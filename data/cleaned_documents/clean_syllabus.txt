@@ -1,0 +1,1807 @@
+CSJMU & UIET KANPUR - B.TECH COMPUTER SCIENCE & ENGINEERING (SPECIALIZATION IN ARTIFICIAL INTELLIGENCE)
+OFFICIAL CLEANED SYLLABUS & COURSE STRUCTURE (76 PAGES FULL DATA)
+
+==================================================
+Subject: Mathematics-I (MTH-S101) | Semester I
+Branch: Computer Science and Engineering (Specialization in Artificial Intelligence)
+Credits: 4 (L: 3, T: 1, P: 0) | PDF Page: 8
+Course Outcomes:
+  - CO1 Test the convergence & divergence of infinite series
+  - CO2 Understand concepts of limit, continuity and differentiability of function of two variables
+  - CO3 Find the maxima and minima of multivariable functions
+  - CO4 Evaluate multiple integrals, concepts of beta & gamma functions
+  - CO5 Apply the concepts of gradient, divergence and curl to formulate engineering problems
+Units & Topics:
+  - Unit-I (Sequences & Series): Definition, Monotonic sequences, Bounded sequences, Convergent and Divergent Sequences Infinite series, Oscillating and Geometric series and their Convergence, nth Term test, Integral test, Comparison Test, Limit Comparison test, Ratio test, Root test, Alternating series, Absolute and Conditional convergence, Leibnitz test.
+  - Unit-II (Differential Calculus): Limit Continuity and differentiability of functions of two variables, Euler’s theorem for homogeneous equations, Tangent plane and normal. Change of variables, chain rule, Jacobians, Taylor’s Theorem for two variables, Extrema of functions of two or more variables, Lagrange’s method of undetermined multipliers.
+  - Unit-III (Integral Calculus): Review of curve tracing, Double and Triple integrals, Change of order of integration. Change of variables. Gamma and Beta functions, Dirichlet’s integral; Applications of Multiple integrals such as surface area, volumes.
+  - Unit-IV (Vector Calculus): Differentiation of vectors, gradient, divergence, curl and their physical meaning; Identities involving gradient, divergence and curl Line and surface integrals Green’s, Gauss and Stroke’s theorem and their applications.
+  - Unit-V (Probability and Statistics): Concept of probability, random variable and distribution function: discrete and continuous, Binomial, Poisson and Normal Distributions.
+Reference Books:
+  - C.L.Liu : Discrete Mathematics, McGraw Hill, 2nd Edition, 1985.
+  - B.Kolman, R.C.Busby, and S.C.Ross, Discrete mathematical structures, Prentice Hall, 2004.
+  - J.L.Mott, A.Kandel and T.P.Baker : Discrete mathematical structures For computer scientists & Mathematicians, Prentice-Hall India, 1985.
+  - J.P.Trembley, R. Manohar, Discrete mathematical structures with applications to computer science, McGraw-Hill, 1975.
+
+
+==================================================
+Subject: Physics-I (PHY-S101) | Semester I
+Branch: Computer Science and Engineering (Specialization in Artificial Intelligence)
+Credits: 5 (L: 3, T: 1, P: 3) | PDF Page: 9
+Course Outcomes:
+  - CO1 Understand the behaviour of Physical bodies
+  - CO2 Understand basic concepts related to motion of objects in daily life
+  - CO3 Gain foundation for applications in applied fields in science and technology
+  - CO4 Understand vectors, laws of motion, momentum, energy, rotational motion, central force field, gravitation, collision, relativity
+  - CO5 Empower students to develop skill of organizing theoretical knowledge and experimental observations
+Units & Topics:
+  - Unit 1 (Vector Derivatives & Coordinate Systems): Revision of vectors, vector differentiation, ordinary derivatives of vectors, space curves, gradient, divergence, curl, polar, curvilinear, cylindrical and spherical coordinate systems.
+  - Unit 2 (Mechanics & Oscillations): Inertial and non-inertial frames, Coriolis force, Newton's laws of motion, work energy theorem, rocket motion, simple harmonic motion, equilibrium.
+  - Unit 3 (Rigid Body Kinematics & Center of Mass): Center of mass calculation, system of particles, elastic and inelastic collisions, moment of inertia theorems.
+  - Unit 4 (Central Forces & Wave Mechanics): Kepler's laws, wave-particle duality, De-Broglie matter waves, Schrodinger wave equations (time dependent and independent), uncertainty principle.
+  - Unit 5 (Special Theory of Relativity): Michelson-Morley experiment, Lorentz transformations, length contraction, time dilation, mass-energy relation E=mc^2.
+Practical Lab Details:
+  - Graphical Analysis
+  - Trajectory of Projectile
+  - Moment of Inertia of Bicycle Wheel
+  - Spring Oscillations
+  - Coupled Pendulum
+  - Bifilar Suspension System
+  - Frequency of AC Mains by Melde's Method
+  - Kater's Pendulum
+  - Inertia Table
+  - Moment of Inertia of Flywheel
+Reference Books:
+  - Vector Analysis by M. R. Spiegel, Schaum's Outlines, 2021
+  - Introduction to Mechanics by R. D. Kleppner and J. Kolenkow, Cambridge, 2014
+  - Concept of Physics (Part-I) by H. C. Verma, 2022
+
+
+==================================================
+Subject: Programming & Computing (C & UNIX) (ISC-S101) | Semester I
+Branch: Computer Science and Engineering (Specialization in Artificial Intelligence)
+Credits: 5 (L: 3, T: 0, P: 3) | PDF Page: 11
+Course Outcomes:
+  - CO1 Recollect various programming constructs and develop C programs
+  - CO2 Understand fundamentals of C programming
+  - CO3 Choose right data representation formats based on requirements
+  - CO4 Implement operations on arrays, functions, pointers, structures, unions and files
+Units & Topics:
+  - Unit 1 (UNIX & Vi Editor Basics): Basic concepts of Computers, Basic UNIX Concepts and Vi - Editor, Internal and External DOS/UNIX commands, Shell scripts.
+  - Unit 2 (C Programming Fundamentals): Variables, Constants, Data types, Conditional statements, Control statements, Loops, Functions, Arrays, Structures, Pointers, File Systems.
+Practical Lab Details:
+  - Learning UNIX/OS Commands and Vi Editor
+  - Writing C Programs for basic data types, control structures, arrays, pointers, structures and file handling
+Reference Books:
+  - Programming in C, Schaum Series, Byron S. Gottfried
+  - The C Programming Language, Brian Kernighan & Dennis Ritchie
+  - Let Us C, Yashavant Kanetkar, 18th Edition
+
+
+==================================================
+Subject: Professional Communication (HSS-S101) | Semester I
+Branch: Computer Science and Engineering (Specialization in Artificial Intelligence)
+Credits: 4 (L: 3, T: 1, P: 0) | PDF Page: 12
+Course Outcomes:
+  - CO1 Enhance communication skills for professional workplace
+  - CO2 Learn effective technical report writing skills
+  - CO3 Improve verbal and non-verbal communication
+  - CO4 Fluency in oral English language nuances
+  - CO5 Learn interpersonal soft skills for placement
+Units & Topics:
+  - Unit 1 (Basics of Technical Communication): General vs Technical communication, levels of communication (Interpersonal, Organizational, Mass), barriers to communication.
+  - Unit 2 (Constituents of Technical Written Communication): Word formation, synonyms/antonyms, paragraph development, condensation methods.
+  - Unit 3 (Forms of Technical Communication): Business letters, job applications, resumes, technical reports, project proposals, thesis writing.
+  - Unit 4 (Presentation Strategies): Audience analysis, audio-visual aids, body language, voice dynamics, delivery nuances.
+  - Unit 5 (Value-Based Text Readings): Essays by M.E. Prior, A. Huxley, J. Bronowski, Bertrand Russell on science, humanities and literature.
+Reference Books:
+  - Improve Your Writing by V.N. Arora and Laxmi Chandra, Oxford Press
+  - Technical Communication by Meenakshi Raman & Sangeeta Sharma, Oxford Press
+
+
+==================================================
+Subject: Mathematics-II (MTH-S102) | Semester II
+Branch: Computer Science and Engineering (Specialization in Artificial Intelligence)
+Credits: 4 (L: 3, T: 1, P: 0) | PDF Page: 14
+Course Outcomes:
+  - CO1 Solve consistent system of linear equations
+  - CO2 Determine power series expansion of functions
+  - CO3 Solve linear differential equations with constant coefficients
+  - CO4 Apply Laplace transforms to engineering physical problems
+  - CO5 Find eigenvalues, eigenvectors & diagonalize matrices
+  - CO6 Understand vector spaces & linear transformations
+Units & Topics:
+  - Unit-I (Matrix Algebra): Rank, Inverse of matrix, system of linear equations, Orthogonal, Symmetric, Skew-symmetric, Hermitian, Unitary matrices.
+  - Unit-II (Vector Space & Eigenvalues): Vector Space, Linear independence, Eigenvalues and Eigenvectors, Cayley-Hamilton theorem, Diagonalization.
+  - Unit-III (Differential Equations): Second order linear ODEs with constant coefficients, Euler-Cauchy equations, variation of parameters, Frobenius method.
+  - Unit-IV (Higher Order ODEs): Higher order linear differential equations using Matrix method.
+  - Unit-V (Laplace Transform): Laplace & inverse Laplace transform, convolution theorem, Dirac delta function, Heaviside unit step function.
+Reference Books:
+  - Discrete Mathematics by C.L. Liu, McGraw Hill
+  - Discrete Mathematical Structures by Kolman, Busby & Ross, Prentice Hall
+
+
+==================================================
+Subject: Object Oriented Programming with Python (CSE-S207) | Semester III
+Branch: Computer Science and Engineering (Specialization in Artificial Intelligence)
+Credits: 5 (L: 3, T: 0, P: 3) | PDF Page: 23
+Course Outcomes:
+  - CO1 Interpret Python syntax, semantics and control flow statements
+  - CO2 Express proficiency in string handling and functions
+  - CO3 Manipulate lists, dictionaries, tuples and sets
+  - CO4 Perform file system and regex operations
+  - CO5 Articulate OOP concepts (Encapsulation, Inheritance, Polymorphism)
+Units & Topics:
+  - Unit 1 (Python Basics & Control Flow): Python IDE, Type Conversion, Arithmetic Operators, Conditionals (if-elif-else), Loops (while, for, break, continue).
+  - Unit 2 (Data Structures & Functions): Strings, Lists, Tuples, Dictionaries, Sets, Lambda expressions, Higher order functions.
+  - Unit 3 (File I/O & Modules): File input/output, Exceptions, Modules, Abstract Data Types (ADTs).
+  - Unit 4 (Object-Oriented Programming): Classes, Objects, __init__ method, Inheritance, Polymorphism, Encapsulation.
+  - Unit 5 (Recursion & Sorting Algorithms): Recursive Fibonacci, Tower of Hanoi, Binary Search, Selection Sort, Merge Sort.
+Practical Lab Details:
+  - Python Matrix Multiplication and GCD calculation
+  - Word frequency counter in text files
+  - Sorting algorithms (Selection, Insertion, Merge Sort) implementation
+  - Pygame bouncing ball simulation
+Reference Books:
+  - Think Python: How to Think Like a Computer Scientist by Allen B. Downey
+  - An Introduction to Python by Guido van Rossum
+  - Introduction to Computation and Programming Using Python by John V. Guttag, MIT Press
+
+
+==================================================
+Subject: Data Structure Using Python (CSE-S208) | Semester IV
+Branch: Computer Science and Engineering (Specialization in Artificial Intelligence)
+Credits: 4 (L: 3, T: 0, P: 2) | PDF Page: 30
+Course Outcomes:
+  - CO1 Differentiate static and dynamic memory allocation
+  - CO2 Implement linear and non-linear data structures
+  - CO3 Analyze searching and sorting techniques
+  - CO4 Identify appropriate data structure for a given problem
+  - CO5 Compute time complexities of different algorithms
+Units & Topics:
+  - Unit 1 (Python Memory & Algorithmic Analysis): Variables, Memory Model, Asymptotic Notation Big-O, Selection & Insertion Sort, Inductive Reasoning.
+  - Unit 2 (Sorting & Advanced Lists): Merge Sort, Quick Sort, Stable Sorting, Dictionaries, Map/Filter/List Comprehensions.
+  - Unit 3 (Linear Data Structures & Backtracking): Stacks, Queues, Heaps, Backtracking N-Queens, Scope in Python.
+  - Unit 4 (Trees & Dynamic Programming): Linked Lists, Binary Search Trees (BST), Height-Balanced Trees (AVL), Memoization, Dynamic Programming.
+Practical Lab Details:
+  - Stack, Queue, Circular Queue Array and Linked List Implementation
+  - Binary Search Tree Insertion, Deletion and Traversals (Inorder, Preorder, Postorder)
+  - Graph Traversals (BFS & DFS)
+Reference Books:
+  - Python Programming Using Problem Solving Approach by Reema Thareja, Oxford
+  - Data Structures and Algorithms in Python by Michael T. Goodrich
+
+
+==================================================
+Subject: Database Management Systems (CSE-S301) | Semester V
+Branch: Computer Science and Engineering (Specialization in Artificial Intelligence)
+Credits: 5 (L: 3, T: 0, P: 3) | PDF Page: 38
+Course Outcomes:
+  - CO1 Describe fundamental elements of relational DBMS
+  - CO2 Explain relational data model, ER-model, relational algebra and SQL
+  - CO3 Design ER-models for real-world scenarios
+  - CO4 Convert ER-model to relational tables and execute SQL queries
+  - CO5 Improve database design via Normalization (1NF, 2NF, 3NF, BCNF)
+  - CO6 Understand indexing (B-trees, B+ trees) and hashing storage structures
+Units & Topics:
+  - Unit 1 (DBMS Architecture & ER Modeling): Database applications, Data Abstraction, ER Model, Entity Sets, Attributes, Keys, ER Diagrams.
+  - Unit 2 (Relational Model & SQL): Relational Algebra, Tuple & Domain Calculus, SQL Data Definition DDL, DML, Subqueries, Joins, Aggregate Functions.
+  - Unit 3 (Normalization & Functional Dependencies): 1NF, 2NF, 3NF, BCNF, Functional Dependencies, Closure sets, Canonical Cover, Lossless Join Decomposition.
+  - Unit 4 (Transaction & Concurrency Control): ACID Properties, Serializability, Lock-Based Protocols, Deadlock Handling, Recovery Systems.
+Practical Lab Details:
+  - SQL Table Creation DDL and Data Manipulation DML
+  - Complex SQL Subqueries, Joins, and Union/Intersect Operations
+  - PL/SQL Triggers, Views, Procedures, and Functions
+Reference Books:
+  - Database System Concepts by Silberschatz, Korth, Sudarshan, 7th Edition
+  - Database Management Systems by Raghu Ramakrishnan & Johannes Gehrke
+
+
+==================================================
+Subject: Artificial Intelligence (CSE-S518) | Semester VI
+Branch: Computer Science and Engineering (Specialization in Artificial Intelligence)
+Credits: 4 (L: 3, T: 1, P: 0) | PDF Page: 49
+Course Outcomes:
+  - CO1 Demonstrate fundamental understanding of AI history and foundations
+  - CO2 Apply basic principles of AI in problem solving, inference, perception, knowledge representation
+  - CO3 Demonstrate understanding of intelligent agents, expert systems, neural networks
+  - CO4 Demonstrate proficiency developing applications in AI languages (PROLOG/LISP)
+  - CO5 Apply scientific method to machine learning models to solve global problems
+Units & Topics:
+  - Unit 1 (Foundations & Intelligent Agents): History of AI, Rational Agents, Agent Architectures, Problem Spaces, State Space Search.
+  - Unit 2 (Uninformed & Informed Search Techniques): BFS, DFS, Depth Limited, Iterative Deepening, A* Search, Heuristics, Hill Climbing, Simulated Annealing, Genetic Algorithms.
+  - Unit 3 (Adversarial Search & CSP): Constraint Satisfaction Problems, Minimax Algorithm, Alpha-Beta Pruning.
+  - Unit 4 (Knowledge Representation & Logic): Predicate Calculus, Rules, Symbolic Reasoning, Uncertainty, Probabilistic Reasoning, PROLOG/LISP programming.
+Reference Books:
+  - Artificial Intelligence: A Modern Approach by Stuart Russell & Peter Norvig, 3rd Edition
+  - Artificial Intelligence by Elaine Rich and Kevin Knight
+
+
+==================================================
+Subject: Machine Learning (CSE-S402) | Semester VII
+Branch: Computer Science and Engineering (Specialization in Artificial Intelligence)
+Credits: 4 (L: 3, T: 1, P: 0) | PDF Page: 53
+Course Outcomes:
+  - CO1 Appreciate importance of visualization in data analytics solution
+  - CO2 Apply structured thinking to unstructured problems
+  - CO3 Understand broad collection of machine learning algorithms
+  - CO4 Learn algorithmic topics of machine learning and required mathematical theory
+  - CO5 Develop appreciation for learning from data
+Units & Topics:
+  - Unit 1 (Introduction & Regression Models): Supervised, Unsupervised, Reinforcement Learning, Linear Regression, Ridge, Lasso, Gradient Descent.
+  - Unit 2 (Classification Algorithms): Logistic Regression, Naive Bayes Classifier, Decision Trees, Pruning, Support Vector Machines (SVM), Hinge Loss.
+  - Unit 3 (Neural Networks & Backpropagation): Perceptrons, Feed Forward Networks, Backpropagation, Maximum Likelihood Estimation.
+  - Unit 4 (Unsupervised Learning & Clustering): K-Means, Hierarchical Clustering, Dimensionality Reduction (PCA), Apriori Algorithm, FP-Growth.
+  - Unit 5 (Evaluation & ROC Curves): Cross Validation, Bootstrapping, ROC Curves, Recommendation Systems.
+Reference Books:
+  - Machine Learning by Tom M. Mitchell
+  - Pattern Recognition and Machine Learning by Christopher M. Bishop
+  - Deep Learning by Ian Goodfellow, Yoshua Bengio, Aaron Courville
+
+
+==================================================
+Subject: Deep Learning (CSE-S526) | Semester VII
+Branch: Computer Science and Engineering (Specialization in Artificial Intelligence)
+Credits: 4 (L: 3, T: 1, P: 0) | PDF Page: 52
+Course Outcomes:
+  - CO1 Understand main fundamentals that drive Deep Learning
+  - CO2 Build, train and apply fully connected deep neural networks
+  - CO3 Implement efficient CNN or RNN architectures
+  - CO4 Understand key features in neural network architecture
+Units & Topics:
+  - Unit 1 (TensorFlow & Perceptrons): Computational Graphs, TensorBoard, Keras, Perceptrons, XOR Problem.
+  - Unit 2 (Activation Functions & Backpropagation): Sigmoid, ReLU, Softmax, Gradient Descent, Stochastic Gradient Descent, Backpropagation in ANN.
+  - Unit 3 (Optimization & Regularization): Overfitting, Cross Validation, Feature Selection, Dropout, Regularization, Hyperparameter tuning.
+  - Unit 4 (Convolutional & Recurrent Neural Networks): CNNs, Kernel Filters, Pooling, RNNs, Unfolded RNNs, LSTM, Seq2Seq models, Natural Language Processing, Speech & Video Analytics.
+Reference Books:
+  - Deep Learning by Ian Goodfellow, Yoshua Bengio, Aaron Courville, MIT Press
+  - Pattern Recognition and Machine Learning by Christopher M. Bishop
+
+
+==================================================
+Subject: Introduction to Blockchain (CSE-S532) | Semester VIII
+Branch: Computer Science and Engineering (Specialization in Artificial Intelligence)
+Credits: 4 (L: 3, T: 1, P: 0) | PDF Page: 75
+Course Outcomes:
+  - CO1 Understand architecture and working of blockchain systems
+  - CO2 Analyze role of consensus algorithms and cryptography in blockchain
+  - CO3 Evaluate real-world applications of blockchain across multiple domains
+  - CO4 Design and implement simple blockchain-based solutions
+Units & Topics:
+  - Unit 1 (Introduction to Blockchain): Evolution of Blockchain, Distributed Systems, Blocks, Chains, Transactions, Public/Private/Consortium Blockchains.
+  - Unit 2 (Consensus Mechanisms): Proof of Work (PoW), Proof of Stake (PoS), DPoS, PBFT, Proof of Authority.
+  - Unit 3 (Blockchain Platforms): Bitcoin Architecture, Ethereum Smart Contracts & DApps, Hyperledger Fabric.
+  - Unit 4 (Blockchain Applications): DeFi, Supply Chain Management, Digital Identity, Healthcare, IoT Integration.
+  - Unit 5 (Challenges & Future Trends): Scalability, Energy Consumption, Web 3.0, NFTs, Metaverse, Quantum Computing impact.
+Reference Books:
+  - Mastering Blockchain by Imran Bashir
+  - Blockchain Basics by Daniel Drescher
+  - Ethereum and Solidity: The Complete Developer's Guide by Stephen Grider
+
+
+
+==================================================
+CSJMU & UIET KANPUR - B.TECH ELECTRONICS & COMMUNICATION ENGINEERING (ECE)
+OFFICIAL CLEANED SYLLABUS & COURSE STRUCTURE (96 PAGES FULL DATA)
+
+==================================================
+Subject: Analog Electronics (ECE-S201) | Semester III
+Branch: Electronics & Communication Engineering
+Credits: 5 (L: 3, T: 1, P: 3) | PDF Page: 32
+Course Outcomes:
+  - CO1 Develop comprehensive understanding of special-purpose semiconductor diodes
+  - CO2 Analyze and design BJT-based amplifier circuits using small signal models and h-parameters
+  - CO3 Impart knowledge on construction, operation, and characteristics of JFETs
+  - CO4 Provide in-depth understanding of MOSFET physical structure and I-V characteristics
+  - CO5 Introduce concept of multi-stage amplification, coupling methods and cascaded amplifiers
+Units & Topics:
+  - Unit-I (Special Diodes): Review of PN Junction, Breakdown Mechanisms in Semiconductor Diodes, Zener Diode as regulator, Tunnel Diode, Varactor Diode, Photo Diode, Light Emitting Diode.
+  - Unit-II (Bipolar Junction Transistor & UJT): Transistor as Amplifier, small signal low frequency amplifier, CE amplifier graphical analysis, h-parameters model.
+  - Unit-III (Junction Field Effect Transistor (JFET)): Construction, principle of operation, Pinch-off Voltage, Volt-Ampere characteristics, FET parameters, Common Source & Common Drain Amplifiers.
+  - Unit-IV (MOSFET): Structure and physical operation of MOSFET, Enhancement and Depletion modes, I-V relationship in saturation and non-saturation regions.
+  - Unit-V (Multi Stage Amplifiers): Classification of amplifiers, RC coupled amplifier, transformer coupled amplifier, Direct coupled amplifier, Darlington pair amplifier.
+Reference Books:
+  - Boylestad & Nashelsky - Electronic Devices and Circuit Theory, 11th Edition, Pearson
+  - Sedra & Smith - Microelectronic Circuits, 8th Edition, Oxford University Press
+  - Millman & Halkias - Integrated Electronics: Analog and Digital Circuits, McGraw-Hill
+
+
+==================================================
+Subject: Digital Electronics & Logic Design (ECE-S202) | Semester III
+Branch: Electronics & Communication Engineering
+Credits: 5 (L: 3, T: 1, P: 3) | PDF Page: 34
+Course Outcomes:
+  - CO1 Examine structure of number systems and perform conversion among different systems
+  - CO2 Understand Digital Logic Families and Boolean algebra reduction via K-Maps
+  - CO3 Design and analyze synchronous and asynchronous sequential circuits using flip-flops
+  - CO4 Analyze multivibrators and study RAM, ROM, EPROM, EEPROM memories
+  - CO5 Implement combinational logic circuits using PLDs (PLAs, PALs)
+Units & Topics:
+  - Unit-I (Logic Circuits & Boolean Algebra): Number systems, Gray code, BCD Code, Boolean algebra theorems, K-Map minimization, Logic families (RTL, DTL, TTL, ECL, CMOS).
+  - Unit-II (Combinational Circuits): Binary Adder/Subtractor, Parallel Adder, BCD Adder, Decoders, Multiplexers, Demultiplexers, Comparators, Seven-segment decoder.
+  - Unit-III (Sequential Circuits): Flip-Flops (RS, D, T, JK), Master-Slave Flip-Flops, Race around condition, Excitation tables, State diagrams.
+  - Unit-IV (Counters & Shift Registers): Asynchronous & Synchronous counters, Ripple counter, Up-Down counter, Ring counter, Shift registers.
+  - Unit-V (Multivibrators & Memories): Monostable, Bistable, Astable Multivibrators, Schmitt trigger, RAM, ROM, PROM, EPROM, EEPROM, PLAs, PALs, BiCMOS.
+Reference Books:
+  - Morris Mano - Digital Design, PHI
+  - Digital Electronics by Bignill & Donovan
+  - Digital Integrated Circuits by A.K. Gautam
+
+
+==================================================
+Subject: Electromagnetic Theory (ECE-S203) | Semester III
+Branch: Electronics & Communication Engineering
+Credits: 3 (L: 3, T: 0, P: 0) | PDF Page: 36
+Course Outcomes:
+  - CO1 Differentiate coordinate systems and use them for electromagnetic field problems
+  - CO2 Describe static electric and magnetic fields, boundary conditions and potentials
+  - CO3 Use integral and point form of Maxwell equations
+  - CO4 Describe time varying fields, wave propagation, Poynting theorem
+  - CO5 Apply wave reflection/refraction and Smith Chart in practical fields
+Units & Topics:
+  - Unit-I (Electrostatics): Vector calculus, Coulomb's law, Gauss's Law, Electric Potential, Polarization, Poisson's and Laplace's equations.
+  - Unit-II (Magnetostatics): Biot-Savart's law, Ampere's Circuital Law, Magnetic Flux density, Vector potentials, Magnetic boundary conditions, Inductance.
+  - Unit-III (Maxwell's Equations & EM Waves): Faraday's Law, Displacement Current, Maxwell's Equations, Plane waves in lossless dielectrics, Poynting Vector.
+  - Unit-IV (Transmission Lines): Transmission line parameters, Input impedance, SWR, Smith Chart applications.
+  - Unit-V (Waveguides): Parallel Plate Waveguide, TE, TM, TEM modes, Rectangular Waveguide, Power transmission.
+Reference Books:
+  - Engineering Electromagnetics by William H. Hayt
+  - Elements of Electromagnetics by Matthew N.O. Sadiku, Oxford
+
+
+==================================================
+Subject: Network Analysis and Synthesis (ECE-S204) | Semester III
+Branch: Electronics & Communication Engineering
+Credits: 3 (L: 3, T: 0, P: 0) | PDF Page: 38
+Course Outcomes:
+  - CO1 Understand graph theory using different analysis methods
+  - CO2 Apply network functions for electrical network analysis
+  - CO3 Understand two port networks
+  - CO4 Understand properties of network functions
+  - CO5 Explain fundamentals and types of passive and active filters
+Units & Topics:
+  - Unit-I (Graph Theory): Graph of network, Planar/Non-Planar graphs, Tree, Co-Tree, Cut set matrix, Tie set matrix, Nodal analysis.
+  - Unit-II (Transient Circuit Analysis): Natural and forced response, Transient and steady state response for DC/AC inputs via Laplace methods.
+  - Unit-III (Network Functions): Complex frequency, Transform impedances, Poles and zeros, Driving point and transfer functions.
+  - Unit-IV (Two Port Networks): Z, Y, ABCD, h parameters, Interconnections of two port networks, T and Pi representations.
+  - Unit-V (Network Synthesis & Filters): Positive real functions, Foster and Cauer synthesis of LC/RC/RL networks, Passive and Active Filters.
+Reference Books:
+  - Network Analysis by M.E. Van Valkenburg, Prentice Hall
+  - Fundamentals of Electric Circuits by Alexander & Sadiku, McGraw Hill
+
+
+==================================================
+Subject: Analog Integrated Circuits (ECE-S205) | Semester IV
+Branch: Electronics & Communication Engineering
+Credits: 5 (L: 3, T: 0, P: 3) | PDF Page: 42
+Course Outcomes:
+  - CO1 Understand advantages of negative feedback and feedback amplifier topologies
+  - CO2 Analyze Power Amplifiers (Class A, B, AB, C, Push-Pull)
+  - CO3 Design sinusoidal/non-sinusoidal oscillators and Op-Amp fundamentals
+  - CO4 Understand functioning of Op-Amps and design Op-Amp based circuits
+  - CO5 Apply ADC/DAC in different systems and wave shaping circuits
+Units & Topics:
+  - Unit-I (Feedback Amplifiers & Topologies): Negative feedback advantages, Voltage series, current series, voltage shunt, current shunt, gain & phase margin.
+  - Unit-II (Power Amplifiers): Class A, Class B, Class AB, Class C, Push-Pull configuration, Power BJTs, MOS Power Transistors, Heat sinks.
+  - Unit-III (Oscillators & Op-Amp Fundamentals): Barkhausen criterion, RC phase shift, Wien bridge, Hartley, Colpitts oscillators, Current mirror, Active load.
+  - Unit-IV (Op-Amp Applications & Active Filters): Inverting/non-inverting amplifiers, Integrator, Differentiator, Precision Rectifier, Schmitt trigger, Active Filters.
+  - Unit-V (Data Converters & Wave Shaping): DAC/ADC, 555 Timer applications, Monostable/Astable operation, Ramp & Sawtooth generators.
+Reference Books:
+  - Integrated Electronics by Millman & Halkias, McGraw Hill
+  - Op-Amps and Linear Integrated Circuits by Ramakant A. Gayakwad, PHI
+
+
+==================================================
+Subject: Microprocessors and Microcontrollers (ECE-S206) | Semester IV
+Branch: Electronics & Communication Engineering
+Credits: 5 (L: 3, T: 0, P: 3) | PDF Page: 43
+Course Outcomes:
+  - CO1 Describe history and architectures of 8085 and 8086 microprocessors
+  - CO2 Draw timing diagrams and write assembly programs for 8085/8086
+  - CO3 Distinguish operational modes of microprocessors
+  - CO4 Interface peripherals (8255, 8259, 8253, 8251) and memory
+  - CO5 Understand 8051 Microcontroller architecture and basic assembly programming
+Units & Topics:
+  - Unit-I (8085 & 8086 Microprocessor Architecture): 8085 Register structure, ALU, Bus organization. 8086 Internal organization, Bus interface unit, Execution unit.
+  - Unit-II (Assembly Language Programming): Addressing modes, Data transfer, Arithmetic/logical instructions, Jumps, Calls, Loops, Assembler Directives.
+  - Unit-III (CPU Module Design & 8087 Coprocessor): Pin configuration of 8086/8088, Demultiplexing, Minimum/Maximum mode operation, 8087 Numeric coprocessor.
+  - Unit-IV (Peripheral Interfacing): 8255 PPI, 8251 USART, 8259 PIC, 8237 DMA Controller, 8253/8254 Timer, ADC/DAC interfacing.
+  - Unit-V (Memory Interfacing): RAM & ROM Interfacing, Timing considerations, DRAM interfacing.
+  - Unit-VI (8051 Microcontroller Architecture): 8051 Architecture, Instruction set, Special Function Registers, Assembly language programming.
+Reference Books:
+  - Microprocessor Architecture, Programming, and Applications with 8085 by Ramesh Gaonkar
+  - 8086 Microprocessors Architecture by Douglas V. Hall, McGraw-Hill
+  - The 8051 Microcontroller by Kenneth J. Ayala
+
+
+==================================================
+Subject: Analog and Digital Communication (ECE-S301) | Semester V
+Branch: Electronics & Communication Engineering
+Credits: 5 (L: 3, T: 0, P: 3) | PDF Page: 49
+Course Outcomes:
+  - CO1 Apply statistical communication theory to analog/digital systems
+  - CO2 Amplitude modulation (DSB-SC, SSB-SC, VSB) and noise calculation
+  - CO3 Frequency modulation (FM/PM), PAM, PWM, PPM, PCM techniques
+  - CO4 Digital baseband transmission, line coding, Nyquist criterion, matched filters
+  - CO5 Digital modulation (ASK, FSK, PSK, QPSK, MSK) and error control coding
+Units & Topics:
+  - Unit-I (Communication System & Random Processes): LTI systems, Power spectral density, Gaussian process, Thermal noise, Noise figure, Noise bandwidth.
+  - Unit-II (Amplitude & Angle Modulation): DSB-SC, SSB-SC, VSB, AM transmitters/receivers, FM/PM generation and detection, Pre-emphasis & De-emphasis.
+  - Unit-III (Sampling & Pulse Modulation): Sampling theorem, PAM, PWM, PPM, PCM, DPCM, Delta Modulation, Slope overload.
+  - Unit-IV (Digital Baseband Transmission): Line coding (NRZ, RZ, AMI, Manchester), ISI, Nyquist criterion, Matched filter receiver, Error probability.
+  - Unit-V (Digital Modulation & Error Control Coding): ASK, FSK, PSK, QPSK, MSK, Hamming distance, Linear Block Codes, Cyclic Codes, Convolutional Codes, Viterbi decoding.
+Reference Books:
+  - Communication Systems by Simon Haykin, John Wiley & Sons
+  - Modern Digital and Analog Communication Systems by B.P. Lathi, Oxford Press
+
+
+==================================================
+Subject: Digital Signal Processing (ECE-S306) | Semester VI
+Branch: Electronics & Communication Engineering
+Credits: 5 (L: 3, T: 0, P: 3) | PDF Page: 58
+Course Outcomes:
+  - CO1 Design and describe IIR and FIR digital filter realizations
+  - CO2 Select parameters of analog IIR digital filters (Butterworth, Chebyshev) via Bilinear Transformation
+  - CO3 Design FIR filters using window functions (Hamming, Hanning, Blackman, Kaiser)
+  - CO4 Define DFT properties, Circular Convolution, and FFT algorithms (DIT/DIF)
+  - CO5 Understand multirate DSP (decimation, interpolation, sampling rate conversion)
+Units & Topics:
+  - Unit-I (DSP Basics & Filter Realizations): Recursive/Non-recursive systems, Direct form, Cascade, Parallel, Ladder structures for IIR and FIR filters.
+  - Unit-II (IIR Filter Design): Impulse Invariant Transformation, Bilinear Transformation, Butterworth & Chebyshev filter design.
+  - Unit-III (FIR Filter Design & Quantization Effects): Rectangular, Hamming, Hanning, Blackman, Kaiser windows, Finite word length effects, Quantization noise.
+  - Unit-IV (DFT & FFT Algorithms): Properties of DFT, Circular Convolution, Radix-2 DIT and DIF Fast Fourier Transform algorithms.
+  - Unit-V (Multirate Digital Signal Processing): Decimation, Interpolation, Multistage sampling rate conversion, Sub-band coding of speech.
+Reference Books:
+  - Digital Signal Processing by John G. Proakis & Dimitris G. Manolakis, Pearson
+  - Digital Signal Processing by Oppenheim & Schafer, Pearson
+
+
+==================================================
+Subject: Fiber Optics Communication (ECE-S307) | Semester VI
+Branch: Electronics & Communication Engineering
+Credits: 5 (L: 3, T: 0, P: 3) | PDF Page: 60
+Course Outcomes:
+  - CO1 Recognize and classify Optical Fiber structures and modes
+  - CO2 Understand fiber transmission characteristics (attenuation, dispersion) and coupling losses
+  - CO3 Understand operation of optical sources (LASER, LED) and detectors (PIN, APD)
+  - CO4 Understand optical receiver operation, noise models and pre-amplifiers
+  - CO5 Analyze digital optical transmission links, WDM concepts, and power budgets
+Units & Topics:
+  - Unit-I (Optical Fiber Structure & Waveguides): Ray theory transmission, Step index & Graded index fibers, Single mode fiber, Fiber fabrication.
+  - Unit-II (Signal Degradation in Optical Fibers): Attenuation, absorption losses, scattering losses, dispersion, Source-to-fiber power launching, Splicing.
+  - Unit-III (Optical Sources & Detectors): Semiconductor Injection Laser (ILD), LED structures, PIN photodiodes, Avalanche Photodiodes (APD).
+  - Unit-IV (Optical Receivers): Digital receiver noise, Shot noise, Pre-amplifier types, Receiver sensitivity.
+  - Unit-V (Digital Transmission Systems & WDM): Point to point links, Link power budget, Rise time budget, WDM concepts, Advanced multiplexing.
+Reference Books:
+  - Optical Fiber Communications by Gerd Keiser, McGraw-Hill
+  - Optical Fiber Communication by John M. Senior, Prentice Hall
+
+
+==================================================
+Subject: VLSI Design & Technology (ECE-S308) | Semester VI
+Branch: Electronics & Communication Engineering
+Credits: 4 (L: 3, T: 1, P: 0) | PDF Page: 62
+Course Outcomes:
+  - CO1 Identify material design limits used for IC fabrication
+  - CO2 Describe performance of technology scaling
+  - CO3 Analyze physical fabrication steps (Epitaxy, Oxidation, Lithography, Etching, Ion Implantation)
+  - CO4 Analyze MOS transistor operation, CMOS inverters and logic gate layout
+  - CO5 Write Verilog HDL code for combinational and sequential digital circuits
+Units & Topics:
+  - Unit-I (Crystal Growth & Lithography): CZ Crystal Growing, Epitaxy, Oxidation mechanism, Optical/Electron/X-ray Lithography, Reactive Plasma Etching.
+  - Unit-II (Diffusion & Ion Implantation): Fick's diffusion equations, Ion Implantation range theory, Annealing, Metallization, Bipolar IC Technology.
+  - Unit-III (MOS & CMOS Technology): NMOS, PMOS, CMOS IC technology, Metal gate, Poly silicon gate, MOSFET static characteristics, VLSI layout rules.
+  - Unit-IV (CMOS Inverter & Logic Gates): Static CMOS inverter, Power & delay analysis, Static and Dynamic CMOS logic gates, Latches & Registers.
+  - Unit-V (Verilog HDL Hardware Modeling): Gate level, Behavioral, Data flow, Switch level modeling in Verilog, Logic synthesis.
+Reference Books:
+  - VLSI Technology by S.M. Sze, McGraw-Hill
+  - Basic VLSI Design by Douglas A. Pucknell & Kamran Eshraghian
+  - CMOS Digital Integrated Circuits by Sung-Mo Kang & Yusuf Leblebici
+
+
+==================================================
+Subject: Wireless & Mobile Communication (ECE-S401) | Semester VII
+Branch: Electronics & Communication Engineering
+Credits: 5 (L: 3, T: 0, P: 3) | PDF Page: 65
+Course Outcomes:
+  - CO1 Understand cellular concepts: frequency reuse, cell splitting, handoff, GSM, CDMA
+  - CO2 Calculate link budget using path loss and propagation models
+  - CO3 Analyze multipath fading channels and Doppler spread
+  - CO4 Understand spread spectrum techniques (DS-SS, FH-SS), OFDM, MIMO
+  - CO5 Understand 2G, 3G, 4G LTE, 5G NR architecture and mobile standards
+Units & Topics:
+  - Unit-I (Cellular Mobile Concepts & Standards): Frequency reuse, Handoff strategies, Interference, Capacity, Evolution of 2G, 3G, 4G, 5G.
+  - Unit-II (Signal Propagation & Antennas): Reflection, Diffraction, Scattering, Log-normal shadowing, Base station antenna arrays.
+  - Unit-III (Multipath Fading Channels): Doppler shift, Small-scale fading, Delay spread, Coherence bandwidth, Flat and frequency selective fading.
+  - Unit-IV (Spread Spectrum & Modulation): DS-SS, FH-SS, FDMA, TDMA, CDMA, SDMA, QAM, OFDM multicarrier modulation.
+  - Unit-V (MIMO & Wireless Standards): Diversity receivers (MRC, RAKE), MIMO spatial multiplexing, GSM, EDGE, GPRS, WCDMA, LTE.
+Reference Books:
+  - Wireless Communications: Principles and Practice by Theodore S. Rappaport, Pearson
+  - 4G, LTE-Advanced Pro and The Road to 5G by Erik Dahlman
+  - Mobile Cellular Telecommunications by William C.Y. Lee
+
+
+==================================================
+Subject: Embedded Systems (ECE-S522) | Semester VIII
+Branch: Electronics & Communication Engineering
+Credits: 5 (L: 3, T: 0, P: 2) | PDF Page: 92
+Course Outcomes:
+  - CO1 Understand architecture and programming model of embedded processors (8051, ARM)
+  - CO2 Interface peripheral devices (ADC, DAC, Timers, UART, SPI, I2C)
+  - CO3 Analyze embedded system design using Real-Time Operating Systems (RTOS)
+  - CO4 Design real-time applications using interrupt handling and scheduling
+  - CO5 Develop embedded C programs for microcontroller-based systems
+Units & Topics:
+  - Unit-I (Introduction to Embedded Systems): Embedded hardware units, processor, memory, I/O devices, design process and constraints.
+  - Unit-II (Microcontrollers & ARM Architecture): 8051 & ARM Cortex architecture, Embedded C programming, Stack, Subroutines, Interrupts.
+  - Unit-III (Peripheral Interfacing & Protocols): Timers, Counters, UART, SPI, I2C, ADC/DAC, Sensors, Arduino & STM32 development boards.
+  - Unit-IV (Embedded Software & RTOS): Real-Time Operating Systems (RTOS), Task scheduling, Context switching, Semaphores, Mutexes, Message queues.
+  - Unit-V (Applications & Hardware/Software Co-Design): IoT, Automotive, Medical embedded systems, Simulation tools (Keil, Proteus).
+Reference Books:
+  - Embedded Systems: Architecture, Programming and Design by Raj Kamal, McGraw-Hill
+  - Introduction to Embedded Systems by Shibu K.V., McGraw-Hill
+  - The 8051 Microcontroller and Embedded Systems by Muhammad Ali Mazidi
+
+
+
+==================================================
+CSJMU & UIET KANPUR - B.TECH CHEMICAL ENGINEERING (CHE)
+OFFICIAL CLEANED SYLLABUS & COURSE STRUCTURE (130 PAGES FULL DATA)
+
+==================================================
+Subject: Process Calculations (CHES201) | Semester III
+Branch: Chemical Engineering
+Credits: 4 (L: 3, T: 1, P: 0) | PDF Page: 32
+Course Outcomes:
+  - CO1 Demonstrate comprehensive understanding of material and energy balance equations for open and closed systems
+  - CO2 Select appropriate basis and conduct degree of freedom analysis before solving balance problems
+  - CO3 Make elementary flow-sheets and perform material & energy balance calculations with recycle, bypass and purge
+  - CO4 Perform process calculations utilizing psychrometric charts and steam tables
+  - CO5 Apply simultaneous material and energy balance calculations for steady state and unsteady state systems
+Units & Topics:
+  - Unit 1 (Dimensions & Stoichiometry): Units, dimensions, conversions, dimensional consistency, stoichiometry, conversion, selectivity, yield.
+  - Unit 2 (Gases & Vapour Pressure): Ideal gas laws, Dalton's law, Amagat's law, Vapour pressure, Cox chart, Raoult's law, Henry's law.
+  - Unit 3 (Humidity & Material Balances): Relative humidity, dew point, wet bulb temperature, Psychrometric charts, Material balances with and without chemical reactions, recycle, bypass, purge.
+  - Unit 4 (Thermophysics & Thermochemistry): Heat capacity of gases/liquids, heat of reaction, combustion, formation, Enthalpy-concentration charts, Flame temperature, Unsteady state balances.
+Reference Books:
+  - Basic Principles and Calculations in Chemical Engineering by D.M. Himmelblau, Prentice Hall
+  - Chemical Process Principles by O.A. Hougen, K.M. Watson & R.A. Ragatz, John Wiley & Sons
+
+
+==================================================
+Subject: Fluid Mechanics & Mechanical Operations (CHES202) | Semester III
+Branch: Chemical Engineering
+Credits: 4 (L: 3, T: 1, P: 0) | PDF Page: 33
+Course Outcomes:
+  - CO1 Understand and apply fluid properties and principles of fluid statics
+  - CO2 Analyze and solve problems related to fluid kinematics and dynamics
+  - CO3 Grasp concepts of laminar and turbulent flow, boundary layers, and dimensional analysis
+  - CO4 Evaluate and design hydraulic systems, pipe networks and pumps
+  - CO5 Select appropriate mechanical-physical separation techniques for solid-fluid systems
+Units & Topics:
+  - Unit 1 (Fluid Statics & Pressure Measurement): Viscosity, Newtonian/non-Newtonian fluids, Pascal's law, Barometer, Manometer, Bourdon gauge, Archimedes' principle.
+  - Unit 2 (Fluid Kinematics & Bernoulli Equation): Continuity equation, Euler's equation, Bernoulli's equation, Venturimeter, Orifice meter, Pitot tube, Rotameter.
+  - Unit 3 (Pipe Flow & Navier-Stokes): Hagen-Poiseuille law, Boundary layer formation, Buckingham pi-theorem, Model laws.
+  - Unit 4 (Piping Networks & Pumps): Darcy-Weisbach equation, Moody's chart, Centrifugal pumps, NPSH, Reciprocating pumps.
+  - Unit 5 (Particle Characterization & Size Reduction): Crushers, Grinders, Laws of comminution (Rittinger, Kick, Bond), Screening, Settling.
+  - Unit 6 (Sedimentation & Filtration): Thickeners, Cake filtration, Filter press, Cyclones, Electrostatic precipitators, Belt conveyors.
+Reference Books:
+  - Fluid Mechanics and Machinery by C S P Ojha, R Berndtsson, P N Chandramouli, Oxford
+  - Fluid Mechanics for Chemical Engineers by N de Nevers, McGraw Hill
+
+
+==================================================
+Subject: Chemical Engineering Thermodynamics (CHES203) | Semester IV
+Branch: Chemical Engineering
+Credits: 4 (L: 3, T: 1, P: 0) | PDF Page: 38
+Course Outcomes:
+  - CO1 Calculate thermodynamic properties of substances
+  - CO2 Apply 1st and 2nd laws of thermodynamics to closed and open chemical processes
+  - CO3 Determine thermodynamic properties of ideal and real gaseous mixtures
+  - CO4 Apply equilibrium conditions to binary and multi-component phase equilibria (VLE)
+  - CO5 Calculate thermodynamic properties of ideal and non-ideal solutions
+  - CO6 Determine reaction equilibrium constants and composition of product mixtures
+Units & Topics:
+  - Unit 1 (Thermodynamic Laws & P-V-T Behavior): First and Second laws for open/closed systems, Cubic equations of state, Virial equation, Compressibility factor.
+  - Unit 2 (Property Relations & Departure Functions): Gibbs-Duhem relation, Maxwell relations, Fugacity and fugacity coefficients, Real gas mixtures.
+  - Unit 3 (Solutions & Vapour-Liquid Equilibrium (VLE)): Raoult's law, Activity coefficients, Excess Gibbs free energy, Azeotropes, Bubble & Dew point calculations.
+  - Unit 4 (Chemical Reaction Equilibrium): Standard Gibbs free energy change, Equilibrium constant K, Temperature effects on reaction equilibrium.
+Reference Books:
+  - Chemical Engineering Thermodynamics by Y.V.C. Rao, University Press
+  - Introduction to Chemical Engineering Thermodynamics by Smith & van Ness, McGraw Hill
+
+
+==================================================
+Subject: Heat Transfer (CHES204) | Semester IV
+Branch: Chemical Engineering
+Credits: 4 (L: 3, T: 1, P: 0) | PDF Page: 39
+Course Outcomes:
+  - CO1 Understand principles of conduction, convection and radiation
+  - CO2 Calculate steady state conductive heat transfer through simple & composite geometries
+  - CO3 Differentiate types of heat exchangers, their construction, operation and design
+  - CO4 Understand heat transfer with phase change (boiling and condensation)
+  - CO5 Analyze functioning and design of single/multiple effect evaporators
+  - CO6 Calculate radiative heat transfer between black and grey bodies
+Units & Topics:
+  - Unit 1 (Conduction Heat Transfer): Fourier's law, 1D steady conduction, plain/cylindrical/spherical walls, fins effectiveness & efficiency.
+  - Unit 2 (Convection Heat Transfer): Natural and forced convection, Heat transfer coefficients, Boundary layers, Dimensionless numbers (Nusselt, Prandtl, Grashof).
+  - Unit 3 (Heat Exchangers & Phase Change): Double pipe, Shell & Tube heat exchangers, LMTD, NTU method, Filmwise & Dropwise condensation, Pool boiling curve.
+  - Unit 4 (Evaporation & Radiation): Single and Multiple effect evaporators, Boiling point elevation, Stefan-Boltzmann law, Planck's law, View factors.
+Reference Books:
+  - Heat Transfer Principles and Applications by B. K. Dutta, PHI
+  - Process Heat Transfer by D.Q. Kern, McGraw Hill
+  - Heat and Mass Transfer by Y. A. Cengel, McGraw Hill
+
+
+==================================================
+Subject: Chemical Process Industries (CHES205) | Semester IV
+Branch: Chemical Engineering
+Credits: 4 (L: 4, T: 0, P: 0) | PDF Page: 41
+Course Outcomes:
+  - CO1 Understand role of chemical process engineer and process flow diagrams
+  - CO2 Demonstrate understanding of chloro-alkali, fertilizers, sugar, petroleum industries
+  - CO3 Identify and solve manufacturing engineering problems for CPI products
+  - CO4 Analyze Indian chemical process industry landscape and utilities
+Units & Topics:
+  - Unit 1 (Inorganic Process Industries): Chlor-alkali (soda ash, caustic soda, chlorine), Sulphur & sulphuric acid, Phosphorus & Phosphoric acid, Ammonia & Urea.
+  - Unit 2 (Natural Products & Polymers): Cement rock beneficiation, Pulp & Paper, Sugar, Alcohol, Polyethylene, Polypropylene, PVC, Synthetic fibres.
+  - Unit 3 (Petroleum Refining & Petrochemicals): Crude distillation, Thermal cracking, Catalytic cracking, Reforming, Alkylation, Benzene, Toluene, Xylene production.
+Reference Books:
+  - Dryden's Outlines of Chemical Technology by M. Gopala Rao, East West Press
+  - Shreve's Chemical Process Industries by G.T. Austin, McGraw Hill
+
+
+==================================================
+Subject: Mass Transfer I (CHES301) | Semester V
+Branch: Chemical Engineering
+Credits: 4 (L: 3, T: 1, P: 0) | PDF Page: 46
+Course Outcomes:
+  - CO1 Understand mass transfer phenomena on macro level
+  - CO2 Understand equilibrium concepts in separation operations
+  - CO3 Design Distillation, Extraction, Leaching, Adsorption columns
+  - CO4 Find optimum conditions for component separation via graphical/analytical methods
+Units & Topics:
+  - Unit 1 (Distillation): VLE, Relative volatility, Raoult's law, Flash & Steam distillation, McCabe-Thiele and Ponchon-Savarit methods, Reflux ratio.
+  - Unit 2 (Liquid Extraction & Leaching): Triangular phase diagrams, Single and multistage countercurrent extraction, Lixiviation, Leaching equilibrium.
+  - Unit 3 (Adsorption): Adsorption equilibria, Freundlich equation, Adsorption hysteresis, Single & multistage adsorption columns.
+Reference Books:
+  - Mass-Transfer Operations by R E Treybal, McGraw Hill
+  - Principles of Mass Transfer and Separation Processes by B K Dutta, PHI
+
+
+==================================================
+Subject: Chemical Reaction Engineering-I (CHES302) | Semester V
+Branch: Chemical Engineering
+Credits: 5 (L: 3, T: 1, P: 3) | PDF Page: 47
+Course Outcomes:
+  - CO1 Estimate rate expressions for elementary and non-elementary homogeneous reactions
+  - CO2 Carry out kinetic studies for batch, CSTR, and PFR reactors
+  - CO3 Determine optimal combinations of mixed and plug flow reactors
+  - CO4 Analyze non-isothermal reactors and non-ideal flow RTD dispersion models
+Units & Topics:
+  - Unit 1 (Reaction Kinetics & Batch Data): Rate equations, Temperature dependence, Arrhenius law, Integral and Differential batch data analysis, Half-life method.
+  - Unit 2 (Ideal Reactor Design): Batch reactor, CSTR, PFR, Size comparison of reactors, Multiple reactor systems, Autocatalytic reactions.
+  - Unit 3 (Design for Multiple & Non-Isothermal Reactions): Parallel & Series reactions, Yield & Selectivity, Adiabatic and non-adiabatic operations.
+  - Unit 4 (Non-Ideal Flow & RTD Models): Residence Time Distribution (RTD), E, C, F curves, Segregation model, Dispersion model.
+Practical Lab Details:
+  - Saponification reaction kinetics in Batch Reactor
+  - Reaction rate constant in Semi-Batch, PFR, and CSTR reactors
+  - Residence Time Distribution (RTD) measurement in PFR and CSTR
+Reference Books:
+  - Chemical Reaction Engineering by O. Levenspiel, John Wiley & Sons
+  - Elements of Chemical Reaction Engineering by H.S. Fogler, Prentice Hall
+
+
+==================================================
+Subject: Mass Transfer II (CHES306) | Semester VI
+Branch: Chemical Engineering
+Credits: 4 (L: 3, T: 1, P: 0) | PDF Page: 55
+Course Outcomes:
+  - CO1 Understand fundamentals of molecular diffusion in fluids and solids
+  - CO2 Apply mass transfer coefficients and interphase theories (Film, Penetration, Surface Renewal)
+  - CO3 Design gas absorption towers, humidification units, and batch/continuous driers
+  - CO4 Calculate HTU, NTU, HETP for packed bed columns
+Units & Topics:
+  - Unit 1 (Molecular Diffusion & Mass Transfer Coefficients): Fick's law, Diffusion in gases & liquids, Film theory, Penetration theory, Surface renewal theory, jH and jD factors.
+  - Unit 2 (Interphase Mass Transfer & Absorption): Equilibrium solubility, Kremser equations, Packed towers design, HETP, HTU, NTU calculations.
+  - Unit 3 (Humidification & Drying): Psychrometric chart, Cooling towers, Rate of drying curve, Cross and through circulation driers.
+Reference Books:
+  - Mass-Transfer Operations by R E Treybal, McGraw Hill
+  - Unit Operations of Chemical Engineering by McCabe, Smith, Harriott
+
+
+==================================================
+Subject: Instrumentation and Process Control (CHES307) | Semester VI
+Branch: Chemical Engineering
+Credits: 5 (L: 3, T: 1, P: 3) | PDF Page: 57
+Course Outcomes:
+  - CO1 Estimate mathematical modeling of chemical control systems
+  - CO2 Calculate Laplace transform transfer functions, poles and zeros
+  - CO3 Study 1st and 2nd order dynamic behaviors (overshoot, decay ratio, damping)
+  - CO4 Use P, PI, PID controllers and tune via Ziegler-Nichols & Cohen-Coon methods
+  - CO5 Analyze stability via Routh-Hurwitz, Root-Locus, Bode, and Nyquist plots
+Units & Topics:
+  - Unit 1 (Process Control Basics & Modeling): Stirred tank heater, Control valves, Transfer functions, First and Second order system dynamics.
+  - Unit 2 (Feedback Controllers & Tuning): On-off, P, PI, PID control modes, Final control elements, Ziegler-Nichols & Cohen-Coon tuning.
+  - Unit 3 (Control System Stability): Routh-Hurwitz criteria, Root-Locus analysis, Bode plots, Nyquist stability, Gain & Phase margins.
+  - Unit 4 (Advanced Control Strategies): Ratio, Cascade, Feedforward, Override control, Microprocessor-based controllers.
+Practical Lab Details:
+  - Flow Control, Level Control, Temperature Control, Pressure Control Trainers
+  - Dynamics of 2-tank interacting and non-interacting systems
+  - MATLAB-SIMULINK open loop dynamics simulation
+Reference Books:
+  - Process System Analysis & Control by D.R. Coughanowr, McGraw Hill
+  - Process Dynamics & Control by George Stephanopoulos, Prentice Hall
+
+
+==================================================
+Subject: Chemical Engineering Design-II (CHES308) | Semester VI
+Branch: Chemical Engineering
+Credits: 4 (L: 3, T: 1, P: 0) | PDF Page: 59
+Course Outcomes:
+  - CO1 Predict physical properties and phase equilibrium data
+  - CO2 Design pumps, compressors, ejectors and synthesize process flowsheets
+  - CO3 Perform detailed hydraulic design of multicomponent distillation columns
+  - CO4 Design heat transfer equipment (Shell & Tube, Condensers, Evaporators)
+  - CO5 Estimate mechanical design of thin-walled pressure vessels and supports
+Units & Topics:
+  - Unit 1 (Process Flowsheeting & Pumps): Anatomy of chemical process, PFD, PID, Flowsheet synthesis, Tearing algorithms, Pump selection.
+  - Unit 2 (Separation Column Design): Continuous distillation, Reflux ratio, McCabe-Thiele, Short-cut multicomponent design, Tray hydraulics, Packed columns.
+  - Unit 3 (Heat Exchanger & Pressure Vessel Design): Kern's method, Bell's method for Shell & Tube heat exchangers, Pressure vessel design under internal pressure, Saddle/Skirt supports.
+Reference Books:
+  - Coulson and Richardson's Chemical Engineering Design Vol 6 by R. K. Sinnott, Elsevier
+  - Applied Process Design for Chemical Plants by E. E. Ludwig
+
+
+==================================================
+Subject: Chemical Reaction Engineering -II (CHES309) | Semester VI
+Branch: Chemical Engineering
+Credits: 4 (L: 3, T: 1, P: 0) | PDF Page: 61
+Course Outcomes:
+  - CO1 Differentiate homogeneous and heterogeneous catalytic reactions
+  - CO2 Understand catalyst preparation, characterization and adsorption isotherms (Langmuir, BET)
+  - CO3 Analyze internal & external mass transfer effects (Thiele modulus, Effectiveness factor)
+  - CO4 Model catalyst deactivation mechanisms (poisoning, fouling)
+  - CO5 Design heterogeneous reactors (Packed Bed, Fluidized Bed, Gas-Liquid reactors)
+Units & Topics:
+  - Unit 1 (Heterogeneous Catalysis & Adsorption): Solid catalysts, Langmuir-Hinshelwood & Eley-Rideal kinetic models, BET isotherm.
+  - Unit 2 (Transport Effects & Reactor Design): Thiele Modulus, Internal & External effectiveness factors, Packed bed & Fluidized bed reactor design.
+  - Unit 3 (Deactivation & Fluid-Particle Reactions): Shrinking core model, Progressive conversion model, Catalyst deactivation kinetics, Hatta number.
+Reference Books:
+  - Elements of Chemical Reaction Engineering by H. Scott Fogler, Prentice Hall
+  - Chemical Reaction Engineering by O. Levenspiel
+
+
+==================================================
+Subject: Transport Phenomena (CHE-S401) | Semester VII
+Branch: Chemical Engineering
+Credits: 4 (L: 4, T: 0, P: 0) | PDF Page: 66
+Course Outcomes:
+  - CO1 Understand momentum, heat and mass transport phenomena on macro and micro levels
+  - CO2 Derive shell balances for momentum, energy and mass transport with boundary conditions
+  - CO3 Solve Navier-Stokes equations for falling films, circular tubes and annulus
+  - CO4 Apply equations of change to non-isothermal and multi-component systems
+Units & Topics:
+  - Unit 1 (Momentum Transport & Shell Balances): Newton's law of viscosity, Non-Newtonian fluids, Shell momentum balance, Flow down an inclined plane, Flow in circular pipe.
+  - Unit 2 (Energy Transport & Shell Energy Balances): Fourier's law, Thermal conductivity, Shell energy balance, Conduction with heat generation, Free & Forced convection.
+  - Unit 3 (Mass Transport & Shell Mass Balances): Fick's law of diffusion, Diffusivity, Shell mass balance, Diffusion through stagnant gas film, Diffusion with homogeneous/heterogeneous reaction.
+Reference Books:
+  - Transport Phenomena by R. Byron Bird, Warren E. Stewart, Edwin N. Lightfoot, John Wiley
+  - Introduction to Transport Phenomena by William J. Thomson, Pearson
+
+
+
+==================================================
+CSJMU & UIET KANPUR - B.TECH INFORMATION TECHNOLOGY (IT)
+OFFICIAL CLEANED SYLLABUS & COURSE STRUCTURE (153 PAGES FULL DATA)
+
+==================================================
+Subject: Object Oriented Programming Theory (DIT-S201) | Semester III
+Branch: Information Technology
+Credits: 5 (L: 3, T: 1, P: 3) | PDF Page: 31
+Course Outcomes:
+  - CO1 Explain fundamental features of object oriented language
+  - CO2 Explain Java Runtime Environment, Java Language building blocks and run Java programs
+  - CO3 Construct Java programs making use of OOP principles with exception handling
+  - CO4 Make use of multithreading concepts and event handling mechanism
+  - CO5 Develop event-driven Graphical User Interface (GUI) programming using Applets and Swings
+Units & Topics:
+  - Unit 1 (OOP Concepts & C++ Transition): Objects, Classes, Encapsulation, Inheritance, Polymorphism, Data Types, Control Structures, Arrays, Pointers, Strings.
+  - Unit 2 (Java Fundamentals & Multithreading): JRE, JVM, Classes, Objects, Method Overloading, Multithreading, Exception Handling, I/O Streams.
+  - Unit 3 (GUI Programming with Swings): Applets, AWT, Swings, Event Handling, GUI Components, Layout Managers.
+Practical Lab Details:
+  - Classes, Objects, and Operator Overloading in C++/Java
+  - Singly and Doubly Linked List Implementation
+  - Inheritance (Single, Multiple, Multilevel) and Virtual Functions
+  - Exception Handling (division by zero, stack overflow/underflow)
+Reference Books:
+  - Java: The Complete Reference by Herbert Schildt, 12th Edition, McGraw Hill
+  - Java 2 Unleashed by Stephen Potts, Sams Publishing
+
+
+==================================================
+Subject: Digital Electronics (DIT-S203) | Semester III
+Branch: Information Technology
+Credits: 5 (L: 3, T: 0, P: 2) | PDF Page: 32
+Course Outcomes:
+  - CO1 Understand number systems and Boolean algebra
+  - CO2 Analyze combinational logic circuits and K-Map simplification
+  - CO3 Construct multiplexers, adders, subtractors, comparators, flip-flops
+  - CO4 Analyze synchronous and asynchronous sequential circuits
+  - CO5 Understand registers, counters, ADC and DAC converters
+Units & Topics:
+  - Unit 1 (Boolean Algebra & K-Maps): Number systems, Gray code, BCD, K-Map minimization, Quine McCluskey method, Prime implicants.
+  - Unit 2 (Logic Families & Combinational Circuits): TTL, ECL, CMOS logic families, Adders, Subtractors, Encoders, Decoders, MUX, DEMUX, PLDs.
+  - Unit 3 (Sequential Logic Circuits): RS, JK, D, T Flip-Flops, Master-Slave Flip-Flops, Counters, Shift Registers, State Diagrams, VHDL.
+Practical Lab Details:
+  - Verification of logic gates using NAND/NOR universal gates
+  - Adder/Subtractor design using IC 7483
+  - Demultiplexer/Decoder using IC 74138 and Modulo-N counter using 74190
+Reference Books:
+  - Fundamentals of Logic Design by Charles H. Roth, Jaico
+  - Digital Logic and Computer Design by Morris Mano, Prentice Hall
+
+
+==================================================
+Subject: Data Structure (DIT-S205) | Semester III
+Branch: Information Technology
+Credits: 5 (L: 3, T: 1, P: 3) | PDF Page: 40
+Course Outcomes:
+  - CO1 Understand data structure operations (insertion, deletion, traversal)
+  - CO2 Analyze problems and design algorithms
+  - CO3 Develop C programs for non-linear data structures
+  - CO4 Investigate searching and sorting techniques
+  - CO5 Apply graphs, trees and file organization to real-world problems
+Units & Topics:
+  - Unit 1 (Arrays, Stacks & Queues): Recursion, Sequential representation of Stacks and Queues, Circular Queues.
+  - Unit 2 (Linked Lists & Sorting): Singly & Doubly Linked Lists, Dynamic Storage Allocation, Insertion/Selection/Bubble/Quick/Merge/Heap Sort.
+  - Unit 3 (Trees, Graphs & Hashing): Binary Search Trees (BST), Preorder/Inorder/Postorder traversals, B-Trees, B+ Trees, Graphs BFS & DFS, Hash Tables.
+Practical Lab Details:
+  - Stack, Queue, Circular Queue array and linked list implementation
+  - BST insertion, deletion, and tree traversals
+  - Graph Traversals (BFS, DFS) and Sorting Algorithms
+Reference Books:
+  - Data Structure Using C and C++ by Langsam, Augenstein, Tenenbaum, Pearson
+  - Data Structures with C by Seymour Lipschutz, Schaum's Outline
+
+
+==================================================
+Subject: Computer Organization (DIT-S202) | Semester IV
+Branch: Information Technology
+Credits: 4 (L: 3, T: 1, P: 0) | PDF Page: 42
+Course Outcomes:
+  - CO1 Explain organizational and architectural issues of digital computer
+  - CO2 Describe data transfer techniques and I/O interfaces
+  - CO3 Analyze memory hierarchy performance and ALU arithmetic implementation
+  - CO4 Describe hardwired and micro-programmed control unit CPU pipelining
+Units & Topics:
+  - Unit 1 (Data Representation & Computer Arithmetic): Integer & floating point representation, IEEE 754, Booth's multiplier, Ripple carry and carry look-ahead adders.
+  - Unit 2 (Memory Organization): RAM, ROM, SRAM vs DRAM, Cache memory mapping functions, Cache write policies.
+  - Unit 3 (I/O & Control Unit Design): Interrupt-driven I/O, Direct Memory Access (DMA), Hardwired vs Micro-programmed Control Unit, Pipelining.
+Reference Books:
+  - Computer Organization by V.C. Hamacher, Z.G. Vranesic, S.G. Zaky, McGraw-Hill
+  - Computer Organization & Architecture by William Stallings, Pearson
+
+
+==================================================
+Subject: Software Engineering (DIT-S206) | Semester IV
+Branch: Information Technology
+Credits: 5 (L: 3, T: 0, P: 3) | PDF Page: 43
+Course Outcomes:
+  - CO1 Learn software crisis, SDLC models (Waterfall, Prototype, Spiral, Agile)
+  - CO2 SRS document engineering, Data Flow Diagrams (DFD), ER Diagrams, SQA
+  - CO3 Software design modularization, coupling, cohesion, FP & Cyclomatic complexity metrics
+  - CO4 Software testing (Black Box, White Box, Unit, Integration, System Testing)
+  - CO5 Software maintenance, COCOMO cost estimation, risk management
+Units & Topics:
+  - Unit 1 (SDLC Models & Software Crisis): Waterfall, Prototype, Spiral, Evolutionary models, SDLC life cycle.
+  - Unit 2 (SRS & Requirements Engineering): Elicitation, DFDs, ER Diagrams, SRS IEEE standards, ISO 9000, CMM models.
+  - Unit 3 (Software Design & Metrics): Coupling, Cohesion, Function Point (FP) metrics, Cyclomatic complexity, Control flow graphs.
+  - Unit 4 (Testing & Project Management): Unit, Integration, System, Black Box, White Box testing, COCOMO model, CASE tools.
+Reference Books:
+  - Software Engineering: A Practitioner's Approach by Roger S. Pressman & Bruce R. Maxim
+  - An Integrated Approach to Software Engineering by Pankaj Jalote
+
+
+==================================================
+Subject: Database Management Systems (DIT-S307) | Semester V
+Branch: Information Technology
+Credits: 5 (L: 3, T: 1, P: 3) | PDF Page: 49
+Course Outcomes:
+  - CO1 Understand DBMS concepts, ER Modeling, and ER Diagrams
+  - CO2 Write SQL queries, Relational Algebra, and Relational Calculus
+  - CO3 Understand Normalization forms (1NF, 2NF, 3NF, BCNF)
+  - CO4 Understand Transaction management and ACID properties
+  - CO5 Understand Concurrency Control and Object-Oriented databases
+Units & Topics:
+  - Unit 1 (ER Modeling & Architecture): DBMS Architecture, Data Models, ER Diagrams, Entity sets, Attributes, Keys.
+  - Unit 2 (Relational Algebra & SQL): Relational Algebra, DDL, DML, Joins, Subqueries, Aggregate functions.
+  - Unit 3 (Functional Dependencies & Normalization): 1NF, 2NF, 3NF, BCNF, Closure sets, Canonical cover, Lossless join decomposition.
+  - Unit 4 (Transaction Processing & Concurrency): ACID properties, Serializability, Locking protocols, Deadlocks, Recovery.
+Practical Lab Details:
+  - SQL DDL & DML table operations
+  - Complex SQL Subqueries and Joins
+  - PL/SQL Triggers, Procedures, and Views
+Reference Books:
+  - Database System Concepts by Silberschatz, Korth, Sudarshan
+  - Database Management Systems by Raghu Ramakrishnan
+
+
+==================================================
+Subject: Operating System (DIT-S309) | Semester V
+Branch: Information Technology
+Credits: 4 (L: 3, T: 0, P: 3) | PDF Page: 51
+Course Outcomes:
+  - CO1 Explain operating system types, process creation, threads, IPC
+  - CO2 Understand CPU scheduling algorithms (FCFS, SJF, Round Robin)
+  - CO3 Understand process synchronization, semaphores, deadlock handling
+  - CO4 Explain memory management (paging, segmentation, virtual memory)
+  - CO5 Manage disk space, file systems, Android OS
+Units & Topics:
+  - Unit 1 (Process Management & IPC): Process synchronization, Dekker's algorithm, Semaphores, Monitors, Producer-Consumer problem.
+  - Unit 2 (CPU Scheduling & Deadlocks): FCFS, SJF, Priority, Round Robin scheduling, Deadlock prevention, avoidance, detection.
+  - Unit 3 (Memory Management & File Systems): Paging, Segmentation, Page replacement algorithms, Virtual memory, File protection.
+Reference Books:
+  - Operating System Concepts by Silberschatz, Galvin, Gagne
+  - Modern Operating Systems by Andrew S. Tanenbaum
+
+
+==================================================
+Subject: Computer Networks (DIT-S302) | Semester VI
+Branch: Information Technology
+Credits: 4 (L: 3, T: 0, P: 3) | PDF Page: 52
+Course Outcomes:
+  - CO1 Understand OSI 7-layer model, TCP/IP architecture, switching modes
+  - CO2 Analyze data link framing, error control, CSMA/CD, Ethernet
+  - CO3 Analyze routing algorithms (Distance Vector, Link State), IP addressing
+  - CO4 Understand Transport layer protocols (TCP, UDP), congestion control
+  - CO5 Understand Application layer protocols (HTTP, SMTP, FTP, DNS)
+Units & Topics:
+  - Unit 1 (Physical & Data Link Layer): OSI model, Topologies, Transmission media, Framing, Error detection/correction, ALOHA, CSMA/CD, Ethernet.
+  - Unit 2 (Network Layer & Routing): IPv4, IPv6, Subnetting, Routing algorithms (Shortest path, Distance Vector, Link State), ICMP, ARP.
+  - Unit 3 (Transport & Application Layer): TCP, UDP, Congestion control, Socket programming, HTTP, DNS, FTP, SMTP.
+Reference Books:
+  - Computer Networks by Andrew S. Tanenbaum, Pearson
+  - Data Communications and Networking by Behrouz A. Forouzan, McGraw-Hill
+
+
+==================================================
+Subject: Internet Technology (DIT-S308) | Semester VI
+Branch: Information Technology
+Credits: 5 (L: 3, T: 0, P: 3) | PDF Page: 54
+Course Outcomes:
+  - CO1 Understand web terminology and web project strategies
+  - CO2 Hands-on practice on HTML, XML, CSS and JavaScript
+  - CO3 Understand Java Beans, EJB, Servlets API
+  - CO4 Develop JSP web applications with error handling
+  - CO5 Database connectivity using JDBC and Struts framework
+Units & Topics:
+  - Unit 1 (Web Development Strategies): History of Web, Protocols, Web project planning, Target users.
+  - Unit 2 (HTML, CSS, XML & JavaScript): Forms, Frames, CSS Layouts, DOM, SAX, JavaScript objects, DHTML.
+  - Unit 3 (Servlets & JSP): Servlet lifecycle, HTTP requests/responses, JSP implicit objects, Session handling.
+  - Unit 4 (JDBC & Web Frameworks): JDBC database connectivity, JSP beans, Struts framework.
+Reference Books:
+  - Collaborative Web Development by Jessica Burdman, Addison Wesley
+  - Core Java: An Integrated Approach by R. Nageswara Rao, Dreamtech
+
+
+==================================================
+Subject: Digital Image Processing (DIT-S401) | Semester VII
+Branch: Information Technology
+Credits: 5 (L: 3, T: 0, P: 3) | PDF Page: 57
+Course Outcomes:
+  - CO1 Review fundamental concepts of digital image processing system
+  - CO2 Analyze images in frequency domain using DFT/DCT transforms
+  - CO3 Evaluate image enhancement and restoration techniques
+  - CO4 Categorize image compression techniques (Huffman, LZW)
+  - CO5 Interpret image segmentation and edge detection methods
+Units & Topics:
+  - Unit 1 (Image Acquisition & Representation): Sampling, Quantization, Pixel connectivity, Image sensors.
+  - Unit 2 (Spatial & Frequency Enhancement): Histogram equalization, Spatial filtering, Fourier Transform, DCT.
+  - Unit 3 (Segmentation & Compression): Edge detection, Hough transform, Huffman coding, LZW, JPEG standard.
+Reference Books:
+  - Digital Image Processing by Rafael C. Gonzalez & Richard E. Woods, Pearson
+  - Introductory Computer Vision and Image Processing by Andrion Low
+
+
+==================================================
+Subject: Information Systems (DIT-S402) | Semester VIII
+Branch: Information Technology
+Credits: 4 (L: 3, T: 1, P: 0) | PDF Page: 59
+Course Outcomes:
+  - CO1 Understand Information Systems concepts and business types
+  - CO2 Analyze IS for Business Operations and Strategic Advantage
+  - CO3 Design ERP, SCM, CRM enterprise systems
+  - CO4 System Analysis and Design, Process Modeling, Decision Tables
+Units & Topics:
+  - Unit 1 (Information System Fundamentals): Business view of IS, SCM, CRM, ERP overview, Data Warehousing, Data Cubes.
+  - Unit 2 (OLAP vs OLTP & System Design): OLAP operations, Data mining for business intelligence, Decision trees, Decision tables.
+Reference Books:
+  - Management Information Systems by Effy Oz, Thomson Learning
+  - Management Information Systems by James A. O'Brien, McGraw-Hill
+
+
+==================================================
+Subject: Cloud Computing (DIT-S551) | Semester VIII
+Branch: Information Technology
+Credits: 4 (L: 3, T: 0, P: 2) | PDF Page: 126
+Course Outcomes:
+  - CO1 Describe principles of Parallel/Distributed Computing and Cloud evolution
+  - CO2 Implement Virtualization technologies and Service-Oriented Architecture (SOA)
+  - CO3 Elucidate NIST Cloud Computing Architecture (IaaS, PaaS, SaaS)
+  - CO4 Analyze resource provisioning, SLAs, security and governance in clouds
+Units & Topics:
+  - Unit 1 (Cloud Paradigm & Architecture): NIST model, Grid vs Cloud computing, Public/Private/Hybrid clouds.
+  - Unit 2 (Virtualization & Service Models): Hypervisors, VM provisioning, IaaS (Amazon EC2), PaaS (Google App Engine), SaaS.
+  - Unit 3 (Cloud Security & Storage): SLA management, Cloud security governance, Data privacy, Identity & Access Management (IAM).
+Reference Books:
+  - Cloud Computing: A Practical Approach by Anthony T. Velte, McGraw-Hill
+  - Cloud Computing: Principles and Paradigms by Rajkumar Buyya
+
+
+
+==================================================
+CSJMU & UIET KANPUR - B.TECH MECHANICAL ENGINEERING (MEE)
+OFFICIAL CLEANED SYLLABUS & COURSE STRUCTURE (94 PAGES FULL DATA)
+
+==================================================
+Subject: Basic Fluid Mechanics (MEES201) | Semester III
+Branch: Mechanical Engineering
+Credits: 4 (L: 3, T: 0, P: 2) | PDF Page: 29
+Course Outcomes:
+  - CO1 State Newton's law of viscosity and explain mechanics of fluids at rest and motion
+  - CO2 Derive Euler's equation of motion and deduce Bernoulli's equation
+  - CO3 Compute force of buoyancy on submerged bodies and analyze pipe energy losses
+  - CO4 Understand boundary layer concepts and rate equations under steady/unsteady transport
+Units & Topics:
+  - Unit-I (Fluid Statics): Viscosity, Surface tension, Manometers, Buoyancy, Center of buoyancy, Stability of floating bodies.
+  - Unit-II (Fluid Kinematics & Dynamics): Streamlines, Continuity equation, Euler's equation, Bernoulli's equation, Venturimeter, Orifice meter, Pitot tube.
+  - Unit-III (Boundary Layer & Pipe Flow): Laminar and turbulent boundary layers, Drag and Lift, Darcy-Weisbach equation, Moody's chart, Hydraulic gradient line.
+Practical Lab Details:
+  - Momentum equation verification via jet impact
+  - Discharge coefficient determination for Orifice & Venturimeter
+  - Laminar to turbulent transition & lower critical Reynolds number
+  - Meta-centric height determination for ship model
+Reference Books:
+  - Fluid Mechanics & Machinery by Agarwal, TMH
+  - Introduction to Fluid Mechanics & Machines by S.K. Som & G. Biswas, TMH
+  - Fluid Mechanics & Hydraulic Machines by R.K. Bansal, Laxmi Publications
+
+
+==================================================
+Subject: Kinematics of Machine (MEES202) | Semester III
+Branch: Mechanical Engineering
+Credits: 4 (L: 3, T: 0, P: 2) | PDF Page: 30
+Course Outcomes:
+  - CO1 Identify link, pair, chain, joints and inversions of mechanisms
+  - CO2 Construct velocity and acceleration diagrams for different mechanisms
+  - CO3 Understand Cam profile generation and their applications
+  - CO4 Learn concept of gear, gear train and automotive transmissions
+  - CO5 Understand balancing of rotating and reciprocating machines
+Units & Topics:
+  - Unit-I (Kinematic Chains & Mechanisms): Links, Kinematic pairs, Degrees of freedom, Inversions of four-bar chain, Slider-crank mechanism, Velocity & Acceleration analysis.
+  - Unit-II (Cam Synthesis & Balancing): Cam profile synthesis, Flywheel, Inertia forces, Balancing of rotating & reciprocating masses.
+Practical Lab Details:
+  - Study of simple linkage models & four-bar linkage inversions
+  - Study of single/double slider crank mechanisms
+  - Paucellier, Hart, Grass-Hopper, Watt & Tchebicheff mechanisms
+Reference Books:
+  - Theory of Machines by Thomas Bevan, CBS Publishers
+  - Mechanisms of Machines by W.L. Cleghorn, Oxford University Press
+  - Kinematics and Dynamics of Machinery by Robert L. Norton, McGraw-Hill
+
+
+==================================================
+Subject: Manufacturing Science (MEES203) | Semester III
+Branch: Mechanical Engineering
+Credits: 4 (L: 3, T: 0, P: 2) | PDF Page: 31
+Course Outcomes:
+  - CO1 Understand fundamentals and analysis of Forging and Rolling processes
+  - CO2 Knowledge of wire drawing, extrusion, sheet metal working, HERF processes
+  - CO3 Understand principles of gas, arc, TIG, MIG, resistance welding and metallurgy
+  - CO4 Understand pattern allowances, molding sand properties, sand casting, cupola furnace
+  - CO5 Mechanics of metal cutting, Merchant force circle, tool life, economics of cutting
+  - CO6 Grinding wheel designation, abrasives, dressing, truing, centerless grinding
+Units & Topics:
+  - Unit-I (Metal Forming & Sheet Metal): Forging, Rolling, Wire drawing, Extrusion, Press work, Blanking, Piercing, Deep drawing, HERF.
+  - Unit-II (Welding Processes): Gas welding, Arc welding, TIG, MIG, Resistance welding, Soldering, Brazing, HAZ defects.
+  - Unit-III (Casting (Foundry)): Pattern allowances, Molding sand properties, Gating system, Risers, Cupola furnace, Die casting, Centrifugal casting.
+  - Unit-IV (Metal Cutting & Grinding): Merchant's force circle, Tool geometry ASA system, Chip formation, Tool wear & life, Grinding wheel specification.
+Practical Lab Details:
+  - Pattern making and sand mold casting
+  - Hand & Power Forging operations
+  - Lathe thread cutting, Milling gear cutting, Shaper block machining
+  - Gas, Arc & Spot welding experiments
+Reference Books:
+  - Manufacturing Science by A. Ghosh and A.K. Mallik, East West Press
+  - Manufacturing Engineering & Technology by Serope Kalpakjian, Pearson
+  - Manufacturing Technology by P.N. Rao, McGraw-Hill
+
+
+==================================================
+Subject: Basic Solid Mechanics (MEES205) | Semester IV
+Branch: Mechanical Engineering
+Credits: 3 (L: 3, T: 0, P: 0) | PDF Page: 37
+Course Outcomes:
+  - CO1 Analyze behavior of solid bodies subjected to various loading types
+  - CO2 Apply structural element analysis to simple mechanical structures
+  - CO3 Compute slope, deflection, bending stresses and shear stresses in beams
+  - CO4 Calculate torsional shear stress in shafts and column buckling
+  - CO5 Apply Mohr's circle principal stresses and failure theories
+  - CO6 Solve combined loading problems using SFD, BMD, torsion and principal stresses
+Units & Topics:
+  - Unit-I (Stress, Strain & Compound Stresses): Elastic constants, Plane stress, Principal stress/strain, Mohr's circle, Axially loaded members.
+  - Unit-II (SFD, BMD & Beam Bending): Shear Force Diagram (SFD), Bending Moment Diagram (BMD), Flexural formula, Torsion of circular shafts.
+  - Unit-III (Deflection, Columns & Pressure Vessels): Deflection of beams, Energy methods, Euler's column buckling, Thin & thick cylinders, Springs.
+Reference Books:
+  - Engineering Mechanics of Solids by Egor P. Popov, Prentice Hall
+  - Strength of Materials by R. Subramanian, Oxford Press
+  - Mechanics of Materials by Ferdinand P. Beer & E. Russel Johnston
+
+
+==================================================
+Subject: Material Science & Engineering (MEES206) | Semester IV
+Branch: Mechanical Engineering
+Credits: 4 (L: 3, T: 0, P: 2) | PDF Page: 38
+Course Outcomes:
+  - CO1 Know crystalline structure, crystal imperfections and defects
+  - CO2 Understand phase diagrams and phase transformations in materials
+  - CO3 Understand heat treatment processes (annealing, normalizing, hardening, tempering)
+  - CO4 Understand electrical, magnetic and optical properties of engineering materials
+  - CO5 Appreciate properties of polymers, ceramics, composites and smart materials
+Units & Topics:
+  - Unit-I (Crystal Structure & Imperfections): Crystalline solids, Crystal defects, Point/line/surface defects, Tensile & plastic properties, Creep, Fracture.
+  - Unit-II (Phase Diagrams & Heat Treatment): Iron-Carbon equilibrium diagram, TTT diagram, Annealing, Normalizing, Quenching, Tempering, Case hardening.
+  - Unit-III (Engineering Materials & Ceramics): Plain carbon steel, Alloy steels, Aluminium/Copper/Nickel alloys, Ceramics, Polymers, Composite materials, Smart materials.
+Practical Lab Details:
+  - UTM Tensile & Compression testing on mild steel
+  - Impact testing (Charpy & Izod)
+  - Hardness testing (Brinell, Rockwell, Vickers)
+  - Microstructure analysis of steels and cast irons
+Reference Books:
+  - Materials Science and Engineering by W.D. Callister, Wiley
+  - Material Science and Engineering by V. Raghavan, Prentice Hall
+
+
+==================================================
+Subject: Dynamics of Machines (MEES207) | Semester IV
+Branch: Mechanical Engineering
+Credits: 4 (L: 3, T: 0, P: 2) | PDF Page: 39
+Course Outcomes:
+  - CO1 Identify problems associated with unbalance in rotating & reciprocating machines
+  - CO2 Realize requirements of frictional devices (clutches, brakes, dynamometers)
+  - CO3 Identify type of governors suited for speed control applications
+  - CO4 Understand challenges posed by mechanical vibrations and gyroscopic motion
+Units & Topics:
+  - Unit-I (Force Analysis & Turning Moment): D'Alembert's principle, Dynamic force analysis of slider crank, Turning moment diagram, Flywheel design.
+  - Unit-II (Governors & Gyroscopic Motion): Centrifugal governors (Watt, Porter, Proell, Hartnell), Gyroscopic couple, Stability of aircrafts & ships.
+  - Unit-III (Balancing & Friction Devices): Static & Dynamic balancing, Reciprocating engine balancing, Clutches (single/multi-plate, cone), Brakes, Dynamometers.
+Practical Lab Details:
+  - Watt, Porter, Proell & Hartnell Governor experiments
+  - Motorized Gyroscope couple measurement
+  - Static and Dynamic balancing of rotating masses
+  - Critical speed of shaft determination
+Reference Books:
+  - Theory of Machines by Thomas Bevan, CBS Publishers
+  - Theory of Machines and Mechanisms by Joseph E. Shigley, Oxford
+  - Theory of Machines by S.S. Rattan, McGraw-Hill
+
+
+==================================================
+Subject: Heat Transfer & Mass Transfer (MEES301) | Semester V
+Branch: Mechanical Engineering
+Credits: 4 (L: 3, T: 0, P: 2) | PDF Page: 46
+Course Outcomes:
+  - CO1 Understand basic heat transfer mechanisms (conduction, convection, radiation)
+  - CO2 Solve 1D steady & transient conduction in solids (rectangular, cylindrical, spherical)
+  - CO3 Calculate heat transfer from extended surfaces (fins) and natural/forced convection
+  - CO4 Analyze performance of heat exchangers (LMTD, NTU methods)
+  - CO5 Understand radiation shape factors, Stefan-Boltzmann law, Fick's law of mass diffusion
+Units & Topics:
+  - Unit-I (Conduction Heat Transfer): 1D heat conduction equation, Critical thickness of insulation, Composite walls & cylinders.
+  - Unit-II (Fins & Natural Convection): Heat transfer from fins, Thermal boundary layer, Grashof & Rayleigh numbers, Combined free/forced convection.
+  - Unit-III (Forced Convection, Boiling & Heat Exchangers): Empirical relations for pipe flow, Pool boiling curve, LMTD and NTU heat exchanger design.
+  - Unit-IV (Thermal Radiation & Mass Transfer): Planck's law, Wein's law, Radiation shields, Fick's law of diffusion, Mass transfer rate equations.
+Practical Lab Details:
+  - Thermal conductivity measurement of composite wall & cylinder
+  - Pin-fin natural & forced convection experiment
+  - Parallel and Counter flow Heat Exchanger performance testing
+  - Stefan-Boltzmann radiation emissivity determination
+Reference Books:
+  - Heat Transfer by J.P. Holman, McGraw-Hill
+  - Fundamentals of Heat and Mass Transfer by Incropera & DeWitt, Wiley
+  - Heat & Mass Transfer by P.K. Nag, McGraw-Hill
+
+
+==================================================
+Subject: Fluid Machinery System (MEES302) | Semester V
+Branch: Mechanical Engineering
+Credits: 4 (L: 3, T: 0, P: 2) | PDF Page: 48
+Course Outcomes:
+  - CO1 Analyze principles of jet propulsion and impact forces
+  - CO2 Evaluate performance and design of impulse (Pelton) and reaction (Francis, Kaplan) turbines
+  - CO3 Apply dimensional analysis and model similitude to fluid machinery
+  - CO4 Describe operation and performance characteristics of centrifugal and reciprocating pumps
+  - CO5 Explain functions of hydraulic accumulator, press, ram, crane, torque converter
+Units & Topics:
+  - Unit 1 (Impact of Free Jets): Impulse-Momentum principle, Jet impingement on flat/curved vanes, Jet propulsion of ships.
+  - Unit 2 (Impulse & Reaction Turbines): Pelton wheel construction & governing, Francis turbine, Kaplan turbine, Draft tube, Cavitation.
+  - Unit 3 (Pumps & Hydraulic Systems): Centrifugal pump manometric head & NPSH, Reciprocating pump indicator diagram, Air vessels, Hydraulic Ram & Press.
+Practical Lab Details:
+  - Pelton Wheel load & efficiency performance test
+  - Francis & Kaplan Turbine load tests
+  - Centrifugal Pump & Reciprocating Pump characteristic curves
+  - Hydraulic Ram performance test
+Reference Books:
+  - Fluid Mechanics and Fluid Machines by S.K. Som & G. Biswas, McGraw-Hill
+  - Fluid Mechanics and Hydraulic Machines by R.K. Bansal, Laxmi Publications
+
+
+==================================================
+Subject: Machine Design (MEES305) | Semester V
+Branch: Mechanical Engineering
+Credits: 3 (L: 3, T: 0, P: 0) | PDF Page: 52
+Course Outcomes:
+  - CO1 Select engineering materials and understand design considerations & standards
+  - CO2 Design machine elements under static and dynamic (fatigue) loading
+  - CO3 Analyze and design riveted, welded, cotter, shaft, key, coupling joints
+  - CO4 Design helical springs, leaf springs, and power screws (screw jack)
+  - CO5 Design spur, helical, bevel, worm gears and gearbox layouts
+Units & Topics:
+  - Unit-I (Design Standards & Material Selection): ASTM testing methods, Steel designations, Creep and fatigue material selection.
+  - Unit-II (Static & Dynamic Design): Failure theories, Factor of safety, Stress concentration, Endurance limit, Soderberg & Goodman diagrams.
+  - Unit-III (Joints, Shafts & Couplings): Riveted/welded/cotter joints, Shaft strength & rigidity design, Rigid & flexible couplings.
+  - Unit-IV (Springs, Power Screws & Gears): Helical & leaf springs, Screw jack threads, Spur/Helical/Bevel/Worm gear module & speed diagrams.
+Reference Books:
+  - Design of Machine Elements by V.B. Bhandari, McGraw-Hill
+  - Mechanical Engineering Design by Joseph E. Shigley, McGraw-Hill
+
+
+==================================================
+Subject: Computer Aided Design (MEES306) | Semester VI
+Branch: Mechanical Engineering
+Credits: 4 (L: 3, T: 0, P: 2) | PDF Page: 56
+Course Outcomes:
+  - CO1 Understand applications of computers in mechanical design
+  - CO2 Develop mathematical representations of curves (Spline, Bezier, B-Spline)
+  - CO3 Develop mathematical representations of solids (CSG, B-Rep)
+  - CO4 Perform 2D and 3D geometric transformations (translation, scaling, rotation)
+  - CO5 Evaluate design using commercial CAD software and Finite Element Method (FEM)
+Units & Topics:
+  - Unit 1 (Computer Graphics & Curve Representation): Display file structure, Spline curves, Bezier curves, B-Splines, 2D/3D transformations.
+  - Unit 2 (Solid Modeling & FEM Basics): Constructive Solid Geometry (CSG), Boundary Representation (B-Rep), 1D/2D spring & beam FEM analysis.
+Practical Lab Details:
+  - Line and circle drawing algorithms implementation
+  - 2D/3D geometric transformation coding
+  - 3D Solid modeling using AutoCAD/Pro-E/Creo
+  - FEM 1D spring system analysis program
+Reference Books:
+  - Computer Graphics by Hearn & Baker, Prentice Hall
+  - CAD/CAM: Computer-Aided Design and Manufacturing by M.P. Groover, Pearson
+
+
+==================================================
+Subject: Refrigeration and Air Conditioning (MEES307) | Semester VI
+Branch: Mechanical Engineering
+Credits: 4 (L: 3, T: 0, P: 2) | PDF Page: 57
+Course Outcomes:
+  - CO1 Understand principles and applications of refrigeration cycles (Carnot, Bell-Coleman)
+  - CO2 Analyze performance of Vapour Compression Refrigeration Systems (VCRS)
+  - CO3 Analyze air conditioning processes using psychrometric charts
+  - CO4 Study Vapour Absorption Systems (LiBr-water, Ammonia-water) and thermoelectric cooling
+  - CO5 Evaluate cooling and heating load calculations for buildings
+Units & Topics:
+  - Unit 1 (Air Refrigeration & VCRS): Bell-Coleman cycle, Aircraft refrigeration, Refrigerants classification, VCRS subcooling & superheating.
+  - Unit 2 (Vapour Absorption & Psychrometrics): LiBr-water & Ammonia-water absorption systems, Psychrometric terms, Wet bulb temperature, Comfort charts.
+  - Unit 3 (Air Conditioning Equipment & Load Design): Duct design, Expansion valves, Cooling towers, Cooling & heating load calculations.
+Practical Lab Details:
+  - Refrigeration Test Rig COP calculation
+  - Air Conditioning Test Rig psychrometric performance test
+  - Ice Plant & Window AC operational study
+  - Two-stage Reciprocating Compressor volumetric efficiency calculation
+Reference Books:
+  - Refrigeration and Air Conditioning by C.P. Arora, McGraw-Hill
+  - Refrigeration and Air Conditioning by Manohar Prasad, New Age
+
+
+==================================================
+Subject: Computer Aided Manufacturing (MEES401) | Semester VII
+Branch: Mechanical Engineering
+Credits: 4 (L: 3, T: 0, P: 2) | PDF Page: 61
+Course Outcomes:
+  - CO1 Educate students on NC, CNC, DNC automation systems
+  - CO2 Gain working knowledge of CNC machines, machine tools, drives, ball screws
+  - CO3 Understand industrial robotics, ATC, APC, FMS shop floor layout
+  - CO4 Write manual CNC part programs using G & M codes, APT language
+  - CO5 Understand Group Technology (GT), CAPP, Rapid Prototyping
+Units & Topics:
+  - Unit 1 (NC/CNC Machine Construction): NC vs CNC vs DNC, Recirculating ball screws, Feedback transducers, Automatic Tool Changer (ATC), Tooling.
+  - Unit 2 (CNC Part Programming & FMS): ISO G & M codes, Canned cycles, Subroutines, Tool radius compensation, FMS, CIM, Robotics.
+Practical Lab Details:
+  - CNC Lathe turning, grooving, and threading G-code programming
+  - CNC Milling contouring and drilling G-code programming
+  - Industrial Robot pick-and-place programming
+Reference Books:
+  - CAD/CAM/CIM by Radhakrishnan & Subramanyam, Wiley
+  - Numerical Control and Computer Aided Manufacturing by Pressman & Williams, McGraw-Hill
+
+
+
+==================================================
+CSJMU & UIET KANPUR - B.TECH MATERIALS SCIENCE & METALLURGICAL ENGINEERING (MSME)
+OFFICIAL CLEANED SYLLABUS & COURSE STRUCTURE (65 PAGES FULL DATA)
+
+==================================================
+Subject: Crystal Structure of Materials (MSES201) | Semester III
+Branch: Materials Science and Metallurgical Engineering
+Credits: 4 (L: 3, T: 0, P: 3) | PDF Page: 31
+Course Outcomes:
+  - CO1 Classify Materials Based on Structure and Properties
+  - CO2 Explain Types of Chemical Bonding in Solids
+  - CO3 Understand Crystal Geometry and Lattice Concepts
+  - CO4 Analyze Crystal Structures and Defects in Materials
+  - CO5 Apply X-Ray Diffraction Techniques to Determine Crystal Structures
+Units & Topics:
+  - Unit 1 (Crystal Geometry & Bonding): Classification of materials, Single/polycrystalline, Unit cells, Bravais lattices, Miller indices, Reciprocal lattices, Ionic/covalent/metallic bonding.
+  - Unit 2 (Imperfections & XRD): Point/line/surface defects, Coherent/incoherent interfaces, Frenkel & Schottky defects, Bragg's Law, Powder method XRD.
+Practical Lab Details:
+  - Basic crystal structures and atomic packing
+  - Determination of cubic crystal structures
+  - Mechanical testing of metallic specimens
+Reference Books:
+  - Materials Science and Engineering: An Introduction by W.D. Callister, Wiley
+  - The Science and Engineering of Materials by Donald R. Askeland, Chapman & Hall
+  - Materials Science and Engineering by V. Raghavan, PHI
+
+
+==================================================
+Subject: Nature and Properties of Materials (MSES202) | Semester III
+Branch: Materials Science and Metallurgical Engineering
+Credits: 4 (L: 3, T: 1, P: 0) | PDF Page: 32
+Course Outcomes:
+  - CO1 Apply Quantum Mechanical Principles to Material Behavior
+  - CO2 Analyze Electrical and Magnetic Properties of Materials
+  - CO3 Evaluate Thermal and Optical Properties of Solids
+  - CO4 Understand Mechanical Behavior of Engineering Materials
+  - CO5 Establish Structure-Property Relationships and Material Design Principles
+Units & Topics:
+  - Unit 1 (Electronic & Magnetic Properties): Free electron theory, Fermi energy, Band theory, Semiconductors, Hall effect, Dielectric, Piezoelectric, Ferroelectric, Para/Dia/Ferro/Ferrimagnetism.
+  - Unit 2 (Thermal & Optical Properties): Specific heat, Thermal conductivity, Expansion, Thermoelectricity, Refractive index, Absorption, Lasers.
+  - Unit 3 (Mechanical Properties): Stress-strain response, Yield strength, Tensile strength, Modulus of elasticity, Creep, Fatigue, Fracture.
+Reference Books:
+  - Materials Science and Engineering: An Introduction by W.D. Callister, Wiley
+  - Materials Science and Engineering by V. Raghavan, PHI
+
+
+==================================================
+Subject: Phase Equilibria in Materials (MSES203) | Semester IV
+Branch: Materials Science and Metallurgical Engineering
+Credits: 4 (L: 3, T: 0, P: 3) | PDF Page: 34
+Course Outcomes:
+  - CO1 Apply Phase Rule and Lever Rule to Binary Systems
+  - CO2 Analyze Solidification Mechanisms and Microstructural Evolution
+  - CO3 Evaluate Complex Phase Reactions and Intermediate Phases
+  - CO4 Interpret and Construct Ternary Phase Diagrams
+  - CO5 Relate Phase Diagram Knowledge to Engineering Alloys
+Units & Topics:
+  - Unit 1 (Binary Phase Diagrams & Solidification): Phase rule, Lever rule, Isomorphous systems, Eutectic, Peritectic, Monotectic, Syntectic systems, Hume-Rothery rules, Spinodal decomposition.
+  - Unit 2 (Ternary Diagrams & Engineering Alloys): Ternary phase diagrams, Gibbs triangle, Isothermal tie-lines, Stainless steels, High speed steels, Hadfield steels, Superalloys.
+Practical Lab Details:
+  - Metallographic sample preparation of common metals
+  - Microstructural observation of ferrous and non-ferrous alloys
+Reference Books:
+  - Physical Metallurgy by V. Raghavan, PHI
+  - Phase Diagrams in Metallurgy by Frederic N. Rhines, McGraw-Hill
+
+
+==================================================
+Subject: Metallurgical Thermodynamics (MSES204) | Semester IV
+Branch: Materials Science and Metallurgical Engineering
+Credits: 4 (L: 3, T: 1, P: 0) | PDF Page: 35
+Course Outcomes:
+  - CO1 Understand and Apply Laws of Thermodynamics to Metallurgical Systems
+  - CO2 Analyze Thermodynamic Functions and Maxwell Relations
+  - CO3 Evaluate Solution Behavior, Raoult's and Henry's Laws, and Phase Equilibria
+  - CO4 Assess Thermodynamics of Reactions, Ellingham Diagrams, and Defects
+  - CO5 Explore Electrochemical Principles, Nernst Equation, and Pourbaix Diagrams
+Units & Topics:
+  - Unit 1 (Thermodynamic Functions & Solutions): First, Second & Third laws, Enthalpy, Gibbs free energy, Clausius-Clapeyron equation, Raoult's & Henry's laws, Activity coefficients, Gibbs-Duhem equation.
+  - Unit 2 (Ellingham Diagrams & Electrochemistry): Equilibrium constant, Ellingham diagrams, Phase stability, Nernst equation, Potential-pH (Pourbaix) diagrams.
+Reference Books:
+  - Introduction to Metallurgical Thermodynamics by David R. Gaskell, McGraw-Hill
+  - Textbook of Materials and Metallurgical Thermodynamics by A. Ghosh, PHI
+
+
+==================================================
+Subject: Principles of Metal Extraction and Refining (MSES205) | Semester IV
+Branch: Materials Science and Metallurgical Engineering
+Credits: 4 (L: 3, T: 1, P: 0) | PDF Page: 36
+Course Outcomes:
+  - CO1 Understand Sources and Preparation of Raw Materials
+  - CO2 Analyze Mineral Beneficiation and Agglomeration Techniques (Sintering, Pelletizing)
+  - CO3 Perform Material and Energy Balances in Metallurgical Processes
+  - CO4 Understand Principles of Extractive Metallurgy (Hydrometallurgy, Pyrometallurgy, Electrometallurgy)
+  - CO5 Evaluate Pyro-metallurgical Operations and Refining Techniques for Non-Ferrous Metals (Al, Cu, Zn, Ti)
+Units & Topics:
+  - Unit 1 (Mineral Beneficiation & Agglomeration): Comminution, Tabling, Jigging, Flotation, Gravity separation, Sintering, Pelletizing, Briquetting.
+  - Unit 2 (Extractive & Pyro-Metallurgy): Material & Energy balances, Hydrometallurgy, Electrometallurgy, Extraction of Al, Cu, Zn, Ti, Roasting, Smelting, Refining.
+Reference Books:
+  - Principles of Extractive Metallurgy by H.S. Ray & A. Ghosh, New Age
+  - Principles of Extractive Metallurgy by T. Rosenqvist
+
+
+==================================================
+Subject: Phase Transformation in Metals (MSES301) | Semester V
+Branch: Materials Science and Metallurgical Engineering
+Credits: 4 (L: 3, T: 0, P: 3) | PDF Page: 42
+Course Outcomes:
+  - CO1 Understand Thermodynamics and Nucleation Kinetics of Phase Transformations
+  - CO2 Analyze Growth Mechanisms During Phase Transformations
+  - CO3 Apply Kinetic Models (Johnson-Mehl, Avrami) to Phase Transformation Analysis
+  - CO4 Understand Microstructural Evolution, TTT & CCT Diagrams
+  - CO5 Explore Advanced Solidification, Metallic Glasses, and Recrystallization
+Units & Topics:
+  - Unit 1 (Nucleation & Growth Kinetics): Homogeneous & Heterogeneous nucleation, Diffusion-controlled growth, Widmanstatten growth, Eutectoid growth, Avrami model.
+  - Unit 2 (TTT Diagrams & Recrystallization): Isothermal & Continuous cooling transformation (TTT & CCT) diagrams, Grain growth kinetics, Metallic glasses.
+Practical Lab Details:
+  - Heat treatment of carbon steels
+  - Metallographic sample preparation and phase transformation analysis
+Reference Books:
+  - Phase Transformation in Metals and Alloys by D.A. Porter & K.E. Easterling, CRC
+  - Physical Metallurgy Principles by Robert E. Reed-Hill
+
+
+==================================================
+Subject: Mechanical Behaviour of Materials (MSES302) | Semester V
+Branch: Materials Science and Metallurgical Engineering
+Credits: 4 (L: 3, T: 1, P: 0) | PDF Page: 43
+Course Outcomes:
+  - CO1 Understand Stress, Strain, and Elastic Behavior using Tensors and Mohr's Circle
+  - CO2 Analyze Plastic Deformation and Dislocation Mechanics (Slip, Twinning)
+  - CO3 Evaluate Strengthening Mechanisms (Work Hardening, Grain Boundary, Precipitation)
+  - CO4 Assess Fracture, Fatigue, and High-Temperature Creep Failure
+  - CO5 Relate Microstructure to Mechanical Properties Across Metals, Ceramics, Polymers
+Units & Topics:
+  - Unit 1 (Stress Tensors & Dislocation Theory): Stress/Strain tensors, Elasticity, Yield criteria, Slip & Twinning, Edge/Screw dislocations, Dislocation interactions.
+  - Unit 2 (Strengthening & Failure Mechanics): Strain hardening, Grain boundary strengthening, Griffith theory, Linear elastic fracture mechanics, Fatigue, Creep rupture.
+Reference Books:
+  - Mechanical Metallurgy by George E. Dieter, McGraw-Hill
+  - Mechanical Behavior of Materials by Marc A. Meyers & K.K. Chawla, Prentice Hall
+
+
+==================================================
+Subject: Iron Making (MSES304) | Semester V
+Branch: Materials Science and Metallurgical Engineering
+Credits: 4 (L: 3, T: 1, P: 0) | PDF Page: 45
+Course Outcomes:
+  - CO1 Understand Historical Development and Fundamentals of Iron Making
+  - CO2 Analyze Chemical Reactions and Thermodynamics in Blast Furnace
+  - CO3 Evaluate Raw Materials and Burden Preparation (Sintering, Pelletization, Coke)
+  - CO4 Understand Slag Chemistry and Hot Metal Quality Control
+  - CO5 Assess Alternative Iron Making Processes (Sponge Iron, DRI) and Blast Furnace Calculations
+Units & Topics:
+  - Unit 1 (Blast Furnace Reactions & Thermodynamics): BF shape, zones, Direct & indirect reduction, Sintering, Pelletization, Burden distribution.
+  - Unit 2 (Slag Chemistry & Alternative Routes): Slag basicity, Sulphide & phosphate capacity, Sponge iron (DRI), Smelting reduction, BF material & heat balances.
+Reference Books:
+  - Ironmaking and Steelmaking: Theory and Practice by A. Ghosh & A. Chatterjee, PHI
+  - A First Course in Iron and Steelmaking by D. Mazumdar, University Press
+
+
+==================================================
+Subject: Transport Phenomenon and Rate Processes (MSES305) | Semester VI
+Branch: Materials Science and Metallurgical Engineering
+Credits: 4 (L: 3, T: 1, P: 0) | PDF Page: 47
+Course Outcomes:
+  - CO1 Understand Fundamental Principles of Momentum Transfer in Metallurgical Flow
+  - CO2 Analyze Heat Transfer Mechanisms (Conduction, Convection, Radiation)
+  - CO3 Apply Mass Transfer Concepts, Diffusion Laws, and Fick's Laws
+  - CO4 Utilize Dimensional Analysis and Identify Key Dimensionless Numbers
+  - CO5 Study Chemical Kinetics, Oxidation Kinetics, and Electrochemical Kinetics
+Units & Topics:
+  - Unit 1 (Momentum, Heat & Mass Transport): Viscosity, Shell balances, Bernoulli equation, Fourier's law, Convection coefficients, Radiation, Fick's laws.
+  - Unit 2 (Kinetics & Dimensional Analysis): Buckingham Pi theorem, Arrhenius relation, Heterogeneous reaction kinetics, Oxidation & Electrochemical kinetics.
+Reference Books:
+  - Kinetics of Metallurgical Reactions by Hem Shanker Ray, Oxford & IBH
+  - Introduction to Transport Phenomena by William J. Thomson
+
+
+==================================================
+Subject: Materials Characterization (MSE-S307) | Semester VI
+Branch: Materials Science and Metallurgical Engineering
+Credits: 4 (L: 3, T: 0, P: 3) | PDF Page: 49
+Course Outcomes:
+  - CO1 Understand Fundamentals and Applications of Optical Microscopy
+  - CO2 Gain Proficiency in Scanning Electron Microscopy (SEM)
+  - CO3 Apply X-Ray Diffraction (XRD) for Crystallographic and Residual Stress Analysis
+  - CO4 Explore Transmission Electron Microscopy (TEM) and Associated Techniques
+  - CO5 Utilize Spectroscopic (UV-Vis, IR, Raman) and Thermal Analysis Techniques (DSC, DTA, TGA)
+Units & Topics:
+  - Unit 1 (Optical & Scanning Electron Microscopy): Phase contrast, Polarised light, SEM instrumentation, Sample preparation, Secondary & Backscattered electron imaging.
+  - Unit 2 (XRD & Transmission Electron Microscopy): Bragg's law, Crystallite size, Peak broadening, TEM diffraction & image formation.
+  - Unit 3 (Spectroscopy & Thermal Analysis): UV-Vis, IR, Raman spectroscopy, Differential Scanning Calorimetry (DSC), Thermogravimetric Analysis (TGA).
+Practical Lab Details:
+  - X-ray diffraction crystallographic analysis
+  - SEM surface morphology examination
+  - TGA thermal decomposition analysis of polymers and ceramics
+Reference Books:
+  - Elements of X-Ray Diffraction by B.D. Cullity, Addison-Wesley
+  - Transmission Electron Microscopy by D.B. Williams & C. Barry Carter, Springer
+
+
+==================================================
+Subject: Heat Treatment of Metals (MSES308) | Semester VI
+Branch: Materials Science and Metallurgical Engineering
+Credits: 4 (L: 3, T: 1, P: 0) | PDF Page: 50
+Course Outcomes:
+  - CO1 Understand Heat Treatment Operations for Steels and Cast Irons
+  - CO2 Understand Phase Transformations, Hardenability, TTT and CCT Diagrams
+  - CO3 Analyze Quench Hardening, Tempering, Martensitic Transformation, and Retained Austenite
+  - CO4 Understand Surface Hardening (Carburizing, Nitriding, Induction Hardening)
+  - CO5 Study Heat Treatment of Tool Steels, Cast Irons, Ni-Superalloys, and Ti Alloys
+Units & Topics:
+  - Unit 1 (Fe-C Diagram & Transformation Curves): Iron-Carbon phase diagram, Hardenability, TTT diagrams, CCT diagrams, Martensitic transformation kinetics.
+  - Unit 2 (Hardening, Tempering & Surface Treatments): Quench hardening, Tempering of martensite, Carburizing, Nitriding, Carbonitriding, Superalloys heat treatment.
+Reference Books:
+  - Physical Metallurgy by Lakhtin, CBS
+  - Heat Treatment: Principles and Techniques by T.V. Rajan, C.P. Sharma, Ashok Sharma
+  - Heat Treatment of Metals by V. Raghavan
+
+
+==================================================
+Subject: Steel Making (MSE-S309) | Semester VI
+Branch: Materials Science and Metallurgical Engineering
+Credits: 4 (L: 3, T: 1, P: 0) | PDF Page: 51
+Course Outcomes:
+  - CO1 Understand Modern Steelmaking Routes (BF-BOF, DRI-EAF, SR) and Thermodynamics
+  - CO2 Analyze Primary Steelmaking Processes (LD Converter, EAF, Induction Furnace)
+  - CO3 Comprehend Secondary Steelmaking Techniques (Ladle Deoxidation, Vacuum Degassing, RH Degasser)
+  - CO4 Evaluate Steel Quality via Inclusion & Impurity Control (Ladle Desulphurization, Ca Treatment)
+  - CO5 Understand Heat Transfer, Continuous Casting, and NDT Quality Inspection
+Units & Topics:
+  - Unit 1 (Primary Steelmaking Routes): BF-BOF, DRI-EAF, LD converter process, Catch carbon technique, Slag evolution, Electric Arc Furnace.
+  - Unit 2 (Secondary Steelmaking & Casting): Deoxidation kinetics, Vacuum degassing, Ladle desulphurization, Calcium treatment, Continuous casting, NDT testing.
+Reference Books:
+  - A First Course in Iron and Steelmaking by D. Mazumdar, University Press
+  - Ironmaking and Steelmaking: Theory and Practice by A. Ghosh & A. Chatterjee
+  - Steel Making by A.K. Chakrabarti, Prentice Hall
+
+
+
+==================================================
+CSJMU & UIET KANPUR - B.TECH COMPUTER SCIENCE & ENGINEERING (CSE)
+OFFICIAL CLEANED SYLLABUS & COURSE STRUCTURE (95 PAGES FULL DATA)
+
+==================================================
+Subject: Data Structure (CSES201) | Semester III
+Branch: Computer Science and Engineering
+Credits: 5 (L: 3, T: 0, P: 3) | PDF Page: 29
+Course Outcomes:
+  - CO1 Learn basic types for data structure, implementation and application
+  - CO2 Know the strength and weakness of different data structures
+  - CO3 Use appropriate data structure in context of solution of given problem
+  - CO4 Develop programming skills required to solve given problem
+Units & Topics:
+  - Unit 1 (Arrays, Stacks & Queues): Recursion, Sequential representation of Stacks and Queues, Circular Queues.
+  - Unit 2 (Linked Lists & Sorting): Dynamic Storage allocation, Doubly linked list, Insertion/Bubble/Quick/Merge/Heap/Shell sort.
+  - Unit 3 (Trees, Graphs & Hashing): Binary Search Trees (BST), Preorder/Inorder/Postorder traversals, B-Trees, B+ Trees, Graphs BFS & DFS, Hash tables.
+Practical Lab Details:
+  - Stack, Queue, Circular Queue array and linked list implementation
+  - Binary Search Tree insertion, deletion, and traversals
+  - Graph Traversals (BFS, DFS) and Sorting Algorithms
+Reference Books:
+  - Data Structure Using C and C++ by Y. Langsam, M.J. Augenstein, A.M. Tenenbaum, Pearson
+  - Data Structures with C by Seymour Lipschutz, Schaum's Outline, McGraw Hill
+
+
+==================================================
+Subject: Digital Electronics and Logic Design (CSES202) | Semester III
+Branch: Computer Science and Engineering
+Credits: 4 (L: 3, T: 0, P: 2) | PDF Page: 30
+Course Outcomes:
+  - CO1 Convert different type of codes and number systems used in digital communication
+  - CO2 Employ code converting circuits and compare logic families (RTL, DTL, TTL, ECL, CMOS)
+  - CO3 Analyze digital electronic circuits using K-Maps and Quine McCluskey method
+  - CO4 Design sequential logic circuits with and without memory elements using VHDL
+Units & Topics:
+  - Unit 1 (Boolean Algebra & Logic Families): Number systems, K-Maps, Quine McCluskey method, Prime implicants, TTL, ECL, CMOS logic families.
+  - Unit 2 (Combinational & Sequential Logic): Adders, Subtractors, Encoders, Decoders, MUX, DEMUX, ROM, PAL, PLA, Flip-Flops (RS, JK, D, T), State diagrams, VHDL.
+Practical Lab Details:
+  - Logic gates verification using Universal Gates NAND / NOR
+  - Adder / Subtractor operation using IC 7483
+  - Demultiplexer / Decoder operation using IC-74138 and Modulo-N counter using 74190
+Reference Books:
+  - Fundamentals of Logic Design by Charles H. Roth, Jr., Jaico
+  - Digital Logic and Computer Design by Morris Mano, Prentice Hall
+
+
+==================================================
+Subject: Object Oriented Programming (Using Java) (CSES204) | Semester IV
+Branch: Computer Science and Engineering
+Credits: 5 (L: 3, T: 0, P: 3) | PDF Page: 35
+Course Outcomes:
+  - CO1 Understand basic concepts of Procedure-Oriented vs Object-Oriented Programming
+  - CO2 Achieve knowledge of developing simple Java programs
+  - CO3 Develop computer programs to solve real-world problems
+  - CO4 Design simple GUI interfaces using Applets and Swings
+  - CO5 Achieve knowledge of multi-threading and event-handling techniques
+Units & Topics:
+  - Unit 1 (Java OOP Basics): Objects, Classes, Encapsulation, Inheritance, Polymorphism, Packages, Interfaces.
+  - Unit 2 (Java Applets & GUI): Applets, Swings, Multithreading, File I/O, Exception handling, Event-handling.
+Practical Lab Details:
+  - Classes, Objects, and Method Overloading in Java
+  - Inheritance (Single, Multiple, Multilevel) and Abstract Classes
+  - Exception handling and Console I/O operations
+Reference Books:
+  - Java: The Complete Reference by Herbert Schildt, 12th Edition, McGraw Hill
+  - Java 2 Unleashed by Stephen Potts, Sams Publishing
+
+
+==================================================
+Subject: Computer Organization (CSES205) | Semester IV
+Branch: Computer Science and Engineering
+Credits: 4 (L: 3, T: 1, P: 0) | PDF Page: 37
+Course Outcomes:
+  - CO1 Explain organizational and architectural issues of a digital computer
+  - CO2 Describe data transfer techniques and I/O interfaces
+  - CO3 Analyze performance of memories and ALU arithmetic implementation
+  - CO4 Describe hardwired and micro-programmed control of CPU and pipelining
+Units & Topics:
+  - Unit 1 (Processor Arithmetic & ALU): Integer & floating point representation, Booth's algorithm, Half/Full adders, ALU design.
+  - Unit 2 (Memory & Control Unit): RAM, ROM, DRAM vs SRAM, Cache mapping functions, Pipelined architectures, Hardwired vs Microprogrammed control.
+Reference Books:
+  - Computer Organization by V.C. Hamacher, Z.G. Vranesic, S.G. Zaky, McGraw-Hill
+  - Computer Organization & Architecture by William Stallings, Pearson
+
+
+==================================================
+Subject: Operating System (CSES206) | Semester IV
+Branch: Computer Science and Engineering
+Credits: 4 (L: 3, T: 1, P: 0) | PDF Page: 38
+Course Outcomes:
+  - CO1 Understand services provided by Operating System at different levels
+  - CO2 Learn real life applications of Operating System in every field
+  - CO3 Understand CPU scheduling algorithms and process synchronization to avoid deadlocks
+  - CO4 Learn memory management techniques (paging, segmentation, demand paging)
+Units & Topics:
+  - Unit 1 (Process Management & Deadlocks): Process synchronization, Semaphores, Monitors, CPU Scheduling (SJF, FCFS, Round Robin), Deadlock avoidance.
+  - Unit 2 (Memory & File Systems): Paging, Segmentation, Page replacement algorithms, Virtual memory, File protection, Access rights.
+Reference Books:
+  - Operating System Concepts by A. Silberschatz & P.B. Galvin, Wiley
+  - Modern Operating Systems by Andrew Tanenbaum, Pearson
+
+
+==================================================
+Subject: Database Management Systems (CSES301) | Semester V
+Branch: Computer Science and Engineering
+Credits: 5 (L: 3, T: 0, P: 3) | PDF Page: 42
+Course Outcomes:
+  - CO1 Describe fundamental elements of relational database management systems
+  - CO2 Explain relational data model, ER-model, relational algebra and SQL
+  - CO3 Design ER-models to represent database application scenarios
+  - CO4 Convert ER-model to relational tables and formulate SQL queries
+  - CO5 Improve database design by normalization (1NF, 2NF, 3NF, BCNF)
+  - CO6 Familiar with database storage structures, B-trees, indexing and hashing
+Units & Topics:
+  - Unit 1 (ER Modeling & Relational Algebra): DBMS Architecture, Entity-Relationship Model, Relational Algebra, Tuple & Domain Calculus.
+  - Unit 2 (SQL & Normalization): SQL DDL, DML, Subqueries, Functional Dependencies, 1NF, 2NF, 3NF, BCNF, Lossless join decomposition.
+  - Unit 3 (Transactions & Concurrency): ACID properties, Serializability, Concurrency Control, Lock-based protocols, Recovery algorithms.
+Practical Lab Details:
+  - SQL Table creation and data insertion
+  - Complex queries using Union, Intersect, Minus, Subqueries
+  - PL/SQL Triggers, Views, and Stored Procedures
+Reference Books:
+  - Database System Concepts by Abraham Silberschatz, Henry F. Korth, S. Sudarshan, McGraw-Hill
+  - Database Management Systems by Raghu Ramakrishnan & Johannes Gehrke
+
+
+==================================================
+Subject: Design and Analysis of Algorithms (CSES302) | Semester V
+Branch: Computer Science and Engineering
+Credits: 4 (L: 3, T: 1, P: 0) | PDF Page: 44
+Course Outcomes:
+  - CO1 Ability to decide appropriate data type and data structure for a given problem
+  - CO2 Ability to select best algorithm by considering data size and operation complexity
+  - CO3 Ability to compare algorithms with respect to time and space complexity
+Units & Topics:
+  - Unit 1 (Asymptotic Analysis & Sorting): Big-O, Theta, Omega notations, Recurrence relations, Stable matching, Order statistics.
+  - Unit 2 (Graph & Paradigm Design): BFS, DFS, Dijkstra's shortest path, Kruskal's & Prim's MST, Divide & Conquer (Mergesort, Quicksort), Greedy method (Knapsack).
+  - Unit 3 (Dynamic Programming & NP-Completeness): 0/1 Knapsack, Longest Common Subsequence, Matrix chain multiplication, Network Flow, NP-Complete problems, Polynomial time approximation.
+Reference Books:
+  - Fundamentals of Computer Algorithms by E. Horowitz & S. Sahni, Galgotia
+  - Introduction to Algorithms by Cormen, Leiserson, Rivest, Stein (CLRS), MIT Press
+
+
+==================================================
+Subject: Microprocessor (CSES303) | Semester V
+Branch: Computer Science and Engineering
+Credits: 4 (L: 3, T: 0, P: 2) | PDF Page: 45
+Course Outcomes:
+  - CO1 Assess and solve basic binary math operations using microprocessor 8085/8086
+  - CO2 Apply addressing modes and data transfer instructions in assembly programming
+  - CO3 Compare 8085 Microprocessor and Microcontroller standards
+  - CO4 Analyze assembly language programs and cross-assembler utilities
+Units & Topics:
+  - Unit 1 (8085 & 8086 Architecture): 8085 Architecture, Memory interfacing, I/O interfacing, Assembly language programming, 8085 instruction set.
+  - Unit 2 (Interfacing & Peripheral Devices): Counters & Delays, Stack & Subroutines, BCD Arithmetic, Interrupts, D/A & A/D converters, 8255 PPI, 8259 PIC.
+Practical Lab Details:
+  - 8-bit and 16-bit Addition and Subtraction in Assembly
+  - Sorting n numbers in ascending & descending order
+  - Interfacing switches and LED display with 8085
+Reference Books:
+  - Microprocessor Architecture, Programming, and Applications with 8085 by Ramesh S. Gaonkar, Pearson
+  - Microprocessor & Interfacing Programming & Hardware by Douglas V. Hall, McGraw-Hill
+
+
+==================================================
+Subject: Theory of Computation (CSES304) | Semester V
+Branch: Computer Science and Engineering
+Credits: 4 (L: 3, T: 1, P: 0) | PDF Page: 47
+Course Outcomes:
+  - CO1 Design Finite Automata machines for given computational problems
+  - CO2 Analyze a given Finite Automata machine and find out its Language
+  - CO3 Design Pushdown Automata (PDA) for given Context-Free Languages
+  - CO4 Generate strings/sentences of a given CFL using its grammar
+  - CO5 Design Turing machines for given computational problems
+Units & Topics:
+  - Unit 1 (Finite Automata & Regular Languages): DFA, NFA, Regular grammars, Regular expressions, Equivalence of machines, Minimization of automata.
+  - Unit 2 (Context-Free Languages & PDA): CFG simplification, Chomsky Normal Form (CNF), Greibach Normal Form (GNF), Pushdown Automata.
+  - Unit 3 (Turing Machines & Undecidability): Turing machines, Computable functions, Church's thesis, Decidability, Undecidability, Halting problem.
+Reference Books:
+  - Introduction to Automata Theory, Languages, and Computation by J.E. Hopcroft, R. Motwani, J.D. Ullman, Pearson
+  - Introduction to Theory of Computation by Michael Sipser, Cengage
+
+
+==================================================
+Subject: Compiler Design (CSES305) | Semester VI
+Branch: Computer Science and Engineering
+Credits: 4 (L: 3, T: 1, P: 0) | PDF Page: 49
+Course Outcomes:
+  - CO1 Understand fundamentals of compiler and relationships among different phases
+  - CO2 Understand finite state machines, recursive descent parsing, production rules
+  - CO3 Analyze and implement front-end, back-end, and middle-end optimizations
+  - CO4 Use modern tools (LEX, YACC) for designing new compilers
+Units & Topics:
+  - Unit 1 (Lexical & Syntax Analysis): Phases of compiler, Tokens, Lexemes, Regular definitions, LEX, CFGs, Top-down & Bottom-up parsing, LL(1), LR, SLR, LALR, YACC.
+  - Unit 2 (Intermediate Code & Optimization): Syntax Directed Definitions, Three-address code, Quadruples, Triples, Code optimization DAGs, Peephole optimization, Register allocation.
+Reference Books:
+  - Compilers: Principles, Techniques, and Tools by A.V. Aho, R. Sethi, J.D. Ullman (Dragon Book), Pearson
+  - Advanced Compiler Design and Implementation by Steven Muchnick, Elsevier
+
+
+==================================================
+Subject: Computer Networks (CSES306) | Semester VI
+Branch: Computer Science and Engineering
+Credits: 4 (L: 3, T: 1, P: 0) | PDF Page: 51
+Course Outcomes:
+  - CO1 Recognize technological trends of Computer Networking
+  - CO2 Discuss key technological components of OSI 7-layer & TCP/IP network model
+  - CO3 Evaluate challenges in building networks and solutions for routing and congestion
+Units & Topics:
+  - Unit 1 (Network Architecture & Data Link Layer): OSI 7-layer architecture, Topologies, CSMA/CD, Ethernet, Token Ring, Framing, Error detection/correction.
+  - Unit 2 (Network & Transport Layers): IP addressing, Subnetting, Distance Vector & Link State routing, OSPF, BGP, TCP, UDP, Congestion control, ATM.
+Reference Books:
+  - Computer Networks by Andrew S. Tanenbaum, Pearson
+  - Data Communications and Networking by Behrouz A. Forouzan, McGraw-Hill
+
+
+==================================================
+Subject: Computer Graphics (CSES401) | Semester VII
+Branch: Computer Science and Engineering
+Credits: 4 (L: 3, T: 1, P: 0) | PDF Page: 54
+Course Outcomes:
+  - CO1 Understand basics of computer graphics, video display devices, and geometry
+  - CO2 Discuss algorithms for scan conversion, line/circle drawing and filling
+  - CO3 Use 2D/3D geometric transformations in composite form
+  - CO4 Extract scenes with line & polygon clipping methods (Cohen-Sutherland)
+  - CO5 Explore 3D projections, hidden line/surface removal (Z-buffer), and illumination models
+Units & Topics:
+  - Unit 1 (Scan Conversion & 2D Transformations): Bresenham line/circle algorithm, Boundary fill, Flood fill, 2D Translation/Rotation/Scaling, Homogeneous coordinates.
+  - Unit 2 (Clipping, 3D Graphics & Visibility): Cohen-Sutherland line clipping, Sutherland-Hodgeman polygon clipping, 3D projections, Z-buffer algorithm, Bezier & B-Spline curves.
+Practical Lab Details:
+  - DDA and Bresenham line and circle drawing algorithms
+  - 2D/3D geometric transformations program in C/OpenGL
+  - Cohen-Sutherland line clipping and Z-buffer hidden surface removal
+Reference Books:
+  - Computer Graphics using OpenGL by F.S. Hill, Pearson
+  - Computer Graphics C Version by Donald Hearn & M. Pauline Baker, Pearson
+

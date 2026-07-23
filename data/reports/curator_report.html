@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSJMU AI-Assisted Knowledge Curator Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0B0F19;
+            --card: #151C2C;
+            --card-border: #222E45;
+            --text-primary: #F1F5F9;
+            --text-secondary: #94A3B8;
+            --accent-blue: #38BDF8;
+            --accent-purple: #818CF8;
+            --success: #10B981;
+            --warning: #F59E0B;
+            --danger: #EF4444;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Plus Jakarta Sans', sans-serif; }
+        body { background: var(--bg); color: var(--text-primary); padding: 2.5rem; line-height: 1.6; }
+        .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2.5rem; border-bottom: 1px solid var(--card-border); padding-bottom: 1.5rem; }
+        .header h1 { font-size: 2.2rem; font-weight: 800; background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .metrics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1.2rem; margin-bottom: 2.5rem; }
+        .metric-card { background: var(--card); border: 1px solid var(--card-border); border-radius: 16px; padding: 1.4rem; text-align: center; }
+        .metric-val { font-size: 2rem; font-weight: 800; color: var(--accent-blue); margin-top: 0.3rem; }
+        .metric-val.success { color: var(--success); }
+        .metric-val.warning { color: var(--warning); }
+        .metric-val.danger { color: var(--danger); }
+        .metric-lbl { font-size: 0.78rem; font-weight: 700; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.08em; }
+        .card { background: var(--card); border: 1px solid var(--card-border); border-radius: 16px; padding: 1.5rem; margin-bottom: 1.5rem; }
+        .section-title { font-size: 1.4rem; font-weight: 700; margin: 2rem 0 1.2rem 0; color: var(--text-primary); }
+        .table-wrapper { background: var(--card); border: 1px solid var(--card-border); border-radius: 16px; overflow: hidden; }
+        table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+        th { background: #0F1623; padding: 1.2rem 1rem; text-align: left; font-weight: 700; color: var(--text-secondary); border-bottom: 1px solid var(--card-border); }
+        td { padding: 1.1rem 1rem; border-bottom: 1px solid var(--card-border); vertical-align: top; }
+        .cat-pill { background: rgba(56, 189, 248, 0.1); color: var(--accent-blue); padding: 0.2rem 0.6rem; border-radius: 6px; font-size: 0.76rem; font-weight: 600; }
+        .badge-priority { background: rgba(239, 68, 68, 0.2); color: var(--danger); border: 1px solid var(--danger); padding: 0.3rem 0.8rem; border-radius: 999px; font-size: 0.8rem; font-weight: 700; }
+        code { font-family: monospace; background: #0F172A; padding: 0.2rem 0.4rem; border-radius: 4px; color: var(--accent-purple); font-size: 0.8rem; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div>
+            <h1>🧠 AI-Assisted Knowledge Curator Dashboard</h1>
+            <p>Continuous Knowledge Quality & Automated Diagnosis Engine • CSJMU & UIET</p>
+        </div>
+    </div>
+
+    <div class="metrics-grid">
+        <div class="metric-card">
+            <div class="metric-lbl">Audited Questions</div>
+            <div class="metric-val">305</div>
+        </div>
+        <div class="metric-card">
+            <div class="metric-lbl">Total Failed / Partial</div>
+            <div class="metric-val warning">87</div>
+        </div>
+        <div class="metric-card">
+            <div class="metric-lbl">Retrieval Failures</div>
+            <div class="metric-val danger">75</div>
+        </div>
+        <div class="metric-card">
+            <div class="metric-lbl">Coverage Failures</div>
+            <div class="metric-val danger">12</div>
+        </div>
+        <div class="metric-card">
+            <div class="metric-lbl">New Documents Needed</div>
+            <div class="metric-val success">6</div>
+        </div>
+    </div>
+
+    <div class="section-title">📌 Prioritized Official Document Collection Roadmap (Ranked by Impact)</div>
+    
+            <div class="card">
+                <div style="display:flex; justify-content:space-between; align-items:center;">
+                    <h3 style="color:var(--accent-blue);">#1. 📑 csjmu_facilities_official_handbook.pdf</h3>
+                    <span class="badge badge-priority">Impact: 5 Questions</span>
+                </div>
+                <p><strong>Target Category:</strong> Facilities • <strong>Priority:</strong> <span style="color:var(--danger); font-weight:700;">High</span></p>
+                <p><strong>Required Fields to Collect:</strong></p>
+                <ul style="margin-left:1.5rem; color:var(--text-secondary); font-size:0.9rem;">
+                    <li>Detailed official guidelines regarding Facilities</li><li>Contact Email and Phone Numbers</li><li>Frequently Asked Questions</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <div style="display:flex; justify-content:space-between; align-items:center;">
+                    <h3 style="color:var(--accent-blue);">#2. 📑 csjmu_faculty_official_handbook.pdf</h3>
+                    <span class="badge badge-priority">Impact: 2 Questions</span>
+                </div>
+                <p><strong>Target Category:</strong> Faculty • <strong>Priority:</strong> <span style="color:var(--danger); font-weight:700;">High</span></p>
+                <p><strong>Required Fields to Collect:</strong></p>
+                <ul style="margin-left:1.5rem; color:var(--text-secondary); font-size:0.9rem;">
+                    <li>Detailed official guidelines regarding Faculty</li><li>Contact Email and Phone Numbers</li><li>Frequently Asked Questions</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <div style="display:flex; justify-content:space-between; align-items:center;">
+                    <h3 style="color:var(--accent-blue);">#3. 📑 csjmu_general_official_handbook.pdf</h3>
+                    <span class="badge badge-priority">Impact: 2 Questions</span>
+                </div>
+                <p><strong>Target Category:</strong> General • <strong>Priority:</strong> <span style="color:var(--danger); font-weight:700;">High</span></p>
+                <p><strong>Required Fields to Collect:</strong></p>
+                <ul style="margin-left:1.5rem; color:var(--text-secondary); font-size:0.9rem;">
+                    <li>Detailed official guidelines regarding General</li><li>Contact Email and Phone Numbers</li><li>Frequently Asked Questions</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <div style="display:flex; justify-content:space-between; align-items:center;">
+                    <h3 style="color:var(--accent-blue);">#4. 📑 csjmu_syllabus_labs_official_handbook.pdf</h3>
+                    <span class="badge badge-priority">Impact: 1 Questions</span>
+                </div>
+                <p><strong>Target Category:</strong> Syllabus_Labs • <strong>Priority:</strong> <span style="color:var(--danger); font-weight:700;">High</span></p>
+                <p><strong>Required Fields to Collect:</strong></p>
+                <ul style="margin-left:1.5rem; color:var(--text-secondary); font-size:0.9rem;">
+                    <li>Detailed official guidelines regarding Syllabus_Labs</li><li>Contact Email and Phone Numbers</li><li>Frequently Asked Questions</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <div style="display:flex; justify-content:space-between; align-items:center;">
+                    <h3 style="color:var(--accent-blue);">#5. 📑 csjmu_alumni_official_handbook.pdf</h3>
+                    <span class="badge badge-priority">Impact: 1 Questions</span>
+                </div>
+                <p><strong>Target Category:</strong> Alumni • <strong>Priority:</strong> <span style="color:var(--danger); font-weight:700;">High</span></p>
+                <p><strong>Required Fields to Collect:</strong></p>
+                <ul style="margin-left:1.5rem; color:var(--text-secondary); font-size:0.9rem;">
+                    <li>Detailed official guidelines regarding Alumni</li><li>Contact Email and Phone Numbers</li><li>Frequently Asked Questions</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <div style="display:flex; justify-content:space-between; align-items:center;">
+                    <h3 style="color:var(--accent-blue);">#6. 📑 csjmu_dignitaries_official_handbook.pdf</h3>
+                    <span class="badge badge-priority">Impact: 1 Questions</span>
+                </div>
+                <p><strong>Target Category:</strong> Dignitaries • <strong>Priority:</strong> <span style="color:var(--danger); font-weight:700;">High</span></p>
+                <p><strong>Required Fields to Collect:</strong></p>
+                <ul style="margin-left:1.5rem; color:var(--text-secondary); font-size:0.9rem;">
+                    <li>Detailed official guidelines regarding Dignitaries</li><li>Contact Email and Phone Numbers</li><li>Frequently Asked Questions</li>
+                </ul>
+            </div>
+            
+
+    <div class="section-title">🔧 Retrieval Optimization Recommendations (Facts Exist in Corpus)</div>
+    <div class="table-wrapper">
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Category</th>
+                    <th>Question</th>
+                    <th>Source Document Found</th>
+                    <th>Recommended Chunking / Metadata Fix</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+            <tr>
+                <td>#11</td>
+                <td><span class="cat-pill">Admissions</span></td>
+                <td><strong>Are board recognitions required for admission eligibility?</strong></td>
+                <td><code>course_eligibility.json</code></td>
+                <td>Merge unit header context into child chunk or split multi-topic paragraphs into single-concept units.</td>
+            </tr>
+            
+            <tr>
+                <td>#27</td>
+                <td><span class="cat-pill">Eligibility</span></td>
+                <td><strong>What is the minimum percentage required in 12th standard for B.Tech admission?</strong></td>
+                <td><code>course_eligibility.json</code></td>
+                <td>Merge unit header context into child chunk or split multi-topic paragraphs into single-concept units.</td>
+            </tr>
+            
+            <tr>
+                <td>#31</td>
+                <td><span class="cat-pill">Eligibility</span></td>
+                <td><strong>What is the eligibility for B.Pharm (Bachelor of Pharmacy)?</strong></td>
+                <td><code>course_eligibility.json</code></td>
+                <td>Merge unit header context into child chunk or split multi-topic paragraphs into single-concept units.</td>
+            </tr>
+            
+            <tr>
+                <td>#32</td>
+                <td><span class="cat-pill">Eligibility</span></td>
+                <td><strong>What is the eligibility for D.Pharm (Diploma in Pharmacy)?</strong></td>
+                <td><code>course_eligibility.json</code></td>
+                <td>Merge unit header context into child chunk or split multi-topic paragraphs into single-concept units.</td>
+            </tr>
+            
+            <tr>
+                <td>#62</td>
+                <td><span class="cat-pill">Departments</span></td>
+                <td><strong>Tell me about the School of Languages.</strong></td>
+                <td><code>admission_coordinators.json</code></td>
+                <td>Merge unit header context into child chunk or split multi-topic paragraphs into single-concept units.</td>
+            </tr>
+            
+            <tr>
+                <td>#63</td>
+                <td><span class="cat-pill">Departments</span></td>
+                <td><strong>Tell me about the School of Arts, Humanities & Social Sciences.</strong></td>
+                <td><code>course_eligibility.json</code></td>
+                <td>Merge unit header context into child chunk or split multi-topic paragraphs into single-concept units.</td>
+            </tr>
+            
+            <tr>
+                <td>#83</td>
+                <td><span class="cat-pill">Faculty</span></td>
+                <td><strong>Who is the Dean of Student Welfare (DSW)?</strong></td>
+                <td><code>uiet_teachers.json</code></td>
+                <td>Merge unit header context into child chunk or split multi-topic paragraphs into single-concept units.</td>
+            </tr>
+            
+            <tr>
+                <td>#90</td>
+                <td><span class="cat-pill">Hostel</span></td>
+                <td><strong>What is the curfew timing for girls hostels?</strong></td>
+                <td><code>facilities_at_csjm.txt</code></td>
+                <td>Merge unit header context into child chunk or split multi-topic paragraphs into single-concept units.</td>
+            </tr>
+            
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

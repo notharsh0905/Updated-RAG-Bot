@@ -1,0 +1,251 @@
+{
+  "total_prompt_issues": 41,
+  "records": [
+    {
+      "question_id": 27,
+      "question": "What is the minimum percentage required in 12th standard for B.Tech admission?",
+      "issue": "Partial Context Provided",
+      "action": "Instruct prompt to explicitly list available subset and request missing fields cleanly."
+    },
+    {
+      "question_id": 31,
+      "question": "What is the eligibility for B.Pharm (Bachelor of Pharmacy)?",
+      "issue": "Partial Context Provided",
+      "action": "Instruct prompt to explicitly list available subset and request missing fields cleanly."
+    },
+    {
+      "question_id": 32,
+      "question": "What is the eligibility for D.Pharm (Diploma in Pharmacy)?",
+      "issue": "Partial Context Provided",
+      "action": "Instruct prompt to explicitly list available subset and request missing fields cleanly."
+    },
+    {
+      "question_id": 104,
+      "question": "Which top companies visit CSJMU for campus recruitment?",
+      "issue": "Partial Context Provided",
+      "action": "Instruct prompt to explicitly list available subset and request missing fields cleanly."
+    },
+    {
+      "question_id": 149,
+      "question": "What achievements are listed for CSJMU alumni?",
+      "issue": "Partial Context Provided",
+      "action": "Instruct prompt to explicitly list available subset and request missing fields cleanly."
+    },
+    {
+      "question_id": 153,
+      "question": "Is CBSE recognised for admission to CSJMU?",
+      "issue": "Partial Context Provided",
+      "action": "Instruct prompt to explicitly list available subset and request missing fields cleanly."
+    },
+    {
+      "question_id": 154,
+      "question": "Is ICSE/ISC board recognised by CSJMU?",
+      "issue": "Partial Context Provided",
+      "action": "Instruct prompt to explicitly list available subset and request missing fields cleanly."
+    },
+    {
+      "question_id": 159,
+      "question": "What support does CSJMU provide to student startups and incubatees?",
+      "issue": "Partial Context Provided",
+      "action": "Instruct prompt to explicitly list available subset and request missing fields cleanly."
+    },
+    {
+      "question_id": 163,
+      "question": "What undergraduate degree courses are offered at CSJMU?",
+      "issue": "Partial Context Provided",
+      "action": "Instruct prompt to explicitly list available subset and request missing fields cleanly."
+    },
+    {
+      "question_id": 167,
+      "question": "Is Ph.D. program offered at CSJMU?",
+      "issue": "Partial Context Provided",
+      "action": "Instruct prompt to explicitly list available subset and request missing fields cleanly."
+    },
+    {
+      "question_id": 184,
+      "question": "What key highlights make CSJMU a leading state university in Uttar Pradesh?",
+      "issue": "Partial Context Provided",
+      "action": "Instruct prompt to explicitly list available subset and request missing fields cleanly."
+    },
+    {
+      "question_id": 190,
+      "question": "How far is CSJMU campus from Kanpur Central Railway Station?",
+      "issue": "Partial Context Provided",
+      "action": "Instruct prompt to explicitly list available subset and request missing fields cleanly."
+    },
+    {
+      "question_id": 191,
+      "question": "How far is CSJMU campus from Kanpur Airport?",
+      "issue": "Partial Context Provided",
+      "action": "Instruct prompt to explicitly list available subset and request missing fields cleanly."
+    },
+    {
+      "question_id": 194,
+      "question": "Is there an entrance exam conducted by CSJMU for non-JEE courses?",
+      "issue": "Partial Context Provided",
+      "action": "Instruct prompt to explicitly list available subset and request missing fields cleanly."
+    },
+    {
+      "question_id": 197,
+      "question": "What is the refund policy if a candidate cancels admission?",
+      "issue": "Partial Context Provided",
+      "action": "Instruct prompt to explicitly list available subset and request missing fields cleanly."
+    },
+    {
+      "question_id": 199,
+      "question": "What stream in 12th is required for B.Sc Agriculture?",
+      "issue": "Partial Context Provided",
+      "action": "Instruct prompt to explicitly list available subset and request missing fields cleanly."
+    },
+    {
+      "question_id": 214,
+      "question": "Does CSJMU have an online library portal?",
+      "issue": "Partial Context Provided",
+      "action": "Instruct prompt to explicitly list available subset and request missing fields cleanly."
+    },
+    {
+      "question_id": 215,
+      "question": "Is INFLIBNET and Shodhganga accessible from the university library?",
+      "issue": "Partial Context Provided",
+      "action": "Instruct prompt to explicitly list available subset and request missing fields cleanly."
+    },
+    {
+      "question_id": 220,
+      "question": "Are open electives offered across different engineering departments?",
+      "issue": "Partial Context Provided",
+      "action": "Instruct prompt to explicitly list available subset and request missing fields cleanly."
+    },
+    {
+      "question_id": 224,
+      "question": "Can fees be paid online through the CSJMU portal?",
+      "issue": "Partial Context Provided",
+      "action": "Instruct prompt to explicitly list available subset and request missing fields cleanly."
+    },
+    {
+      "question_id": 225,
+      "question": "Is installment facility allowed for tuition fee payment?",
+      "issue": "Partial Context Provided",
+      "action": "Instruct prompt to explicitly list available subset and request missing fields cleanly."
+    },
+    {
+      "question_id": 226,
+      "question": "What official website URL does CSJMU use?",
+      "issue": "Partial Context Provided",
+      "action": "Instruct prompt to explicitly list available subset and request missing fields cleanly."
+    },
+    {
+      "question_id": 228,
+      "question": "What is the official postal address of CSJMU?",
+      "issue": "Partial Context Provided",
+      "action": "Instruct prompt to explicitly list available subset and request missing fields cleanly."
+    },
+    {
+      "question_id": 233,
+      "question": "Can students apply for multiple programs simultaneously?",
+      "issue": "Partial Context Provided",
+      "action": "Instruct prompt to explicitly list available subset and request missing fields cleanly."
+    },
+    {
+      "question_id": 235,
+      "question": "Is there any relaxation in marks for reserved category candidates?",
+      "issue": "Partial Context Provided",
+      "action": "Instruct prompt to explicitly list available subset and request missing fields cleanly."
+    },
+    {
+      "question_id": 236,
+      "question": "How can a student contact their subject teacher or HOD?",
+      "issue": "Partial Context Provided",
+      "action": "Instruct prompt to explicitly list available subset and request missing fields cleanly."
+    },
+    {
+      "question_id": 241,
+      "question": "Are industrial visits organized for engineering students?",
+      "issue": "Partial Context Provided",
+      "action": "Instruct prompt to explicitly list available subset and request missing fields cleanly."
+    },
+    {
+      "question_id": 247,
+      "question": "Who chairs the Executive Council of CSJMU?",
+      "issue": "Partial Context Provided",
+      "action": "Instruct prompt to explicitly list available subset and request missing fields cleanly."
+    },
+    {
+      "question_id": 248,
+      "question": "What NSS and NCC wings exist at CSJMU?",
+      "issue": "Partial Context Provided",
+      "action": "Instruct prompt to explicitly list available subset and request missing fields cleanly."
+    },
+    {
+      "question_id": 252,
+      "question": "What happens if a candidate misses the reporting deadline after admission?",
+      "issue": "Partial Context Provided",
+      "action": "Instruct prompt to explicitly list available subset and request missing fields cleanly."
+    },
+    {
+      "question_id": 261,
+      "question": "What is the fee structure for Ph.D. scholars?",
+      "issue": "Partial Context Provided",
+      "action": "Instruct prompt to explicitly list available subset and request missing fields cleanly."
+    },
+    {
+      "question_id": 266,
+      "question": "Can candidates with vocational subjects in 12th apply for B.Tech?",
+      "issue": "Partial Context Provided",
+      "action": "Instruct prompt to explicitly list available subset and request missing fields cleanly."
+    },
+    {
+      "question_id": 267,
+      "question": "Who manages student discipline in UIET?",
+      "issue": "Partial Context Provided",
+      "action": "Instruct prompt to explicitly list available subset and request missing fields cleanly."
+    },
+    {
+      "question_id": 269,
+      "question": "Does CSJMU have an indoor badminton court?",
+      "issue": "Partial Context Provided",
+      "action": "Instruct prompt to explicitly list available subset and request missing fields cleanly."
+    },
+    {
+      "question_id": 272,
+      "question": "Is late fee applicable if fee is paid after due date?",
+      "issue": "Partial Context Provided",
+      "action": "Instruct prompt to explicitly list available subset and request missing fields cleanly."
+    },
+    {
+      "question_id": 273,
+      "question": "Does CSJMU publish research journals or newsletters?",
+      "issue": "Partial Context Provided",
+      "action": "Instruct prompt to explicitly list available subset and request missing fields cleanly."
+    },
+    {
+      "question_id": 287,
+      "question": "What dining options exist in the university cafeteria?",
+      "issue": "Partial Context Provided",
+      "action": "Instruct prompt to explicitly list available subset and request missing fields cleanly."
+    },
+    {
+      "question_id": 288,
+      "question": "What software tools are used for Chemical Engineering simulations?",
+      "issue": "Partial Context Provided",
+      "action": "Instruct prompt to explicitly list available subset and request missing fields cleanly."
+    },
+    {
+      "question_id": 294,
+      "question": "Who is the Dean of School of Engineering & Technology?",
+      "issue": "Partial Context Provided",
+      "action": "Instruct prompt to explicitly list available subset and request missing fields cleanly."
+    },
+    {
+      "question_id": 298,
+      "question": "What company off-campus opportunities are shared by the T&P cell?",
+      "issue": "Partial Context Provided",
+      "action": "Instruct prompt to explicitly list available subset and request missing fields cleanly."
+    },
+    {
+      "question_id": 301,
+      "question": "How can I contact CSJMU for academic certificates?",
+      "issue": "Partial Context Provided",
+      "action": "Instruct prompt to explicitly list available subset and request missing fields cleanly."
+    }
+  ]
+}

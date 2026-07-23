@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+.venv
+
+# Jupyter & Checkpoints
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# Chroma Vector DB (Optional to exclude if dynamically built)
+# CHECK_DB/
+
+# Environment files
+.env
+
+# IDE & OS
+.DS_Store
+.vscode/
+.idea/
+*.swp
+
+# Docker / Logs
+*.log
+
+# pytest
+.pytest_cache/
+

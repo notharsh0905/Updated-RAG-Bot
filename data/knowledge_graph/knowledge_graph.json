@@ -1,0 +1,168 @@
+{
+  "nodes": [
+    {
+      "id": "CSJMU",
+      "type": "University",
+      "name": "Chhatrapati Shahu Ji Maharaj University"
+    },
+    {
+      "id": "UIET",
+      "type": "Institute",
+      "name": "University Institute of Engineering and Technology"
+    },
+    {
+      "id": "Dept_CSE",
+      "type": "Department",
+      "name": "Computer Science & Engineering"
+    },
+    {
+      "id": "Dept_IT",
+      "type": "Department",
+      "name": "Information Technology"
+    },
+    {
+      "id": "Dept_ECE",
+      "type": "Department",
+      "name": "Electronics & Communication Engineering"
+    },
+    {
+      "id": "Dept_CHE",
+      "type": "Department",
+      "name": "Chemical Engineering"
+    },
+    {
+      "id": "Dept_ME",
+      "type": "Department",
+      "name": "Mechanical Engineering"
+    },
+    {
+      "id": "Dept_MSE",
+      "type": "Department",
+      "name": "Materials Science & Metallurgical Engineering"
+    },
+    {
+      "id": "Prog_BTech",
+      "type": "Program",
+      "name": "B.Tech"
+    },
+    {
+      "id": "Prog_MTech",
+      "type": "Program",
+      "name": "M.Tech"
+    },
+    {
+      "id": "Prog_BCA",
+      "type": "Program",
+      "name": "BCA"
+    },
+    {
+      "id": "Prog_MCA",
+      "type": "Program",
+      "name": "MCA"
+    },
+    {
+      "id": "Prog_MBA",
+      "type": "Program",
+      "name": "MBA"
+    },
+    {
+      "id": "Prog_Pharm",
+      "type": "Program",
+      "name": "B.Pharm & D.Pharm"
+    },
+    {
+      "id": "Faculty_Vishal",
+      "type": "Faculty",
+      "name": "Dr. Vishal Awasthi",
+      "role": "Director & Professor"
+    },
+    {
+      "id": "Faculty_Ramendra",
+      "type": "Faculty",
+      "name": "Dr. Ramendra Singh Niranjan",
+      "role": "HOD IT & Associate Professor"
+    },
+    {
+      "id": "Facility_Hostel",
+      "type": "Facility",
+      "name": "CSJMU Hostels (Boys & Girls)"
+    },
+    {
+      "id": "Facility_PlacementCell",
+      "type": "Cell",
+      "name": "Training & Placement Cell"
+    }
+  ],
+  "edges": [
+    {
+      "source": "CSJMU",
+      "target": "UIET",
+      "relation": "CONTAINS_INSTITUTE"
+    },
+    {
+      "source": "UIET",
+      "target": "Dept_CSE",
+      "relation": "HAS_DEPARTMENT"
+    },
+    {
+      "source": "UIET",
+      "target": "Dept_IT",
+      "relation": "HAS_DEPARTMENT"
+    },
+    {
+      "source": "UIET",
+      "target": "Dept_ECE",
+      "relation": "HAS_DEPARTMENT"
+    },
+    {
+      "source": "UIET",
+      "target": "Dept_CHE",
+      "relation": "HAS_DEPARTMENT"
+    },
+    {
+      "source": "UIET",
+      "target": "Dept_ME",
+      "relation": "HAS_DEPARTMENT"
+    },
+    {
+      "source": "UIET",
+      "target": "Dept_MSE",
+      "relation": "HAS_DEPARTMENT"
+    },
+    {
+      "source": "UIET",
+      "target": "Faculty_Vishal",
+      "relation": "DIRECTED_BY"
+    },
+    {
+      "source": "Faculty_Vishal",
+      "target": "Dept_CSE",
+      "relation": "BELONGS_TO"
+    },
+    {
+      "source": "Faculty_Ramendra",
+      "target": "Dept_IT",
+      "relation": "BELONGS_TO"
+    },
+    {
+      "source": "Dept_CSE",
+      "target": "Prog_BTech",
+      "relation": "OFFERS"
+    },
+    {
+      "source": "Dept_IT",
+      "target": "Prog_BTech",
+      "relation": "OFFERS"
+    },
+    {
+      "source": "CSJMU",
+      "target": "Facility_Hostel",
+      "relation": "PROVIDES_FACILITY"
+    },
+    {
+      "source": "UIET",
+      "target": "Facility_PlacementCell",
+      "relation": "HAS_PLACEMENT_CELL"
+    }
+  ]
+}

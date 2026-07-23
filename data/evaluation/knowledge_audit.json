@@ -1,0 +1,63 @@
+{
+  "audited_files": [
+    {
+      "filename": "golden_dataset.json",
+      "size_kb": 259.73,
+      "status": "Audited & Verified"
+    },
+    {
+      "filename": "chunks.json",
+      "size_kb": 34.65,
+      "status": "Audited & Verified"
+    },
+    {
+      "filename": "knowledge_objects.json",
+      "size_kb": 1.4,
+      "status": "Audited & Verified"
+    },
+    {
+      "filename": "query_aliases.json",
+      "size_kb": 104.29,
+      "status": "Audited & Verified"
+    },
+    {
+      "filename": "clean_syllabus.json",
+      "size_kb": 12.17,
+      "status": "Audited & Verified"
+    },
+    {
+      "filename": "human_review.csv",
+      "size_kb": 218.58,
+      "status": "Audited & Verified"
+    },
+    {
+      "filename": "wrong_answers.json",
+      "size_kb": 0.05,
+      "status": "Audited & Verified"
+    },
+    {
+      "filename": "missing_documents.json",
+      "size_kb": 29.28,
+      "status": "Audited & Verified"
+    },
+    {
+      "filename": "retrieval_improvements.json",
+      "size_kb": 0.05,
+      "status": "Audited & Verified"
+    },
+    {
+      "filename": "prompt_improvements.json",
+      "size_kb": 10.63,
+      "status": "Audited & Verified"
+    }
+  ],
+  "duplicate_knowledge_items": [],
+  "contradicting_information": [],
+  "redundant_chunks": 0,
+  "poor_chunk_boundaries": {
+    "very_short_chunks_lt_80_chars": 0,
+    "very_long_chunks_gt_800_chars": 0
+  },
+  "empty_metadata_fields": 0,
+  "missing_metadata_fields": 0
+}

@@ -1,0 +1,24 @@
+id,category,question,answer,response_time_sec,word_count,http_status,retrieval_count,retrieval_score,passed,status,flags,flag_count
+1,General,Where is Chhatrapati Shahu Ji Maharaj University (CSJMU) located?,"Chhatrapati Shahu Ji Maharaj University (CSJMU) is located in Kanpur, Uttar Pradesh.",15.723,12,200,5,1.0,False,FAIL,Short Answer (<20 words),1
+2,General,What is the full name of UIET Kanpur?,The full name of UIET Kanpur is University Institute of Engineering and Technology (UIET).,19.288,14,200,5,1.0,False,FAIL,Short Answer (<20 words),1
+3,General,When was CSJMU established?,"The answer to the question ""When was CSJMU established?"" is:
+
+CSJM University has been on the map of higher education for more than five decades. With a steadfast trajectory of progress since its establishment in 1966, it now boasts of a vibrant campus wing and approximately 700 affiliated colleges across seven districts of Uttar Pradesh.
+
+So, according to this information, CSJMU was established in 1966.",11.768,65,200,5,1.0,True,PASS,None,0
+4,General,What are the major schools and institutes in CSJMU?,"The major schools and institutes in CSJMU are:
+
+1. School of Engineering & Technology (UIET)
+2. School of Business Management
+3. Atal Bihari Vajpayee School of Legal Studies
+4. Schools of Life Sciences & Biotechnology
+5. School of Basic Sciences
+6. School of Arts, Humanities and Social Sciences
+7. School of Languages
+8. School of Health Sciences
+9. School of Performing and Creative Arts
+10. School of Pharmaceutical Sciences
+11. School of Advanced Agriculture Sciences and Technology
+12. School of Education
+13. School of Hospitality, Tourism and Catering Technology",26.31,89,200,5,1.0,True,PASS,None,0
+5,General,Does CSJMU have an official helpline or contact email?,"Based on the provided context, I found that CSJMU does not have an official helpline or contact email mentioned. The context only provides phone numbers (8090803220), website URLs (www.innovation.csjmu.ac.in and https://placement.csjmu.ac.in/), and email addresses for specific departments and individuals, but no information about a general helpline or contact email is available.",8.771,51,200,5,1.0,True,PASS,None,0

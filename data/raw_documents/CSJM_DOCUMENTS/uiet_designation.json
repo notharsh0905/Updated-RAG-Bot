@@ -1,0 +1,65 @@
+[
+    {
+        "name": "Dr. Brishti Mitra",
+        "designation": "DEAN ACADEMICS OF CHHATRAPATI SAHU JI MAHARAJ UNIVERSITY(CSJMU)",
+        "email": "dean_acad@csjmu.ac.in",
+        "mobile_no": "9935167873",
+        "profile_url": "https://csjmu.ac.in/all-faculty/dr-brishti-mitra/"
+    },
+    {
+        "name": "Dr. Alok Kumar",
+        "designation": "Director of University Institute of Engineering and Technology (UIET)",
+        "email": "director.uiet@csjmu.ac.in",
+        "mobile_no": "7007713064",
+        "profile_url": "https://csjmu.ac.in/all-faculty/dr-alok-kumar/"
+    },
+    {
+        "name": "Dr. Sandesh Gupta",
+        "designation": "Head of department(hod) of Bachelors in Computer Science and Engineering(B.Tech in CSE) and Computer Science and Engineering-Artificial Intelligence(B.tech in CSE-AI), Masters in computer science and engineering(M.tech in )",
+        "email": "sandesh@csjmu.ac.in",
+        "mobile_no": "9830530450",
+        "profile_url": "https://csjmu.ac.in/all-faculty/dr-sandesh-gupta/"
+    },
+    {
+        "name": "Dr. Ajeet Kumar Srivastava",
+        "designation": "Head of department(hod) of Bachelors in Electronics and Communication Engineering(ECE), Diploma in Electrical Engineering, Integrated M.Sc. Electronics, M.Tech in Electronics and Communication Engineering(M.tech in ECE).",
+        "email": "ajeetsrivastava@csjmu.ac.in",
+        "mobile_no": "9307511919",
+        "profile_url": "https://csjmu.ac.in/all-faculty/er-ajeet-kumar-srivastva/"
+    },
+    {
+        "name": "Dr. Pushpa Mamoria",
+        "designation": "Head of department(hod) of bachelors and masters Computer Applications, (CA, BCA, MCA)",
+        "email": "pushpamamoria@csjmu.ac.in",
+        "mobile_no": "9455816503",
+        "profile_url": "https://csjmu.ac.in/all-faculty/dr-pushpa-mamoria/"
+    },
+    {
+        "name": "Dr. Vijay Kumar Kashyap",
+        "designation": "Head of department(hod) of Materials Science & Metallurgical Engineering(MSME)",
+        "email": "vijaykashyap@csjmu.ac.in",
+        "mobile_no": "8765673930",
+        "profile_url": "https://csjmu.ac.in/all-faculty/dr-vijay-kumar-kashyap/"
+    },
+    {
+        "name": "Dr. Gaurav Kumar Pandey",
+        "designation": "Head of department(hod) of Mechanical Engineering(ME)",
+        "email": "gauravkpandey@csjmu.ac.in",
+        "mobile_no": "9889709786",
+        "profile_url": "https://csjmu.ac.in/all-faculty/dr-gaurav-kumar-pandey/"
+    },
+    {
+        "name": "Dr. Abhishek Kumar Chandra",
+        "designation": "Head of department(hod) of Chemical Engineering(CE)",
+        "email": "abhishekchandra@csjmu.ac.in",
+        "mobile_no": "9450326388",
+        "profile_url": "https://csjmu.ac.in/all-faculty/dr-abhishek-kumar-chandra/s"
+    },
+    {
+        "name": "Ar. Ashutosh Pathak",
+        "designation": "Head of department(hod) of bachelors Vocational Studies and Design, Diploma in Interiar Design and Fashion Technology(VOC, B.VOC)",
+        "email": "ashutoshpathak@csjmu.ac.in",
+        "mobile_no": "",
+        "profile_url": "https://csjmu.ac.in/all-faculty/ar-ashutosh-pathak/"
+    }
+]

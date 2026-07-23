@@ -1,0 +1,310 @@
+{
+  "collection_counts": {
+    "Admissions": 2,
+    "Faculty": 2,
+    "Departments": 0,
+    "Hostel": 1,
+    "Placements": 0,
+    "Scholarships": 0,
+    "Syllabus": 49,
+    "Regulations": 0,
+    "Academic_Calendar": 0,
+    "Facilities": 0,
+    "Notices": 0,
+    "FAQs": 19
+  },
+  "chunk_mappings": [
+    {
+      "chunk_id": "opt_chunk_001",
+      "assigned_collection": "Admissions"
+    },
+    {
+      "chunk_id": "opt_chunk_002",
+      "assigned_collection": "Syllabus"
+    },
+    {
+      "chunk_id": "opt_chunk_003",
+      "assigned_collection": "Syllabus"
+    },
+    {
+      "chunk_id": "opt_chunk_004",
+      "assigned_collection": "Syllabus"
+    },
+    {
+      "chunk_id": "opt_chunk_005",
+      "assigned_collection": "Syllabus"
+    },
+    {
+      "chunk_id": "opt_chunk_006",
+      "assigned_collection": "Syllabus"
+    },
+    {
+      "chunk_id": "opt_chunk_007",
+      "assigned_collection": "Syllabus"
+    },
+    {
+      "chunk_id": "opt_chunk_008",
+      "assigned_collection": "Syllabus"
+    },
+    {
+      "chunk_id": "opt_chunk_009",
+      "assigned_collection": "Faculty"
+    },
+    {
+      "chunk_id": "opt_chunk_010",
+      "assigned_collection": "Syllabus"
+    },
+    {
+      "chunk_id": "opt_chunk_011",
+      "assigned_collection": "Syllabus"
+    },
+    {
+      "chunk_id": "opt_chunk_012",
+      "assigned_collection": "Syllabus"
+    },
+    {
+      "chunk_id": "opt_chunk_013",
+      "assigned_collection": "Syllabus"
+    },
+    {
+      "chunk_id": "opt_chunk_014",
+      "assigned_collection": "Syllabus"
+    },
+    {
+      "chunk_id": "opt_chunk_015",
+      "assigned_collection": "Syllabus"
+    },
+    {
+      "chunk_id": "opt_chunk_016",
+      "assigned_collection": "Syllabus"
+    },
+    {
+      "chunk_id": "opt_chunk_017",
+      "assigned_collection": "Syllabus"
+    },
+    {
+      "chunk_id": "opt_chunk_018",
+      "assigned_collection": "FAQs"
+    },
+    {
+      "chunk_id": "opt_chunk_019",
+      "assigned_collection": "FAQs"
+    },
+    {
+      "chunk_id": "opt_chunk_020",
+      "assigned_collection": "FAQs"
+    },
+    {
+      "chunk_id": "opt_chunk_021",
+      "assigned_collection": "FAQs"
+    },
+    {
+      "chunk_id": "opt_chunk_022",
+      "assigned_collection": "FAQs"
+    },
+    {
+      "chunk_id": "opt_chunk_023",
+      "assigned_collection": "FAQs"
+    },
+    {
+      "chunk_id": "opt_chunk_024",
+      "assigned_collection": "FAQs"
+    },
+    {
+      "chunk_id": "opt_chunk_025",
+      "assigned_collection": "FAQs"
+    },
+    {
+      "chunk_id": "opt_chunk_026",
+      "assigned_collection": "FAQs"
+    },
+    {
+      "chunk_id": "opt_chunk_027",
+      "assigned_collection": "FAQs"
+    },
+    {
+      "chunk_id": "opt_chunk_028",
+      "assigned_collection": "FAQs"
+    },
+    {
+      "chunk_id": "opt_chunk_029",
+      "assigned_collection": "FAQs"
+    },
+    {
+      "chunk_id": "opt_chunk_030",
+      "assigned_collection": "FAQs"
+    },
+    {
+      "chunk_id": "opt_chunk_031",
+      "assigned_collection": "FAQs"
+    },
+    {
+      "chunk_id": "opt_chunk_032",
+      "assigned_collection": "FAQs"
+    },
+    {
+      "chunk_id": "opt_chunk_033",
+      "assigned_collection": "FAQs"
+    },
+    {
+      "chunk_id": "opt_chunk_034",
+      "assigned_collection": "FAQs"
+    },
+    {
+      "chunk_id": "opt_chunk_035",
+      "assigned_collection": "Syllabus"
+    },
+    {
+      "chunk_id": "opt_chunk_036",
+      "assigned_collection": "Syllabus"
+    },
+    {
+      "chunk_id": "opt_chunk_037",
+      "assigned_collection": "Syllabus"
+    },
+    {
+      "chunk_id": "opt_chunk_038",
+      "assigned_collection": "Syllabus"
+    },
+    {
+      "chunk_id": "opt_chunk_039",
+      "assigned_collection": "FAQs"
+    },
+    {
+      "chunk_id": "opt_chunk_040",
+      "assigned_collection": "FAQs"
+    },
+    {
+      "chunk_id": "opt_chunk_041",
+      "assigned_collection": "Syllabus"
+    },
+    {
+      "chunk_id": "opt_chunk_042",
+      "assigned_collection": "Syllabus"
+    },
+    {
+      "chunk_id": "opt_chunk_043",
+      "assigned_collection": "Syllabus"
+    },
+    {
+      "chunk_id": "opt_chunk_044",
+      "assigned_collection": "Syllabus"
+    },
+    {
+      "chunk_id": "opt_chunk_045",
+      "assigned_collection": "Syllabus"
+    },
+    {
+      "chunk_id": "opt_chunk_046",
+      "assigned_collection": "Syllabus"
+    },
+    {
+      "chunk_id": "opt_chunk_047",
+      "assigned_collection": "Syllabus"
+    },
+    {
+      "chunk_id": "opt_chunk_048",
+      "assigned_collection": "Syllabus"
+    },
+    {
+      "chunk_id": "opt_chunk_049",
+      "assigned_collection": "Syllabus"
+    },
+    {
+      "chunk_id": "opt_chunk_050",
+      "assigned_collection": "Syllabus"
+    },
+    {
+      "chunk_id": "opt_chunk_051",
+      "assigned_collection": "Syllabus"
+    },
+    {
+      "chunk_id": "opt_chunk_052",
+      "assigned_collection": "Syllabus"
+    },
+    {
+      "chunk_id": "opt_chunk_053",
+      "assigned_collection": "Syllabus"
+    },
+    {
+      "chunk_id": "opt_chunk_054",
+      "assigned_collection": "Syllabus"
+    },
+    {
+      "chunk_id": "opt_chunk_055",
+      "assigned_collection": "Syllabus"
+    },
+    {
+      "chunk_id": "opt_chunk_056",
+      "assigned_collection": "Syllabus"
+    },
+    {
+      "chunk_id": "opt_chunk_057",
+      "assigned_collection": "Syllabus"
+    },
+    {
+      "chunk_id": "opt_chunk_058",
+      "assigned_collection": "Syllabus"
+    },
+    {
+      "chunk_id": "opt_chunk_059",
+      "assigned_collection": "Syllabus"
+    },
+    {
+      "chunk_id": "opt_chunk_060",
+      "assigned_collection": "Admissions"
+    },
+    {
+      "chunk_id": "opt_chunk_061",
+      "assigned_collection": "Syllabus"
+    },
+    {
+      "chunk_id": "opt_chunk_062",
+      "assigned_collection": "Syllabus"
+    },
+    {
+      "chunk_id": "opt_chunk_063",
+      "assigned_collection": "Syllabus"
+    },
+    {
+      "chunk_id": "opt_chunk_064",
+      "assigned_collection": "Syllabus"
+    },
+    {
+      "chunk_id": "opt_chunk_065",
+      "assigned_collection": "Syllabus"
+    },
+    {
+      "chunk_id": "opt_chunk_066",
+      "assigned_collection": "Syllabus"
+    },
+    {
+      "chunk_id": "opt_chunk_067",
+      "assigned_collection": "Syllabus"
+    },
+    {
+      "chunk_id": "opt_chunk_068",
+      "assigned_collection": "Syllabus"
+    },
+    {
+      "chunk_id": "opt_chunk_069",
+      "assigned_collection": "Syllabus"
+    },
+    {
+      "chunk_id": "opt_chunk_070",
+      "assigned_collection": "Syllabus"
+    },
+    {
+      "chunk_id": "opt_chunk_071",
+      "assigned_collection": "Syllabus"
+    },
+    {
+      "chunk_id": "opt_chunk_072",
+      "assigned_collection": "Faculty"
+    },
+    {
+      "chunk_id": "opt_chunk_073",
+      "assigned_collection": "Hostel"
+    }
+  ]
+}
