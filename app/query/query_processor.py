@@ -66,7 +66,12 @@ DOMAIN_SPELL_MAP = {
     "llb": "LLB",
     "llm": "LLM",
     "bpt": "BPT",
-    "bmlt": "BMLT"
+    "bmlt": "BMLT",
+    "tcs": "TCS Tata Consultancy Services campus placements",
+    "jio": "Jio Platforms campus placement",
+    "cadence": "Cadence Design Systems placement package",
+    "quizizz": "Quizizz campus placement package",
+    "prospa": "Prospa Inc placement package"
 }
 
 

@@ -353,6 +353,26 @@
       "source": "GATE_ACHIEVEMENTS",
       "target": "ZARISH_RASHID_AIR_317",
       "relation": "features_top_ranker"
+    },
+    {
+      "source": "PLACEMENT_REPORT_2025",
+      "target": "HIGHEST_PACKAGE_45LPA",
+      "relation": "records_highest_salary"
+    },
+    {
+      "source": "PLACEMENT_REPORT_2025",
+      "target": "TOP_RECRUITERS",
+      "relation": "lists_recruiters"
+    },
+    {
+      "source": "PLACEMENT_REPORT_2025",
+      "target": "HIGHEST_PACKAGE_45LPA",
+      "relation": "records_highest_salary"
+    },
+    {
+      "source": "PLACEMENT_REPORT_2025",
+      "target": "TOP_RECRUITERS",
+      "relation": "lists_recruiters"
     }
   ]
 }
