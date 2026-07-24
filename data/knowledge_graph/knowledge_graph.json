@@ -91,6 +91,81 @@
       "id": "Facility_PlacementCell",
       "type": "Cell",
       "name": "Training & Placement Cell"
+    },
+    {
+      "id": "UIET_PROSPECTUS_2026",
+      "label": "UIET Prospectus 2026",
+      "type": "Document"
+    },
+    {
+      "id": "SUPERCOMPUTING_HUB",
+      "label": "Supercomputing Hub (NVIDIA DGX H100)",
+      "type": "ResearchFacility"
+    },
+    {
+      "id": "CYBER_SECURITY_LAB",
+      "label": "Cyber Security Laboratory",
+      "type": "Laboratory"
+    },
+    {
+      "id": "AICTE_IDEA_LAB",
+      "label": "AICTE IDEA Lab",
+      "type": "Laboratory"
+    },
+    {
+      "id": "DRONE_LAB",
+      "label": "Drone Laboratory & Innovation Center",
+      "type": "Laboratory"
+    },
+    {
+      "id": "BCA_MCA_DEPT",
+      "label": "Department of Computer Applications",
+      "type": "Department"
+    },
+    {
+      "id": "VOCATIONAL_STUDIES_DEPT",
+      "label": "Department of Vocational Studies",
+      "type": "Department"
+    },
+    {
+      "id": "PROFESSORS_OF_PRACTICE",
+      "label": "Professors of Practice",
+      "type": "FacultyGroup"
+    },
+    {
+      "id": "PLACEMENT_REPORT_2025",
+      "label": "UIET Placement Report 2023-2025",
+      "type": "Document"
+    },
+    {
+      "id": "HIGHEST_PACKAGE_45LPA",
+      "label": "Highest Package (45.00 LPA / 16.00 LPA)",
+      "type": "PlacementFact"
+    },
+    {
+      "id": "TOP_RECRUITERS",
+      "label": "Quizizz, Cadence, Prospa, Sopra Steria, TCS, Jio",
+      "type": "RecruiterGroup"
+    },
+    {
+      "id": "GATE_ACHIEVEMENTS",
+      "label": "GATE Qualified Students (2023-2024)",
+      "type": "AchievementGroup"
+    },
+    {
+      "id": "AMAN_SINGH_AIR_19",
+      "label": "Aman Singh (CHE) - AIR 19",
+      "type": "StudentAchiever"
+    },
+    {
+      "id": "UTKARSH_TRIPATHI_AIR_182",
+      "label": "Utkarsh Tripathi (CHE) - AIR 182",
+      "type": "StudentAchiever"
+    },
+    {
+      "id": "ZARISH_RASHID_AIR_317",
+      "label": "Zarish Rashid (MSME) - AIR 317",
+      "type": "StudentAchiever"
     }
   ],
   "edges": [
@@ -163,6 +238,121 @@
       "source": "UIET",
       "target": "Facility_PlacementCell",
       "relation": "HAS_PLACEMENT_CELL"
+    },
+    {
+      "source": "UIET_PROSPECTUS_2026",
+      "target": "SUPERCOMPUTING_HUB",
+      "relation": "features_facility"
+    },
+    {
+      "source": "UIET_PROSPECTUS_2026",
+      "target": "CYBER_SECURITY_LAB",
+      "relation": "features_facility"
+    },
+    {
+      "source": "UIET_PROSPECTUS_2026",
+      "target": "AICTE_IDEA_LAB",
+      "relation": "features_facility"
+    },
+    {
+      "source": "UIET_PROSPECTUS_2026",
+      "target": "DRONE_LAB",
+      "relation": "features_facility"
+    },
+    {
+      "source": "UIET_PROSPECTUS_2026",
+      "target": "BCA_MCA_DEPT",
+      "relation": "includes_department"
+    },
+    {
+      "source": "UIET_PROSPECTUS_2026",
+      "target": "VOCATIONAL_STUDIES_DEPT",
+      "relation": "includes_department"
+    },
+    {
+      "source": "UIET_PROSPECTUS_2026",
+      "target": "SUPERCOMPUTING_HUB",
+      "relation": "features_facility"
+    },
+    {
+      "source": "UIET_PROSPECTUS_2026",
+      "target": "CYBER_SECURITY_LAB",
+      "relation": "features_facility"
+    },
+    {
+      "source": "UIET_PROSPECTUS_2026",
+      "target": "AICTE_IDEA_LAB",
+      "relation": "features_facility"
+    },
+    {
+      "source": "UIET_PROSPECTUS_2026",
+      "target": "DRONE_LAB",
+      "relation": "features_facility"
+    },
+    {
+      "source": "UIET_PROSPECTUS_2026",
+      "target": "BCA_MCA_DEPT",
+      "relation": "includes_department"
+    },
+    {
+      "source": "UIET_PROSPECTUS_2026",
+      "target": "VOCATIONAL_STUDIES_DEPT",
+      "relation": "includes_department"
+    },
+    {
+      "source": "PLACEMENT_REPORT_2025",
+      "target": "HIGHEST_PACKAGE_45LPA",
+      "relation": "records_highest_salary"
+    },
+    {
+      "source": "PLACEMENT_REPORT_2025",
+      "target": "TOP_RECRUITERS",
+      "relation": "lists_recruiters"
+    },
+    {
+      "source": "GATE_ACHIEVEMENTS",
+      "target": "AMAN_SINGH_AIR_19",
+      "relation": "features_top_ranker"
+    },
+    {
+      "source": "GATE_ACHIEVEMENTS",
+      "target": "UTKARSH_TRIPATHI_AIR_182",
+      "relation": "features_top_ranker"
+    },
+    {
+      "source": "GATE_ACHIEVEMENTS",
+      "target": "ZARISH_RASHID_AIR_317",
+      "relation": "features_top_ranker"
+    },
+    {
+      "source": "GATE_ACHIEVEMENTS",
+      "target": "AMAN_SINGH_AIR_19",
+      "relation": "features_top_ranker"
+    },
+    {
+      "source": "GATE_ACHIEVEMENTS",
+      "target": "UTKARSH_TRIPATHI_AIR_182",
+      "relation": "features_top_ranker"
+    },
+    {
+      "source": "GATE_ACHIEVEMENTS",
+      "target": "ZARISH_RASHID_AIR_317",
+      "relation": "features_top_ranker"
+    },
+    {
+      "source": "GATE_ACHIEVEMENTS",
+      "target": "AMAN_SINGH_AIR_19",
+      "relation": "features_top_ranker"
+    },
+    {
+      "source": "GATE_ACHIEVEMENTS",
+      "target": "UTKARSH_TRIPATHI_AIR_182",
+      "relation": "features_top_ranker"
+    },
+    {
+      "source": "GATE_ACHIEVEMENTS",
+      "target": "ZARISH_RASHID_AIR_317",
+      "relation": "features_top_ranker"
     }
   ]
 }

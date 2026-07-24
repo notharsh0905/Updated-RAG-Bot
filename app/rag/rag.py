@@ -18,6 +18,7 @@ from app.rag.prompt import PromptBuilder
 from app.query.query_processor import query_processor
 from app.memory.memory import memory_manager
 from app.cache.cache import response_cache
+from app.rag.response_enrichment import response_enrichment_engine
 from app.analytics.database import db_manager
 from app.core.logging_config import setup_logger
 
@@ -121,7 +122,10 @@ class RAGPipeline:
         elapsed_time = round(time.time() - start_time, 3)
         logger.info(f"Successfully generated response from Ollama in {elapsed_time}s.")
 
-        # 8. Save to memory & database
+        # 8. Enrich Response with Campus Fact & Clickable Suggested Questions
+        enrichment = response_enrichment_engine.enrich_response(question, answer, active_session)
+
+        # Save to memory & database
         memory_manager.add_user_message(active_session, question)
         memory_manager.add_assistant_message(active_session, answer)
 
@@ -140,6 +144,9 @@ class RAGPipeline:
             "session_id": active_session,
             "question": question,
             "answer": answer,
+            "full_enriched_text": enrichment["full_enriched_text"],
+            "campus_fact": enrichment["campus_fact"],
+            "suggested_questions": enrichment["suggested_questions"],
             "context": context,
             "sources": sources,
             "response_time_sec": elapsed_time
@@ -194,6 +201,18 @@ class RAGPipeline:
             token = chunk.content if hasattr(chunk, "content") else str(chunk)
             full_answer += token
             yield token
+
+        # Append Smart Campus Fact & Clickable Suggestions on stream completion
+        enrichment = response_enrichment_engine.enrich_response(question, full_answer, active_session)
+
+        if enrichment["campus_fact"]:
+            fact_md = f"\n\n{enrichment['campus_fact']['display_markdown']}"
+            yield fact_md
+
+        if enrichment["suggested_questions"]:
+            sug_md = "\n\n────────────────────────\n**You may also want to know:**\n"
+            sug_md += "\n".join([f"• [{q}]" for q in enrichment["suggested_questions"]])
+            yield sug_md
 
         # Save memory on stream completion
         memory_manager.add_user_message(active_session, question)

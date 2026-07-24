@@ -1,0 +1,43 @@
+[
+  {
+    "category": "Placement Highlights & Summary",
+    "academic_year": "2023-2025",
+    "highest_package": "45.00 LPA",
+    "average_package": "6.50 LPA",
+    "median_package": "5.50 LPA",
+    "top_recruiter_highest": "Quizizz (16 LPA), Cadence Design Systems (15 LPA), Prospa Inc (12 LPA)",
+    "placement_percentage": "85.4%",
+    "content": "UIET CSJM University Training and Placement Cell achieved stellar campus placements for 2023-2025. The highest international package reached 45.00 LPA, with top domestic packages of 16.00 LPA (Quizizz), 15.00 LPA (Cadence Design Systems), 12.00 LPA (Prospa Inc), 7.00 LPA (TCS / Jio / Nucleus), and 6.6 LPA (Vigorous Healtech). Overall placement percentage across B.Tech engineering branches exceeds 85%."
+  },
+  {
+    "category": "Branch-wise Placements - CSE & IT",
+    "academic_year": "2023-2025",
+    "branch": "Computer Science & Engineering (CSE) and Information Technology (IT)",
+    "key_recruiters": "Quizizz, Cadence, Prospa, Virtusa, Step2Gen, Sopra Steria, TCS, Jio Platforms, Nucleus Software, Vinove Software, ExtraMarks",
+    "student_placements": "Shraddha Rani Verma (IT - Quizizz 16 LPA), Lakshmendra Pratap Singh (CSE - Cadence 15 LPA), Akash Maddhesiya (CSE - Prospa 12 LPA / Virtusa 5 LPA), Akarsh Tripathi (CSE - Sopra Steria 6 LPA), Tushar Pandey (IT - TCS / Jio 7 LPA), Tarang Sharma (IT - 7 LPA), Utkarsh Saxena (IT - 6 LPA), Ankur Pandey & Aditya Tiwari (CSE - TCS / Nucleus / Vinove 7 LPA / 5.4 LPA), Khushi Nigam (CSE - 6 LPA).",
+    "content": "Computer Science & Engineering (CSE) and Information Technology (IT) departments recorded 90%+ placement rates. Major recruiters include Quizizz (16 LPA), Cadence Design Systems (15 LPA), Prospa (12 LPA), Sopra Steria (6 LPA), TCS (7 LPA), Jio Platforms (7 LPA), Virtusa (5 LPA), Step2Gen, and Nucleus Software."
+  },
+  {
+    "category": "Branch-wise Placements - ECE & CHE",
+    "academic_year": "2023-2025",
+    "branch": "Electronics & Communication Engineering (ECE) and Chemical Engineering (CHE)",
+    "key_recruiters": "Vodafone Idea, Sanchit Gupta, Saurav Chemicals, RSPL Group, SmartBrains, Emerson, Emeiss Technologies, Spirale Infosoft",
+    "student_placements": "Karan Tiwari (ECE - 6 LPA), Sanchit Gupta (ECE - 5 LPA), Akansha Singh (ECE - 5.5 LPA), Rabia Ansari (ECE - Vodafone Idea 5 LPA), Mohd Kaif (CHE - Saurav Chemicals 4 LPA), Divya Singh & Kashan Maqbool (CHE - 4 LPA), Aditya Sahani & Rajat Verma (CHE - RSPL Group 2.16 LPA).",
+    "content": "Electronics & Communication (ECE) and Chemical Engineering (CHE) graduates secured core and IT offers. ECE students bagged offers up to 6 LPA with Vodafone Idea, Emeiss Technologies, and Spirale Infosoft. Chemical Engineering students were recruited by Saurav Chemicals (4 LPA) and RSPL Group."
+  },
+  {
+    "category": "Branch-wise Placements - MEE & MSME",
+    "academic_year": "2023-2025",
+    "branch": "Mechanical Engineering (MEE) and Materials Science & Metallurgical Engineering (MSME)",
+    "key_recruiters": "Exotic Learning, Learning Routes, RSPL Group, Viraaj Ventures, West Auto Components, Surya Electronics, SmartBrains",
+    "student_placements": "Abhinav Kumar Yadav (MEE - Exotic Learning 6.12 LPA), Aman Srivastava (MEE - 6.12 LPA / RSPL 2.16 LPA), Zarish Rashid (MSME - Learning Routes 5.7 LPA), Nivedita Mishra & Aditi Mishra (MEE - Viraaj Ventures 5.21 LPA), Ankit Kumar Rai & Harsh Mishra (MEE - West Auto Components 2.2 LPA).",
+    "content": "Mechanical Engineering (MEE) and Metallurgical Engineering (MSME) students were placed across core manufacturing, automotive, and ed-tech companies including Exotic Learning (6.12 LPA), Learning Routes (5.7 LPA), Viraaj Ventures (5.21 LPA), West Auto Components (2.2 LPA), and RSPL Group."
+  },
+  {
+    "category": "Placement Process, Internships & Training Activities",
+    "academic_year": "2023-2025",
+    "training_cell": "UIET Training and Placement Cell (T&P Cell)",
+    "activities": "Campus recruitment drives, pre-placement training, mock interviews, aptitude development, coding bootcamps, industrial visits, summer internships",
+    "content": "The UIET Training and Placement Cell organizes year-round soft skills training, technical coding bootcamps, industrial internships, mock interview sessions, and active campus recruitment drives connecting students with over 100+ national and multinational recruiters."
+  }
+]
