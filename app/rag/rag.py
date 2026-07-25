@@ -117,17 +117,19 @@ class RAGPipeline:
 
         # 7. Invoke LLM
         response = self.llm.invoke(prompt)
-        answer = response.content
+        raw_answer = response.content
+        answer = self.sanitize_response(raw_answer)
 
         elapsed_time = round(time.time() - start_time, 3)
         logger.info(f"Successfully generated response from Ollama in {elapsed_time}s.")
 
         # 8. Enrich Response with Campus Fact & Clickable Suggested Questions
         enrichment = response_enrichment_engine.enrich_response(question, answer, active_session)
+        full_enriched_text = enrichment["full_enriched_text"]
 
         # Save to memory & database
         memory_manager.add_user_message(active_session, question)
-        memory_manager.add_assistant_message(active_session, answer)
+        memory_manager.add_assistant_message(active_session, full_enriched_text)
 
         sources = [
             {
@@ -138,13 +140,14 @@ class RAGPipeline:
             for doc in retrieved_docs
         ]
 
-        db_manager.log_query(active_session, question, norm_question, answer, elapsed_time, len(sources), cached=False)
+        db_manager.log_query(active_session, question, norm_question, full_enriched_text, elapsed_time, len(sources), cached=False)
 
         result_payload = {
             "session_id": active_session,
             "question": question,
-            "answer": answer,
-            "full_enriched_text": enrichment["full_enriched_text"],
+            "answer": full_enriched_text,
+            "direct_answer": answer,
+            "full_enriched_text": full_enriched_text,
             "campus_fact": enrichment["campus_fact"],
             "suggested_questions": enrichment["suggested_questions"],
             "context": context,
@@ -154,12 +157,40 @@ class RAGPipeline:
 
         # Save to cache
         if use_cache:
-            response_cache.put(norm_question, k, strict_prompt, result_payload if return_sources else answer)
+            response_cache.put(norm_question, k, strict_prompt, result_payload if return_sources else full_enriched_text)
 
         if return_sources:
             return result_payload
 
-        return answer
+        return full_enriched_text
+
+    @staticmethod
+    def sanitize_response(text: str) -> str:
+        """Sanitizes any stray developer or RAG terminology into official university phrasing."""
+        if not text:
+            return text
+
+        import re
+        replacements = [
+            (r"(?i)based on the provided context,?\s*", "According to official CSJMU records, "),
+            (r"(?i)based on the context,?\s*", "According to official CSJMU records, "),
+            (r"(?i)according to the provided context,?\s*", "According to official CSJMU records, "),
+            (r"(?i)according to the context,?\s*", "According to official CSJMU records, "),
+            (r"(?i)the provided context does not mention\b", "the currently indexed official university documents do not specify"),
+            (r"(?i)the context does not mention\b", "the currently indexed official university documents do not specify"),
+            (r"(?i)the retrieved documents do not mention\b", "the currently indexed official university documents do not specify"),
+            (r"(?i)the retrieved context does not contain\b", "the currently indexed official university documents do not specify"),
+            (r"(?i)in the provided documents,?\s*", "in official university records, "),
+            (r"(?i)this information is not available in the provided documents\.?", "The currently indexed official university documents do not specify this information."),
+            (r"(?i)there is no context provided\b", "The currently indexed official university documents do not specify this information."),
+            (r"(?i)there is no information in the context\b", "The currently indexed official university documents do not specify this information."),
+        ]
+
+        sanitized = text
+        for pattern, replacement in replacements:
+            sanitized = re.sub(pattern, replacement, sanitized)
+
+        return sanitized
 
     def ask_stream(
         self,
@@ -196,27 +227,25 @@ class RAGPipeline:
         else:
             prompt = PromptBuilder.build_flexible_prompt(context, rewritten_question)
 
-        full_answer = ""
+        full_raw_answer = ""
         for chunk in self.llm.stream(prompt):
             token = chunk.content if hasattr(chunk, "content") else str(chunk)
-            full_answer += token
+            full_raw_answer += token
             yield token
 
-        # Append Smart Campus Fact & Clickable Suggestions on stream completion
-        enrichment = response_enrichment_engine.enrich_response(question, full_answer, active_session)
+        sanitized_answer = self.sanitize_response(full_raw_answer)
+
+        # Append Smart Campus Fact on stream completion
+        enrichment = response_enrichment_engine.enrich_response(question, sanitized_answer, active_session)
 
         if enrichment["campus_fact"]:
             fact_md = f"\n\n{enrichment['campus_fact']['display_markdown']}"
             yield fact_md
 
-        if enrichment["suggested_questions"]:
-            sug_md = "\n\n────────────────────────\n**You may also want to know:**\n"
-            sug_md += "\n".join([f"• [{q}]" for q in enrichment["suggested_questions"]])
-            yield sug_md
-
         # Save memory on stream completion
+        full_final = f"{sanitized_answer}\n\n{enrichment['campus_fact']['display_markdown']}" if enrichment["campus_fact"] else sanitized_answer
         memory_manager.add_user_message(active_session, question)
-        memory_manager.add_assistant_message(active_session, full_answer)
+        memory_manager.add_assistant_message(active_session, full_final)
 
     def rebuild_database(self) -> Dict[str, Any]:
         """

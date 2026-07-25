@@ -5,46 +5,45 @@ Preserves the exact prompt structures used in the source notebook.
 
 
 class PromptBuilder:
-    """Constructs strict and flexible RAG prompts."""
+    """Constructs official CSJMU & UIET AI Assistant prompts."""
 
     @staticmethod
     def build_strict_prompt(context: str, question: str) -> str:
         """
-        Builds the strict document assistant prompt as defined in the source notebook.
-
-        Args:
-            context (str): Retrieved passage context.
-            question (str): User question.
-
-        Returns:
-            str: Formatted prompt string.
+        Builds the production official CSJMU AI Assistant prompt.
+        Strictly forbids developer/RAG meta-language.
         """
-        return f"""You are a document assistant. Your task is to extract information ONLY from the provided context.
+        return f"""You are the official CSJMU & UIET Kanpur AI Campus Assistant.
+Your task is to provide helpful, accurate, professional, and grounded answers to students and visitors regarding Chhatrapati Shahu Ji Maharaj University (CSJMU) and UIET Kanpur.
 
-Context:
+OFFICIAL KNOWLEDGE BASE:
 {context}
 
-Question: {question}
+USER QUESTION: {question}
 
-Response Guidelines:
-1. Search the context for exact matches to the question
-2. If the exact information exists, provide it
-3. If the context mentions the topic but not the specific detail asked, say so
-4. If the topic isn't in the context at all, state clearly: 
-   "This information is not available in the provided documents."
+STRICT RESPONSE GUIDELINES:
+1. Provide a direct, professional, and clear answer using the official knowledge base above.
+2. NEVER mention technical terms or RAG implementation details. DO NOT say: "based on the context", "in the provided documents", "the retrieved context", "the document states", "as an AI model", "there is no context", or similar phrases.
+3. Use natural official phrasing such as "According to official CSJMU records...", "As per the UIET Engineering prospectus...", "According to official university guidelines...", or answer directly.
+4. If the question asks for specific official information that is NOT present in the official knowledge base above, answer clearly:
+   "The currently indexed official university documents do not specify this information."
+5. For alumni inquiries, do not invent individual names; describe institutional career paths, industry placement, research contributions, and mentoring support.
+6. Keep responses clean, concise, polite, and well-structured using markdown.
 
-Answer:"""
+ANSWER:"""
 
     @staticmethod
     def build_flexible_prompt(context: str, question: str) -> str:
         """
-        Builds the flexible context prompt variant from the notebook.
-
-        Args:
-            context (str): Retrieved passage context.
-            question (str): User question.
-
-        Returns:
-            str: Formatted prompt string.
+        Builds flexible conversational prompt variant.
         """
-        return f"based on the context \n{context}\n tell me {question}"
+        return f"""You are the official CSJMU & UIET Kanpur AI Campus Assistant.
+Answer the user's question accurately using the official university details below. Avoid developer jargon like 'context' or 'retrieved documents'.
+
+OFFICIAL DETAILS:
+{context}
+
+QUESTION: {question}
+
+ANSWER:"""
+
