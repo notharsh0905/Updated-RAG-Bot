@@ -1,0 +1,35 @@
+[
+  {
+    "facility_name": "Innovation Center",
+    "type": "Campus Facility & Startup Incubator",
+    "purpose": "Empowers CSJMU & UIET students to transform innovative technical ideas into real-world projects and viable commercial startups.",
+    "key_offerings": [
+      "Prototype Development Lab for hardware and software projects",
+      "Idea Incubation & University Guidance",
+      "Expert Faculty and Industry Mentorship",
+      "Startup Support & University Guidance",
+      "Seed Funding Support and Investor Networking"
+    ],
+    "details": "The Innovation Center provides state-of-the-art incubation facilities, technical resources, and mentorship to encourage student entrepreneurship and technological innovation across CSJMU campus.",
+    "keywords": ["innovation center", "innovation", "prototype", "startup support", "mentorship", "incubation", "idea incubation", "project development", "funding support"]
+  },
+  {
+    "startup_name": "PEZ",
+    "type": "Smart Campus Printing Startup",
+    "description": "A smart campus digital printing service designed to eliminate long printing queues for students.",
+    "workflow": [
+      "1. Upload document via mobile or web portal",
+      "2. Scan QR code at PEZ print station",
+      "3. Pay digitally via UPI/Card",
+      "4. Collect instant printout",
+      "5. Automatic file deletion after printing for user privacy"
+    ],
+    "key_features": [
+      "Fast & Convenient Printing",
+      "Secure Encrypted Printing",
+      "Automatic Data Deletion for Privacy",
+      "Zero Waiting Queue"
+    ],
+    "keywords": ["pez", "pez startup", "print", "printer", "photocopy", "documents", "qr printing", "queue", "digital printing"]
+  }
+]

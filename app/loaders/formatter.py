@@ -92,3 +92,49 @@ def department_format_doc(d: Dict[str, Any]) -> str:
         f"The department has the following laboratories: {laboratories}. "
         f"The department offers the following courses: {courses}."
     )
+
+
+def scholarship_format_doc(item: Dict[str, Any]) -> str:
+    """Formats official scholarship matrix, documents checklist, and UP Free Tablet scheme entries."""
+    cat = item.get("category", "")
+    if "Amount" in cat:
+        sc = item.get("sc_st_students", {})
+        gen = item.get("general_obc_students", {})
+        return (
+            f"Official CSJMU UP Government Scholarship & Fee Reimbursement Amount Details: "
+            f"For SC/ST Students: With Hostel is {sc.get('with_hostel')}, Without Hostel is {sc.get('without_hostel')}. {sc.get('details', '')} "
+            f"For General and OBC Students: With Hostel is {gen.get('with_hostel')}, Without Hostel is {gen.get('without_hostel')}. {gen.get('details', '')}"
+        )
+    elif "Documents" in cat:
+        docs_list = item.get("required_documents_list", [])
+        docs_str = ", ".join(docs_list)
+        return (
+            f"Official Checklist of Required Documents for CSJMU UP Scholarship and Fee Reimbursement Application: "
+            f"Students must submit the following 16 documents: {docs_str}. "
+            f"{item.get('guidelines', '')}"
+        )
+    elif "Tablet" in cat or "Laptop" in cat:
+        return (
+            f"Official UP Government Free Tablet & Smartphone Scheme: {item.get('official_name')} (popularly known as {item.get('popular_name')}). "
+            f"Eligibility: {item.get('eligibility')}. Benefits: {item.get('benefits')}"
+        )
+    return str(item)
+
+
+def innovation_startup_format_doc(item: Dict[str, Any]) -> str:
+    """Formats Innovation Center and PEZ Smart Campus Printing Startup entries."""
+    if "facility_name" in item:
+        offerings = ", ".join(item.get("key_offerings", []))
+        return (
+            f"CSJMU & UIET Innovation Center ({item.get('type')}): Purpose: {item.get('purpose')} "
+            f"Key offerings and services include: {offerings}. Details: {item.get('details')}"
+        )
+    elif "startup_name" in item:
+        workflow = " -> ".join(item.get("workflow", []))
+        features = ", ".join(item.get("key_features", []))
+        return (
+            f"PEZ Campus Startup ({item.get('type')}): Description: {item.get('description')} "
+            f"How it works workflow: {workflow}. Key features: {features}."
+        )
+    return str(item)
+

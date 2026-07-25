@@ -110,5 +110,34 @@
     "fact": "UIET students actively participate in national competitive coding and robotics events including the ICPC Asia Regional Contest.",
     "source": "Engineering PDF",
     "keywords": ["innovation", "icpc", "coding", "competitions", "robotics", "contests"]
+  },
+  {
+    "id": "fact_schol_001",
+    "category": "Scholarships",
+    "fact": "Under the UP Government Fee Reimbursement Scheme, eligible SC/ST students receive up to Rs. 1,17,000 per year, while General/OBC students receive Rs. 64,500 (with hostel) or Rs. 57,000 (day scholars).",
+    "source": "Scholarship Guidelines",
+    "keywords": ["scholarship", "fee reimbursement", "amount", "sc", "st", "obc", "general", "hostel", "financial assistance"]
+  },
+  {
+    "id": "fact_scheme_001",
+    "category": "Government Schemes",
+    "fact": "CSJMU students are eligible for free tablets and smartphones under the Swami Vivekananda Youth Empowerment Scheme (UP Free Tablet / Smartphone Scheme).",
+    "source": "UP Youth Empowerment Scheme",
+    "keywords": ["free tablet", "smartphone", "laptop", "swami vivekananda", "youth empowerment", "up government"]
+  },
+  {
+    "id": "fact_innov_001",
+    "category": "Innovation",
+    "fact": "The CSJMU & UIET Innovation Center provides students with state-of-the-art prototype development labs, idea incubation, university guidance, and investor mentorship.",
+    "source": "Innovation Center Guidelines",
+    "keywords": ["innovation center", "incubation", "prototype", "startup support", "mentorship", "project development"]
+  },
+  {
+    "id": "fact_startup_001",
+    "category": "Campus Startups",
+    "fact": "PEZ is a smart campus printing startup that allows students to upload documents, scan a QR code at campus print stations, pay digitally, and print instantly with automatic file deletion.",
+    "source": "Campus Startup Records",
+    "keywords": ["pez", "printing", "printer", "photocopy", "qr print", "startup", "smart campus"]
   }
 ]
+

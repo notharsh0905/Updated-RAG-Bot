@@ -18,6 +18,8 @@ from app.loaders.formatter import (
     approved_boards_format_doc,
     course_eligibility_format_doc,
     department_format_doc,
+    scholarship_format_doc,
+    innovation_startup_format_doc,
 )
 from app.core.logging_config import setup_logger
 
@@ -38,7 +40,7 @@ class DocumentLoader:
 
     def load_all_documents(self) -> List[Document]:
         """
-        Loads and parses all 17 JSON and TXT datasets into LangChain Documents.
+        Loads and parses all JSON and TXT datasets into LangChain Documents.
 
         Returns:
             List[Document]: Comprehensive list of chunked child and parent documents.
@@ -91,11 +93,77 @@ class DocumentLoader:
         # 15. about_csjm.txt
         self._load_about_csjm(document_collection)
 
-        # 16. optimized_chunks.json (Cleaned single-concept syllabus & entity chunks)
+        # 16. scholarship_and_schemes.json
+        self._load_scholarship_and_schemes(document_collection)
+
+        # 17. campus_innovation_and_startups.json
+        self._load_campus_innovation_and_startups(document_collection)
+
+        # 18. optimized_chunks.json (Cleaned single-concept syllabus & entity chunks)
         self._load_optimized_syllabus_chunks(document_collection)
 
         logger.info(f"Successfully loaded and formatted {len(document_collection)} total documents.")
         return document_collection
+
+    def _load_scholarship_and_schemes(self, collection: List[Document]) -> None:
+        file_path = self.data_dir / "scholarship_and_schemes.json"
+        if not file_path.exists():
+            logger.warning(f"File not found: {file_path}")
+            return
+        with open(file_path, "r", encoding="utf-8") as file:
+            data = json.load(file)
+
+        doc_name = "scholarship_and_schemes.json"
+        parent_doc = Document(
+            page_content="",
+            metadata={"source": doc_name, "type": "parent", "id": 0, "doc_type": "scholarship_and_schemes"}
+        )
+        for i, item in enumerate(data, start=1):
+            text = scholarship_format_doc(item)
+            collection.append(
+                Document(
+                    page_content=text,
+                    metadata={
+                        "source": doc_name,
+                        "type": "child",
+                        "id": i,
+                        "doc_type": "scholarship_and_schemes",
+                        "category": item.get("category")
+                    }
+                )
+            )
+            parent_doc.page_content += text + "\n"
+        collection.append(parent_doc)
+
+    def _load_campus_innovation_and_startups(self, collection: List[Document]) -> None:
+        file_path = self.data_dir / "campus_innovation_and_startups.json"
+        if not file_path.exists():
+            logger.warning(f"File not found: {file_path}")
+            return
+        with open(file_path, "r", encoding="utf-8") as file:
+            data = json.load(file)
+
+        doc_name = "campus_innovation_and_startups.json"
+        parent_doc = Document(
+            page_content="",
+            metadata={"source": doc_name, "type": "parent", "id": 0, "doc_type": "campus_innovation_and_startups"}
+        )
+        for i, item in enumerate(data, start=1):
+            text = innovation_startup_format_doc(item)
+            collection.append(
+                Document(
+                    page_content=text,
+                    metadata={
+                        "source": doc_name,
+                        "type": "child",
+                        "id": i,
+                        "doc_type": "campus_innovation_and_startups",
+                        "name": item.get("facility_name") or item.get("startup_name")
+                    }
+                )
+            )
+            parent_doc.page_content += text + "\n"
+        collection.append(parent_doc)
 
     def _load_uiet_designation(self, collection: List[Document]) -> None:
         file_path = self.data_dir / "uiet_designation.json"
