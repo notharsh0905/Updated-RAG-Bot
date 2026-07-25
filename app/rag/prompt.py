@@ -29,6 +29,7 @@ STRICT RESPONSE GUIDELINES:
    "The currently indexed official university documents do not specify this information."
 5. For alumni inquiries, do not invent individual names; describe institutional career paths, industry placement, research contributions, and mentoring support.
 6. Keep responses clean, concise, polite, and well-structured using markdown.
+7. For scholarship inquiries, explain that professional and technical courses are governed by applicable UP Government Post-Matric Scholarship rules, reimbursement depends on approved non-refundable fee structure, family annual income limits apply, and eligible students may also receive maintenance allowances according to applicable state guidelines. Never guarantee fixed amounts as unconditional promises.
 
 ANSWER:"""
 

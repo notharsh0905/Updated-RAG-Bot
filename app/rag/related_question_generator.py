@@ -75,10 +75,26 @@ DOMAIN_QUESTION_MAP: Dict[str, List[str]] = {
         "Which department faculty specialize in AI and Cyber Security?"
     ],
     "scholarships": [
-        "How can students apply for National Scholarship Portal (NSP) schemes?",
         "What documents are required for UP scholarship fee waiver?",
-        "Are merit scholarships awarded to top performing students?",
-        "What financial aid is available for economically weaker sections?"
+        "How much scholarship do SC/ST and OBC students receive?",
+        "How can students apply for National Scholarship Portal (NSP) schemes?",
+        "Does CSJMU provide free tablets under the UP Government scheme?"
+    ],
+    "innovation": [
+        "What prototype development and incubation facilities exist at the Innovation Center?",
+        "What is PEZ smart campus printing startup and how does it work?",
+        "What startup support and mentorship does CSJMU offer?",
+        "What research projects are supported in campus laboratories?"
+    ],
+    "tablets": [
+        "Who is eligible for the Swami Vivekananda Youth Empowerment Scheme?",
+        "What digital devices are distributed under UP Free Tablet Scheme?",
+        "What other government scholarships and schemes are available?"
+    ],
+    "alumni": [
+        "Who are notable UIET alumni working in ISRO, Apple, and Microsoft?",
+        "What career paths and achievements do UIET graduates hold?",
+        "How do alumni contribute to student mentorship at UIET?"
     ],
     "general": [
         "What is the admission procedure for UIET programs?",
@@ -106,6 +122,10 @@ def detect_domain_category(query: str, answer_text: str = "") -> str:
         return "departments"
     elif any(k in q_lower for k in ["syllab", "curricul", "subject", "course", "semester", "credit"]):
         return "syllabus"
+    elif any(k in q_lower for k in ["innovat", "incubat", "prototype", "pez", "startup", "print"]):
+        return "innovation"
+    elif any(k in q_lower for k in ["tablet", "smartphone", "laptop", "swami vivekananda", "youth empowerment"]):
+        return "tablets"
     elif any(k in q_lower for k in ["lab", "laboratory", "idea lab", "drone", "cyber security"]):
         return "laboratories"
     elif any(k in q_lower for k in ["supercomput", "nvidia", "research", "ai hub", "gpu"]):
@@ -114,11 +134,14 @@ def detect_domain_category(query: str, answer_text: str = "") -> str:
         return "hostel"
     elif any(k in q_lower for k in ["faculty", "teacher", "director", "professor", "hod", "dean"]):
         return "faculty"
-    elif any(k in q_lower for k in ["scholar", "stipend", "financial aid", "waiver", "nsp"]):
+    elif any(k in q_lower for k in ["scholar", "stipend", "financial aid", "waiver", "nsp", "reimbursement"]):
         return "scholarships"
+    elif any(k in q_lower for k in ["alumni", "alumnus", "graduate"]):
+        return "alumni"
     
     return "general"
 
 
 def get_candidate_questions(domain: str) -> List[str]:
     return DOMAIN_QUESTION_MAP.get(domain, DOMAIN_QUESTION_MAP["general"])
+
