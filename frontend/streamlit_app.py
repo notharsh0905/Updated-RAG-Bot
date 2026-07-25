@@ -205,16 +205,6 @@ with st.sidebar:
             st.toast("Started new chat session!", icon="✨")
             st.rerun()
 
-        # Chat History Export
-        chat_export_json = json.dumps(st.session_state.messages, indent=2)
-        st.download_button(
-            label="📥 Export Chat History (JSON)",
-            data=chat_export_json,
-            file_name=f"csjmu_chat_{st.session_state.session_id[:8]}.json",
-            mime="application/json",
-            use_container_width=True
-        )
-
         st.divider()
         st.markdown("**Official University Contact**")
         st.caption("📧 Admission: `admission@csjmu.ac.in`\n🌐 Website: [csjmu.ac.in](https://csjmu.ac.in)")
@@ -306,34 +296,101 @@ if portal_mode == "🌐 Public Assistant":
 
         st.divider()
 
+        # Short Label Mapping Dictionary for Suggestion Chips
+        SHORT_LABEL_MAP = {
+            "What prototype development and incubation facilities exist at the Innovation Center?": "🚀 Innovation Center",
+            "What is PEZ smart campus printing startup and how does it work?": "🖨️ PEZ Printing",
+            "What startup support and mentorship does CSJMU offer?": "🤝 Startup Support",
+            "What research projects are supported in campus laboratories?": "🔬 Research Labs",
+            "What are the eligibility criteria for B.Tech admission?": "📝 B.Tech Eligibility",
+            "What is the annual fee structure for engineering courses?": "💰 Fee Structure",
+            "Which B.Tech engineering branches are available at UIET?": "🏫 UIET Branches",
+            "What scholarships and UP fee waivers are offered?": "🎓 Scholarships",
+            "What documents are required for UP scholarship fee waiver?": "📄 Required Documents",
+            "How much scholarship do SC/ST and OBC students receive?": "💵 Scholarship Amounts",
+            "How can students apply for National Scholarship Portal (NSP) schemes?": "🏛️ NSP Schemes",
+            "Does CSJMU provide free tablets under the UP Government scheme?": "📱 Free Tablet Scheme",
+            "Who is eligible for the Swami Vivekananda Youth Empowerment Scheme?": "📱 Free Tablet Scheme",
+            "What digital devices are distributed under UP Free Tablet Scheme?": "📱 Free Tablet Scheme",
+            "What other government scholarships and schemes are available?": "🎓 Government Schemes",
+            "Who are notable UIET alumni working in ISRO, Apple, and Microsoft?": "🌟 Notable Alumni",
+            "What career paths and achievements do UIET graduates hold?": "💼 Alumni Careers",
+            "How do alumni contribute to student mentorship at UIET?": "🤝 Alumni Mentorship",
+            "Which top companies visit UIET for campus recruitment?": "💼 Top Recruiters",
+            "What is the highest domestic and international package?": "🏆 Placement Packages",
+            "What is the branch-wise placement percentage for CSE and IT?": "📊 Placement Stats",
+            "What training and mock interview support does the T&P Cell offer?": "🎯 T&P Training",
+            "What facilities exist in the campus sports complex and gymnasium?": "🏋️ Sports & Gym",
+            "What is the curfew timing and security rules for hostels?": "🏠 Hostel Rules",
+            "Is there a medical health center on campus?": "🏥 Health Center",
+            "What is the annual fee for hostel accommodation and mess?": "🏠 Hostel Fee & Mess",
+            "What facilities exist in the campus hostels?": "🏠 Hostel Facilities",
+            "Who are the Professors of Practice and industry experts?": "👨‍🏫 Faculty Experts",
+            "Who is the Director of UIET CSJM University?": "👨‍🏫 UIET Director",
+            "How can students schedule academic counseling with faculty?": "💬 Faculty Counseling",
+            "Which department faculty specialize in AI and Cyber Security?": "🤖 AI & Cyber Faculty",
+            "What is the admission procedure for B.Tech CSE at UIET?": "📝 B.Tech Admission",
+            "What is the admission procedure for B.Tech programs?": "📝 B.Tech Admission",
+            "What is the eligibility for BCA and MCA courses?": "🎓 BCA & MCA Eligibility",
+            "Is there any relaxation for reserved category candidates?": "⚖️ Reserved Relaxation",
+            "What are the required documents for admission counseling?": "📄 Counseling Documents",
+            "What scholarships and financial concessions are available?": "💰 Financial Aid",
+            "What is the hostel fee and caution deposit structure?": "🏠 Hostel Deposit",
+            "What is the fee payment deadline and mode of payment?": "💳 Fee Payment",
+            "What is the fee for M.Tech and MCA programmes?": "💰 M.Tech & MCA Fees",
+            "Who achieved the highest GATE rank in UIET?": "🎯 GATE Toppers",
+            "Which departments have the most GATE qualifiers?": "📊 GATE Qualifiers",
+            "Is GATE score mandatory for M.Tech admissions?": "🎓 GATE for M.Tech",
+            "What support does UIET provide for competitive exam preparation?": "📚 GATE Coaching",
+            "What laboratories and research facilities exist in the department?": "🔬 Department Labs",
+            "Who is the Head of Department and Dean of UIET?": "👨‍🏫 HOD & Dean",
+            "What are the placement statistics for CSE and ECE?": "📊 CSE/ECE Placements",
+            "Where can I find the complete course syllabus and curriculum?": "📚 Syllabus & Courses",
+            "What subjects and credits are offered in Semester 1 & 2?": "📖 Semester 1 & 2",
+            "What laboratories are attached to this engineering course?": "🔬 Course Labs",
+            "How are mid-semester and end-semester exams evaluated?": "📝 Exam Evaluation",
+            "Who are the faculty members teaching this department?": "👨‍🏫 Department Faculty",
+            "Tell me about the Supercomputing Hub (NVIDIA DGX H100).": "⚡ Supercomputer DGX",
+            "What research activities take place in the Cyber Security Lab?": "🛡️ Cyber Security Lab",
+            "What prototyping equipment is available in the AICTE IDEA Lab?": "🛠️ AICTE IDEA Lab",
+            "What projects are conducted in the Advanced Drone Lab?": "🛸 Drone Lab",
+            "What is the Supercomputing Hub for Artificial Intelligence?": "⚡ AI Supercomputer",
+            "Do UIET faculty members hold Ph.D. degrees from IITs/NITs?": "🎓 Faculty PhDs",
+            "What industry collaborations and MoUs exist at UIET?": "🤝 Industry MoUs",
+            "Are undergraduate students allowed to publish research papers?": "📄 Student Research",
+            "What is the admission procedure for UIET programs?": "📝 Admission Process",
+            "What is the highest package in UIET placements?": "🏆 Highest Package",
+            "What engineering branches are offered at UIET Kanpur?": "🏫 Engineering Branches",
+            "What facilities exist on the CSJMU campus?": "🏊 Campus Facilities"
+        }
+
         # Display Chat Conversation
         for idx, message in enumerate(st.session_state.messages):
             with st.chat_message(message["role"]):
                 st.markdown(message["content"])
 
-                # Render Document Sources if available
-                if message.get("sources"):
-                    with st.expander("📚 View Official Document References"):
-                        for s_idx, src in enumerate(message["sources"], 1):
-                            st.markdown(
-                                f"**Reference {s_idx}:** `{src.get('source')}` | **Category:** `{src.get('doc_type')}`\n"
-                                f"> *\"{src.get('content_snippet')}...\"*"
-                            )
-
-                # Render Clickable Suggestion Chips (2–4 Contextual Action Chips)
+                # Render Clickable Suggestion Chips (2–4 Contextual Action Chips with Short Labels)
                 suggestions = message.get("suggestions", [])
                 if message["role"] == "assistant" and suggestions:
-                    st.markdown("────────────────────────")
-                    st.markdown("💡 **You may also want to know:**")
-                    s_cols = st.columns(len(suggestions))
-                    for s_idx, sug_text in enumerate(suggestions):
+                    st.markdown("<br>👇 **You may also want to know:**", unsafe_allow_html=True)
+                    s_cols = st.columns(min(len(suggestions), 4))
+                    for s_idx, sug_item in enumerate(suggestions[:4]):
+                        # Support dict or string suggestion items
+                        if isinstance(sug_item, dict):
+                            full_q = sug_item.get("full_question", "")
+                            short_lbl = sug_item.get("short_label", full_q)
+                        else:
+                            full_q = sug_item
+                            short_lbl = SHORT_LABEL_MAP.get(full_q, f"❓ {full_q[:20]}...")
+
                         with s_cols[s_idx]:
-                            if st.button(f"👉 {sug_text}", key=f"sug_{idx}_{s_idx}", use_container_width=True):
-                                st.session_state.pending_question = sug_text
+                            if st.button(short_lbl, key=f"sug_{idx}_{s_idx}", use_container_width=True):
+                                st.session_state.pending_question = full_q
                                 st.rerun()
 
                 # Inline Feedback Buttons
                 if message["role"] == "assistant" and idx > 0:
+                    st.markdown("<br>", unsafe_allow_html=True)
                     fb1, fb2, _ = st.columns([1, 1, 10])
                     with fb1:
                         if st.button("👍", key=f"up_{idx}"):
@@ -460,7 +517,7 @@ else:
         st.caption("Authorized access for CSJMU & UIET Knowledge Management & System Administration")
 
         admin_tabs = st.tabs([
-            "📊 System Metrics", "🛠️ Rebuild Embeddings", "📥 Upload Knowledge", "📝 Feedback Review", "🔍 Gap Audit Report"
+            "📊 System Metrics", "🛠️ Rebuild Embeddings", "📥 Upload Knowledge", "📝 Feedback Review", "🔍 Gap Audit Report", "📚 Document Inspector"
         ])
 
         with admin_tabs[0]:
@@ -513,6 +570,23 @@ else:
             - **Innovation & PEZ Startup:** 100% Covered
             - **Placements & GATE:** 100% Covered
             """)
+
+        with admin_tabs[5]:
+            st.subheader("Document Reference Inspector (Admin Debugging)")
+            st.caption("Inspect document source snippets from current chat session.")
+            has_sources = False
+            for msg in reversed(st.session_state.messages):
+                if msg.get("sources"):
+                    has_sources = True
+                    st.markdown("##### Recent Document Matches:")
+                    for s_idx, src in enumerate(msg["sources"], 1):
+                        st.markdown(
+                            f"**Reference {s_idx}:** `{src.get('source')}` | **Type:** `{src.get('doc_type')}`\n"
+                            f"> *\"{src.get('content_snippet')}...\"*"
+                        )
+                    break
+            if not has_sources:
+                st.info("No active query sources logged in session history.")
 
 # Production Footer
 st.markdown("""

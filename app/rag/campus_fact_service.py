@@ -94,9 +94,9 @@ class CampusFactService:
             history_list.pop(0)
 
         display_markdown = (
-            f"💡 **Did You Know?**\n"
-            f"{fact_text}\n"
-            f"*(Source: {selected_fact['source']})*"
+            f"> 💡 **Did You Know?**  \n"
+            f"> {fact_text}  \n"
+            f"> *(Source: {selected_fact['source']})*"
         )
 
         return {

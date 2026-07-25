@@ -32,16 +32,11 @@ class ResponseEnrichmentEngine:
         # Section 3: Suggested Follow-up Questions (2-4 dynamic questions)
         suggested_questions = suggestion_engine.generate_suggestions(query, answer_text, session_key)
 
-        # Build Enriched Markdown Display String
+        # Build Enriched Markdown Display String (Answer + Styled Campus Fact Card only)
         enriched_parts = [direct_answer]
 
         if campus_fact:
             enriched_parts.append(campus_fact["display_markdown"])
-
-        if suggested_questions:
-            suggestions_md = "────────────────────────\n**You may also want to know:**\n"
-            suggestions_md += "\n".join([f"• [{q}]" for q in suggested_questions])
-            enriched_parts.append(suggestions_md)
 
         full_enriched_text = "\n\n".join(enriched_parts)
 

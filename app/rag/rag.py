@@ -19,6 +19,7 @@ from app.query.query_processor import query_processor
 from app.memory.memory import memory_manager
 from app.cache.cache import response_cache
 from app.rag.response_enrichment import response_enrichment_engine
+from app.rag.suggestion_engine import suggestion_engine
 from app.analytics.database import db_manager
 from app.core.logging_config import setup_logger
 
@@ -126,6 +127,7 @@ class RAGPipeline:
         # 8. Enrich Response with Campus Fact & Clickable Suggested Questions
         enrichment = response_enrichment_engine.enrich_response(question, answer, active_session)
         full_enriched_text = enrichment["full_enriched_text"]
+        suggested_objects = suggestion_engine.get_suggestion_objects(question, answer, active_session)
 
         # Save to memory & database
         memory_manager.add_user_message(active_session, question)
@@ -150,6 +152,7 @@ class RAGPipeline:
             "full_enriched_text": full_enriched_text,
             "campus_fact": enrichment["campus_fact"],
             "suggested_questions": enrichment["suggested_questions"],
+            "suggested_objects": suggested_objects,
             "context": context,
             "sources": sources,
             "response_time_sec": elapsed_time
