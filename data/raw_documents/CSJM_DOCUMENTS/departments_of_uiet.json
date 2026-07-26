@@ -1,0 +1,225 @@
+{
+  "departments": [
+    {
+      "name": "Department of Computer Science & Engineering (CSE)",
+      "established": 1996,
+      "description": "Established in 1996 with the inception of the Institute, the department has evolved into a dynamic center for teaching, research, and innovation, significantly expanding its infrastructure, laboratory facilities, and academic offerings in line with emerging technological trends.",
+      "key_highlights": [
+        "Offers a strong foundation in core areas of Computer Science complemented by advanced and interdisciplinary electives.",
+        "Equipped with WiFi-enabled smart classrooms and modern laboratories.",
+        "Promotes innovation through project-based learning, coding culture, internships, and participation in national and international competitions."
+      ],
+      "electives": [
+        "Artificial Intelligence",
+        "Machine Learning",
+        "Data Science",
+        "Natural Language Processing",
+        "Distributed and Parallel Computing",
+        "Advanced Computer Networks",
+        "DBMS",
+        "Cloud Computing"
+      ],
+      "laboratories": [
+        "Programming and core computing labs for first-year students",
+        "Advanced computing labs with high-end systems and dual-boot environments",
+        "Microprocessors",
+        "Digital Electronics",
+        "Networking",
+        "Research"
+      ],
+      "courses_offered": [
+        "B.Tech. in Computer Science and Engineering",
+        "B.Tech. in Computer Science And Engineering (Artificial Intelligence)",
+        "M.Tech. in Computer Science and Engineering",
+        "PhD in Computer Science and Engineering"
+      ]
+    },
+    {
+      "name": "Department of Electronics & Communication Engineering (ECE)",
+      "established": 1996,
+      "description": "Initiated in 1996 at UIET due to rapid development in Electronics and Communication, aiming to help students and teachers reach their full potential by providing a multifaceted, supportive learning and teaching environment.",
+      "key_highlights": [
+        "Active interaction with reputed institutes like IIT Kanpur, HBTU Kanpur, and IETE Kanpur local chapter.",
+        "Faculty actively involved in diverse research areas."
+      ],
+      "research_area": [
+        "Digital Communications",
+        "Signal processing",
+        "Instrumentation",
+        "VLSI",
+        "Antenna Design",
+        "Power Electronics and Embedded",
+        "Fibre Optics Communication"
+      ],
+      "career_roles": [
+        "Network Engineers",
+        "Voice Engineers",
+        "Server Administrators",
+        "Wireless security Engineers",
+        "Infrastructure Engineers",
+        "Wireless Architecture Engineers",
+        "Solution Architects",
+        "VLSI Engineers"
+      ],
+      "courses_offered": [
+        "B.Tech in Electronics and Communication Engineering",
+        "M.Tech. in Electronics and Communication Engineering",
+        "Integrated M.Sc. Electronics (Specialization in VLSI and IOT)",
+        "Diploma in Electrical Engineering",
+        "PhD in Electronics and Communication"
+      ]
+    },
+    {
+      "name": "Department of Chemical Engineering (CHE)",
+      "established": 1996,
+      "description": "Established in 1996 in UIET, CSJM University, to provide competent and well-trained professionals for the chemical industries of the country.",
+      "key_highlights": [
+        "Highly qualified and experienced faculty members with PhD and Master's degrees from reputed institutions like IITs and NITs.",
+        "Teaching supported by modern pedagogical tools to promote analytical thinking, innovation, and conceptual clarity.",
+        "Lecture recordings regularly made available on the university's Gyansanchay portal and the departmental YouTube channel.",
+        "Active professional development through its IIChE student chapter, organizing expert talks, seminars, and industrial visits.",
+        "All classrooms are ICT-enabled, and the department houses a well-equipped seminar hall with smart board facilities."
+      ],
+      "computational_facilities_and_software": [
+        "CHEMCAD",
+        "ANSYS",
+        "MATLAB",
+        "High-speed Wi-Fi and LAN connectivity"
+      ],
+      "courses_offered": [
+        "B.Tech. in Chemical Engineering",
+        "Diploma in Chemical Technology"
+      ]
+    },
+    {
+      "name": "Department of Mechanical Engineering",
+      "established": null,
+      "description": "Established with an aim to educate and train graduates to contribute to manufacturing and allied sectors, preparing them to take products from beginning to finish while designing for aesthetics, functionality, and durability.",
+      "key_highlights": [
+        "Engineers design and manufacture everything from small parts to large machine parts.",
+        "Well-equipped laboratories and infrastructure to cater to the students.",
+        "Extends Testing and Consultancy work for local industries."
+      ],
+      "applications_and_systems": [
+        "Train engines",
+        "Engine parts",
+        "Aircraft engines",
+        "Automatic systems",
+        "Pulley and chain drives",
+        "Measurement tools",
+        "Sensors",
+        "Thermal and hydraulic turbines",
+        "Wind turbines",
+        "Fuel cells",
+        "Compressors",
+        "Pumps",
+        "Robots",
+        "Machine tools"
+      ],
+      "courses_offered": [
+        "B.Tech in Mechanical Engineering",
+        "Diploma in Mechanical Engineering",
+        "PhD in Mechanical Engineering"
+      ]
+    },
+    {
+      "name": "Department of Materials Science & Metallurgical Engineering",
+      "established": 2004,
+      "description": "Established in 2004 as Materials Science and Engineering and later renamed as Materials Science and Metallurgical Engineering. It is the second Institute in this region (other than IIT-Kanpur) offering an undergraduate course in this domain.",
+      "key_highlights": [
+        "Addresses the increasing global demand for new, smart, and traditional materials.",
+        "Engineers manufacture and tailor material properties, design and process materials, construct components, select materials, and analyze failures.",
+        "Spans from production in mega quantities (steel, aluminum, copper, zinc) to high-tech research areas."
+      ],
+      "sectors_and_industries_served": [
+        "Production units",
+        "Manufacturing plants",
+        "Research institutions",
+        "Academic institutions",
+        "Space research centers",
+        "Nuclear power plants",
+        "Government-run CSIR Labs"
+      ],
+      "research_and_production_areas": [
+        "Electronic materials",
+        "Magnetic materials",
+        "Ceramic materials",
+        "Optical materials",
+        "Nano-materials",
+        "Smart materials"
+      ],
+      "courses_offered": [
+        "B.Tech. in Materials Science and Metallurgical Engineering",
+        "M.Tech. in Nano-Science and Nano Technology",
+        "Diploma in Metallurgy and Material Technology",
+        "PhD in Materials Science and Metallurgical Engineering"
+      ]
+    },
+    {
+      "name": "Department of Computer Applications",
+      "established": 2001,
+      "description": "Established in UIET in 2001, the department is housed in a big spacious building with classrooms, faculty rooms, and several computer laboratories, making rapid progress in academic performance and career tracking.",
+      "key_highlights": [
+        "Computer systems in labs feature advanced configurations for Windows and Linux environments.",
+        "High-speed internet connections used for project development.",
+        "Conducts various training programs in high-end technologies and offers hands-on projects with active assistance from teaching faculty.",
+        "Students placed in top software giants."
+      ],
+      "programming_languages_taught": [
+        "C++",
+        "JAVA",
+        "Visual Basic",
+        "Visual C"
+      ],
+      "software_available": [
+        "Apache Tomcat 5.0.29",
+        "J2sdk6.0",
+        "J2EE Server1.4",
+        "Jakarta ANT",
+        "Oracle 11i",
+        "Jakarta Struts",
+        "Jakarta Cactus",
+        "NetBeans IDE1.4"
+      ],
+      "recruiters": [
+        "Infosys",
+        "Wipro",
+        "Satyam",
+        "HCL",
+        "Accenture",
+        "Mindtree",
+        "Honeywell",
+        "Mascot"
+      ],
+      "courses_offered": [
+        "Bachelor of Computer Applications (BCA)",
+        "Master of Computer Applications (MCA)",
+        "PhD in Computer Applications"
+      ]
+    },
+    {
+      "name": "Department of Vocational Studies",
+      "established": 2019,
+      "description": "Established in 2019, this is a vibrant and rapidly growing academic unit dedicated to skill-based and industry-oriented education, bridging creativity with practical and technical expertise.",
+      "key_highlights": [
+        "Fosters a learning environment that encourages innovation, design thinking, and hands-on experience.",
+        "Programmes combine conceptual understanding with practical training.",
+        "Well-equipped with advanced design labs, high-end computer workstations, and 3D printing facilities for prototyping.",
+        "Strong focus on employability, professional growth, training, internships, and industry interaction.",
+        "Established connections with industry partners in cities like Kanpur, Lucknow, and Delhi."
+      ],
+      "practical_training_areas": [
+        "Spatial planning",
+        "Garment construction",
+        "Digital design tools",
+        "Multidisciplinary design approaches"
+      ],
+      "courses_offered": [
+        "Bachelor of Design (B.Des)",
+        "Bachelor of Vocation in Interior Design",
+        "Bachelor of Vocation in Fashion and Apparel Design",
+        "Diploma in Fashion Technology"
+      ]
+    }
+  ]
+}

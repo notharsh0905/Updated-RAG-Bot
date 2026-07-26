@@ -1,0 +1,566 @@
+[
+  {
+    "Name": "Dr. Abhishek Kumar Chandra",
+    "Contact": "9450326388",
+    "Programme": "B.Tech",
+    "Departments": "School of Engineering & Technology"
+  },
+  {
+    "Name": "Dr. Ramendra Singh Niranjan",
+    "Contact": "9450334647",
+    "Programme": "B.Tech",
+    "Departments": "School of Engineering & Technology"
+  },
+  {
+    "Name": "Dr. V. K. Kashyap",
+    "Contact": "8765673930",
+    "Programme": "B.Tech",
+    "Departments": "School of Engineering & Technology"
+  },
+  {
+    "Name": "Mrs. Mamta Mayee Panda",
+    "Contact": "7307916101",
+    "Programme": "BCA/MCA",
+    "Departments": "School of Engineering & Technology"
+  },
+  {
+    "Name": "Mr. Akhilesh Singh",
+    "Contact": "8400190194",
+    "Programme": "BCA",
+    "Departments": "School of Engineering & Technology"
+  },
+  {
+    "Name": "Dr. Ritesh Agarwal",
+    "Contact": "8299861509",
+    "Programme": "MCA",
+    "Departments": "School of Engineering & Technology"
+  },
+  {
+    "Name": "Er. Kamal Kant",
+    "Contact": "9198228980",
+    "Programme": "M.Tech, CSE",
+    "Departments": "School of Engineering & Technology"
+  },
+  {
+    "Name": "Er. Amit Katiyar",
+    "Contact": "9935409070",
+    "Programme": "M.Tech, ECE",
+    "Departments": "School of Engineering & Technology"
+  },
+  {
+    "Name": "Dr. V. K. Kashyap",
+    "Contact": "8765673930",
+    "Programme": "B.Tech, M.Tech, Nano Science & Nano Tech",
+    "Departments": "School of Engineering & Technology"
+  },
+  {
+    "Name": "Er. Anand Kumar Gupta",
+    "Contact": "7905490488",
+    "Programme": "Diploma EE",
+    "Departments": "School of Engineering & Technology"
+  },
+  {
+    "Name": "Er. Yastuti Rao Gautam",
+    "Contact": "7376238224",
+    "Programme": "Diploma MEE",
+    "Departments": "School of Engineering & Technology"
+  },
+  {
+    "Name": "Dr. Arun Kumar Gupta",
+    "Contact": "8318128701",
+    "Programme": "Diploma CHE",
+    "Departments": "School of Engineering & Technology"
+  },
+  {
+    "Name": "Dr. V. K. Kashyap",
+    "Contact": "8765673930",
+    "Programme": "Diploma MMT",
+    "Departments": "School of Engineering & Technology"
+  },
+  {
+    "Name": "Dr. Ajay Tiwari",
+    "Contact": "7275002763",
+    "Programme": "Integrated M.Sc Electronics (VLSI & IOT)",
+    "Departments": "School of Engineering & Technology"
+  },
+  {
+    "Name": "Ar. Prashant Singh",
+    "Contact": "8574110490",
+    "Programme": "B.Des / B.Voc ID / Diploma FT",
+    "Departments": "School of Engineering & Technology"
+  },
+  {
+    "Name": "Dr. Alok Pandey",
+    "Contact": "8052232974",
+    "Programme": "B.Sc.(H) Biotechnology / M.Sc. Biotechnology",
+    "Departments": "School of Life Sciences & Biotechnology"
+  },
+  {
+    "Name": "Dr. Neerja Srivastava",
+    "Contact": "9415154373",
+    "Programme": "B.Sc. (H) Biological Sciences / M.Sc. Biochemistry",
+    "Departments": "School of Life Sciences & Biotechnology"
+  },
+  {
+    "Name": "Dr. Swasti Srivastava",
+    "Contact": "9389139125",
+    "Programme": "B.Sc.- M.Sc. Integrated Biotech",
+    "Departments": "School of Life Sciences & Biotechnology"
+  },
+  {
+    "Name": "Prof. Varsha Gupta / Dr. Gaurav Kumar",
+    "Contact": "9450442861 / 9871831534",
+    "Programme": "M.Sc. Life Sciences",
+    "Departments": "School of Life Sciences & Biotechnology"
+  },
+  {
+    "Name": "Dr. Manishi Tripathi",
+    "Contact": "9839120478",
+    "Programme": "M.Sc. Microbiology",
+    "Departments": "School of Life Sciences & Biotechnology"
+  },
+  {
+    "Name": "Prof. Varsha Gupta / Dr. Rajeev Mishra",
+    "Contact": "9450442861 / 9565322777",
+    "Programme": "M.Sc. Forensic Science",
+    "Departments": "School of Life Sciences & Biotechnology"
+  },
+  {
+    "Name": "Dr. Prabal Pratap Singh",
+    "Contact": "9889159477",
+    "Programme": "B.Sc. Combination",
+    "Departments": "School of Basic Sciences"
+  },
+  {
+    "Name": "Dr. Yogesh Chandra",
+    "Contact": "8004435422",
+    "Programme": "B.Sc. Combination",
+    "Departments": "School of Basic Sciences"
+  },
+  {
+    "Name": "Dr. Awanish Bajpeyi",
+    "Contact": "8934875519",
+    "Programme": "B.Sc. Hons. Physics / M.Sc. Physics",
+    "Departments": "School of Basic Sciences"
+  },
+  {
+    "Name": "Dr. Meraj Jafri",
+    "Contact": "9935651275",
+    "Programme": "B.Sc. Hons. Chemistry",
+    "Departments": "School of Basic Sciences"
+  },
+  {
+    "Name": "Dr. Arpit Dwivedi",
+    "Contact": "7897037465",
+    "Programme": "B.Sc. Hons. Mathematics / M.Sc. Mathematics",
+    "Departments": "School of Basic Sciences"
+  },
+  {
+    "Name": "Dr. Ratna Shukla",
+    "Contact": "9450127383",
+    "Programme": "M.Sc. Chemistry / Industrial Chemistry",
+    "Departments": "School of Basic Sciences"
+  },
+  {
+    "Name": "Dr. Durgesh Singh / Dr. Pradeep Kumar",
+    "Contact": "7007067835",
+    "Programme": "M.Sc. Geography with GIS and Remote Sensing / M.A Geography",
+    "Departments": "School of Basic Sciences"
+  },
+  {
+    "Name": "Dr. Droupti Yadav",
+    "Contact": "9305345442",
+    "Programme": "M.Sc. Environmental Science",
+    "Departments": "School of Basic Sciences"
+  },
+  {
+    "Name": "Dr. Chandrashekhar Kumar (PT)",
+    "Contact": "9919630553",
+    "Programme": "Bachelor of Physiotherapy (BPT) / Master of Physiotherapy (MPT)",
+    "Departments": "School of Health Sciences"
+  },
+  {
+    "Name": "Dr. Alka Katiyar",
+    "Contact": "8756003046",
+    "Programme": "B.Sc. Medical Laboratory Technology (BMLT) / M.Sc. Medical Laboratory Technology (MMLT)",
+    "Departments": "School of Health Sciences"
+  },
+  {
+    "Name": "Mr. Santosh Kumar Yadav",
+    "Contact": "8808444676",
+    "Programme": "Bachelor in Medical Radiology & Imaging Technology (BMRIT)",
+    "Departments": "School of Health Sciences"
+  },
+  {
+    "Name": "Mr. Vishwdeep Mishra",
+    "Contact": "7351772926",
+    "Programme": "Bachelor in Optometry (BOPT)",
+    "Departments": "School of Health Sciences"
+  },
+  {
+    "Name": "Mr. Mohit Kumar",
+    "Contact": "9807532535",
+    "Programme": "B.Sc. in Medical Microbiology (BMM)",
+    "Departments": "School of Health Sciences"
+  },
+  {
+    "Name": "Dr. Anamika Dixit",
+    "Contact": "9236566878",
+    "Programme": "B.Sc. Human Nutrition (BHN) / M.Sc. Human Nutrition (MHN)",
+    "Departments": "School of Health Sciences"
+  },
+  {
+    "Name": "Dr. Ajay Kumar Gupta",
+    "Contact": "9415510866",
+    "Programme": "B. Pharm",
+    "Departments": "School of Pharmaceutical Sciences"
+  },
+  {
+    "Name": "Dr. Meenakshi Gupta",
+    "Contact": "9369542416",
+    "Programme": "D. Pharm",
+    "Departments": "School of Pharmaceutical Sciences"
+  },
+  {
+    "Name": "Dr. Anupriya Kapoor",
+    "Contact": "9454739680",
+    "Programme": "M. Pharm Pharmaceutics",
+    "Departments": "School of Pharmaceutical Sciences"
+  },
+  {
+    "Name": "Mrs. Shweta Singh Verma",
+    "Contact": "9839954321",
+    "Programme": "M. Pharm Pharmaceutical Chemistry",
+    "Departments": "School of Pharmaceutical Sciences"
+  },
+  {
+    "Name": "Dr. Prakash Chandra Gupta",
+    "Contact": "7897419191",
+    "Programme": "M. Pharm Pharmacognosy",
+    "Departments": "School of Pharmaceutical Sciences"
+  },
+  {
+    "Name": "Mr. Ajay Kumar Singh",
+    "Contact": "8081014420",
+    "Programme": "M. Pharm Pharmacology",
+    "Departments": "School of Pharmaceutical Sciences"
+  },
+  {
+    "Name": "Dr. Sonali Maurya / Dr. Prabhat Gaurav Mishra",
+    "Contact": "9013414374 / 9389069879",
+    "Programme": "Department of English",
+    "Departments": "School of Languages"
+  },
+  {
+    "Name": "Dr. Shriprakash",
+    "Contact": "9307012707",
+    "Programme": "Department of Hindi",
+    "Departments": "School of Languages"
+  },
+  {
+    "Name": "Dr. Preetivaradhan Dubey",
+    "Contact": "9792004004",
+    "Programme": "Department of Sanskrit",
+    "Departments": "School of Languages"
+  },
+  {
+    "Name": "Mr. Sumit Jain Shastri",
+    "Contact": "9450120746",
+    "Programme": "Achharya Vidyasagar Sudhasagar Jain Shodh Peeth",
+    "Departments": "School of Languages"
+  },
+  {
+    "Name": "Mr. Ashok Kumar / Mr. Rishi Srivastava",
+    "Contact": "7985729456 / 8957867952",
+    "Programme": "BA LLB (H)",
+    "Departments": "School of Legal Studies"
+  },
+  {
+    "Name": "Mr. Divyansh Shukla / Ms. Meghna Bajpai",
+    "Contact": "9958397748 / 7024100946",
+    "Programme": "BBA.LL.B. (H)",
+    "Departments": "School of Legal Studies"
+  },
+  {
+    "Name": "Ms. Smriti Roy / Ms. Kaushiki Trivedi",
+    "Contact": "8600890129 / 9026233032",
+    "Programme": "LL.B. (H)",
+    "Departments": "School of Legal Studies"
+  },
+  {
+    "Name": "Dr. Rahul Tiwari / Mr. Rishi Srivastava",
+    "Contact": "8303884814 / 8957867952",
+    "Programme": "LLM (2 Year Programme)",
+    "Departments": "School of Legal Studies"
+  },
+  {
+    "Name": "Dr. Samiuddin / Mr. Samarendr Chauhan",
+    "Contact": "9696311031 / 9582745106",
+    "Programme": "LLM (1 Year Programme)",
+    "Departments": "School of Legal Studies"
+  },
+  {
+    "Name": "Mr Siddharth Singh",
+    "Contact": "7355559499",
+    "Programme": "Bachelor of Hotel Management & Catering Technology / Diploma in Bakery & Confectionery",
+    "Departments": "School of Hospitality, Tourism & Catering Technology"
+  },
+  {
+    "Name": "Mr Ankit Kumar",
+    "Contact": "9140502991",
+    "Programme": "Diploma in Front Office",
+    "Departments": "School of Hospitality, Tourism & Catering Technology"
+  },
+  {
+    "Name": "Mrs Aishwarya Arya",
+    "Contact": "7054394159",
+    "Programme": "Diploma in Food & Beverage Service",
+    "Departments": "School of Hospitality, Tourism & Catering Technology"
+  },
+  {
+    "Name": "Mr Arvind Chauhan",
+    "Contact": "8738993112",
+    "Programme": "Master of Hotel Management & Catering Technology",
+    "Departments": "School of Hospitality, Tourism & Catering Technology"
+  },
+  {
+    "Name": "Mr Shivansu Sachan",
+    "Contact": "9695901901",
+    "Programme": "Diploma In Food Production",
+    "Departments": "School of Hospitality, Tourism & Catering Technology"
+  },
+  {
+    "Name": "Mr. Vinay Singh",
+    "Contact": "8299343039",
+    "Programme": "BFA",
+    "Departments": "School of Creative & Performing Arts"
+  },
+  {
+    "Name": "Mr. Juit Bali Yadav",
+    "Contact": "9453437753",
+    "Programme": "BFA",
+    "Departments": "School of Creative & Performing Arts"
+  },
+  {
+    "Name": "Miss. Tanisha Wadhawan",
+    "Contact": "8176913524",
+    "Programme": "BFA",
+    "Departments": "School of Creative & Performing Arts"
+  },
+  {
+    "Name": "Dr. Mithaee Lal",
+    "Contact": "8840274431",
+    "Programme": "MFA",
+    "Departments": "School of Creative & Performing Arts"
+  },
+  {
+    "Name": "Dr. Randhir Singh",
+    "Contact": "9451102934",
+    "Programme": "MFA",
+    "Departments": "School of Creative & Performing Arts"
+  },
+  {
+    "Name": "Dr. Sachiv Gautam",
+    "Contact": "9120670593",
+    "Programme": "Certificate courses in Fine Arts",
+    "Departments": "School of Creative & Performing Arts"
+  },
+  {
+    "Name": "Dr. Bappa Maji",
+    "Contact": "9163718889",
+    "Programme": "Certificate courses in Fine Arts",
+    "Departments": "School of Creative & Performing Arts"
+  },
+  {
+    "Name": "Dr. Shubham Varma",
+    "Contact": "8795845530",
+    "Programme": "M.A. Tabla, BPA Â Tabla, BPA Â Kathak, MPA - Kathak",
+    "Departments": "School of Creative & Performing Arts"
+  },
+  {
+    "Name": "Dr. Richa Mishra",
+    "Contact": "9889005805",
+    "Programme": "M.A. Â Vocal, BPA- Vocal",
+    "Departments": "School of Creative & Performing Arts"
+  },
+  {
+    "Name": "Mrs. Anupama Yadav",
+    "Contact": "7007091171",
+    "Programme": "B.Ed.",
+    "Departments": "School of Teacher Education"
+  },
+  {
+    "Name": "Dr. Gopal Singh",
+    "Contact": "9410863892",
+    "Programme": "M.Ed.",
+    "Departments": "School of Teacher Education"
+  },
+  {
+    "Name": "Dr. Kalpana Agnihotri",
+    "Contact": "8840088412",
+    "Programme": "ITEP",
+    "Departments": "School of Teacher Education"
+  },
+  {
+    "Name": "Dr. Kunwar Kuldeep Chauhan",
+    "Contact": "9990654272",
+    "Programme": "Certificate Course on Digigogy",
+    "Departments": "School of Teacher Education"
+  },
+  {
+    "Name": "Mrs. Priya Tewari",
+    "Contact": "9415201445",
+    "Programme": "Certificate Course on Educational Leadership and Management",
+    "Departments": "School of Teacher Education"
+  },
+  {
+    "Name": "Mrs. Nimisha Singh Kushwaha",
+    "Contact": "7889298717",
+    "Programme": "Bachelor of Physical Education & Sports",
+    "Departments": "School of Teacher Education"
+  },
+  {
+    "Name": "Mr. Abhishek Mishra",
+    "Contact": "7379726337",
+    "Programme": "Bachelor of Physical Education",
+    "Departments": "School of Teacher Education"
+  },
+  {
+    "Name": "Mr. Saurabh Tiwari",
+    "Contact": "7355124275",
+    "Programme": "Master of Physical Education",
+    "Departments": "School of Teacher Education"
+  },
+  {
+    "Name": "Dr. Ram Kishore",
+    "Contact": "9451409112",
+    "Programme": "BSc in Yoga Science / MSc in Yoga Science / MA in Yoga / Post Graduate Diploma in Yoga",
+    "Departments": "School of Teacher Education"
+  },
+  {
+    "Name": "Dr. Prashant",
+    "Contact": "9785196711",
+    "Programme": "BA Program (Combination) / BA (Hons.) Philosophy / MA Hindu Studies",
+    "Departments": "School of Arts, Humanities & Social Sciences"
+  },
+  {
+    "Name": "Dr. Pooja Singh / Dr. Manas Upadhyay",
+    "Contact": "7985169813 / 9936262920",
+    "Programme": "Bachelor of Arts (Honours) - Economics / MA Hindu Studies",
+    "Departments": "School of Arts, Humanities & Social Sciences"
+  },
+  {
+    "Name": "Dr. Anita Awasthi / Mr. Satyendra Singh Chauhan",
+    "Contact": "6306827962 / 9792322333",
+    "Programme": "BA (Hons.) Sociology / Master of Arts - Sociology",
+    "Departments": "School of Arts, Humanities & Social Sciences"
+  },
+  {
+    "Name": "Mr. Ahmed Abdullah",
+    "Contact": "8840795684",
+    "Programme": "BA (Hons.) Psychology / B.Sc. (Hons.) Clinical Psychology",
+    "Departments": "School of Arts, Humanities & Social Sciences"
+  },
+  {
+    "Name": "Dr. Pawan Kumar Gupta",
+    "Contact": "9044988714",
+    "Programme": "BA (Hons.) Political Science",
+    "Departments": "School of Arts, Humanities & Social Sciences"
+  },
+  {
+    "Name": "Dr. S.P. Verma / Mr. Satyendra Singh Chauhan",
+    "Contact": "8218756681 / 9792322333",
+    "Programme": "Master of Social Work (MSW)",
+    "Departments": "School of Arts, Humanities & Social Sciences"
+  },
+  {
+    "Name": "Dr. Sharad Dixit",
+    "Contact": "9140562284",
+    "Programme": "Master of Arts - Economics (On Campus)",
+    "Departments": "School of Arts, Humanities & Social Sciences"
+  },
+  {
+    "Name": "Dr. Anshu Singh",
+    "Contact": "9891445385",
+    "Programme": "Master of Arts In Public Health",
+    "Departments": "School of Arts, Humanities & Social Sciences"
+  },
+  {
+    "Name": "Dr. Priyanka Shukla",
+    "Contact": "8957052126",
+    "Programme": "M.A. Clinical Psychology / PG Diploma in Guidance and Counselling",
+    "Departments": "School of Arts, Humanities & Social Sciences"
+  },
+  {
+    "Name": "Mrs. Deepmala Nigam / Miss. Smita Gupta",
+    "Contact": "9651218059 / 9569829085",
+    "Programme": "B.Lib & I.Sc. / M.Lib & I.Sc.",
+    "Departments": "School of Arts, Humanities & Social Sciences"
+  },
+  {
+    "Name": "Dr. Yogendra Kumar Pandey / Dr. Om Shankar Gupta",
+    "Contact": "9026760033 / 9868092768",
+    "Programme": "BAJMC / MAJMC / PGDJMC / MAJMC Lateral Entry",
+    "Departments": "School of Arts, Humanities & Social Sciences"
+  },
+  {
+    "Name": "Dr. Sangam Bajpai",
+    "Contact": "8887878840",
+    "Programme": "M.A. Jyotirvigyan / Diploma in Karmkand / P.G. Diploma in Vastu Shastra",
+    "Departments": "School of Arts, Humanities & Social Sciences"
+  },
+  {
+    "Name": "Dr. Prashant Trivedi",
+    "Contact": "9936164861",
+    "Programme": "MBA",
+    "Departments": "School of Business Management"
+  },
+  {
+    "Name": "Dr. Surendra",
+    "Contact": "9889085952",
+    "Programme": "MHA",
+    "Departments": "School of Business Management"
+  },
+  {
+    "Name": "Dr. Nazmi Shabbir",
+    "Contact": "7007023609",
+    "Programme": "M.Com",
+    "Departments": "School of Business Management"
+  },
+  {
+    "Name": "Dr. Pravin Agrawal",
+    "Contact": "8127337872",
+    "Programme": "BBA",
+    "Departments": "School of Business Management"
+  },
+  {
+    "Name": "Mr. Prakash Narain Pandey",
+    "Contact": "9919258585",
+    "Programme": "B.Com Honours",
+    "Departments": "School of Business Management"
+  },
+  {
+    "Name": "Mr. Abhishek Dwivedi",
+    "Contact": "7348308031",
+    "Programme": "M.Sc. Ag. Agronomy",
+    "Departments": "School of Advanced Agriculture Sciences & Technology"
+  },
+  {
+    "Name": "Dr. Ankit Singh Bhadauria",
+    "Contact": "8273918014",
+    "Programme": "M.Sc. Ag. Horticulture",
+    "Departments": "School of Advanced Agriculture Sciences & Technology"
+  },
+  {
+    "Name": "Dr. Sudhir Kumar",
+    "Contact": "8573894646",
+    "Programme": "M.Sc. Food Science and Technology",
+    "Departments": "School of Advanced Agriculture Sciences & Technology"
+  },
+  {
+    "Name": "Dr. Rohit and Dr. Ankit Singh Bhadauria",
+    "Contact": "9125965352",
+    "Programme": "B.Sc. (Hons.) Agriculture",
+    "Departments": "School of Advanced Agriculture Sciences & Technology"
+  }
+]

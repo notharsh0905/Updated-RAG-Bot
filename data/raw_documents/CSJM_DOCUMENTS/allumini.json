@@ -1,0 +1,102 @@
+[
+	{
+		"name": "Prof. Rajeev Kumar",
+		"designation": "Professor",
+		"organization": "IIT Mandi"
+	},
+	{
+		"name": "Dr. Anand Handa",
+		"designation": "CSO, C3i Hub",
+		"organization": "IIT Kanpur"
+	},
+	{
+		"name": "Dr. Raghvendra Singh",
+		"designation": "Associate Professor",
+		"organization": "IIT Kanpur"
+	},
+	{
+		"name": "Prof. Surya Prakash",
+		"designation": "Professor",
+		"organization": "IIT Indore"
+	},
+	{
+		"name": "Atul Nigotia",
+		"designation": "Scientific/Engineer",
+		"organization": "ISRO"
+	},
+	{
+		"name": "Priyanka Mishra",
+		"designation": "Scientific/Engineer, Deputy Project Director Chandrayaan-3",
+		"organization": "ISRO"
+	},
+	{
+		"name": "Priyanka Yadav",
+		"designation": "Scientific/Engineer",
+		"organization": "ISRO"
+	},
+	{
+		"name": "Pravesh Mathur",
+		"designation": "Scientific/Engineer",
+		"organization": "ISRO"
+	},
+	{
+		"name": "Shashank Gupta",
+		"designation": "Vice President",
+		"organization": "Royal Bank of Scotland"
+	},
+	{
+		"name": "Mohammad Afzal",
+		"designation": "E/M Engineer",
+		"organization": "Military Engineer Services"
+	},
+	{
+		"name": "Dr. Rita Maurya",
+		"designation": "Assistant Professor",
+		"organization": "NIT Hamirpur"
+	},
+	{
+		"name": "Janardan Singh",
+		"designation": "Scientist/Engineer-SC",
+		"organization": "ISRO, Government of India"
+	},
+	{
+		"name": "Gautam Wadhwani",
+		"designation": "Engineering Manager",
+		"organization": "Apple Inc."
+	},
+	{
+		"name": "Abhishek Dwivedi",
+		"designation": "Sr. Software Dev Engineering",
+		"organization": "CISCO"
+	},
+	{
+		"name": "Anukriti Ojha",
+		"designation": "Sr. Quality Engineer",
+		"organization": "Walmart Global Tech"
+	},
+	{
+		"name": "Mukesh Kumar",
+		"designation": "Engineering Manager",
+		"organization": "Amazon Web Services"
+	},
+	{
+		"name": "Mayank Garg",
+		"designation": "Senior Principal Engineering Lead",
+		"organization": "Microsoft"
+	},
+	{
+		"name": "Ashutosh Dixit",
+		"designation": "Scientific Officer",
+		"organization": "BARC Mumbai"
+	},
+	{
+		"name": "Apoorva Tripathi",
+		"designation": "IAS",
+		"organization": "UPSC 2020"
+	},
+	{
+		"name": "Pawana Dengar",
+		"designation": "Wing Commander",
+		"organization": "Indian Air Force"
+	}
+]

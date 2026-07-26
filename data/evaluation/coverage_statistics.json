@@ -1,0 +1,137 @@
+{
+  "total_questions": 305,
+  "covered_questions": 218,
+  "partial_questions": 41,
+  "missing_questions": 46,
+  "coverage_percentage": 71.48,
+  "average_retrieval_score": 0.72,
+  "average_confidence": 0.72,
+  "top_missing_topics": [
+    {
+      "topic": "General Information",
+      "count": 9,
+      "reason": "No document in the knowledge base addresses this specific question regarding General.",
+      "document_required": "csjmu_general_handbook.pdf",
+      "priority": "High",
+      "questions": [
+        "Is Pharmacy Council of India (PCI) approval held by the School of Pharmaceutical Sciences?",
+        "Is Bar Council of India (BCI) approval held by the School of Legal Studies?",
+        "What city public transport options connect to CSJMU?",
+        "What is the official email address for general inquiries?",
+        "What cultural events and annual festivals are celebrated at CSJMU?",
+        "Does CSJMU have an anti-sexual harassment cell / Internal Complaints Committee?",
+        "Does CSJMU have Memorandum of Understanding (MoU) with foreign universities?",
+        "Where can students obtain transcript certificates and duplicate marksheets?",
+        "What sports tournaments are held annually at CSJMU stadium?"
+      ]
+    },
+    {
+      "topic": "General Details",
+      "count": 8,
+      "reason": "Document provides partial context but lacks complete answer details.",
+      "document_required": "csjmu_general_extended_info.pdf",
+      "priority": "Medium",
+      "questions": [
+        "What key highlights make CSJMU a leading state university in Uttar Pradesh?",
+        "How far is CSJMU campus from Kanpur Central Railway Station?",
+        "How far is CSJMU campus from Kanpur Airport?",
+        "What official website URL does CSJMU use?",
+        "What is the official postal address of CSJMU?",
+        "What NSS and NCC wings exist at CSJMU?",
+        "Does CSJMU publish research journals or newsletters?",
+        "How can I contact CSJMU for academic certificates?"
+      ]
+    },
+    {
+      "topic": "Eligibility Details",
+      "count": 6,
+      "reason": "Document provides partial context but lacks complete answer details.",
+      "document_required": "csjmu_eligibility_extended_info.pdf",
+      "priority": "Medium",
+      "questions": [
+        "What is the minimum percentage required in 12th standard for B.Tech admission?",
+        "What is the eligibility for B.Pharm (Bachelor of Pharmacy)?",
+        "What is the eligibility for D.Pharm (Diploma in Pharmacy)?",
+        "What stream in 12th is required for B.Sc Agriculture?",
+        "Is there any relaxation in marks for reserved category candidates?",
+        "Can candidates with vocational subjects in 12th apply for B.Tech?"
+      ]
+    },
+    {
+      "topic": "Syllabus_Labs Information",
+      "count": 6,
+      "reason": "No document in the knowledge base addresses this specific question regarding Syllabus_Labs.",
+      "document_required": "csjmu_syllabus_labs_handbook.pdf",
+      "priority": "High",
+      "questions": [
+        "What credit system is followed in UIET engineering curriculum?",
+        "How many semesters are in B.Tech program at UIET?",
+        "How many semesters are in M.Tech program at UIET?",
+        "How are mid-semester and end-semester exams evaluated?",
+        "Does UIET follow AICTE model curriculum?",
+        "What is the pass percentage criteria in sessional examinations?"
+      ]
+    },
+    {
+      "topic": "Facilities Information",
+      "count": 5,
+      "reason": "No document in the knowledge base addresses this specific question regarding Facilities.",
+      "document_required": "csjmu_facilities_handbook.pdf",
+      "priority": "High",
+      "questions": [
+        "Does CSJMU have a Guest House for visitors?",
+        "Is there a post office inside CSJMU campus?",
+        "Does CSJMU have an Auditorium?",
+        "What is the seating capacity of the CSJMU Auditorium?",
+        "What sports courts exist near the stadium complex?"
+      ]
+    },
+    {
+      "topic": "Faculty Information",
+      "count": 4,
+      "reason": "No document in the knowledge base addresses this specific question regarding Faculty.",
+      "document_required": "csjmu_faculty_handbook.pdf",
+      "priority": "High",
+      "questions": [
+        "Who is the Dean of Student Welfare (DSW)?",
+        "Who is the Registrar of CSJMU?",
+        "Who is the Vice-Chancellor of CSJMU?",
+        "Do faculty members in UIET hold Ph.D. degrees from IITs/NITs?"
+      ]
+    },
+    {
+      "topic": "Hostel Fees & Rules",
+      "count": 4,
+      "reason": "No hostel fee matrix, mess fee details, security deposit rules, or 24/7 security helpline numbers present in hostel.txt.",
+      "document_required": "csjmu_hostel_fee_matrix_and_helpline.pdf",
+      "priority": "High",
+      "questions": [
+        "What is the curfew timing for girls hostels?",
+        "What is the curfew timing for boys hostels?",
+        "What is the 24/7 security control room number for hostels?",
+        "Is there a refundable caution deposit for hostel or university admission?"
+      ]
+    },
+    {
+      "topic": "Scholarship Guidelines & Concessions",
+      "count": 4,
+      "reason": "No document contains scholarship rules, eligibility criteria for financial aid, or application procedure.",
+      "document_required": "csjmu_scholarship_policy.pdf",
+      "priority": "High",
+      "questions": [
+        "What scholarships are available for CSJMU students?",
+        "Are merit scholarships awarded to top performing students?",
+        "How can students apply for National Scholarship Portal (NSP) schemes?",
+        "What documents are required to claim UP scholarship fee waiver?"
+      ]
+    }
+  ],
+  "duplicate_questions": 0,
+  "weak_knowledge_areas": [
+    "General Information",
+    "General Details",
+    "Eligibility Details",
+    "Syllabus_Labs Information",
+    "Facilities Information"
+  ]
+}

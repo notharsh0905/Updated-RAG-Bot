@@ -1,0 +1,143 @@
+[
+  {
+    "id": "fact_eng_001",
+    "category": "Research",
+    "fact": "UIET houses a cutting-edge Supercomputing Hub for Artificial Intelligence featuring an NVIDIA DGX H100 GPU cluster dedicated to advanced AI research.",
+    "source": "Engineering PDF",
+    "keywords": ["ai", "supercomputer", "nvidia", "h100", "research", "gpu", "cluster"]
+  },
+  {
+    "id": "fact_eng_002",
+    "category": "Laboratories",
+    "fact": "The AICTE IDEA Lab at UIET CSJMU provides hands-on 3D printing, laser cutting, and prototyping equipment for student innovators.",
+    "source": "Engineering PDF",
+    "keywords": ["idea lab", "aicte", "3d printing", "laboratories", "lab", "innovation", "prototype"]
+  },
+  {
+    "id": "fact_eng_003",
+    "category": "Laboratories",
+    "fact": "UIET operates an Advanced Drone Laboratory dedicated to research in autonomous aerial vehicles, flight controllers, and aerial mapping.",
+    "source": "Engineering PDF",
+    "keywords": ["drone", "uav", "drone lab", "aerial", "flight", "laboratories"]
+  },
+  {
+    "id": "fact_eng_004",
+    "category": "Laboratories",
+    "fact": "The State-of-the-Art Cyber Security Lab at UIET equips students with practical ethical hacking, network analysis, and VAPT skills using Kali Linux.",
+    "source": "Engineering PDF",
+    "keywords": ["cyber security", "hacking", "vapt", "kali linux", "security", "laboratories"]
+  },
+  {
+    "id": "fact_eng_005",
+    "category": "Infrastructure",
+    "fact": "CSJMU Central Library is a magnificent three-storied centrally air-conditioned building offering extensive digital e-resources and automated search catalogs.",
+    "source": "Engineering PDF",
+    "keywords": ["library", "books", "e-resources", "infrastructure", "facilities", "digital"]
+  },
+  {
+    "id": "fact_eng_006",
+    "category": "Admissions",
+    "fact": "UIET offers B.Tech undergraduate degree programmes across six specialized engineering streams including CSE, CSE (AI), ECE, CHE, MEE, and MSME.",
+    "source": "Engineering PDF",
+    "keywords": ["admissions", "btech", "engineering", "programmes", "courses", "degrees"]
+  },
+  {
+    "id": "fact_eng_007",
+    "category": "Departments",
+    "fact": "The Department of Vocational Studies at UIET offers specialized B.Voc and D.Voc programmes tailored to industry skill requirements.",
+    "source": "Engineering PDF",
+    "keywords": ["vocational", "bvoc", "dvoc", "departments", "skills", "courses"]
+  },
+  {
+    "id": "fact_eng_008",
+    "category": "Faculty",
+    "fact": "UIET engages Professors of Practice and visiting experts from top IITs, NITs, and industry leading institutions for student mentorship.",
+    "source": "Engineering PDF",
+    "keywords": ["faculty", "professors", "professors of practice", "iit", "nit", "teachers"]
+  },
+  {
+    "id": "fact_place_001",
+    "category": "Placements",
+    "fact": "UIET engineering students achieved a stellar highest domestic placement package of 16 LPA with Quizizz and 15 LPA with Cadence Design Systems.",
+    "source": "Placement Report",
+    "keywords": ["placement", "placements", "quizizz", "cadence", "highest package", "salary", "lpa", "jobs"]
+  },
+  {
+    "id": "fact_place_002",
+    "category": "Industry Collaboration",
+    "fact": "Leading recruiters including TCS, Jio Platforms, Sopra Steria, Prospa, Virtusa, and Vodafone Idea regularly conduct campus recruitment drives at UIET.",
+    "source": "Placement Report",
+    "keywords": ["recruiters", "tcs", "jio", "prospa", "sopra steria", "industry collaboration", "companies", "hiring"]
+  },
+  {
+    "id": "fact_place_003",
+    "category": "Training",
+    "fact": "The UIET Training and Placement Cell organizes year-round technical bootcamps, mock interview sessions, and soft skill workshops for all students.",
+    "source": "Placement Report",
+    "keywords": ["training", "placement cell", "bootcamps", "interviews", "workshops", "career"]
+  },
+  {
+    "id": "fact_gate_001",
+    "category": "GATE",
+    "fact": "Aman Singh from Chemical Engineering achieved an impressive All India Rank (AIR) 19 with a score of 821 in the national GATE examination.",
+    "source": "Official GATE PDF",
+    "keywords": ["gate", "air", "rank", "aman singh", "che", "score", "topper", "exam"]
+  },
+  {
+    "id": "fact_gate_002",
+    "category": "Student Achievements",
+    "fact": "Over 46 UIET students from CSE, ECE, CHE, MEE, MSME, and IT departments qualified the competitive national GATE examination.",
+    "source": "Official GATE PDF",
+    "keywords": ["achievements", "qualified", "gate", "students", "ranks", "scores", "success"]
+  },
+  {
+    "id": "fact_gate_003",
+    "category": "Academic Excellence",
+    "fact": "Utkarsh Tripathi (CHE) secured AIR 182 and Zarish Rashid (MSME) achieved AIR 317 in the GATE competitive national examination.",
+    "source": "Official GATE PDF",
+    "keywords": ["academic excellence", "gate", "rank", "air", "che", "msme", "utkarsh", "zarish"]
+  },
+  {
+    "id": "fact_eng_009",
+    "category": "Infrastructure",
+    "fact": "CSJMU campus features modern student hostels, a dedicated Health Center, gymnasium, multi-sport complex, and active NSS units.",
+    "source": "Engineering PDF",
+    "keywords": ["hostels", "health center", "gymnasium", "sports", "nss", "facilities", "infrastructure"]
+  },
+  {
+    "id": "fact_eng_010",
+    "category": "Innovation",
+    "fact": "UIET students actively participate in national competitive coding and robotics events including the ICPC Asia Regional Contest.",
+    "source": "Engineering PDF",
+    "keywords": ["innovation", "icpc", "coding", "competitions", "robotics", "contests"]
+  },
+  {
+    "id": "fact_schol_001",
+    "category": "Scholarships",
+    "fact": "Under the UP Government Fee Reimbursement Scheme, eligible SC/ST students receive up to Rs. 1,17,000 per year, while General/OBC students receive Rs. 64,500 (with hostel) or Rs. 57,000 (day scholars).",
+    "source": "Scholarship Guidelines",
+    "keywords": ["scholarship", "fee reimbursement", "amount", "sc", "st", "obc", "general", "hostel", "financial assistance"]
+  },
+  {
+    "id": "fact_scheme_001",
+    "category": "Government Schemes",
+    "fact": "CSJMU students are eligible for free tablets and smartphones under the Swami Vivekananda Youth Empowerment Scheme (UP Free Tablet / Smartphone Scheme).",
+    "source": "UP Youth Empowerment Scheme",
+    "keywords": ["free tablet", "smartphone", "laptop", "swami vivekananda", "youth empowerment", "up government"]
+  },
+  {
+    "id": "fact_innov_001",
+    "category": "Innovation",
+    "fact": "The CSJMU & UIET Innovation Center provides students with state-of-the-art prototype development labs, idea incubation, university guidance, and investor mentorship.",
+    "source": "Innovation Center Guidelines",
+    "keywords": ["innovation center", "incubation", "prototype", "startup support", "mentorship", "project development"]
+  },
+  {
+    "id": "fact_startup_001",
+    "category": "Campus Startups",
+    "fact": "PEZ is a smart campus printing startup that allows students to upload documents, scan a QR code at campus print stations, pay digitally, and print instantly with automatic file deletion.",
+    "source": "Campus Startup Records",
+    "keywords": ["pez", "printing", "printer", "photocopy", "qr print", "startup", "smart campus"]
+  }
+]
+

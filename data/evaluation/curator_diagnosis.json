@@ -1,0 +1,1362 @@
+{
+  "diagnosis_summary": {
+    "total_questions_audited": 305,
+    "total_failed_or_partial": 87,
+    "retrieval_failures_count": 75,
+    "coverage_failures_count": 12,
+    "target_documents_needed_count": 6
+  },
+  "retrieval_failure_diagnoses": [
+    {
+      "question_id": 11,
+      "category": "Admissions",
+      "question": "Are board recognitions required for admission eligibility?",
+      "coverage_status": "Missing",
+      "source_document_found": "course_eligibility.json",
+      "retrieval_failure_reason": "Information exists in course_eligibility.json, but retriever ranked general chunks higher due to low keyword overlap in query.",
+      "recommended_chunk_fix": "Merge unit header context into child chunk or split multi-topic paragraphs into single-concept units.",
+      "recommended_metadata_fix": "Add explicit metadata tags: category='Admissions', keywords=['board', 'recognitions', 'required', 'admission']",
+      "recommended_query_aliases": [
+        "are board recognitions required for admission eligibility",
+        "csjmu admissions",
+        "uiet board recognitions"
+      ]
+    },
+    {
+      "question_id": 27,
+      "category": "Eligibility",
+      "question": "What is the minimum percentage required in 12th standard for B.Tech admission?",
+      "coverage_status": "Partial",
+      "source_document_found": "course_eligibility.json",
+      "retrieval_failure_reason": "Information exists in course_eligibility.json, but retriever ranked general chunks higher due to low keyword overlap in query.",
+      "recommended_chunk_fix": "Merge unit header context into child chunk or split multi-topic paragraphs into single-concept units.",
+      "recommended_metadata_fix": "Add explicit metadata tags: category='Eligibility', keywords=['minimum', 'percentage', 'required', '12th']",
+      "recommended_query_aliases": [
+        "what is the minimum percentage required in 12th standard for b.tech admission",
+        "csjmu eligibility",
+        "uiet minimum percentage"
+      ]
+    },
+    {
+      "question_id": 31,
+      "category": "Eligibility",
+      "question": "What is the eligibility for B.Pharm (Bachelor of Pharmacy)?",
+      "coverage_status": "Partial",
+      "source_document_found": "course_eligibility.json",
+      "retrieval_failure_reason": "Information exists in course_eligibility.json, but retriever ranked general chunks higher due to low keyword overlap in query.",
+      "recommended_chunk_fix": "Merge unit header context into child chunk or split multi-topic paragraphs into single-concept units.",
+      "recommended_metadata_fix": "Add explicit metadata tags: category='Eligibility', keywords=['eligibility', 'b.pharm', 'bachelor', 'pharmacy']",
+      "recommended_query_aliases": [
+        "what is the eligibility for b.pharm (bachelor of pharmacy)",
+        "csjmu eligibility",
+        "uiet eligibility b.pharm"
+      ]
+    },
+    {
+      "question_id": 32,
+      "category": "Eligibility",
+      "question": "What is the eligibility for D.Pharm (Diploma in Pharmacy)?",
+      "coverage_status": "Partial",
+      "source_document_found": "course_eligibility.json",
+      "retrieval_failure_reason": "Information exists in course_eligibility.json, but retriever ranked general chunks higher due to low keyword overlap in query.",
+      "recommended_chunk_fix": "Merge unit header context into child chunk or split multi-topic paragraphs into single-concept units.",
+      "recommended_metadata_fix": "Add explicit metadata tags: category='Eligibility', keywords=['eligibility', 'd.pharm', 'diploma', 'pharmacy']",
+      "recommended_query_aliases": [
+        "what is the eligibility for d.pharm (diploma in pharmacy)",
+        "csjmu eligibility",
+        "uiet eligibility d.pharm"
+      ]
+    },
+    {
+      "question_id": 62,
+      "category": "Departments",
+      "question": "Tell me about the School of Languages.",
+      "coverage_status": "Missing",
+      "source_document_found": "admission_coordinators.json",
+      "retrieval_failure_reason": "Information exists in admission_coordinators.json, but retriever ranked general chunks higher due to low keyword overlap in query.",
+      "recommended_chunk_fix": "Merge unit header context into child chunk or split multi-topic paragraphs into single-concept units.",
+      "recommended_metadata_fix": "Add explicit metadata tags: category='Departments', keywords=['school', 'languages']",
+      "recommended_query_aliases": [
+        "tell me about the school of languages.",
+        "csjmu departments",
+        "uiet school languages"
+      ]
+    },
+    {
+      "question_id": 63,
+      "category": "Departments",
+      "question": "Tell me about the School of Arts, Humanities & Social Sciences.",
+      "coverage_status": "Missing",
+      "source_document_found": "course_eligibility.json",
+      "retrieval_failure_reason": "Information exists in course_eligibility.json, but retriever ranked general chunks higher due to low keyword overlap in query.",
+      "recommended_chunk_fix": "Merge unit header context into child chunk or split multi-topic paragraphs into single-concept units.",
+      "recommended_metadata_fix": "Add explicit metadata tags: category='Departments', keywords=['school', 'arts', 'humanities', 'social']",
+      "recommended_query_aliases": [
+        "tell me about the school of arts, humanities & social sciences.",
+        "csjmu departments",
+        "uiet school arts"
+      ]
+    },
+    {
+      "question_id": 83,
+      "category": "Faculty",
+      "question": "Who is the Dean of Student Welfare (DSW)?",
+      "coverage_status": "Missing",
+      "source_document_found": "uiet_teachers.json",
+      "retrieval_failure_reason": "Information exists in uiet_teachers.json, but retriever ranked general chunks higher due to low keyword overlap in query.",
+      "recommended_chunk_fix": "Merge unit header context into child chunk or split multi-topic paragraphs into single-concept units.",
+      "recommended_metadata_fix": "Add explicit metadata tags: category='Faculty', keywords=['dean', 'student', 'welfare', 'dsw']",
+      "recommended_query_aliases": [
+        "who is the dean of student welfare (dsw)",
+        "csjmu faculty",
+        "uiet dean student"
+      ]
+    },
+    {
+      "question_id": 90,
+      "category": "Hostel",
+      "question": "What is the curfew timing for girls hostels?",
+      "coverage_status": "Missing",
+      "source_document_found": "facilities_at_csjm.txt",
+      "retrieval_failure_reason": "Information exists in facilities_at_csjm.txt, but retriever ranked general chunks higher due to low keyword overlap in query.",
+      "recommended_chunk_fix": "Merge unit header context into child chunk or split multi-topic paragraphs into single-concept units.",
+      "recommended_metadata_fix": "Add explicit metadata tags: category='Hostel', keywords=['curfew', 'timing', 'girls', 'hostels']",
+      "recommended_query_aliases": [
+        "what is the curfew timing for girls hostels",
+        "csjmu hostel",
+        "uiet curfew timing"
+      ]
+    },
+    {
+      "question_id": 91,
+      "category": "Hostel",
+      "question": "What is the curfew timing for boys hostels?",
+      "coverage_status": "Missing",
+      "source_document_found": "facilities_at_csjm.txt",
+      "retrieval_failure_reason": "Information exists in facilities_at_csjm.txt, but retriever ranked general chunks higher due to low keyword overlap in query.",
+      "recommended_chunk_fix": "Merge unit header context into child chunk or split multi-topic paragraphs into single-concept units.",
+      "recommended_metadata_fix": "Add explicit metadata tags: category='Hostel', keywords=['curfew', 'timing', 'boys', 'hostels']",
+      "recommended_query_aliases": [
+        "what is the curfew timing for boys hostels",
+        "csjmu hostel",
+        "uiet curfew timing"
+      ]
+    },
+    {
+      "question_id": 99,
+      "category": "Hostel",
+      "question": "What is the 24/7 security control room number for hostels?",
+      "coverage_status": "Missing",
+      "source_document_found": "departments_of_uiet.json",
+      "retrieval_failure_reason": "Information exists in departments_of_uiet.json, but retriever ranked general chunks higher due to low keyword overlap in query.",
+      "recommended_chunk_fix": "Merge unit header context into child chunk or split multi-topic paragraphs into single-concept units.",
+      "recommended_metadata_fix": "Add explicit metadata tags: category='Hostel', keywords=['security', 'control', 'room', 'number']",
+      "recommended_query_aliases": [
+        "what is the 24/7 security control room number for hostels",
+        "csjmu hostel",
+        "uiet security control"
+      ]
+    },
+    {
+      "question_id": 102,
+      "category": "Placements",
+      "question": "What is the highest package offered at UIET Kanpur?",
+      "coverage_status": "Missing",
+      "source_document_found": "placements.txt",
+      "retrieval_failure_reason": "Information exists in placements.txt, but retriever ranked general chunks higher due to low keyword overlap in query.",
+      "recommended_chunk_fix": "Merge unit header context into child chunk or split multi-topic paragraphs into single-concept units.",
+      "recommended_metadata_fix": "Add explicit metadata tags: category='Placements', keywords=['highest', 'package', 'offered']",
+      "recommended_query_aliases": [
+        "what is the highest package offered at uiet kanpur",
+        "csjmu placements",
+        "uiet highest package"
+      ]
+    },
+    {
+      "question_id": 103,
+      "category": "Placements",
+      "question": "What is the average package for B.Tech CSE students?",
+      "coverage_status": "Missing",
+      "source_document_found": "course_eligibility.json",
+      "retrieval_failure_reason": "Information exists in course_eligibility.json, but retriever ranked general chunks higher due to low keyword overlap in query.",
+      "recommended_chunk_fix": "Merge unit header context into child chunk or split multi-topic paragraphs into single-concept units.",
+      "recommended_metadata_fix": "Add explicit metadata tags: category='Placements', keywords=['average', 'package', 'b.tech', 'cse']",
+      "recommended_query_aliases": [
+        "what is the average package for b.tech cse students",
+        "csjmu placements",
+        "uiet average package"
+      ]
+    },
+    {
+      "question_id": 104,
+      "category": "Placements",
+      "question": "Which top companies visit CSJMU for campus recruitment?",
+      "coverage_status": "Partial",
+      "source_document_found": "departments_of_uiet.json",
+      "retrieval_failure_reason": "Information exists in departments_of_uiet.json, but retriever ranked general chunks higher due to low keyword overlap in query.",
+      "recommended_chunk_fix": "Merge unit header context into child chunk or split multi-topic paragraphs into single-concept units.",
+      "recommended_metadata_fix": "Add explicit metadata tags: category='Placements', keywords=['top', 'companies', 'visit', 'campus']",
+      "recommended_query_aliases": [
+        "which top companies visit csjmu for campus recruitment",
+        "csjmu placements",
+        "uiet top companies"
+      ]
+    },
+    {
+      "question_id": 107,
+      "category": "Placements",
+      "question": "Is industrial training mandatory for B.Tech students?",
+      "coverage_status": "Missing",
+      "source_document_found": "course_eligibility.json",
+      "retrieval_failure_reason": "Information exists in course_eligibility.json, but retriever ranked general chunks higher due to low keyword overlap in query.",
+      "recommended_chunk_fix": "Merge unit header context into child chunk or split multi-topic paragraphs into single-concept units.",
+      "recommended_metadata_fix": "Add explicit metadata tags: category='Placements', keywords=['industrial', 'training', 'mandatory', 'b.tech']",
+      "recommended_query_aliases": [
+        "is industrial training mandatory for b.tech students",
+        "csjmu placements",
+        "uiet industrial training"
+      ]
+    },
+    {
+      "question_id": 125,
+      "category": "Facilities",
+      "question": "Is there a post office inside CSJMU campus?",
+      "coverage_status": "Missing",
+      "source_document_found": "course_eligibility.json",
+      "retrieval_failure_reason": "Information exists in course_eligibility.json, but retriever ranked general chunks higher due to low keyword overlap in query.",
+      "recommended_chunk_fix": "Merge unit header context into child chunk or split multi-topic paragraphs into single-concept units.",
+      "recommended_metadata_fix": "Add explicit metadata tags: category='Facilities', keywords=['there', 'post', 'office', 'inside']",
+      "recommended_query_aliases": [
+        "is there a post office inside csjmu campus",
+        "csjmu facilities",
+        "uiet there post"
+      ]
+    },
+    {
+      "question_id": 127,
+      "category": "Facilities",
+      "question": "What is the seating capacity of the CSJMU Auditorium?",
+      "coverage_status": "Missing",
+      "source_document_found": "facilities_at_csjm.txt",
+      "retrieval_failure_reason": "Information exists in facilities_at_csjm.txt, but retriever ranked general chunks higher due to low keyword overlap in query.",
+      "recommended_chunk_fix": "Merge unit header context into child chunk or split multi-topic paragraphs into single-concept units.",
+      "recommended_metadata_fix": "Add explicit metadata tags: category='Facilities', keywords=['seating', 'capacity', 'auditorium']",
+      "recommended_query_aliases": [
+        "what is the seating capacity of the csjmu auditorium",
+        "csjmu facilities",
+        "uiet seating capacity"
+      ]
+    },
+    {
+      "question_id": 142,
+      "category": "Syllabus_Labs",
+      "question": "What credit system is followed in UIET engineering curriculum?",
+      "coverage_status": "Missing",
+      "source_document_found": "course_eligibility.json",
+      "retrieval_failure_reason": "Information exists in course_eligibility.json, but retriever ranked general chunks higher due to low keyword overlap in query.",
+      "recommended_chunk_fix": "Merge unit header context into child chunk or split multi-topic paragraphs into single-concept units.",
+      "recommended_metadata_fix": "Add explicit metadata tags: category='Syllabus_Labs', keywords=['credit', 'system', 'followed', 'engineering']",
+      "recommended_query_aliases": [
+        "what credit system is followed in uiet engineering curriculum",
+        "csjmu syllabus_labs",
+        "uiet credit system"
+      ]
+    },
+    {
+      "question_id": 143,
+      "category": "Syllabus_Labs",
+      "question": "How many semesters are in B.Tech program at UIET?",
+      "coverage_status": "Missing",
+      "source_document_found": "course_eligibility.json",
+      "retrieval_failure_reason": "Information exists in course_eligibility.json, but retriever ranked general chunks higher due to low keyword overlap in query.",
+      "recommended_chunk_fix": "Merge unit header context into child chunk or split multi-topic paragraphs into single-concept units.",
+      "recommended_metadata_fix": "Add explicit metadata tags: category='Syllabus_Labs', keywords=['many', 'semesters', 'b.tech', 'program']",
+      "recommended_query_aliases": [
+        "how many semesters are in b.tech program at uiet",
+        "csjmu syllabus_labs",
+        "uiet many semesters"
+      ]
+    },
+    {
+      "question_id": 144,
+      "category": "Syllabus_Labs",
+      "question": "How many semesters are in M.Tech program at UIET?",
+      "coverage_status": "Missing",
+      "source_document_found": "course_eligibility.json",
+      "retrieval_failure_reason": "Information exists in course_eligibility.json, but retriever ranked general chunks higher due to low keyword overlap in query.",
+      "recommended_chunk_fix": "Merge unit header context into child chunk or split multi-topic paragraphs into single-concept units.",
+      "recommended_metadata_fix": "Add explicit metadata tags: category='Syllabus_Labs', keywords=['many', 'semesters', 'm.tech', 'program']",
+      "recommended_query_aliases": [
+        "how many semesters are in m.tech program at uiet",
+        "csjmu syllabus_labs",
+        "uiet many semesters"
+      ]
+    },
+    {
+      "question_id": 153,
+      "category": "Approved_Boards",
+      "question": "Is CBSE recognised for admission to CSJMU?",
+      "coverage_status": "Partial",
+      "source_document_found": "course_eligibility.json",
+      "retrieval_failure_reason": "Information exists in course_eligibility.json, but retriever ranked general chunks higher due to low keyword overlap in query.",
+      "recommended_chunk_fix": "Merge unit header context into child chunk or split multi-topic paragraphs into single-concept units.",
+      "recommended_metadata_fix": "Add explicit metadata tags: category='Approved_Boards', keywords=['cbse', 'recognised', 'admission']",
+      "recommended_query_aliases": [
+        "is cbse recognised for admission to csjmu",
+        "csjmu approved_boards",
+        "uiet cbse recognised"
+      ]
+    },
+    {
+      "question_id": 154,
+      "category": "Approved_Boards",
+      "question": "Is ICSE/ISC board recognised by CSJMU?",
+      "coverage_status": "Partial",
+      "source_document_found": "course_eligibility.json",
+      "retrieval_failure_reason": "Information exists in course_eligibility.json, but retriever ranked general chunks higher due to low keyword overlap in query.",
+      "recommended_chunk_fix": "Merge unit header context into child chunk or split multi-topic paragraphs into single-concept units.",
+      "recommended_metadata_fix": "Add explicit metadata tags: category='Approved_Boards', keywords=['icse', 'isc', 'board', 'recognised']",
+      "recommended_query_aliases": [
+        "is icse/isc board recognised by csjmu",
+        "csjmu approved_boards",
+        "uiet icse isc"
+      ]
+    },
+    {
+      "question_id": 156,
+      "category": "Approved_Boards",
+      "question": "What is the policy regarding unrecognised fake boards?",
+      "coverage_status": "Missing",
+      "source_document_found": "facilities_at_csjm.txt",
+      "retrieval_failure_reason": "Information exists in facilities_at_csjm.txt, but retriever ranked general chunks higher due to low keyword overlap in query.",
+      "recommended_chunk_fix": "Merge unit header context into child chunk or split multi-topic paragraphs into single-concept units.",
+      "recommended_metadata_fix": "Add explicit metadata tags: category='Approved_Boards', keywords=['policy', 'regarding', 'unrecognised', 'fake']",
+      "recommended_query_aliases": [
+        "what is the policy regarding unrecognised fake boards",
+        "csjmu approved_boards",
+        "uiet policy regarding"
+      ]
+    },
+    {
+      "question_id": 157,
+      "category": "Approved_Boards",
+      "question": "Where can candidates verify board recognition status?",
+      "coverage_status": "Missing",
+      "source_document_found": "course_eligibility.json",
+      "retrieval_failure_reason": "Information exists in course_eligibility.json, but retriever ranked general chunks higher due to low keyword overlap in query.",
+      "recommended_chunk_fix": "Merge unit header context into child chunk or split multi-topic paragraphs into single-concept units.",
+      "recommended_metadata_fix": "Add explicit metadata tags: category='Approved_Boards', keywords=['candidates', 'verify', 'board', 'recognition']",
+      "recommended_query_aliases": [
+        "where can candidates verify board recognition status",
+        "csjmu approved_boards",
+        "uiet candidates verify"
+      ]
+    },
+    {
+      "question_id": 159,
+      "category": "Innovation",
+      "question": "What support does CSJMU provide to student startups and incubatees?",
+      "coverage_status": "Partial",
+      "source_document_found": "departments_of_uiet.json",
+      "retrieval_failure_reason": "Information exists in departments_of_uiet.json, but retriever ranked general chunks higher due to low keyword overlap in query.",
+      "recommended_chunk_fix": "Merge unit header context into child chunk or split multi-topic paragraphs into single-concept units.",
+      "recommended_metadata_fix": "Add explicit metadata tags: category='Innovation', keywords=['support', 'provide', 'student', 'startups']",
+      "recommended_query_aliases": [
+        "what support does csjmu provide to student startups and incubatees",
+        "csjmu innovation",
+        "uiet support provide"
+      ]
+    },
+    {
+      "question_id": 162,
+      "category": "Dignitaries",
+      "question": "What is the vision of CSJMU according to university leadership?",
+      "coverage_status": "Missing",
+      "source_document_found": "uiet_teachers.json",
+      "retrieval_failure_reason": "Information exists in uiet_teachers.json, but retriever ranked general chunks higher due to low keyword overlap in query.",
+      "recommended_chunk_fix": "Merge unit header context into child chunk or split multi-topic paragraphs into single-concept units.",
+      "recommended_metadata_fix": "Add explicit metadata tags: category='Dignitaries', keywords=['vision', 'according', 'leadership']",
+      "recommended_query_aliases": [
+        "what is the vision of csjmu according to university leadership",
+        "csjmu dignitaries",
+        "uiet vision according"
+      ]
+    },
+    {
+      "question_id": 163,
+      "category": "Courses",
+      "question": "What undergraduate degree courses are offered at CSJMU?",
+      "coverage_status": "Partial",
+      "source_document_found": "course_eligibility.json",
+      "retrieval_failure_reason": "Information exists in course_eligibility.json, but retriever ranked general chunks higher due to low keyword overlap in query.",
+      "recommended_chunk_fix": "Merge unit header context into child chunk or split multi-topic paragraphs into single-concept units.",
+      "recommended_metadata_fix": "Add explicit metadata tags: category='Courses', keywords=['undergraduate', 'degree', 'courses', 'offered']",
+      "recommended_query_aliases": [
+        "what undergraduate degree courses are offered at csjmu",
+        "csjmu courses",
+        "uiet undergraduate degree"
+      ]
+    },
+    {
+      "question_id": 167,
+      "category": "Courses",
+      "question": "Is Ph.D. program offered at CSJMU?",
+      "coverage_status": "Partial",
+      "source_document_found": "departments_of_uiet.json",
+      "retrieval_failure_reason": "Information exists in departments_of_uiet.json, but retriever ranked general chunks higher due to low keyword overlap in query.",
+      "recommended_chunk_fix": "Merge unit header context into child chunk or split multi-topic paragraphs into single-concept units.",
+      "recommended_metadata_fix": "Add explicit metadata tags: category='Courses', keywords=['ph.d', 'program', 'offered']",
+      "recommended_query_aliases": [
+        "is ph.d. program offered at csjmu",
+        "csjmu courses",
+        "uiet ph.d program"
+      ]
+    },
+    {
+      "question_id": 178,
+      "category": "Fees",
+      "question": "Is there a refundable caution deposit for hostel or university admission?",
+      "coverage_status": "Missing",
+      "source_document_found": "admission_process.txt",
+      "retrieval_failure_reason": "Information exists in admission_process.txt, but retriever ranked general chunks higher due to low keyword overlap in query.",
+      "recommended_chunk_fix": "Merge unit header context into child chunk or split multi-topic paragraphs into single-concept units.",
+      "recommended_metadata_fix": "Add explicit metadata tags: category='Fees', keywords=['there', 'refundable', 'caution', 'deposit']",
+      "recommended_query_aliases": [
+        "is there a refundable caution deposit for hostel or university admission",
+        "csjmu fees",
+        "uiet there refundable"
+      ]
+    },
+    {
+      "question_id": 179,
+      "category": "Scholarships",
+      "question": "What scholarships are available for CSJMU students?",
+      "coverage_status": "Missing",
+      "source_document_found": "departments_of_uiet.json",
+      "retrieval_failure_reason": "Information exists in departments_of_uiet.json, but retriever ranked general chunks higher due to low keyword overlap in query.",
+      "recommended_chunk_fix": "Merge unit header context into child chunk or split multi-topic paragraphs into single-concept units.",
+      "recommended_metadata_fix": "Add explicit metadata tags: category='Scholarships', keywords=['scholarships', 'available', 'students']",
+      "recommended_query_aliases": [
+        "what scholarships are available for csjmu students",
+        "csjmu scholarships",
+        "uiet scholarships available"
+      ]
+    },
+    {
+      "question_id": 180,
+      "category": "Scholarships",
+      "question": "Can SC/ST/OBC students get UP government fee reimbursement?",
+      "coverage_status": "Missing",
+      "source_document_found": "course_eligibility.json",
+      "retrieval_failure_reason": "Information exists in course_eligibility.json, but retriever ranked general chunks higher due to low keyword overlap in query.",
+      "recommended_chunk_fix": "Merge unit header context into child chunk or split multi-topic paragraphs into single-concept units.",
+      "recommended_metadata_fix": "Add explicit metadata tags: category='Scholarships', keywords=['obc', 'students', 'get', 'government']",
+      "recommended_query_aliases": [
+        "can sc/st/obc students get up government fee reimbursement",
+        "csjmu scholarships",
+        "uiet obc students"
+      ]
+    },
+    {
+      "question_id": 181,
+      "category": "Scholarships",
+      "question": "Are merit scholarships awarded to top performing students?",
+      "coverage_status": "Missing",
+      "source_document_found": "course_eligibility.json",
+      "retrieval_failure_reason": "Information exists in course_eligibility.json, but retriever ranked general chunks higher due to low keyword overlap in query.",
+      "recommended_chunk_fix": "Merge unit header context into child chunk or split multi-topic paragraphs into single-concept units.",
+      "recommended_metadata_fix": "Add explicit metadata tags: category='Scholarships', keywords=['merit', 'scholarships', 'awarded', 'top']",
+      "recommended_query_aliases": [
+        "are merit scholarships awarded to top performing students",
+        "csjmu scholarships",
+        "uiet merit scholarships"
+      ]
+    },
+    {
+      "question_id": 182,
+      "category": "Scholarships",
+      "question": "How can students apply for National Scholarship Portal (NSP) schemes?",
+      "coverage_status": "Missing",
+      "source_document_found": "course_eligibility.json",
+      "retrieval_failure_reason": "Information exists in course_eligibility.json, but retriever ranked general chunks higher due to low keyword overlap in query.",
+      "recommended_chunk_fix": "Merge unit header context into child chunk or split multi-topic paragraphs into single-concept units.",
+      "recommended_metadata_fix": "Add explicit metadata tags: category='Scholarships', keywords=['students', 'apply', 'national', 'scholarship']",
+      "recommended_query_aliases": [
+        "how can students apply for national scholarship portal (nsp) schemes",
+        "csjmu scholarships",
+        "uiet students apply"
+      ]
+    },
+    {
+      "question_id": 184,
+      "category": "General",
+      "question": "What key highlights make CSJMU a leading state university in Uttar Pradesh?",
+      "coverage_status": "Partial",
+      "source_document_found": "approved_boards.json",
+      "retrieval_failure_reason": "Information exists in approved_boards.json, but retriever ranked general chunks higher due to low keyword overlap in query.",
+      "recommended_chunk_fix": "Merge unit header context into child chunk or split multi-topic paragraphs into single-concept units.",
+      "recommended_metadata_fix": "Add explicit metadata tags: category='General', keywords=['key', 'highlights', 'make', 'leading']",
+      "recommended_query_aliases": [
+        "what key highlights make csjmu a leading state university in uttar pradesh",
+        "csjmu general",
+        "uiet key highlights"
+      ]
+    },
+    {
+      "question_id": 187,
+      "category": "General",
+      "question": "Is Pharmacy Council of India (PCI) approval held by the School of Pharmaceutical Sciences?",
+      "coverage_status": "Missing",
+      "source_document_found": "course_eligibility.json",
+      "retrieval_failure_reason": "Information exists in course_eligibility.json, but retriever ranked general chunks higher due to low keyword overlap in query.",
+      "recommended_chunk_fix": "Merge unit header context into child chunk or split multi-topic paragraphs into single-concept units.",
+      "recommended_metadata_fix": "Add explicit metadata tags: category='General', keywords=['pharmacy', 'council', 'india', 'pci']",
+      "recommended_query_aliases": [
+        "is pharmacy council of india (pci) approval held by the school of pharmaceutical sciences",
+        "csjmu general",
+        "uiet pharmacy council"
+      ]
+    },
+    {
+      "question_id": 188,
+      "category": "General",
+      "question": "Is Bar Council of India (BCI) approval held by the School of Legal Studies?",
+      "coverage_status": "Missing",
+      "source_document_found": "course_eligibility.json",
+      "retrieval_failure_reason": "Information exists in course_eligibility.json, but retriever ranked general chunks higher due to low keyword overlap in query.",
+      "recommended_chunk_fix": "Merge unit header context into child chunk or split multi-topic paragraphs into single-concept units.",
+      "recommended_metadata_fix": "Add explicit metadata tags: category='General', keywords=['bar', 'council', 'india', 'bci']",
+      "recommended_query_aliases": [
+        "is bar council of india (bci) approval held by the school of legal studies",
+        "csjmu general",
+        "uiet bar council"
+      ]
+    },
+    {
+      "question_id": 190,
+      "category": "General",
+      "question": "How far is CSJMU campus from Kanpur Central Railway Station?",
+      "coverage_status": "Partial",
+      "source_document_found": "placements.txt",
+      "retrieval_failure_reason": "Information exists in placements.txt, but retriever ranked general chunks higher due to low keyword overlap in query.",
+      "recommended_chunk_fix": "Merge unit header context into child chunk or split multi-topic paragraphs into single-concept units.",
+      "recommended_metadata_fix": "Add explicit metadata tags: category='General', keywords=['far', 'campus', 'central', 'railway']",
+      "recommended_query_aliases": [
+        "how far is csjmu campus from kanpur central railway station",
+        "csjmu general",
+        "uiet far campus"
+      ]
+    },
+    {
+      "question_id": 192,
+      "category": "General",
+      "question": "What city public transport options connect to CSJMU?",
+      "coverage_status": "Missing",
+      "source_document_found": "uiet_teachers.json",
+      "retrieval_failure_reason": "Information exists in uiet_teachers.json, but retriever ranked general chunks higher due to low keyword overlap in query.",
+      "recommended_chunk_fix": "Merge unit header context into child chunk or split multi-topic paragraphs into single-concept units.",
+      "recommended_metadata_fix": "Add explicit metadata tags: category='General', keywords=['city', 'public', 'transport', 'options']",
+      "recommended_query_aliases": [
+        "what city public transport options connect to csjmu",
+        "csjmu general",
+        "uiet city public"
+      ]
+    },
+    {
+      "question_id": 194,
+      "category": "Admissions",
+      "question": "Is there an entrance exam conducted by CSJMU for non-JEE courses?",
+      "coverage_status": "Partial",
+      "source_document_found": "course_eligibility.json",
+      "retrieval_failure_reason": "Information exists in course_eligibility.json, but retriever ranked general chunks higher due to low keyword overlap in query.",
+      "recommended_chunk_fix": "Merge unit header context into child chunk or split multi-topic paragraphs into single-concept units.",
+      "recommended_metadata_fix": "Add explicit metadata tags: category='Admissions', keywords=['there', 'entrance', 'exam', 'conducted']",
+      "recommended_query_aliases": [
+        "is there an entrance exam conducted by csjmu for non-jee courses",
+        "csjmu admissions",
+        "uiet there entrance"
+      ]
+    },
+    {
+      "question_id": 197,
+      "category": "Admissions",
+      "question": "What is the refund policy if a candidate cancels admission?",
+      "coverage_status": "Partial",
+      "source_document_found": "course_eligibility.json",
+      "retrieval_failure_reason": "Information exists in course_eligibility.json, but retriever ranked general chunks higher due to low keyword overlap in query.",
+      "recommended_chunk_fix": "Merge unit header context into child chunk or split multi-topic paragraphs into single-concept units.",
+      "recommended_metadata_fix": "Add explicit metadata tags: category='Admissions', keywords=['refund', 'policy', 'candidate', 'cancels']",
+      "recommended_query_aliases": [
+        "what is the refund policy if a candidate cancels admission",
+        "csjmu admissions",
+        "uiet refund policy"
+      ]
+    },
+    {
+      "question_id": 199,
+      "category": "Eligibility",
+      "question": "What stream in 12th is required for B.Sc Agriculture?",
+      "coverage_status": "Partial",
+      "source_document_found": "course_eligibility.json",
+      "retrieval_failure_reason": "Information exists in course_eligibility.json, but retriever ranked general chunks higher due to low keyword overlap in query.",
+      "recommended_chunk_fix": "Merge unit header context into child chunk or split multi-topic paragraphs into single-concept units.",
+      "recommended_metadata_fix": "Add explicit metadata tags: category='Eligibility', keywords=['stream', '12th', 'required', 'b.sc']",
+      "recommended_query_aliases": [
+        "what stream in 12th is required for b.sc agriculture",
+        "csjmu eligibility",
+        "uiet stream 12th"
+      ]
+    },
+    {
+      "question_id": 204,
+      "category": "Faculty",
+      "question": "Do faculty members in UIET hold Ph.D. degrees from IITs/NITs?",
+      "coverage_status": "Missing",
+      "source_document_found": "departments_of_uiet.json",
+      "retrieval_failure_reason": "Information exists in departments_of_uiet.json, but retriever ranked general chunks higher due to low keyword overlap in query.",
+      "recommended_chunk_fix": "Merge unit header context into child chunk or split multi-topic paragraphs into single-concept units.",
+      "recommended_metadata_fix": "Add explicit metadata tags: category='Faculty', keywords=['faculty', 'members', 'hold', 'ph.d']",
+      "recommended_query_aliases": [
+        "do faculty members in uiet hold ph.d. degrees from iits/nits",
+        "csjmu faculty",
+        "uiet faculty members"
+      ]
+    },
+    {
+      "question_id": 214,
+      "category": "Facilities",
+      "question": "Does CSJMU have an online library portal?",
+      "coverage_status": "Partial",
+      "source_document_found": "course_eligibility.json",
+      "retrieval_failure_reason": "Information exists in course_eligibility.json, but retriever ranked general chunks higher due to low keyword overlap in query.",
+      "recommended_chunk_fix": "Merge unit header context into child chunk or split multi-topic paragraphs into single-concept units.",
+      "recommended_metadata_fix": "Add explicit metadata tags: category='Facilities', keywords=['online', 'library', 'portal']",
+      "recommended_query_aliases": [
+        "does csjmu have an online library portal",
+        "csjmu facilities",
+        "uiet online library"
+      ]
+    },
+    {
+      "question_id": 219,
+      "category": "Syllabus_Labs",
+      "question": "Does UIET follow AICTE model curriculum?",
+      "coverage_status": "Missing",
+      "source_document_found": "course_eligibility.json",
+      "retrieval_failure_reason": "Information exists in course_eligibility.json, but retriever ranked general chunks higher due to low keyword overlap in query.",
+      "recommended_chunk_fix": "Merge unit header context into child chunk or split multi-topic paragraphs into single-concept units.",
+      "recommended_metadata_fix": "Add explicit metadata tags: category='Syllabus_Labs', keywords=['follow', 'aicte', 'model', 'curriculum']",
+      "recommended_query_aliases": [
+        "does uiet follow aicte model curriculum",
+        "csjmu syllabus_labs",
+        "uiet follow aicte"
+      ]
+    },
+    {
+      "question_id": 220,
+      "category": "Syllabus_Labs",
+      "question": "Are open electives offered across different engineering departments?",
+      "coverage_status": "Partial",
+      "source_document_found": "departments_of_uiet.json",
+      "retrieval_failure_reason": "Information exists in departments_of_uiet.json, but retriever ranked general chunks higher due to low keyword overlap in query.",
+      "recommended_chunk_fix": "Merge unit header context into child chunk or split multi-topic paragraphs into single-concept units.",
+      "recommended_metadata_fix": "Add explicit metadata tags: category='Syllabus_Labs', keywords=['open', 'electives', 'offered', 'across']",
+      "recommended_query_aliases": [
+        "are open electives offered across different engineering departments",
+        "csjmu syllabus_labs",
+        "uiet open electives"
+      ]
+    },
+    {
+      "question_id": 224,
+      "category": "Fees",
+      "question": "Can fees be paid online through the CSJMU portal?",
+      "coverage_status": "Partial",
+      "source_document_found": "course_eligibility.json",
+      "retrieval_failure_reason": "Information exists in course_eligibility.json, but retriever ranked general chunks higher due to low keyword overlap in query.",
+      "recommended_chunk_fix": "Merge unit header context into child chunk or split multi-topic paragraphs into single-concept units.",
+      "recommended_metadata_fix": "Add explicit metadata tags: category='Fees', keywords=['fees', 'paid', 'online', 'portal']",
+      "recommended_query_aliases": [
+        "can fees be paid online through the csjmu portal",
+        "csjmu fees",
+        "uiet fees paid"
+      ]
+    },
+    {
+      "question_id": 225,
+      "category": "Fees",
+      "question": "Is installment facility allowed for tuition fee payment?",
+      "coverage_status": "Partial",
+      "source_document_found": "admission_process.txt",
+      "retrieval_failure_reason": "Information exists in admission_process.txt, but retriever ranked general chunks higher due to low keyword overlap in query.",
+      "recommended_chunk_fix": "Merge unit header context into child chunk or split multi-topic paragraphs into single-concept units.",
+      "recommended_metadata_fix": "Add explicit metadata tags: category='Fees', keywords=['installment', 'facility', 'allowed', 'tuition']",
+      "recommended_query_aliases": [
+        "is installment facility allowed for tuition fee payment",
+        "csjmu fees",
+        "uiet installment facility"
+      ]
+    },
+    {
+      "question_id": 226,
+      "category": "General",
+      "question": "What official website URL does CSJMU use?",
+      "coverage_status": "Partial",
+      "source_document_found": "guidelines_for_admission.txt",
+      "retrieval_failure_reason": "Information exists in guidelines_for_admission.txt, but retriever ranked general chunks higher due to low keyword overlap in query.",
+      "recommended_chunk_fix": "Merge unit header context into child chunk or split multi-topic paragraphs into single-concept units.",
+      "recommended_metadata_fix": "Add explicit metadata tags: category='General', keywords=['official', 'website', 'url', 'use']",
+      "recommended_query_aliases": [
+        "what official website url does csjmu use",
+        "csjmu general",
+        "uiet official website"
+      ]
+    },
+    {
+      "question_id": 227,
+      "category": "General",
+      "question": "What is the official email address for general inquiries?",
+      "coverage_status": "Missing",
+      "source_document_found": "placements.txt",
+      "retrieval_failure_reason": "Information exists in placements.txt, but retriever ranked general chunks higher due to low keyword overlap in query.",
+      "recommended_chunk_fix": "Merge unit header context into child chunk or split multi-topic paragraphs into single-concept units.",
+      "recommended_metadata_fix": "Add explicit metadata tags: category='General', keywords=['official', 'email', 'address', 'general']",
+      "recommended_query_aliases": [
+        "what is the official email address for general inquiries",
+        "csjmu general",
+        "uiet official email"
+      ]
+    },
+    {
+      "question_id": 229,
+      "category": "General",
+      "question": "What cultural events and annual festivals are celebrated at CSJMU?",
+      "coverage_status": "Missing",
+      "source_document_found": "hostel.txt",
+      "retrieval_failure_reason": "Information exists in hostel.txt, but retriever ranked general chunks higher due to low keyword overlap in query.",
+      "recommended_chunk_fix": "Merge unit header context into child chunk or split multi-topic paragraphs into single-concept units.",
+      "recommended_metadata_fix": "Add explicit metadata tags: category='General', keywords=['cultural', 'events', 'annual', 'festivals']",
+      "recommended_query_aliases": [
+        "what cultural events and annual festivals are celebrated at csjmu",
+        "csjmu general",
+        "uiet cultural events"
+      ]
+    },
+    {
+      "question_id": 232,
+      "category": "Admissions",
+      "question": "What is the procedure for verification of educational marksheets?",
+      "coverage_status": "Missing",
+      "source_document_found": "guidelines_for_admission.txt",
+      "retrieval_failure_reason": "Information exists in guidelines_for_admission.txt, but retriever ranked general chunks higher due to low keyword overlap in query.",
+      "recommended_chunk_fix": "Merge unit header context into child chunk or split multi-topic paragraphs into single-concept units.",
+      "recommended_metadata_fix": "Add explicit metadata tags: category='Admissions', keywords=['procedure', 'verification', 'educational', 'marksheets']",
+      "recommended_query_aliases": [
+        "what is the procedure for verification of educational marksheets",
+        "csjmu admissions",
+        "uiet procedure verification"
+      ]
+    },
+    {
+      "question_id": 233,
+      "category": "Admissions",
+      "question": "Can students apply for multiple programs simultaneously?",
+      "coverage_status": "Partial",
+      "source_document_found": "departments_of_uiet.json",
+      "retrieval_failure_reason": "Information exists in departments_of_uiet.json, but retriever ranked general chunks higher due to low keyword overlap in query.",
+      "recommended_chunk_fix": "Merge unit header context into child chunk or split multi-topic paragraphs into single-concept units.",
+      "recommended_metadata_fix": "Add explicit metadata tags: category='Admissions', keywords=['students', 'apply', 'multiple', 'programs']",
+      "recommended_query_aliases": [
+        "can students apply for multiple programs simultaneously",
+        "csjmu admissions",
+        "uiet students apply"
+      ]
+    },
+    {
+      "question_id": 235,
+      "category": "Eligibility",
+      "question": "Is there any relaxation in marks for reserved category candidates?",
+      "coverage_status": "Partial",
+      "source_document_found": "course_eligibility.json",
+      "retrieval_failure_reason": "Information exists in course_eligibility.json, but retriever ranked general chunks higher due to low keyword overlap in query.",
+      "recommended_chunk_fix": "Merge unit header context into child chunk or split multi-topic paragraphs into single-concept units.",
+      "recommended_metadata_fix": "Add explicit metadata tags: category='Eligibility', keywords=['there', 'any', 'relaxation', 'marks']",
+      "recommended_query_aliases": [
+        "is there any relaxation in marks for reserved category candidates",
+        "csjmu eligibility",
+        "uiet there any"
+      ]
+    },
+    {
+      "question_id": 236,
+      "category": "Faculty",
+      "question": "How can a student contact their subject teacher or HOD?",
+      "coverage_status": "Partial",
+      "source_document_found": "course_eligibility.json",
+      "retrieval_failure_reason": "Information exists in course_eligibility.json, but retriever ranked general chunks higher due to low keyword overlap in query.",
+      "recommended_chunk_fix": "Merge unit header context into child chunk or split multi-topic paragraphs into single-concept units.",
+      "recommended_metadata_fix": "Add explicit metadata tags: category='Faculty', keywords=['student', 'contact', 'their', 'subject']",
+      "recommended_query_aliases": [
+        "how can a student contact their subject teacher or hod",
+        "csjmu faculty",
+        "uiet student contact"
+      ]
+    },
+    {
+      "question_id": 241,
+      "category": "Syllabus_Labs",
+      "question": "Are industrial visits organized for engineering students?",
+      "coverage_status": "Partial",
+      "source_document_found": "course_eligibility.json",
+      "retrieval_failure_reason": "Information exists in course_eligibility.json, but retriever ranked general chunks higher due to low keyword overlap in query.",
+      "recommended_chunk_fix": "Merge unit header context into child chunk or split multi-topic paragraphs into single-concept units.",
+      "recommended_metadata_fix": "Add explicit metadata tags: category='Syllabus_Labs', keywords=['industrial', 'visits', 'organized', 'engineering']",
+      "recommended_query_aliases": [
+        "are industrial visits organized for engineering students",
+        "csjmu syllabus_labs",
+        "uiet industrial visits"
+      ]
+    },
+    {
+      "question_id": 244,
+      "category": "Placements",
+      "question": "Are mock interviews and soft skills workshops conducted for students?",
+      "coverage_status": "Missing",
+      "source_document_found": "course_eligibility.json",
+      "retrieval_failure_reason": "Information exists in course_eligibility.json, but retriever ranked general chunks higher due to low keyword overlap in query.",
+      "recommended_chunk_fix": "Merge unit header context into child chunk or split multi-topic paragraphs into single-concept units.",
+      "recommended_metadata_fix": "Add explicit metadata tags: category='Placements', keywords=['mock', 'interviews', 'soft', 'skills']",
+      "recommended_query_aliases": [
+        "are mock interviews and soft skills workshops conducted for students",
+        "csjmu placements",
+        "uiet mock interviews"
+      ]
+    },
+    {
+      "question_id": 245,
+      "category": "Scholarships",
+      "question": "What documents are required to claim UP scholarship fee waiver?",
+      "coverage_status": "Missing",
+      "source_document_found": "admission_process.txt",
+      "retrieval_failure_reason": "Information exists in admission_process.txt, but retriever ranked general chunks higher due to low keyword overlap in query.",
+      "recommended_chunk_fix": "Merge unit header context into child chunk or split multi-topic paragraphs into single-concept units.",
+      "recommended_metadata_fix": "Add explicit metadata tags: category='Scholarships', keywords=['documents', 'required', 'claim', 'scholarship']",
+      "recommended_query_aliases": [
+        "what documents are required to claim up scholarship fee waiver",
+        "csjmu scholarships",
+        "uiet documents required"
+      ]
+    },
+    {
+      "question_id": 248,
+      "category": "General",
+      "question": "What NSS and NCC wings exist at CSJMU?",
+      "coverage_status": "Partial",
+      "source_document_found": "about_csjm.txt",
+      "retrieval_failure_reason": "Information exists in about_csjm.txt, but retriever ranked general chunks higher due to low keyword overlap in query.",
+      "recommended_chunk_fix": "Merge unit header context into child chunk or split multi-topic paragraphs into single-concept units.",
+      "recommended_metadata_fix": "Add explicit metadata tags: category='General', keywords=['nss', 'ncc', 'wings', 'exist']",
+      "recommended_query_aliases": [
+        "what nss and ncc wings exist at csjmu",
+        "csjmu general",
+        "uiet nss ncc"
+      ]
+    },
+    {
+      "question_id": 249,
+      "category": "General",
+      "question": "Does CSJMU have an anti-sexual harassment cell / Internal Complaints Committee?",
+      "coverage_status": "Missing",
+      "source_document_found": "guidelines_for_admission.txt",
+      "retrieval_failure_reason": "Information exists in guidelines_for_admission.txt, but retriever ranked general chunks higher due to low keyword overlap in query.",
+      "recommended_chunk_fix": "Merge unit header context into child chunk or split multi-topic paragraphs into single-concept units.",
+      "recommended_metadata_fix": "Add explicit metadata tags: category='General', keywords=['anti-sexual', 'harassment', 'cell', 'internal']",
+      "recommended_query_aliases": [
+        "does csjmu have an anti-sexual harassment cell / internal complaints committee",
+        "csjmu general",
+        "uiet anti-sexual harassment"
+      ]
+    },
+    {
+      "question_id": 252,
+      "category": "Admissions",
+      "question": "What happens if a candidate misses the reporting deadline after admission?",
+      "coverage_status": "Partial",
+      "source_document_found": "course_eligibility.json",
+      "retrieval_failure_reason": "Information exists in course_eligibility.json, but retriever ranked general chunks higher due to low keyword overlap in query.",
+      "recommended_chunk_fix": "Merge unit header context into child chunk or split multi-topic paragraphs into single-concept units.",
+      "recommended_metadata_fix": "Add explicit metadata tags: category='Admissions', keywords=['happens', 'candidate', 'misses', 'reporting']",
+      "recommended_query_aliases": [
+        "what happens if a candidate misses the reporting deadline after admission",
+        "csjmu admissions",
+        "uiet happens candidate"
+      ]
+    },
+    {
+      "question_id": 259,
+      "category": "Syllabus_Labs",
+      "question": "What is the pass percentage criteria in sessional examinations?",
+      "coverage_status": "Missing",
+      "source_document_found": "guidelines_for_admission.txt",
+      "retrieval_failure_reason": "Information exists in guidelines_for_admission.txt, but retriever ranked general chunks higher due to low keyword overlap in query.",
+      "recommended_chunk_fix": "Merge unit header context into child chunk or split multi-topic paragraphs into single-concept units.",
+      "recommended_metadata_fix": "Add explicit metadata tags: category='Syllabus_Labs', keywords=['pass', 'percentage', 'criteria', 'sessional']",
+      "recommended_query_aliases": [
+        "what is the pass percentage criteria in sessional examinations",
+        "csjmu syllabus_labs",
+        "uiet pass percentage"
+      ]
+    },
+    {
+      "question_id": 261,
+      "category": "Fees",
+      "question": "What is the fee structure for Ph.D. scholars?",
+      "coverage_status": "Partial",
+      "source_document_found": "uiet_teachers.json",
+      "retrieval_failure_reason": "Information exists in uiet_teachers.json, but retriever ranked general chunks higher due to low keyword overlap in query.",
+      "recommended_chunk_fix": "Merge unit header context into child chunk or split multi-topic paragraphs into single-concept units.",
+      "recommended_metadata_fix": "Add explicit metadata tags: category='Fees', keywords=['fee', 'structure', 'ph.d', 'scholars']",
+      "recommended_query_aliases": [
+        "what is the fee structure for ph.d. scholars",
+        "csjmu fees",
+        "uiet fee structure"
+      ]
+    },
+    {
+      "question_id": 263,
+      "category": "General",
+      "question": "Does CSJMU have Memorandum of Understanding (MoU) with foreign universities?",
+      "coverage_status": "Missing",
+      "source_document_found": "facilities_at_csjm.txt",
+      "retrieval_failure_reason": "Information exists in facilities_at_csjm.txt, but retriever ranked general chunks higher due to low keyword overlap in query.",
+      "recommended_chunk_fix": "Merge unit header context into child chunk or split multi-topic paragraphs into single-concept units.",
+      "recommended_metadata_fix": "Add explicit metadata tags: category='General', keywords=['memorandum', 'understanding', 'mou', 'foreign']",
+      "recommended_query_aliases": [
+        "does csjmu have memorandum of understanding (mou) with foreign universities",
+        "csjmu general",
+        "uiet memorandum understanding"
+      ]
+    },
+    {
+      "question_id": 264,
+      "category": "General",
+      "question": "Where can students obtain transcript certificates and duplicate marksheets?",
+      "coverage_status": "Missing",
+      "source_document_found": "guidelines_for_admission.txt",
+      "retrieval_failure_reason": "Information exists in guidelines_for_admission.txt, but retriever ranked general chunks higher due to low keyword overlap in query.",
+      "recommended_chunk_fix": "Merge unit header context into child chunk or split multi-topic paragraphs into single-concept units.",
+      "recommended_metadata_fix": "Add explicit metadata tags: category='General', keywords=['students', 'obtain', 'transcript', 'certificates']",
+      "recommended_query_aliases": [
+        "where can students obtain transcript certificates and duplicate marksheets",
+        "csjmu general",
+        "uiet students obtain"
+      ]
+    },
+    {
+      "question_id": 266,
+      "category": "Eligibility",
+      "question": "Can candidates with vocational subjects in 12th apply for B.Tech?",
+      "coverage_status": "Partial",
+      "source_document_found": "course_eligibility.json",
+      "retrieval_failure_reason": "Information exists in course_eligibility.json, but retriever ranked general chunks higher due to low keyword overlap in query.",
+      "recommended_chunk_fix": "Merge unit header context into child chunk or split multi-topic paragraphs into single-concept units.",
+      "recommended_metadata_fix": "Add explicit metadata tags: category='Eligibility', keywords=['candidates', 'vocational', 'subjects', '12th']",
+      "recommended_query_aliases": [
+        "can candidates with vocational subjects in 12th apply for b.tech",
+        "csjmu eligibility",
+        "uiet candidates vocational"
+      ]
+    },
+    {
+      "question_id": 267,
+      "category": "Faculty",
+      "question": "Who manages student discipline in UIET?",
+      "coverage_status": "Partial",
+      "source_document_found": "course_eligibility.json",
+      "retrieval_failure_reason": "Information exists in course_eligibility.json, but retriever ranked general chunks higher due to low keyword overlap in query.",
+      "recommended_chunk_fix": "Merge unit header context into child chunk or split multi-topic paragraphs into single-concept units.",
+      "recommended_metadata_fix": "Add explicit metadata tags: category='Faculty', keywords=['manages', 'student', 'discipline']",
+      "recommended_query_aliases": [
+        "who manages student discipline in uiet",
+        "csjmu faculty",
+        "uiet manages student"
+      ]
+    },
+    {
+      "question_id": 271,
+      "category": "Placements",
+      "question": "What average salary packages are secured by MCA students?",
+      "coverage_status": "Missing",
+      "source_document_found": "course_eligibility.json",
+      "retrieval_failure_reason": "Information exists in course_eligibility.json, but retriever ranked general chunks higher due to low keyword overlap in query.",
+      "recommended_chunk_fix": "Merge unit header context into child chunk or split multi-topic paragraphs into single-concept units.",
+      "recommended_metadata_fix": "Add explicit metadata tags: category='Placements', keywords=['average', 'salary', 'packages', 'secured']",
+      "recommended_query_aliases": [
+        "what average salary packages are secured by mca students",
+        "csjmu placements",
+        "uiet average salary"
+      ]
+    },
+    {
+      "question_id": 272,
+      "category": "Fees",
+      "question": "Is late fee applicable if fee is paid after due date?",
+      "coverage_status": "Partial",
+      "source_document_found": "course_eligibility.json",
+      "retrieval_failure_reason": "Information exists in course_eligibility.json, but retriever ranked general chunks higher due to low keyword overlap in query.",
+      "recommended_chunk_fix": "Merge unit header context into child chunk or split multi-topic paragraphs into single-concept units.",
+      "recommended_metadata_fix": "Add explicit metadata tags: category='Fees', keywords=['late', 'fee', 'applicable', 'fee']",
+      "recommended_query_aliases": [
+        "is late fee applicable if fee is paid after due date",
+        "csjmu fees",
+        "uiet late fee"
+      ]
+    },
+    {
+      "question_id": 273,
+      "category": "General",
+      "question": "Does CSJMU publish research journals or newsletters?",
+      "coverage_status": "Partial",
+      "source_document_found": "uiet_teachers.json",
+      "retrieval_failure_reason": "Information exists in uiet_teachers.json, but retriever ranked general chunks higher due to low keyword overlap in query.",
+      "recommended_chunk_fix": "Merge unit header context into child chunk or split multi-topic paragraphs into single-concept units.",
+      "recommended_metadata_fix": "Add explicit metadata tags: category='General', keywords=['publish', 'research', 'journals', 'newsletters']",
+      "recommended_query_aliases": [
+        "does csjmu publish research journals or newsletters",
+        "csjmu general",
+        "uiet publish research"
+      ]
+    },
+    {
+      "question_id": 288,
+      "category": "Syllabus_Labs",
+      "question": "What software tools are used for Chemical Engineering simulations?",
+      "coverage_status": "Partial",
+      "source_document_found": "course_eligibility.json",
+      "retrieval_failure_reason": "Information exists in course_eligibility.json, but retriever ranked general chunks higher due to low keyword overlap in query.",
+      "recommended_chunk_fix": "Merge unit header context into child chunk or split multi-topic paragraphs into single-concept units.",
+      "recommended_metadata_fix": "Add explicit metadata tags: category='Syllabus_Labs', keywords=['software', 'tools', 'used', 'chemical']",
+      "recommended_query_aliases": [
+        "what software tools are used for chemical engineering simulations",
+        "csjmu syllabus_labs",
+        "uiet software tools"
+      ]
+    },
+    {
+      "question_id": 291,
+      "category": "General",
+      "question": "What sports tournaments are held annually at CSJMU stadium?",
+      "coverage_status": "Missing",
+      "source_document_found": "facilities_at_csjm.txt",
+      "retrieval_failure_reason": "Information exists in facilities_at_csjm.txt, but retriever ranked general chunks higher due to low keyword overlap in query.",
+      "recommended_chunk_fix": "Merge unit header context into child chunk or split multi-topic paragraphs into single-concept units.",
+      "recommended_metadata_fix": "Add explicit metadata tags: category='General', keywords=['sports', 'tournaments', 'held', 'annually']",
+      "recommended_query_aliases": [
+        "what sports tournaments are held annually at csjmu stadium",
+        "csjmu general",
+        "uiet sports tournaments"
+      ]
+    },
+    {
+      "question_id": 294,
+      "category": "Faculty",
+      "question": "Who is the Dean of School of Engineering & Technology?",
+      "coverage_status": "Partial",
+      "source_document_found": "course_eligibility.json",
+      "retrieval_failure_reason": "Information exists in course_eligibility.json, but retriever ranked general chunks higher due to low keyword overlap in query.",
+      "recommended_chunk_fix": "Merge unit header context into child chunk or split multi-topic paragraphs into single-concept units.",
+      "recommended_metadata_fix": "Add explicit metadata tags: category='Faculty', keywords=['dean', 'school', 'engineering', 'technology']",
+      "recommended_query_aliases": [
+        "who is the dean of school of engineering & technology",
+        "csjmu faculty",
+        "uiet dean school"
+      ]
+    },
+    {
+      "question_id": 298,
+      "category": "Placements",
+      "question": "What company off-campus opportunities are shared by the T&P cell?",
+      "coverage_status": "Partial",
+      "source_document_found": "about_csjm.txt",
+      "retrieval_failure_reason": "Information exists in about_csjm.txt, but retriever ranked general chunks higher due to low keyword overlap in query.",
+      "recommended_chunk_fix": "Merge unit header context into child chunk or split multi-topic paragraphs into single-concept units.",
+      "recommended_metadata_fix": "Add explicit metadata tags: category='Placements', keywords=['company', 'off-campus', 'opportunities', 'shared']",
+      "recommended_query_aliases": [
+        "what company off-campus opportunities are shared by the t&p cell",
+        "csjmu placements",
+        "uiet company off-campus"
+      ]
+    },
+    {
+      "question_id": 301,
+      "category": "General",
+      "question": "How can I contact CSJMU for academic certificates?",
+      "coverage_status": "Partial",
+      "source_document_found": "guidelines_for_admission.txt",
+      "retrieval_failure_reason": "Information exists in guidelines_for_admission.txt, but retriever ranked general chunks higher due to low keyword overlap in query.",
+      "recommended_chunk_fix": "Merge unit header context into child chunk or split multi-topic paragraphs into single-concept units.",
+      "recommended_metadata_fix": "Add explicit metadata tags: category='General', keywords=['contact', 'academic', 'certificates']",
+      "recommended_query_aliases": [
+        "how can i contact csjmu for academic certificates",
+        "csjmu general",
+        "uiet contact academic"
+      ]
+    },
+    {
+      "question_id": 302,
+      "category": "Admissions",
+      "question": "What is the helpline number for CSJMU admissions?",
+      "coverage_status": "Missing",
+      "source_document_found": "guidelines_for_admission.txt",
+      "retrieval_failure_reason": "Information exists in guidelines_for_admission.txt, but retriever ranked general chunks higher due to low keyword overlap in query.",
+      "recommended_chunk_fix": "Merge unit header context into child chunk or split multi-topic paragraphs into single-concept units.",
+      "recommended_metadata_fix": "Add explicit metadata tags: category='Admissions', keywords=['helpline', 'number', 'admissions']",
+      "recommended_query_aliases": [
+        "what is the helpline number for csjmu admissions",
+        "csjmu admissions",
+        "uiet helpline number"
+      ]
+    },
+    {
+      "question_id": 305,
+      "category": "Facilities",
+      "question": "What sports courts exist near the stadium complex?",
+      "coverage_status": "Missing",
+      "source_document_found": "approved_boards.json",
+      "retrieval_failure_reason": "Information exists in approved_boards.json, but retriever ranked general chunks higher due to low keyword overlap in query.",
+      "recommended_chunk_fix": "Merge unit header context into child chunk or split multi-topic paragraphs into single-concept units.",
+      "recommended_metadata_fix": "Add explicit metadata tags: category='Facilities', keywords=['sports', 'courts', 'exist', 'near']",
+      "recommended_query_aliases": [
+        "what sports courts exist near the stadium complex",
+        "csjmu facilities",
+        "uiet sports courts"
+      ]
+    }
+  ],
+  "coverage_failure_diagnoses": [
+    {
+      "question_id": 84,
+      "category": "Faculty",
+      "question": "Who is the Registrar of CSJMU?",
+      "missing_fields": [
+        "Detailed official guidelines regarding Faculty",
+        "Contact Email and Phone Numbers",
+        "Frequently Asked Questions"
+      ],
+      "recommended_official_document": "csjmu_faculty_official_handbook.pdf"
+    },
+    {
+      "question_id": 85,
+      "category": "Faculty",
+      "question": "Who is the Vice-Chancellor of CSJMU?",
+      "missing_fields": [
+        "Detailed official guidelines regarding Faculty",
+        "Contact Email and Phone Numbers",
+        "Frequently Asked Questions"
+      ],
+      "recommended_official_document": "csjmu_faculty_official_handbook.pdf"
+    },
+    {
+      "question_id": 120,
+      "category": "Facilities",
+      "question": "Does CSJMU have a Guest House for visitors?",
+      "missing_fields": [
+        "Detailed official guidelines regarding Facilities",
+        "Contact Email and Phone Numbers",
+        "Frequently Asked Questions"
+      ],
+      "recommended_official_document": "csjmu_facilities_official_handbook.pdf"
+    },
+    {
+      "question_id": 126,
+      "category": "Facilities",
+      "question": "Does CSJMU have an Auditorium?",
+      "missing_fields": [
+        "Detailed official guidelines regarding Facilities",
+        "Contact Email and Phone Numbers",
+        "Frequently Asked Questions"
+      ],
+      "recommended_official_document": "csjmu_facilities_official_handbook.pdf"
+    },
+    {
+      "question_id": 145,
+      "category": "Syllabus_Labs",
+      "question": "How are mid-semester and end-semester exams evaluated?",
+      "missing_fields": [
+        "Detailed official guidelines regarding Syllabus_Labs",
+        "Contact Email and Phone Numbers",
+        "Frequently Asked Questions"
+      ],
+      "recommended_official_document": "csjmu_syllabus_labs_official_handbook.pdf"
+    },
+    {
+      "question_id": 149,
+      "category": "Alumni",
+      "question": "What achievements are listed for CSJMU alumni?",
+      "missing_fields": [
+        "Detailed official guidelines regarding Alumni",
+        "Contact Email and Phone Numbers",
+        "Frequently Asked Questions"
+      ],
+      "recommended_official_document": "csjmu_alumni_official_handbook.pdf"
+    },
+    {
+      "question_id": 191,
+      "category": "General",
+      "question": "How far is CSJMU campus from Kanpur Airport?",
+      "missing_fields": [
+        "Detailed official guidelines regarding General",
+        "Contact Email and Phone Numbers",
+        "Frequently Asked Questions"
+      ],
+      "recommended_official_document": "csjmu_general_official_handbook.pdf"
+    },
+    {
+      "question_id": 215,
+      "category": "Facilities",
+      "question": "Is INFLIBNET and Shodhganga accessible from the university library?",
+      "missing_fields": [
+        "Detailed official guidelines regarding Facilities",
+        "Contact Email and Phone Numbers",
+        "Frequently Asked Questions"
+      ],
+      "recommended_official_document": "csjmu_facilities_official_handbook.pdf"
+    },
+    {
+      "question_id": 228,
+      "category": "General",
+      "question": "What is the official postal address of CSJMU?",
+      "missing_fields": [
+        "Detailed official guidelines regarding General",
+        "Contact Email and Phone Numbers",
+        "Frequently Asked Questions"
+      ],
+      "recommended_official_document": "csjmu_general_official_handbook.pdf"
+    },
+    {
+      "question_id": 247,
+      "category": "Dignitaries",
+      "question": "Who chairs the Executive Council of CSJMU?",
+      "missing_fields": [
+        "Detailed official guidelines regarding Dignitaries",
+        "Contact Email and Phone Numbers",
+        "Frequently Asked Questions"
+      ],
+      "recommended_official_document": "csjmu_dignitaries_official_handbook.pdf"
+    },
+    {
+      "question_id": 269,
+      "category": "Facilities",
+      "question": "Does CSJMU have an indoor badminton court?",
+      "missing_fields": [
+        "Detailed official guidelines regarding Facilities",
+        "Contact Email and Phone Numbers",
+        "Frequently Asked Questions"
+      ],
+      "recommended_official_document": "csjmu_facilities_official_handbook.pdf"
+    },
+    {
+      "question_id": 287,
+      "category": "Facilities",
+      "question": "What dining options exist in the university cafeteria?",
+      "missing_fields": [
+        "Detailed official guidelines regarding Facilities",
+        "Contact Email and Phone Numbers",
+        "Frequently Asked Questions"
+      ],
+      "recommended_official_document": "csjmu_facilities_official_handbook.pdf"
+    }
+  ],
+  "prioritized_document_action_roadmap": [
+    {
+      "document_name": "csjmu_facilities_official_handbook.pdf",
+      "category": "Facilities",
+      "questions_unlocked_count": 5,
+      "affected_questions": [
+        "Does CSJMU have a Guest House for visitors?",
+        "Does CSJMU have an Auditorium?",
+        "Is INFLIBNET and Shodhganga accessible from the university library?",
+        "Does CSJMU have an indoor badminton court?",
+        "What dining options exist in the university cafeteria?"
+      ],
+      "missing_fields": [
+        "Detailed official guidelines regarding Facilities",
+        "Contact Email and Phone Numbers",
+        "Frequently Asked Questions"
+      ],
+      "priority": "High"
+    },
+    {
+      "document_name": "csjmu_faculty_official_handbook.pdf",
+      "category": "Faculty",
+      "questions_unlocked_count": 2,
+      "affected_questions": [
+        "Who is the Registrar of CSJMU?",
+        "Who is the Vice-Chancellor of CSJMU?"
+      ],
+      "missing_fields": [
+        "Detailed official guidelines regarding Faculty",
+        "Contact Email and Phone Numbers",
+        "Frequently Asked Questions"
+      ],
+      "priority": "High"
+    },
+    {
+      "document_name": "csjmu_general_official_handbook.pdf",
+      "category": "General",
+      "questions_unlocked_count": 2,
+      "affected_questions": [
+        "How far is CSJMU campus from Kanpur Airport?",
+        "What is the official postal address of CSJMU?"
+      ],
+      "missing_fields": [
+        "Detailed official guidelines regarding General",
+        "Contact Email and Phone Numbers",
+        "Frequently Asked Questions"
+      ],
+      "priority": "High"
+    },
+    {
+      "document_name": "csjmu_syllabus_labs_official_handbook.pdf",
+      "category": "Syllabus_Labs",
+      "questions_unlocked_count": 1,
+      "affected_questions": [
+        "How are mid-semester and end-semester exams evaluated?"
+      ],
+      "missing_fields": [
+        "Detailed official guidelines regarding Syllabus_Labs",
+        "Contact Email and Phone Numbers",
+        "Frequently Asked Questions"
+      ],
+      "priority": "High"
+    },
+    {
+      "document_name": "csjmu_alumni_official_handbook.pdf",
+      "category": "Alumni",
+      "questions_unlocked_count": 1,
+      "affected_questions": [
+        "What achievements are listed for CSJMU alumni?"
+      ],
+      "missing_fields": [
+        "Detailed official guidelines regarding Alumni",
+        "Contact Email and Phone Numbers",
+        "Frequently Asked Questions"
+      ],
+      "priority": "High"
+    },
+    {
+      "document_name": "csjmu_dignitaries_official_handbook.pdf",
+      "category": "Dignitaries",
+      "questions_unlocked_count": 1,
+      "affected_questions": [
+        "Who chairs the Executive Council of CSJMU?"
+      ],
+      "missing_fields": [
+        "Detailed official guidelines regarding Dignitaries",
+        "Contact Email and Phone Numbers",
+        "Frequently Asked Questions"
+      ],
+      "priority": "High"
+    }
+  ]
+}

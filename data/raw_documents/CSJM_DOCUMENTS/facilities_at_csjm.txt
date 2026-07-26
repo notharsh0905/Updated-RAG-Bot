@@ -1,0 +1,92 @@
+Facilities at Csjmu Campus-
+1) ICT enabled Classroms
+2) State of the art Laborateries
+3) Central Library
+4) Hostel for boys and girls
+5) Sports facilities
+6) Auditorium
+7) Swimming Pool
+8) Health Centre
+9)Multi-purpose Hall
+
+
+Csjmu Student Hobby Club-
+1) Cultural Club
+2) Fitness Club
+3) Gardening Club
+4) Photography Club
+5) Literary Club
+6) Robots and Drone Club
+7) Cooking Club
+8) Coding Club
+
+
+Note: 10% supernumerary seats are available in all programmes on University Campus for International Students
+
+
+Facilities at University Institute of Engineering and Technology (UIET) -
+1) ICPC Asia Regional Contest - Kanpur Site  is organized regularly to enhance competitive programming skills, global exposure, teamwork, and advanced problem-sol ving abilities among UIET students.
+2) AICTE IDEA Lab - aims to foster innovation and creativity among students by providing hands-on, multidisciplinary learning through modern tools and  prototyping facilities.
+3) Hackathons are conducted on emerging areas such as AI, ML, Cloud Computing, and Cybersecurity to promote innovation, hands-on learning, and collaborative problem-solving.
+4) Coding Club activities facilitate interaction with industry and academic experts through workshops, mentorship, and technical sessions, improving coding proficiency, critical thinking, and professional confidence.
+5) Robotics  initiatives offering multidisciplinary exposure by integrating programming with mechanical systems, sensors, and actuators, strengthening practical understanding of software-hardware convergence.
+6) Universal Human Values (UHV) lectures are conducted for all UIET students to inculcate ethical, social, and human-centric values.
+7) Industry-oriented courses run with the support of PMRF students from IIT Kanpur, providing exposure to advanced research practices and industry-relevant skills.
+8) Use of industry-standard software tools such as CAD, ANSYS, CHEMCAD, ASPEN and Solid Works to bridge the gap between theory and practical application.
+9) Academic and Research 
+a.) Facilities Labs and Workshops: Specialized departmental laboratories equipped for practical, hands-on learning. 
+b.) Central Library: A three-story, air-conditioned facility with over, books, e-resources, and digital access.
+c.) Lecture Halls: Spacious classrooms supported by modern teaching aids and projectors.
+d.) Central Workshop: A dedicated space for engineering practice and technical training.
+
+10) Health and Wellness
+a.) Medical Centre: A 10-bed health facility with specialist doctors and 24-hour ambulance service.
+b.) Sports Stadium: A large complex for cricket, football, hockey, and a 400-meter racing track.
+c.) Gymnasium A well-equipped central gym for student and faculty fitness.
+
+11) Utilities and connectivity
+a.) Banking: In-campus branches of Bank of Baroda and Union Bank of India, along with ATM services.
+b.) Connectivity: High-speed Wi-Fi available across the entire campus.
+c.) Reliable Power and Water: Round-the-clock (24-hour) electricity and water supply to hostels and academic blocks.
+d.) Transportation Regular bus facility for commuting and a dedicated helipad for emergency and VIP visits.
+
+12) Supercomputing Hub for Artificial Intelligence :- The University Institute of Engineering and Technology (UIET) has taken a significant step toward technological advancement by establishing a Supercomputing Hub for Artificial Intelligence within its Department of Computer Science and Engineering. This initiative represents a major milestone not only for the university but also for the entire region, positioning CSJMU as a growing center of excellence in advanced computing and AI-driven innovation. Designed with cutting-edge infrastructure, the Supercomputing Hub is equipped with GPU-accelerated high-performance computing systems, powered by advanced NVIDIA DX H200-class processors. These systems are capable of handling large-scale computational tasks, enabling researchers and students to work on complex problems involving massive datasets and high-speed processing. The facility provides an ideal environment for developing and training sophisticated AI models, supporting real-time analytics, simulations, and data-intensive applications.
+Equipped with GPU-accelerated high-performance computing systems
+Powered by NVIDIA DX H200-class processors for intensive AI workloads
+Designed for large-scale model training and real-time data processing
+Supports high-speed computation for complex simulations and analytics
+The Supercomputing Hub enables
+a) Advanced Artificial Intelligence and Machine Learning research
+b) Deep Learning and neural network development
+c) Computer Vision and intelligent image processing
+d) Natural Language Processing (NLP) applications
+e) Development and training of Large Language Models (LLMs)
+f) Data-intensive scientific and industrial research
+This Supercomputing Hub is recognized as one of the first facilities of its kind in a public
+university in Kanpur, marking a new era of innovation and technological growth. It reflects
+CSJMU's commitment to building a future-ready ecosystem that encourages creativity, research
+excellence, and skill development in emerging technologies. Through this visionary initiative, UIET continues to shape the next generation of engineers, researchers, and innovators, empowering them with the tools and knowledge required to thrive in the rapidly evolving world of Artificial Intelligence and digital transformation.
+
+13) Cyber Security Lab :- Our Cyber Security Lab is a state-of-the-art facility designed to equip students with practical knowledge and industry-relevant skills in safeguarding digital infrastructure. It offers a dynamic environment where learners can explore real-world cyber threats and develop effective defense strategies. Students gain hands-on experience in Vulnerability Assessment and Penetration Testing (VAPT), enabling them to identify, analyze, and mitigate system vulnerabilities in a controlled setup. Through ethical hacking practices, they learn how attackers operate and how to defend systems using advanced tools such as Kali Linux and Metasploit. The lab also emphasizes network security analysis, where students monitor and evaluate network traffic to detect anomalies and prevent unauthorized access. In addition, phishing simulation and awareness programs help learners understand social engineering attacks and build resilience against them. A strong focus is placed on cryptography and data protection, introducing students to modern encryption techniques and secure communication protocols. Overall, the Cyber Security Lab fosters critical thinking, problem-solving, and a proactive approach to tackling emerging cyber threats, preparing students for careers in the rapidly evolving field of cybersecurity.
+
+14) AICTE IDEA Lab :- The AICTE IDEA (Idea Development, Evaluation and Application) Lab at CSJM University, Kanpur, established on 10th February 2025 with a project outlay of ₹90 lakhs, is a flagship initiative to promote innovation-driven education. Aligned with the National Education Policy , the lab emphasizes hands-on STEM learning, nurturing skills such as critical thinking, design thinking, collaboration, and problem-solving. Located in the Central Workshop Building, it serves as a shared innovation hub for students, faculty, and nearby institutions. With strong industry collaboration, the lab fosters product development, research, and startup culture, empowering students to become future-ready innovators and entrepreneurs.
+
+15) Drone Lab :- The Drone Lab at UIET CSJMU serves as a cutting-edge facility dedicated to innovation, research, and experiential learning in unmanned aerial vehicle (UAV) technology. It provides students with opportunities to design, assemble, and program drones while gaining hands-on exposure to flight dynamics, control systems, and embedded technologies. The lab supports diverse applications such as precision agriculture, aerial surveillance, mapping, and disaster response. Equipped with advanced tools and guided by experienced faculty, it nurtures creativity, collaboration, and problem-solving skills. Students actively participate in projects, competitions, and research initiatives, enhancing their technical expertise and industry readiness. The Drone Lab bridges the gap between theoretical knowledge and practical implementation, empowering students to develop impactful solutions. It plays a crucial role in shaping future engineers capable of driving innovation in aerospace, robotics, and emerging drone-based technologies.
+
+16) Robotics Lab :- The Robotics Lab at UIET offers a dynamic environment for students to design, build, and program intelligent robotic systems. Through hands-on learning, students explore robot design, embedded systems, sensors, and actuators, gaining practical experience in automation and autonomous technologies. The lab introduces microcontrollers, Arduino, and real-time programming, enabling understanding of robot-environment interaction. It focuses on applications like industrial automation, robotic arms, and AI-based systems. Students engage in projects, competitions, and research, enhancing technical and problem-solving skills. By integrating AI, machine learning, and IoT, the lab prepares students for careers in robotics, automation, and advanced technological domains.
+
+17) Campus :- University Institute of Engineering and Technology is situated in the 250-acre lush green campus of Chhatrapati Shahuji Maharaj University, Kanpur. The different engineering departments are located in their own buildings which have classrooms, laboratories and faculty offices. Additionally, there is a Lecture Hall Complex comprising of nine lecture halls.
+
+18) Library :- The Central Library has a centrally located magnificent three-storied building equipped with all modern facilities. It has a seating capacity for about 500 users. It has a collection of over 1,20,000 books, which consists of books, thesis, reference collections, and bound volumes of journals. In addition to this, it has good collection of E-resources like e-journals, e-books and e-repository.
+
+19) Central Workshop :- Maintaining the focus on practice-oriented teaching, the Central Workshop is the right place for the learners to utilize their technical know-how on hands on project to find conclusive results. Students of all engineering disciplines get hands-on training in welding, forging, cutting, drilling, etc.
+
+20) Language Lab :- To enhance the communication skills of the young aspiring engineers, modern and updated Language Lab is accessed by the learners belonging to varied backgrounds. The learners are trained to acquire proficiency and fluency in their speaking skills by participating in various form of mock oral presentations viz Group discussions, Mock Interview Sessions, and Elevator Speeches.
+
+21) Innovation & Entrepreneurship Incubation Cell :- To support the ingenious young minds, the university has established an Innovation and Entrepreneurship Incubation Cell. The aim is to develop entrepreneurial attitude in students and faculty by incorporating it within the academic framework and to create a pre-incubation platform to nurture ideas to technological inventions and business enterprises by providing pre-seed financial support, infrastructures and resources.
+
+22) NSS Units :- Today’s youth is the building block of our nation. To generate awareness among the youth regarding their responsibility towards their society and our communities, the university is following the Central Sector Scheme of the Government of India under the Ministry of Youth Affairs and Sports, the NSS Scheme to train the young students to participate in social service activities.
+
+23) Health Center :- The Health Center is well-equipped with 10 beds and provides OPD facility for Medicine, Orthopedics, Ophthalmology, ENT, Surgery, Psychiatry, Psychology, Dental, and Pediatrics by renowned specialists of the city. 24-hour ambulance service and facilities for ECG, Multipara monitor, Dental X-ray, and Minor OT services are also available.
+
+24) Gymnasium & Sports Complex :- The progressive mind resides in a healthy body. To maintain the healthy coordination between the two, the gymnasium is equipped with the instruments, exercising gears, and machines that are required for de-stressing a tired mind and building a healthy body. The facility to participate in various sports activities such as Badminton, Volleyball, Basketball, Cricket and swimming among others encourages the learners to be active and to be fit.

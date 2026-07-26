@@ -1,0 +1,701 @@
+{
+  "total_missing_or_partial": 87,
+  "records": [
+    {
+      "question_id": 11,
+      "category": "Admissions",
+      "question": "Are board recognitions required for admission eligibility?",
+      "status": "Missing",
+      "reason": "No document in the knowledge base addresses this specific question regarding Admissions.",
+      "suggested_document": "csjmu_admissions_official_document.pdf"
+    },
+    {
+      "question_id": 27,
+      "category": "Eligibility",
+      "question": "What is the minimum percentage required in 12th standard for B.Tech admission?",
+      "status": "Partial",
+      "missing_details": "Document provides partial context but lacks complete answer details.",
+      "suggested_document": "csjmu_eligibility_detailed.pdf"
+    },
+    {
+      "question_id": 31,
+      "category": "Eligibility",
+      "question": "What is the eligibility for B.Pharm (Bachelor of Pharmacy)?",
+      "status": "Partial",
+      "missing_details": "Document provides partial context but lacks complete answer details.",
+      "suggested_document": "csjmu_eligibility_detailed.pdf"
+    },
+    {
+      "question_id": 32,
+      "category": "Eligibility",
+      "question": "What is the eligibility for D.Pharm (Diploma in Pharmacy)?",
+      "status": "Partial",
+      "missing_details": "Document provides partial context but lacks complete answer details.",
+      "suggested_document": "csjmu_eligibility_detailed.pdf"
+    },
+    {
+      "question_id": 62,
+      "category": "Departments",
+      "question": "Tell me about the School of Languages.",
+      "status": "Missing",
+      "reason": "No document in the knowledge base addresses this specific question regarding Departments.",
+      "suggested_document": "csjmu_departments_official_document.pdf"
+    },
+    {
+      "question_id": 63,
+      "category": "Departments",
+      "question": "Tell me about the School of Arts, Humanities & Social Sciences.",
+      "status": "Missing",
+      "reason": "No document in the knowledge base addresses this specific question regarding Departments.",
+      "suggested_document": "csjmu_departments_official_document.pdf"
+    },
+    {
+      "question_id": 83,
+      "category": "Faculty",
+      "question": "Who is the Dean of Student Welfare (DSW)?",
+      "status": "Missing",
+      "reason": "No document in the knowledge base addresses this specific question regarding Faculty.",
+      "suggested_document": "csjmu_faculty_official_document.pdf"
+    },
+    {
+      "question_id": 84,
+      "category": "Faculty",
+      "question": "Who is the Registrar of CSJMU?",
+      "status": "Missing",
+      "reason": "No document in the knowledge base addresses this specific question regarding Faculty.",
+      "suggested_document": "csjmu_faculty_official_document.pdf"
+    },
+    {
+      "question_id": 85,
+      "category": "Faculty",
+      "question": "Who is the Vice-Chancellor of CSJMU?",
+      "status": "Missing",
+      "reason": "No document in the knowledge base addresses this specific question regarding Faculty.",
+      "suggested_document": "csjmu_faculty_official_document.pdf"
+    },
+    {
+      "question_id": 90,
+      "category": "Hostel",
+      "question": "What is the curfew timing for girls hostels?",
+      "status": "Missing",
+      "reason": "No hostel fee matrix, mess fee details, security deposit rules, or 24/7 security helpline numbers present in hostel.txt.",
+      "suggested_document": "csjmu_hostel_official_document.pdf"
+    },
+    {
+      "question_id": 91,
+      "category": "Hostel",
+      "question": "What is the curfew timing for boys hostels?",
+      "status": "Missing",
+      "reason": "No hostel fee matrix, mess fee details, security deposit rules, or 24/7 security helpline numbers present in hostel.txt.",
+      "suggested_document": "csjmu_hostel_official_document.pdf"
+    },
+    {
+      "question_id": 99,
+      "category": "Hostel",
+      "question": "What is the 24/7 security control room number for hostels?",
+      "status": "Missing",
+      "reason": "No hostel fee matrix, mess fee details, security deposit rules, or 24/7 security helpline numbers present in hostel.txt.",
+      "suggested_document": "csjmu_hostel_official_document.pdf"
+    },
+    {
+      "question_id": 102,
+      "category": "Placements",
+      "question": "What is the highest package offered at UIET Kanpur?",
+      "status": "Missing",
+      "reason": "No placement statistics, package numbers, or company-wise placement reports present in placements.txt.",
+      "suggested_document": "csjmu_placements_official_document.pdf"
+    },
+    {
+      "question_id": 103,
+      "category": "Placements",
+      "question": "What is the average package for B.Tech CSE students?",
+      "status": "Missing",
+      "reason": "No placement statistics, package numbers, or company-wise placement reports present in placements.txt.",
+      "suggested_document": "csjmu_placements_official_document.pdf"
+    },
+    {
+      "question_id": 104,
+      "category": "Placements",
+      "question": "Which top companies visit CSJMU for campus recruitment?",
+      "status": "Partial",
+      "missing_details": "Document provides partial context but lacks complete answer details.",
+      "suggested_document": "csjmu_placements_detailed.pdf"
+    },
+    {
+      "question_id": 107,
+      "category": "Placements",
+      "question": "Is industrial training mandatory for B.Tech students?",
+      "status": "Missing",
+      "reason": "No document in the knowledge base addresses this specific question regarding Placements.",
+      "suggested_document": "csjmu_placements_official_document.pdf"
+    },
+    {
+      "question_id": 120,
+      "category": "Facilities",
+      "question": "Does CSJMU have a Guest House for visitors?",
+      "status": "Missing",
+      "reason": "No document in the knowledge base addresses this specific question regarding Facilities.",
+      "suggested_document": "csjmu_facilities_official_document.pdf"
+    },
+    {
+      "question_id": 125,
+      "category": "Facilities",
+      "question": "Is there a post office inside CSJMU campus?",
+      "status": "Missing",
+      "reason": "No document in the knowledge base addresses this specific question regarding Facilities.",
+      "suggested_document": "csjmu_facilities_official_document.pdf"
+    },
+    {
+      "question_id": 126,
+      "category": "Facilities",
+      "question": "Does CSJMU have an Auditorium?",
+      "status": "Missing",
+      "reason": "No document in the knowledge base addresses this specific question regarding Facilities.",
+      "suggested_document": "csjmu_facilities_official_document.pdf"
+    },
+    {
+      "question_id": 127,
+      "category": "Facilities",
+      "question": "What is the seating capacity of the CSJMU Auditorium?",
+      "status": "Missing",
+      "reason": "No document in the knowledge base addresses this specific question regarding Facilities.",
+      "suggested_document": "csjmu_facilities_official_document.pdf"
+    },
+    {
+      "question_id": 142,
+      "category": "Syllabus_Labs",
+      "question": "What credit system is followed in UIET engineering curriculum?",
+      "status": "Missing",
+      "reason": "No document in the knowledge base addresses this specific question regarding Syllabus_Labs.",
+      "suggested_document": "csjmu_syllabus_labs_official_document.pdf"
+    },
+    {
+      "question_id": 143,
+      "category": "Syllabus_Labs",
+      "question": "How many semesters are in B.Tech program at UIET?",
+      "status": "Missing",
+      "reason": "No document in the knowledge base addresses this specific question regarding Syllabus_Labs.",
+      "suggested_document": "csjmu_syllabus_labs_official_document.pdf"
+    },
+    {
+      "question_id": 144,
+      "category": "Syllabus_Labs",
+      "question": "How many semesters are in M.Tech program at UIET?",
+      "status": "Missing",
+      "reason": "No document in the knowledge base addresses this specific question regarding Syllabus_Labs.",
+      "suggested_document": "csjmu_syllabus_labs_official_document.pdf"
+    },
+    {
+      "question_id": 145,
+      "category": "Syllabus_Labs",
+      "question": "How are mid-semester and end-semester exams evaluated?",
+      "status": "Missing",
+      "reason": "No document in the knowledge base addresses this specific question regarding Syllabus_Labs.",
+      "suggested_document": "csjmu_syllabus_labs_official_document.pdf"
+    },
+    {
+      "question_id": 149,
+      "category": "Alumni",
+      "question": "What achievements are listed for CSJMU alumni?",
+      "status": "Partial",
+      "missing_details": "Document provides partial context but lacks complete answer details.",
+      "suggested_document": "csjmu_alumni_detailed.pdf"
+    },
+    {
+      "question_id": 153,
+      "category": "Approved_Boards",
+      "question": "Is CBSE recognised for admission to CSJMU?",
+      "status": "Partial",
+      "missing_details": "Document provides partial context but lacks complete answer details.",
+      "suggested_document": "csjmu_approved_boards_detailed.pdf"
+    },
+    {
+      "question_id": 154,
+      "category": "Approved_Boards",
+      "question": "Is ICSE/ISC board recognised by CSJMU?",
+      "status": "Partial",
+      "missing_details": "Document provides partial context but lacks complete answer details.",
+      "suggested_document": "csjmu_approved_boards_detailed.pdf"
+    },
+    {
+      "question_id": 156,
+      "category": "Approved_Boards",
+      "question": "What is the policy regarding unrecognised fake boards?",
+      "status": "Missing",
+      "reason": "No document in the knowledge base addresses this specific question regarding Approved_Boards.",
+      "suggested_document": "csjmu_approved_boards_official_document.pdf"
+    },
+    {
+      "question_id": 157,
+      "category": "Approved_Boards",
+      "question": "Where can candidates verify board recognition status?",
+      "status": "Missing",
+      "reason": "No document in the knowledge base addresses this specific question regarding Approved_Boards.",
+      "suggested_document": "csjmu_approved_boards_official_document.pdf"
+    },
+    {
+      "question_id": 159,
+      "category": "Innovation",
+      "question": "What support does CSJMU provide to student startups and incubatees?",
+      "status": "Partial",
+      "missing_details": "Document provides partial context but lacks complete answer details.",
+      "suggested_document": "csjmu_innovation_detailed.pdf"
+    },
+    {
+      "question_id": 162,
+      "category": "Dignitaries",
+      "question": "What is the vision of CSJMU according to university leadership?",
+      "status": "Missing",
+      "reason": "No document in the knowledge base addresses this specific question regarding Dignitaries.",
+      "suggested_document": "csjmu_dignitaries_official_document.pdf"
+    },
+    {
+      "question_id": 163,
+      "category": "Courses",
+      "question": "What undergraduate degree courses are offered at CSJMU?",
+      "status": "Partial",
+      "missing_details": "Document provides partial context but lacks complete answer details.",
+      "suggested_document": "csjmu_courses_detailed.pdf"
+    },
+    {
+      "question_id": 167,
+      "category": "Courses",
+      "question": "Is Ph.D. program offered at CSJMU?",
+      "status": "Partial",
+      "missing_details": "Document provides partial context but lacks complete answer details.",
+      "suggested_document": "csjmu_courses_detailed.pdf"
+    },
+    {
+      "question_id": 178,
+      "category": "Fees",
+      "question": "Is there a refundable caution deposit for hostel or university admission?",
+      "status": "Missing",
+      "reason": "No hostel fee matrix, mess fee details, security deposit rules, or 24/7 security helpline numbers present in hostel.txt.",
+      "suggested_document": "csjmu_fees_official_document.pdf"
+    },
+    {
+      "question_id": 179,
+      "category": "Scholarships",
+      "question": "What scholarships are available for CSJMU students?",
+      "status": "Missing",
+      "reason": "No document contains scholarship rules, eligibility criteria for financial aid, or application procedure.",
+      "suggested_document": "csjmu_scholarships_official_document.pdf"
+    },
+    {
+      "question_id": 180,
+      "category": "Scholarships",
+      "question": "Can SC/ST/OBC students get UP government fee reimbursement?",
+      "status": "Missing",
+      "reason": "No document in the knowledge base addresses this specific question regarding Scholarships.",
+      "suggested_document": "csjmu_scholarships_official_document.pdf"
+    },
+    {
+      "question_id": 181,
+      "category": "Scholarships",
+      "question": "Are merit scholarships awarded to top performing students?",
+      "status": "Missing",
+      "reason": "No document contains scholarship rules, eligibility criteria for financial aid, or application procedure.",
+      "suggested_document": "csjmu_scholarships_official_document.pdf"
+    },
+    {
+      "question_id": 182,
+      "category": "Scholarships",
+      "question": "How can students apply for National Scholarship Portal (NSP) schemes?",
+      "status": "Missing",
+      "reason": "No document contains scholarship rules, eligibility criteria for financial aid, or application procedure.",
+      "suggested_document": "csjmu_scholarships_official_document.pdf"
+    },
+    {
+      "question_id": 184,
+      "category": "General",
+      "question": "What key highlights make CSJMU a leading state university in Uttar Pradesh?",
+      "status": "Partial",
+      "missing_details": "Document provides partial context but lacks complete answer details.",
+      "suggested_document": "csjmu_general_detailed.pdf"
+    },
+    {
+      "question_id": 187,
+      "category": "General",
+      "question": "Is Pharmacy Council of India (PCI) approval held by the School of Pharmaceutical Sciences?",
+      "status": "Missing",
+      "reason": "No document in the knowledge base addresses this specific question regarding General.",
+      "suggested_document": "csjmu_general_official_document.pdf"
+    },
+    {
+      "question_id": 188,
+      "category": "General",
+      "question": "Is Bar Council of India (BCI) approval held by the School of Legal Studies?",
+      "status": "Missing",
+      "reason": "No document in the knowledge base addresses this specific question regarding General.",
+      "suggested_document": "csjmu_general_official_document.pdf"
+    },
+    {
+      "question_id": 190,
+      "category": "General",
+      "question": "How far is CSJMU campus from Kanpur Central Railway Station?",
+      "status": "Partial",
+      "missing_details": "Document provides partial context but lacks complete answer details.",
+      "suggested_document": "csjmu_general_detailed.pdf"
+    },
+    {
+      "question_id": 191,
+      "category": "General",
+      "question": "How far is CSJMU campus from Kanpur Airport?",
+      "status": "Partial",
+      "missing_details": "Document provides partial context but lacks complete answer details.",
+      "suggested_document": "csjmu_general_detailed.pdf"
+    },
+    {
+      "question_id": 192,
+      "category": "General",
+      "question": "What city public transport options connect to CSJMU?",
+      "status": "Missing",
+      "reason": "No document in the knowledge base addresses this specific question regarding General.",
+      "suggested_document": "csjmu_general_official_document.pdf"
+    },
+    {
+      "question_id": 194,
+      "category": "Admissions",
+      "question": "Is there an entrance exam conducted by CSJMU for non-JEE courses?",
+      "status": "Partial",
+      "missing_details": "Document provides partial context but lacks complete answer details.",
+      "suggested_document": "csjmu_admissions_detailed.pdf"
+    },
+    {
+      "question_id": 197,
+      "category": "Admissions",
+      "question": "What is the refund policy if a candidate cancels admission?",
+      "status": "Partial",
+      "missing_details": "Document provides partial context but lacks complete answer details.",
+      "suggested_document": "csjmu_admissions_detailed.pdf"
+    },
+    {
+      "question_id": 199,
+      "category": "Eligibility",
+      "question": "What stream in 12th is required for B.Sc Agriculture?",
+      "status": "Partial",
+      "missing_details": "Document provides partial context but lacks complete answer details.",
+      "suggested_document": "csjmu_eligibility_detailed.pdf"
+    },
+    {
+      "question_id": 204,
+      "category": "Faculty",
+      "question": "Do faculty members in UIET hold Ph.D. degrees from IITs/NITs?",
+      "status": "Missing",
+      "reason": "No document in the knowledge base addresses this specific question regarding Faculty.",
+      "suggested_document": "csjmu_faculty_official_document.pdf"
+    },
+    {
+      "question_id": 214,
+      "category": "Facilities",
+      "question": "Does CSJMU have an online library portal?",
+      "status": "Partial",
+      "missing_details": "Document provides partial context but lacks complete answer details.",
+      "suggested_document": "csjmu_facilities_detailed.pdf"
+    },
+    {
+      "question_id": 215,
+      "category": "Facilities",
+      "question": "Is INFLIBNET and Shodhganga accessible from the university library?",
+      "status": "Partial",
+      "missing_details": "Document provides partial context but lacks complete answer details.",
+      "suggested_document": "csjmu_facilities_detailed.pdf"
+    },
+    {
+      "question_id": 219,
+      "category": "Syllabus_Labs",
+      "question": "Does UIET follow AICTE model curriculum?",
+      "status": "Missing",
+      "reason": "No document in the knowledge base addresses this specific question regarding Syllabus_Labs.",
+      "suggested_document": "csjmu_syllabus_labs_official_document.pdf"
+    },
+    {
+      "question_id": 220,
+      "category": "Syllabus_Labs",
+      "question": "Are open electives offered across different engineering departments?",
+      "status": "Partial",
+      "missing_details": "Document provides partial context but lacks complete answer details.",
+      "suggested_document": "csjmu_syllabus_labs_detailed.pdf"
+    },
+    {
+      "question_id": 224,
+      "category": "Fees",
+      "question": "Can fees be paid online through the CSJMU portal?",
+      "status": "Partial",
+      "missing_details": "Document provides partial context but lacks complete answer details.",
+      "suggested_document": "csjmu_fees_detailed.pdf"
+    },
+    {
+      "question_id": 225,
+      "category": "Fees",
+      "question": "Is installment facility allowed for tuition fee payment?",
+      "status": "Partial",
+      "missing_details": "Document provides partial context but lacks complete answer details.",
+      "suggested_document": "csjmu_fees_detailed.pdf"
+    },
+    {
+      "question_id": 226,
+      "category": "General",
+      "question": "What official website URL does CSJMU use?",
+      "status": "Partial",
+      "missing_details": "Document provides partial context but lacks complete answer details.",
+      "suggested_document": "csjmu_general_detailed.pdf"
+    },
+    {
+      "question_id": 227,
+      "category": "General",
+      "question": "What is the official email address for general inquiries?",
+      "status": "Missing",
+      "reason": "No document in the knowledge base addresses this specific question regarding General.",
+      "suggested_document": "csjmu_general_official_document.pdf"
+    },
+    {
+      "question_id": 228,
+      "category": "General",
+      "question": "What is the official postal address of CSJMU?",
+      "status": "Partial",
+      "missing_details": "Document provides partial context but lacks complete answer details.",
+      "suggested_document": "csjmu_general_detailed.pdf"
+    },
+    {
+      "question_id": 229,
+      "category": "General",
+      "question": "What cultural events and annual festivals are celebrated at CSJMU?",
+      "status": "Missing",
+      "reason": "No document in the knowledge base addresses this specific question regarding General.",
+      "suggested_document": "csjmu_general_official_document.pdf"
+    },
+    {
+      "question_id": 232,
+      "category": "Admissions",
+      "question": "What is the procedure for verification of educational marksheets?",
+      "status": "Missing",
+      "reason": "No document in the knowledge base addresses this specific question regarding Admissions.",
+      "suggested_document": "csjmu_admissions_official_document.pdf"
+    },
+    {
+      "question_id": 233,
+      "category": "Admissions",
+      "question": "Can students apply for multiple programs simultaneously?",
+      "status": "Partial",
+      "missing_details": "Document provides partial context but lacks complete answer details.",
+      "suggested_document": "csjmu_admissions_detailed.pdf"
+    },
+    {
+      "question_id": 235,
+      "category": "Eligibility",
+      "question": "Is there any relaxation in marks for reserved category candidates?",
+      "status": "Partial",
+      "missing_details": "Document provides partial context but lacks complete answer details.",
+      "suggested_document": "csjmu_eligibility_detailed.pdf"
+    },
+    {
+      "question_id": 236,
+      "category": "Faculty",
+      "question": "How can a student contact their subject teacher or HOD?",
+      "status": "Partial",
+      "missing_details": "Document provides partial context but lacks complete answer details.",
+      "suggested_document": "csjmu_faculty_detailed.pdf"
+    },
+    {
+      "question_id": 241,
+      "category": "Syllabus_Labs",
+      "question": "Are industrial visits organized for engineering students?",
+      "status": "Partial",
+      "missing_details": "Document provides partial context but lacks complete answer details.",
+      "suggested_document": "csjmu_syllabus_labs_detailed.pdf"
+    },
+    {
+      "question_id": 244,
+      "category": "Placements",
+      "question": "Are mock interviews and soft skills workshops conducted for students?",
+      "status": "Missing",
+      "reason": "No document in the knowledge base addresses this specific question regarding Placements.",
+      "suggested_document": "csjmu_placements_official_document.pdf"
+    },
+    {
+      "question_id": 245,
+      "category": "Scholarships",
+      "question": "What documents are required to claim UP scholarship fee waiver?",
+      "status": "Missing",
+      "reason": "No document contains scholarship rules, eligibility criteria for financial aid, or application procedure.",
+      "suggested_document": "csjmu_scholarships_official_document.pdf"
+    },
+    {
+      "question_id": 247,
+      "category": "Dignitaries",
+      "question": "Who chairs the Executive Council of CSJMU?",
+      "status": "Partial",
+      "missing_details": "Document provides partial context but lacks complete answer details.",
+      "suggested_document": "csjmu_dignitaries_detailed.pdf"
+    },
+    {
+      "question_id": 248,
+      "category": "General",
+      "question": "What NSS and NCC wings exist at CSJMU?",
+      "status": "Partial",
+      "missing_details": "Document provides partial context but lacks complete answer details.",
+      "suggested_document": "csjmu_general_detailed.pdf"
+    },
+    {
+      "question_id": 249,
+      "category": "General",
+      "question": "Does CSJMU have an anti-sexual harassment cell / Internal Complaints Committee?",
+      "status": "Missing",
+      "reason": "No document in the knowledge base addresses this specific question regarding General.",
+      "suggested_document": "csjmu_general_official_document.pdf"
+    },
+    {
+      "question_id": 252,
+      "category": "Admissions",
+      "question": "What happens if a candidate misses the reporting deadline after admission?",
+      "status": "Partial",
+      "missing_details": "Document provides partial context but lacks complete answer details.",
+      "suggested_document": "csjmu_admissions_detailed.pdf"
+    },
+    {
+      "question_id": 259,
+      "category": "Syllabus_Labs",
+      "question": "What is the pass percentage criteria in sessional examinations?",
+      "status": "Missing",
+      "reason": "No document in the knowledge base addresses this specific question regarding Syllabus_Labs.",
+      "suggested_document": "csjmu_syllabus_labs_official_document.pdf"
+    },
+    {
+      "question_id": 261,
+      "category": "Fees",
+      "question": "What is the fee structure for Ph.D. scholars?",
+      "status": "Partial",
+      "missing_details": "Document provides partial context but lacks complete answer details.",
+      "suggested_document": "csjmu_fees_detailed.pdf"
+    },
+    {
+      "question_id": 263,
+      "category": "General",
+      "question": "Does CSJMU have Memorandum of Understanding (MoU) with foreign universities?",
+      "status": "Missing",
+      "reason": "No document in the knowledge base addresses this specific question regarding General.",
+      "suggested_document": "csjmu_general_official_document.pdf"
+    },
+    {
+      "question_id": 264,
+      "category": "General",
+      "question": "Where can students obtain transcript certificates and duplicate marksheets?",
+      "status": "Missing",
+      "reason": "No document in the knowledge base addresses this specific question regarding General.",
+      "suggested_document": "csjmu_general_official_document.pdf"
+    },
+    {
+      "question_id": 266,
+      "category": "Eligibility",
+      "question": "Can candidates with vocational subjects in 12th apply for B.Tech?",
+      "status": "Partial",
+      "missing_details": "Document provides partial context but lacks complete answer details.",
+      "suggested_document": "csjmu_eligibility_detailed.pdf"
+    },
+    {
+      "question_id": 267,
+      "category": "Faculty",
+      "question": "Who manages student discipline in UIET?",
+      "status": "Partial",
+      "missing_details": "Document provides partial context but lacks complete answer details.",
+      "suggested_document": "csjmu_faculty_detailed.pdf"
+    },
+    {
+      "question_id": 269,
+      "category": "Facilities",
+      "question": "Does CSJMU have an indoor badminton court?",
+      "status": "Partial",
+      "missing_details": "Document provides partial context but lacks complete answer details.",
+      "suggested_document": "csjmu_facilities_detailed.pdf"
+    },
+    {
+      "question_id": 271,
+      "category": "Placements",
+      "question": "What average salary packages are secured by MCA students?",
+      "status": "Missing",
+      "reason": "No placement statistics, package numbers, or company-wise placement reports present in placements.txt.",
+      "suggested_document": "csjmu_placements_official_document.pdf"
+    },
+    {
+      "question_id": 272,
+      "category": "Fees",
+      "question": "Is late fee applicable if fee is paid after due date?",
+      "status": "Partial",
+      "missing_details": "Document provides partial context but lacks complete answer details.",
+      "suggested_document": "csjmu_fees_detailed.pdf"
+    },
+    {
+      "question_id": 273,
+      "category": "General",
+      "question": "Does CSJMU publish research journals or newsletters?",
+      "status": "Partial",
+      "missing_details": "Document provides partial context but lacks complete answer details.",
+      "suggested_document": "csjmu_general_detailed.pdf"
+    },
+    {
+      "question_id": 287,
+      "category": "Facilities",
+      "question": "What dining options exist in the university cafeteria?",
+      "status": "Partial",
+      "missing_details": "Document provides partial context but lacks complete answer details.",
+      "suggested_document": "csjmu_facilities_detailed.pdf"
+    },
+    {
+      "question_id": 288,
+      "category": "Syllabus_Labs",
+      "question": "What software tools are used for Chemical Engineering simulations?",
+      "status": "Partial",
+      "missing_details": "Document provides partial context but lacks complete answer details.",
+      "suggested_document": "csjmu_syllabus_labs_detailed.pdf"
+    },
+    {
+      "question_id": 291,
+      "category": "General",
+      "question": "What sports tournaments are held annually at CSJMU stadium?",
+      "status": "Missing",
+      "reason": "No document in the knowledge base addresses this specific question regarding General.",
+      "suggested_document": "csjmu_general_official_document.pdf"
+    },
+    {
+      "question_id": 294,
+      "category": "Faculty",
+      "question": "Who is the Dean of School of Engineering & Technology?",
+      "status": "Partial",
+      "missing_details": "Document provides partial context but lacks complete answer details.",
+      "suggested_document": "csjmu_faculty_detailed.pdf"
+    },
+    {
+      "question_id": 298,
+      "category": "Placements",
+      "question": "What company off-campus opportunities are shared by the T&P cell?",
+      "status": "Partial",
+      "missing_details": "Document provides partial context but lacks complete answer details.",
+      "suggested_document": "csjmu_placements_detailed.pdf"
+    },
+    {
+      "question_id": 301,
+      "category": "General",
+      "question": "How can I contact CSJMU for academic certificates?",
+      "status": "Partial",
+      "missing_details": "Document provides partial context but lacks complete answer details.",
+      "suggested_document": "csjmu_general_detailed.pdf"
+    },
+    {
+      "question_id": 302,
+      "category": "Admissions",
+      "question": "What is the helpline number for CSJMU admissions?",
+      "status": "Missing",
+      "reason": "No document in the knowledge base addresses this specific question regarding Admissions.",
+      "suggested_document": "csjmu_admissions_official_document.pdf"
+    },
+    {
+      "question_id": 305,
+      "category": "Facilities",
+      "question": "What sports courts exist near the stadium complex?",
+      "status": "Missing",
+      "reason": "No document in the knowledge base addresses this specific question regarding Facilities.",
+      "suggested_document": "csjmu_facilities_official_document.pdf"
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+[
+  {
+    "category": "Scholarship Amount Matrix",
+    "title": "CSJMU UP Government Scholarship & Fee Reimbursement Amount Matrix",
+    "sc_st_students": {
+      "with_hostel": "Rs. 1,17,000",
+      "without_hostel": "Rs. 1,17,000",
+      "details": "SC/ST category students receive up to Rs. 1,17,000 per year under UP Government Fee Reimbursement Scheme regardless of hostel or day scholar status."
+    },
+    "general_obc_students": {
+      "with_hostel": "Rs. 64,500",
+      "without_hostel": "Rs. 57,000",
+      "details": "General and OBC category students receive Rs. 64,500 with hostel accommodation and Rs. 57,000 for day scholars under UP Government Fee Reimbursement."
+    },
+    "keywords": ["scholarship", "amount", "fee reimbursement", "sc", "st", "obc", "general", "hostel", "day scholar", "financial assistance"]
+  },
+  {
+    "category": "Scholarship Required Documents",
+    "title": "Official Checklist of Required Documents for UP Scholarship & Fee Reimbursement Application",
+    "required_documents_list": [
+      "Passbook print",
+      "Class 10 Marksheet",
+      "Class 12 Marksheet",
+      "Hostel Mess Receipt",
+      "College Fee Receipt",
+      "Domicile Certificate",
+      "Income Certificate",
+      "Aadhaar Copy",
+      "Father's PAN Card",
+      "Income Certificate (Online Copy)",
+      "Domicile Certificate (Online Copy)",
+      "Gap Affidavit",
+      "College ID Card",
+      "Aadhaar Card",
+      "Shapath Patra",
+      "Final Scholarship Application Print"
+    ],
+    "guidelines": "Students applying for UP Government Scholarship or Fee Reimbursement must submit all 16 listed documents along with the final application printout to the scholarship cell.",
+    "keywords": ["documents required", "scholarship documents", "fee reimbursement documents", "checklist", "shapath patra", "income certificate", "domicile certificate", "passbook", "fee receipt"]
+  },
+  {
+    "category": "Government Laptop & Tablet Scheme",
+    "title": "Swami Vivekananda Youth Empowerment Scheme (UP Free Tablet / Smartphone Scheme)",
+    "official_name": "Swami Vivekananda Youth Empowerment Scheme",
+    "popular_name": "UP Free Tablet / Smartphone Scheme",
+    "eligibility": "Eligible undergraduate and postgraduate students enrolled in CSJMU & UIET engineering, science, and vocational programs.",
+    "benefits": "Free digital devices (tablets or smartphones) distributed by the UP Government to empower youth with modern educational tools and digital access.",
+    "keywords": ["tablet", "smartphone", "laptop", "swami vivekananda youth empowerment", "free tablet scheme", "up government scheme", "youth empowerment", "digital device"]
+  }
+]

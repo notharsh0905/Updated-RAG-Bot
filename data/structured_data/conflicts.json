@@ -1,0 +1,13 @@
+{
+  "total_conflicts_detected": 1,
+  "conflicts": [
+    {
+      "conflict_id": "CONF_001",
+      "domain": "Hostel Rules",
+      "issue": "Curfew Timing Discrepancy between general hostel guidelines and specific girls hostel notice.",
+      "document_a": "hostel.txt",
+      "document_b": "guidelines_for_admission.txt",
+      "status": "Flagged for Verification"
+    }
+  ]
+}

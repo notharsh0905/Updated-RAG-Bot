@@ -1,0 +1,2129 @@
+{
+  "missing_summary": {
+    "total_missing_or_partial": 87,
+    "missing_topics_count": 26
+  },
+  "missing_topics": [
+    {
+      "topic": "General Information",
+      "count": 9,
+      "reason": "No document in the knowledge base addresses this specific question regarding General.",
+      "document_required": "csjmu_general_handbook.pdf",
+      "priority": "High",
+      "questions": [
+        "Is Pharmacy Council of India (PCI) approval held by the School of Pharmaceutical Sciences?",
+        "Is Bar Council of India (BCI) approval held by the School of Legal Studies?",
+        "What city public transport options connect to CSJMU?",
+        "What is the official email address for general inquiries?",
+        "What cultural events and annual festivals are celebrated at CSJMU?",
+        "Does CSJMU have an anti-sexual harassment cell / Internal Complaints Committee?",
+        "Does CSJMU have Memorandum of Understanding (MoU) with foreign universities?",
+        "Where can students obtain transcript certificates and duplicate marksheets?",
+        "What sports tournaments are held annually at CSJMU stadium?"
+      ]
+    },
+    {
+      "topic": "General Details",
+      "count": 8,
+      "reason": "Document provides partial context but lacks complete answer details.",
+      "document_required": "csjmu_general_extended_info.pdf",
+      "priority": "Medium",
+      "questions": [
+        "What key highlights make CSJMU a leading state university in Uttar Pradesh?",
+        "How far is CSJMU campus from Kanpur Central Railway Station?",
+        "How far is CSJMU campus from Kanpur Airport?",
+        "What official website URL does CSJMU use?",
+        "What is the official postal address of CSJMU?",
+        "What NSS and NCC wings exist at CSJMU?",
+        "Does CSJMU publish research journals or newsletters?",
+        "How can I contact CSJMU for academic certificates?"
+      ]
+    },
+    {
+      "topic": "Eligibility Details",
+      "count": 6,
+      "reason": "Document provides partial context but lacks complete answer details.",
+      "document_required": "csjmu_eligibility_extended_info.pdf",
+      "priority": "Medium",
+      "questions": [
+        "What is the minimum percentage required in 12th standard for B.Tech admission?",
+        "What is the eligibility for B.Pharm (Bachelor of Pharmacy)?",
+        "What is the eligibility for D.Pharm (Diploma in Pharmacy)?",
+        "What stream in 12th is required for B.Sc Agriculture?",
+        "Is there any relaxation in marks for reserved category candidates?",
+        "Can candidates with vocational subjects in 12th apply for B.Tech?"
+      ]
+    },
+    {
+      "topic": "Syllabus_Labs Information",
+      "count": 6,
+      "reason": "No document in the knowledge base addresses this specific question regarding Syllabus_Labs.",
+      "document_required": "csjmu_syllabus_labs_handbook.pdf",
+      "priority": "High",
+      "questions": [
+        "What credit system is followed in UIET engineering curriculum?",
+        "How many semesters are in B.Tech program at UIET?",
+        "How many semesters are in M.Tech program at UIET?",
+        "How are mid-semester and end-semester exams evaluated?",
+        "Does UIET follow AICTE model curriculum?",
+        "What is the pass percentage criteria in sessional examinations?"
+      ]
+    },
+    {
+      "topic": "Facilities Information",
+      "count": 5,
+      "reason": "No document in the knowledge base addresses this specific question regarding Facilities.",
+      "document_required": "csjmu_facilities_handbook.pdf",
+      "priority": "High",
+      "questions": [
+        "Does CSJMU have a Guest House for visitors?",
+        "Is there a post office inside CSJMU campus?",
+        "Does CSJMU have an Auditorium?",
+        "What is the seating capacity of the CSJMU Auditorium?",
+        "What sports courts exist near the stadium complex?"
+      ]
+    },
+    {
+      "topic": "Faculty Information",
+      "count": 4,
+      "reason": "No document in the knowledge base addresses this specific question regarding Faculty.",
+      "document_required": "csjmu_faculty_handbook.pdf",
+      "priority": "High",
+      "questions": [
+        "Who is the Dean of Student Welfare (DSW)?",
+        "Who is the Registrar of CSJMU?",
+        "Who is the Vice-Chancellor of CSJMU?",
+        "Do faculty members in UIET hold Ph.D. degrees from IITs/NITs?"
+      ]
+    },
+    {
+      "topic": "Hostel Fees & Rules",
+      "count": 4,
+      "reason": "No hostel fee matrix, mess fee details, security deposit rules, or 24/7 security helpline numbers present in hostel.txt.",
+      "document_required": "csjmu_hostel_fee_matrix_and_helpline.pdf",
+      "priority": "High",
+      "questions": [
+        "What is the curfew timing for girls hostels?",
+        "What is the curfew timing for boys hostels?",
+        "What is the 24/7 security control room number for hostels?",
+        "Is there a refundable caution deposit for hostel or university admission?"
+      ]
+    },
+    {
+      "topic": "Scholarship Guidelines & Concessions",
+      "count": 4,
+      "reason": "No document contains scholarship rules, eligibility criteria for financial aid, or application procedure.",
+      "document_required": "csjmu_scholarship_policy.pdf",
+      "priority": "High",
+      "questions": [
+        "What scholarships are available for CSJMU students?",
+        "Are merit scholarships awarded to top performing students?",
+        "How can students apply for National Scholarship Portal (NSP) schemes?",
+        "What documents are required to claim UP scholarship fee waiver?"
+      ]
+    },
+    {
+      "topic": "Admissions Details",
+      "count": 4,
+      "reason": "Document provides partial context but lacks complete answer details.",
+      "document_required": "csjmu_admissions_extended_info.pdf",
+      "priority": "Medium",
+      "questions": [
+        "Is there an entrance exam conducted by CSJMU for non-JEE courses?",
+        "What is the refund policy if a candidate cancels admission?",
+        "Can students apply for multiple programs simultaneously?",
+        "What happens if a candidate misses the reporting deadline after admission?"
+      ]
+    },
+    {
+      "topic": "Facilities Details",
+      "count": 4,
+      "reason": "Document provides partial context but lacks complete answer details.",
+      "document_required": "csjmu_facilities_extended_info.pdf",
+      "priority": "Medium",
+      "questions": [
+        "Does CSJMU have an online library portal?",
+        "Is INFLIBNET and Shodhganga accessible from the university library?",
+        "Does CSJMU have an indoor badminton court?",
+        "What dining options exist in the university cafeteria?"
+      ]
+    },
+    {
+      "topic": "Fees Details",
+      "count": 4,
+      "reason": "Document provides partial context but lacks complete answer details.",
+      "document_required": "csjmu_fees_extended_info.pdf",
+      "priority": "Medium",
+      "questions": [
+        "Can fees be paid online through the CSJMU portal?",
+        "Is installment facility allowed for tuition fee payment?",
+        "What is the fee structure for Ph.D. scholars?",
+        "Is late fee applicable if fee is paid after due date?"
+      ]
+    },
+    {
+      "topic": "Admissions Information",
+      "count": 3,
+      "reason": "No document in the knowledge base addresses this specific question regarding Admissions.",
+      "document_required": "csjmu_admissions_handbook.pdf",
+      "priority": "High",
+      "questions": [
+        "Are board recognitions required for admission eligibility?",
+        "What is the procedure for verification of educational marksheets?",
+        "What is the helpline number for CSJMU admissions?"
+      ]
+    },
+    {
+      "topic": "Placement Statistics & Packages",
+      "count": 3,
+      "reason": "No placement statistics, package numbers, or company-wise placement reports present in placements.txt.",
+      "document_required": "csjmu_placement_report_2024_2025.pdf",
+      "priority": "High",
+      "questions": [
+        "What is the highest package offered at UIET Kanpur?",
+        "What is the average package for B.Tech CSE students?",
+        "What average salary packages are secured by MCA students?"
+      ]
+    },
+    {
+      "topic": "Syllabus_Labs Details",
+      "count": 3,
+      "reason": "Document provides partial context but lacks complete answer details.",
+      "document_required": "csjmu_syllabus_labs_extended_info.pdf",
+      "priority": "Medium",
+      "questions": [
+        "Are open electives offered across different engineering departments?",
+        "Are industrial visits organized for engineering students?",
+        "What software tools are used for Chemical Engineering simulations?"
+      ]
+    },
+    {
+      "topic": "Faculty Details",
+      "count": 3,
+      "reason": "Document provides partial context but lacks complete answer details.",
+      "document_required": "csjmu_faculty_extended_info.pdf",
+      "priority": "Medium",
+      "questions": [
+        "How can a student contact their subject teacher or HOD?",
+        "Who manages student discipline in UIET?",
+        "Who is the Dean of School of Engineering & Technology?"
+      ]
+    },
+    {
+      "topic": "Departments Information",
+      "count": 2,
+      "reason": "No document in the knowledge base addresses this specific question regarding Departments.",
+      "document_required": "csjmu_departments_handbook.pdf",
+      "priority": "High",
+      "questions": [
+        "Tell me about the School of Languages.",
+        "Tell me about the School of Arts, Humanities & Social Sciences."
+      ]
+    },
+    {
+      "topic": "Placements Details",
+      "count": 2,
+      "reason": "Document provides partial context but lacks complete answer details.",
+      "document_required": "csjmu_placements_extended_info.pdf",
+      "priority": "Medium",
+      "questions": [
+        "Which top companies visit CSJMU for campus recruitment?",
+        "What company off-campus opportunities are shared by the T&P cell?"
+      ]
+    },
+    {
+      "topic": "Placements Information",
+      "count": 2,
+      "reason": "No document in the knowledge base addresses this specific question regarding Placements.",
+      "document_required": "csjmu_placements_handbook.pdf",
+      "priority": "High",
+      "questions": [
+        "Is industrial training mandatory for B.Tech students?",
+        "Are mock interviews and soft skills workshops conducted for students?"
+      ]
+    },
+    {
+      "topic": "Approved_Boards Details",
+      "count": 2,
+      "reason": "Document provides partial context but lacks complete answer details.",
+      "document_required": "csjmu_approved_boards_extended_info.pdf",
+      "priority": "Medium",
+      "questions": [
+        "Is CBSE recognised for admission to CSJMU?",
+        "Is ICSE/ISC board recognised by CSJMU?"
+      ]
+    },
+    {
+      "topic": "Approved_Boards Information",
+      "count": 2,
+      "reason": "No document in the knowledge base addresses this specific question regarding Approved_Boards.",
+      "document_required": "csjmu_approved_boards_handbook.pdf",
+      "priority": "High",
+      "questions": [
+        "What is the policy regarding unrecognised fake boards?",
+        "Where can candidates verify board recognition status?"
+      ]
+    },
+    {
+      "topic": "Courses Details",
+      "count": 2,
+      "reason": "Document provides partial context but lacks complete answer details.",
+      "document_required": "csjmu_courses_extended_info.pdf",
+      "priority": "Medium",
+      "questions": [
+        "What undergraduate degree courses are offered at CSJMU?",
+        "Is Ph.D. program offered at CSJMU?"
+      ]
+    },
+    {
+      "topic": "Alumni Details",
+      "count": 1,
+      "reason": "Document provides partial context but lacks complete answer details.",
+      "document_required": "csjmu_alumni_extended_info.pdf",
+      "priority": "Medium",
+      "questions": [
+        "What achievements are listed for CSJMU alumni?"
+      ]
+    },
+    {
+      "topic": "Innovation Details",
+      "count": 1,
+      "reason": "Document provides partial context but lacks complete answer details.",
+      "document_required": "csjmu_innovation_extended_info.pdf",
+      "priority": "Medium",
+      "questions": [
+        "What support does CSJMU provide to student startups and incubatees?"
+      ]
+    },
+    {
+      "topic": "Dignitaries Information",
+      "count": 1,
+      "reason": "No document in the knowledge base addresses this specific question regarding Dignitaries.",
+      "document_required": "csjmu_dignitaries_handbook.pdf",
+      "priority": "High",
+      "questions": [
+        "What is the vision of CSJMU according to university leadership?"
+      ]
+    },
+    {
+      "topic": "Scholarships Information",
+      "count": 1,
+      "reason": "No document in the knowledge base addresses this specific question regarding Scholarships.",
+      "document_required": "csjmu_scholarships_handbook.pdf",
+      "priority": "High",
+      "questions": [
+        "Can SC/ST/OBC students get UP government fee reimbursement?"
+      ]
+    },
+    {
+      "topic": "Dignitaries Details",
+      "count": 1,
+      "reason": "Document provides partial context but lacks complete answer details.",
+      "document_required": "csjmu_dignitaries_extended_info.pdf",
+      "priority": "Medium",
+      "questions": [
+        "Who chairs the Executive Council of CSJMU?"
+      ]
+    }
+  ],
+  "missing_questions_detail": [
+    {
+      "question_id": 11,
+      "category": "Admissions",
+      "question": "Are board recognitions required for admission eligibility?",
+      "golden_answer": "Information is not available in the current CSJMU/UIET knowledge base documents.",
+      "source_document": "N/A",
+      "chunk_id": "N/A",
+      "similarity_score": 0.15,
+      "confidence_score": 0.1,
+      "keywords_used": [
+        "board",
+        "recognitions",
+        "required",
+        "admission",
+        "eligibility"
+      ],
+      "coverage_status": "Missing",
+      "reason_if_missing": "No document in the knowledge base addresses this specific question regarding Admissions.",
+      "missing_topic": "Admissions Information",
+      "possible_document_required": "csjmu_admissions_handbook.pdf"
+    },
+    {
+      "question_id": 27,
+      "category": "Eligibility",
+      "question": "What is the minimum percentage required in 12th standard for B.Tech admission?",
+      "golden_answer": "B.Tech. in Computer Science and Engineering (AICTE Approved) is a programme offered by CSJMU. The duration of the course is 4 Years. It has 180* + EWS seats available. The eligibility criteria is Passed 10+2 with Physics, Chemistry, Mathematics as compulsory subjects. Minimum of 45% marks in PCM. Th...",
+      "source_document": "course_eligibility.json",
+      "chunk_id": "chunk_1",
+      "similarity_score": 0.55,
+      "confidence_score": 0.5,
+      "keywords_used": [
+        "minimum",
+        "percentage",
+        "required",
+        "12th",
+        "standard",
+        "b.tech",
+        "admission"
+      ],
+      "coverage_status": "Partial",
+      "reason_if_missing": "Document provides partial context but lacks complete answer details.",
+      "missing_topic": "Eligibility Details",
+      "possible_document_required": "csjmu_eligibility_extended_info.pdf"
+    },
+    {
+      "question_id": 31,
+      "category": "Eligibility",
+      "question": "What is the eligibility for B.Pharm (Bachelor of Pharmacy)?",
+      "golden_answer": "B. Pharm (Lateral Entry) is a programme offered by CSJMU. The duration of the course is 3 Years. It has 10 seats available. The eligibility criteria is D. Pharm from PCI approved college. The annual fee is Rs. 1,11,200. The admission process is Merit based / Interview.",
+      "source_document": "course_eligibility.json",
+      "chunk_id": "chunk_51",
+      "similarity_score": 0.55,
+      "confidence_score": 0.5,
+      "keywords_used": [
+        "eligibility",
+        "b.pharm",
+        "bachelor",
+        "pharmacy"
+      ],
+      "coverage_status": "Partial",
+      "reason_if_missing": "Document provides partial context but lacks complete answer details.",
+      "missing_topic": "Eligibility Details",
+      "possible_document_required": "csjmu_eligibility_extended_info.pdf"
+    },
+    {
+      "question_id": 32,
+      "category": "Eligibility",
+      "question": "What is the eligibility for D.Pharm (Diploma in Pharmacy)?",
+      "golden_answer": "B. Pharm (Lateral Entry) is a programme offered by CSJMU. The duration of the course is 3 Years. It has 10 seats available. The eligibility criteria is D. Pharm from PCI approved college. The annual fee is Rs. 1,11,200. The admission process is Merit based / Interview.",
+      "source_document": "course_eligibility.json",
+      "chunk_id": "chunk_51",
+      "similarity_score": 0.55,
+      "confidence_score": 0.5,
+      "keywords_used": [
+        "eligibility",
+        "d.pharm",
+        "diploma",
+        "pharmacy"
+      ],
+      "coverage_status": "Partial",
+      "reason_if_missing": "Document provides partial context but lacks complete answer details.",
+      "missing_topic": "Eligibility Details",
+      "possible_document_required": "csjmu_eligibility_extended_info.pdf"
+    },
+    {
+      "question_id": 62,
+      "category": "Departments",
+      "question": "Tell me about the School of Languages.",
+      "golden_answer": "Information is not available in the current CSJMU/UIET knowledge base documents.",
+      "source_document": "N/A",
+      "chunk_id": "N/A",
+      "similarity_score": 0.15,
+      "confidence_score": 0.1,
+      "keywords_used": [
+        "school",
+        "languages"
+      ],
+      "coverage_status": "Missing",
+      "reason_if_missing": "No document in the knowledge base addresses this specific question regarding Departments.",
+      "missing_topic": "Departments Information",
+      "possible_document_required": "csjmu_departments_handbook.pdf"
+    },
+    {
+      "question_id": 63,
+      "category": "Departments",
+      "question": "Tell me about the School of Arts, Humanities & Social Sciences.",
+      "golden_answer": "Information is not available in the current CSJMU/UIET knowledge base documents.",
+      "source_document": "N/A",
+      "chunk_id": "N/A",
+      "similarity_score": 0.15,
+      "confidence_score": 0.1,
+      "keywords_used": [
+        "school",
+        "arts",
+        "humanities",
+        "social",
+        "sciences"
+      ],
+      "coverage_status": "Missing",
+      "reason_if_missing": "No document in the knowledge base addresses this specific question regarding Departments.",
+      "missing_topic": "Departments Information",
+      "possible_document_required": "csjmu_departments_handbook.pdf"
+    },
+    {
+      "question_id": 83,
+      "category": "Faculty",
+      "question": "Who is the Dean of Student Welfare (DSW)?",
+      "golden_answer": "Information is not available in the current CSJMU/UIET knowledge base documents.",
+      "source_document": "N/A",
+      "chunk_id": "N/A",
+      "similarity_score": 0.15,
+      "confidence_score": 0.1,
+      "keywords_used": [
+        "dean",
+        "student",
+        "welfare",
+        "dsw"
+      ],
+      "coverage_status": "Missing",
+      "reason_if_missing": "No document in the knowledge base addresses this specific question regarding Faculty.",
+      "missing_topic": "Faculty Information",
+      "possible_document_required": "csjmu_faculty_handbook.pdf"
+    },
+    {
+      "question_id": 84,
+      "category": "Faculty",
+      "question": "Who is the Registrar of CSJMU?",
+      "golden_answer": "Information is not available in the current CSJMU/UIET knowledge base documents.",
+      "source_document": "N/A",
+      "chunk_id": "N/A",
+      "similarity_score": 0.15,
+      "confidence_score": 0.1,
+      "keywords_used": [
+        "registrar"
+      ],
+      "coverage_status": "Missing",
+      "reason_if_missing": "No document in the knowledge base addresses this specific question regarding Faculty.",
+      "missing_topic": "Faculty Information",
+      "possible_document_required": "csjmu_faculty_handbook.pdf"
+    },
+    {
+      "question_id": 85,
+      "category": "Faculty",
+      "question": "Who is the Vice-Chancellor of CSJMU?",
+      "golden_answer": "Information is not available in the current CSJMU/UIET knowledge base documents.",
+      "source_document": "N/A",
+      "chunk_id": "N/A",
+      "similarity_score": 0.15,
+      "confidence_score": 0.1,
+      "keywords_used": [
+        "vice-chancellor"
+      ],
+      "coverage_status": "Missing",
+      "reason_if_missing": "No document in the knowledge base addresses this specific question regarding Faculty.",
+      "missing_topic": "Faculty Information",
+      "possible_document_required": "csjmu_faculty_handbook.pdf"
+    },
+    {
+      "question_id": 90,
+      "category": "Hostel",
+      "question": "What is the curfew timing for girls hostels?",
+      "golden_answer": "The current hostel document (hostel.txt) outlines general hostel rules and basic amenities but lacks specific fee breakdowns, mess fees, security deposit amounts, refund policies, and 24/7 security room numbers.",
+      "source_document": "hostel.txt",
+      "chunk_id": "chunk_1",
+      "similarity_score": 0.55,
+      "confidence_score": 0.5,
+      "keywords_used": [
+        "curfew",
+        "timing",
+        "girls",
+        "hostels"
+      ],
+      "coverage_status": "Missing",
+      "reason_if_missing": "No hostel fee matrix, mess fee details, security deposit rules, or 24/7 security helpline numbers present in hostel.txt.",
+      "missing_topic": "Hostel Fees & Rules",
+      "possible_document_required": "csjmu_hostel_fee_matrix_and_helpline.pdf"
+    },
+    {
+      "question_id": 91,
+      "category": "Hostel",
+      "question": "What is the curfew timing for boys hostels?",
+      "golden_answer": "The current hostel document (hostel.txt) outlines general hostel rules and basic amenities but lacks specific fee breakdowns, mess fees, security deposit amounts, refund policies, and 24/7 security room numbers.",
+      "source_document": "hostel.txt",
+      "chunk_id": "chunk_1",
+      "similarity_score": 0.55,
+      "confidence_score": 0.5,
+      "keywords_used": [
+        "curfew",
+        "timing",
+        "boys",
+        "hostels"
+      ],
+      "coverage_status": "Missing",
+      "reason_if_missing": "No hostel fee matrix, mess fee details, security deposit rules, or 24/7 security helpline numbers present in hostel.txt.",
+      "missing_topic": "Hostel Fees & Rules",
+      "possible_document_required": "csjmu_hostel_fee_matrix_and_helpline.pdf"
+    },
+    {
+      "question_id": 99,
+      "category": "Hostel",
+      "question": "What is the 24/7 security control room number for hostels?",
+      "golden_answer": "The current hostel document (hostel.txt) outlines general hostel rules and basic amenities but lacks specific fee breakdowns, mess fees, security deposit amounts, refund policies, and 24/7 security room numbers.",
+      "source_document": "hostel.txt",
+      "chunk_id": "chunk_1",
+      "similarity_score": 0.55,
+      "confidence_score": 0.5,
+      "keywords_used": [
+        "security",
+        "control",
+        "room",
+        "number",
+        "hostels"
+      ],
+      "coverage_status": "Missing",
+      "reason_if_missing": "No hostel fee matrix, mess fee details, security deposit rules, or 24/7 security helpline numbers present in hostel.txt.",
+      "missing_topic": "Hostel Fees & Rules",
+      "possible_document_required": "csjmu_hostel_fee_matrix_and_helpline.pdf"
+    },
+    {
+      "question_id": 102,
+      "category": "Placements",
+      "question": "What is the highest package offered at UIET Kanpur?",
+      "golden_answer": "The placements document (placements.txt) mentions training and placement cell activities but lacks numerical placement statistics, highest/average packages, and branch-wise placement reports.",
+      "source_document": "placements.txt",
+      "chunk_id": "chunk_1",
+      "similarity_score": 0.58,
+      "confidence_score": 0.52,
+      "keywords_used": [
+        "highest",
+        "package",
+        "offered"
+      ],
+      "coverage_status": "Missing",
+      "reason_if_missing": "No placement statistics, package numbers, or company-wise placement reports present in placements.txt.",
+      "missing_topic": "Placement Statistics & Packages",
+      "possible_document_required": "csjmu_placement_report_2024_2025.pdf"
+    },
+    {
+      "question_id": 103,
+      "category": "Placements",
+      "question": "What is the average package for B.Tech CSE students?",
+      "golden_answer": "The placements document (placements.txt) mentions training and placement cell activities but lacks numerical placement statistics, highest/average packages, and branch-wise placement reports.",
+      "source_document": "placements.txt",
+      "chunk_id": "chunk_1",
+      "similarity_score": 0.58,
+      "confidence_score": 0.52,
+      "keywords_used": [
+        "average",
+        "package",
+        "b.tech",
+        "cse",
+        "students"
+      ],
+      "coverage_status": "Missing",
+      "reason_if_missing": "No placement statistics, package numbers, or company-wise placement reports present in placements.txt.",
+      "missing_topic": "Placement Statistics & Packages",
+      "possible_document_required": "csjmu_placement_report_2024_2025.pdf"
+    },
+    {
+      "question_id": 104,
+      "category": "Placements",
+      "question": "Which top companies visit CSJMU for campus recruitment?",
+      "golden_answer": "Campus Recruitment 2023-24: Campus Drives: 84+ Number of Selections: 419+ (Campus / off Campus & Virtual Drive)",
+      "source_document": "placements.txt",
+      "chunk_id": "chunk_2",
+      "similarity_score": 0.55,
+      "confidence_score": 0.5,
+      "keywords_used": [
+        "top",
+        "companies",
+        "visit",
+        "campus",
+        "recruitment"
+      ],
+      "coverage_status": "Partial",
+      "reason_if_missing": "Document provides partial context but lacks complete answer details.",
+      "missing_topic": "Placements Details",
+      "possible_document_required": "csjmu_placements_extended_info.pdf"
+    },
+    {
+      "question_id": 107,
+      "category": "Placements",
+      "question": "Is industrial training mandatory for B.Tech students?",
+      "golden_answer": "Information is not available in the current CSJMU/UIET knowledge base documents.",
+      "source_document": "N/A",
+      "chunk_id": "N/A",
+      "similarity_score": 0.15,
+      "confidence_score": 0.1,
+      "keywords_used": [
+        "industrial",
+        "training",
+        "mandatory",
+        "b.tech",
+        "students"
+      ],
+      "coverage_status": "Missing",
+      "reason_if_missing": "No document in the knowledge base addresses this specific question regarding Placements.",
+      "missing_topic": "Placements Information",
+      "possible_document_required": "csjmu_placements_handbook.pdf"
+    },
+    {
+      "question_id": 120,
+      "category": "Facilities",
+      "question": "Does CSJMU have a Guest House for visitors?",
+      "golden_answer": "Information is not available in the current CSJMU/UIET knowledge base documents.",
+      "source_document": "N/A",
+      "chunk_id": "N/A",
+      "similarity_score": 0.15,
+      "confidence_score": 0.1,
+      "keywords_used": [
+        "guest",
+        "house",
+        "visitors"
+      ],
+      "coverage_status": "Missing",
+      "reason_if_missing": "No document in the knowledge base addresses this specific question regarding Facilities.",
+      "missing_topic": "Facilities Information",
+      "possible_document_required": "csjmu_facilities_handbook.pdf"
+    },
+    {
+      "question_id": 125,
+      "category": "Facilities",
+      "question": "Is there a post office inside CSJMU campus?",
+      "golden_answer": "Information is not available in the current CSJMU/UIET knowledge base documents.",
+      "source_document": "N/A",
+      "chunk_id": "N/A",
+      "similarity_score": 0.15,
+      "confidence_score": 0.1,
+      "keywords_used": [
+        "there",
+        "post",
+        "office",
+        "inside",
+        "campus"
+      ],
+      "coverage_status": "Missing",
+      "reason_if_missing": "No document in the knowledge base addresses this specific question regarding Facilities.",
+      "missing_topic": "Facilities Information",
+      "possible_document_required": "csjmu_facilities_handbook.pdf"
+    },
+    {
+      "question_id": 126,
+      "category": "Facilities",
+      "question": "Does CSJMU have an Auditorium?",
+      "golden_answer": "Information is not available in the current CSJMU/UIET knowledge base documents.",
+      "source_document": "N/A",
+      "chunk_id": "N/A",
+      "similarity_score": 0.15,
+      "confidence_score": 0.1,
+      "keywords_used": [
+        "auditorium"
+      ],
+      "coverage_status": "Missing",
+      "reason_if_missing": "No document in the knowledge base addresses this specific question regarding Facilities.",
+      "missing_topic": "Facilities Information",
+      "possible_document_required": "csjmu_facilities_handbook.pdf"
+    },
+    {
+      "question_id": 127,
+      "category": "Facilities",
+      "question": "What is the seating capacity of the CSJMU Auditorium?",
+      "golden_answer": "Information is not available in the current CSJMU/UIET knowledge base documents.",
+      "source_document": "N/A",
+      "chunk_id": "N/A",
+      "similarity_score": 0.15,
+      "confidence_score": 0.1,
+      "keywords_used": [
+        "seating",
+        "capacity",
+        "auditorium"
+      ],
+      "coverage_status": "Missing",
+      "reason_if_missing": "No document in the knowledge base addresses this specific question regarding Facilities.",
+      "missing_topic": "Facilities Information",
+      "possible_document_required": "csjmu_facilities_handbook.pdf"
+    },
+    {
+      "question_id": 142,
+      "category": "Syllabus_Labs",
+      "question": "What credit system is followed in UIET engineering curriculum?",
+      "golden_answer": "Information is not available in the current CSJMU/UIET knowledge base documents.",
+      "source_document": "N/A",
+      "chunk_id": "N/A",
+      "similarity_score": 0.15,
+      "confidence_score": 0.1,
+      "keywords_used": [
+        "credit",
+        "system",
+        "followed",
+        "engineering",
+        "curriculum"
+      ],
+      "coverage_status": "Missing",
+      "reason_if_missing": "No document in the knowledge base addresses this specific question regarding Syllabus_Labs.",
+      "missing_topic": "Syllabus_Labs Information",
+      "possible_document_required": "csjmu_syllabus_labs_handbook.pdf"
+    },
+    {
+      "question_id": 143,
+      "category": "Syllabus_Labs",
+      "question": "How many semesters are in B.Tech program at UIET?",
+      "golden_answer": "Information is not available in the current CSJMU/UIET knowledge base documents.",
+      "source_document": "N/A",
+      "chunk_id": "N/A",
+      "similarity_score": 0.15,
+      "confidence_score": 0.1,
+      "keywords_used": [
+        "many",
+        "semesters",
+        "b.tech",
+        "program"
+      ],
+      "coverage_status": "Missing",
+      "reason_if_missing": "No document in the knowledge base addresses this specific question regarding Syllabus_Labs.",
+      "missing_topic": "Syllabus_Labs Information",
+      "possible_document_required": "csjmu_syllabus_labs_handbook.pdf"
+    },
+    {
+      "question_id": 144,
+      "category": "Syllabus_Labs",
+      "question": "How many semesters are in M.Tech program at UIET?",
+      "golden_answer": "Information is not available in the current CSJMU/UIET knowledge base documents.",
+      "source_document": "N/A",
+      "chunk_id": "N/A",
+      "similarity_score": 0.15,
+      "confidence_score": 0.1,
+      "keywords_used": [
+        "many",
+        "semesters",
+        "m.tech",
+        "program"
+      ],
+      "coverage_status": "Missing",
+      "reason_if_missing": "No document in the knowledge base addresses this specific question regarding Syllabus_Labs.",
+      "missing_topic": "Syllabus_Labs Information",
+      "possible_document_required": "csjmu_syllabus_labs_handbook.pdf"
+    },
+    {
+      "question_id": 145,
+      "category": "Syllabus_Labs",
+      "question": "How are mid-semester and end-semester exams evaluated?",
+      "golden_answer": "Information is not available in the current CSJMU/UIET knowledge base documents.",
+      "source_document": "N/A",
+      "chunk_id": "N/A",
+      "similarity_score": 0.15,
+      "confidence_score": 0.1,
+      "keywords_used": [
+        "mid-semester",
+        "end-semester",
+        "exams",
+        "evaluated"
+      ],
+      "coverage_status": "Missing",
+      "reason_if_missing": "No document in the knowledge base addresses this specific question regarding Syllabus_Labs.",
+      "missing_topic": "Syllabus_Labs Information",
+      "possible_document_required": "csjmu_syllabus_labs_handbook.pdf"
+    },
+    {
+      "question_id": 149,
+      "category": "Alumni",
+      "question": "What achievements are listed for CSJMU alumni?",
+      "golden_answer": "ABOUT CHHATRAPATI SHAHU JI MAHARAJ UNIVERSITY (CSJMU) :- Chhatrapati Shahu Ji Maharaj (CSJM) University, situated in Kanpur, Uttar Pradesh, shines as a symbol of excellence in the higher education landscape of India. Accredited with the highest NAAC grade of A++, it is recognized as one of the most ...",
+      "source_document": "about_csjm.txt",
+      "chunk_id": "chunk_0",
+      "similarity_score": 0.55,
+      "confidence_score": 0.5,
+      "keywords_used": [
+        "achievements",
+        "listed",
+        "alumni"
+      ],
+      "coverage_status": "Partial",
+      "reason_if_missing": "Document provides partial context but lacks complete answer details.",
+      "missing_topic": "Alumni Details",
+      "possible_document_required": "csjmu_alumni_extended_info.pdf"
+    },
+    {
+      "question_id": 153,
+      "category": "Approved_Boards",
+      "question": "Is CBSE recognised for admission to CSJMU?",
+      "golden_answer": "Central Board of Secondary Education (CBSE) is one of the approved boards accepted by CSJMU. Its address is Community Centre, Shiksha Kendra, Preet Vihar, Delhi.",
+      "source_document": "approved_boards.json",
+      "chunk_id": "chunk_9",
+      "similarity_score": 0.55,
+      "confidence_score": 0.5,
+      "keywords_used": [
+        "cbse",
+        "recognised",
+        "admission"
+      ],
+      "coverage_status": "Partial",
+      "reason_if_missing": "Document provides partial context but lacks complete answer details.",
+      "missing_topic": "Approved_Boards Details",
+      "possible_document_required": "csjmu_approved_boards_extended_info.pdf"
+    },
+    {
+      "question_id": 154,
+      "category": "Approved_Boards",
+      "question": "Is ICSE/ISC board recognised by CSJMU?",
+      "golden_answer": "Cambridge International Examination (CIE) is one of the approved boards accepted by CSJMU. Its address is .",
+      "source_document": "approved_boards.json",
+      "chunk_id": "chunk_8",
+      "similarity_score": 0.55,
+      "confidence_score": 0.5,
+      "keywords_used": [
+        "icse",
+        "isc",
+        "board",
+        "recognised"
+      ],
+      "coverage_status": "Partial",
+      "reason_if_missing": "Document provides partial context but lacks complete answer details.",
+      "missing_topic": "Approved_Boards Details",
+      "possible_document_required": "csjmu_approved_boards_extended_info.pdf"
+    },
+    {
+      "question_id": 156,
+      "category": "Approved_Boards",
+      "question": "What is the policy regarding unrecognised fake boards?",
+      "golden_answer": "Information is not available in the current CSJMU/UIET knowledge base documents.",
+      "source_document": "N/A",
+      "chunk_id": "N/A",
+      "similarity_score": 0.15,
+      "confidence_score": 0.1,
+      "keywords_used": [
+        "policy",
+        "regarding",
+        "unrecognised",
+        "fake",
+        "boards"
+      ],
+      "coverage_status": "Missing",
+      "reason_if_missing": "No document in the knowledge base addresses this specific question regarding Approved_Boards.",
+      "missing_topic": "Approved_Boards Information",
+      "possible_document_required": "csjmu_approved_boards_handbook.pdf"
+    },
+    {
+      "question_id": 157,
+      "category": "Approved_Boards",
+      "question": "Where can candidates verify board recognition status?",
+      "golden_answer": "Information is not available in the current CSJMU/UIET knowledge base documents.",
+      "source_document": "N/A",
+      "chunk_id": "N/A",
+      "similarity_score": 0.15,
+      "confidence_score": 0.1,
+      "keywords_used": [
+        "candidates",
+        "verify",
+        "board",
+        "recognition",
+        "status"
+      ],
+      "coverage_status": "Missing",
+      "reason_if_missing": "No document in the knowledge base addresses this specific question regarding Approved_Boards.",
+      "missing_topic": "Approved_Boards Information",
+      "possible_document_required": "csjmu_approved_boards_handbook.pdf"
+    },
+    {
+      "question_id": 159,
+      "category": "Innovation",
+      "question": "What support does CSJMU provide to student startups and incubatees?",
+      "golden_answer": "CSJMIF Overview  Fostering Innovation, Igniting Change CHHATRAPATI SHAHU JI MAHARAJ INNOVATION FOUNDATION SECTION 8 TECH BUSINESS INCUBATOR PROMOTED BY CSJM UNIVERSITY KANPUR Logo: CSJMIF  We provide hand holding and nurturing that can help start ups and entrepreneurs succeed in today's ever-changin...",
+      "source_document": "innovation_foundation.txt",
+      "chunk_id": "chunk_0",
+      "similarity_score": 0.55,
+      "confidence_score": 0.5,
+      "keywords_used": [
+        "support",
+        "provide",
+        "student",
+        "startups",
+        "incubatees"
+      ],
+      "coverage_status": "Partial",
+      "reason_if_missing": "Document provides partial context but lacks complete answer details.",
+      "missing_topic": "Innovation Details",
+      "possible_document_required": "csjmu_innovation_extended_info.pdf"
+    },
+    {
+      "question_id": 162,
+      "category": "Dignitaries",
+      "question": "What is the vision of CSJMU according to university leadership?",
+      "golden_answer": "Information is not available in the current CSJMU/UIET knowledge base documents.",
+      "source_document": "N/A",
+      "chunk_id": "N/A",
+      "similarity_score": 0.15,
+      "confidence_score": 0.1,
+      "keywords_used": [
+        "vision",
+        "according",
+        "leadership"
+      ],
+      "coverage_status": "Missing",
+      "reason_if_missing": "No document in the knowledge base addresses this specific question regarding Dignitaries.",
+      "missing_topic": "Dignitaries Information",
+      "possible_document_required": "csjmu_dignitaries_handbook.pdf"
+    },
+    {
+      "question_id": 163,
+      "category": "Courses",
+      "question": "What undergraduate degree courses are offered at CSJMU?",
+      "golden_answer": "ABOUT CHHATRAPATI SHAHU JI MAHARAJ UNIVERSITY (CSJMU) :- Chhatrapati Shahu Ji Maharaj (CSJM) University, situated in Kanpur, Uttar Pradesh, shines as a symbol of excellence in the higher education landscape of India. Accredited with the highest NAAC grade of A++, it is recognized as one of the most ...",
+      "source_document": "about_csjm.txt",
+      "chunk_id": "chunk_0",
+      "similarity_score": 0.55,
+      "confidence_score": 0.5,
+      "keywords_used": [
+        "undergraduate",
+        "degree",
+        "courses",
+        "offered"
+      ],
+      "coverage_status": "Partial",
+      "reason_if_missing": "Document provides partial context but lacks complete answer details.",
+      "missing_topic": "Courses Details",
+      "possible_document_required": "csjmu_courses_extended_info.pdf"
+    },
+    {
+      "question_id": 167,
+      "category": "Courses",
+      "question": "Is Ph.D. program offered at CSJMU?",
+      "golden_answer": "ABOUT CHHATRAPATI SHAHU JI MAHARAJ UNIVERSITY (CSJMU) :- Chhatrapati Shahu Ji Maharaj (CSJM) University, situated in Kanpur, Uttar Pradesh, shines as a symbol of excellence in the higher education landscape of India. Accredited with the highest NAAC grade of A++, it is recognized as one of the most ...",
+      "source_document": "about_csjm.txt",
+      "chunk_id": "chunk_0",
+      "similarity_score": 0.55,
+      "confidence_score": 0.5,
+      "keywords_used": [
+        "ph.d",
+        "program",
+        "offered"
+      ],
+      "coverage_status": "Partial",
+      "reason_if_missing": "Document provides partial context but lacks complete answer details.",
+      "missing_topic": "Courses Details",
+      "possible_document_required": "csjmu_courses_extended_info.pdf"
+    },
+    {
+      "question_id": 178,
+      "category": "Fees",
+      "question": "Is there a refundable caution deposit for hostel or university admission?",
+      "golden_answer": "The current hostel document (hostel.txt) outlines general hostel rules and basic amenities but lacks specific fee breakdowns, mess fees, security deposit amounts, refund policies, and 24/7 security room numbers.",
+      "source_document": "hostel.txt",
+      "chunk_id": "chunk_1",
+      "similarity_score": 0.55,
+      "confidence_score": 0.5,
+      "keywords_used": [
+        "there",
+        "refundable",
+        "caution",
+        "deposit",
+        "hostel",
+        "admission"
+      ],
+      "coverage_status": "Missing",
+      "reason_if_missing": "No hostel fee matrix, mess fee details, security deposit rules, or 24/7 security helpline numbers present in hostel.txt.",
+      "missing_topic": "Hostel Fees & Rules",
+      "possible_document_required": "csjmu_hostel_fee_matrix_and_helpline.pdf"
+    },
+    {
+      "question_id": 179,
+      "category": "Scholarships",
+      "question": "What scholarships are available for CSJMU students?",
+      "golden_answer": "No scholarship guidelines, UP government fee reimbursement rules, or financial assistance policies are present in the current knowledge base.",
+      "source_document": "N/A",
+      "chunk_id": "N/A",
+      "similarity_score": 0.2,
+      "confidence_score": 0.1,
+      "keywords_used": [
+        "scholarships",
+        "available",
+        "students"
+      ],
+      "coverage_status": "Missing",
+      "reason_if_missing": "No document contains scholarship rules, eligibility criteria for financial aid, or application procedure.",
+      "missing_topic": "Scholarship Guidelines & Concessions",
+      "possible_document_required": "csjmu_scholarship_policy.pdf"
+    },
+    {
+      "question_id": 180,
+      "category": "Scholarships",
+      "question": "Can SC/ST/OBC students get UP government fee reimbursement?",
+      "golden_answer": "Information is not available in the current CSJMU/UIET knowledge base documents.",
+      "source_document": "N/A",
+      "chunk_id": "N/A",
+      "similarity_score": 0.15,
+      "confidence_score": 0.1,
+      "keywords_used": [
+        "obc",
+        "students",
+        "get",
+        "government",
+        "fee",
+        "reimbursement"
+      ],
+      "coverage_status": "Missing",
+      "reason_if_missing": "No document in the knowledge base addresses this specific question regarding Scholarships.",
+      "missing_topic": "Scholarships Information",
+      "possible_document_required": "csjmu_scholarships_handbook.pdf"
+    },
+    {
+      "question_id": 181,
+      "category": "Scholarships",
+      "question": "Are merit scholarships awarded to top performing students?",
+      "golden_answer": "No scholarship guidelines, UP government fee reimbursement rules, or financial assistance policies are present in the current knowledge base.",
+      "source_document": "N/A",
+      "chunk_id": "N/A",
+      "similarity_score": 0.2,
+      "confidence_score": 0.1,
+      "keywords_used": [
+        "merit",
+        "scholarships",
+        "awarded",
+        "top",
+        "performing",
+        "students"
+      ],
+      "coverage_status": "Missing",
+      "reason_if_missing": "No document contains scholarship rules, eligibility criteria for financial aid, or application procedure.",
+      "missing_topic": "Scholarship Guidelines & Concessions",
+      "possible_document_required": "csjmu_scholarship_policy.pdf"
+    },
+    {
+      "question_id": 182,
+      "category": "Scholarships",
+      "question": "How can students apply for National Scholarship Portal (NSP) schemes?",
+      "golden_answer": "No scholarship guidelines, UP government fee reimbursement rules, or financial assistance policies are present in the current knowledge base.",
+      "source_document": "N/A",
+      "chunk_id": "N/A",
+      "similarity_score": 0.2,
+      "confidence_score": 0.1,
+      "keywords_used": [
+        "students",
+        "apply",
+        "national",
+        "scholarship",
+        "portal",
+        "nsp",
+        "schemes"
+      ],
+      "coverage_status": "Missing",
+      "reason_if_missing": "No document contains scholarship rules, eligibility criteria for financial aid, or application procedure.",
+      "missing_topic": "Scholarship Guidelines & Concessions",
+      "possible_document_required": "csjmu_scholarship_policy.pdf"
+    },
+    {
+      "question_id": 184,
+      "category": "General",
+      "question": "What key highlights make CSJMU a leading state university in Uttar Pradesh?",
+      "golden_answer": "ABOUT CHHATRAPATI SHAHU JI MAHARAJ UNIVERSITY (CSJMU) :- Chhatrapati Shahu Ji Maharaj (CSJM) University, situated in Kanpur, Uttar Pradesh, shines as a symbol of excellence in the higher education landscape of India. Accredited with the highest NAAC grade of A++, it is recognized as one of the most ...",
+      "source_document": "about_csjm.txt",
+      "chunk_id": "chunk_0",
+      "similarity_score": 0.55,
+      "confidence_score": 0.5,
+      "keywords_used": [
+        "key",
+        "highlights",
+        "make",
+        "leading",
+        "state",
+        "uttar",
+        "pradesh"
+      ],
+      "coverage_status": "Partial",
+      "reason_if_missing": "Document provides partial context but lacks complete answer details.",
+      "missing_topic": "General Details",
+      "possible_document_required": "csjmu_general_extended_info.pdf"
+    },
+    {
+      "question_id": 187,
+      "category": "General",
+      "question": "Is Pharmacy Council of India (PCI) approval held by the School of Pharmaceutical Sciences?",
+      "golden_answer": "Information is not available in the current CSJMU/UIET knowledge base documents.",
+      "source_document": "N/A",
+      "chunk_id": "N/A",
+      "similarity_score": 0.15,
+      "confidence_score": 0.1,
+      "keywords_used": [
+        "pharmacy",
+        "council",
+        "india",
+        "pci",
+        "approval",
+        "held",
+        "school",
+        "pharmaceutical",
+        "sciences"
+      ],
+      "coverage_status": "Missing",
+      "reason_if_missing": "No document in the knowledge base addresses this specific question regarding General.",
+      "missing_topic": "General Information",
+      "possible_document_required": "csjmu_general_handbook.pdf"
+    },
+    {
+      "question_id": 188,
+      "category": "General",
+      "question": "Is Bar Council of India (BCI) approval held by the School of Legal Studies?",
+      "golden_answer": "Information is not available in the current CSJMU/UIET knowledge base documents.",
+      "source_document": "N/A",
+      "chunk_id": "N/A",
+      "similarity_score": 0.15,
+      "confidence_score": 0.1,
+      "keywords_used": [
+        "bar",
+        "council",
+        "india",
+        "bci",
+        "approval",
+        "held",
+        "school",
+        "legal",
+        "studies"
+      ],
+      "coverage_status": "Missing",
+      "reason_if_missing": "No document in the knowledge base addresses this specific question regarding General.",
+      "missing_topic": "General Information",
+      "possible_document_required": "csjmu_general_handbook.pdf"
+    },
+    {
+      "question_id": 190,
+      "category": "General",
+      "question": "How far is CSJMU campus from Kanpur Central Railway Station?",
+      "golden_answer": "Facilities at Csjmu Campus- 1) ICT enabled Classroms 2) State of the art Laborateries 3) Central Library 4) Hostel for boys and girls 5) Sports facilities 6) Auditorium 7) Swimming Pool 8) Health Centre 9)Multi-purpose Hall  Csjmu Student Hobby Club- 1) Cultural Club 2) Fitness Club 3) Gardening Clu...",
+      "source_document": "facilities_at_csjm.txt",
+      "chunk_id": "chunk_0",
+      "similarity_score": 0.55,
+      "confidence_score": 0.5,
+      "keywords_used": [
+        "far",
+        "campus",
+        "central",
+        "railway",
+        "station"
+      ],
+      "coverage_status": "Partial",
+      "reason_if_missing": "Document provides partial context but lacks complete answer details.",
+      "missing_topic": "General Details",
+      "possible_document_required": "csjmu_general_extended_info.pdf"
+    },
+    {
+      "question_id": 191,
+      "category": "General",
+      "question": "How far is CSJMU campus from Kanpur Airport?",
+      "golden_answer": "ABOUT CHHATRAPATI SHAHU JI MAHARAJ UNIVERSITY (CSJMU) :- Chhatrapati Shahu Ji Maharaj (CSJM) University, situated in Kanpur, Uttar Pradesh, shines as a symbol of excellence in the higher education landscape of India. Accredited with the highest NAAC grade of A++, it is recognized as one of the most ...",
+      "source_document": "about_csjm.txt",
+      "chunk_id": "chunk_0",
+      "similarity_score": 0.55,
+      "confidence_score": 0.5,
+      "keywords_used": [
+        "far",
+        "campus",
+        "airport"
+      ],
+      "coverage_status": "Partial",
+      "reason_if_missing": "Document provides partial context but lacks complete answer details.",
+      "missing_topic": "General Details",
+      "possible_document_required": "csjmu_general_extended_info.pdf"
+    },
+    {
+      "question_id": 192,
+      "category": "General",
+      "question": "What city public transport options connect to CSJMU?",
+      "golden_answer": "Information is not available in the current CSJMU/UIET knowledge base documents.",
+      "source_document": "N/A",
+      "chunk_id": "N/A",
+      "similarity_score": 0.15,
+      "confidence_score": 0.1,
+      "keywords_used": [
+        "city",
+        "public",
+        "transport",
+        "options",
+        "connect"
+      ],
+      "coverage_status": "Missing",
+      "reason_if_missing": "No document in the knowledge base addresses this specific question regarding General.",
+      "missing_topic": "General Information",
+      "possible_document_required": "csjmu_general_handbook.pdf"
+    },
+    {
+      "question_id": 194,
+      "category": "Admissions",
+      "question": "Is there an entrance exam conducted by CSJMU for non-JEE courses?",
+      "golden_answer": "5. For admission to programmes based on Entrance Examination, a separate Admission Portal will be available on the CSJM University website. (check Flowsheet for details of the registration and application process for programmes with Entrance Examination)",
+      "source_document": "guidelines_for_admission.txt",
+      "chunk_id": "chunk_6",
+      "similarity_score": 0.55,
+      "confidence_score": 0.5,
+      "keywords_used": [
+        "there",
+        "entrance",
+        "exam",
+        "conducted",
+        "non-jee",
+        "courses"
+      ],
+      "coverage_status": "Partial",
+      "reason_if_missing": "Document provides partial context but lacks complete answer details.",
+      "missing_topic": "Admissions Details",
+      "possible_document_required": "csjmu_admissions_extended_info.pdf"
+    },
+    {
+      "question_id": 197,
+      "category": "Admissions",
+      "question": "What is the refund policy if a candidate cancels admission?",
+      "golden_answer": "18. If any candidate gets admission on the basis of false information /improper means or on the basis of false marksheet/certificates, his/her admission will be cancelled with immediate effect.",
+      "source_document": "guidelines_for_admission.txt",
+      "chunk_id": "chunk_19",
+      "similarity_score": 0.55,
+      "confidence_score": 0.5,
+      "keywords_used": [
+        "refund",
+        "policy",
+        "candidate",
+        "cancels",
+        "admission"
+      ],
+      "coverage_status": "Partial",
+      "reason_if_missing": "Document provides partial context but lacks complete answer details.",
+      "missing_topic": "Admissions Details",
+      "possible_document_required": "csjmu_admissions_extended_info.pdf"
+    },
+    {
+      "question_id": 199,
+      "category": "Eligibility",
+      "question": "What stream in 12th is required for B.Sc Agriculture?",
+      "golden_answer": "M.Sc. Ag. (Agronomy) is a programme offered by CSJMU. The duration of the course is 2 Years. It has 30 seats available. The eligibility criteria is B.Sc. (Hons.) Agriculture / B.Sc. Agriculture. The annual fee is Rs. 51,200. The admission process is Merit Based.",
+      "source_document": "course_eligibility.json",
+      "chunk_id": "chunk_143",
+      "similarity_score": 0.55,
+      "confidence_score": 0.5,
+      "keywords_used": [
+        "stream",
+        "12th",
+        "required",
+        "b.sc",
+        "agriculture"
+      ],
+      "coverage_status": "Partial",
+      "reason_if_missing": "Document provides partial context but lacks complete answer details.",
+      "missing_topic": "Eligibility Details",
+      "possible_document_required": "csjmu_eligibility_extended_info.pdf"
+    },
+    {
+      "question_id": 204,
+      "category": "Faculty",
+      "question": "Do faculty members in UIET hold Ph.D. degrees from IITs/NITs?",
+      "golden_answer": "Information is not available in the current CSJMU/UIET knowledge base documents.",
+      "source_document": "N/A",
+      "chunk_id": "N/A",
+      "similarity_score": 0.15,
+      "confidence_score": 0.1,
+      "keywords_used": [
+        "faculty",
+        "members",
+        "hold",
+        "ph.d",
+        "degrees",
+        "iits",
+        "nits"
+      ],
+      "coverage_status": "Missing",
+      "reason_if_missing": "No document in the knowledge base addresses this specific question regarding Faculty.",
+      "missing_topic": "Faculty Information",
+      "possible_document_required": "csjmu_faculty_handbook.pdf"
+    },
+    {
+      "question_id": 214,
+      "category": "Facilities",
+      "question": "Does CSJMU have an online library portal?",
+      "golden_answer": "Facilities at Csjmu Campus- 1) ICT enabled Classroms 2) State of the art Laborateries 3) Central Library 4) Hostel for boys and girls 5) Sports facilities 6) Auditorium 7) Swimming Pool 8) Health Centre 9)Multi-purpose Hall",
+      "source_document": "facilities_at_csjm.txt",
+      "chunk_id": "chunk_1",
+      "similarity_score": 0.55,
+      "confidence_score": 0.5,
+      "keywords_used": [
+        "online",
+        "library",
+        "portal"
+      ],
+      "coverage_status": "Partial",
+      "reason_if_missing": "Document provides partial context but lacks complete answer details.",
+      "missing_topic": "Facilities Details",
+      "possible_document_required": "csjmu_facilities_extended_info.pdf"
+    },
+    {
+      "question_id": 215,
+      "category": "Facilities",
+      "question": "Is INFLIBNET and Shodhganga accessible from the university library?",
+      "golden_answer": "ABOUT CHHATRAPATI SHAHU JI MAHARAJ UNIVERSITY (CSJMU) :- Chhatrapati Shahu Ji Maharaj (CSJM) University, situated in Kanpur, Uttar Pradesh, shines as a symbol of excellence in the higher education landscape of India. Accredited with the highest NAAC grade of A++, it is recognized as one of the most ...",
+      "source_document": "about_csjm.txt",
+      "chunk_id": "chunk_0",
+      "similarity_score": 0.55,
+      "confidence_score": 0.5,
+      "keywords_used": [
+        "inflibnet",
+        "shodhganga",
+        "accessible",
+        "library"
+      ],
+      "coverage_status": "Partial",
+      "reason_if_missing": "Document provides partial context but lacks complete answer details.",
+      "missing_topic": "Facilities Details",
+      "possible_document_required": "csjmu_facilities_extended_info.pdf"
+    },
+    {
+      "question_id": 219,
+      "category": "Syllabus_Labs",
+      "question": "Does UIET follow AICTE model curriculum?",
+      "golden_answer": "Information is not available in the current CSJMU/UIET knowledge base documents.",
+      "source_document": "N/A",
+      "chunk_id": "N/A",
+      "similarity_score": 0.15,
+      "confidence_score": 0.1,
+      "keywords_used": [
+        "follow",
+        "aicte",
+        "model",
+        "curriculum"
+      ],
+      "coverage_status": "Missing",
+      "reason_if_missing": "No document in the knowledge base addresses this specific question regarding Syllabus_Labs.",
+      "missing_topic": "Syllabus_Labs Information",
+      "possible_document_required": "csjmu_syllabus_labs_handbook.pdf"
+    },
+    {
+      "question_id": 220,
+      "category": "Syllabus_Labs",
+      "question": "Are open electives offered across different engineering departments?",
+      "golden_answer": "(i) The candidate will select the faculty/programme along with campus/college in which admission is sought (Science/Arts/Commerce/ Agriculture/Management etc.).  (ii) The candidate while applying at the admission portal has the maximum permissible limit of choosing 3 programmes in a maximum of 10 de...",
+      "source_document": "guidelines_for_admission.txt",
+      "chunk_id": "chunk_5",
+      "similarity_score": 0.55,
+      "confidence_score": 0.5,
+      "keywords_used": [
+        "open",
+        "electives",
+        "offered",
+        "across",
+        "different",
+        "engineering",
+        "departments"
+      ],
+      "coverage_status": "Partial",
+      "reason_if_missing": "Document provides partial context but lacks complete answer details.",
+      "missing_topic": "Syllabus_Labs Details",
+      "possible_document_required": "csjmu_syllabus_labs_extended_info.pdf"
+    },
+    {
+      "question_id": 224,
+      "category": "Fees",
+      "question": "Can fees be paid online through the CSJMU portal?",
+      "golden_answer": "2. All admissions to different programmes running in the University campus or affiliated colleges of CSJM University will be made through the Admission Portal available on the University website.",
+      "source_document": "guidelines_for_admission.txt",
+      "chunk_id": "chunk_2",
+      "similarity_score": 0.55,
+      "confidence_score": 0.5,
+      "keywords_used": [
+        "fees",
+        "paid",
+        "online",
+        "portal"
+      ],
+      "coverage_status": "Partial",
+      "reason_if_missing": "Document provides partial context but lacks complete answer details.",
+      "missing_topic": "Fees Details",
+      "possible_document_required": "csjmu_fees_extended_info.pdf"
+    },
+    {
+      "question_id": 225,
+      "category": "Fees",
+      "question": "Is installment facility allowed for tuition fee payment?",
+      "golden_answer": "Hostel fees and mess fees are applicable separately, and payments once made are generally non-refundable website for more information: https://csjmu.ac.in/facilities/hostels/",
+      "source_document": "hostel.txt",
+      "chunk_id": "chunk_13",
+      "similarity_score": 0.55,
+      "confidence_score": 0.5,
+      "keywords_used": [
+        "installment",
+        "facility",
+        "allowed",
+        "tuition",
+        "fee",
+        "payment"
+      ],
+      "coverage_status": "Partial",
+      "reason_if_missing": "Document provides partial context but lacks complete answer details.",
+      "missing_topic": "Fees Details",
+      "possible_document_required": "csjmu_fees_extended_info.pdf"
+    },
+    {
+      "question_id": 226,
+      "category": "General",
+      "question": "What official website URL does CSJMU use?",
+      "golden_answer": "GUIDELINES FOR ADMISSION TO UNIVERSITY CAMPUS/AFFILIATED COLLEGES  1. The detailed information of the admission procedure will be displayed on the University website (www.csjmu.ac.in). Candidates are advised to check the University website regularly for updates.",
+      "source_document": "guidelines_for_admission.txt",
+      "chunk_id": "chunk_1",
+      "similarity_score": 0.55,
+      "confidence_score": 0.5,
+      "keywords_used": [
+        "official",
+        "website",
+        "url",
+        "use"
+      ],
+      "coverage_status": "Partial",
+      "reason_if_missing": "Document provides partial context but lacks complete answer details.",
+      "missing_topic": "General Details",
+      "possible_document_required": "csjmu_general_extended_info.pdf"
+    },
+    {
+      "question_id": 227,
+      "category": "General",
+      "question": "What is the official email address for general inquiries?",
+      "golden_answer": "Information is not available in the current CSJMU/UIET knowledge base documents.",
+      "source_document": "N/A",
+      "chunk_id": "N/A",
+      "similarity_score": 0.15,
+      "confidence_score": 0.1,
+      "keywords_used": [
+        "official",
+        "email",
+        "address",
+        "general",
+        "inquiries"
+      ],
+      "coverage_status": "Missing",
+      "reason_if_missing": "No document in the knowledge base addresses this specific question regarding General.",
+      "missing_topic": "General Information",
+      "possible_document_required": "csjmu_general_handbook.pdf"
+    },
+    {
+      "question_id": 228,
+      "category": "General",
+      "question": "What is the official postal address of CSJMU?",
+      "golden_answer": "Aligarh Muslim University is one of the approved boards accepted by CSJMU. Its address is Aligarh.",
+      "source_document": "approved_boards.json",
+      "chunk_id": "chunk_1",
+      "similarity_score": 0.55,
+      "confidence_score": 0.5,
+      "keywords_used": [
+        "official",
+        "postal",
+        "address"
+      ],
+      "coverage_status": "Partial",
+      "reason_if_missing": "Document provides partial context but lacks complete answer details.",
+      "missing_topic": "General Details",
+      "possible_document_required": "csjmu_general_extended_info.pdf"
+    },
+    {
+      "question_id": 229,
+      "category": "General",
+      "question": "What cultural events and annual festivals are celebrated at CSJMU?",
+      "golden_answer": "Information is not available in the current CSJMU/UIET knowledge base documents.",
+      "source_document": "N/A",
+      "chunk_id": "N/A",
+      "similarity_score": 0.15,
+      "confidence_score": 0.1,
+      "keywords_used": [
+        "cultural",
+        "events",
+        "annual",
+        "festivals",
+        "celebrated"
+      ],
+      "coverage_status": "Missing",
+      "reason_if_missing": "No document in the knowledge base addresses this specific question regarding General.",
+      "missing_topic": "General Information",
+      "possible_document_required": "csjmu_general_handbook.pdf"
+    },
+    {
+      "question_id": 232,
+      "category": "Admissions",
+      "question": "What is the procedure for verification of educational marksheets?",
+      "golden_answer": "Information is not available in the current CSJMU/UIET knowledge base documents.",
+      "source_document": "N/A",
+      "chunk_id": "N/A",
+      "similarity_score": 0.15,
+      "confidence_score": 0.1,
+      "keywords_used": [
+        "procedure",
+        "verification",
+        "educational",
+        "marksheets"
+      ],
+      "coverage_status": "Missing",
+      "reason_if_missing": "No document in the knowledge base addresses this specific question regarding Admissions.",
+      "missing_topic": "Admissions Information",
+      "possible_document_required": "csjmu_admissions_handbook.pdf"
+    },
+    {
+      "question_id": 233,
+      "category": "Admissions",
+      "question": "Can students apply for multiple programs simultaneously?",
+      "golden_answer": "(i) The candidate will select the faculty/programme along with campus/college in which admission is sought (Science/Arts/Commerce/ Agriculture/Management etc.).  (ii) The candidate while applying at the admission portal has the maximum permissible limit of choosing 3 programmes in a maximum of 10 de...",
+      "source_document": "guidelines_for_admission.txt",
+      "chunk_id": "chunk_5",
+      "similarity_score": 0.55,
+      "confidence_score": 0.5,
+      "keywords_used": [
+        "students",
+        "apply",
+        "multiple",
+        "programs",
+        "simultaneously"
+      ],
+      "coverage_status": "Partial",
+      "reason_if_missing": "Document provides partial context but lacks complete answer details.",
+      "missing_topic": "Admissions Details",
+      "possible_document_required": "csjmu_admissions_extended_info.pdf"
+    },
+    {
+      "question_id": 235,
+      "category": "Eligibility",
+      "question": "Is there any relaxation in marks for reserved category candidates?",
+      "golden_answer": "11. The benefit of reservation will be permissible only to Scheduled Castes/ Scheduled Tribes/Other Backward Classes and EWS candidates originally belonging to Uttar Pradesh. Scheduled Castes/ Scheduled Tribes/Other Backward Classes and EWS candidates of other states will be treated as general categ...",
+      "source_document": "guidelines_for_admission.txt",
+      "chunk_id": "chunk_12",
+      "similarity_score": 0.55,
+      "confidence_score": 0.5,
+      "keywords_used": [
+        "there",
+        "any",
+        "relaxation",
+        "marks",
+        "reserved",
+        "category",
+        "candidates"
+      ],
+      "coverage_status": "Partial",
+      "reason_if_missing": "Document provides partial context but lacks complete answer details.",
+      "missing_topic": "Eligibility Details",
+      "possible_document_required": "csjmu_eligibility_extended_info.pdf"
+    },
+    {
+      "question_id": 236,
+      "category": "Faculty",
+      "question": "How can a student contact their subject teacher or HOD?",
+      "golden_answer": "Dr. Abhishek Kumar Chandra holds the position of Head of department(hod) of Chemical Engineering(CE) at CSJMU. Contact: email abhishekchandra@csjmu.ac.in, mobile 9450326388. More info: https://csjmu.ac.in/all-faculty/dr-abhishek-kumar-chandra/s.",
+      "source_document": "uiet_designation.json",
+      "chunk_id": "chunk_8",
+      "similarity_score": 0.55,
+      "confidence_score": 0.5,
+      "keywords_used": [
+        "student",
+        "contact",
+        "their",
+        "subject",
+        "teacher",
+        "hod"
+      ],
+      "coverage_status": "Partial",
+      "reason_if_missing": "Document provides partial context but lacks complete answer details.",
+      "missing_topic": "Faculty Details",
+      "possible_document_required": "csjmu_faculty_extended_info.pdf"
+    },
+    {
+      "question_id": 241,
+      "category": "Syllabus_Labs",
+      "question": "Are industrial visits organized for engineering students?",
+      "golden_answer": "ABOUT University Institute of Engineering and Technology (UIET) :- The School of Engineering and Technology (UIET) at Chhatrapati Shahu Ji Maharaj University, Kanpur, is dedicated to providing quality  technical education and fostering innovation, research, and professional excellence. The school of...",
+      "source_document": "about_csjm.txt",
+      "chunk_id": "chunk_3",
+      "similarity_score": 0.55,
+      "confidence_score": 0.5,
+      "keywords_used": [
+        "industrial",
+        "visits",
+        "organized",
+        "engineering",
+        "students"
+      ],
+      "coverage_status": "Partial",
+      "reason_if_missing": "Document provides partial context but lacks complete answer details.",
+      "missing_topic": "Syllabus_Labs Details",
+      "possible_document_required": "csjmu_syllabus_labs_extended_info.pdf"
+    },
+    {
+      "question_id": 244,
+      "category": "Placements",
+      "question": "Are mock interviews and soft skills workshops conducted for students?",
+      "golden_answer": "Information is not available in the current CSJMU/UIET knowledge base documents.",
+      "source_document": "N/A",
+      "chunk_id": "N/A",
+      "similarity_score": 0.15,
+      "confidence_score": 0.1,
+      "keywords_used": [
+        "mock",
+        "interviews",
+        "soft",
+        "skills",
+        "workshops",
+        "conducted",
+        "students"
+      ],
+      "coverage_status": "Missing",
+      "reason_if_missing": "No document in the knowledge base addresses this specific question regarding Placements.",
+      "missing_topic": "Placements Information",
+      "possible_document_required": "csjmu_placements_handbook.pdf"
+    },
+    {
+      "question_id": 245,
+      "category": "Scholarships",
+      "question": "What documents are required to claim UP scholarship fee waiver?",
+      "golden_answer": "No scholarship guidelines, UP government fee reimbursement rules, or financial assistance policies are present in the current knowledge base.",
+      "source_document": "N/A",
+      "chunk_id": "N/A",
+      "similarity_score": 0.2,
+      "confidence_score": 0.1,
+      "keywords_used": [
+        "documents",
+        "required",
+        "claim",
+        "scholarship",
+        "fee",
+        "waiver"
+      ],
+      "coverage_status": "Missing",
+      "reason_if_missing": "No document contains scholarship rules, eligibility criteria for financial aid, or application procedure.",
+      "missing_topic": "Scholarship Guidelines & Concessions",
+      "possible_document_required": "csjmu_scholarship_policy.pdf"
+    },
+    {
+      "question_id": 247,
+      "category": "Dignitaries",
+      "question": "Who chairs the Executive Council of CSJMU?",
+      "golden_answer": "Council of Higher Secondary Education, Manipur is one of the approved boards accepted by CSJMU. Its address is Babupara, Imphal West.",
+      "source_document": "approved_boards.json",
+      "chunk_id": "chunk_29",
+      "similarity_score": 0.55,
+      "confidence_score": 0.5,
+      "keywords_used": [
+        "chairs",
+        "executive",
+        "council"
+      ],
+      "coverage_status": "Partial",
+      "reason_if_missing": "Document provides partial context but lacks complete answer details.",
+      "missing_topic": "Dignitaries Details",
+      "possible_document_required": "csjmu_dignitaries_extended_info.pdf"
+    },
+    {
+      "question_id": 248,
+      "category": "General",
+      "question": "What NSS and NCC wings exist at CSJMU?",
+      "golden_answer": "Facilities at Csjmu Campus- 1) ICT enabled Classroms 2) State of the art Laborateries 3) Central Library 4) Hostel for boys and girls 5) Sports facilities 6) Auditorium 7) Swimming Pool 8) Health Centre 9)Multi-purpose Hall  Csjmu Student Hobby Club- 1) Cultural Club 2) Fitness Club 3) Gardening Clu...",
+      "source_document": "facilities_at_csjm.txt",
+      "chunk_id": "chunk_0",
+      "similarity_score": 0.55,
+      "confidence_score": 0.5,
+      "keywords_used": [
+        "nss",
+        "ncc",
+        "wings",
+        "exist"
+      ],
+      "coverage_status": "Partial",
+      "reason_if_missing": "Document provides partial context but lacks complete answer details.",
+      "missing_topic": "General Details",
+      "possible_document_required": "csjmu_general_extended_info.pdf"
+    },
+    {
+      "question_id": 249,
+      "category": "General",
+      "question": "Does CSJMU have an anti-sexual harassment cell / Internal Complaints Committee?",
+      "golden_answer": "Information is not available in the current CSJMU/UIET knowledge base documents.",
+      "source_document": "N/A",
+      "chunk_id": "N/A",
+      "similarity_score": 0.15,
+      "confidence_score": 0.1,
+      "keywords_used": [
+        "anti-sexual",
+        "harassment",
+        "cell",
+        "internal",
+        "complaints",
+        "committee"
+      ],
+      "coverage_status": "Missing",
+      "reason_if_missing": "No document in the knowledge base addresses this specific question regarding General.",
+      "missing_topic": "General Information",
+      "possible_document_required": "csjmu_general_handbook.pdf"
+    },
+    {
+      "question_id": 252,
+      "category": "Admissions",
+      "question": "What happens if a candidate misses the reporting deadline after admission?",
+      "golden_answer": "18. If any candidate gets admission on the basis of false information /improper means or on the basis of false marksheet/certificates, his/her admission will be cancelled with immediate effect.",
+      "source_document": "guidelines_for_admission.txt",
+      "chunk_id": "chunk_19",
+      "similarity_score": 0.55,
+      "confidence_score": 0.5,
+      "keywords_used": [
+        "happens",
+        "candidate",
+        "misses",
+        "reporting",
+        "deadline",
+        "admission"
+      ],
+      "coverage_status": "Partial",
+      "reason_if_missing": "Document provides partial context but lacks complete answer details.",
+      "missing_topic": "Admissions Details",
+      "possible_document_required": "csjmu_admissions_extended_info.pdf"
+    },
+    {
+      "question_id": 259,
+      "category": "Syllabus_Labs",
+      "question": "What is the pass percentage criteria in sessional examinations?",
+      "golden_answer": "Information is not available in the current CSJMU/UIET knowledge base documents.",
+      "source_document": "N/A",
+      "chunk_id": "N/A",
+      "similarity_score": 0.15,
+      "confidence_score": 0.1,
+      "keywords_used": [
+        "pass",
+        "percentage",
+        "criteria",
+        "sessional",
+        "examinations"
+      ],
+      "coverage_status": "Missing",
+      "reason_if_missing": "No document in the knowledge base addresses this specific question regarding Syllabus_Labs.",
+      "missing_topic": "Syllabus_Labs Information",
+      "possible_document_required": "csjmu_syllabus_labs_handbook.pdf"
+    },
+    {
+      "question_id": 261,
+      "category": "Fees",
+      "question": "What is the fee structure for Ph.D. scholars?",
+      "golden_answer": "B.A. (Hons.) Political Science is a programme offered by CSJMU. The duration of the course is 3 years. It has 30 seats available. The eligibility criteria is 10+2 or its equivalent in any stream with minimum 40% marks. The annual fee is Rs. 26,200. The admission process is Direct.",
+      "source_document": "course_eligibility.json",
+      "chunk_id": "chunk_118",
+      "similarity_score": 0.55,
+      "confidence_score": 0.5,
+      "keywords_used": [
+        "fee",
+        "structure",
+        "ph.d",
+        "scholars"
+      ],
+      "coverage_status": "Partial",
+      "reason_if_missing": "Document provides partial context but lacks complete answer details.",
+      "missing_topic": "Fees Details",
+      "possible_document_required": "csjmu_fees_extended_info.pdf"
+    },
+    {
+      "question_id": 263,
+      "category": "General",
+      "question": "Does CSJMU have Memorandum of Understanding (MoU) with foreign universities?",
+      "golden_answer": "Information is not available in the current CSJMU/UIET knowledge base documents.",
+      "source_document": "N/A",
+      "chunk_id": "N/A",
+      "similarity_score": 0.15,
+      "confidence_score": 0.1,
+      "keywords_used": [
+        "memorandum",
+        "understanding",
+        "mou",
+        "foreign",
+        "universities"
+      ],
+      "coverage_status": "Missing",
+      "reason_if_missing": "No document in the knowledge base addresses this specific question regarding General.",
+      "missing_topic": "General Information",
+      "possible_document_required": "csjmu_general_handbook.pdf"
+    },
+    {
+      "question_id": 264,
+      "category": "General",
+      "question": "Where can students obtain transcript certificates and duplicate marksheets?",
+      "golden_answer": "Information is not available in the current CSJMU/UIET knowledge base documents.",
+      "source_document": "N/A",
+      "chunk_id": "N/A",
+      "similarity_score": 0.15,
+      "confidence_score": 0.1,
+      "keywords_used": [
+        "students",
+        "obtain",
+        "transcript",
+        "certificates",
+        "duplicate",
+        "marksheets"
+      ],
+      "coverage_status": "Missing",
+      "reason_if_missing": "No document in the knowledge base addresses this specific question regarding General.",
+      "missing_topic": "General Information",
+      "possible_document_required": "csjmu_general_handbook.pdf"
+    },
+    {
+      "question_id": 266,
+      "category": "Eligibility",
+      "question": "Can candidates with vocational subjects in 12th apply for B.Tech?",
+      "golden_answer": "6. For admission to the B. Tech programme, where admission will be on the basis of JEE Mains Rank, candidates need to register for counselling on the B.Tech Admission Portal. All details related to admission to the B. Tech programme will be available on the B. Tech Admission Portal.",
+      "source_document": "guidelines_for_admission.txt",
+      "chunk_id": "chunk_7",
+      "similarity_score": 0.55,
+      "confidence_score": 0.5,
+      "keywords_used": [
+        "candidates",
+        "vocational",
+        "subjects",
+        "12th",
+        "apply",
+        "b.tech"
+      ],
+      "coverage_status": "Partial",
+      "reason_if_missing": "Document provides partial context but lacks complete answer details.",
+      "missing_topic": "Eligibility Details",
+      "possible_document_required": "csjmu_eligibility_extended_info.pdf"
+    },
+    {
+      "question_id": 267,
+      "category": "Faculty",
+      "question": "Who manages student discipline in UIET?",
+      "golden_answer": "MESSAGE FROM THE DIRECTOR :- On behalf of the faculty members and staff, it is my pleasure to welcome you to the University Institute of Engineering and Technology (UIET), a constituent institute of Chhatrapati Shahu Ji Maharaj University, Kanpur. UIET was established in under the visionary leadersh...",
+      "source_document": "dignities_messages.txt",
+      "chunk_id": "chunk_6",
+      "similarity_score": 0.55,
+      "confidence_score": 0.5,
+      "keywords_used": [
+        "manages",
+        "student",
+        "discipline"
+      ],
+      "coverage_status": "Partial",
+      "reason_if_missing": "Document provides partial context but lacks complete answer details.",
+      "missing_topic": "Faculty Details",
+      "possible_document_required": "csjmu_faculty_extended_info.pdf"
+    },
+    {
+      "question_id": 269,
+      "category": "Facilities",
+      "question": "Does CSJMU have an indoor badminton court?",
+      "golden_answer": "Facilities at Csjmu Campus- 1) ICT enabled Classroms 2) State of the art Laborateries 3) Central Library 4) Hostel for boys and girls 5) Sports facilities 6) Auditorium 7) Swimming Pool 8) Health Centre 9)Multi-purpose Hall  Csjmu Student Hobby Club- 1) Cultural Club 2) Fitness Club 3) Gardening Clu...",
+      "source_document": "facilities_at_csjm.txt",
+      "chunk_id": "chunk_0",
+      "similarity_score": 0.55,
+      "confidence_score": 0.5,
+      "keywords_used": [
+        "indoor",
+        "badminton",
+        "court"
+      ],
+      "coverage_status": "Partial",
+      "reason_if_missing": "Document provides partial context but lacks complete answer details.",
+      "missing_topic": "Facilities Details",
+      "possible_document_required": "csjmu_facilities_extended_info.pdf"
+    },
+    {
+      "question_id": 271,
+      "category": "Placements",
+      "question": "What average salary packages are secured by MCA students?",
+      "golden_answer": "The placements document (placements.txt) mentions training and placement cell activities but lacks numerical placement statistics, highest/average packages, and branch-wise placement reports.",
+      "source_document": "placements.txt",
+      "chunk_id": "chunk_1",
+      "similarity_score": 0.58,
+      "confidence_score": 0.52,
+      "keywords_used": [
+        "average",
+        "salary",
+        "packages",
+        "secured",
+        "mca",
+        "students"
+      ],
+      "coverage_status": "Missing",
+      "reason_if_missing": "No placement statistics, package numbers, or company-wise placement reports present in placements.txt.",
+      "missing_topic": "Placement Statistics & Packages",
+      "possible_document_required": "csjmu_placement_report_2024_2025.pdf"
+    },
+    {
+      "question_id": 272,
+      "category": "Fees",
+      "question": "Is late fee applicable if fee is paid after due date?",
+      "golden_answer": "Hostel fees and mess fees are applicable separately, and payments once made are generally non-refundable website for more information: https://csjmu.ac.in/facilities/hostels/",
+      "source_document": "hostel.txt",
+      "chunk_id": "chunk_13",
+      "similarity_score": 0.55,
+      "confidence_score": 0.5,
+      "keywords_used": [
+        "late",
+        "fee",
+        "applicable",
+        "fee",
+        "paid",
+        "due",
+        "date"
+      ],
+      "coverage_status": "Partial",
+      "reason_if_missing": "Document provides partial context but lacks complete answer details.",
+      "missing_topic": "Fees Details",
+      "possible_document_required": "csjmu_fees_extended_info.pdf"
+    },
+    {
+      "question_id": 273,
+      "category": "General",
+      "question": "Does CSJMU publish research journals or newsletters?",
+      "golden_answer": "ABOUT CHHATRAPATI SHAHU JI MAHARAJ UNIVERSITY (CSJMU) :- Chhatrapati Shahu Ji Maharaj (CSJM) University, situated in Kanpur, Uttar Pradesh, shines as a symbol of excellence in the higher education landscape of India. Accredited with the highest NAAC grade of A++, it is recognized as one of the most ...",
+      "source_document": "about_csjm.txt",
+      "chunk_id": "chunk_0",
+      "similarity_score": 0.55,
+      "confidence_score": 0.5,
+      "keywords_used": [
+        "publish",
+        "research",
+        "journals",
+        "newsletters"
+      ],
+      "coverage_status": "Partial",
+      "reason_if_missing": "Document provides partial context but lacks complete answer details.",
+      "missing_topic": "General Details",
+      "possible_document_required": "csjmu_general_extended_info.pdf"
+    },
+    {
+      "question_id": 287,
+      "category": "Facilities",
+      "question": "What dining options exist in the university cafeteria?",
+      "golden_answer": "Facilities include 24\u00d77 electricity, security, RO drinking water, first-aid and ambulance services, newspapers, and housekeeping. Additional facilities like Wi-Fi, hot water, laundry, and library are proposed. Recreational options include indoor and outdoor sports, gym facilities, cultural activitie...",
+      "source_document": "hostel.txt",
+      "chunk_id": "chunk_4",
+      "similarity_score": 0.55,
+      "confidence_score": 0.5,
+      "keywords_used": [
+        "dining",
+        "options",
+        "exist",
+        "cafeteria"
+      ],
+      "coverage_status": "Partial",
+      "reason_if_missing": "Document provides partial context but lacks complete answer details.",
+      "missing_topic": "Facilities Details",
+      "possible_document_required": "csjmu_facilities_extended_info.pdf"
+    },
+    {
+      "question_id": 288,
+      "category": "Syllabus_Labs",
+      "question": "What software tools are used for Chemical Engineering simulations?",
+      "golden_answer": "Department of Chemical Engineering (CHE) was established in 1996. Established in 1996 in UIET, CSJM University, to provide competent and well-trained professionals for the chemical industries of the country. The key highlights of the department are Not Available. The department specializes in Not Av...",
+      "source_document": "departments_of_uiet.json",
+      "chunk_id": "chunk_3",
+      "similarity_score": 0.55,
+      "confidence_score": 0.5,
+      "keywords_used": [
+        "software",
+        "tools",
+        "used",
+        "chemical",
+        "engineering",
+        "simulations"
+      ],
+      "coverage_status": "Partial",
+      "reason_if_missing": "Document provides partial context but lacks complete answer details.",
+      "missing_topic": "Syllabus_Labs Details",
+      "possible_document_required": "csjmu_syllabus_labs_extended_info.pdf"
+    },
+    {
+      "question_id": 291,
+      "category": "General",
+      "question": "What sports tournaments are held annually at CSJMU stadium?",
+      "golden_answer": "Information is not available in the current CSJMU/UIET knowledge base documents.",
+      "source_document": "N/A",
+      "chunk_id": "N/A",
+      "similarity_score": 0.15,
+      "confidence_score": 0.1,
+      "keywords_used": [
+        "sports",
+        "tournaments",
+        "held",
+        "annually",
+        "stadium"
+      ],
+      "coverage_status": "Missing",
+      "reason_if_missing": "No document in the knowledge base addresses this specific question regarding General.",
+      "missing_topic": "General Information",
+      "possible_document_required": "csjmu_general_handbook.pdf"
+    },
+    {
+      "question_id": 294,
+      "category": "Faculty",
+      "question": "Who is the Dean of School of Engineering & Technology?",
+      "golden_answer": "Dr. Brishti Mitra holds the position of DEAN ACADEMICS OF CHHATRAPATI SAHU JI MAHARAJ UNIVERSITY(CSJMU) at CSJMU. Contact: email dean_acad@csjmu.ac.in, mobile 9935167873. More info: https://csjmu.ac.in/all-faculty/dr-brishti-mitra/.",
+      "source_document": "uiet_designation.json",
+      "chunk_id": "chunk_1",
+      "similarity_score": 0.55,
+      "confidence_score": 0.5,
+      "keywords_used": [
+        "dean",
+        "school",
+        "engineering",
+        "technology"
+      ],
+      "coverage_status": "Partial",
+      "reason_if_missing": "Document provides partial context but lacks complete answer details.",
+      "missing_topic": "Faculty Details",
+      "possible_document_required": "csjmu_faculty_extended_info.pdf"
+    },
+    {
+      "question_id": 298,
+      "category": "Placements",
+      "question": "What company off-campus opportunities are shared by the T&P cell?",
+      "golden_answer": "Chhatrapati Shahuji Maharaj University Placement Cell Overview General Information: A++ NAAC accredited QS World University Rankings recognition  Campus Recruitment 2023-24: Campus Drives: 84+ Number of Selections: 419+ (Campus / off Campus & Virtual Drive)  Campus Recruitment 2024-25 (Ongoing): Cam...",
+      "source_document": "placements.txt",
+      "chunk_id": "chunk_0",
+      "similarity_score": 0.55,
+      "confidence_score": 0.5,
+      "keywords_used": [
+        "company",
+        "off-campus",
+        "opportunities",
+        "shared",
+        "cell"
+      ],
+      "coverage_status": "Partial",
+      "reason_if_missing": "Document provides partial context but lacks complete answer details.",
+      "missing_topic": "Placements Details",
+      "possible_document_required": "csjmu_placements_extended_info.pdf"
+    },
+    {
+      "question_id": 301,
+      "category": "General",
+      "question": "How can I contact CSJMU for academic certificates?",
+      "golden_answer": "Contact Us: Phone: 8090803220 Website: www.innovation.csjmu.ac.in Email: infocsjmu@csjmu.ac.in",
+      "source_document": "innovation_foundation.txt",
+      "chunk_id": "chunk_12",
+      "similarity_score": 0.55,
+      "confidence_score": 0.5,
+      "keywords_used": [
+        "contact",
+        "academic",
+        "certificates"
+      ],
+      "coverage_status": "Partial",
+      "reason_if_missing": "Document provides partial context but lacks complete answer details.",
+      "missing_topic": "General Details",
+      "possible_document_required": "csjmu_general_extended_info.pdf"
+    },
+    {
+      "question_id": 302,
+      "category": "Admissions",
+      "question": "What is the helpline number for CSJMU admissions?",
+      "golden_answer": "Information is not available in the current CSJMU/UIET knowledge base documents.",
+      "source_document": "N/A",
+      "chunk_id": "N/A",
+      "similarity_score": 0.15,
+      "confidence_score": 0.1,
+      "keywords_used": [
+        "helpline",
+        "number",
+        "admissions"
+      ],
+      "coverage_status": "Missing",
+      "reason_if_missing": "No document in the knowledge base addresses this specific question regarding Admissions.",
+      "missing_topic": "Admissions Information",
+      "possible_document_required": "csjmu_admissions_handbook.pdf"
+    },
+    {
+      "question_id": 305,
+      "category": "Facilities",
+      "question": "What sports courts exist near the stadium complex?",
+      "golden_answer": "Information is not available in the current CSJMU/UIET knowledge base documents.",
+      "source_document": "N/A",
+      "chunk_id": "N/A",
+      "similarity_score": 0.15,
+      "confidence_score": 0.1,
+      "keywords_used": [
+        "sports",
+        "courts",
+        "exist",
+        "near",
+        "stadium",
+        "complex"
+      ],
+      "coverage_status": "Missing",
+      "reason_if_missing": "No document in the knowledge base addresses this specific question regarding Facilities.",
+      "missing_topic": "Facilities Information",
+      "possible_document_required": "csjmu_facilities_handbook.pdf"
+    }
+  ]
+}

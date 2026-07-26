@@ -1,0 +1,169 @@
+1) Syllabus of CSE (Computer Science and Engineering) :-
+First semester subjects of CSE :- Mathematics-I, Physics-I, Engineering Drawing, Programming in C & Unix, Communicative English, Universal Human Values-I (SIP)
+Second semester subjects of CSE :- Mathematics-II, Physics-II, Chemistry-I, Basic Electrical & Electronics Engg., Workshop Concepts
+Third semester subjects of CSE :- Mathematics-III, Engineering Mechanics, Thermodynamics, Data Structure, Digital Electronics & Logic Design, Internship-1, Universal Human Values-II
+Fourth semester subjects of CSE :- Industrial Economics, Object Oriented Programming (Using Java), Computer Organization, Operating Systems, Discrete Mathematics, Environmental Science
+Fifth semester subjects of CSE :- Database Management System, Design and Analysis of Algorithms, Microprocessor, Theory of Computation, Mathematics Elective MOOCS Course, Internship-2
+Sixth semester subjects of CSE :- Compiler Design, Computer Networks, Software Engineering, Professional Communication, Mathematics Elective MOOCS Course, Departmental Elective
+Seventh semester subjects of CSE :- Industrial Management, Computer Graphics, Summer Training, B.Tech. Project-I, Departmental Elective, Departmental Elective / Open Elective
+Eighth semester subjects of CSE :- Departmental Elective, Departmental Elective, Departmental Elective / Open Elective, Departmental Elective / Humanities Elective, B.Tech. Project-II
+CSE Laboratories :- CSE Core Lab, Advance Lab, Microprocessor & Digital Electronics Lab, Network Lab, Research & BTP Lab, Database Management System Lab, Super Computer Lab, Artificial Intelligence Lab
+
+
+2) Syllabus of CSE-AI (Computer Science and Engineering-Artificial Intelligence) :-
+First semester subjects of CSE (AI) :- Mathematics-I, Physics-I, Workshop Concepts, Chemistry-I, Basic Electrical & Electronics Engg., Universal Human Values-I (SIP)
+Second semester subjects of CSE (AI) :- Mathematics-II, Physics-II, Programming in C & Unix, Engineering Drawing, Communicative English
+Third semester subjects of CSE (AI) :- Mathematics-III, Object Oriented Programming with Python, Digital Electronics & Logic Design, Discrete Mathematics, Universal Human Values-II
+Fourth semester subjects of CSE (AI) :- Industrial Economics, Data Structure using Python, Operating Systems, Probability & Statistics, Computer Organization, Environmental Science
+Fifth semester subjects of CSE (AI) :- Database Management System, Design and Analysis of Algorithms, Artificial Intelligence, Theory of Computation, Introduction to Data Science
+Sixth semester subjects of CSE (AI) :- Adv. Database Management System, Computer Networks, Software Engineering, Capstone Project, Machine Learning
+Seventh semester subjects of CSE (AI) :- Computer Vision, Summer Training, Minor Project, Deep Learning, Departmental Elective, Departmental Elective
+Eighth semester subjects of CSE (AI) :- Major Project
+CSE Laboratories :- CSE Core Lab, Advance Lab, Microprocessor & Digital Electronics Lab, Network Lab, Research & BTP Lab, Database Management System Lab, Super Computer Lab, Artificial Intelligence Lab
+
+
+3) Syllabus of ECE (Electronics and Communication Engineering) :-
+First semester subjects of ECE :- Mathematics-I, Physics-I, Physics Lab-I, Engineering Drawing, Communicative English, Basic Electrical & Electronics Engineering, Basic Electrical & Electronics Engineering Lab, Universal Human Values-I (SIP)
+Second semester subjects of ECE :- Mathematics-II, Physics-II, Physics Lab-II, Programming & Computing (C & UNIX), Programming Lab (C & UNIX), Workshop Concepts, Workshop Practice, Chemistry-I, Chemistry Lab-I
+Third semester subjects of ECE :- Mathematics-III, Thermodynamics, Engineering Mechanics, Analog Electronics, Analog Electronics Lab, Network Analysis and Synthesis, Summer Training
+Fourth semester subjects of ECE :- Industrial Economics, Mathematics-IV, Digital Electronics, Digital Electronics Lab, Electrical Machine, Electrical Machine Lab, Electromagnetic Theory, Environmental Science, Universal Human Values-II
+Fifth semester subjects of ECE :- Professional Communication, Electronics Circuit, Signal and Systems, Measurement and Instrumentation, Measurement and Instrumentation Lab, Microprocessor, Microprocessor Lab, Electrical Engineering Materials, Student Summer Training
+Sixth semester subjects of ECE :- Automatic Control System, Analog Integrated Circuit, Analog Integrated Circuit Lab, Communication System, Communication System Lab, Antenna and Microwave Engineering, Departmental / Open Elective-I, Student Seminar
+Seventh semester subjects of ECE :- Industrial Management, Digital Communication, Digital Communication Lab, Data Communication, Digital Signal Processing, Digital Signal Processing Lab, Summer Training, B.Tech. Project-I
+Eighth semester subjects of ECE :- Wireless and Mobile Communication, Wireless and Mobile Communication Lab, Optical Communication, Optical Communication Lab, VLSI Design and Technology, Departmental Elective-II, B.Tech. Project-II
+Departmental Elective-I subjects of ECE :- Power Electronics, Microprocessor based Instrumentation System, Multimedia Communication, T.V. Engineering, Artificial Intelligence, Advanced Semiconductor Devices
+Departmental Elective-II subjects of ECE :- Information Theory and Coding, Satellite Communication and Radar, Digital Image Processing, Artificial Neural Networks, Biomedical Instruments, Advanced Microprocessor, Radar and Navigation
+Open Elective subjects offered by ECE :- Digital Signal Processing, VLSI Design and Technology, Biomedical Instruments
+Open Elective subjects offered by other Departments :- Object Oriented Programming Using Java (CSE), Computer Graphics (CSE), Cryptography and Network Security (CSE), Python Programming (ECE)
+ECE Laboratories :- Microprocessor Lab, Digital Electronics Lab, Digital Signal Processing Lab, Microwave and Wireless Lab, Analog Integrated Circuit Lab, VLSI Design and Simulation Lab, Advance Optical Communication Lab, Analog and Digital Communication Labs, Instrumentation Lab, Internet of Things (IoT) Lab
+
+
+4) Syllabus of MEE (Mechanical Engineering) :-
+First semester subjects of ME :- Chemistry-I, Basic Electrical & Electronics Engineering, Mathematics-I, Physics-I, Workshop Technology, Universal Human Values-I
+Second semester subjects of ME :- Mathematics-II, Physics-II, Programming and Computing, Engineering Drawing, Communicative English
+Third semester subjects of ME :- Mathematics-III, Engineering Mechanics, Thermodynamics, Mechanical Design & Drawing, Basic Fluid Mechanics & Rate Processes, Environmental Science
+Fourth semester subjects of ME :- Kinematics and Mechanism, Basic Solid Mechanics, Material Science & Engineering, Material Removal Manufacturing Process, Industrial Management, Universal Human Values-II
+Fifth semester subjects of ME :- Dynamics of Machines & Vibrations, Material Additive Manufacturing Process, IC Engines, Energy System, Summer Training / Mini Project, Seminar
+Sixth semester subjects of ME :- Heat Transfer, Design of Machine Elements, Refrigeration & Air-Conditioning, Professional Communication, Departmental Elective-I, Open Elective-I
+Seventh semester subjects of ME :- Computer Aided Manufacturing, Industrial Management & Production System, Industrial Economics, B.Tech. Project-I, Summer Training, Open Elective-II
+Eighth semester subjects of ME :- Metrology, Measurements and Control, Gas Dynamics & Turbo Machinery, Computer Aided Design, B.Tech. Project-II, Departmental Elective-II
+Departmental Elective subjects of ME :- Automobile Engineering, Operation Research, Machine Tool Design, Finite Element Methods, Computational Fluid Dynamics, Advanced Solid Mechanics, Advanced Fluid Mechanics, Fluid Machinery
+Open Elective-I (Even Semester) subjects offered for ME :- Data Structures (CSE), Power Electronics (ECE), Ceramic Materials (MSME), Robotics / Mechatronics (ME)
+Open Elective-II (Odd Semester) subjects offered for ME :- Artificial Intelligence (CSE), Python (CSE), Microprocessors & Applications (ECE), Application of Transport Phenomena in Metal Processing (MSME), Electrochemical Technology in Materials Processing (MSME), Optimization Method in Engineering (ME), Design and Manufacturing of Composites (ME), Non-Conventional Energy Resources (ME)
+ME Laboratories :- CAM Lab, CAD Lab, Metrology Lab, I.C. Engine Lab, Kinematics Lab, Heat Transfer Lab, Material Testing Lab, Fluid Mechanics Lab, Engineering Drawing Lab, Mechanical Vibration Lab, Refrigeration & Air Conditioning Lab
+
+
+5) Syllabus of CHE (Chemical Engineering) :-
+First semester subjects of CHE :- Professional Communication, Mathematics-1, Physics-1, Workshop Concepts & Practice, Programming & Computing, Universal Human Values-1 (SSIP)
+Second semester subjects of CHE :- Mathematics-2, Physics-2, Chemistry-1, Basic Electrical & Electronics Engg.
+Third semester subjects of CHE :- Mathematics-III, Engineering Mechanics, Basic Thermodynamics, Process Calculations, Fluid Mechanics, Chemistry-II, Summer Internship
+Fourth semester subjects of CHE :- Chemical Engineering Thermodynamics, Heat Transfer, Chemical Process Industries, Mechanical Operations, Engineering Economics, Environmental Science, Universal Human Values-II
+Fifth semester subjects of CHE :- Mass Transfer-I, Unit Operations Laboratory-I, Chemical Reaction Engineering-I, Numerical Methods for Chemical Engineers, Communication Practicum, Departmental Elective, Summer Internship
+Sixth semester subjects of CHE :- Mass Transfer-II, Instrumentation & Process Control, Chemical Engineering Design-I, Unit Operations Laboratory-II, Departmental Elective, Student Seminar
+Seventh semester subjects of CHE :- Chemical Engineering Design-II, Chemical Reaction Engineering-II, Process Simulation Lab, Summer Training, Industrial Management, Project-I
+Eighth semester subjects of CHE :- Transport Phenomena, Chemical Reaction Engineering and Process Control Laboratory, Departmental Elective, Departmental Elective, Project-II
+CHE Laboratories :- Unit Operations Lab, Chemical Reaction Engineering Lab, Process Control & Instrumentation Lab, Fluid Mechanics Lab, Process Simulation Lab
+
+
+6) Syllabus of MSME (Materials Science and Metallurgical Engineering) :-
+First semester subjects of MSME :- Mathematics-I, Physics-I, Basic Electrical & Electronics Engineering, Chemistry-I, Engineering Drawing, Universal Human Values-I (SIP)
+Second semester subjects of MSME :- Mathematics-II, Physics-II, Programming & Computing (C & UNIX), Workshop Practice & IDEA Lab, Professional Communication
+Third semester subjects of MSME :- Mathematics-III, Engineering Mechanics, Basic Thermodynamics, Crystal Structure of Materials, Nature and Properties of Materials, Environmental Science, Summer Internship-I
+Fourth semester subjects of MSME :- Phase Equilibria in Materials, Metallurgical Thermodynamics, Principles of Metal Extraction and Refining, Introduction to Machine Learning, Communication Practicum, Universal Human Values-II
+Fifth semester subjects of MSME :- Phase Transformation in Metals, Mechanical Behaviour of Materials, Manufacturing Processes, Iron Making, Departmental Elective-I, Industrial Management, Summer Internship-II
+Sixth semester subjects of MSME :- Transport Phenomenon and Rate Processes, Diffusion in Solids, Materials Characterization, Heat Treatment of Metals, Steel Making, Industrial Economics
+Seventh semester subjects of MSME :- Corrosion and Degradation of Materials, Fuel, Refractories and Furnaces, Polymers and Composite Materials, Application of Transport Phenomenon in Metal Processing, Departmental Elective-II, Project-I, Summer Training
+Eighth semester subjects of MSME :- Departmental Elective-III, Open Elective-I / Departmental Elective-IV, Open Elective-II / Departmental Elective-V, Project-II
+Departmental Elective subjects of MSME :- Electrochemical Technology in Materials Processing, Recycling of Metallurgical and Electronic Waste, Engineering Polymers, Welding and Joining of Metals, Electronic Ceramic Materials, Materials Engineering, Modern Steel Making and Alloying, Electronic Materials for Industry, Principles of Powder Processing, Nano Materials and Their Properties, Computing Methods in Materials Engineering, Artificial Intelligence and Machine Learning in Materials Engineering, Electronic Properties of Materials: Computational Approach, Surfaces and Coatings, Functional Materials, Introduction to Bio Materials
+Open Elective-I (Odd Semester) subjects offered for MSME :- Artificial Intelligence (CSE), Python (CSE), Microprocessors & Applications (ECE), Optimization Method in Engineering (ME), Non-Conventional Energy Resources (ME)
+Open Elective-II (Even Semester) subjects offered for MSME :- Data Structures (CSE), Python (CSE), Power Electronics (ECE), Robotics / Mechatronics (ME), Design and Manufacturing of Composites (ME)
+MSME Laboratories :- Furnace Laboratory, Corrosion Laboratory, Metallography Laboratory, Material Characterization Laboratory, Ceramic and Powder Processing Laboratory
+
+
+7) Syllabus of BCA (Bachelor of Computer Application):-
+First semester subjects of BCA :- Computer Fundamentals & Problem Solving Techniques, C Programming, Principle of Management, Business Communication, Mathematics-I, Computer Laboratory and Practical Work of Office Automation, Computer Laboratory and Practical Work of C Programming
+Second semester subjects of BCA :- Object Oriented Programming Using C++, Internet Technology and Web Design, Organization Behavior, Financial Accounting & Management, Mathematics-II, Computer Laboratory and Practical Work of C++ Programming
+Third semester subjects of BCA :- Python Programming, Data Structure Using C & C++, Operating System, Digital Electronics & Computer Organization, Elements of Statistics, Computer Laboratory and Practical Work of Python, Computer Laboratory and Practical Work of Data Structure
+Fourth semester subjects of BCA :- Computer Graphics & Animation, Database Management System, Software Engineering, Optimization Techniques, Mathematics-III, Computer Graphics & DBMS Laboratory
+Fifth semester subjects of BCA :- Knowledge Management, Java Programming and Dynamic Webpage Design, Computer Network, Numerical Methods, Minor Project, Viva-Voce on Summer Training, Computer Laboratory and Practical Work of Java Programming & Dynamic Webpage Design
+Sixth semester subjects of BCA :- Information & Cyber Security, Internet of Things, E-Commerce, Data Science and Machine Learning, Major Project, Presentation / Seminar based on Major Project
+BCA Laboratories :- Programming Lab, DBMS Lab, Web Technology Lab, Software Engineering Lab, Networking Lab, Major Project Lab
+
+
+8) Syllabus of MCA (Master of Computer Applications) :-
+First semester subjects of MCA :- Fundamental of Computers & Emerging Technologies, Problem Solving using C, Principles of Management & Communication, Discrete Mathematics, Computer Organization & Architecture, Principles of Programming Using C Lab, Professional Communication Lab
+Second semester subjects of MCA :- Theory of Automata & Formal Language, Object Oriented Programming, Operating Systems, Database Management Systems, Data Structures & Analysis of Algorithms, DBMS Lab, Object Oriented and Data Structure Lab
+Third semester subjects of MCA :- Computer Network, Artificial Intelligence, Software Engineering, Elective-I, Elective-II, Universal Human Values, Software Engineering Lab, Mini Project (AI / ISCL)
+Fourth semester subjects of MCA :- Elective-III, Elective-IV, Elective-V, Major Project
+MCA Laboratories :- Programming Lab, DBMS Lab, Web Technology Lab, Software Engineering Lab, Networking Lab, Major Project Lab
+
+
+9) Syllabus of B.Voc in Interior Design :-
+First semester subjects of DID :- Fundamental of Computers, Communication Skills, Trade Enquiry (Market Survey)-I, Basic Design Principles, Art and Interior Graphics-I, Furniture Design Workshop-I, History of Interior Furniture-I, Textile and Accessories, Site Visits
+Second semester subjects of DID :- Environmental Science, Trade Enquiry (Market Survey)-II, Interior Design-I, Display Design-I, Art and Interior Graphics-II, Furniture Design Workshop-II, History of Interior Furniture-II, Interior Materials & Construction Technology-I, Interior Project (Minor)-I, Winter Project-I
+Third semester subjects of DID :- Business Management, Interior Design & Landscape-I, Display Design-II, Furniture Design Workshop-III, Interior Services-I, Interior Materials & Construction Technology-II, AutoCAD-I, Interior Project-II, Site Visits, Summer Project-I
+Fourth semester subjects of DID :- Life Skills, Interior Design & Landscape-II, Display Design-III, Furniture Design Workshop-IV, Interior Services-II, Interior Materials & Construction Technology-III, AutoCAD-II, Interior Project-III, Site Visits, Winter Project-II
+Fifth semester subjects of DID :- Technical English, Legal Ethics & Professional Practice, NSS / Sports / ECO Club, Interior Design-I, Visual Merchandising-I, Product Design-I, Interior Materials Construction Technique-V, Interior Project-IV (Minor Project), Site Visits, Summer Project-II
+Sixth semester subjects of DID :- Entrepreneurship & Project Management, Interior Design-II, Visual Merchandising-II, Product Design-II, Interior Budgeting & Estimation, Interior Project-V (Major Project), Exhibition and Portfolio, Winter Project-III
+DID Laboratories :- Drafting Lab, Design Studio, Computer Lab, Wood & Metal Workshop
+
+
+10) Syllabus of B.Voc in Fashion Technology :-
+Syllabus of DFT (Diploma in Fashion Technology) :-
+First semester subjects of DFT :- Effective Communication Skills, Essentials of Pattern Making, Basics of Textiles, Introduction to Computer, Basics of Apparel Constructions Lab-I, Computer Lab, Fashion Illustration Lab, Communication Lab, Essentials of Pattern Making Lab
+Second semester subjects of DFT :- English, French, Fabric Technology, Apparel Machinery & Equipments, Basics of Apparel Constructions Lab-II, Fabric Analysis Lab, Pattern Making and Grading Lab, Environmental Studies
+Third semester subjects of DFT :- Textile Wet Processing-I, Fashion Marketing and Merchandising, Design Concept and Methodology, Organizational Behavior, Textile Wet Processing Lab-I, History of Costumes, Traditional Embroideries of India, Illustration, Pattern Making & Construction for Kids Lab
+Fourth semester subjects of DFT :- Apparel Marketing & Management, Textile Testing & Quality Control, Textile Wet Processing-II, Computer Application in Fashion Industry, Textile Testing Lab, E-Design Lab, Pattern Making & Garments Construction (Women's Wear), Computer Application in Fashion Industry Lab, Value Education
+Fifth semester subjects of DFT :- Fabric & Garment Care, Apparel Quality Management, Visual Merchandising, Apparel Costing and Export Documentation, Pattern Making & Garment Construction for Adults, Design Collection Lab, CAD Lab-II, Fashion Draping Lab
+Sixth semester subjects of DFT :- Retail Management, Event Management, Home Furnishing, Project & Viva Voce, Internship
+DFT Laboratories :- Drafting Lab, Design Studio, Computer Lab, Wood & Metal Workshop
+
+
+11) Syllabus of Integrated M.Sc. (Electronics) :-
+First semester subjects of Integrated M.Sc. (Electronics) :- Physics-I, Fundamental Chemistry, Mathematics-I, Basic Electrical Engineering, Programming in C, Physics Lab-I, C Lab
+Second semester subjects of Integrated M.Sc. (Electronics) :- Physics-II, Mathematics-II, Basic Electronics, Network Analysis, Electromagnetic, Basic Electronics Lab, Physics Lab-II
+Third semester subjects of Integrated M.Sc. (Electronics) :- Electronic Instrumentation, Semiconductor Fundamentals and Devices, Analog Integrated Circuit, Signal & System Analysis and Mathematical Methods in Electronics, Electronic Materials, Analog Integrated Circuit Lab, Electronic Instrumentation Lab, Summer Training
+Fourth semester subjects of Integrated M.Sc. (Electronics) :- Digital Electronics, Analog Communication, Antenna and Wave Propagation, VLSI Technology, Professional Communication, Digital Electronics Lab, Analog Communication Lab
+Fifth semester subjects of Integrated M.Sc. (Electronics) :- Power Electronics, Microprocessor and Applications, Control System, Digital Communication, Industrial Management, Digital Communication Lab, Microprocessor Lab, Summer Training
+Sixth semester subjects of Integrated M.Sc. (Electronics) :- Wireless Communication, Optical Communication, Advanced Semiconductor Devices, VLSI Design, Seminar, Wireless Communication Lab, Optical Communication Lab
+Seventh semester subjects of Integrated M.Sc. (Electronics) :- Digital Signal Processing, Satellite Communication, Elective-I, Environmental Studies, DSP Lab, Project-I, Summer Training
+Eighth semester subjects of Integrated M.Sc. (Electronics) :- Data Communication, Elective-II, Elective-III, Project-II
+Elective-I subjects of Integrated M.Sc. (Electronics) :- Biomedical Instrumentation, Renewable Energy Resources, JAVA Programming, Optical Networks
+Elective-II subjects of Integrated M.Sc. (Electronics) :- Artificial Intelligence, Telecommunication Switching System, Microwave Electronics, Advanced Microprocessor
+Elective-III subjects of Integrated M.Sc. (Electronics) :- Information Theory and Coding, Programming and Application of Arduino, MATLAB Programming, Digital Image Processing
+
+
+12) Syllabus of M.Sc. (Master in Computer Science) :-
+First semester subjects of MSc in CS :- Unix and C Programming, Computer Organization, Professional Communication, Database Management System, Lab Unix and C Programming, Lab Database Management System
+Second semester subjects of MSc in CS :- Operating System, Data Structures, Computer Network, Web Technology, Lab Web Technology, Lab Data Structure
+Third semester subjects of Msc in CS :- Object Oriented Programming using JAVA, Theory of Computing and Compiler Design, Design and Analysis of Algorithms, Elective-I, Lab Object Oriented Programming using JAVA, Mini Project
+Fourth semester subjects of MSc in CS :- Computer Graphics, Artificial Intelligence, Software Engineering, Elective-II, Major Project
+
+
+13) Syllabus of M.Sc. (Electronics) :-
+First semester subjects of M.Sc. (Electronics) :- Physics of Electronic Materials, Signal Analysis and Mathematical Methods in Electronics, C++ Programming and Data Structure, Semiconductor Devices, C++ Programming and Data Structure Lab, Semiconductor Lab
+Second semester subjects of M.Sc. (Electronics) :- Network Analysis and Synthesis, Electromagnetic, Antenna and Microwave Theory, Electronic Circuit, Digital System and Design, Digital Lab, Electronic Circuits Lab
+Third semester subjects of M.Sc. (Electronics) :- Control System, IC Technology and VLSI Design, Analog and Digital Communication System, Electronic Instrumentation and Measurements, Communication Lab, Seminar / Summer Training
+Fourth semester subjects of M.Sc. (Electronics) :- Wireless and Mobile Communication, Microprocessor and Microcontroller, Optoelectronics and Optical Communication, Elective Course, Microprocessor and Microcontroller Lab, Project
+Elective subjects of M.Sc. (Electronics) :- Power Electronics, Digital Signal Processing, Biomedical Electronics, Embedded System, Foundation of Nano Electronics, Processes in Device Fabrication, Artificial Intelligence, Information Theory and Coding Techniques, Industrial Economics and Management
+
+
+14) Syllabus of PGDDS (Post Graduate Diploma in Data Science) :-
+First semester subjects of PGDDS :- Introduction to Data Science, Mathematics for Data Science & Machine Learning, Introduction to Statistics, Data Analysis and Visualization, Machine Learning, Introduction to Data Science (Python Lab), Python for Data Science, Data Analysis and Visualization Lab, Machine Learning Lab
+Second semester subjects of PGDDS :- Text Analytics, Advance Machine Learning, Neural Networks, Elective, Text Analytics Lab, TensorFlow Lab, Advance Machine Learning Lab, Neural Networks Lab, Elective Lab, Capstone Project, Summer Training
+Elective subjects of PGDDS :- Computer Vision and Image Recognition (Theory), Computer Vision and Image Recognition (Practical), Speech Recognition (Theory), Speech Recognition (Practical), Data Engineering (Theory), Data Engineering (Practical)
+
+
+15) Syllabus of Diploma in Chemical Engineering :-
+First semester subjects (Diploma in chemical Engineering) :- Mathematics-I, Applied Physics-I, Applied Chemistry, Communication Skills in English, Engineering Graphics, Engineering Workshop Practice, Applied Physics-I Lab, Applied Chemistry Lab, Sports and Yoga, Communication Skills in English Lab
+Second semester subjects (Diploma in chemical Engineering) :- Mathematics-II, Applied Physics-II, Introduction to IT Systems, Fundamentals of Electrical & Electronics Engineering, Engineering Mechanics, Applied Physics-II Lab, Introduction to IT Systems Lab, Fundamentals of Electrical & Electronics Engineering Lab, Engineering Mechanics Lab, Environmental Science
+
+
+16) Syllabus of Diploma in Electrical Engineering :-
+First semester subjects of Diploma in Electrical Engineering :- Mathematics-I, Applied Physics-I, Applied Chemistry, Communication Skills in English, Engineering Graphics, Engineering Workshop Practice, Applied Physics-I Lab, Applied Chemistry Lab, Sports and Yoga, Communication Skills in English Lab
+Second semester subjects of Diploma in Electrical Engineering :- Mathematics-II, Applied Physics-II, Introduction to IT Systems, Fundamentals of Electrical & Electronics Engineering, Engineering Mechanics, Applied Physics-II Lab, Introduction to IT Systems Lab, Fundamentals of Electrical & Electronics Engineering Lab, Engineering Mechanics Lab, Environmental Science
+
+
+17) Syllabus of DCA (Diploma in Computer Applications) :-
+First semester subjects of DCA :- Computer Fundamentals & Problem Solving Techniques, C Programming, Principle of Management, Business Communication, Mathematics-I, Lab (Based on Computer Fundamentals), Lab (Based on C Programming)
+Second semester subjects of DCA :- Object Oriented Programming Using C++, Internet Technology and Web Design, Organization Behavior, Financial Accounting & Management, Mathematics-II, Lab (Based on Object Oriented Programming), Lab (Based on Internet Technology and Web Design)

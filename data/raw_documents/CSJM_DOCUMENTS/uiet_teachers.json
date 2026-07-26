@@ -1,0 +1,402 @@
+[
+  {
+    "name": "Dr. Sandesh Gupta",
+    "department": "Computer Science and Engineering (CSE and CSE-AI)",
+    "about": "Dr. Sandesh Gupta(hod) is an Associate Professor and Head of the Department of Computer Science and Engineering at the School of Engineering and Technology, CSJM University, Kanpur. He also serves as the Regional Contest Director (RCD) for the ICPC Asia Kanpur Site. With over 20 years of experience in teaching, research, and academic leadership, his expertise includes medical image processing, computer vision, artificial intelligence, biometrics, and data-driven systems. He has published in reputed journals, holds an international patent, and actively contributes to competitive programming and academic development through ICPC."
+  },
+  {
+    "name": "Dr. Deepak Kumar Verma",
+    "department": "Computer Science and Engineering (CSE and CSE-AI)",
+    "about": "Dr. Deepak Kumar Verma is an Associate Professor in the Department of Computer Science at CSJM University, Kanpur. He holds a PhD in Computer Science & Engineering from Dr. A.P.J. Abdul Kalam Technical University, Lucknow. His academic background also includes an M.Tech and a B.E. in Computer Science & Engineering with excellent academic performance. His research interests include Security in Mobile Ad-Hoc Networks, Database Management Systems, and Software Engineering. He has several years of experience in teaching and academic development in the field of computer science."
+  },
+  {
+    "name": "Dr. Alok Kumar",
+    "department": "Computer Science and Engineering (CSE and CSE-AI)",
+    "about": "Dr. Alok Kumar(director of uiet) is an Associate Professor in the Department of Computer Science at CSJM University, Kanpur, and the current Director of the University Institute of Engineering and Technology (UIET), now known as the School of Engineering and Technology. He holds a Ph.D. in Computer Science and Engineering from Dr. A.P.J. Abdul Kalam Technical University, Lucknow, along with M.Tech and B.Tech degrees in Computer Science and Engineering. His research interests include Natural Language Processing, Sentiment Analysis, and Machine Learning. He is actively involved in teaching and research in advanced areas of artificial intelligence and computational linguistics."
+  },
+  {
+    "name": "Er. Shesh Mani Tiwari",
+    "department": "Computer Science and Engineering (CSE and CSE-AI)",
+    "about": "Er. Shesh Mani Tiwari is an Assistant Professor in the Department of Computer Science at CSJM University, Kanpur. He holds an M.Tech in Computer Science from Rama University and a B.Tech in Computer Science from UPTU. His research interest includes Machine Learning. He has experience in teaching and academic work in the field of computer science and artificial intelligence."
+  },
+  {
+    "name": "Er. Mohd Shah Alam",
+    "department": "Computer Science and Engineering (CSE and CSE-AI)",
+    "about": "Er. Mohd Shah Alam is an Assistant Professor in the Department of Computer Science at CSJM University, Kanpur. He holds an M.Tech from Rama University, Kanpur and a B.Tech from UPTU, Lucknow. His research interests include Machine Learning and Network Security. He is involved in teaching and academic activities in core areas of computer science and emerging technologies."
+  },
+  {
+    "name": "Er. Suruchi Singh",
+    "department": "Computer Science and Engineering (CSE and CSE-AI)",
+    "about": "Er. Suruchi Singh is an Assistant Professor in the Department of Computer Science at CSJM University, Kanpur. She holds an M.Tech from Dr. A.P.J. Abdul Kalam Technical University (AKTU). Her research interests include Data Mining and Artificial Intelligence. She is engaged in teaching and academic work in core areas of computer science and emerging technologies."
+  },
+  {
+    "name": "Kamal Kant",
+    "department": "Computer Science and Engineering (CSE and CSE-AI)",
+    "about": "Kamal Kant is an Assistant Professor in the Department of Computer Science at CSJM University, Kanpur. He holds an M.Tech degree and is involved in teaching and academic activities in computer science. His research interests include Blockchain Technology, Machine Learning, Artificial Intelligence, and Distributed Databases. He focuses on emerging technologies and modern computing systems."
+  },
+  {
+    "name": "Gargi Gupta",
+    "department": "Computer Science and Engineering (CSE and CSE-AI)",
+    "about": "Gargi Gupta is an Assistant Professor in the Department of Computer Science at CSJM University, Kanpur. She holds an M.Tech degree in Computer Science and is actively involved in teaching and academic activities. Her research interests include Machine Learning, Artificial Intelligence, and Data Structures & Algorithms (DSA). She focuses on strengthening core computing concepts and modern AI-based technologies."
+  },
+  {
+    "name": "Sanjay Singh",
+    "department": "Computer Science and Engineering (CSE and CSE-AI)",
+    "about": "Sanjay Singh is an Assistant Professor in the Department of Computer Science at CSJM University, Kanpur. He holds an M.Tech degree in Computer Science and is engaged in teaching and academic activities. His research interests include Design and Analysis of Algorithms (DAA), Data Structures, and Deep Learning. He focuses on strengthening foundational computer science concepts along with modern AI-based techniques."
+  },
+  {
+    "name": "Pragya Tripathi",
+    "department": "Computer Science and Engineering (CSE and CSE-AI)",
+    "about": "Pragya Tripathi is an Assistant Professor in the Department of Computer Science at CSJM University, Kanpur. She holds an M.Tech degree in Computer Science and is involved in teaching and academic activities. Her research interests include Artificial Intelligence, Deep Learning, and Computer Graphics. She focuses on modern computing technologies and AI-driven systems."
+  },
+  {
+    "name": "Gayatri Rajpoot",
+    "department": "Computer Science and Engineering (CSE and CSE-AI)",
+    "about": "Gayatri Rajpoot is an Assistant Professor in the Department of Computer Science at CSJM University, Kanpur. She holds an M.Tech degree in Computer Science and is actively involved in teaching and academic activities. Her research interests include Deep Learning, Machine Learning, Artificial Intelligence, and Data Structures & Algorithms. She focuses on advancing knowledge in core computing concepts and modern AI-based technologies."
+  },
+  {
+    "name": "Hrishabh Prajapati",
+    "department": "Computer Science and Engineering (CSE and CSE-AI)",
+    "about": "Hrishabh Prajapati is an Assistant Professor in the Department of Computer Science at CSJM University, Kanpur. He holds an M.Tech degree in Computer Science and is involved in teaching and academic activities. His research interests include Programming and Computing and Artificial Intelligence. He focuses on strengthening programming fundamentals and modern AI-based computing systems."
+  },
+  {
+    "name": "Er. Ramnayan Mishra",
+    "department": "Computer Science and Engineering (CSE and CSE-AI)",
+    "about": "Er. Ramnayan Mishra is an Assistant Professor in the Department of Computer Science at CSJM University, Kanpur. He holds an M.Tech in Information Technology and a B.Tech in Computer Science & Engineering. His research interests include Biomedical Image Processing and IoT applications. He is actively involved in teaching and academic development in emerging areas of computing and technology."
+  },
+  {
+    "name": "Er. Shubhendra Singh",
+    "department": "Computer Science and Engineering (CSE and CSE-AI)",
+    "about": "Er. Shubhendra Singh is an Assistant Professor in the Department of Computer Science at CSJM University, Kanpur. He holds an M.E. in Computer Science and Engineering from NITTTR, Chandigarh (Panjab University) and a B.Tech in Computer Science from UIET, CSJMU Kanpur. He is currently pursuing a Ph.D. in Computer Science & Engineering from CSJM University, Kanpur. His research interests include Computer Networks and Distributed Systems. He is actively involved in teaching and academic activities in core areas of computer science."
+  },
+  {
+    "name": "Er. Sunil Kumar",
+    "department": "Computer Science and Engineering (CSE and CSE-AI)",
+    "about": "Er. Sunil Kumar is an Assistant Professor in the Department of Computer Science at CSJM University, Kanpur. He holds an M.Tech degree. His research interests include Medical Image Processing and Machine Learning, with a focus on identifying lung diseases using AI and imaging techniques. He has over 12 years of teaching experience and has published research papers in national and international journals. He has also qualified UGC-NET and GATE examinations"
+  },
+  {
+    "name": "Dr. Ajeet Kumar Srivastava",
+    "department": "Electronics and Communication Engineering (ECE)",
+    "about": "Dr. Ajeet Kumar Srivastava(hod) is an Associate Professor and Head of the Department (HOD) of Electronics and Communication Engineering at CSJM University, Kanpur. He holds an M.Tech from BIT Mesra and completed his Ph.D. from HBTU, Kanpur. His research interests include Digital Signal Processing and VLSI Design. He is actively involved in teaching, research, and academic administration in core areas of electronics and communication engineering."
+  },
+  {
+    "name": "Dr. Vishal Awasthi",
+    "department": "Electronics and Communication Engineering (ECE)",
+    "about": "Dr. Vishal Awasthi is an Associate Professor in the Department of Electronics and Communication Engineering at CSJM University, Kanpur. He holds a Ph.D. from Uttar Pradesh Technical University (UPTU), Lucknow and an M.Tech from Harcourt Butler Technical University (HBTU), Kanpur. His research interests include Computer Arithmetic and Digital Signal Processing. He is actively involved in teaching and academic work in core areas of electronics and communication engineering."
+  },
+  {
+    "name": "Er. Parul Awasthi",
+    "department": "Electronics and Communication Engineering (ECE)",
+    "about": "Er. Parul Awasthi is an Assistant Professor in the Department of Electronics and Communication Engineering at CSJM University, Kanpur. She holds an M.Tech in Communication, Control & Networking from Madhav Institute of Technology & Sciences (MITS), Gwalior, and a B.Tech in Electronics from Shivaji University, Kolhapur. Her research interests include Wireless Communication and Networking. She is actively involved in teaching and academic activities in core areas of electronics and communication engineering."
+  },
+  {
+    "name": "Er. Niraj Kumar",
+    "department": "Electronics and Communication Engineering (ECE)",
+    "about": "Er. Niraj Kumar is an Associate Professor in the Department of Electronics and Communication Engineering at CSJM University, Kanpur. He holds an M.Tech in Power Electronics and Drives from Madan Mohan Malaviya Engineering College, Gorakhpur (MMMUT) and a B.Tech in Electronics and Communication Engineering from I.E.T. Lucknow. He is actively involved in teaching and academic work in core areas of electronics and communication engineering."
+  },
+  {
+    "name": "Er. Anand Kumar Gupta",
+    "department": "Electronics and Communication Engineering (ECE)",
+    "about": "Er. Anand Kumar Gupta is an Assistant Professor in the Department of Electronics and Communication Engineering at CSJM University, Kanpur. He holds an M.Tech in Microelectronics and a B.E. in Electronics. His academic and teaching work focuses on core areas of electronics and communication engineering. He is actively involved in teaching, research, and academic development in emerging technologies."
+  },
+  {
+    "name": "Er. Amit Kumar Katiyar",
+    "department": "Electronics and Communication Engineering (ECE)",
+    "about": "Er. Amit Kumar Katiyar is an Assistant Professor in the Department of Electronics and Communication Engineering at CSJM University, Kanpur. He holds an M.Tech in Electronics and Communication from HBTI, Kanpur and an M.Sc in Electronics from UIET, CSJMU. He is involved in teaching and academic activities in core areas of electronics and communication engineering."
+  },
+  {
+    "name": "Er. Preeti Singh",
+    "department": "Electronics and Communication Engineering (ECE)",
+    "about": "Er. Preeti Singh is an Assistant Professor in the Department of Electronics and Communication Engineering at CSJM University, Kanpur. She holds an M.Tech in Digital Design & Technology from Tezpur University, Assam, and an M.Sc in Electronics from CSJM University, Kanpur. She has also qualified UGC-NET. Her research interest includes Antenna Design. She is actively involved in teaching and academic activities in core areas of electronics and communication engineering."
+  },
+  {
+    "name": "Dr. Ajay Tiwari",
+    "department": "Electronics and Communication Engineering (ECE)",
+    "about": "Dr. Ajay Tiwari is an Assistant Professor in the Department of Electronics and Communication Engineering at CSJM University, Kanpur. He holds a Ph.D. from S.N. University, Ranchi, with a research focus on dielectric studies of crystalline ferroelectric materials, and an M.Sc. in Electronics from CSJM University, Kanpur. His research interests include Solid State Physics, Electronic Devices, and Dielectric Materials. He is actively involved in teaching and academic research in core areas of electronics and material science."
+  },
+  {
+    "name": "Er. Somesh Kumar Malhotra",
+    "department": "Electronics and Communication Engineering (ECE)",
+    "about": "Er. Somesh Kumar Malhotra is an Assistant Professor in the Department of Electronics and Communication Engineering at CSJM University, Kanpur. He holds an M.Tech in Electronics and Communication Engineering from AKTU, Lucknow, and an M.Sc in Electronics from UIET, CSJMU. He is actively involved in teaching and academic activities in core areas of electronics and communication engineering."
+  },
+  {
+    "name": "Er. Atul Kumar Agnihotri",
+    "department": "Electronics and Communication Engineering (ECE)",
+    "about": "Er. Atul Kumar Agnihotri is an Assistant Professor in the Department of Electronics and Communication Engineering at CSJM University, Kanpur. He holds an M.Tech degree from Azad Institute of Engineering & Technology, UPTU Lucknow. His research interests include Digital Signal Processing and Wireless Communication. He is actively involved in teaching and academic activities in core areas of electronics and communication engineering."
+  },
+  {
+    "name": "Er. Ompal",
+    "department": "Electronics and Communication Engineering (ECE)",
+    "about": "Er. Ompal is an Assistant Professor in the Department of Electronics and Communication Engineering at CSJM University, Kanpur. He holds an M.Tech in Digital Systems from Madan Mohan Malaviya Engineering College, Gorakhpur (MMUT). His research interests include Digital Systems and Wireless Sensor Networks. He is actively involved in teaching and academic activities in core areas of electronics and communication engineering."
+  },
+  {
+    "name": "Dr. Rajeev Kumar Shakya",
+    "department": "Electronics and Communication Engineering (ECE)",
+    "about": "Dr. Rajeev Kumar Shakya is an Associate Professor in the Department of Electronics and Communication Engineering at CSJM University, Kanpur. He holds a Ph.D. in Signal Processing and Communication Networks from IIT Kanpur, an M.Tech in Digital Techniques from SGSITS Indore, and a B.E. in Electronics & Instrumentation Engineering from SGSITS Indore. He has over 12 years of research and academic experience and has worked at institutions including Adama Science and Technology University, Ethiopia. His research interests include energy-efficient scheduling and clustering, wireless communication (4G/5G and beyond), WSNs/MANET/VANET, IoT, machine learning, and embedded systems. He has published more than 25 research papers, authored a book on Digital Data Communication, and holds multiple patents."
+  },
+  {
+    "name": "Sagar Yadav",
+    "department": "Electronics and Communication Engineering (ECE)",
+    "about": "Sagar Yadav is an Assistant Professor in the Department of Electronics and Communication Engineering at UIET, CSJM University, Kanpur. He holds dual M.Tech degrees in Photonics Science and Engineering from IIT Kanpur and in Instrumentation and Control Engineering from C.S.V.T.U. Bhilai, where he was a university gold medalist. He completed his B.E. in Electronics and Telecommunication Engineering from Government Engineering College Raipur (now NIT Raipur). He has around seven years of teaching experience at NIT Raipur, including Electronics and Communication and Biomedical Engineering. His research interests include Control Engineering, Circuit Theory, Laser Fundamentals, and Photonics."
+  },
+  {
+    "name": "Er. Parul Awasthi",
+    "department": "Electronics and Communication Engineering (ECE)",
+    "about": "Er. Parul Awasthi is an Assistant Professor in the Electronics and Communications department with research interests in Wireless Communication and Networking. She holds an M.Tech. in Communication, Control & Networking from Madhav Institute of Technology & Sciences (MITS), Gwalior, and a B.Tech. in Electronics from Shivaji University, Kolhapur."
+  },
+  {
+    "name": "Dr. Ramendra Singh Niranjan",
+    "department": "Mechanical Engineering (MEE)",
+    "about": "Dr. Ramendra Singh Niranjan is an Associate Professor Mechanical Engineering at CSJM University, Kanpur. He holds a B.Tech and M.Tech (CAD) from HBTI, Kanpur, and has submitted his Ph.D. thesis in Mechanical Engineering from AKTU, Lucknow. His research interests include Micro Machining and Heat Transfer in micro components. He is actively involved in teaching, research, and academic administration in mechanical engineering."
+  },
+  {
+    "name": "Er. Yastuti Rao Gautam",
+    "department": "Mechanical Engineering (MEE)",
+    "about": "Er. Yastuti Rao Gautam is an Assistant Professor in the Department of Mechanical Engineering at CSJM University, Kanpur. She holds a B.Tech in Mechanical Engineering from UIET, CSJM University Kanpur and an M.Tech in Design from MNNIT Allahabad. Her research interests include Design Engineering and Thermal Engineering. She is actively involved in teaching and academic activities in mechanical engineering."
+  },
+  {
+    "name": "Er. Vikash Katiyar",
+    "department": "Mechanical Engineering (MEE)",
+    "about": "Er. Vikash Katiyar is an Assistant Professor in the Department of Mechanical Engineering at CSJM University, Kanpur. He holds a B.Tech from IIT Roorkee and an M.Tech from IIT Kanpur. He has over 10 years of industrial experience in the energy and environment sector, including R&D and consultancy work, and has been serving in academia for the last 10 years. His expertise includes Engineering Mechanics, Solid Mechanics, Thermodynamics, Heat Transfer, Refrigeration and Air Conditioning, Industrial and Production Management, and Operations Research."
+  },
+  {
+    "name": "Er. Ajeet Pratap Singh",
+    "department": "Mechanical Engineering (MEE)",
+    "about": "Er. Ajeet Pratap Singh is an Assistant Professor in the Department of Mechanical Engineering at CSJM University, Kanpur. He holds a B.Tech in Mechanical Engineering from UPTU and an M.Tech in Production Engineering from AIDU, Allahabad. He is actively involved in teaching and academic activities in core areas of mechanical engineering."
+  },
+  {
+    "name": "Er. Shishupal Singh",
+    "department": "Mechanical Engineering (MEE)",
+    "about": "Er. Shishupal Singh is an Assistant Professor in the Department of Mechanical Engineering at CSJM University, Kanpur. He holds a B.Tech in Mechanical Engineering from KIET, Ghaziabad, and an M.Tech in CAD from HBTI, Kanpur. His research interest includes Composite Materials. He is actively involved in teaching and academic activities in core areas of mechanical engineering."
+  },
+  {
+    "name": "Er. Mukesh Kumar Verma",
+    "department": "Mechanical Engineering (MEE)",
+    "about": "Er. Mukesh Kumar Verma is an Assistant Professor in the Department of Mechanical Engineering at CSJM University, Kanpur. He holds a B.Tech in Mechanical Engineering and an M.Tech in Industrial & Production Engineering from NIT Kurukshetra. His research interest includes Conventional Machining. He is actively involved in teaching and academic activities in core areas of mechanical engineering."
+  },
+  {
+    "name": "Er. Ranbir Mukhya",
+    "department": "Mechanical Engineering (MEE)",
+    "about": "Er. Ranbir Mukhya is an Assistant Professor in the Department of Mechanical Engineering at CSJM University, Kanpur. He holds an M.Tech from IIT Kharagpur. His research interest includes the Finite Element Method. He is actively involved in teaching and academic activities in core areas of mechanical engineering."
+  },
+  {
+    "name": "Dr. Hirendra Singh",
+    "department": "Mechanical Engineering (MEE)",
+    "about": "Dr. Hirendra Singh is an Assistant Professor in the Department of Mechanical Engineering at CSJM University, Kanpur. He holds an M.Tech and a Ph.D. in Mechanical Engineering. His research interests include Industry 4.0, Lean Manufacturing, Lean 4.0, Renewable Energy, and Heat and Mass Transfer. He is actively involved in teaching and research in advanced areas of mechanical engineering and modern industrial systems."
+  },
+  {
+    "name": "Dr. Gaurav Kumar Pandey",
+    "department": "Mechanical Engineering (MEE)",
+    "about": "Dr. Gaurav Kumar Pandey is an Associate professor and Head of the Department (HOD) of Mechanical Engineering at CSJM University, Kanpur. He holds an M.Tech and a Ph.D. in Mechanical Engineering. His research interests include Advanced Manufacturing, Hybrid Machining, and Modelling and Optimization. He is actively involved in teaching, research, and academic activities in modern manufacturing and engineering systems."
+  },
+  {
+    "name": "Ms. Shailja Awasthi",
+    "department": "Mechanical Engineering (MEE)",
+    "about": "Ms. Shailja Awasthi is an Assistant Professor in the Department of Mechanical Engineering at CSJM University, Kanpur. She holds an M.Tech degree in Mechanical Engineering. Her research interests include Design and Simulation. She is actively involved in teaching and academic activities in core areas of mechanical engineering."
+  },
+  {
+    "name": "Ms. Shalvi Singh Srivastava",
+    "department": "Mechanical Engineering (MEE)",
+    "about": "Ms. Shalvi Singh Srivastava is an Assistant Professor in the Department of Mechanical Engineering at CSJM University, Kanpur and holds an M.Tech degree. Her research interests include Finite Element Analysis, Plasticity, Damage and Fracture Analysis, and Multiscale Modelling. She is actively involved in teaching and academic activities in advanced areas of mechanical engineering."
+  },
+  {
+    "name": "Dr. Abhishek Kumar Chandra",
+    "department": "Chemical Engineering (CHE)",
+    "about": "Dr. Abhishek Kumar Chandra(hod) is an Associate Professor and Head of the Department (HOD) of Chemical Engineering at CSJM University, Kanpur. He holds a Ph.D. in Chemical Engineering from MNNIT Allahabad, an M.Tech from IIT Bombay, and a B.Tech from HBTI Kanpur. His research interests include Computational Fluid Dynamics, Separation Processes, Microplastic Waste Removal, and Interfacial Science. He is actively involved in teaching, research, and academic administration in advanced areas of chemical engineering."
+  },
+  {
+    "name": "Dr. Brishti Mitra",
+    "department": "Chemical Engineering (CHE)",
+    "about": "Dr. Brishti Mitra(deen of academics) is a Professor in the Department of Chemical Engineering at CSJM University, Kanpur, and also serves as the Dean of Academics of the university. She holds a Ph.D. in Chemical Engineering from IIT Kanpur, along with an M.Tech from IIT Kanpur and a B.Tech from Calcutta University. Her research interests include Reaction Engineering and Catalysis. She is actively involved in teaching, research, and academic administration at the university level."
+  },
+  {
+    "name": "Dr. Arun Kumar Gupta",
+    "department": "Chemical Engineering (CHE)",
+    "about": "Dr. Arun Kumar Gupta is an Associate Professor in the Department of Chemical Engineering at CSJM University, Kanpur. He holds a Ph.D. and M.Tech in Chemical Engineering from IIT Kanpur, and a B.Tech from IET, CSJM University Kanpur. His research interests include Chemical Reaction Engineering, Mass Transfer, Transport Phenomena, and Instrumentation and Process Control. He is actively involved in teaching and research in core areas of chemical engineering."
+  },
+  {
+    "name": "Dr. Vinay Kumar Sachan",
+    "department": "Chemical Engineering (CHE)",
+    "about": "Dr. Vinay Kumar Sachan is an Associate Professor in the Department of Chemical Engineering at CSJM University, Kanpur. He holds a Ph.D. in Chemical Engineering from IIT Kanpur, along with an M.Tech and B.Tech from HBTI, Kanpur. His doctoral research focused on the synthesis and characterization of charged polymeric materials for various applications. He is actively involved in teaching and research in core areas of chemical engineering."
+  },
+  {
+    "name": "Dr. Praveen Bhai Patel",
+    "department": "Chemical Engineering (CHE)",
+    "about": "Dr. Praveen Bhai Patel(placement coordinator) is an Associate Professor in the Department of Chemical Engineering at CSJM University, Kanpur and currently serves as the Placement Coordinator. He holds a Ph.D. in Chemical Engineering from MNNIT Allahabad, an M.Tech from HBTI Kanpur, and a B.Tech from IET, CSJM University Kanpur. His research interests include Biosurfactants, Separation Processes, Water and Air Pollution, Soil Testing, and Industrial Chemistry. He is actively involved in teaching, research, and placement activities at the university."
+  },
+  {
+    "name": "Dr. Umesh Chandra Sharma",
+    "department": "Chemical Engineering (CHE)",
+    "about": "Dr. Umesh Chandra Sharma is an Associate Professor in the Department of Chemical Engineering at CSJM University, Kanpur. He holds a Ph.D. in Chemical Engineering from MNNIT Allahabad, along with an M.Tech and B.Tech from HBTI, Kanpur. His research interests include Biolubricants, Synthesis and Characterization, Rheology, and Friction and Wear Behaviour Studies. He is actively involved in teaching and research in core areas of chemical engineering."
+  },
+  {
+    "name": "Er. Vaibhav Saxena",
+    "department": "Chemical Engineering (CHE)",
+    "about": "Er. Vaibhav Saxena is an Assistant Professor in the Department of Chemical Engineering at CSJM University, Kanpur. He holds a dual degree (B.Tech and M.Tech) in Chemical Engineering from IIT Kharagpur. His research interests include Thermodynamics and Chemical Technology. He is actively involved in teaching and academic activities in core areas of chemical engineering."
+  },
+  {
+    "name": "Dr. Vijay Kumar Kashyap",
+    "department": "Materials Science & Metallurgical Engineering (MSME)",
+    "about": "Dr. Vijay Kumar Kashyap(hod) is an Assistant Professor and Head of the Department (HOD) in the Department of Materials Science and Metallurgical Engineering. His research interests span Electronic Ceramics, Inorganic Oxides, and Oxygen Permeable Inorganic Membranes. He holds a strong academic background from premier institutions — an M.Sc. in Physics from CCS University, Meerut, an M.Tech. in Materials Technology from IIT-BHU, Varanasi, and a Ph.D. in Materials Science from IIT Kanpur."
+  },
+  {
+    "name": "Dr. Alka Gupta",
+    "department": "Materials Science & Metallurgical Engineering (MSME)",
+    "about": "Dr. Alka Gupta is an Assistant Professor in the Department of Materials Science & Metallurgical Engineering at UIET, CSJMU Kanpur, joining the role in February 2017. She holds both her M.Tech. and Ph.D. in Materials Science and Engineering from IIT Kanpur. Her research focuses on Nanomaterials, Energy Materials, and Multiferroic & Electroceramic Materials, with notable work on Solid Oxide Fuel Cells and Bismuth Ferrite for memory and sensor applications. She has published over 6 journal articles, 2 book chapters with Elsevier and Springer, and has presented at 11+ national and international conferences."
+  },
+  {
+    "name": "Dr. Bhoomika Yadav",
+    "department": "Materials Science & Metallurgical Engineering (MSME)",
+    "about": "Dr. Bhoomika Yadav is an Assistant Professor in the Department of Materials Science and Metallurgical Engineering with research interests in Solid State Physics, Electronic Ceramics, Composite Corrosion and Degradation. She completed her B.Sc. and M.Sc. from DDU Gorakhpur University, followed by M.Tech. from IIT-BHU and Ph.D. from IIT Kanpur."
+  },
+  {
+    "name": "Dr. Anju Dixit",
+    "department": "Materials Science & Metallurgical Engineering (MSME)",
+    "about": "Dr. Anju Dixit (Deputy Director of the School of Basic Sciences) is an Associate Professor and Coordinator in the Department of Physics at UIET, also serving as Deputy Director of the School of Basic Sciences. She earned her Ph.D. from the University of Puerto Rico, USA, and completed a DST Young Scientist Fellowship at IIT Kanpur in 2007, after which she joined UIET as a Lecturer. Her research interests lie in Experimental Condensed Matter Physics. She has published around 45 research papers in peer-reviewed journals, completed a UGC Major Research Project in 2014, and has supervised numerous Ph.D. and M.Phil. students at CSJMU Kanpur."
+  },
+  {
+    "name": "Dr. Pushpa Mamoria",
+    "department": "Computer Applications (BCA and MCA)",
+    "about": "Dr. Pushpa Mamoria(hod) is an Associate Professor and Head of the Department (HOD) of Computer Applications at CSJM University, Kanpur. She holds a Ph.D. in Computer Science from Babasaheb Bhimrao Ambedkar University, Lucknow, an M.Tech from Devi Ahilya Vishwavidyalaya, Indore, and a B.E. from SGSITS, Indore. She has over 20 years of teaching experience, including at IIIT Allahabad. Her research interests include Digital Image Processing, Fuzzy Logic, Neural Networks, Soft Computing, IoT, Artificial Intelligence, Machine Learning, Deep Learning, and Wireless Sensor Networks. She is actively involved in teaching, research, and academic administration in advanced computing domains."
+  },
+  {
+    "name": "Dr. Rabins Porwal",
+    "department": "Computer Applications (BCA and MCA)",
+    "about": "Dr. Rabins Porwal is a Professor at CSJM University, Kanpur. He holds a Ph.D. in Software Engineering from Dayalbagh Educational Institute, Agra, and an M.Tech in Computer Science from Jamia Hamdard, New Delhi. With over 22 years of experience in academics and research, his expertise includes Big Data Analytics, Data Science, Artificial Intelligence, Machine Learning, Deep Learning, and Software Engineering. He is also associated with professional bodies such as IEEE, ACM, CSI, ISTE, and ISCA, and actively contributes to teaching, research, and academic leadership."
+  },
+  {
+    "name": "Amit Virmani",
+    "department": "Computer Applications (BCA and MCA)",
+    "about": "Amit Virmani is an Assistant Professor in the Department of Computer Applications at CSJM University, Kanpur. He holds an MCA from RGTU, Bhopal and is currently pursuing a Ph.D. from CSJM University, Kanpur. His research interests include Digital Image Processing and Machine Learning. He is actively involved in teaching and academic activities in computer applications and emerging technologies."
+  },
+  {
+    "name": "Dr. Ritesh Agarwal",
+    "department": "Computer Applications (BCA and MCA)",
+    "about": "Dr. Ritesh Agarwal is an Assistant Professor in the Department of Computer Applications at CSJM University, Kanpur. He holds an M.Sc. and a Ph.D. from CSJM University, Kanpur. His research interests include Geometric Function Theory and Complex Analysis. He is actively involved in teaching and academic work in mathematical and computational foundations."
+  },
+  {
+    "name": "Dr. Shekhar Verma",
+    "department": "Computer Applications (BCA and MCA)",
+    "about": "Dr. Shekhar Verma is an Assistant Professor in the Department of Computer Applications at CSJM University, Kanpur. He holds an MCA from IGNOU, New Delhi, an M.Tech in Information Technology from KSOU, Mysore, and a Ph.D. in Computer Science from SJJTU, Rajasthan. His research interests include Computer Networks, Machine Learning, and IoT. He is actively involved in teaching and academic work in computer applications and emerging technologies."
+  },
+  {
+    "name": "Shilpi Dubey",
+    "department": "Computer Applications (BCA and MCA)",
+    "about": "Shilpi Dubey is an Assistant Professor in the Department of Computer Applications at CSJM University, Kanpur. She holds an MBA from MDS University, Ajmer, has qualified UGC-NET in Management. Her research interests include Marketing and Marketing of Financial Products. She is actively involved in teaching and academic activities in management and computer applications."
+  },
+  {
+    "name": "Dr. Mamta Tiwari",
+    "department": "Computer Applications (BCA and MCA)",
+    "about": "Dr. Mamta Tiwari is an Assistant Professor in the Department of Computer Applications at CSJM University, Kanpur. She holds a Ph.D. from M.G.C.G.V. Chitrakoot, an M.Tech from U.P. Technical University, Lucknow, and an MCA from R.D.V.V., Jabalpur. Her research interests include Data Mining, Data Science, Software Engineering, and Database Management Systems. She is actively involved in teaching and research in core areas of computer applications and data-driven technologies."
+  },
+  {
+    "name": "Omkar Agrahari",
+    "department": "Computer Applications (BCA and MCA)",
+    "about": "Omkar Agrahari is an Assistant Professor in the Department of Computer Applications at CSJM University, Kanpur. He holds an MCA from Rani Durgavati Vishwavidyalaya, Jabalpur, and is currently pursuing a Ph.D. from CSJM University, Kanpur. He has over 19 years of teaching experience in core subjects such as Data Structures and Algorithms, C and C++ programming, Software Engineering, DBMS, Operations Research, and Compiler Design. His research interests include Software Engineering and Data/Learning Analytics, and he is actively involved in teaching and academic development."
+  },
+  {
+    "name": "Prashant Srivastava",
+    "department": "Computer Applications (BCA and MCA)",
+    "about": "Prashant Srivastava is an Assistant Professor in the Department of Computer Applications at CSJM University, Kanpur. He holds an MCA from VBS Purvanchal University, Jaunpur. His research interests include Artificial Intelligence, Machine Learning, and Data Mining. He is actively involved in teaching and academic activities in computer applications and emerging technologies."
+  },
+  {
+    "name": "Akhilesh Singh",
+    "department": "Computer Applications (BCA and MCA)",
+    "about": "Akhilesh Singh is an Assistant Professor in the Department of Computer Applications at CSJM University, Kanpur. He holds an MCA from Dr. A.P.J. Abdul Kalam Technical University, Lucknow. His research interests include Software Engineering and Machine Learning. He is actively involved in teaching and academic activities in computer applications and emerging technologies."
+  },
+  {
+    "name": "Abhishek Dwivedi",
+    "department": "Computer Applications (BCA and MCA)",
+    "about": "Abhishek Dwivedi is an Assistant Professor in the Department of Computer Applications at CSJM University, Kanpur. He holds an MCA from RGPV, Bhopal. His research interests include Machine Learning and Cloud Computing. He is actively involved in teaching and academic activities in computer applications and modern computing technologies."
+  },
+  {
+    "name": "Himanshu Shukla",
+    "department": "Computer Applications (BCA and MCA)",
+    "about": "Himanshu Shukla is an Assistant Professor in the Department of Computer Applications at CSJM University, Kanpur. He holds an MCA from Dr. A.P.J. Abdul Kalam Technical University, Lucknow. His research interests include Cyber and Data Security, Machine Learning, and Cloud Computing. He is actively involved in teaching and academic activities in computer applications and emerging technologies."
+  },
+  {
+    "name": "Mamata Mayee Panda",
+    "department": "Computer Applications (BCA and MCA)",
+    "about": "Mamata Mayee Panda is an Assistant Professor in the Department of Computer Applications at CSJM University, Kanpur. She holds an M.S. in Computer Science and has over 17 years of teaching experience in core subjects such as Computer Architecture, Software Engineering, Compiler Design, and Cryptography. She also has around 3 years of industry experience, working on SAP ERP customization projects at offshore development centers of PwC and IBM India. She is actively involved in teaching and academic development in computer science."
+  },
+  {
+    "name": "Shivneet Tripathi",
+    "department": "Computer Applications (BCA and MCA)",
+    "about": "Shivneet Tripathi is an Assistant Professor in the Department of Computer Applications at CSJM University, Kanpur. He holds a Master of Computer Applications (MCA). He is actively involved in teaching and academic activities in computer applications and core areas of computer science."
+  },
+  {
+    "name": "Mr. Ravi Kant Mishra",
+    "department": "Computer Applications (BCA and MCA)",
+    "about": "Mr. Ravi Kant Mishra is an Assistant Professor in the Department of Computer Applications at CSJM University, Kanpur. He holds an MCA from CSJM University, Kanpur. His research interests include Digital Image Processing, Artificial Intelligence, and Machine Learning. He is actively involved in teaching, mentoring students, and contributing to academic and administrative activities."
+  },
+  {
+    "name": "Dr. Arpita Singh",
+    "department": "Computer Applications (BCA and MCA)",
+    "about": "Dr. Arpita Singh is an Assistant Professor in the Department of Computer Applications at CSJM University, Kanpur. She holds a Ph.D. in Cyber Security and Digital Forensics from Amity University, Lucknow (2023), and an M.Sc. in Information Technology from Babasaheb Bhimrao Ambedkar University, Lucknow. She has over 6 years of academic and research experience. Her research interests include Cyber Crime, Digital Forensics, Cyber Security, Artificial Intelligence, Machine Learning, Deep Learning, and IoT. She is actively involved in teaching and research in emerging areas of cyber security and intelligent systems."
+  },
+  {
+    "name": "Mr. Anand Kumar Mishra",
+    "department": "Computer Applications (BCA and MCA)",
+    "about": "Mr. Anand Kumar Mishra is an Assistant Professor in the Department of Computer Applications at CSJM University, Kanpur. He holds an M.Sc. in Mathematics and an MCA. With over 17 years of academic and research experience, his expertise includes Blockchain Technology, Artificial Intelligence, Machine Learning, Cloud Computing, and Computer Vision. He has published research papers, book chapters, and holds multiple patents, and is actively involved in teaching, research, and academic development in emerging technologies."
+  },
+  {
+    "name": "Ms. Richa Dixit Pandey",
+    "department": "Computer Applications (BCA and MCA)",
+    "about": "Ms. Richa Dixit Pandey is an Assistant Professor in the Department of Computer Applications at CSJM University, Kanpur. She holds an MCA and her research interests include Quantum Computing, with a specific focus on Qubit Measurement Visualization. She is actively involved in teaching and academic activities in computer applications and emerging technologies."
+  },
+  {
+    "name": "Miss Shagoofi Anjum",
+    "department": "Computer Applications (BCA and MCA)",
+    "about": "Miss Shagoofi Anjum is an Assistant Professor in the Department of Computer Applications at CSJM University, Kanpur. She holds an MCA, has qualified UGC-NET. Her research interests include Big Data, Fuzzy Logic, Computational Complexity, and Algorithms. She is actively involved in teaching and academic activities in computer applications and theoretical computing."
+  },
+  {
+    "name": "Mrs. Shikha Shukla",
+    "department": "Computer Applications (BCA and MCA)",
+    "about": "Mrs. Shikha Shukla is an Assistant Professor in the Department of Computer Applications at CSJM University, Kanpur. She holds an MCA from HBTI Kanpur and an M.Tech in Computer Science and Engineering from AKTU Lucknow. Her research interests include Deep Learning and Machine Learning. She is actively involved in teaching and academic activities in computer applications and AI-based technologies."
+  },
+  {
+    "name": "Ar. Prashant Singh",
+    "department": "Vocational Studies (B.Voc)",
+    "about": "Ar. Prashant Singh is an Assistant Professor in the Department of Vocational Studies (Interior Design) at CSJM University, Kanpur. He holds a Masters degree in Urban Planning from MITS Gwalior and a B.Arch from Bundelkhand University, Jhansi. He has professional experience as a Principal Architect and has worked on various residential, commercial, and institutional projects. His expertise includes Urban Planning, Interior Design, Building Construction, Product Design, and Sustainable Development. He is actively involved in teaching, academic activities, and campus development projects."
+  },
+  {
+    "name": "Ar. Neha Mishra",
+    "department": "Vocational Studies (B.Voc)",
+    "about": "Ar. Neha Mishra is an Assistant Professor in the Department of Vocational Studies (Interior Design) at CSJM University, Kanpur. She holds an M.Arch in General Architecture from AKTU, Lucknow, and a B.Arch from Bundelkhand University, Jhansi. She has academic and industry experience in architecture and interior design. Her expertise includes Interior Design, Building Construction, Product Design, Sustainable Development, Landscape Design, and Project Management. She is actively involved in teaching, research, and professional practice in architecture and design."
+  },
+  {
+    "name": "Amna Khatun",
+    "department": "Vocational Studies (B.Voc)",
+    "about": "Amna Khatun is an Instructor in the Department of Vocational Studies at CSJM University, Kanpur. She holds an M.A. in Home Science (Textile & Clothing), a B.A. in Home Science, and a B.Sc. in Fashion Technology. She has over 3 years of teaching experience at CSJM University as a guest faculty and has also worked as a Teaching Assistant at Axis College and as a fashion faculty at Maharana Pratap School. She is actively involved in teaching and skill development in fashion and textile studies."
+  },
+  {
+    "name": "Ar. Prateek Agarwal",
+    "department": "Vocational Studies (B.Voc)",
+    "about": "Ar. Prateek Agarwal is an Assistant Professor in the Department of Vocational Studies (Interior Design) at CSJM University, Kanpur. He holds a Masters degree in Urban and Regional Planning from the Government College of Architecture, Lucknow, and a B.Arch from AKTU. He has academic and industry experience as an architect and planner. His expertise includes Urban and Regional Planning, Interior Design, Building Construction, Visual Merchandising, and Sustainable Development. He is actively involved in teaching and professional practice in architecture and design."
+  },
+  {
+    "name": "Miss Sandhya Verma",
+    "department": "Vocational Studies (B.Voc)",
+    "about": "Miss Sandhya Verma is an Instructor in the Department of Vocational Studies (Fashion Technology) at CSJM University, Kanpur. She holds a Masters degree and an Advanced Diploma in Fashion Technology along with a B.Ed. She has teaching and industry experience in fashion design and technology. Her expertise includes Design Elements, Fabric Ornamentation, Garment Construction, Textile Printing, and Traditional Embroidery. She is actively involved in teaching, skill development, and creative work in fashion and textile design."
+  },
+  {
+    "name": "Ar. Ashutosh Pathak",
+    "department": "Vocational Studies (B.Voc)",
+    "about": "Ar. Ashutosh Pathak(hod) is the Head of Department (hod) and Assistant Professor in the Department of Vocational Studies (Interior Design) at CSJM University, Kanpur. He holds an M.Arch and B.Arch in Building Construction and Management. His expertise includes Interior Design & Space Planning, Architectural Drawings, Building Construction, Project Management, and Sustainable Design. He has academic and industry experience in architecture and project execution, and is actively involved in teaching, research, and professional practice."
+  },
+  {
+    "name": "Ar. Shrusti Sonker",
+    "department": "Vocational Studies (B.Voc)",
+    "about": "Ar. Shrusti Sonker is an Assistant Professor in the Department of Vocational Studies (Interior Design) at CSJM University, Kanpur. She holds an M.Arch in Urban Design from SPA Bhopal and a B.Arch from AKTU, Lucknow. She has academic and freelance experience in architectural and interior design projects. Her expertise includes Interior Design, Urban Design, Building Construction, Sustainable Development, Landscape Design, and Project Management. She is actively involved in teaching, design practice, and creative projects in architecture and interior design."
+  },
+  {
+    "name": "Ar. Ananya Tripathi",
+    "department": "Vocational Studies (B.Voc)",
+    "about": "Ar. Ananya Tripathi is an Assistant Professor in the Department of Vocational Studies at CSJM University, Kanpur. She holds a Masters degree in Urban and Regional Planning and has experience as a research scholar at the Faculty of Architecture and Planning, Lucknow. Her research interests include Architecture and Urban Planning. She is actively involved in teaching and academic activities in design and planning."
+  },
+  {
+    "name": "Aastha Manchanda",
+    "department": "Vocational Studies (B.Voc)",
+    "about": "Aastha Manchanda is an Assistant Professor in the Department of Vocational Studies at CSJM University, Kanpur. She holds a Masters degree in Fashion Management and has around 10 years of experience in visual communication and design thinking. Her research interests include Fashion and Design. She focuses on aesthetics, materiality, and cultural context, and is actively involved in teaching and creative development in design-related fields."
+  }
+]

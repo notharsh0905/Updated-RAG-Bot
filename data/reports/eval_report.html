@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSJMU RAG System — Evaluation Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0F172A;
+            --card: #1E293B;
+            --text: #F8FAFC;
+            --muted: #94A3B8;
+            --primary: #38BDF8;
+            --success: #22C55E;
+            --danger: #EF4444;
+            --border: #334155;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
+        body { background: var(--bg); color: var(--text); padding: 2rem; line-height: 1.5; }
+        .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; border-bottom: 1px solid var(--border); padding-bottom: 1.5rem; }
+        .header h1 { font-size: 1.8rem; font-weight: 700; color: var(--primary); }
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
+        .stat-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.2rem; text-align: center; }
+        .stat-val { font-size: 1.8rem; font-weight: 700; color: var(--primary); margin-top: 0.2rem; }
+        .stat-val.success { color: var(--success); }
+        .stat-val.danger { color: var(--danger); }
+        .stat-lbl { font-size: 0.85rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; }
+        .table-container { background: var(--card); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+        table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+        th { background: #0F172A; padding: 1rem; text-align: left; font-weight: 600; color: var(--muted); border-bottom: 1px solid var(--border); }
+        td { padding: 1rem; border-bottom: 1px solid var(--border); vertical-align: top; }
+        tr.fail { background: rgba(239, 68, 68, 0.05); }
+        .answer-cell { max-height: 120px; overflow-y: auto; color: #E2E8F0; font-size: 0.85rem; white-space: pre-wrap; }
+        .badge { padding: 0.25rem 0.6rem; border-radius: 999px; font-size: 0.75rem; font-weight: 700; display: inline-block; }
+        .badge.pass { background: rgba(34, 197, 94, 0.2); color: var(--success); }
+        .badge.fail { background: rgba(239, 68, 68, 0.2); color: var(--danger); }
+        .category-pill { background: #334155; padding: 0.2rem 0.5rem; border-radius: 4px; font-size: 0.75rem; color: var(--primary); }
+        .flags { color: #FCA5A5; font-size: 0.8rem; font-weight: 500; }
+        .search-bar { width: 100%; padding: 0.8rem; border-radius: 8px; border: 1px solid var(--border); background: var(--card); color: var(--text); margin-bottom: 1rem; font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div>
+            <h1>🎓 CSJMU RAG System Evaluation Dashboard</h1>
+            <p style="color: var(--muted); font-size: 0.9rem;">Automated Test Suite Execution Report • Phase 1 Framework</p>
+        </div>
+        <div>
+            <span class="badge pass" style="font-size: 0.9rem; padding: 0.5rem 1rem;">Accuracy: 60.0%</span>
+        </div>
+    </div>
+
+    <div class="stats-grid">
+        <div class="stat-card">
+            <div class="stat-lbl">Total Questions</div>
+            <div class="stat-val">5</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-lbl">Successful</div>
+            <div class="stat-val success">3</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-lbl">Failed / Flagged</div>
+            <div class="stat-val danger">2</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-lbl">Empty Answers</div>
+            <div class="stat-val danger">0</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-lbl">Avg Response Time</div>
+            <div class="stat-val">16.372s</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-lbl">Avg Retrieval Score</div>
+            <div class="stat-val">1.0</div>
+        </div>
+    </div>
+
+    <input type="text" id="searchInput" class="search-bar" placeholder="Search questions, answers, category, or flags..." onkeyup="filterTable()">
+
+    <div class="table-container">
+        <table id="evalTable">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Category</th>
+                    <th>Question</th>
+                    <th style="width: 35%;">Chatbot Answer</th>
+                    <th>Latency</th>
+                    <th>Words</th>
+                    <th>Status</th>
+                    <th>Flags</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+        <tr class="fail">
+            <td>1</td>
+            <td><span class="category-pill">General</span></td>
+            <td><strong>Where is Chhatrapati Shahu Ji Maharaj University (CSJMU) located?</strong></td>
+            <td><div class="answer-cell">Chhatrapati Shahu Ji Maharaj University (CSJMU) is located in Kanpur, Uttar Pradesh.</div></td>
+            <td>15.723s</td>
+            <td>12</td>
+            <td><span class="badge fail">FAIL</span></td>
+            <td><span class="flags">Short Answer (<20 words)</span></td>
+        </tr>
+        
+        <tr class="fail">
+            <td>2</td>
+            <td><span class="category-pill">General</span></td>
+            <td><strong>What is the full name of UIET Kanpur?</strong></td>
+            <td><div class="answer-cell">The full name of UIET Kanpur is University Institute of Engineering and Technology (UIET).</div></td>
+            <td>19.288s</td>
+            <td>14</td>
+            <td><span class="badge fail">FAIL</span></td>
+            <td><span class="flags">Short Answer (<20 words)</span></td>
+        </tr>
+        
+        <tr class="pass">
+            <td>3</td>
+            <td><span class="category-pill">General</span></td>
+            <td><strong>When was CSJMU established?</strong></td>
+            <td><div class="answer-cell">The answer to the question "When was CSJMU established?" is:
+
+CSJM University has been on the map of higher education for more than five decades. With a steadfast trajectory of progress since its establishment in 1966, it now boasts of a vibrant campus wing and approximately 700 affiliated colleges across seven districts of Uttar Pradesh.
+
+So, according to this information, CSJMU was established in 1966.</div></td>
+            <td>11.768s</td>
+            <td>65</td>
+            <td><span class="badge pass">PASS</span></td>
+            <td><span class="text-muted">None</span></td>
+        </tr>
+        
+        <tr class="pass">
+            <td>4</td>
+            <td><span class="category-pill">General</span></td>
+            <td><strong>What are the major schools and institutes in CSJMU?</strong></td>
+            <td><div class="answer-cell">The major schools and institutes in CSJMU are:
+
+1. School of Engineering & Technology (UIET)
+2. School of Business Management
+3. Atal Bihari Vajpayee School of Legal Studies
+4. Schools of Life Sciences & Biotechnology
+5. School of Basic Sciences
+6. School of Arts, Humanities and Social Sciences
+7. School of Languages
+8. School of Health Sciences
+9. School of Performing and Creative Arts
+10. School of Pharmaceutical Sciences
+11. School of Advanced Agriculture Sciences and Technology
+12. School of Education
+13. School of Hospitality, Tourism and Catering Technology</div></td>
+            <td>26.31s</td>
+            <td>89</td>
+            <td><span class="badge pass">PASS</span></td>
+            <td><span class="text-muted">None</span></td>
+        </tr>
+        
+        <tr class="pass">
+            <td>5</td>
+            <td><span class="category-pill">General</span></td>
+            <td><strong>Does CSJMU have an official helpline or contact email?</strong></td>
+            <td><div class="answer-cell">Based on the provided context, I found that CSJMU does not have an official helpline or contact email mentioned. The context only provides phone numbers (8090803220), website URLs (www.innovation.csjmu.ac.in and https://placement.csjmu.ac.in/), and email addresses for specific departments and individuals, but no information about a general helpline or contact email is available.</div></td>
+            <td>8.771s</td>
+            <td>51</td>
+            <td><span class="badge pass">PASS</span></td>
+            <td><span class="text-muted">None</span></td>
+        </tr>
+        
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        function filterTable() {
+            const input = document.getElementById('searchInput').value.toLowerCase();
+            const rows = document.querySelectorAll('#evalTable tbody tr');
+            rows.forEach(row => {
+                const text = row.innerText.toLowerCase();
+                row.style.display = text.includes(input) ? '' : 'none';
+            });
+        }
+    </script>
+</body>
+</html>
