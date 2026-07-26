@@ -8,6 +8,8 @@ import { Bot, User, Copy, Check, Sparkles } from 'lucide-react';
 import { ChatMessage } from '@/types/chat';
 import { CodeBlock } from './CodeBlock';
 import { ErrorMessage } from './ErrorMessage';
+import { SourceSection } from './SourceSection';
+import { CitationBadge } from './CitationBadge';
 
 interface MessageItemProps {
   message: ChatMessage;
@@ -37,6 +39,28 @@ export const MessageItem: React.FC<MessageItemProps> = ({
       </div>
     );
   }
+
+  // Parse inline citations like [1], [2] into interactive CitationBadges
+  const renderChildrenWithCitations = (children: React.ReactNode) => {
+    if (typeof children === 'string') {
+      const parts = children.split(/(\[\d+\])/g);
+      return parts.map((part, idx) => {
+        const match = part.match(/^\[(\d+)\]$/);
+        if (match) {
+          const citationIdx = parseInt(match[1], 10);
+          return (
+            <CitationBadge
+              key={idx}
+              index={citationIdx}
+              messageId={message.id}
+            />
+          );
+        }
+        return part;
+      });
+    }
+    return children;
+  };
 
   return (
     <motion.div
@@ -90,27 +114,27 @@ export const MessageItem: React.FC<MessageItemProps> = ({
                 },
                 h1: ({ children }) => (
                   <h1 className="text-xl sm:text-2xl font-bold font-serif text-white tracking-tight mt-6 mb-3 border-b border-slate-800 pb-2">
-                    {children}
+                    {renderChildrenWithCitations(children)}
                   </h1>
                 ),
                 h2: ({ children }) => (
                   <h2 className="text-lg sm:text-xl font-bold font-serif text-white tracking-tight mt-5 mb-2.5">
-                    {children}
+                    {renderChildrenWithCitations(children)}
                   </h2>
                 ),
                 h3: ({ children }) => (
                   <h3 className="text-base sm:text-lg font-semibold text-slate-100 mt-4 mb-2">
-                    {children}
+                    {renderChildrenWithCitations(children)}
                   </h3>
                 ),
                 h4: ({ children }) => (
                   <h4 className="text-sm font-semibold text-amber-400 mt-3 mb-1.5">
-                    {children}
+                    {renderChildrenWithCitations(children)}
                   </h4>
                 ),
                 p: ({ children }) => (
                   <p className="text-[14px] sm:text-[15px] leading-7 text-slate-200 mb-3.5 last:mb-0 font-normal">
-                    {children}
+                    {renderChildrenWithCitations(children)}
                   </p>
                 ),
                 ul: ({ children }) => (
@@ -123,10 +147,10 @@ export const MessageItem: React.FC<MessageItemProps> = ({
                     {children}
                   </ol>
                 ),
-                li: ({ children }) => <li className="leading-relaxed pl-1">{children}</li>,
+                li: ({ children }) => <li className="leading-relaxed pl-1">{renderChildrenWithCitations(children)}</li>,
                 blockquote: ({ children }) => (
                   <blockquote className="border-l-3 border-amber-400 bg-slate-950/60 text-slate-300 italic text-xs sm:text-sm pl-4 py-2.5 my-3.5 rounded-r-xl border-y border-r border-slate-800/60">
-                    {children}
+                    {renderChildrenWithCitations(children)}
                   </blockquote>
                 ),
                 table: ({ children }) => (
@@ -150,7 +174,7 @@ export const MessageItem: React.FC<MessageItemProps> = ({
                     {children}
                   </th>
                 ),
-                td: ({ children }) => <td className="p-3 text-slate-300 text-xs">{children}</td>,
+                td: ({ children }) => <td className="p-3 text-slate-300 text-xs">{renderChildrenWithCitations(children)}</td>,
                 a: ({ href, children }: any) => (
                   <a
                     href={href}
@@ -172,6 +196,11 @@ export const MessageItem: React.FC<MessageItemProps> = ({
               <span className="inline-block w-2 h-4 bg-amber-400 animate-pulse align-middle ml-1 rounded-sm shadow-sm" />
             )}
           </div>
+
+          {/* Dedicated Sources & Citations Section */}
+          {!isUser && !message.isStreaming && (
+            <SourceSection sources={message.sources} messageId={message.id} />
+          )}
 
           {/* Action Toolbar & Timestamp for Assistant Message */}
           {!isUser && !message.isStreaming && (

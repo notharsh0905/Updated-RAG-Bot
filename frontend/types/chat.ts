@@ -2,6 +2,9 @@ export interface DocumentSource {
   source: string;
   doc_type: string;
   content_snippet: string;
+  relevance_score?: number;
+  page?: number;
+  chunk_id?: string;
 }
 
 export interface SuggestionObject {
