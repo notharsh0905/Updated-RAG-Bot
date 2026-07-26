@@ -57,6 +57,11 @@ export const ChatSidebar: React.FC<ChatSidebarProps> = ({
 
   const [renameTarget, setRenameTarget] = useState<Conversation | null>(null);
   const [deleteTarget, setDeleteTarget] = useState<Conversation | null>(null);
+  const [mounted, setMounted] = useState(false);
+
+  React.useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const quickCategories = [
     { label: 'B.Tech Admissions', query: 'What is the admission procedure for B.Tech CSE at UIET?', icon: BookOpen },

@@ -42,13 +42,20 @@ export const MessageList: React.FC<MessageListProps> = ({
     bottomRef.current?.scrollIntoView({ behavior: smooth ? 'smooth' : 'auto' });
   }, []);
 
+  const rafRef = useRef<number | null>(null);
+
   const handleScroll = () => {
     if (!containerRef.current) return;
-    const { scrollTop, scrollHeight, clientHeight } = containerRef.current;
-    const isNearBottom = scrollHeight - scrollTop - clientHeight < 120;
+    if (rafRef.current !== null) cancelAnimationFrame(rafRef.current);
 
-    userScrolledUpRef.current = !isNearBottom;
-    setShowScrollBottom(!isNearBottom);
+    rafRef.current = requestAnimationFrame(() => {
+      if (!containerRef.current) return;
+      const { scrollTop, scrollHeight, clientHeight } = containerRef.current;
+      const isNearBottom = scrollHeight - scrollTop - clientHeight < 120;
+
+      userScrolledUpRef.current = !isNearBottom;
+      setShowScrollBottom(!isNearBottom);
+    });
   };
 
   // Smart auto-scroll: auto scroll only if user is near bottom

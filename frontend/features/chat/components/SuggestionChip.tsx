@@ -39,7 +39,7 @@ export const SuggestionChip: React.FC<SuggestionChipProps> = ({
       onKeyDown={handleKeyDown}
       disabled={disabled}
       aria-label={`Ask follow-up: ${fullQuestion}`}
-      className="group px-3 py-1.5 rounded-full bg-slate-800/80 hover:bg-slate-700/90 border border-slate-700/60 hover:border-amber-400/50 text-slate-200 hover:text-white text-xs font-medium transition-all duration-150 shadow-sm flex items-center gap-1.5 active:scale-95 disabled:opacity-40 disabled:pointer-events-none shrink-0"
+      className="group px-3 py-1.5 rounded-full bg-slate-800/80 hover:bg-slate-700/90 border border-slate-700/60 hover:border-amber-400/50 text-slate-200 hover:text-white text-xs font-medium transition-all duration-150 shadow-sm flex items-center gap-1.5 active:scale-95 disabled:opacity-40 disabled:pointer-events-none shrink-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-400"
     >
       {isLoading ? (
         <Loader2 className="w-3 h-3 text-amber-400 animate-spin shrink-0" />
