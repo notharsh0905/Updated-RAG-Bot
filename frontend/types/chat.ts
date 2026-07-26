@@ -20,8 +20,8 @@ export interface ChatMessage {
 
 export interface FeedbackPayload {
   session_id: string;
-  question: str;
-  answer: str;
+  question: string;
+  answer: string;
   rating: number;
   comments?: string;
 }
