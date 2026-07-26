@@ -4,13 +4,14 @@ import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { motion } from 'framer-motion';
-import { Bot, User, Copy, Check, Sparkles } from 'lucide-react';
+import { Bot, User, Sparkles } from 'lucide-react';
 import { ChatMessage } from '@/types/chat';
 import { CodeBlock } from './CodeBlock';
 import { ErrorMessage } from './ErrorMessage';
 import { SourceSection } from './SourceSection';
 import { CitationBadge } from './CitationBadge';
 import { SuggestionSection } from './SuggestionSection';
+import { MessageActions } from './MessageActions';
 
 interface MessageItemProps {
   message: ChatMessage;
@@ -18,7 +19,10 @@ interface MessageItemProps {
   copiedId: string | null;
   onRetry?: (question?: string) => void;
   onSelectQuery?: (query: string) => void;
+  onRegenerate?: () => void;
+  isLastMessage?: boolean;
   disabled?: boolean;
+  sessionId?: string;
 }
 
 export const MessageItem: React.FC<MessageItemProps> = ({
@@ -27,7 +31,10 @@ export const MessageItem: React.FC<MessageItemProps> = ({
   copiedId,
   onRetry,
   onSelectQuery,
+  onRegenerate,
+  isLastMessage,
   disabled,
+  sessionId = 'default-session',
 }) => {
   const isUser = message.role === 'user';
   const isCopied = copiedId === message.id;
@@ -53,7 +60,7 @@ export const MessageItem: React.FC<MessageItemProps> = ({
         const match = part.match(/^\[(\d+)\]$/);
         if (match) {
           const citationIdx = parseInt(match[1], 10);
-          const sourceObj = message.sources && message.sources[citationIdx - 1];
+          const sourceObj = message.sources ? message.sources[citationIdx - 1] : null;
           return (
             <CitationBadge
               key={idx}
@@ -219,32 +226,24 @@ export const MessageItem: React.FC<MessageItemProps> = ({
             />
           )}
 
-          {/* Action Toolbar & Timestamp for Assistant Message */}
+          {/* Response Actions Toolbar (Copy, Regenerate, Like, Dislike, Share) */}
           {!isUser && !message.isStreaming && (
             <div className="flex items-center justify-between pt-3 mt-4 border-t border-slate-800/80 text-xs text-slate-400">
               <span className="text-[10px] font-mono text-slate-500 tracking-tight">
                 {message.timestamp}
               </span>
 
-              <div className="flex items-center gap-1.5 opacity-80 group-hover:opacity-100 transition-opacity">
-                <button
-                  onClick={() => onCopyText(message.id, message.content)}
-                  className="flex items-center gap-1.5 px-2 py-1 hover:text-white hover:bg-slate-800/90 border border-transparent hover:border-slate-700/60 rounded-md transition-all text-[11px] font-sans text-slate-400"
-                  title="Copy full response"
-                >
-                  {isCopied ? (
-                    <>
-                      <Check className="w-3.5 h-3.5 text-emerald-400" />
-                      <span className="text-emerald-400 font-medium">Copied response</span>
-                    </>
-                  ) : (
-                    <>
-                      <Copy className="w-3.5 h-3.5" />
-                      <span>Copy</span>
-                    </>
-                  )}
-                </button>
-              </div>
+              <MessageActions
+                messageId={message.id}
+                question={message.rawQuestion || ''}
+                answer={message.content}
+                sessionId={sessionId}
+                onCopy={() => onCopyText(message.id, message.content)}
+                isCopied={isCopied}
+                onRegenerate={onRegenerate}
+                isLastMessage={isLastMessage}
+                disabled={disabled}
+              />
             </div>
           )}
         </div>

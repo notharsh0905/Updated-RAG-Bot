@@ -15,6 +15,7 @@ export const ChatWindow: React.FC = () => {
     addMessage,
     updateMessageContent,
     updateMessageState,
+    removeMessage,
     pendingQuestion,
     setPendingQuestion,
     isLoading,
@@ -136,6 +137,19 @@ export const ChatWindow: React.FC = () => {
     }
   };
 
+  const handleRegenerate = useCallback(() => {
+    if (isLoading || isSubmittingRef.current || messages.length === 0) return;
+
+    const lastAssistantMsg = [...messages].reverse().find((m) => m.role === 'assistant');
+    const userMessages = messages.filter((m) => m.role === 'user');
+    const lastUserMsg = userMessages[userMessages.length - 1];
+
+    if (lastAssistantMsg && lastUserMsg) {
+      removeMessage(lastAssistantMsg.id);
+      handleExecuteQuery(lastUserMsg.content);
+    }
+  }, [isLoading, messages, removeMessage, handleExecuteQuery]);
+
   return (
     <ChatLayout
       onNewChat={resetChat}
@@ -149,6 +163,8 @@ export const ChatWindow: React.FC = () => {
         copiedId={copiedId}
         onSelectPrompt={handleExecuteQuery}
         onRetry={handleRetry}
+        onRegenerate={handleRegenerate}
+        sessionId={sessionId}
       />
       <ChatInput
         onSubmit={handleExecuteQuery}

@@ -16,6 +16,8 @@ interface MessageListProps {
   copiedId: string | null;
   onSelectPrompt: (prompt: string) => void;
   onRetry?: (question?: string) => void;
+  onRegenerate?: () => void;
+  sessionId?: string;
 }
 
 export const MessageList: React.FC<MessageListProps> = ({
@@ -26,6 +28,8 @@ export const MessageList: React.FC<MessageListProps> = ({
   copiedId,
   onSelectPrompt,
   onRetry,
+  onRegenerate,
+  sessionId,
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const bottomRef = useRef<HTMLDivElement>(null);
@@ -55,6 +59,7 @@ export const MessageList: React.FC<MessageListProps> = ({
   }, [messages, isLoading, isStreaming, scrollToBottom]);
 
   const showEmptyState = messages.length <= 1;
+  const lastAssistantIdx = messages.map((m) => m.role).lastIndexOf('assistant');
 
   return (
     <div
@@ -67,7 +72,7 @@ export const MessageList: React.FC<MessageListProps> = ({
           <EmptyState onSelectPrompt={onSelectPrompt} />
         ) : (
           <AnimatePresence initial={false}>
-            {messages.map((msg) => (
+            {messages.map((msg, idx) => (
               <MessageItem
                 key={msg.id}
                 message={msg}
@@ -75,7 +80,10 @@ export const MessageList: React.FC<MessageListProps> = ({
                 copiedId={copiedId}
                 onRetry={onRetry}
                 onSelectQuery={onSelectPrompt}
+                onRegenerate={onRegenerate}
+                isLastMessage={idx === lastAssistantIdx}
                 disabled={isLoading || isStreaming}
+                sessionId={sessionId}
               />
             ))}
           </AnimatePresence>
