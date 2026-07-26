@@ -2,6 +2,7 @@
 
 import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { useChatStore } from '@/store/useChatStore';
+import { useConversationStore } from '@/store/useConversationStore';
 import { apiService } from '@/services/api';
 import { ChatMessage } from '@/types/chat';
 import { ChatLayout } from './components/ChatLayout';
@@ -10,7 +11,6 @@ import { ChatInput } from './components/ChatInput';
 
 export const ChatWindow: React.FC = () => {
   const {
-    sessionId,
     messages,
     addMessage,
     updateMessageContent,
@@ -23,12 +23,27 @@ export const ChatWindow: React.FC = () => {
     resetChat,
   } = useChatStore();
 
+  const {
+    activeId,
+    createConversation,
+    updateConversationMessages,
+    conversations,
+  } = useConversationStore();
+
   const [copiedId, setCopiedId] = useState<string | null>(null);
   const [isStreaming, setIsStreaming] = useState(false);
 
   // Execution locks to prevent duplicate submissions
   const isSubmittingRef = useRef(false);
   const processedPendingRef = useRef<string | null>(null);
+
+  // Keep conversation store in sync when messages change
+  useEffect(() => {
+    if (messages.length > 0 && activeId) {
+      const userMsg = messages.find((m) => m.role === 'user');
+      updateConversationMessages(activeId, messages, userMsg?.content);
+    }
+  }, [messages, activeId, updateConversationMessages]);
 
   const handleExecuteQuery = useCallback(
     async (queryText: string) => {
@@ -66,7 +81,7 @@ export const ChatWindow: React.FC = () => {
       // SSE Stream Execution with Fallback
       await apiService.sendQueryStream(
         trimmed,
-        sessionId,
+        activeId || 'default-session',
         (token: string) => {
           accumulatedContent += token;
           setIsStreaming(true);
@@ -83,7 +98,7 @@ export const ChatWindow: React.FC = () => {
         async () => {
           // Stream error handler - Fallback to standard POST /query
           try {
-            const res = await apiService.sendQuery(trimmed, sessionId);
+            const res = await apiService.sendQuery(trimmed, activeId || 'default-session');
             updateMessageContent(assistantMsgId, res.answer, false);
             updateMessageState(assistantMsgId, {
               sources: res.sources,
@@ -107,7 +122,7 @@ export const ChatWindow: React.FC = () => {
         }
       );
     },
-    [addMessage, isLoading, setIsLoading, sessionId, updateMessageContent, updateMessageState]
+    [activeId, addMessage, isLoading, setIsLoading, updateMessageContent, updateMessageState]
   );
 
   // Single-execution effect for pending questions passed from other pages/sidebar
@@ -150,9 +165,14 @@ export const ChatWindow: React.FC = () => {
     }
   }, [isLoading, messages, removeMessage, handleExecuteQuery]);
 
+  const handleNewChat = () => {
+    resetChat();
+    createConversation();
+  };
+
   return (
     <ChatLayout
-      onNewChat={resetChat}
+      onNewChat={handleNewChat}
       onSelectQuery={handleExecuteQuery}
     >
       <MessageList
@@ -164,7 +184,7 @@ export const ChatWindow: React.FC = () => {
         onSelectPrompt={handleExecuteQuery}
         onRetry={handleRetry}
         onRegenerate={handleRegenerate}
-        sessionId={sessionId}
+        sessionId={activeId || 'default-session'}
       />
       <ChatInput
         onSubmit={handleExecuteQuery}
