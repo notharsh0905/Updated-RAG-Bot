@@ -13,6 +13,9 @@ interface ChatStore {
   // Actions
   setPendingQuestion: (q: string | null) => void;
   addMessage: (msg: ChatMessage) => void;
+  updateMessageContent: (id: string, newContent: string, isStreaming?: boolean) => void;
+  updateMessageState: (id: string, updates: Partial<ChatMessage>) => void;
+  removeMessage: (id: string) => void;
   setMessages: (msgs: ChatMessage[]) => void;
   setIsLoading: (loading: boolean) => void;
   toggleSidebar: () => void;
@@ -56,12 +59,33 @@ export const useChatStore = create<ChatStore>((set) => ({
 
   setPendingQuestion: (q) => set({ pendingQuestion: q }),
   addMessage: (msg) => set((state) => ({ messages: [...state.messages, msg] })),
+
+  updateMessageContent: (id, newContent, isStreaming = false) =>
+    set((state) => ({
+      messages: state.messages.map((m) =>
+        m.id === id ? { ...m, content: newContent, isStreaming } : m
+      ),
+    })),
+
+  updateMessageState: (id, updates) =>
+    set((state) => ({
+      messages: state.messages.map((m) =>
+        m.id === id ? { ...m, ...updates } : m
+      ),
+    })),
+
+  removeMessage: (id) =>
+    set((state) => ({
+      messages: state.messages.filter((m) => m.id !== id),
+    })),
+
   setMessages: (msgs) => set({ messages: msgs }),
   setIsLoading: (loading) => set({ isLoading: loading }),
   toggleSidebar: () => set((state) => ({ sidebarOpen: !state.sidebarOpen })),
   setSidebarOpen: (open) => set({ sidebarOpen: open }),
   setTheme: (theme) => set({ theme }),
   setIsAdminAuthenticated: (auth) => set({ isAdminAuthenticated: auth }),
+
   resetChat: () =>
     set({
       sessionId: crypto.randomUUID(),

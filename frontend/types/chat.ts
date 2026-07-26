@@ -16,6 +16,9 @@ export interface ChatMessage {
   sources?: DocumentSource[] | null;
   suggestions?: (string | SuggestionObject)[] | null;
   timestamp: string;
+  isStreaming?: boolean;
+  isError?: boolean;
+  rawQuestion?: string;
 }
 
 export interface FeedbackPayload {

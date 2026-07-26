@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useRef, useEffect } from 'react';
-import { Send, Sparkles, Paperclip, Globe, Command } from 'lucide-react';
+import { Send, Sparkles, Loader2 } from 'lucide-react';
 
 interface ChatInputProps {
   onSubmit: (query: string) => void;
@@ -58,10 +58,10 @@ export const ChatInput: React.FC<ChatInputProps> = ({ onSubmit, isLoading }) => 
 
         {/* Bottom Toolbar & Submit Button */}
         <div className="flex items-center justify-between pt-2 border-t border-slate-800/80 px-1 mt-1">
-          {/* Left Accessory Indicators (Ready for Future Features) */}
+          {/* Left Accessory Indicators */}
           <div className="flex items-center gap-1.5 text-xs text-slate-400">
             <span className="hidden sm:inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-slate-800 text-[11px] font-medium text-slate-400 border border-slate-700/50">
-              <Sparkles className="w-3 h-3 text-amber-400" /> Grounded RAG
+              <Sparkles className="w-3 h-3 text-amber-400" /> SSE Streaming RAG
             </span>
             <span className="text-[11px] text-slate-500 hidden md:inline">
               Press <kbd className="font-mono text-[10px] bg-slate-800 px-1 py-0.5 rounded text-slate-400">Enter↵</kbd> to send, <kbd className="font-mono text-[10px] bg-slate-800 px-1 py-0.5 rounded text-slate-400">Shift+Enter</kbd> for line break
@@ -76,7 +76,11 @@ export const ChatInput: React.FC<ChatInputProps> = ({ onSubmit, isLoading }) => 
             className="flex items-center justify-center w-8 h-8 rounded-xl bg-gradient-to-r from-[#A51C30] to-[#8B0000] hover:from-[#C0392B] hover:to-[#A51C30] disabled:opacity-30 disabled:hover:from-[#A51C30] disabled:hover:to-[#8B0000] text-white transition-all shadow-md active:scale-95 shrink-0"
             title="Send query"
           >
-            <Send className="w-3.5 h-3.5" />
+            {isLoading ? (
+              <Loader2 className="w-3.5 h-3.5 animate-spin text-amber-300" />
+            ) : (
+              <Send className="w-3.5 h-3.5" />
+            )}
           </button>
         </div>
       </div>

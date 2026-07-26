@@ -13,6 +13,8 @@ export const ChatWindow: React.FC = () => {
     sessionId,
     messages,
     addMessage,
+    updateMessageContent,
+    updateMessageState,
     pendingQuestion,
     setPendingQuestion,
     isLoading,
@@ -21,6 +23,7 @@ export const ChatWindow: React.FC = () => {
   } = useChatStore();
 
   const [copiedId, setCopiedId] = useState<string | null>(null);
+  const [isStreaming, setIsStreaming] = useState(false);
 
   // Execution locks to prevent duplicate submissions
   const isSubmittingRef = useRef(false);
@@ -33,7 +36,9 @@ export const ChatWindow: React.FC = () => {
 
       isSubmittingRef.current = true;
       setIsLoading(true);
+      setIsStreaming(false);
 
+      // Add user prompt message
       const userMsgId = crypto.randomUUID();
       const userMsg: ChatMessage = {
         id: userMsgId,
@@ -41,34 +46,66 @@ export const ChatWindow: React.FC = () => {
         content: trimmed,
         timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
       };
-
       addMessage(userMsg);
 
-      try {
-        const res = await apiService.sendQuery(trimmed, sessionId);
-        const assistantMsg: ChatMessage = {
-          id: crypto.randomUUID(),
-          role: 'assistant',
-          content: res.answer,
-          sources: res.sources,
-          timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
-        };
-        addMessage(assistantMsg);
-      } catch (err) {
-        const errorMsg: ChatMessage = {
-          id: crypto.randomUUID(),
-          role: 'assistant',
-          content: 'Official university records are currently being updated. Please try again shortly.',
-          timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
-        };
-        addMessage(errorMsg);
-      } finally {
-        setIsLoading(false);
-        isSubmittingRef.current = false;
-        processedPendingRef.current = null;
-      }
+      // Create initial assistant target message
+      const assistantMsgId = crypto.randomUUID();
+      const assistantMsg: ChatMessage = {
+        id: assistantMsgId,
+        role: 'assistant',
+        content: '',
+        isStreaming: true,
+        rawQuestion: trimmed,
+        timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+      };
+      addMessage(assistantMsg);
+
+      let accumulatedContent = '';
+
+      // SSE Stream Execution with Fallback
+      await apiService.sendQueryStream(
+        trimmed,
+        sessionId,
+        (token: string) => {
+          accumulatedContent += token;
+          setIsStreaming(true);
+          updateMessageContent(assistantMsgId, accumulatedContent, true);
+        },
+        () => {
+          // Stream completion handler
+          updateMessageState(assistantMsgId, { isStreaming: false });
+          setIsStreaming(false);
+          setIsLoading(false);
+          isSubmittingRef.current = false;
+          processedPendingRef.current = null;
+        },
+        async () => {
+          // Stream error handler - Fallback to standard POST /query
+          try {
+            const res = await apiService.sendQuery(trimmed, sessionId);
+            updateMessageContent(assistantMsgId, res.answer, false);
+            updateMessageState(assistantMsgId, {
+              sources: res.sources,
+              isStreaming: false,
+              isError: false,
+            });
+          } catch (fallbackErr) {
+            updateMessageState(assistantMsgId, {
+              isError: true,
+              isStreaming: false,
+              content:
+                'Official CSJMU campus knowledge records are currently updating. Verify connection and click retry below.',
+            });
+          } finally {
+            setIsStreaming(false);
+            setIsLoading(false);
+            isSubmittingRef.current = false;
+            processedPendingRef.current = null;
+          }
+        }
+      );
     },
-    [addMessage, isLoading, setIsLoading, sessionId]
+    [addMessage, isLoading, setIsLoading, sessionId, updateMessageContent, updateMessageState]
   );
 
   // Single-execution effect for pending questions passed from other pages/sidebar
@@ -92,6 +129,12 @@ export const ChatWindow: React.FC = () => {
     setTimeout(() => setCopiedId(null), 2000);
   };
 
+  const handleRetry = (retryQuestion?: string) => {
+    if (retryQuestion) {
+      handleExecuteQuery(retryQuestion);
+    }
+  };
+
   return (
     <ChatLayout
       onNewChat={resetChat}
@@ -100,13 +143,15 @@ export const ChatWindow: React.FC = () => {
       <MessageList
         messages={messages}
         isLoading={isLoading}
+        isStreaming={isStreaming}
         onCopyText={handleCopyText}
         copiedId={copiedId}
         onSelectPrompt={handleExecuteQuery}
+        onRetry={handleRetry}
       />
       <ChatInput
         onSubmit={handleExecuteQuery}
-        isLoading={isLoading}
+        isLoading={isLoading || isStreaming}
       />
     </ChatLayout>
   );

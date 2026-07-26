@@ -7,20 +7,36 @@ import { motion } from 'framer-motion';
 import { Bot, User, Copy, Check, Sparkles } from 'lucide-react';
 import { ChatMessage } from '@/types/chat';
 import { CodeBlock } from './CodeBlock';
+import { ErrorMessage } from './ErrorMessage';
 
 interface MessageItemProps {
   message: ChatMessage;
   onCopyText: (id: string, text: string) => void;
   copiedId: string | null;
+  onRetry?: (question?: string) => void;
 }
 
 export const MessageItem: React.FC<MessageItemProps> = ({
   message,
   onCopyText,
   copiedId,
+  onRetry,
 }) => {
   const isUser = message.role === 'user';
   const isCopied = copiedId === message.id;
+
+  // Render Error Message Card if API call failed
+  if (message.isError) {
+    return (
+      <div className="w-full py-2">
+        <ErrorMessage
+          onRetry={() => onRetry && onRetry(message.rawQuestion)}
+          errorText={message.content}
+          question={message.rawQuestion}
+        />
+      </div>
+    );
+  }
 
   return (
     <motion.div
@@ -46,7 +62,7 @@ export const MessageItem: React.FC<MessageItemProps> = ({
           }`}
         >
           {/* Markdown Content Area */}
-          <div className="text-[14px] sm:text-[15px] leading-7 font-sans">
+          <div className="text-[14px] sm:text-[15px] leading-7 font-sans relative">
             <ReactMarkdown
               remarkPlugins={[remarkGfm]}
               components={{
@@ -150,10 +166,15 @@ export const MessageItem: React.FC<MessageItemProps> = ({
             >
               {message.content}
             </ReactMarkdown>
+
+            {/* Active Streaming Typing Cursor */}
+            {message.isStreaming && (
+              <span className="inline-block w-2 h-4 bg-amber-400 animate-pulse align-middle ml-1 rounded-sm shadow-sm" />
+            )}
           </div>
 
           {/* Action Toolbar & Timestamp for Assistant Message */}
-          {!isUser && (
+          {!isUser && !message.isStreaming && (
             <div className="flex items-center justify-between pt-3 mt-4 border-t border-slate-800/80 text-xs text-slate-400">
               <span className="text-[10px] font-mono text-slate-500 tracking-tight">
                 {message.timestamp}

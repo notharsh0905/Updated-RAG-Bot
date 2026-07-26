@@ -41,6 +41,72 @@ export const apiService = {
     return response.data;
   },
 
+  // SSE Stream Query (POST /query/stream)
+  sendQueryStream: async (
+    question: string,
+    sessionId: string,
+    onChunk: (token: string) => void,
+    onComplete: () => void,
+    onError: (err: Error) => void,
+    k: number = 5,
+    strict: boolean = true
+  ): Promise<void> => {
+    try {
+      const response = await fetch(`${API_BASE_URL}/query/stream`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          question,
+          session_id: sessionId,
+          k,
+          strict,
+          use_hybrid: true,
+        }),
+      });
+
+      if (!response.ok || !response.body) {
+        throw new Error(`HTTP ${response.status}: Stream connection failed`);
+      }
+
+      const reader = response.body.getReader();
+      const decoder = new TextDecoder();
+      let buffer = '';
+
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+
+        buffer += decoder.decode(value, { stream: true });
+        const lines = buffer.split('\n\n');
+        buffer = lines.pop() || '';
+
+        for (const line of lines) {
+          const trimmed = line.trim();
+          if (trimmed.startsWith('data: ')) {
+            const rawData = trimmed.slice(6);
+            if (rawData.startsWith('[ERROR]: ')) {
+              throw new Error(rawData.slice(9));
+            }
+            onChunk(rawData);
+          }
+        }
+      }
+
+      if (buffer.trim().startsWith('data: ')) {
+        const rawData = buffer.trim().slice(6);
+        if (!rawData.startsWith('[ERROR]: ')) {
+          onChunk(rawData);
+        }
+      }
+
+      onComplete();
+    } catch (err: any) {
+      onError(err instanceof Error ? err : new Error(String(err)));
+    }
+  },
+
   // Submit Feedback (POST /feedback)
   sendFeedback: async (payload: FeedbackPayload): Promise<void> => {
     await apiClient.post('/feedback', payload);
