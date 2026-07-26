@@ -48,11 +48,13 @@ export const MessageItem: React.FC<MessageItemProps> = ({
         const match = part.match(/^\[(\d+)\]$/);
         if (match) {
           const citationIdx = parseInt(match[1], 10);
+          const sourceObj = message.sources && message.sources[citationIdx - 1];
           return (
             <CitationBadge
               key={idx}
               index={citationIdx}
               messageId={message.id}
+              source={sourceObj}
             />
           );
         }

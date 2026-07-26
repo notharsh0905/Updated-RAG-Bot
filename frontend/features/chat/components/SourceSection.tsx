@@ -1,8 +1,8 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { BookOpen, ShieldCheck } from 'lucide-react';
+import { BookOpen, ShieldCheck, X } from 'lucide-react';
 import { DocumentSource } from '@/types/chat';
 import { SourceCard } from './SourceCard';
 
@@ -12,6 +12,8 @@ interface SourceSectionProps {
 }
 
 export const SourceSection: React.FC<SourceSectionProps> = ({ sources, messageId }) => {
+  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+
   if (!sources || sources.length === 0) return null;
 
   return (
@@ -31,22 +33,41 @@ export const SourceSection: React.FC<SourceSectionProps> = ({ sources, messageId
           </span>
         </div>
 
-        <div className="flex items-center gap-1 text-[11px] text-emerald-400 font-medium">
-          <ShieldCheck className="w-3.5 h-3.5" />
-          <span className="hidden sm:inline">100% Grounded</span>
+        <div className="flex items-center gap-2">
+          {selectedIndex !== null && (
+            <button
+              onClick={() => setSelectedIndex(null)}
+              className="flex items-center gap-1 px-2 py-0.5 rounded bg-slate-800 hover:bg-slate-700 text-[10px] text-slate-300 transition-colors"
+            >
+              <X className="w-3 h-3 text-slate-400" /> Clear focus
+            </button>
+          )}
+
+          <div className="flex items-center gap-1 text-[11px] text-emerald-400 font-medium">
+            <ShieldCheck className="w-3.5 h-3.5" />
+            <span className="hidden sm:inline">100% Grounded</span>
+          </div>
         </div>
       </div>
 
-      {/* Source Cards Grid */}
+      {/* Source Cards Grid with Focus Mode Support */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2.5">
-        {sources.map((src, idx) => (
-          <SourceCard
-            key={idx}
-            source={src}
-            index={idx}
-            messageId={messageId}
-          />
-        ))}
+        {sources.map((src, idx) => {
+          const isSelected = selectedIndex === idx;
+          const isDimmed = selectedIndex !== null && selectedIndex !== idx;
+
+          return (
+            <SourceCard
+              key={idx}
+              source={src}
+              index={idx}
+              messageId={messageId}
+              isSelected={isSelected}
+              isDimmed={isDimmed}
+              onSelect={() => setSelectedIndex(selectedIndex === idx ? null : idx)}
+            />
+          );
+        })}
       </div>
     </motion.div>
   );

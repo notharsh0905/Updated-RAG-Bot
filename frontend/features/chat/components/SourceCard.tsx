@@ -12,19 +12,29 @@ import {
   Sparkles,
   ShieldCheck,
   ChevronDown,
-  ExternalLink,
-  Layers,
+  ArrowUp,
   FileCheck,
 } from 'lucide-react';
 import { DocumentSource } from '@/types/chat';
+import { EvidenceHighlight } from './EvidenceHighlight';
 
 interface SourceCardProps {
   source: DocumentSource;
   index: number;
   messageId?: string;
+  isSelected?: boolean;
+  isDimmed?: boolean;
+  onSelect?: () => void;
 }
 
-export const SourceCard: React.FC<SourceCardProps> = ({ source, index, messageId }) => {
+export const SourceCard: React.FC<SourceCardProps> = ({
+  source,
+  index,
+  messageId,
+  isSelected,
+  isDimmed,
+  onSelect,
+}) => {
   const [isExpanded, setIsExpanded] = useState(false);
 
   // Automatic Icon Mapping based on doc_type or source name
@@ -62,10 +72,34 @@ export const SourceCard: React.FC<SourceCardProps> = ({ source, index, messageId
 
   const cardId = messageId ? `source-card-${messageId}-${index}` : `source-card-${index}`;
 
+  // Reverse Navigation: Scroll back up to the exact citation in the assistant answer text
+  const handleScrollToAnswerCitation = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    const citationAnchorId = messageId
+      ? `citation-anchor-${messageId}-${index + 1}`
+      : `citation-anchor-${index + 1}`;
+
+    const anchorElement = document.getElementById(citationAnchorId);
+    if (anchorElement) {
+      anchorElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      anchorElement.classList.add('ring-2', 'ring-amber-400', 'animate-pulse');
+      setTimeout(() => {
+        anchorElement.classList.remove('ring-2', 'ring-amber-400', 'animate-pulse');
+      }, 2500);
+    }
+  };
+
   return (
     <div
       id={cardId}
-      className="rounded-xl bg-slate-950/90 border border-slate-800/90 hover:border-slate-700/80 p-3 text-slate-200 transition-all duration-200 shadow-sm flex flex-col justify-between space-y-2.5 group"
+      onClick={onSelect}
+      className={`rounded-xl border p-3 text-slate-200 transition-all duration-200 shadow-sm flex flex-col justify-between space-y-2.5 group cursor-pointer ${
+        isSelected
+          ? 'bg-slate-900/95 border-amber-400/80 ring-2 ring-amber-400/40 shadow-amber-400/10 scale-[1.01]'
+          : isDimmed
+          ? 'bg-slate-950/70 border-slate-800/70 opacity-60 hover:opacity-100 hover:border-slate-700'
+          : 'bg-slate-950/90 border-slate-800/90 hover:border-slate-700/80'
+      }`}
     >
       {/* Top Header Row */}
       <div className="flex items-start justify-between gap-2">
@@ -89,7 +123,7 @@ export const SourceCard: React.FC<SourceCardProps> = ({ source, index, messageId
         )}
       </div>
 
-      {/* Snippet Content View */}
+      {/* Snippet Content View with Evidence Highlighting */}
       <div className="text-xs text-slate-300 font-sans leading-relaxed">
         {isExpanded ? (
           <motion.div
@@ -98,11 +132,11 @@ export const SourceCard: React.FC<SourceCardProps> = ({ source, index, messageId
             exit={{ opacity: 0, height: 0 }}
             className="p-3 rounded-lg bg-slate-900/90 border border-slate-800/80 text-xs text-slate-300 space-y-2 mt-1"
           >
-            <p className="whitespace-pre-wrap leading-relaxed font-sans">{source.content_snippet}</p>
+            <EvidenceHighlight text={source.content_snippet} />
 
             <div className="pt-2 border-t border-slate-800/80 flex items-center justify-between text-[10px] font-mono text-slate-400">
               <span className="flex items-center gap-1">
-                <FileCheck className="w-3 h-3 text-emerald-400" /> Source File: {source.source}
+                <FileCheck className="w-3 h-3 text-emerald-400" /> Source: {source.source}
               </span>
               {source.page && <span>Page {source.page}</span>}
             </div>
@@ -114,15 +148,26 @@ export const SourceCard: React.FC<SourceCardProps> = ({ source, index, messageId
         )}
       </div>
 
-      {/* Footer Controls & Trust Badge */}
-      <div className="flex items-center justify-between pt-1 text-[10px] text-slate-400 font-medium border-t border-slate-900">
-        <span className="flex items-center gap-1 text-slate-400">
-          <ShieldCheck className="w-3 h-3 text-emerald-400" /> Verified Record
-        </span>
-
+      {/* Footer Controls & Reverse Navigation */}
+      <div className="flex items-center justify-between pt-1.5 text-[10px] text-slate-400 font-medium border-t border-slate-900/90">
+        {/* Bi-Directional Reverse Navigation Button */}
         <button
           type="button"
-          onClick={() => setIsExpanded(!isExpanded)}
+          onClick={handleScrollToAnswerCitation}
+          className="flex items-center gap-1 text-slate-400 hover:text-amber-300 transition-colors"
+          title="Scroll back up to citation in answer"
+        >
+          <ArrowUp className="w-3 h-3 text-amber-400" />
+          <span>Referenced in Answer</span>
+        </button>
+
+        {/* Expand Excerpt Trigger */}
+        <button
+          type="button"
+          onClick={(e) => {
+            e.stopPropagation();
+            setIsExpanded(!isExpanded);
+          }}
           className="flex items-center gap-1 text-amber-400/90 hover:text-amber-300 transition-colors font-medium text-[11px]"
         >
           <span>{isExpanded ? 'Collapse excerpt' : 'View excerpt'}</span>
