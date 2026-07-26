@@ -32,7 +32,7 @@ export const MessageList: React.FC<MessageListProps> = ({
 
   return (
     <div className="flex-1 overflow-y-auto px-3 sm:px-6 py-6 custom-scrollbar flex flex-col items-center">
-      <div className="w-full max-w-3xl space-y-6 flex-1 flex flex-col justify-start">
+      <div className="w-full max-w-3xl space-y-6 sm:space-y-7 flex-1 flex flex-col justify-start">
         {showEmptyState ? (
           <EmptyState onSelectPrompt={onSelectPrompt} />
         ) : (
@@ -50,7 +50,7 @@ export const MessageList: React.FC<MessageListProps> = ({
 
         {isLoading && <LoadingPlaceholder />}
 
-        <div ref={bottomRef} className="h-2" />
+        <div ref={bottomRef} className="h-4" />
       </div>
     </div>
   );
