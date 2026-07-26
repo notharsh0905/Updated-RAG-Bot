@@ -74,6 +74,8 @@ export const MessageList: React.FC<MessageListProps> = ({
                 onCopyText={onCopyText}
                 copiedId={copiedId}
                 onRetry={onRetry}
+                onSelectQuery={onSelectPrompt}
+                disabled={isLoading || isStreaming}
               />
             ))}
           </AnimatePresence>

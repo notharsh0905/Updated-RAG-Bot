@@ -20,6 +20,11 @@ export interface QueryApiResponse {
     doc_type: string;
     content_snippet: string;
   }>;
+  suggested_questions?: string[];
+  suggested_objects?: Array<{
+    short_label: string;
+    full_question: string;
+  }>;
   response_time_sec?: number;
 }
 

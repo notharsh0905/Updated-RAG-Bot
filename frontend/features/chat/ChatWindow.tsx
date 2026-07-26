@@ -86,6 +86,7 @@ export const ChatWindow: React.FC = () => {
             updateMessageContent(assistantMsgId, res.answer, false);
             updateMessageState(assistantMsgId, {
               sources: res.sources,
+              suggestions: res.suggested_objects || res.suggested_questions,
               isStreaming: false,
               isError: false,
             });

@@ -10,12 +10,15 @@ import { CodeBlock } from './CodeBlock';
 import { ErrorMessage } from './ErrorMessage';
 import { SourceSection } from './SourceSection';
 import { CitationBadge } from './CitationBadge';
+import { SuggestionSection } from './SuggestionSection';
 
 interface MessageItemProps {
   message: ChatMessage;
   onCopyText: (id: string, text: string) => void;
   copiedId: string | null;
   onRetry?: (question?: string) => void;
+  onSelectQuery?: (query: string) => void;
+  disabled?: boolean;
 }
 
 export const MessageItem: React.FC<MessageItemProps> = ({
@@ -23,6 +26,8 @@ export const MessageItem: React.FC<MessageItemProps> = ({
   onCopyText,
   copiedId,
   onRetry,
+  onSelectQuery,
+  disabled,
 }) => {
   const isUser = message.role === 'user';
   const isCopied = copiedId === message.id;
@@ -202,6 +207,16 @@ export const MessageItem: React.FC<MessageItemProps> = ({
           {/* Dedicated Sources & Citations Section */}
           {!isUser && !message.isStreaming && (
             <SourceSection sources={message.sources} messageId={message.id} />
+          )}
+
+          {/* Dedicated Smart Follow-Up Suggestions & AI Quick Actions Section */}
+          {!isUser && !message.isStreaming && onSelectQuery && (
+            <SuggestionSection
+              suggestions={message.suggestions}
+              onSelectQuery={onSelectQuery}
+              disabled={disabled}
+              lastAssistantContent={message.content}
+            />
           )}
 
           {/* Action Toolbar & Timestamp for Assistant Message */}
