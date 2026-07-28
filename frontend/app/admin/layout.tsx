@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import {
@@ -8,25 +8,53 @@ import {
   FileText,
   BarChart3,
   MessageSquare,
+  ShieldAlert,
   UploadCloud,
   Server,
   Users,
   Settings,
   UserCheck,
   LogOut,
-  ShieldCheck,
 } from 'lucide-react';
 import { useChatStore } from '@/store/useChatStore';
+import { apiService } from '@/services/api';
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const router = useRouter();
   const { isAdminAuthenticated, setIsAdminAuthenticated } = useChatStore();
+  const [openReviewsCount, setOpenReviewsCount] = useState<number>(0);
 
   const isLoginPage = pathname === '/admin/login';
 
+  // Synchronize open reviews badge count
+  useEffect(() => {
+    if (isLoginPage) return;
+    const fetchBadgeCount = async () => {
+      try {
+        const items = await apiService.getQualityCenterItems();
+        const openCount = items.filter((i) =>
+          ['New', 'Assigned', 'Investigating', 'Waiting for KB Update'].includes(i.status)
+        ).length;
+        setOpenReviewsCount(openCount);
+      } catch {
+        setOpenReviewsCount(0);
+      }
+    };
+
+    fetchBadgeCount();
+    const interval = setInterval(fetchBadgeCount, 10000);
+    return () => clearInterval(interval);
+  }, [isLoginPage, pathname]);
+
   const adminNav = [
     { href: '/admin/dashboard', label: 'Overview', icon: LayoutDashboard },
+    {
+      href: '/admin/monitoring',
+      label: 'AI Quality Center',
+      icon: ShieldAlert,
+      badge: openReviewsCount > 0 ? openReviewsCount : undefined,
+    },
     { href: '/admin/documents', label: 'Documents', icon: FileText },
     { href: '/admin/analytics', label: 'Analytics', icon: BarChart3 },
     { href: '/admin/feedback', label: 'Feedback', icon: MessageSquare },
@@ -63,7 +91,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
               </span>
             </div>
             <p className="text-[11px] text-slate-300">
-              System performance monitoring, document RAG inspection & knowledge base controls
+              System performance monitoring, AI Quality Governance & knowledge base controls
             </p>
           </div>
         </div>
@@ -98,6 +126,11 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
               >
                 <Icon className={`w-4 h-4 ${isActive ? 'text-[#8B0000] dark:text-amber-400' : 'text-slate-400'}`} />
                 <span>{item.label}</span>
+                {item.badge !== undefined && (
+                  <span className="px-1.5 py-0.2 rounded-full bg-red-600 text-white text-[10px] font-bold shadow-xs">
+                    {item.badge}
+                  </span>
+                )}
               </Link>
             );
           })}
