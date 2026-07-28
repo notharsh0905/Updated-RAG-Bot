@@ -71,18 +71,18 @@ export const MessageActions: React.FC<MessageActionsProps> = ({
 
   return (
     <>
-      <div className="flex items-center gap-1 text-xs text-slate-400 opacity-90 group-hover:opacity-100 transition-opacity">
+      <div className="flex items-center gap-1 text-xs text-slate-500 dark:text-slate-400 opacity-90 group-hover:opacity-100 transition-opacity">
         {/* Copy Button */}
         <button
           type="button"
           onClick={onCopy}
-          className="p-1.5 hover:text-white hover:bg-slate-800/90 rounded-md transition-colors text-slate-400 flex items-center gap-1 text-[11px]"
+          className="p-1.5 hover:text-slate-900 dark:hover:text-white hover:bg-slate-200 dark:hover:bg-slate-800/90 rounded-md transition-colors text-slate-500 dark:text-slate-400 flex items-center gap-1 text-[11px]"
           title="Copy response"
         >
           {isCopied ? (
             <>
-              <Check className="w-3.5 h-3.5 text-emerald-400" />
-              <span className="text-emerald-400 font-medium">Copied</span>
+              <Check className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
+              <span className="text-emerald-600 dark:text-emerald-400 font-semibold">Copied</span>
             </>
           ) : (
             <Copy className="w-3.5 h-3.5" />
@@ -95,11 +95,11 @@ export const MessageActions: React.FC<MessageActionsProps> = ({
             type="button"
             disabled={disabled}
             onClick={onRegenerate}
-            className="p-1.5 hover:text-amber-300 hover:bg-slate-800/90 rounded-md transition-colors text-slate-400 flex items-center gap-1 text-[11px] disabled:opacity-40"
+            className="p-1.5 hover:text-slate-900 dark:hover:text-amber-300 hover:bg-slate-200 dark:hover:bg-slate-800/90 rounded-md transition-colors text-slate-500 dark:text-slate-400 flex items-center gap-1 text-[11px] disabled:opacity-40"
             title="Regenerate last response"
           >
-            <RotateCcw className="w-3.5 h-3.5 text-amber-400" />
-            <span className="hidden sm:inline">Regenerate</span>
+            <RotateCcw className="w-3.5 h-3.5 text-[#8B0000] dark:text-amber-400" />
+            <span className="hidden sm:inline font-medium">Regenerate</span>
           </button>
         )}
 
@@ -109,8 +109,8 @@ export const MessageActions: React.FC<MessageActionsProps> = ({
           onClick={handleLike}
           className={`p-1.5 rounded-md transition-colors ${
             liked
-              ? 'text-emerald-400 bg-emerald-950/40 border border-emerald-800/60'
-              : 'hover:text-emerald-400 hover:bg-slate-800/90 text-slate-400'
+              ? 'text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-300 dark:border-emerald-800/60'
+              : 'hover:text-emerald-600 dark:hover:text-emerald-400 hover:bg-slate-200 dark:hover:bg-slate-800/90 text-slate-500 dark:text-slate-400'
           }`}
           title="Good response"
         >
@@ -123,8 +123,8 @@ export const MessageActions: React.FC<MessageActionsProps> = ({
           onClick={() => setShowFeedbackModal(true)}
           className={`p-1.5 rounded-md transition-colors ${
             disliked
-              ? 'text-rose-400 bg-rose-950/40 border border-rose-800/60'
-              : 'hover:text-rose-400 hover:bg-slate-800/90 text-slate-400'
+              ? 'text-red-600 dark:text-rose-400 bg-red-50 dark:bg-rose-950/40 border border-red-300 dark:border-rose-800/60'
+              : 'hover:text-red-600 dark:hover:text-rose-400 hover:bg-slate-200 dark:hover:bg-slate-800/90 text-slate-500 dark:text-slate-400'
           }`}
           title="Report problem / Poor response"
         >
@@ -135,11 +135,11 @@ export const MessageActions: React.FC<MessageActionsProps> = ({
         <button
           type="button"
           onClick={handleShare}
-          className="p-1.5 hover:text-white hover:bg-slate-800/90 rounded-md transition-colors text-slate-400"
+          className="p-1.5 hover:text-slate-900 dark:hover:text-white hover:bg-slate-200 dark:hover:bg-slate-800/90 rounded-md transition-colors text-slate-500 dark:text-slate-400"
           title="Share excerpt"
         >
           {shared ? (
-            <CheckCheck className="w-3.5 h-3.5 text-blue-400" />
+            <CheckCheck className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400" />
           ) : (
             <Share2 className="w-3.5 h-3.5" />
           )}

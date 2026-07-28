@@ -49,20 +49,20 @@ export const Sidebar: React.FC = () => {
   };
 
   return (
-    <aside className="fixed inset-y-0 left-0 z-50 w-72 bg-slate-900 text-white flex flex-col shadow-2xl border-r border-slate-800 transition-all duration-300">
+    <aside className="fixed inset-y-0 left-0 z-50 w-72 bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-200 flex flex-col shadow-2xl border-r border-slate-200 dark:border-slate-800 transition-all duration-300">
       {/* Top Header with Authentic CSJMU Seal */}
-      <div className="p-4 border-b border-slate-800 flex items-center justify-between">
+      <div className="p-4 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between">
         <div className="flex items-center gap-2.5">
           <img
             src="/images/csjmu-seal-logo.jpg"
             alt="CSJMU Logo"
-            className="w-7 h-7 rounded-full object-contain bg-white p-0.5"
+            className="w-7 h-7 rounded-full object-contain bg-white p-0.5 border border-slate-200 dark:border-slate-700 shadow-sm"
           />
-          <span className="font-bold text-sm tracking-tight text-white">CSJMU AI Portal</span>
+          <span className="font-bold text-sm tracking-tight text-[#002B49] dark:text-white">CSJMU AI Portal</span>
         </div>
         <button
           onClick={() => setSidebarOpen(false)}
-          className="p-1 text-slate-400 hover:text-white hover:bg-slate-800 rounded-lg transition-colors"
+          className="p-1 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors"
           title="Close Sidebar"
           aria-label="Close Sidebar"
         >
@@ -85,7 +85,7 @@ export const Sidebar: React.FC = () => {
       <div className="flex-1 overflow-y-auto px-3 py-2 space-y-6">
         {/* Quick Topics */}
         <div>
-          <div className="px-3 mb-2 text-[11px] font-bold text-slate-400 uppercase tracking-wider">
+          <div className="px-3 mb-2 text-[11px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider">
             Quick Topics
           </div>
           <div className="space-y-1">
@@ -95,9 +95,9 @@ export const Sidebar: React.FC = () => {
                 <button
                   key={idx}
                   onClick={() => handleCategoryClick(cat.query)}
-                  className="w-full flex items-center gap-2.5 px-3 py-2 text-xs font-medium text-slate-300 hover:text-white hover:bg-slate-800/80 rounded-lg transition-colors text-left"
+                  className="w-full flex items-center gap-2.5 px-3 py-2 text-xs font-medium text-slate-700 dark:text-slate-300 hover:text-[#002B49] dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800/80 rounded-lg transition-colors text-left"
                 >
-                  <Icon className="w-4 h-4 text-amber-400 shrink-0" />
+                  <Icon className="w-4 h-4 text-[#8B0000] dark:text-amber-400 shrink-0" />
                   <span className="truncate">{cat.label}</span>
                 </button>
               );
@@ -107,29 +107,29 @@ export const Sidebar: React.FC = () => {
 
         {/* Campus Links */}
         <div>
-          <div className="px-3 mb-2 text-[11px] font-bold text-slate-400 uppercase tracking-wider">
+          <div className="px-3 mb-2 text-[11px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider">
             Campus Information
           </div>
           <div className="space-y-1">
             <Link
               href="/about"
-              className="flex items-center gap-2.5 px-3 py-2 text-xs font-medium text-slate-300 hover:text-white hover:bg-slate-800/80 rounded-lg transition-colors"
+              className="flex items-center gap-2.5 px-3 py-2 text-xs font-medium text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800/80 rounded-lg transition-colors"
             >
-              <Info className="w-4 h-4 text-slate-400 shrink-0" />
+              <Info className="w-4 h-4 text-blue-500 shrink-0" />
               <span>About CSJMU & UIET</span>
             </Link>
             <Link
               href="/help"
-              className="flex items-center gap-2.5 px-3 py-2 text-xs font-medium text-slate-300 hover:text-white hover:bg-slate-800/80 rounded-lg transition-colors"
+              className="flex items-center gap-2.5 px-3 py-2 text-xs font-medium text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800/80 rounded-lg transition-colors"
             >
-              <HelpCircle className="w-4 h-4 text-slate-400 shrink-0" />
+              <HelpCircle className="w-4 h-4 text-emerald-500 shrink-0" />
               <span>Help & Student FAQ</span>
             </Link>
             <Link
               href="/contact"
-              className="flex items-center gap-2.5 px-3 py-2 text-xs font-medium text-slate-300 hover:text-white hover:bg-slate-800/80 rounded-lg transition-colors"
+              className="flex items-center gap-2.5 px-3 py-2 text-xs font-medium text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800/80 rounded-lg transition-colors"
             >
-              <PhoneCall className="w-4 h-4 text-slate-400 shrink-0" />
+              <PhoneCall className="w-4 h-4 text-purple-500 shrink-0" />
               <span>Official Contact Directory</span>
             </Link>
           </div>
@@ -137,9 +137,9 @@ export const Sidebar: React.FC = () => {
       </div>
 
       {/* Footer Info */}
-      <div className="p-4 border-t border-slate-800 text-xs text-slate-400 space-y-1 bg-slate-950/60">
-        <div className="flex items-center gap-1.5 font-medium text-slate-300">
-          <ShieldCheck className="w-3.5 h-3.5 text-amber-400" />
+      <div className="p-4 border-t border-slate-200 dark:border-slate-800 text-xs text-slate-500 dark:text-slate-400 space-y-1 bg-slate-50 dark:bg-slate-950/60">
+        <div className="flex items-center gap-1.5 font-semibold text-slate-800 dark:text-slate-300">
+          <ShieldCheck className="w-3.5 h-3.5 text-emerald-500 dark:text-amber-400" />
           <span>NAAC A++ Accredited</span>
         </div>
         <p className="text-[11px] text-slate-500">CSJMU Kanpur Official Enterprise System</p>

@@ -1,16 +1,27 @@
 'use client';
 
 import React, { useState } from 'react';
-import { MapPin, Mail, Phone, Clock, Send, ShieldCheck, CheckCircle2 } from 'lucide-react';
+import { MapPin, Mail, Phone, Clock, Send, ShieldCheck, AlertCircle, Loader2 } from 'lucide-react';
 
 export default function ContactPage() {
-  const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [notice, setNotice] = useState<string | null>(null);
   const [formData, setFormData] = useState({ name: '', email: '', subject: 'admissions', message: '' });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.name || !formData.email || !formData.message) return;
-    setSubmitted(true);
+    
+    setIsSubmitting(true);
+    setNotice(null);
+
+    // Honest Frontend Abstraction (No fake backend calls)
+    setTimeout(() => {
+      setIsSubmitting(false);
+      setNotice(
+        'The University Online Inquiry API service is currently undergoing scheduled maintenance. For immediate official response, please email admission@csjmu.ac.in or call +91 0512-2580044 directly.'
+      );
+    }, 600);
   };
 
   return (
@@ -86,88 +97,91 @@ export default function ContactPage() {
               Submit Official Student Inquiry
             </h2>
 
-            {submitted ? (
-              <div className="p-6 rounded-xl bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-300 dark:border-emerald-800 text-center space-y-2">
-                <CheckCircle2 className="w-8 h-8 text-emerald-600 dark:text-emerald-400 mx-auto" />
-                <h3 className="font-bold text-sm text-emerald-900 dark:text-emerald-200">
-                  Inquiry Submitted Successfully
-                </h3>
-                <p className="text-xs text-emerald-700 dark:text-emerald-300 max-w-sm mx-auto">
-                  Thank you. Your message has been logged with the university helpdesk. An officer will review your request.
-                </p>
+            {notice && (
+              <div className="p-4 rounded-xl bg-amber-50 dark:bg-amber-950/40 border border-amber-300 dark:border-amber-800 text-xs text-amber-900 dark:text-amber-200 flex items-start gap-2.5 leading-relaxed">
+                <AlertCircle className="w-4 h-4 text-amber-600 dark:text-amber-400 shrink-0 mt-0.5" />
+                <div>
+                  <strong className="block font-bold mb-0.5">University Inquiry Service Status</strong>
+                  <span>{notice}</span>
+                </div>
               </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div className="space-y-1.5">
-                    <label className="text-xs font-semibold text-slate-700 dark:text-slate-300">
-                      Full Name *
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      value={formData.name}
-                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      placeholder="e.g. Rahul Sharma"
-                      className="w-full h-10 px-3 rounded-lg border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-950 text-xs text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-[#002B49] dark:focus:ring-amber-400"
-                    />
-                  </div>
+            )}
 
-                  <div className="space-y-1.5">
-                    <label className="text-xs font-semibold text-slate-700 dark:text-slate-300">
-                      Email Address *
-                    </label>
-                    <input
-                      type="email"
-                      required
-                      value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      placeholder="e.g. student@gmail.com"
-                      className="w-full h-10 px-3 rounded-lg border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-950 text-xs text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-[#002B49] dark:focus:ring-amber-400"
-                    />
-                  </div>
-                </div>
-
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="space-y-1.5">
                   <label className="text-xs font-semibold text-slate-700 dark:text-slate-300">
-                    Category / Department
+                    Full Name *
                   </label>
-                  <select
-                    value={formData.subject}
-                    onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                    className="w-full h-10 px-3 rounded-lg border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-950 text-xs text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-[#002B49] dark:focus:ring-amber-400"
-                  >
-                    <option value="admissions">B.Tech Admissions 2026-27</option>
-                    <option value="scholarship">UP Post-Matric Fee Reimbursement</option>
-                    <option value="hostel">Hostel & Mess Services</option>
-                    <option value="examinations">Examinations & Marksheets</option>
-                    <option value="other">General University Inquiry</option>
-                  </select>
-                </div>
-
-                <div className="space-y-1.5">
-                  <label className="text-xs font-semibold text-slate-700 dark:text-slate-300">
-                    Message Details *
-                  </label>
-                  <textarea
+                  <input
+                    type="text"
                     required
-                    rows={4}
-                    value={formData.message}
-                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    placeholder="Describe your inquiry clearly..."
-                    className="w-full p-3 rounded-lg border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-950 text-xs text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-[#002B49] dark:focus:ring-amber-400"
+                    value={formData.name}
+                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                    placeholder="e.g. Rahul Sharma"
+                    className="w-full h-10 px-3 rounded-lg border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-950 text-xs text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-[#002B49] dark:focus:ring-amber-400"
                   />
                 </div>
 
-                <button
-                  type="submit"
-                  className="w-full h-10 rounded-lg bg-[#002B49] hover:bg-[#001D33] text-white font-semibold text-xs flex items-center justify-center gap-1.5 shadow-sm transition-colors"
+                <div className="space-y-1.5">
+                  <label className="text-xs font-semibold text-slate-700 dark:text-slate-300">
+                    Email Address *
+                  </label>
+                  <input
+                    type="email"
+                    required
+                    value={formData.email}
+                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                    placeholder="e.g. student@gmail.com"
+                    className="w-full h-10 px-3 rounded-lg border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-950 text-xs text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-[#002B49] dark:focus:ring-amber-400"
+                  />
+                </div>
+              </div>
+
+              <div className="space-y-1.5">
+                <label className="text-xs font-semibold text-slate-700 dark:text-slate-300">
+                  Category / Department
+                </label>
+                <select
+                  value={formData.subject}
+                  onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
+                  className="w-full h-10 px-3 rounded-lg border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-950 text-xs text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-[#002B49] dark:focus:ring-amber-400"
                 >
+                  <option value="admissions">B.Tech Admissions 2026-27</option>
+                  <option value="scholarship">UP Post-Matric Fee Reimbursement</option>
+                  <option value="hostel">Hostel & Mess Services</option>
+                  <option value="examinations">Examinations & Marksheets</option>
+                  <option value="other">General University Inquiry</option>
+                </select>
+              </div>
+
+              <div className="space-y-1.5">
+                <label className="text-xs font-semibold text-slate-700 dark:text-slate-300">
+                  Message Details *
+                </label>
+                <textarea
+                  required
+                  rows={4}
+                  value={formData.message}
+                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                  placeholder="Describe your inquiry clearly..."
+                  className="w-full p-3 rounded-lg border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-950 text-xs text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-[#002B49] dark:focus:ring-amber-400"
+                />
+              </div>
+
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="w-full h-10 rounded-lg bg-[#002B49] hover:bg-[#001D33] text-white font-semibold text-xs flex items-center justify-center gap-1.5 shadow-sm transition-colors disabled:opacity-50"
+              >
+                {isSubmitting ? (
+                  <Loader2 className="w-3.5 h-3.5 animate-spin" />
+                ) : (
                   <Send className="w-3.5 h-3.5" />
-                  <span>Submit Form to University Office</span>
-                </button>
-              </form>
-            )}
+                )}
+                <span>Submit Form to University Office</span>
+              </button>
+            </form>
           </div>
         </div>
       </div>

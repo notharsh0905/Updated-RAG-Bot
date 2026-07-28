@@ -72,7 +72,7 @@ export const MessageList: React.FC<MessageListProps> = ({
     <div
       ref={containerRef}
       onScroll={handleScroll}
-      className="flex-1 overflow-y-auto px-3 sm:px-6 py-6 custom-scrollbar flex flex-col items-center relative"
+      className="flex-1 overflow-y-auto px-3 sm:px-6 py-6 custom-scrollbar flex flex-col items-center relative bg-slate-50/50 dark:bg-slate-950/50"
     >
       <div className="w-full max-w-3xl space-y-6 sm:space-y-7 flex-1 flex flex-col justify-start">
         {showEmptyState ? (
@@ -110,10 +110,10 @@ export const MessageList: React.FC<MessageListProps> = ({
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 10, scale: 0.9 }}
             onClick={() => scrollToBottom(true)}
-            className="fixed bottom-24 z-30 flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-800/90 text-slate-200 hover:text-white border border-slate-700/80 shadow-xl backdrop-blur-md text-xs font-semibold transition-all hover:bg-slate-700 active:scale-95"
+            className="fixed bottom-24 z-30 flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/90 dark:bg-slate-800/90 text-slate-800 dark:text-slate-200 hover:text-slate-900 dark:hover:text-white border border-slate-200 dark:border-slate-700/80 shadow-xl backdrop-blur-md text-xs font-semibold transition-all hover:bg-slate-100 dark:hover:bg-slate-700 active:scale-95"
           >
             <span>Scroll to latest</span>
-            <ChevronDown className="w-3.5 h-3.5 text-amber-400" />
+            <ChevronDown className="w-3.5 h-3.5 text-[#8B0000] dark:text-amber-400" />
           </motion.button>
         )}
       </AnimatePresence>

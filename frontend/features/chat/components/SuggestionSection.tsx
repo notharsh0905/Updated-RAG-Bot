@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Compass, Sparkles } from 'lucide-react';
+import { Compass } from 'lucide-react';
 import { SuggestionObject } from '@/types/chat';
 import { SuggestionChip } from './SuggestionChip';
 import { QuickActionBar } from './QuickActionBar';
@@ -80,12 +80,12 @@ export const SuggestionSection: React.FC<SuggestionSectionProps> = ({
       initial={{ opacity: 0, y: 6 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.25, delay: 0.15 }}
-      className="mt-4 pt-3 border-t border-slate-800/80 space-y-3 w-full"
+      className="mt-5 pt-4 border-t border-slate-200 dark:border-slate-800/80 space-y-3.5 w-full"
     >
       {/* Header */}
-      <div className="flex items-center gap-1.5 text-[11px] font-bold text-slate-400 uppercase tracking-wider">
-        <Compass className="w-3.5 h-3.5 text-amber-400" />
-        <span>Suggested Next Questions</span>
+      <div className="flex items-center gap-1.5 text-[11px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider">
+        <Compass className="w-3.5 h-3.5 text-[#8B0000] dark:text-amber-400" />
+        <span>Suggested Follow-Up Questions</span>
       </div>
 
       {/* Chips List with Horizontal Scroll */}

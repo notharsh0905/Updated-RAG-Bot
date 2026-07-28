@@ -19,7 +19,7 @@ export const ChatLayout: React.FC<ChatLayoutProps> = ({
   const { sidebarOpen, setSidebarOpen, toggleSidebar } = useChatStore();
 
   return (
-    <div className="flex h-full w-full bg-slate-950 text-slate-100 overflow-hidden relative">
+    <div className="flex h-full w-full bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 overflow-hidden relative">
       {/* Responsive Collapsible Sidebar */}
       <ChatSidebar
         isOpen={sidebarOpen}
@@ -29,7 +29,7 @@ export const ChatLayout: React.FC<ChatLayoutProps> = ({
       />
 
       {/* Main Workspace Area */}
-      <div className="flex-1 flex flex-col min-w-0 h-full bg-slate-900/90 relative overflow-hidden">
+      <div className="flex-1 flex flex-col min-w-0 h-full bg-white dark:bg-slate-900/90 relative overflow-hidden">
         <ChatHeader
           sidebarOpen={sidebarOpen}
           onToggleSidebar={toggleSidebar}

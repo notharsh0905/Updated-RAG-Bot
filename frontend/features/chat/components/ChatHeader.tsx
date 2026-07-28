@@ -5,15 +5,13 @@ import Link from 'next/link';
 import {
   PanelLeftClose,
   PanelLeftOpen,
-  Plus,
-  Sparkles,
   Home,
   Sun,
   Moon,
   ShieldCheck,
   RotateCcw,
 } from 'lucide-react';
-import { useChatStore } from '@/store/useChatStore';
+import { useTheme } from '@/components/theme-provider';
 
 interface ChatHeaderProps {
   sidebarOpen: boolean;
@@ -26,17 +24,18 @@ export const ChatHeader: React.FC<ChatHeaderProps> = ({
   onToggleSidebar,
   onNewChat,
 }) => {
-  const { theme, setTheme } = useChatStore();
-  const isDark = theme === 'dark';
+  const { theme, setTheme, resolvedTheme } = useTheme();
+  const isDark = resolvedTheme === 'dark';
 
   return (
-    <header className="h-14 border-b border-slate-800 bg-slate-900/90 backdrop-blur-md px-3 sm:px-4 flex items-center justify-between shrink-0 z-20">
-      {/* Left Section: Sidebar Toggle & Model Info */}
+    <header className="h-14 border-b border-slate-200 dark:border-slate-800 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md px-3 sm:px-4 flex items-center justify-between shrink-0 z-20 transition-colors">
+      {/* Left Section: Sidebar Toggle & Official CSJMU Status Pill */}
       <div className="flex items-center gap-3">
         <button
           onClick={onToggleSidebar}
-          className="p-2 text-slate-400 hover:text-white hover:bg-slate-800 rounded-lg transition-colors focus:outline-none focus:ring-1 focus:ring-slate-700"
+          className="p-2 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors focus:outline-none focus:ring-1 focus:ring-slate-300 dark:focus:ring-slate-700"
           title={sidebarOpen ? 'Collapse sidebar' : 'Expand sidebar'}
+          aria-label={sidebarOpen ? 'Collapse sidebar' : 'Expand sidebar'}
         >
           {sidebarOpen ? (
             <PanelLeftClose className="w-5 h-5" />
@@ -45,21 +44,33 @@ export const ChatHeader: React.FC<ChatHeaderProps> = ({
           )}
         </button>
 
-        {/* Model Selector Pill */}
-        <div className="flex items-center gap-2.5 px-3 py-1.5 rounded-full bg-slate-800/80 border border-slate-700/60 text-xs text-slate-200">
-          <div className="relative flex items-center justify-center">
+        {/* Official CSJMU Intelligence Status Pill */}
+        <div className="flex items-center gap-2.5 px-3 py-1.5 rounded-full bg-slate-100 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60 text-xs text-slate-800 dark:text-slate-200">
+          <div className="relative flex items-center justify-center shrink-0">
             <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping absolute" />
-            <span className="w-2 h-2 rounded-full bg-emerald-400 relative" />
+            <span className="w-2 h-2 rounded-full bg-emerald-500 relative" />
           </div>
-          <span className="font-semibold text-slate-100 flex items-center gap-1.5">
-            <span>CSJMU Intelligence</span>
-            <span className="text-[10px] font-mono px-1.5 py-0.5 rounded bg-slate-700 text-amber-400 border border-amber-400/20">
+          
+          <div className="flex items-center gap-1.5 leading-none">
+            <img
+              src="/images/csjmu-seal-logo.jpg"
+              alt="CSJMU Logo"
+              className="w-4 h-4 rounded-full object-contain shrink-0"
+            />
+            <span className="font-bold text-slate-900 dark:text-slate-100">
+              CSJMU Intelligence
+            </span>
+            <span className="text-[10px] font-mono px-1.5 py-0.5 rounded bg-slate-200 dark:bg-slate-700 text-[#8B0000] dark:text-amber-400 font-semibold border border-slate-300 dark:border-amber-400/20">
               v2.5
             </span>
-          </span>
-          <span className="hidden md:inline text-slate-500">•</span>
-          <span className="hidden md:inline text-slate-400 text-[11px] font-medium flex items-center gap-1">
-            <ShieldCheck className="w-3 h-3 text-emerald-400" /> Official Campus Portal
+          </div>
+
+          <span className="hidden md:inline text-slate-300 dark:text-slate-600">•</span>
+          
+          {/* Horizontally Aligned Verified Status Icon */}
+          <span className="hidden md:inline-flex items-center gap-1.5 text-slate-600 dark:text-slate-300 text-[11px] font-medium leading-none">
+            <ShieldCheck className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400 shrink-0" />
+            <span>Official Campus Portal</span>
           </span>
         </div>
       </div>
@@ -68,31 +79,33 @@ export const ChatHeader: React.FC<ChatHeaderProps> = ({
       <div className="flex items-center gap-2">
         <button
           onClick={onNewChat}
-          className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-slate-200 hover:text-white bg-slate-800 hover:bg-slate-700/80 border border-slate-700/70 rounded-lg transition-all active:scale-95"
+          className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-slate-700 dark:text-slate-200 hover:text-slate-900 dark:hover:text-white bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700/80 border border-slate-200 dark:border-slate-700/70 rounded-lg transition-all active:scale-95"
           title="Reset conversation"
         >
-          <RotateCcw className="w-3.5 h-3.5 text-amber-400" />
+          <RotateCcw className="w-3.5 h-3.5 text-[#8B0000] dark:text-amber-400" />
           <span>New Chat</span>
         </button>
 
+        {/* Theme Toggle Button */}
         <button
           onClick={() => setTheme(isDark ? 'light' : 'dark')}
-          className="p-2 text-slate-400 hover:text-white hover:bg-slate-800 rounded-lg transition-colors"
-          title="Toggle Theme"
+          className="p-2 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors border border-slate-200 dark:border-slate-800"
+          title={`Switch to ${isDark ? 'Light' : 'Dark'} Mode`}
+          aria-label={`Switch to ${isDark ? 'Light' : 'Dark'} Mode`}
         >
           {isDark ? (
             <Sun className="w-4 h-4 text-amber-400" />
           ) : (
-            <Moon className="w-4 h-4 text-slate-300" />
+            <Moon className="w-4 h-4 text-slate-700" />
           )}
         </button>
 
         <Link
           href="/"
-          className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-slate-300 hover:text-white hover:bg-slate-800 border border-slate-800 hover:border-slate-700 rounded-lg transition-colors"
+          className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white bg-slate-50 dark:bg-slate-800/60 hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800 rounded-lg transition-colors"
           title="Return to main university portal"
         >
-          <Home className="w-3.5 h-3.5 text-blue-400" />
+          <Home className="w-3.5 h-3.5 text-[#002B49] dark:text-blue-400" />
           <span className="hidden sm:inline">Main Portal</span>
         </Link>
       </div>
