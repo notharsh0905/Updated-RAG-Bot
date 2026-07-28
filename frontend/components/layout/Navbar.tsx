@@ -2,82 +2,96 @@
 
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import { Menu, Moon, Sun, Lock, MessageSquare, Home, Sparkles } from 'lucide-react';
+import { Menu, Moon, Sun, Lock, Bot } from 'lucide-react';
 import { useChatStore } from '@/store/useChatStore';
+import { useTheme } from '@/components/theme-provider';
 
 export const Navbar: React.FC = () => {
   const pathname = usePathname();
-  const { toggleSidebar, theme, setTheme, isAdminAuthenticated } = useChatStore();
+  const { toggleSidebar, isAdminAuthenticated } = useChatStore();
+  const { theme, setTheme, resolvedTheme } = useTheme();
 
-  const isDark = theme === 'dark';
+  const isDark = resolvedTheme === 'dark';
 
   const navItems = [
-    { href: '/', label: '🏠 HOME' },
+    { href: '/', label: 'HOME' },
     { href: '/about', label: 'ABOUT US' },
     { href: '/help', label: 'HELP & FAQ' },
     { href: '/contact', label: 'CONTACT' },
-    { href: '/chat', label: '💬 AI ASSISTANT', highlight: true },
+    { href: '/chat', label: 'AI ASSISTANT', highlight: true },
   ];
 
   return (
-    <header className="sticky top-0 z-50 w-full shadow-md">
-      {/* Middle White Header Banner with Seal */}
-      <div className="w-full bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 py-3 px-4 sm:px-8 flex items-center justify-between">
-        <div className="flex items-center gap-4">
+    <header className="sticky top-0 z-40 w-full shadow-sm">
+      {/* Top Header Banner with Official CSJMU Seal */}
+      <div className="w-full bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 py-2.5 px-4 sm:px-8 flex items-center justify-between">
+        <div className="flex items-center gap-3.5">
           <button
             onClick={toggleSidebar}
-            className="p-2 text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors"
-            title="Toggle Menu"
+            className="p-2 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors"
+            title="Toggle Sidebar Menu"
+            aria-label="Toggle Sidebar Menu"
           >
             <Menu className="w-5 h-5" />
           </button>
 
-          {/* Authentic CSJMU Circular Seal Emblem */}
-          <Link href="/" className="flex items-center gap-3.5 group">
-            <div className="relative w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#8B0000] border-2 border-[#D4AF37] flex items-center justify-center text-white shadow-md shrink-0 group-hover:scale-105 transition-transform">
-              <div className="text-center font-serif text-[10px] leading-tight font-extrabold uppercase px-1">
-                CSJMU<br />KANPUR
-              </div>
+          {/* Official CSJMU Seal & Title */}
+          <Link href="/" className="flex items-center gap-3 group">
+            <div className="relative w-11 h-11 sm:w-12 sm:h-12 rounded-full overflow-hidden border border-slate-200 dark:border-slate-700 shadow-sm shrink-0 bg-white p-0.5">
+              <img
+                src="/images/csjmu-seal-logo.jpg"
+                alt="CSJMU Official Seal Logo"
+                className="w-full h-full object-contain rounded-full"
+              />
             </div>
 
             <div className="flex flex-col">
-              <span className="font-serif font-extrabold text-base sm:text-2xl text-[#002B49] dark:text-white tracking-tight leading-tight">
-                University Institute of Engineering and Technology
+              <span className="font-serif font-extrabold text-sm sm:text-lg text-[#002B49] dark:text-white tracking-tight leading-snug group-hover:text-[#8B0000] dark:group-hover:text-amber-400 transition-colors">
+                Chhatrapati Shahu Ji Maharaj University, Kanpur
               </span>
-              <span className="text-xs sm:text-sm font-semibold text-slate-600 dark:text-slate-300">
-                School of Engineering and Technology, Kanpur
+              <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">
+                University Institute of Engineering and Technology (UIET)
               </span>
             </div>
           </Link>
         </div>
 
-        {/* Right Utility Buttons */}
+        {/* Utility Actions */}
         <div className="flex items-center gap-2">
+          {/* Theme Toggle Button */}
           <button
             onClick={() => setTheme(isDark ? 'light' : 'dark')}
-            className="p-2 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors"
-            title="Toggle Theme"
+            className="p-2.5 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors border border-slate-200 dark:border-slate-700"
+            title={`Switch to ${isDark ? 'Light' : 'Dark'} Mode`}
+            aria-label={`Switch to ${isDark ? 'Light' : 'Dark'} Mode`}
           >
-            {isDark ? <Sun className="w-5 h-5 text-amber-400" /> : <Moon className="w-5 h-5 text-slate-600" />}
+            {isDark ? (
+              <Sun className="w-4 h-4 text-amber-400" />
+            ) : (
+              <Moon className="w-4 h-4 text-slate-700" />
+            )}
           </button>
 
+          {/* Admin Dashboard / Login Button */}
           <Link
             href={isAdminAuthenticated ? '/admin/dashboard' : '/admin/login'}
-            className={`p-2 rounded-lg transition-colors ${
+            className={`p-2.5 rounded-lg transition-colors border ${
               isAdminAuthenticated
-                ? 'text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-300'
-                : 'text-slate-500 hover:text-[#002B49] dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800'
+                ? 'text-emerald-700 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/40 border-emerald-300 dark:border-emerald-800 font-semibold text-xs flex items-center gap-1.5'
+                : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 border-slate-200 dark:border-slate-700'
             }`}
-            title={isAdminAuthenticated ? "Admin Dashboard" : "Admin Login"}
+            title={isAdminAuthenticated ? 'Admin Dashboard' : 'Admin Login'}
           >
-            <Lock className="w-5 h-5" />
+            <Lock className="w-4 h-4" />
+            {isAdminAuthenticated && <span className="hidden sm:inline">Admin Active</span>}
           </Link>
         </div>
       </div>
 
-      {/* Primary University Navy Navigation Bar */}
-      <nav className="w-full bg-[#002B49] text-white flex items-center justify-between px-4 sm:px-8 text-xs font-bold tracking-wider overflow-x-auto">
+      {/* Main University Navigation Bar */}
+      <nav className="w-full bg-[#002B49] text-white flex items-center justify-between px-4 sm:px-8 text-xs font-semibold tracking-wide overflow-x-auto">
         <div className="flex items-center">
           {navItems.map((item) => {
             const isActive = pathname === item.href;
@@ -85,12 +99,12 @@ export const Navbar: React.FC = () => {
               <Link
                 key={item.href}
                 href={item.href}
-                className={`py-3 px-4 transition-colors whitespace-nowrap border-b-2 ${
+                className={`py-2.5 px-4 transition-colors whitespace-nowrap border-b-2 font-medium ${
                   isActive
-                    ? 'bg-[#A51C30] border-amber-400 text-white font-extrabold shadow-inner'
+                    ? 'bg-[#8B0000] border-amber-400 text-white font-bold'
                     : item.highlight
-                    ? 'bg-gradient-to-r from-[#A51C30] to-csjmu-navy hover:bg-[#A51C30] text-amber-300 border-transparent'
-                    : 'hover:bg-[#003B63] border-transparent text-slate-200 hover:text-white'
+                    ? 'bg-amber-400/10 text-amber-300 border-transparent hover:bg-amber-400/20 font-bold'
+                    : 'hover:bg-[#00385F] border-transparent text-slate-200 hover:text-white'
                 }`}
               >
                 {item.label}
@@ -99,9 +113,9 @@ export const Navbar: React.FC = () => {
           })}
         </div>
 
-        <div className="hidden lg:flex items-center gap-2 py-1.5 px-3 rounded bg-amber-400/20 text-amber-300 border border-amber-400/30 text-[11px]">
-          <Sparkles className="w-3.5 h-3.5" />
-          <span>Official CSJMU AI Assistant Portal</span>
+        <div className="hidden lg:flex items-center gap-2 py-1 px-3 rounded bg-white/10 border border-white/20 text-slate-100 text-[11px] font-medium">
+          <Bot className="w-3.5 h-3.5 text-amber-300" />
+          <span>Official AI Assistant Active</span>
         </div>
       </nav>
     </header>

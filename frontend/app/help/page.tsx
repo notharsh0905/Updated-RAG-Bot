@@ -1,76 +1,141 @@
 'use client';
 
-import React from 'react';
-import { HelpCircle, ChevronRight } from 'lucide-react';
-import Link from 'next/link';
+import React, { useState } from 'react';
+import { useRouter } from 'next/navigation';
+import { Search, ChevronDown, Bot, HelpCircle, ArrowRight } from 'lucide-react';
+import { useChatStore } from '@/store/useChatStore';
+
+interface FAQItem {
+  question: string;
+  answer: string;
+  category: string;
+  aiQuery: string;
+}
 
 export default function HelpPage() {
-  const faqs = [
+  const router = useRouter();
+  const { setPendingQuestion } = useChatStore();
+  const [searchTerm, setSearchTerm] = useState('');
+  const [openIdx, setOpenIdx] = useState<number | null>(0);
+
+  const handleAskAI = (query: string) => {
+    setPendingQuestion(query);
+    router.push('/chat');
+  };
+
+  const faqs: FAQItem[] = [
     {
-      q: 'How do I apply for B.Tech admission at UIET Kanpur?',
-      a: 'Admission to B.Tech programs is conducted through CSJM University B.Tech Admission Portal strictly based on JEE Mains rank and counseling procedure.',
+      category: 'Admissions & Eligibility',
+      question: 'What is the admission procedure for B.Tech CSE at UIET Kanpur?',
+      answer: 'Admissions to B.Tech Computer Science & Engineering at UIET are conducted through NTA JEE Mains ranks followed by AKTU / CSJMU counseling rounds. 10% seats are filled via spot counseling rounds based on merit.',
+      aiQuery: 'What is the step by step admission procedure for B.Tech CSE at UIET Kanpur?',
     },
     {
-      q: 'What scholarships and fee waivers are available?',
-      a: 'Eligible students can apply for UP Government Post-Matric Fee Reimbursement schemes (subject to family income limits and approved non-refundable fees) and National Scholarship Portal (NSP) schemes.',
+      category: 'Fee Waiver & Scholarships',
+      question: 'How do UP Post-Matric Fee Reimbursements work for engineering students?',
+      answer: 'Eligible domicile students of Uttar Pradesh whose family annual income falls below the prescribed threshold (2 Lakhs for SC/ST, 2 Lakhs for OBC/General) can apply on the UP Scholarship Portal (scholarship.up.gov.in) for 100% fee reimbursement.',
+      aiQuery: 'What are the rules and income criteria for UP Post-Matric scholarship fee reimbursement at CSJMU?',
     },
     {
-      q: 'Does UP Government provide free tablets or smartphones?',
-      a: 'Yes! Eligible students receive free tablets/smartphones under the UP Government Swami Vivekananda Youth Empowerment Scheme.',
+      category: 'Placements & Careers',
+      question: 'What are the recent placement metrics and top recruiters at UIET?',
+      answer: 'UIET students secured placement packages up to 16 LPA. Top campus recruiters include TCS Digital, Infosys, Wipro, Cognizant, Reliance Industries, HCL Technologies, and Paytm.',
+      aiQuery: 'What is the highest placement package, average salary, and recruiters list for UIET CSE?',
     },
     {
-      q: 'What is the highest placement package at UIET?',
-      a: 'Students have achieved top domestic packages of 16 LPA (Quizizz) and 15 LPA (Cadence Design Systems) with top recruiters including TCS, Jio Platforms, and Sopra Steria.',
+      category: 'Hostel & Campus Facilities',
+      question: 'What are the hostel rules, mess charges, and curfew timings at CSJMU?',
+      answer: 'CSJMU provides separate boys and girls hostels on campus with 24x7 Wi-Fi, bio-metric attendance, mess food, and security guards. Curfew timing for student hostels is 9:30 PM.',
+      aiQuery: 'Tell me about CSJMU hostel fee, mess rules, security, and curfew timings',
     },
     {
-      q: 'How does the PEZ Smart Printing service work?',
-      a: 'Students scan the PEZ QR code, upload documents via mobile browser, pay digitally, and print instantly with 100% automated file deletion for security.',
+      category: 'AI Supercomputer & Innovation',
+      question: 'Who can access the NVIDIA DGX H100 Supercomputing Hub and Innovation Center?',
+      answer: 'UIET B.Tech final year students, M.Tech scholars, and faculty conducting approved research in AI, Machine Learning, and Computer Vision can request GPU compute access through the Dean of Engineering.',
+      aiQuery: 'How can students apply for compute access at the NVIDIA DGX H100 supercomputer hub?',
     },
   ];
 
+  const filteredFaqs = faqs.filter(
+    (f) =>
+      f.question.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      f.answer.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      f.category.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   return (
-    <div className="max-w-4xl mx-auto px-4 py-10 space-y-8">
-      <div className="space-y-2">
-        <div className="inline-flex items-center gap-2 text-csjmu-blue dark:text-csjmu-gold text-xs font-bold uppercase">
-          <HelpCircle className="w-4 h-4" />
-          Student Help Center
-        </div>
-        <h1 className="text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
-          Frequently Asked Questions (FAQ)
+    <div className="max-w-4xl mx-auto px-4 py-8 space-y-8">
+      {/* Title */}
+      <div className="space-y-2 border-b border-slate-200 dark:border-slate-800 pb-5">
+        <h1 className="text-2xl sm:text-3xl font-serif font-bold text-[#002B49] dark:text-white tracking-tight">
+          Help & Student FAQ Center
         </h1>
-        <p className="text-sm text-slate-500 dark:text-slate-400">
-          Instant answers to common student inquiries regarding admissions, scholarships, and campus facilities.
+        <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300">
+          Frequently asked questions regarding CSJMU admissions, scholarships, hostels, and AI consultation
         </p>
       </div>
 
-      <div className="space-y-4">
-        {faqs.map((faq, idx) => (
-          <div
-            key={idx}
-            className="p-5 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm space-y-2"
-          >
-            <h3 className="font-bold text-sm text-slate-900 dark:text-white flex items-center gap-2">
-              <ChevronRight className="w-4 h-4 text-csjmu-gold shrink-0" />
-              {faq.q}
-            </h3>
-            <p className="text-xs text-slate-600 dark:text-slate-300 pl-6 leading-relaxed">
-              {faq.a}
-            </p>
-          </div>
-        ))}
+      {/* Search Input */}
+      <div className="relative">
+        <Search className="w-5 h-5 text-slate-400 absolute left-4 top-3.5 pointer-events-none" />
+        <input
+          type="text"
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+          placeholder="Search FAQs (e.g. 'hostel curfew', 'fee reimbursement', 'spot round')..."
+          className="w-full h-12 pl-11 pr-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 text-xs sm:text-sm text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-[#002B49] dark:focus:ring-amber-400 shadow-sm"
+        />
       </div>
 
-      <div className="p-6 rounded-2xl bg-csjmu-navy text-white flex flex-col sm:flex-row items-center justify-between gap-4">
-        <div>
-          <h3 className="font-bold text-base">Have more specific questions?</h3>
-          <p className="text-xs text-slate-300">Launch the AI Assistant to get instant grounded answers.</p>
-        </div>
-        <Link
-          href="/chat"
-          className="px-5 py-2.5 rounded-xl bg-csjmu-gold text-csjmu-navy font-bold text-xs hover:bg-amber-400 transition-all shrink-0"
-        >
-          Ask AI Assistant
-        </Link>
+      {/* Accordion FAQ List */}
+      <div className="space-y-3">
+        {filteredFaqs.map((faq, idx) => {
+          const isOpen = openIdx === idx;
+          return (
+            <div
+              key={idx}
+              className="rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden transition-colors"
+            >
+              <button
+                onClick={() => setOpenIdx(isOpen ? null : idx)}
+                className="w-full p-4 text-left flex items-center justify-between gap-4 font-semibold text-xs sm:text-sm text-slate-900 dark:text-white hover:bg-slate-50 dark:hover:bg-slate-800/60 transition-colors"
+              >
+                <div className="flex items-center gap-2.5">
+                  <HelpCircle className="w-4 h-4 text-[#8B0000] dark:text-amber-400 shrink-0" />
+                  <span>{faq.question}</span>
+                </div>
+                <ChevronDown
+                  className={`w-4 h-4 text-slate-400 transition-transform ${isOpen ? 'rotate-180' : ''}`}
+                />
+              </button>
+
+              {isOpen && (
+                <div className="px-4 pb-4 pt-1 space-y-3 text-xs text-slate-600 dark:text-slate-300 border-t border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-950/40">
+                  <p className="leading-relaxed">{faq.answer}</p>
+                  <div className="pt-2 flex items-center justify-between">
+                    <span className="px-2 py-0.5 rounded bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-[10px] font-semibold">
+                      Category: {faq.category}
+                    </span>
+                    <button
+                      onClick={() => handleAskAI(faq.aiQuery)}
+                      className="px-3 py-1 rounded bg-[#002B49] hover:bg-[#001D33] text-white font-semibold text-xs inline-flex items-center gap-1.5 transition-colors shadow-sm"
+                    >
+                      <Bot className="w-3.5 h-3.5 text-amber-300" />
+                      <span>Ask AI for Details</span>
+                      <ArrowRight className="w-3 h-3" />
+                    </button>
+                  </div>
+                </div>
+              )}
+            </div>
+          );
+        })}
+
+        {filteredFaqs.length === 0 && (
+          <div className="p-8 text-center bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl text-xs text-slate-500">
+            No matching FAQ found. Try asking our official AI Assistant directly.
+          </div>
+        )}
       </div>
     </div>
   );

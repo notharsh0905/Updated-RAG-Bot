@@ -17,6 +17,7 @@ import {
   PhoneCall,
   Info,
   X,
+  ShieldCheck,
 } from 'lucide-react';
 import { useChatStore } from '@/store/useChatStore';
 
@@ -29,7 +30,7 @@ export const Sidebar: React.FC = () => {
   const quickCategories = [
     { label: 'B.Tech Admissions', query: 'What is the admission procedure for B.Tech CSE at UIET?', icon: BookOpen },
     { label: 'Scholarships & Aid', query: 'What scholarships and UP fee reimbursement rules apply?', icon: DollarSign },
-    { label: 'Placements & Companies', query: 'What is the highest placement package and top recruiters at UIET?', icon: Briefcase },
+    { label: 'Placements & Career', query: 'What is the highest placement package and top recruiters at UIET?', icon: Briefcase },
     { label: 'Hostels & Mess', query: 'What hostel facilities, mess, rules, and curfew timings exist?', icon: HomeIcon },
     { label: 'UIET Departments', query: 'What engineering departments and programs exist under UIET?', icon: Building },
     { label: 'Faculty & Mentors', query: 'Tell me about the faculty background and mentorship at UIET.', icon: GraduationCap },
@@ -48,37 +49,43 @@ export const Sidebar: React.FC = () => {
   };
 
   return (
-    <aside className="fixed inset-y-0 left-0 z-40 w-72 bg-slate-900 text-white flex flex-col shadow-2xl border-r border-slate-800 transition-all duration-300">
-      {/* Top Header */}
+    <aside className="fixed inset-y-0 left-0 z-50 w-72 bg-slate-900 text-white flex flex-col shadow-2xl border-r border-slate-800 transition-all duration-300">
+      {/* Top Header with Authentic CSJMU Seal */}
       <div className="p-4 border-b border-slate-800 flex items-center justify-between">
-        <div className="flex items-center gap-2">
-          <GraduationCap className="w-5 h-5 text-csjmu-gold" />
-          <span className="font-bold text-sm tracking-wide text-white">CSJMU AI Portal</span>
+        <div className="flex items-center gap-2.5">
+          <img
+            src="/images/csjmu-seal-logo.jpg"
+            alt="CSJMU Logo"
+            className="w-7 h-7 rounded-full object-contain bg-white p-0.5"
+          />
+          <span className="font-bold text-sm tracking-tight text-white">CSJMU AI Portal</span>
         </div>
         <button
           onClick={() => setSidebarOpen(false)}
           className="p-1 text-slate-400 hover:text-white hover:bg-slate-800 rounded-lg transition-colors"
+          title="Close Sidebar"
+          aria-label="Close Sidebar"
         >
           <X className="w-5 h-5" />
         </button>
       </div>
 
-      {/* Start New Chat Button */}
-      <div className="p-4">
+      {/* Start New Chat CTA */}
+      <div className="p-3.5">
         <button
           onClick={handleNewChat}
-          className="w-full flex items-center justify-center gap-2 py-2.5 px-4 bg-csjmu-blue hover:bg-csjmu-navy text-white rounded-xl font-semibold text-sm transition-all shadow-md active:scale-95 border border-blue-400/20"
+          className="w-full flex items-center justify-center gap-2 py-2.5 px-4 bg-[#8B0000] hover:bg-red-900 text-white rounded-lg font-semibold text-xs transition-all shadow-sm active:scale-98 border border-red-700/40"
         >
-          <Plus className="w-4 h-4" />
-          Start New Chat
+          <Plus className="w-4 h-4 text-amber-300" />
+          <span>New AI Consultation</span>
         </button>
       </div>
 
       {/* Navigation List */}
       <div className="flex-1 overflow-y-auto px-3 py-2 space-y-6">
-        {/* Quick Categories */}
+        {/* Quick Topics */}
         <div>
-          <div className="px-3 mb-2 text-xs font-bold text-csjmu-gold uppercase tracking-wider">
+          <div className="px-3 mb-2 text-[11px] font-bold text-slate-400 uppercase tracking-wider">
             Quick Topics
           </div>
           <div className="space-y-1">
@@ -90,7 +97,7 @@ export const Sidebar: React.FC = () => {
                   onClick={() => handleCategoryClick(cat.query)}
                   className="w-full flex items-center gap-2.5 px-3 py-2 text-xs font-medium text-slate-300 hover:text-white hover:bg-slate-800/80 rounded-lg transition-colors text-left"
                 >
-                  <Icon className="w-4 h-4 text-csjmu-gold/90 shrink-0" />
+                  <Icon className="w-4 h-4 text-amber-400 shrink-0" />
                   <span className="truncate">{cat.label}</span>
                 </button>
               );
@@ -98,9 +105,9 @@ export const Sidebar: React.FC = () => {
           </div>
         </div>
 
-        {/* Portal Pages */}
+        {/* Campus Links */}
         <div>
-          <div className="px-3 mb-2 text-xs font-bold text-slate-400 uppercase tracking-wider">
+          <div className="px-3 mb-2 text-[11px] font-bold text-slate-400 uppercase tracking-wider">
             Campus Information
           </div>
           <div className="space-y-1">
@@ -108,31 +115,34 @@ export const Sidebar: React.FC = () => {
               href="/about"
               className="flex items-center gap-2.5 px-3 py-2 text-xs font-medium text-slate-300 hover:text-white hover:bg-slate-800/80 rounded-lg transition-colors"
             >
-              <Info className="w-4 h-4 text-blue-400 shrink-0" />
+              <Info className="w-4 h-4 text-slate-400 shrink-0" />
               <span>About CSJMU & UIET</span>
             </Link>
             <Link
               href="/help"
               className="flex items-center gap-2.5 px-3 py-2 text-xs font-medium text-slate-300 hover:text-white hover:bg-slate-800/80 rounded-lg transition-colors"
             >
-              <HelpCircle className="w-4 h-4 text-emerald-400 shrink-0" />
+              <HelpCircle className="w-4 h-4 text-slate-400 shrink-0" />
               <span>Help & Student FAQ</span>
             </Link>
             <Link
               href="/contact"
               className="flex items-center gap-2.5 px-3 py-2 text-xs font-medium text-slate-300 hover:text-white hover:bg-slate-800/80 rounded-lg transition-colors"
             >
-              <PhoneCall className="w-4 h-4 text-purple-400 shrink-0" />
-              <span>Official Contact</span>
+              <PhoneCall className="w-4 h-4 text-slate-400 shrink-0" />
+              <span>Official Contact Directory</span>
             </Link>
           </div>
         </div>
       </div>
 
       {/* Footer Info */}
-      <div className="p-4 border-t border-slate-800 text-xs text-slate-400 space-y-1">
-        <p className="font-medium text-slate-300">CSJMU Kanpur • NAAC A++</p>
-        <p className="text-[11px] text-slate-500">Official AI Campus Assistant v2.5</p>
+      <div className="p-4 border-t border-slate-800 text-xs text-slate-400 space-y-1 bg-slate-950/60">
+        <div className="flex items-center gap-1.5 font-medium text-slate-300">
+          <ShieldCheck className="w-3.5 h-3.5 text-amber-400" />
+          <span>NAAC A++ Accredited</span>
+        </div>
+        <p className="text-[11px] text-slate-500">CSJMU Kanpur Official Enterprise System</p>
       </div>
     </aside>
   );

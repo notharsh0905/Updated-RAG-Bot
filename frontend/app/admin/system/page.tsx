@@ -1,10 +1,9 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
-import Link from 'next/link';
 import { apiService } from '@/services/api';
 import { SystemHealth } from '@/types/chat';
-import { Server, ArrowLeft, RefreshCw } from 'lucide-react';
+import { Server, RefreshCw, Cpu, Database, ShieldCheck } from 'lucide-react';
 
 export default function AdminSystemPage() {
   const [health, setHealth] = useState<SystemHealth | null>(null);
@@ -25,53 +24,50 @@ export default function AdminSystemPage() {
   };
 
   return (
-    <div className="max-w-5xl mx-auto px-4 py-8 space-y-6">
-      <div className="flex items-center justify-between">
-        <div>
-          <h1 className="text-2xl font-extrabold text-slate-900 dark:text-white tracking-tight">
-            🛠️ System Health & Maintenance
-          </h1>
-          <p className="text-xs text-slate-500 dark:text-slate-400">
-            Hardware status, Ollama model connections, Chroma DB collection state
-          </p>
-        </div>
-        <Link href="/admin/dashboard" className="inline-flex items-center gap-1 text-xs font-bold text-csjmu-blue hover:underline">
-          <ArrowLeft className="w-4 h-4" />
-          Back to Dashboard
-        </Link>
+    <div className="space-y-6">
+      {/* Title */}
+      <div className="p-6 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm space-y-1">
+        <h2 className="text-xl font-bold text-[#002B49] dark:text-white tracking-tight">
+          System Infrastructure & Health Maintenance
+        </h2>
+        <p className="text-xs text-slate-500 dark:text-slate-400">
+          Ollama inference node connection, Chroma vector collection state, and sparse BM25 keyword index management
+        </p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div className="p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm space-y-3">
-          <div className="flex items-center gap-2 text-csjmu-navy dark:text-csjmu-gold font-bold text-sm">
-            <Server className="w-5 h-5" />
-            <span>Ollama Inference Server</span>
+        {/* Ollama Engine Status */}
+        <div className="p-6 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm space-y-3">
+          <div className="flex items-center gap-2 text-[#002B49] dark:text-amber-400 font-bold text-sm">
+            <Server className="w-5 h-5 text-[#8B0000] dark:text-amber-400" />
+            <span>Ollama Inference Server Engine</span>
           </div>
-          <div className="text-xs space-y-1 font-mono text-slate-600 dark:text-slate-300">
-            <p><strong>Status:</strong> {health?.ollama?.connected ? '🟢 Connected' : '🔴 Disconnected'}</p>
-            <p><strong>URL:</strong> http://localhost:11434</p>
-            <p><strong>LLM Model:</strong> llama3.2:3b</p>
-            <p><strong>Embedding Model:</strong> nomic-embed-text</p>
+          <div className="text-xs space-y-2 font-mono text-slate-700 dark:text-slate-300">
+            <p><strong>Connection Status:</strong> {health?.ollama?.connected ? '🟢 Connected' : '🔴 Offline'}</p>
+            <p><strong>Endpoint URL:</strong> http://localhost:11434</p>
+            <p><strong>Primary LLM Model:</strong> llama3.2:3b</p>
+            <p><strong>Embedding Engine:</strong> nomic-embed-text</p>
           </div>
         </div>
 
-        <div className="p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm space-y-3">
-          <div className="flex items-center gap-2 text-csjmu-navy dark:text-csjmu-gold font-bold text-sm">
-            <RefreshCw className="w-5 h-5" />
-            <span>Vector Database (Chroma)</span>
+        {/* Vector DB & BM25 Status */}
+        <div className="p-6 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm space-y-3">
+          <div className="flex items-center gap-2 text-[#002B49] dark:text-amber-400 font-bold text-sm">
+            <Database className="w-5 h-5 text-[#8B0000] dark:text-amber-400" />
+            <span>Chroma Vector Store & BM25 Index</span>
           </div>
-          <div className="text-xs space-y-1 font-mono text-slate-600 dark:text-slate-300">
+          <div className="text-xs space-y-2 font-mono text-slate-700 dark:text-slate-300">
             <p><strong>Active Collection:</strong> {health?.vector_db?.collection || 'collection50'}</p>
-            <p><strong>Indexed Chunks:</strong> {health?.vector_db?.document_count || 994}</p>
-            <p><strong>Sparse BM25 Index:</strong> Built across 994 document chunks</p>
+            <p><strong>Indexed Chunks:</strong> {health?.vector_db?.document_count || 994} chunks</p>
+            <p><strong>BM25 Keyword Index:</strong> Synced across 994 document chunks</p>
           </div>
           <button
             onClick={handleTriggerRebuild}
-            className="px-4 py-2 rounded-xl bg-csjmu-blue hover:bg-csjmu-navy text-white text-xs font-bold transition-all shadow-sm"
+            className="px-4 py-2 rounded-lg bg-[#002B49] hover:bg-[#001D33] text-white text-xs font-semibold shadow-sm transition-colors"
           >
             Trigger Full Database Rebuild
           </button>
-          {rebuildMsg && <p className="text-xs font-mono font-semibold pt-1">{rebuildMsg}</p>}
+          {rebuildMsg && <p className="text-xs font-mono font-semibold pt-1 text-slate-800 dark:text-slate-200">{rebuildMsg}</p>}
         </div>
       </div>
     </div>
