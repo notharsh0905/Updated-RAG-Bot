@@ -1,11 +1,12 @@
 'use client';
 
 import React from 'react';
-import { useChatStore } from '@/store/useChatStore';
-import { FileText, Database, Search } from 'lucide-react';
+import { useConversationStore } from '@/store/useConversationStore';
+import { FileText, Database } from 'lucide-react';
 
 export default function AdminDocumentsPage() {
-  const { messages } = useChatStore();
+  const { getActiveMessages } = useConversationStore();
+  const messages = getActiveMessages();
   const sourceMessages = messages.filter((m) => m.sources && m.sources.length > 0);
 
   return (

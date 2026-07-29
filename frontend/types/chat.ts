@@ -18,6 +18,7 @@ export interface ChatMessage {
   content: string;
   sources?: DocumentSource[] | null;
   suggestions?: (string | SuggestionObject)[] | null;
+  facts?: string[] | Record<string, string> | null;
   timestamp: string;
   isStreaming?: boolean;
   isError?: boolean;

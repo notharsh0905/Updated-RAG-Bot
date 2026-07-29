@@ -9,41 +9,46 @@ import { ChatLayout } from './components/ChatLayout';
 import { MessageList } from './components/MessageList';
 import { ChatInput } from './components/ChatInput';
 
+const DEFAULT_SMART_SUGGESTIONS = [
+  'What is the admission procedure for B.Tech CSE at UIET?',
+  'What scholarships and UP fee waivers are offered?',
+  'What is the highest package in UIET placements?',
+  'What facilities exist in the campus hostels?',
+];
+
 export const ChatWindow: React.FC = () => {
+  // UI-only Transient State
   const {
-    messages,
-    addMessage,
-    updateMessageContent,
-    updateMessageState,
-    removeMessage,
     pendingQuestion,
     setPendingQuestion,
     isLoading,
     setIsLoading,
-    resetChat,
+    isStreaming,
+    setIsStreaming,
+    resetUIState,
   } = useChatStore();
 
+  // Permanent Conversation State & Granular Message Actions
   const {
     activeId,
-    createConversation,
-    updateConversationMessages,
     conversations,
+    createConversation,
+    addMessageToActive,
+    appendTokenToActive,
+    updateActiveMessage,
+    finishActiveMessageStreaming,
+    removeMessageFromActive,
   } = useConversationStore();
 
   const [copiedId, setCopiedId] = useState<string | null>(null);
-  const [isStreaming, setIsStreaming] = useState(false);
+
+  // Derive active messages directly from source of truth - ZERO passive sync useEffects
+  const activeConv = conversations.find((c) => c.id === activeId);
+  const messages: ChatMessage[] = activeConv?.messages || [];
 
   // Execution locks to prevent duplicate submissions
   const isSubmittingRef = useRef(false);
   const processedPendingRef = useRef<string | null>(null);
-
-  // Keep conversation store in sync when messages change
-  useEffect(() => {
-    if (messages.length > 0 && activeId) {
-      const userMsg = messages.find((m) => m.role === 'user');
-      updateConversationMessages(activeId, messages, userMsg?.content);
-    }
-  }, [messages, activeId, updateConversationMessages]);
 
   const handleExecuteQuery = useCallback(
     async (queryText: string) => {
@@ -54,7 +59,7 @@ export const ChatWindow: React.FC = () => {
       setIsLoading(true);
       setIsStreaming(false);
 
-      // Add user prompt message
+      // Add user prompt message to active conversation
       const userMsgId = crypto.randomUUID();
       const userMsg: ChatMessage = {
         id: userMsgId,
@@ -62,9 +67,9 @@ export const ChatWindow: React.FC = () => {
         content: trimmed,
         timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
       };
-      addMessage(userMsg);
+      addMessageToActive(userMsg);
 
-      // Create initial assistant target message
+      // Create initial target assistant message in active conversation
       const assistantMsgId = crypto.randomUUID();
       const assistantMsg: ChatMessage = {
         id: assistantMsgId,
@@ -74,22 +79,19 @@ export const ChatWindow: React.FC = () => {
         rawQuestion: trimmed,
         timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
       };
-      addMessage(assistantMsg);
+      addMessageToActive(assistantMsg);
 
-      let accumulatedContent = '';
-
-      // SSE Stream Execution with Fallback
+      // SSE Stream Execution with Guaranteed Granular Mutation & Completion
       await apiService.sendQueryStream(
         trimmed,
         activeId || 'default-session',
         (token: string) => {
-          accumulatedContent += token;
           setIsStreaming(true);
-          updateMessageContent(assistantMsgId, accumulatedContent, true);
+          appendTokenToActive(assistantMsgId, token);
         },
         () => {
-          // Stream completion handler
-          updateMessageState(assistantMsgId, { isStreaming: false });
+          // Stream completion handler - Commit message, stop cursor & attach suggestions
+          finishActiveMessageStreaming(assistantMsgId, DEFAULT_SMART_SUGGESTIONS);
           setIsStreaming(false);
           setIsLoading(false);
           isSubmittingRef.current = false;
@@ -99,15 +101,15 @@ export const ChatWindow: React.FC = () => {
           // Stream error handler - Fallback to standard POST /query
           try {
             const res = await apiService.sendQuery(trimmed, activeId || 'default-session');
-            updateMessageContent(assistantMsgId, res.answer, false);
-            updateMessageState(assistantMsgId, {
+            updateActiveMessage(assistantMsgId, {
+              content: res.answer,
               sources: res.sources,
-              suggestions: res.suggested_objects || res.suggested_questions,
+              suggestions: res.suggested_objects || res.suggested_questions || DEFAULT_SMART_SUGGESTIONS,
               isStreaming: false,
               isError: false,
             });
           } catch (fallbackErr) {
-            updateMessageState(assistantMsgId, {
+            updateActiveMessage(assistantMsgId, {
               isError: true,
               isStreaming: false,
               content:
@@ -122,10 +124,19 @@ export const ChatWindow: React.FC = () => {
         }
       );
     },
-    [activeId, addMessage, isLoading, setIsLoading, updateMessageContent, updateMessageState]
+    [
+      activeId,
+      isLoading,
+      setIsLoading,
+      setIsStreaming,
+      addMessageToActive,
+      appendTokenToActive,
+      updateActiveMessage,
+      finishActiveMessageStreaming,
+    ]
   );
 
-  // Single-execution effect for pending questions passed from other pages/sidebar
+  // Single-execution effect for pending questions passed from other pages
   useEffect(() => {
     if (
       pendingQuestion &&
@@ -160,13 +171,13 @@ export const ChatWindow: React.FC = () => {
     const lastUserMsg = userMessages[userMessages.length - 1];
 
     if (lastAssistantMsg && lastUserMsg) {
-      removeMessage(lastAssistantMsg.id);
+      removeMessageFromActive(lastAssistantMsg.id);
       handleExecuteQuery(lastUserMsg.content);
     }
-  }, [isLoading, messages, removeMessage, handleExecuteQuery]);
+  }, [isLoading, messages, removeMessageFromActive, handleExecuteQuery]);
 
   const handleNewChat = () => {
-    resetChat();
+    resetUIState();
     createConversation();
   };
 

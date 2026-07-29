@@ -5,7 +5,6 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
 import { ChatMessage } from '@/types/chat';
 import { MessageItem } from './MessageItem';
-import { LoadingPlaceholder } from './LoadingPlaceholder';
 import { EmptyState } from './EmptyState';
 
 interface MessageListProps {
@@ -35,14 +34,13 @@ export const MessageList: React.FC<MessageListProps> = ({
   const bottomRef = useRef<HTMLDivElement>(null);
   const [showScrollBottom, setShowScrollBottom] = useState(false);
   const userScrolledUpRef = useRef(false);
+  const rafRef = useRef<number | null>(null);
 
   const scrollToBottom = useCallback((smooth = true) => {
     userScrolledUpRef.current = false;
-    setShowScrollBottom(false);
+    setShowScrollBottom((prev) => (prev ? false : prev));
     bottomRef.current?.scrollIntoView({ behavior: smooth ? 'smooth' : 'auto' });
   }, []);
-
-  const rafRef = useRef<number | null>(null);
 
   const handleScroll = () => {
     if (!containerRef.current) return;
@@ -54,18 +52,23 @@ export const MessageList: React.FC<MessageListProps> = ({
       const isNearBottom = scrollHeight - scrollTop - clientHeight < 120;
 
       userScrolledUpRef.current = !isNearBottom;
-      setShowScrollBottom(!isNearBottom);
+      setShowScrollBottom((prev) => {
+        const next = !isNearBottom;
+        return prev !== next ? next : prev;
+      });
     });
   };
 
-  // Smart auto-scroll: auto scroll only if user is near bottom
+  // Smart auto-scroll: Scroll to bottom only if user hasn't manually scrolled up
   useEffect(() => {
     if (!userScrolledUpRef.current) {
-      scrollToBottom(true);
+      bottomRef.current?.scrollIntoView({ behavior: 'smooth' });
     }
-  }, [messages, isLoading, isStreaming, scrollToBottom]);
+  }, [messages, isLoading, isStreaming]);
 
-  const showEmptyState = messages.length <= 1;
+  // Show EmptyState ONLY when the active conversation has 0 messages
+  const showEmptyState = messages.length === 0;
+
   const lastAssistantIdx = messages.map((m) => m.role).lastIndexOf('assistant');
 
   return (
@@ -95,9 +98,6 @@ export const MessageList: React.FC<MessageListProps> = ({
             ))}
           </AnimatePresence>
         )}
-
-        {/* Loading Placeholder while waiting for initial stream token */}
-        {isLoading && !isStreaming && <LoadingPlaceholder />}
 
         <div ref={bottomRef} className="h-4" />
       </div>

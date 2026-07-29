@@ -20,10 +20,12 @@ import {
   ShieldCheck,
 } from 'lucide-react';
 import { useChatStore } from '@/store/useChatStore';
+import { useConversationStore } from '@/store/useConversationStore';
 
 export const Sidebar: React.FC = () => {
   const router = useRouter();
-  const { sidebarOpen, setSidebarOpen, resetChat, setPendingQuestion } = useChatStore();
+  const { sidebarOpen, setSidebarOpen, resetUIState, setPendingQuestion } = useChatStore();
+  const { createConversation } = useConversationStore();
 
   if (!sidebarOpen) return null;
 
@@ -44,7 +46,8 @@ export const Sidebar: React.FC = () => {
   };
 
   const handleNewChat = () => {
-    resetChat();
+    resetUIState();
+    createConversation();
     router.push('/chat');
   };
 

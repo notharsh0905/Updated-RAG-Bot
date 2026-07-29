@@ -169,7 +169,7 @@ def query_endpoint(payload: QueryRequest):
 @app.post("/query/stream", tags=["RAG Query"])
 def query_stream_endpoint(payload: QueryRequest):
     """
-    Server-Sent Events (SSE) streaming query endpoint.
+    Server-Sent Events (SSE) streaming query endpoint with explicit completion sentinel.
     """
     global pipeline
     if not pipeline:
@@ -189,6 +189,7 @@ def query_stream_endpoint(payload: QueryRequest):
             )
             for token in stream_gen:
                 yield f"data: {token}\n\n"
+            yield "data: [DONE]\n\n"
         except Exception as e:
             yield f"data: [ERROR]: {str(e)}\n\n"
 

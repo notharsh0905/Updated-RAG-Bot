@@ -18,6 +18,7 @@ import {
   Award,
   Calendar,
   ChevronRight,
+  Quote,
 } from 'lucide-react';
 import { useChatStore } from '@/store/useChatStore';
 
@@ -90,7 +91,7 @@ export default function HomePage() {
         </div>
       </div>
 
-      {/* Hero Header Card with Official CSJMU Banner Logo */}
+      {/* Hero Header Card */}
       <section className="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 sm:p-10 shadow-sm relative overflow-hidden">
         <div className="max-w-4xl space-y-5">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 text-xs font-semibold border border-slate-200 dark:border-slate-700">
@@ -195,36 +196,82 @@ export default function HomePage() {
         </div>
       </div>
 
-      {/* Leadership Messages */}
-      <section className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div className="p-5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm space-y-2.5">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-lg bg-[#002B49] text-amber-300 font-serif font-bold flex items-center justify-center text-xs border border-amber-400/30 shrink-0">
-              VC
-            </div>
-            <div>
-              <h3 className="font-bold text-sm text-[#002B49] dark:text-white">Vice Chancellor&apos;s Message</h3>
-              <p className="text-xs font-semibold text-[#8B0000] dark:text-amber-400">Prof. Vinay Kumar Pathak</p>
-            </div>
-          </div>
-          <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed italic">
-            &quot;The Institute is forging ahead to create engineers, scientists, and professionals of high competence to meet the technical challenges of tomorrow.&quot;
-          </p>
+      {/* Official University Leadership Cards with Photographs */}
+      <section className="space-y-4">
+        <div className="border-b border-slate-200 dark:border-slate-800 pb-2 flex items-center justify-between">
+          <h2 className="text-base font-serif font-bold text-[#002B49] dark:text-white flex items-center gap-2">
+            <span className="uni-bullet">➲</span>
+            <span>University Leadership Messages</span>
+          </h2>
+          <span className="text-xs text-slate-500 font-medium">Institutional Mentors</span>
         </div>
 
-        <div className="p-5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm space-y-2.5">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-lg bg-[#8B0000] text-white font-serif font-bold flex items-center justify-center text-xs border border-white/20 shrink-0">
-              DIR
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {/* Vice Chancellor Profile Card */}
+          <div className="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm space-y-4 flex flex-col justify-between hover:border-slate-300 dark:hover:border-slate-700 transition-all">
+            <div className="flex items-start gap-4">
+              {/* Circular Portrait Image */}
+              <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden border-2 border-[#002B49] dark:border-amber-400 shadow-md shrink-0 bg-slate-100 relative">
+                <img
+                  src="/images/vc-portrait.jpg"
+                  alt="Prof. Vinay Kumar Pathak"
+                  loading="lazy"
+                  className="w-full h-full object-cover rounded-full"
+                />
+              </div>
+              <div className="space-y-1">
+                <h3 className="font-bold text-base text-[#002B49] dark:text-white tracking-tight">
+                  Prof. Vinay Kumar Pathak
+                </h3>
+                <p className="text-xs font-bold text-[#8B0000] dark:text-amber-400">
+                  Hon'ble Vice Chancellor, CSJMU Kanpur
+                </p>
+                <p className="text-[11px] text-slate-500 font-medium">
+                  Chhatrapati Shahu Ji Maharaj University
+                </p>
+              </div>
             </div>
-            <div>
-              <h3 className="font-bold text-sm text-[#002B49] dark:text-white">Director&apos;s Message</h3>
-              <p className="text-xs font-semibold text-[#8B0000] dark:text-amber-400">Dr. Alok Kumar</p>
+
+            <div className="p-4 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800/80 relative">
+              <Quote className="w-5 h-5 text-[#8B0000]/20 dark:text-amber-400/20 absolute right-3 top-3" />
+              <p className="text-xs text-slate-700 dark:text-slate-300 leading-relaxed italic">
+                &quot;CSJMU is forging ahead to create engineers, scientists, and professionals of high competence to meet the technical challenges of tomorrow and serve society through innovation.&quot;
+              </p>
             </div>
           </div>
-          <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed italic">
-            &quot;Our vision is to emerge as one of the premier educational and research institutes in engineering and technology.&quot;
-          </p>
+
+          {/* Director UIET Profile Card */}
+          <div className="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm space-y-4 flex flex-col justify-between hover:border-slate-300 dark:hover:border-slate-700 transition-all">
+            <div className="flex items-start gap-4">
+              {/* Circular Portrait Image */}
+              <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden border-2 border-[#8B0000] dark:border-amber-400 shadow-md shrink-0 bg-slate-100 relative">
+                <img
+                  src="/images/director-portrait.jpg"
+                  alt="Prof. (Dr.) Alok Kumar"
+                  loading="lazy"
+                  className="w-full h-full object-cover rounded-full"
+                />
+              </div>
+              <div className="space-y-1">
+                <h3 className="font-bold text-base text-[#002B49] dark:text-white tracking-tight">
+                  Prof. (Dr.) Alok Kumar
+                </h3>
+                <p className="text-xs font-bold text-[#8B0000] dark:text-amber-400">
+                  Director, UIET Kanpur
+                </p>
+                <p className="text-[11px] text-slate-500 font-medium">
+                  School of Engineering & Technology
+                </p>
+              </div>
+            </div>
+
+            <div className="p-4 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800/80 relative">
+              <Quote className="w-5 h-5 text-[#8B0000]/20 dark:text-amber-400/20 absolute right-3 top-3" />
+              <p className="text-xs text-slate-700 dark:text-slate-300 leading-relaxed italic">
+                &quot;Our vision is to emerge as one of the premier educational and research institutes in engineering, providing state-of-the-art supercomputing, incubation, and academic excellence.&quot;
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 

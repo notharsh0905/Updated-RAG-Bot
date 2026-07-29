@@ -308,7 +308,7 @@ export const apiService = {
     return response.data;
   },
 
-  // SSE Stream Query (POST /query/stream)
+  // SSE Stream Query (POST /query/stream) with strict completion handling
   sendQueryStream: async (
     question: string,
     sessionId: string,
@@ -318,6 +318,7 @@ export const apiService = {
     k: number = 5,
     strict: boolean = true
   ): Promise<void> => {
+    let completed = false;
     try {
       const response = await fetch(`${API_BASE_URL}/query/stream`, {
         method: 'POST',
@@ -353,6 +354,11 @@ export const apiService = {
           const trimmed = line.trim();
           if (trimmed.startsWith('data: ')) {
             const rawData = trimmed.slice(6);
+            if (rawData === '[DONE]') {
+              completed = true;
+              onComplete();
+              return;
+            }
             if (rawData.startsWith('[ERROR]: ')) {
               throw new Error(rawData.slice(9));
             }
@@ -363,14 +369,24 @@ export const apiService = {
 
       if (buffer.trim().startsWith('data: ')) {
         const rawData = buffer.trim().slice(6);
+        if (rawData === '[DONE]') {
+          completed = true;
+          onComplete();
+          return;
+        }
         if (!rawData.startsWith('[ERROR]: ')) {
           onChunk(rawData);
         }
       }
 
-      onComplete();
+      if (!completed) {
+        completed = true;
+        onComplete();
+      }
     } catch (err: any) {
-      onError(err instanceof Error ? err : new Error(String(err)));
+      if (!completed) {
+        onError(err instanceof Error ? err : new Error(String(err)));
+      }
     }
   },
 
