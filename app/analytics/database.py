@@ -5,6 +5,8 @@ SQLite Database Manager for Analytics, Feedback, and Conversation Session Histor
 import sqlite3
 import json
 import time
+import uuid
+import hashlib
 from pathlib import Path
 from typing import Dict, Any, List, Optional
 from app.core.config import config
@@ -88,6 +90,129 @@ class DatabaseManager:
                 upload_timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
             )
             """)
+
+            # 1. student_queries (Primary Trace Table)
+            cursor.execute("""
+            CREATE TABLE IF NOT EXISTS student_queries (
+                query_id TEXT PRIMARY KEY,
+                session_id TEXT NOT NULL,
+                conversation_id TEXT,
+                anonymous_student_id TEXT,
+                question TEXT NOT NULL,
+                answer TEXT NOT NULL,
+                prompt_version TEXT DEFAULT '2.0',
+                model_used TEXT DEFAULT 'llama3.2:3b',
+                embedding_model TEXT DEFAULT 'nomic-embed-text',
+                retrieval_method TEXT DEFAULT 'hybrid_bm25_vector',
+                total_retrieved_chunks INTEGER DEFAULT 0,
+                confidence_score REAL DEFAULT 0.0,
+                total_tokens INTEGER DEFAULT 0,
+                prompt_tokens INTEGER DEFAULT 0,
+                completion_tokens INTEGER DEFAULT 0,
+                response_time_sec REAL DEFAULT 0.0,
+                streaming_time_sec REAL DEFAULT 0.0,
+                cached INTEGER DEFAULT 0,
+                timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
+            )
+            """)
+            cursor.execute("CREATE INDEX IF NOT EXISTS idx_sq_session_id ON student_queries (session_id)")
+            cursor.execute("CREATE INDEX IF NOT EXISTS idx_sq_timestamp ON student_queries (timestamp DESC)")
+
+            # 2. query_trace (Chunk Traces)
+            cursor.execute("""
+            CREATE TABLE IF NOT EXISTS query_trace (
+                trace_id TEXT PRIMARY KEY,
+                query_id TEXT NOT NULL,
+                document_id TEXT,
+                chunk_id TEXT,
+                similarity_score REAL DEFAULT 0.0,
+                chunk_rank INTEGER,
+                source_page INTEGER DEFAULT 1,
+                collection_name TEXT DEFAULT 'collection50',
+                metadata_json TEXT,
+                FOREIGN KEY (query_id) REFERENCES student_queries (query_id) ON DELETE CASCADE
+            )
+            """)
+            cursor.execute("CREATE INDEX IF NOT EXISTS idx_qt_query_id ON query_trace (query_id)")
+
+            # 3. query_documents (Question-Document Relationship)
+            cursor.execute("""
+            CREATE TABLE IF NOT EXISTS query_documents (
+                rel_id TEXT PRIMARY KEY,
+                query_id TEXT NOT NULL,
+                document_id TEXT,
+                filename TEXT NOT NULL,
+                category TEXT,
+                version TEXT DEFAULT '1.0',
+                timestamp DATETIME DEFAULT CURRENT_TIMESTAMP,
+                FOREIGN KEY (query_id) REFERENCES student_queries (query_id) ON DELETE CASCADE
+            )
+            """)
+            cursor.execute("CREATE INDEX IF NOT EXISTS idx_qd_query_id ON query_documents (query_id)")
+
+            # 4. query_feedback (Student Ratings)
+            cursor.execute("""
+            CREATE TABLE IF NOT EXISTS query_feedback (
+                feedback_id TEXT PRIMARY KEY,
+                query_id TEXT,
+                session_id TEXT NOT NULL,
+                rating INTEGER NOT NULL,
+                reason TEXT,
+                comments TEXT,
+                timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
+            )
+            """)
+            cursor.execute("CREATE INDEX IF NOT EXISTS idx_qf_query_id ON query_feedback (query_id)")
+
+            # 5. review_tickets (Admin Review Workflow)
+            cursor.execute("""
+            CREATE TABLE IF NOT EXISTS review_tickets (
+                ticket_id TEXT PRIMARY KEY,
+                query_id TEXT UNIQUE NOT NULL,
+                status TEXT DEFAULT 'Pending',
+                assigned_reviewer TEXT DEFAULT 'Unassigned',
+                priority TEXT DEFAULT 'Medium',
+                root_cause TEXT DEFAULT 'Unknown',
+                resolution TEXT,
+                admin_notes TEXT,
+                created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+                updated_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+                FOREIGN KEY (query_id) REFERENCES student_queries (query_id)
+            )
+            """)
+            cursor.execute("CREATE INDEX IF NOT EXISTS idx_rt_status ON review_tickets (status)")
+
+            # 6. kb_tasks (Knowledge Improvement Tasks)
+            cursor.execute("""
+            CREATE TABLE IF NOT EXISTS kb_tasks (
+                task_id TEXT PRIMARY KEY,
+                linked_query_id TEXT,
+                linked_document_id TEXT,
+                task_summary TEXT NOT NULL,
+                suggested_fix TEXT NOT NULL,
+                priority TEXT DEFAULT 'High',
+                department TEXT DEFAULT 'Knowledge Base Team',
+                assigned_reviewer TEXT DEFAULT 'Unassigned',
+                status TEXT DEFAULT 'Open',
+                deadline TEXT,
+                created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+            )
+            """)
+            cursor.execute("CREATE INDEX IF NOT EXISTS idx_kbt_status ON kb_tasks (status)")
+
+            # 7. admin_activity_logs (Admin Actions Log)
+            cursor.execute("""
+            CREATE TABLE IF NOT EXISTS admin_activity_logs (
+                log_id TEXT PRIMARY KEY,
+                actor TEXT NOT NULL,
+                action TEXT NOT NULL,
+                affected_record_id TEXT,
+                ip_address TEXT,
+                timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
+            )
+            """)
+            cursor.execute("CREATE INDEX IF NOT EXISTS idx_aal_timestamp ON admin_activity_logs (timestamp DESC)")
+
             conn.commit()
 
     def log_query(
@@ -263,6 +388,192 @@ class DatabaseManager:
         except Exception as e:
             logger.error(f"Failed to fetch document by checksum: {e}")
             return None
+
+    def log_ai_operations_trace(self, payload: Dict[str, Any]) -> str:
+        """
+        Logs complete AI operation trace across student_queries, query_trace, and query_documents tables.
+        Returns generated query_id.
+        """
+        try:
+            query_id = payload.get("query_id") or f"query_{uuid.uuid4()}"
+            session_id = payload.get("session_id") or "anonymous"
+            conversation_id = payload.get("conversation_id") or session_id
+            anonymous_student_id = payload.get("anonymous_student_id") or f"student_{hashlib.md5(session_id.encode()).hexdigest()[:8]}"
+            question = payload.get("question", "")
+            answer = payload.get("answer", "")
+            prompt_version = payload.get("prompt_version", "2.0")
+            model_used = payload.get("model_used", "llama3.2:3b")
+            embedding_model = payload.get("embedding_model", "nomic-embed-text")
+            retrieval_method = payload.get("retrieval_method", "hybrid_bm25_vector")
+            total_retrieved_chunks = payload.get("total_retrieved_chunks", 0)
+            confidence_score = payload.get("confidence_score", 0.0)
+            total_tokens = payload.get("total_tokens", 0)
+            prompt_tokens = payload.get("prompt_tokens", 0)
+            completion_tokens = payload.get("completion_tokens", 0)
+            response_time_sec = payload.get("response_time_sec", 0.0)
+            streaming_time_sec = payload.get("streaming_time_sec", 0.0)
+            cached = 1 if payload.get("cached") else 0
+
+            with self._get_connection() as conn:
+                cursor = conn.cursor()
+                
+                # 1. Insert into student_queries
+                cursor.execute("""
+                INSERT OR REPLACE INTO student_queries (
+                    query_id, session_id, conversation_id, anonymous_student_id,
+                    question, answer, prompt_version, model_used, embedding_model,
+                    retrieval_method, total_retrieved_chunks, confidence_score,
+                    total_tokens, prompt_tokens, completion_tokens, response_time_sec,
+                    streaming_time_sec, cached
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                """, (
+                    query_id, session_id, conversation_id, anonymous_student_id,
+                    question, answer, prompt_version, model_used, embedding_model,
+                    retrieval_method, total_retrieved_chunks, confidence_score,
+                    total_tokens, prompt_tokens, completion_tokens, response_time_sec,
+                    streaming_time_sec, cached
+                ))
+
+                # 2. Insert retrieved chunks into query_trace
+                chunks_trace = payload.get("retrieved_chunks", [])
+                for rank, chunk in enumerate(chunks_trace, start=1):
+                    trace_id = f"trace_{uuid.uuid4()}"
+                    doc_id = chunk.get("document_id") or f"doc_{hashlib.md5(chunk.get('source', '').encode()).hexdigest()[:8]}"
+                    chunk_id = chunk.get("chunk_id") or f"chunk_{rank}"
+                    similarity_score = chunk.get("similarity_score") or chunk.get("vector_cosine_score") or 0.0
+                    source_page = chunk.get("page") or 1
+                    collection_name = chunk.get("collection") or "collection50"
+                    metadata_json = json.dumps(chunk.get("metadata", {}))
+
+                    cursor.execute("""
+                    INSERT INTO query_trace (
+                        trace_id, query_id, document_id, chunk_id, similarity_score,
+                        chunk_rank, source_page, collection_name, metadata_json
+                    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+                    """, (
+                        trace_id, query_id, doc_id, chunk_id, similarity_score,
+                        rank, source_page, collection_name, metadata_json
+                    ))
+
+                # 3. Insert question -> document relationships into query_documents
+                documents = payload.get("documents", [])
+                seen_docs = set()
+                for doc_info in documents:
+                    fname = doc_info.get("filename") or doc_info.get("source") or "Unknown"
+                    if fname in seen_docs:
+                        continue
+                    seen_docs.add(fname)
+                    
+                    rel_id = f"qdoc_{uuid.uuid4()}"
+                    doc_id = doc_info.get("document_id") or f"doc_{hashlib.md5(fname.encode()).hexdigest()[:8]}"
+                    cat = doc_info.get("category") or doc_info.get("doc_type") or "General"
+                    ver = doc_info.get("version", "1.0")
+
+                    cursor.execute("""
+                    INSERT INTO query_documents (
+                        rel_id, query_id, document_id, filename, category, version
+                    ) VALUES (?, ?, ?, ?, ?, ?)
+                    """, (rel_id, query_id, doc_id, fname, cat, ver))
+
+                conn.commit()
+                return query_id
+        except Exception as e:
+            logger.error(f"Failed to log AI operations trace to DB: {e}")
+            return ""
+
+    def log_query_feedback_trace(
+        self,
+        query_id: Optional[str],
+        session_id: str,
+        rating: int,
+        reason: Optional[str] = None,
+        comments: Optional[str] = None
+    ) -> str:
+        """Logs student feedback and auto-creates review ticket if rating is negative (-1)."""
+        try:
+            feedback_id = f"fb_{uuid.uuid4()}"
+            with self._get_connection() as conn:
+                cursor = conn.cursor()
+                cursor.execute("""
+                INSERT INTO query_feedback (feedback_id, query_id, session_id, rating, reason, comments)
+                VALUES (?, ?, ?, ?, ?, ?)
+                """, (feedback_id, query_id, session_id, rating, reason or "", comments or ""))
+
+                # Auto-generate review ticket if rating is -1 (Thumbs Down) and query_id exists
+                if rating == -1 and query_id:
+                    ticket_id = f"tkt_{str(uuid.uuid4())[:8]}"
+                    cursor.execute("""
+                    INSERT OR IGNORE INTO review_tickets (
+                        ticket_id, query_id, status, assigned_reviewer, priority, root_cause, admin_notes
+                    ) VALUES (?, ?, 'Pending', 'Unassigned', 'High', 'Negative Feedback', ?)
+                    """, (ticket_id, query_id, f"Student negative rating: {comments or 'No comment'}"))
+
+                conn.commit()
+                return feedback_id
+        except Exception as e:
+            logger.error(f"Failed to log query feedback trace: {e}")
+            return ""
+
+    def log_admin_activity(
+        self,
+        actor: str,
+        action: str,
+        affected_record_id: Optional[str] = None,
+        ip_address: Optional[str] = None
+    ) -> bool:
+        """Logs an administrative action for security and audit trail."""
+        try:
+            log_id = f"log_{uuid.uuid4()}"
+            with self._get_connection() as conn:
+                cursor = conn.cursor()
+                cursor.execute("""
+                INSERT INTO admin_activity_logs (log_id, actor, action, affected_record_id, ip_address)
+                VALUES (?, ?, ?, ?, ?)
+                """, (log_id, actor, action, affected_record_id or "", ip_address or "127.0.0.1"))
+                conn.commit()
+                return True
+        except Exception as e:
+            logger.error(f"Failed to log admin activity: {e}")
+            return False
+
+    def get_queries_feed(
+        self,
+        limit: int = 50,
+        offset: int = 0,
+        rating: Optional[int] = None,
+        status: Optional[str] = None
+    ) -> List[Dict[str, Any]]:
+        """Retrieves paginated AI operations query feed for Student Query Center."""
+        try:
+            with self._get_connection() as conn:
+                cursor = conn.cursor()
+                sql = """
+                SELECT q.query_id, q.session_id, q.question, q.answer, q.confidence_score,
+                       q.response_time_sec, q.total_retrieved_chunks, q.cached, q.timestamp,
+                       f.rating as user_rating, f.comments as user_comments,
+                       t.ticket_id, t.status as review_status, t.priority, t.assigned_reviewer, t.root_cause
+                FROM student_queries q
+                LEFT JOIN query_feedback f ON q.query_id = f.query_id
+                LEFT JOIN review_tickets t ON q.query_id = t.query_id
+                WHERE 1=1
+                """
+                params = []
+                if rating is not None:
+                    sql += " AND f.rating = ?"
+                    params.append(rating)
+                if status is not None:
+                    sql += " AND t.status = ?"
+                    params.append(status)
+
+                sql += " ORDER BY q.timestamp DESC LIMIT ? OFFSET ?"
+                params.extend([limit, offset])
+
+                cursor.execute(sql, params)
+                rows = cursor.fetchall()
+                return [dict(r) for r in rows]
+        except Exception as e:
+            logger.error(f"Failed to fetch queries feed: {e}")
+            return []
 
 
 db_manager = DatabaseManager()

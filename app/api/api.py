@@ -13,6 +13,7 @@ from typing import Optional, List, Dict, Any
 from app.rag.rag import RAGPipeline
 from app.utils.utils import check_ollama_health, check_dataset_status
 from app.analytics.database import db_manager
+from app.analytics.async_logger import async_logger
 from app.memory.memory import memory_manager
 from app.core.config import config
 from app.core.logging_config import setup_logger
@@ -72,10 +73,12 @@ class QueryResponse(BaseModel):
 
 class FeedbackRequest(BaseModel):
     """User Feedback Payload."""
+    query_id: Optional[str] = Field(default=None, description="Optional UUID of specific query trace.")
     session_id: Optional[str] = None
     question: str
     answer: str
     rating: int = Field(..., example=1, description="1 for 👍, -1 for 👎")
+    reason: Optional[str] = None
     comments: Optional[str] = None
 
 
@@ -208,9 +211,33 @@ def feedback_endpoint(payload: FeedbackRequest):
         rating=payload.rating,
         comments=payload.comments
     )
+    
+    # Asynchronously persist feedback and generate review tickets if rating is -1
+    async_logger.log_feedback_async(
+        query_id=payload.query_id,
+        session_id=payload.session_id or "anonymous",
+        rating=payload.rating,
+        reason=payload.reason,
+        comments=payload.comments
+    )
+
     if success:
         return {"status": "success", "message": "Feedback recorded. Thank you!"}
     raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail="Failed to record feedback.")
+
+
+@app.get("/admin/queries/feed", tags=["Administration"])
+def admin_queries_feed_endpoint(
+    limit: int = Query(default=50, ge=1, le=200),
+    offset: int = Query(default=0, ge=0),
+    rating: Optional[int] = Query(default=None),
+    status: Optional[str] = Query(default=None)
+):
+    """
+    Returns AI Operations Query Center feed combining queries, traces, feedback, and review tickets.
+    """
+    queries = db_manager.get_queries_feed(limit=limit, offset=offset, rating=rating, status=status)
+    return {"queries": queries, "count": len(queries), "limit": limit, "offset": offset}
 
 
 @app.get("/admin/analytics", tags=["Administration"])
