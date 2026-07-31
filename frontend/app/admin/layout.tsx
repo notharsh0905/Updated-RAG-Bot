@@ -8,6 +8,7 @@ import {
   FileText,
   BarChart3,
   MessageSquare,
+  MessageSquareCode,
   ShieldAlert,
   UploadCloud,
   Server,
@@ -49,6 +50,11 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
 
   const adminNav = [
     { href: '/admin/dashboard', label: 'Overview', icon: LayoutDashboard },
+    {
+      href: '/admin/queries',
+      label: 'Student Query Center',
+      icon: MessageSquareCode,
+    },
     {
       href: '/admin/monitoring',
       label: 'AI Quality Center',

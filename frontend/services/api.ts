@@ -510,6 +510,25 @@ export const apiService = {
     }
   },
 
+  // Fetch AI Operations Query Center Feed (GET /admin/queries/feed)
+  getQueryFeed: async (params?: {
+    limit?: number;
+    offset?: number;
+    rating?: number;
+    status?: string;
+  }): Promise<Array<any>> => {
+    try {
+      const response = await apiClient.get<{
+        queries: Array<any>;
+        count: number;
+      }>('/admin/queries/feed', { params });
+      return response.data?.queries || [];
+    } catch (e) {
+      console.error('Failed to fetch queries feed:', e);
+      return [];
+    }
+  },
+
   // Get Session History (GET /admin/history/{session_id})
   getSessionHistory: async (sessionId: string): Promise<Array<{ role: string; content: string }>> => {
     try {
