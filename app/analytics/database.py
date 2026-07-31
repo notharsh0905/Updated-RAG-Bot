@@ -71,6 +71,23 @@ class DatabaseManager:
                 timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
             )
             """)
+
+            # Uploaded documents metadata table
+            cursor.execute("""
+            CREATE TABLE IF NOT EXISTS uploaded_documents (
+                document_id TEXT PRIMARY KEY,
+                original_filename TEXT NOT NULL,
+                stored_filename TEXT NOT NULL,
+                file_type TEXT NOT NULL,
+                file_size_bytes INTEGER NOT NULL,
+                checksum TEXT UNIQUE NOT NULL,
+                category TEXT,
+                page_count INTEGER DEFAULT 1,
+                chunk_count INTEGER DEFAULT 0,
+                status TEXT DEFAULT 'completed',
+                upload_timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
+            )
+            """)
             conn.commit()
 
     def log_query(
@@ -177,6 +194,75 @@ class DatabaseManager:
         except Exception as e:
             logger.error(f"Failed to fetch analytics summary: {e}")
             return {"total_queries": 0, "avg_response_time_sec": 0.0, "cache_hits": 0, "thumbs_up": 0, "thumbs_down": 0, "satisfaction_pct": 0.0}
+
+    def log_uploaded_document(
+        self,
+        document_id: str,
+        original_filename: str,
+        stored_filename: str,
+        file_type: str,
+        file_size_bytes: int,
+        checksum: str,
+        category: str = "uploaded_document",
+        page_count: int = 1,
+        chunk_count: int = 0,
+        status: str = "completed"
+    ) -> bool:
+        """Logs an uploaded document's metadata to SQLite database."""
+        try:
+            with self._get_connection() as conn:
+                cursor = conn.cursor()
+                cursor.execute("""
+                INSERT OR REPLACE INTO uploaded_documents (
+                    document_id, original_filename, stored_filename, file_type,
+                    file_size_bytes, checksum, category, page_count, chunk_count, status
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                """, (
+                    document_id, original_filename, stored_filename, file_type,
+                    file_size_bytes, checksum, category, page_count, chunk_count, status
+                ))
+                conn.commit()
+                return True
+        except Exception as e:
+            logger.error(f"Failed to log uploaded document: {e}")
+            return False
+
+    def get_uploaded_documents(self, limit: int = 100) -> List[Dict[str, Any]]:
+        """Retrieves list of all uploaded documents with metadata."""
+        try:
+            with self._get_connection() as conn:
+                cursor = conn.cursor()
+                cursor.execute("""
+                SELECT document_id, original_filename, stored_filename, file_type,
+                       file_size_bytes, checksum, category, page_count, chunk_count,
+                       status, upload_timestamp
+                FROM uploaded_documents
+                ORDER BY upload_timestamp DESC
+                LIMIT ?
+                """, (limit,))
+                rows = cursor.fetchall()
+                return [dict(r) for r in rows]
+        except Exception as e:
+            logger.error(f"Failed to fetch uploaded documents: {e}")
+            return []
+
+    def get_document_by_checksum(self, checksum: str) -> Optional[Dict[str, Any]]:
+        """Checks if a document with identical SHA-256 checksum exists."""
+        try:
+            with self._get_connection() as conn:
+                cursor = conn.cursor()
+                cursor.execute("""
+                SELECT document_id, original_filename, stored_filename, file_type,
+                       file_size_bytes, checksum, category, page_count, chunk_count,
+                       status, upload_timestamp
+                FROM uploaded_documents
+                WHERE checksum = ?
+                """, (checksum,))
+                row = cursor.fetchone()
+                return dict(row) if row else None
+        except Exception as e:
+            logger.error(f"Failed to fetch document by checksum: {e}")
+            return None
 
 
 db_manager = DatabaseManager()

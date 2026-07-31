@@ -444,6 +444,72 @@ export const apiService = {
     return response.data;
   },
 
+  // Upload Document (POST /admin/upload)
+  uploadDocument: async (
+    file: File,
+    category: string = 'admissions'
+  ): Promise<{
+    success: boolean;
+    document_id: string;
+    filename: string;
+    pages: number;
+    chunks: number;
+    embedding_model: string;
+    processing_time: number;
+    status: string;
+  }> => {
+    const formData = new FormData();
+    formData.append('file', file);
+    formData.append('category', category);
+
+    const response = await apiClient.post('/admin/upload', formData, {
+      headers: {
+        'Content-Type': 'multipart/form-data',
+      },
+    });
+    return response.data;
+  },
+
+  // Get Uploaded Documents List (GET /admin/documents/uploaded)
+  getUploadedDocuments: async (): Promise<
+    Array<{
+      document_id: string;
+      original_filename: string;
+      stored_filename: string;
+      file_type: string;
+      file_size_bytes: number;
+      checksum: string;
+      category?: string;
+      page_count: number;
+      chunk_count: number;
+      status: string;
+      upload_timestamp: string;
+    }>
+  > => {
+    try {
+      const response = await apiClient.get<{
+        documents: Array<{
+          document_id: string;
+          original_filename: string;
+          stored_filename: string;
+          file_type: string;
+          file_size_bytes: number;
+          checksum: string;
+          category?: string;
+          page_count: number;
+          chunk_count: number;
+          status: string;
+          upload_timestamp: string;
+        }>;
+        count: number;
+      }>('/admin/documents/uploaded');
+      return response.data?.documents || [];
+    } catch (e) {
+      console.error('Failed to fetch uploaded documents:', e);
+      return [];
+    }
+  },
+
   // Get Session History (GET /admin/history/{session_id})
   getSessionHistory: async (sessionId: string): Promise<Array<{ role: string; content: string }>> => {
     try {

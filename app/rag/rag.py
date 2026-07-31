@@ -6,6 +6,7 @@ response caching, prompt formatting, and Ollama LLM generation.
 
 import time
 import uuid
+import json
 from typing import Dict, Any, List, Generator, Optional
 from langchain_core.documents import Document
 
@@ -22,6 +23,8 @@ from app.rag.response_enrichment import response_enrichment_engine
 from app.rag.suggestion_engine import suggestion_engine
 from app.rag.pil import pil_engine
 from app.analytics.database import db_manager
+from app.ingestion.document_processor import DocumentProcessor
+from pathlib import Path
 from app.core.logging_config import setup_logger
 
 logger = setup_logger("rag_pipeline")
@@ -321,6 +324,147 @@ class RAGPipeline:
             "status": "success",
             "message": f"Successfully rebuilt database with {count} document chunks.",
             "document_count": count
+        }
+
+    def ingest_uploaded_document(
+        self,
+        file_bytes: bytes,
+        filename: str,
+        category: str = "uploaded_document"
+    ) -> Dict[str, Any]:
+        """
+        Processes an uploaded document (PDF, TXT, DOCX, JSON), extracts text & pages,
+        chunks text, generates embeddings via Ollama, inserts vectors into Chroma,
+        updates BM25 index dynamically, and logs metadata to SQLite.
+
+        Returns:
+            Dict containing ingestion details (success, document_id, pages, chunks, processing_time).
+        """
+        start_time = time.time()
+        logger.info(f"--- START DOCUMENT INGESTION WORKFLOW: '{filename}' ---")
+
+        # 1. Validate file format and size
+        is_valid, err_msg = DocumentProcessor.validate_file(filename, file_bytes)
+        if not is_valid:
+            logger.error(f"Validation failed for '{filename}': {err_msg}")
+            raise ValueError(err_msg)
+
+        # 2. Compute SHA-256 Checksum
+        checksum = DocumentProcessor.compute_sha256(file_bytes)
+        existing_doc = db_manager.get_document_by_checksum(checksum)
+        if existing_doc:
+            logger.warning(f"Duplicate document upload attempt for '{filename}' (checksum: {checksum[:12]}...).")
+            raise ValueError(f"Duplicate file detected: An identical document '{existing_doc['original_filename']}' is already indexed.")
+
+        # 3. Store uploaded document to disk
+        doc_id = f"doc_{uuid.uuid4()}"
+        ext = Path(filename).suffix.lower()
+        uploads_dir = config.BASE_DIR / "data" / "uploads"
+        uploads_dir.mkdir(parents=True, exist_ok=True)
+        
+        sanitized_name = "".join(c for c in filename if c.isalnum() or c in (".", "_", "-"))
+        stored_filename = f"{doc_id}_{sanitized_name}"
+        file_path = uploads_dir / stored_filename
+
+        with open(file_path, "wb") as f:
+            f.write(file_bytes)
+        logger.info(f"Saved uploaded file to: {file_path}")
+
+        # 4. Extract text and page records
+        try:
+            extracted = DocumentProcessor.extract_text_and_pages(file_bytes, filename)
+        except Exception as e:
+            logger.error(f"Text extraction failed for '{filename}': {e}")
+            raise ValueError(f"Failed to extract text from file '{filename}': {str(e)}")
+
+        # 5. Semantic Chunking
+        chunks = DocumentProcessor.chunk_text(
+            text=extracted["text"],
+            filename=filename,
+            document_id=doc_id,
+            checksum=checksum,
+            category=category
+        )
+
+        if not chunks:
+            raise ValueError(f"No valid text chunks generated for file '{filename}'.")
+
+        # 6. Generate Embeddings & Insert into Chroma Vector Database
+        logger.info(f"Embedding {len(chunks)} text chunks using '{self.vector_store_manager.embedding_model_name}'...")
+        try:
+            self.vector_store_manager.vector_store.add_documents(chunks)
+            logger.info(f"Successfully added {len(chunks)} vectors to Chroma collection '{self.vector_store_manager.collection_name}'.")
+        except Exception as e:
+            logger.error(f"Vector store embedding insertion failed for '{filename}': {e}")
+            raise RuntimeError(f"Embedding failure during vector database insertion: {str(e)}")
+
+        # 7. Update BM25 Sparse Keyword Index
+        self.retriever.add_documents(chunks)
+
+        # 8. Clear Response Cache to reflect new document knowledge immediately
+        response_cache.clear()
+
+        processing_time = round(time.time() - start_time, 2)
+
+        # 9. Log Document Metadata to SQLite DB & metadata JSON
+        db_manager.log_uploaded_document(
+            document_id=doc_id,
+            original_filename=filename,
+            stored_filename=stored_filename,
+            file_type=ext.replace(".", ""),
+            file_size_bytes=len(file_bytes),
+            checksum=checksum,
+            category=category,
+            page_count=extracted["pages"],
+            chunk_count=len(chunks),
+            status="completed"
+        )
+
+        # Mirror metadata to JSON for standalone persistence
+        meta_json_path = uploads_dir / "metadata.json"
+        existing_metadata = []
+        if meta_json_path.exists():
+            try:
+                with open(meta_json_path, "r", encoding="utf-8") as f:
+                    existing_metadata = json.load(f)
+            except Exception:
+                existing_metadata = []
+        
+        new_record = {
+            "document_id": doc_id,
+            "original_filename": filename,
+            "stored_filename": stored_filename,
+            "file_type": ext.replace(".", ""),
+            "file_size_bytes": len(file_bytes),
+            "checksum": checksum,
+            "category": category,
+            "page_count": extracted["pages"],
+            "chunk_count": len(chunks),
+            "status": "completed",
+            "upload_timestamp": time.strftime("%Y-%m-%d %H:%M:%S")
+        }
+        existing_metadata.insert(0, new_record)
+        with open(meta_json_path, "w", encoding="utf-8") as f:
+            json.dump(existing_metadata, f, indent=2)
+
+        logger.info(
+            f"--- FINISHED DOCUMENT INGESTION WORKFLOW: '{filename}' ---\n"
+            f"  Document ID     : {doc_id}\n"
+            f"  Pages Extracted : {extracted['pages']}\n"
+            f"  Chunks Embedded : {len(chunks)}\n"
+            f"  Processing Time : {processing_time}s\n"
+            f"-------------------------------------------------------"
+        )
+
+        return {
+            "success": True,
+            "document_id": doc_id,
+            "filename": filename,
+            "pages": extracted["pages"],
+            "chunks": len(chunks),
+            "embedding_model": self.vector_store_manager.embedding_model_name,
+            "processing_time": processing_time,
+            "status": "completed"
         }
 
 

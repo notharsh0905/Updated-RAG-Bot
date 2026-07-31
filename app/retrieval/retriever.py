@@ -58,6 +58,23 @@ class RetrieverManager:
         except Exception as e:
             logger.error(f"Failed to build BM25 index: {e}")
 
+    def add_documents(self, new_docs: List[Document]):
+        """Dynamically appends new document chunks to BM25 index corpus without full rebuild."""
+        try:
+            if not new_docs:
+                return
+
+            self.corpus_docs.extend(new_docs)
+            tokenized_corpus = []
+            for doc in self.corpus_docs:
+                tokens = re.findall(r'\w+', doc.page_content.lower())
+                tokenized_corpus.append(tokens)
+
+            self.bm25 = BM25Okapi(tokenized_corpus)
+            logger.info(f"Updated BM25 index with {len(new_docs)} new chunks. Total corpus size: {len(self.corpus_docs)}.")
+        except Exception as e:
+            logger.error(f"Failed to update BM25 index dynamically: {e}")
+
     def retrieve_vector(self, query: str, k: int = config.DEFAULT_K) -> List[Document]:
         """Performs dense vector similarity search."""
         return self.vector_store.similarity_search(query, k=k)

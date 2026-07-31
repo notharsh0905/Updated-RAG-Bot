@@ -4,7 +4,7 @@ Exposes endpoints for health checks, question answering, SSE streaming,
 feedback collection, and admin analytics.
 """
 
-from fastapi import FastAPI, HTTPException, status, Query
+from fastapi import FastAPI, HTTPException, status, Query, File, UploadFile, Form
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import StreamingResponse
 from pydantic import BaseModel, Field
@@ -255,3 +255,68 @@ def rebuild_endpoint():
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
             detail=f"Failed to rebuild database: {str(e)}"
         )
+
+
+class DocumentUploadResponse(BaseModel):
+    """Document Ingestion Response Payload."""
+    success: bool
+    document_id: str
+    filename: str
+    pages: int
+    chunks: int
+    embedding_model: str
+    processing_time: float
+    status: str
+
+
+@app.post("/admin/upload", response_model=DocumentUploadResponse, tags=["Administration"])
+async def admin_upload_endpoint(
+    file: UploadFile = File(...),
+    category: str = Form("uploaded_document")
+):
+    """
+    Ingests an uploaded document (PDF, TXT, DOCX, JSON) into Chroma DB & BM25 index incrementally.
+    """
+    global pipeline
+    if not pipeline:
+        raise HTTPException(
+            status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
+            detail="RAG Pipeline is not initialized."
+        )
+
+    try:
+        content = await file.read()
+        res = pipeline.ingest_uploaded_document(
+            file_bytes=content,
+            filename=file.filename or "uploaded_file.pdf",
+            category=category
+        )
+        return DocumentUploadResponse(
+            success=res["success"],
+            document_id=res["document_id"],
+            filename=res["filename"],
+            pages=res["pages"],
+            chunks=res["chunks"],
+            embedding_model=res["embedding_model"],
+            processing_time=res["processing_time"],
+            status=res["status"]
+        )
+    except ValueError as ve:
+        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail=str(ve))
+    except RuntimeError as re:
+        raise HTTPException(status_code=status.HTTP_503_SERVICE_UNAVAILABLE, detail=str(re))
+    except Exception as e:
+        logger.error(f"Error handling admin upload endpoint: {e}")
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail=f"Document ingestion failed: {str(e)}"
+        )
+
+
+@app.get("/admin/documents/uploaded", tags=["Administration"])
+def admin_uploaded_documents_endpoint():
+    """
+    Returns list of all uploaded documents indexed in the RAG knowledge base.
+    """
+    docs = db_manager.get_uploaded_documents()
+    return {"documents": docs, "count": len(docs)}
