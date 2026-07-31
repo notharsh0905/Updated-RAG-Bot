@@ -9,6 +9,7 @@ import {
   BarChart3,
   MessageSquare,
   MessageSquareCode,
+  CheckSquare,
   ShieldAlert,
   UploadCloud,
   Server,
@@ -51,6 +52,12 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
   const adminNav = [
     { href: '/admin/dashboard', label: 'Overview', icon: LayoutDashboard },
     {
+      href: '/admin/reviews',
+      label: 'Human Review Workspace',
+      icon: CheckSquare,
+      badge: openReviewsCount > 0 ? openReviewsCount : undefined,
+    },
+    {
       href: '/admin/queries',
       label: 'Student Query Center',
       icon: MessageSquareCode,
@@ -59,7 +66,6 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
       href: '/admin/monitoring',
       label: 'AI Quality Center',
       icon: ShieldAlert,
-      badge: openReviewsCount > 0 ? openReviewsCount : undefined,
     },
     { href: '/admin/documents', label: 'Documents', icon: FileText },
     { href: '/admin/analytics', label: 'Analytics', icon: BarChart3 },
