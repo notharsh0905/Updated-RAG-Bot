@@ -32,6 +32,14 @@ class DocumentProcessor:
         return hashlib.sha256(file_bytes).hexdigest()
 
     @staticmethod
+    def sanitize_filename(filename: str) -> str:
+        """Sanitizes filename to prevent path traversal exploits."""
+        safe_name = Path(filename).name
+        # Remove any path separation attempts
+        safe_name = safe_name.replace("..", "").replace("/", "").replace("\\", "")
+        return safe_name or "uploaded_document"
+
+    @staticmethod
     def validate_file(filename: str, file_bytes: bytes) -> Tuple[bool, str]:
         """
         Validates file extension and size constraints.

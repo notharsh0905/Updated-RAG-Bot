@@ -4,9 +4,11 @@ Exposes endpoints for health checks, question answering, SSE streaming,
 feedback collection, and admin analytics.
 """
 
-from fastapi import FastAPI, HTTPException, status, Query, File, UploadFile, Form
+import shutil
+import time
+from fastapi import FastAPI, HTTPException, status, Query, File, UploadFile, Form, Request
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import StreamingResponse
+from fastapi.responses import StreamingResponse, JSONResponse
 from pydantic import BaseModel, Field
 from typing import Optional, List, Dict, Any
 
@@ -14,6 +16,7 @@ from app.rag.rag import RAGPipeline
 from app.utils.utils import check_ollama_health, check_dataset_status
 from app.analytics.database import db_manager
 from app.analytics.async_logger import async_logger
+from app.ingestion.document_processor import DocumentProcessor
 from app.memory.memory import memory_manager
 from app.core.config import config
 from app.core.logging_config import setup_logger
@@ -26,14 +29,48 @@ app = FastAPI(
     version="2.0.0"
 )
 
-# Enable CORS
+# Dynamic CORS origins from configuration
+cors_origins = [o.strip() for o in config.CORS_ORIGINS.split(",") if o.strip()]
+if "*" not in cors_origins:
+    cors_origins.append("*")
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=cors_origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+
+# Global Production Exception Handler
+@app.exception_handler(Exception)
+async def global_exception_handler(request: Request, exc: Exception):
+    """Prevents raw internal stack traces from reaching clients in production."""
+    logger.error(f"Unhandled Exception on {request.method} {request.url}: {exc}")
+    return JSONResponse(
+        status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+        content={
+            "error": True,
+            "status": "error",
+            "message": "An internal server error occurred while processing your request.",
+            "timestamp": time.time()
+        }
+    )
+
+
+@app.exception_handler(HTTPException)
+async def http_exception_handler(request: Request, exc: HTTPException):
+    """Standardized HTTP Exception handler."""
+    return JSONResponse(
+        status_code=exc.status_code,
+        content={
+            "error": True,
+            "status": "fail",
+            "message": exc.detail,
+            "timestamp": time.time()
+        }
+    )
 
 # Global RAG Pipeline Instance
 pipeline: Optional[RAGPipeline] = None
@@ -111,21 +148,55 @@ def root_endpoint():
 
 @app.get("/health", tags=["Health"])
 def health_endpoint():
-    """Health check endpoint evaluating Ollama connectivity and Vector DB status."""
+    """Structured production health check endpoint evaluating all backend subsystems."""
     ollama_status = check_ollama_health(config.OLLAMA_BASE_URL)
     dataset_status = check_dataset_status()
     
     vector_count = pipeline.vector_store_manager.get_count() if pipeline else 0
 
-    is_healthy = ollama_status.get("connected", False) and dataset_status.get("exists", False)
+    # SQLite DB health check
+    sqlite_healthy = False
+    try:
+        db_manager.get_uploaded_documents(limit=1)
+        sqlite_healthy = True
+    except Exception:
+        sqlite_healthy = False
+
+    # System Disk metrics
+    total_b, used_b, free_b = shutil.disk_usage(config.BASE_DIR)
+    disk_free_gb = round(free_b / (1024 ** 3), 2)
+    disk_usage_pct = round((used_b / total_b) * 100, 1)
+
+    is_healthy = ollama_status.get("connected", False) and sqlite_healthy and disk_free_gb > 1.0
 
     return {
         "status": "healthy" if is_healthy else "degraded",
-        "ollama": ollama_status,
-        "dataset": dataset_status,
+        "timestamp": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
+        "environment": config.ENVIRONMENT,
+        "backend": {
+            "status": "online",
+            "version": "2.0.0",
+            "rag_pipeline": "initialized" if pipeline else "offline"
+        },
+        "ollama": {
+            "connected": ollama_status.get("connected", False),
+            "base_url": config.OLLAMA_BASE_URL,
+            "llm_model": config.LLM_MODEL,
+            "embedding_model": config.EMBEDDING_MODEL
+        },
         "vector_db": {
+            "type": "ChromaDB",
             "collection": config.COLLECTION_NAME,
-            "document_count": vector_count
+            "document_count": vector_count,
+            "persistence_dir": str(config.CHROMA_DB_DIR)
+        },
+        "sqlite_db": {
+            "status": "healthy" if sqlite_healthy else "error",
+            "db_path": str(db_manager.db_path)
+        },
+        "system": {
+            "disk_free_gb": disk_free_gb,
+            "disk_usage_pct": disk_usage_pct
         }
     }
 
@@ -313,9 +384,10 @@ async def admin_upload_endpoint(
 
     try:
         content = await file.read()
+        safe_filename = DocumentProcessor.sanitize_filename(file.filename or "uploaded_file.pdf")
         res = pipeline.ingest_uploaded_document(
             file_bytes=content,
-            filename=file.filename or "uploaded_file.pdf",
+            filename=safe_filename,
             category=category
         )
         return DocumentUploadResponse(
