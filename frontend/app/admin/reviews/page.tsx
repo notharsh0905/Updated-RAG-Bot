@@ -119,21 +119,21 @@ export default function HumanReviewWorkspacePage() {
         {
           ticket_id: 'tkt_10294',
           query_id: 'query_8f9b2c1a-4d3e-4b2a-8c1d-9e8f7a6b5c4d',
-          session_id: 'session-hostel-9912',
-          question: 'What is the exact hostel fee for 1st year B.Tech girls at UIET Kanpur?',
+          session_id: 'session-scholarship-9912',
+          question: 'What is the annual family income limit for UP Post-Matric fee reimbursement?',
           answer:
-            'The hostel fee for B.Tech students is approximately Rs. 42,000 per annum including mess advance and security deposit.',
-          confidence_score: 0.68,
+            'The annual income limit for UP Post-Matric fee reimbursement is Rs. 2.0 Lakhs per annum for General, OBC, and SC/ST category students as per current UP Government guidelines.',
+          confidence_score: 0.88,
           status: 'Under Review',
           priority: 'High',
-          assigned_reviewer: 'Admission Cell',
+          assigned_reviewer: 'Scholarship Cell',
           root_cause: 'Outdated Information',
           user_rating: -1,
-          user_comments: 'Hostel fee figure is outdated; prospectus lists Rs. 48,500.',
+          user_comments: 'Income limit circular updated to Rs. 2.5 Lakhs for SC/ST category in 2026.',
           created_at: new Date(Date.now() - 1000 * 60 * 45).toISOString(),
-          department_category: 'hostels',
+          department_category: 'scholarship',
           official_source_snippet:
-            'Official CSJMU Prospectus 2025-26 (Page 14): Girls Hostel Fee is Rs. 48,500 per annum including Mess Advance.',
+            'Official UP Scholarship Circular 2026: SC/ST income ceiling is Rs. 2.50 Lakhs; General/OBC ceiling is Rs. 2.00 Lakhs.',
         },
         {
           ticket_id: 'tkt_10295',
@@ -141,8 +141,8 @@ export default function HumanReviewWorkspacePage() {
           session_id: 'session-btech-uiet-8821',
           question: 'What is the minimum eligibility percentage for B.Tech CSE at UIET Kanpur?',
           answer:
-            'The minimum eligibility for B.Tech Computer Science & Engineering (CSE) at UIET Kanpur is 45% aggregate in 10+2 with Physics, Mathematics, and Chemistry.',
-          confidence_score: 0.93,
+            'The minimum eligibility for B.Tech Computer Science & Engineering (CSE) at UIET Kanpur is 45% aggregate in 10+2 with Physics, Mathematics, and Chemistry/Computer Science.',
+          confidence_score: 0.95,
           status: 'Approved',
           priority: 'Low',
           assigned_reviewer: 'Academic Office',
@@ -151,7 +151,25 @@ export default function HumanReviewWorkspacePage() {
           created_at: new Date(Date.now() - 1000 * 60 * 120).toISOString(),
           department_category: 'admissions',
           official_source_snippet:
-            'UIET Kanpur Admission Guidelines 2025: B.Tech CSE eligibility is 45% in 10+2 PCM.',
+            'UIET Kanpur Admission Guidelines 2026: B.Tech CSE eligibility is 45% in 10+2 PCM.',
+        },
+        {
+          ticket_id: 'tkt_10296',
+          query_id: 'query_99e8a71b-3c2d-4e5f-8a1b-2c3d4e5f6a7b',
+          session_id: 'session-migration-4410',
+          question: 'Where can I submit my Migration Certificate for document verification?',
+          answer:
+            'Migration Certificates should be submitted at the UIET Academic Cell (Room 104, Admin Block) along with your original 10+2 marksheet.',
+          confidence_score: 0.92,
+          status: 'Pending',
+          priority: 'Medium',
+          assigned_reviewer: 'Academic Office',
+          root_cause: 'Missing Document',
+          user_rating: 1,
+          created_at: new Date(Date.now() - 1000 * 60 * 200).toISOString(),
+          department_category: 'academics',
+          official_source_snippet:
+            'UIET Academic Circular 2026: Document verification takes place in Room 104, Admin Block.',
         },
       ];
       setTickets(fallback);

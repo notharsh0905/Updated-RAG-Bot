@@ -5,11 +5,11 @@ import { Users, UserPlus, ShieldCheck, Lock } from 'lucide-react';
 
 export default function AdminUsersPage() {
   const users = [
-    { name: 'Dr. Alok Kumar', email: 'director.uiet@csjmu.ac.in', role: 'Super Administrator', dept: 'Director Office', status: 'Active' },
-    { name: 'Prof. Vinay Pathak', email: 'vc@csjmu.ac.in', role: 'Executive Sponsor', dept: 'Vice Chancellor Office', status: 'Active' },
-    { name: 'Dr. Rahul Dev', email: 'rahul.cse@csjmu.ac.in', role: 'Knowledge Manager', dept: 'Computer Science & Eng', status: 'Active' },
-    { name: 'Anita Sharma', email: 'admissions@csjmu.ac.in', role: 'Admissions Officer', dept: 'University Helpdesk', status: 'Active' },
-    { name: 'Sanjay Verma', email: 'hostel.admin@csjmu.ac.in', role: 'Hostel Manager', dept: 'Student Affairs', status: 'Active' },
+    { name: 'Prof. (Dr.) Alok Kumar', email: 'director.uiet@csjmu.ac.in', role: 'Super Administrator', dept: 'Director Office', status: 'Active' },
+    { name: 'Prof. Vinay Kumar Pathak', email: 'vc@csjmu.ac.in', role: 'Executive Sponsor', dept: 'Vice Chancellor Office', status: 'Active' },
+    { name: 'Dr. Rahul Dev', email: 'academic.uiet@csjmu.ac.in', role: 'Knowledge Manager', dept: 'Academic & Exam Cell', status: 'Active' },
+    { name: 'UIET Admissions Nodal Desk', email: 'admissions.uiet@csjmu.ac.in', role: 'Admissions Officer', dept: 'Admissions Cell', status: 'Active' },
+    { name: 'CSJMU Hostel Warden Office', email: 'hostels@csjmu.ac.in', role: 'Hostel Manager', dept: 'Student Accommodation', status: 'Active' },
   ];
 
   return (
