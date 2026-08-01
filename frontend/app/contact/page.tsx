@@ -15,13 +15,13 @@ export default function ContactPage() {
     setIsSubmitting(true);
     setNotice(null);
 
-    // Honest Frontend Abstraction (No fake backend calls)
+    // Honest UX Notification
     setTimeout(() => {
       setIsSubmitting(false);
       setNotice(
-        'The University Online Inquiry API service is currently undergoing scheduled maintenance. For immediate official response, please email admission@csjmu.ac.in or call +91 0512-2580044 directly.'
+        'Online inquiry submission will be available in a future update. For assistance, please contact the university through the official contact details below.'
       );
-    }, 600);
+    }, 400);
   };
 
   return (

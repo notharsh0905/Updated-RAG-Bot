@@ -144,6 +144,75 @@ export default function AboutPage() {
           </p>
         </div>
       </div>
+
+      {/* Official Project Credits & Development Team Section */}
+      <section className="space-y-4 pt-4 border-t border-slate-200 dark:border-slate-800">
+        <div className="border-b border-slate-200 dark:border-slate-800 pb-2">
+          <h2 className="text-lg font-serif font-bold text-[#002B49] dark:text-white flex items-center gap-2">
+            <span className="uni-bullet">➲</span>
+            <span>Project Credits & R&D Development Team</span>
+          </h2>
+        </div>
+
+        <div className="p-6 rounded-2xl bg-slate-900 text-slate-100 border border-slate-800 shadow-md space-y-6">
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-800 pb-4">
+            <div>
+              <span className="text-xs font-mono font-bold text-amber-400 bg-amber-400/10 px-2.5 py-1 rounded border border-amber-400/20">
+                Release v3.0.0 (Production 2026)
+              </span>
+              <h3 className="text-base font-bold text-white mt-2">
+                CSJMU AI Smart Student Help Desk & RAG Platform
+              </h3>
+              <p className="text-xs text-slate-400 mt-0.5">
+                University Institute of Engineering & Technology (UIET), CSJMU Kanpur
+              </p>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs">
+            {/* Academic Guide */}
+            <div className="p-4 rounded-xl bg-slate-950/80 border border-slate-800 space-y-2">
+              <span className="text-[10px] font-bold uppercase tracking-wider text-amber-400">
+                Academic Project Guide
+              </span>
+              <div>
+                <h4 className="text-sm font-bold text-white">Assistant Professor Gayatri Rajpoot</h4>
+                <p className="text-[11px] text-slate-400 font-medium">Faculty of Computer Science & Engineering</p>
+                <p className="text-[11px] text-slate-500">UIET CSJMU Kanpur</p>
+              </div>
+            </div>
+
+            {/* Lead Developer */}
+            <div className="p-4 rounded-xl bg-slate-950/80 border border-slate-800 space-y-2">
+              <span className="text-[10px] font-bold uppercase tracking-wider text-cyan-400">
+                Lead Software Architect & Developer
+              </span>
+              <div>
+                <h4 className="text-sm font-bold text-white">Harsh Upadhyay</h4>
+                <p className="text-[11px] text-cyan-300 font-mono">B.Tech CSE (2K24)</p>
+                <p className="text-[11px] text-slate-400">Full-Stack RAG & System Architecture</p>
+              </div>
+            </div>
+
+            {/* Engineering Team */}
+            <div className="p-4 rounded-xl bg-slate-950/80 border border-slate-800 space-y-2">
+              <span className="text-[10px] font-bold uppercase tracking-wider text-emerald-400">
+                Engineering Team Members
+              </span>
+              <div className="space-y-1.5">
+                <div>
+                  <h4 className="text-xs font-bold text-white">Nikhil Kumar</h4>
+                  <p className="text-[11px] text-emerald-400 font-mono">B.Tech CSE AI (2K23)</p>
+                </div>
+                <div>
+                  <h4 className="text-xs font-bold text-white">Priyanshi Yadav</h4>
+                  <p className="text-[11px] text-emerald-400 font-mono">B.Tech CSE AI (2K23)</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

@@ -70,6 +70,49 @@ export default function AdminSystemPage() {
           {rebuildMsg && <p className="text-xs font-mono font-semibold pt-1 text-slate-800 dark:text-slate-200">{rebuildMsg}</p>}
         </div>
       </div>
+
+      {/* Project Credits & Institutional Metadata */}
+      <div className="p-6 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm space-y-4">
+        <div className="flex items-center justify-between border-b border-slate-200 dark:border-slate-800 pb-3">
+          <h3 className="text-sm font-bold text-[#002B49] dark:text-white uppercase tracking-wider">
+            Academic R&D Project Credits & System Specifications
+          </h3>
+          <span className="text-xs font-mono font-bold text-cyan-500 bg-cyan-500/10 px-2.5 py-0.5 rounded border border-cyan-500/20">
+            Release v3.0.0
+          </span>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
+          <div className="p-3.5 rounded-lg bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 space-y-1">
+            <span className="text-[10px] font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400">
+              Academic Project Guide
+            </span>
+            <p className="font-bold text-slate-900 dark:text-white">Assistant Professor Gayatri Rajpoot</p>
+            <p className="text-[11px] text-slate-500">Dept. of Computer Science & Engineering</p>
+          </div>
+
+          <div className="p-3.5 rounded-lg bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 space-y-1">
+            <span className="text-[10px] font-bold uppercase tracking-wider text-cyan-600 dark:text-cyan-400">
+              Lead Software Architect
+            </span>
+            <p className="font-bold text-slate-900 dark:text-white">Harsh Upadhyay</p>
+            <p className="text-[11px] text-cyan-600 dark:text-cyan-400 font-mono">B.Tech CSE (2K24)</p>
+          </div>
+
+          <div className="p-3.5 rounded-lg bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 space-y-1">
+            <span className="text-[10px] font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">
+              Engineering Team Members
+            </span>
+            <p className="font-bold text-slate-900 dark:text-white">Nikhil Kumar <span className="font-mono text-[10px] font-normal text-slate-500">(B.Tech CSE AI 2K23)</span></p>
+            <p className="font-bold text-slate-900 dark:text-white">Priyanshi Yadav <span className="font-mono text-[10px] font-normal text-slate-500">(B.Tech CSE AI 2K23)</span></p>
+          </div>
+        </div>
+
+        <div className="pt-2 text-[11px] text-slate-500 font-mono flex items-center justify-between border-t border-slate-200 dark:border-slate-800">
+          <span>University Institute of Engineering & Technology (UIET), CSJMU Kanpur</span>
+          <span>Deployment Year: 2026</span>
+        </div>
+      </div>
     </div>
   );
 }
