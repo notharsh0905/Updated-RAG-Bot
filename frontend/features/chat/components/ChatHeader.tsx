@@ -45,22 +45,22 @@ export const ChatHeader: React.FC<ChatHeaderProps> = ({
         </button>
 
         {/* Official CSJMU Intelligence Status Pill */}
-        <div className="flex items-center gap-2.5 px-3 py-1.5 rounded-full bg-slate-100 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60 text-xs text-slate-800 dark:text-slate-200">
+        <div className="flex items-center gap-2 sm:gap-2.5 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full bg-slate-100 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60 text-xs text-slate-800 dark:text-slate-200 min-w-0 max-w-[190px] xs:max-w-[240px] sm:max-w-none">
           <div className="relative flex items-center justify-center shrink-0">
             <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping absolute" />
             <span className="w-2 h-2 rounded-full bg-emerald-500 relative" />
           </div>
           
-          <div className="flex items-center gap-1.5 leading-none">
+          <div className="flex items-center gap-1 sm:gap-1.5 leading-none min-w-0 truncate">
             <img
               src="/images/csjmu-seal-logo.jpg"
               alt="CSJMU Logo"
               className="w-4 h-4 rounded-full object-contain shrink-0"
             />
-            <span className="font-bold text-slate-900 dark:text-slate-100">
+            <span className="font-bold text-slate-900 dark:text-slate-100 truncate">
               CSJMU Intelligence
             </span>
-            <span className="text-[10px] font-mono px-1.5 py-0.5 rounded bg-slate-200 dark:bg-slate-700 text-[#8B0000] dark:text-amber-400 font-semibold border border-slate-300 dark:border-amber-400/20">
+            <span className="text-[10px] font-mono px-1.5 py-0.5 rounded bg-slate-200 dark:bg-slate-700 text-[#8B0000] dark:text-amber-400 font-semibold border border-slate-300 dark:border-amber-400/20 shrink-0">
               v2.5
             </span>
           </div>
@@ -68,7 +68,7 @@ export const ChatHeader: React.FC<ChatHeaderProps> = ({
           <span className="hidden md:inline text-slate-300 dark:text-slate-600">•</span>
           
           {/* Horizontally Aligned Verified Status Icon */}
-          <span className="hidden md:inline-flex items-center gap-1.5 text-slate-600 dark:text-slate-300 text-[11px] font-medium leading-none">
+          <span className="hidden md:inline-flex items-center gap-1.5 text-slate-600 dark:text-slate-300 text-[11px] font-medium leading-none shrink-0">
             <ShieldCheck className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400 shrink-0" />
             <span>Official Campus Portal</span>
           </span>

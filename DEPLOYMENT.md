@@ -205,3 +205,39 @@ curl -s http://localhost:8000/health | jq
 | `Ollama Connection Failed` | Ollama service not running | Run `ollama serve` or check `systemctl status ollama` |
 | `HTTP 503 Pipeline Not Initialized` | Chroma DB loading issue | Run `python3 -m src.rag` or check logs |
 | Slow Response Latency | CPU bottleneck | Ensure Ollama has GPU access or increase worker threads |
+
+---
+
+## 🛡️ Production Security Hardening
+
+This deployment incorporates enterprise-grade security controls tailored for institutional and campus web applications:
+
+### 1. HTTP Security Headers
+Every HTTP response from both the Next.js frontend and FastAPI backend contains mandatory security headers:
+
+- `X-Content-Type-Options: nosniff` — Prevents MIME-type sniffing attacks.
+- `X-Frame-Options: DENY` — Protects against clickjacking by preventing iframe embedding.
+- `Referrer-Policy: strict-origin-when-cross-origin` — Restricts sensitive referrer leakage across origins.
+- `Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), accelerometer=(), gyroscope=(), magnetometer=()` — Disables unneeded browser capabilities.
+- `Content-Security-Policy`:
+  ```
+  default-src 'self'; img-src 'self' data: blob: https:; style-src 'self' 'unsafe-inline'; font-src 'self' data:; script-src 'self' 'unsafe-inline' 'unsafe-eval'; connect-src 'self' http://localhost:* http://127.0.0.1:* http://10.63.135.235:8000 ws://localhost:* ws://127.0.0.1:*; object-src 'none'; base-uri 'self'; frame-ancestors 'none';
+  ```
+
+### 2. Cookie Security Policy
+Administrative sessions are issued exclusively as server-side cookies:
+- **`HttpOnly`**: Prevents client-side JavaScript (`document.cookie`) from accessing session tokens, mitigating XSS risks.
+- **`SameSite=Lax`**: Protects against Cross-Site Request Forgery (CSRF).
+- **`Path=/`**: Restricted cookie scope.
+- **`Secure`**: Automatically enforced in HTTPS / production environments.
+
+### 3. Backend Authentication & Session Architecture
+- **Zero Frontend Passcode Storage**: Administrator credentials (`ADMIN_PASSCODE`) are owned exclusively by backend environment variables and `app/core/config.py`.
+- **HMAC Session Signing**: Session tokens (`admin:<timestamp>:<signature>`) are signed with HMAC-SHA256 using `ADMIN_SESSION_SECRET` with a 24-hour expiration TTL.
+- **Backend Route Guards**: Every administrative endpoint (`/admin/*`, `/rebuild`) requires a valid session token via the `require_admin_auth` dependency.
+
+### 4. HTTPS & HSTS Requirements
+In production deployments (`ENVIRONMENT=production` with HTTPS active):
+- `Strict-Transport-Security: max-age=31536000; includeSubDomains; preload` (HSTS) is dynamically attached to enforce HTTPS connections across all subdomains.
+- CSP appends `upgrade-insecure-requests;`.
+

@@ -29,6 +29,28 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
 
   const isLoginPage = pathname === '/admin/login';
 
+  // Verify backend HttpOnly session cookie on admin page access
+  useEffect(() => {
+    if (isLoginPage) return;
+
+    const verifySession = async () => {
+      try {
+        const res = await apiService.verifyAdminSession();
+        if (res.authenticated) {
+          setIsAdminAuthenticated(true);
+        } else {
+          setIsAdminAuthenticated(false);
+          router.push('/admin/login');
+        }
+      } catch {
+        setIsAdminAuthenticated(false);
+        router.push('/admin/login');
+      }
+    };
+
+    verifySession();
+  }, [isLoginPage, pathname, router, setIsAdminAuthenticated]);
+
   // Synchronize open reviews badge count
   useEffect(() => {
     if (isLoginPage) return;
@@ -48,6 +70,17 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
     const interval = setInterval(fetchBadgeCount, 10000);
     return () => clearInterval(interval);
   }, [isLoginPage, pathname]);
+
+  const handleLogout = async () => {
+    try {
+      await apiService.adminLogout();
+    } catch (e) {
+      console.error('Failed to log out admin session:', e);
+    } finally {
+      setIsAdminAuthenticated(false);
+      router.push('/admin/login');
+    }
+  };
 
   const adminNav = [
     { href: '/admin/dashboard', label: 'Overview', icon: LayoutDashboard },
@@ -109,10 +142,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
         </div>
 
         <button
-          onClick={() => {
-            setIsAdminAuthenticated(false);
-            router.push('/admin/login');
-          }}
+          onClick={handleLogout}
           className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-red-900/80 hover:bg-red-800 text-white text-xs font-semibold border border-red-700/50 transition-colors shrink-0"
         >
           <LogOut className="w-3.5 h-3.5" />

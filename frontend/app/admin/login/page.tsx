@@ -5,21 +5,33 @@ import { useRouter } from 'next/navigation';
 import { Lock, ShieldCheck, KeyRound, ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
 import { useChatStore } from '@/store/useChatStore';
+import { apiService } from '@/services/api';
 
 export default function AdminLoginPage() {
   const [passcode, setPasscode] = useState('');
   const [error, setError] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const { setIsAdminAuthenticated } = useChatStore();
   const router = useRouter();
 
-  const handleLogin = (e: React.FormEvent) => {
+  const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
-    const validPasscode = process.env.NEXT_PUBLIC_ADMIN_PASSCODE || 'CSJMU_UIET_2026';
-    if (passcode.trim() === validPasscode) {
-      setIsAdminAuthenticated(true);
-      router.push('/admin/dashboard');
-    } else {
-      setError('Invalid Administrator Key. Enter authorized university passcode.');
+    setError('');
+    setIsSubmitting(true);
+    try {
+      const res = await apiService.adminLogin(passcode.trim());
+      if (res.authenticated) {
+        setIsAdminAuthenticated(true);
+        router.push('/admin/dashboard');
+      } else {
+        setError('Invalid Administrator Key. Enter authorized university passcode.');
+      }
+    } catch (err: any) {
+      setError(
+        err.response?.data?.message || err.message || 'Authentication failed. Please verify credentials.'
+      );
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -76,9 +88,10 @@ export default function AdminLoginPage() {
 
           <button
             type="submit"
-            className="w-full h-10 rounded-lg bg-[#002B49] hover:bg-[#001D33] text-white font-semibold text-xs shadow-sm transition-colors"
+            disabled={isSubmitting}
+            className="w-full h-10 rounded-lg bg-[#002B49] hover:bg-[#001D33] text-white font-semibold text-xs shadow-sm transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            Authenticate Admin Credentials
+            {isSubmitting ? 'Authenticating Session...' : 'Authenticate Admin Credentials'}
           </button>
         </form>
 

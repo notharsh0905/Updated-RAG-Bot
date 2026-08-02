@@ -71,20 +71,20 @@ export default function HomePage() {
   ];
 
   return (
-    <div className="flex flex-col min-h-[calc(100vh-8rem)] max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-8">
+    <div className="flex flex-col min-h-[calc(100vh-8rem)] w-full max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8 py-4 sm:py-6 space-y-6 sm:space-y-8 min-w-0 overflow-hidden">
       
       {/* Official Ticker Announcement Bar */}
-      <div className="flex flex-col sm:flex-row items-center justify-between gap-3 p-3.5 rounded-xl bg-[#002B49] text-white shadow-sm border border-slate-700">
-        <div className="flex items-center gap-2 text-xs font-semibold">
-          <span className="px-2 py-0.5 rounded bg-[#8B0000] text-white text-[10px] font-bold uppercase tracking-wider">
+      <div className="flex flex-col sm:flex-row items-center justify-between gap-3 p-3.5 rounded-xl bg-[#002B49] text-white shadow-sm border border-slate-700 w-full max-w-full overflow-hidden">
+        <div className="flex items-center gap-2 text-xs font-semibold min-w-0 w-full sm:w-auto">
+          <span className="px-2 py-0.5 rounded bg-[#8B0000] text-white text-[10px] font-bold uppercase tracking-wider shrink-0">
             ANNOUNCEMENT
           </span>
           <span className="truncate">1st On Spot Counselling Session 2026-27 Results & Seat Allotment Open</span>
         </div>
-        <div className="flex items-center gap-2 shrink-0">
+        <div className="flex items-center gap-2 shrink-0 w-full sm:w-auto">
           <button
             onClick={() => handleCardClick('What is the procedure for B.Tech spot counselling round 3?')}
-            className="px-3 py-1 rounded bg-[#8B0000] hover:bg-red-800 text-white font-semibold text-xs transition-colors"
+            className="w-full sm:w-auto px-3 py-1.5 sm:py-1 rounded bg-[#8B0000] hover:bg-red-800 text-white font-semibold text-xs transition-colors text-center"
           >
             Spot Counselling Details
           </button>
@@ -92,40 +92,42 @@ export default function HomePage() {
       </div>
 
       {/* Hero Header Card */}
-      <section className="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 sm:p-10 shadow-sm relative overflow-hidden">
-        <div className="max-w-4xl space-y-5">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 text-xs font-semibold border border-slate-200 dark:border-slate-700">
-            <ShieldCheck className="w-4 h-4 text-[#8B0000] dark:text-amber-400" />
-            <span>NAAC A++ Accredited State University • Category-1 Status</span>
+      <section className="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-4 sm:p-8 lg:p-10 shadow-sm relative overflow-hidden w-full max-w-full min-w-0">
+        <div className="max-w-4xl space-y-4 sm:space-y-5 min-w-0">
+          <div className="inline-flex items-center gap-2 px-2.5 sm:px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 text-[11px] sm:text-xs font-semibold border border-slate-200 dark:border-slate-700 max-w-full overflow-hidden">
+            <ShieldCheck className="w-4 h-4 text-[#8B0000] dark:text-amber-400 shrink-0" />
+            <span className="truncate">NAAC A++ Accredited State University • Category-1 Status</span>
           </div>
 
-          <div className="space-y-2">
-            <h1 className="text-2xl sm:text-4xl font-serif font-extrabold text-[#002B49] dark:text-white tracking-tight leading-tight">
+          <div className="space-y-2 min-w-0">
+            <h1 className="text-xl xs:text-2xl sm:text-3xl lg:text-4xl font-serif font-extrabold text-[#002B49] dark:text-white tracking-tight leading-snug sm:leading-tight break-words">
               Chhatrapati Shahu Ji Maharaj University, Kanpur
             </h1>
-            <p className="text-base sm:text-lg font-semibold text-[#8B0000] dark:text-amber-400">
+            <p className="text-xs xs:text-sm sm:text-base lg:text-lg font-semibold text-[#8B0000] dark:text-amber-400 leading-snug break-words">
               University Institute of Engineering and Technology (UIET) Enterprise AI Portal
             </p>
           </div>
 
-          <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed max-w-3xl">
+          <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed max-w-3xl break-words">
             Welcome to the official intelligent assistant for UIET Kanpur. Search or ask questions regarding B.Tech admissions 2026-27, UP Post-Matric fee waivers, department curricula, placement metrics, or supercomputing research facilities.
           </p>
 
           {/* Integrated Enterprise Search Bar */}
-          <form onSubmit={handleDirectSearch} className="relative max-w-2xl pt-2">
-            <div className="relative flex items-center">
-              <Search className="w-5 h-5 text-slate-400 absolute left-4 pointer-events-none" />
-              <input
-                type="text"
-                value={quickInput}
-                onChange={(e) => setQuickInput(e.target.value)}
-                placeholder="Ask official AI Assistant (e.g. 'What is the eligibility for B.Tech CSE?')..."
-                className="w-full h-12 pl-11 pr-24 rounded-xl bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-white text-sm font-medium border border-slate-300 dark:border-slate-700 shadow-inner focus:outline-none focus:ring-2 focus:ring-[#002B49] dark:focus:ring-amber-400"
-              />
+          <form onSubmit={handleDirectSearch} className="relative max-w-2xl pt-2 w-full min-w-0">
+            <div className="relative flex flex-col xs:flex-row items-stretch xs:items-center gap-2 xs:gap-0">
+              <div className="relative flex-1 flex items-center w-full min-w-0">
+                <Search className="w-4 h-4 sm:w-5 sm:h-5 text-slate-400 absolute left-3.5 sm:left-4 pointer-events-none shrink-0" />
+                <input
+                  type="text"
+                  value={quickInput}
+                  onChange={(e) => setQuickInput(e.target.value)}
+                  placeholder="Ask official AI Assistant (e.g. 'What is the eligibility for B.Tech CSE?')..."
+                  className="w-full h-11 sm:h-12 pl-10 sm:pl-11 pr-3 xs:pr-24 sm:pr-32 rounded-xl bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-white text-xs sm:text-sm font-medium border border-slate-300 dark:border-slate-700 shadow-inner focus:outline-none focus:ring-2 focus:ring-[#002B49] dark:focus:ring-amber-400"
+                />
+              </div>
               <button
                 type="submit"
-                className="absolute right-1.5 h-9 px-4 rounded-lg bg-[#002B49] hover:bg-[#001D33] text-white font-semibold text-xs flex items-center gap-1.5 transition-colors shadow-sm"
+                className="w-full xs:w-auto xs:absolute xs:right-1.5 h-10 xs:h-9 px-4 rounded-lg bg-[#002B49] hover:bg-[#001D33] text-white font-semibold text-xs flex items-center justify-center gap-1.5 transition-colors shadow-sm shrink-0"
               >
                 <span>Consult AI</span>
                 <Send className="w-3.5 h-3.5" />
@@ -136,23 +138,23 @@ export default function HomePage() {
       </section>
 
       {/* Main 2-Column Section */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 w-full max-w-full min-w-0">
         
         {/* Left Column: Useful Links Directory */}
-        <div className="lg:col-span-5 space-y-4">
-          <div className="rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-5 shadow-sm space-y-3">
-            <div className="border-b border-slate-200 dark:border-slate-800 pb-2.5">
-              <h2 className="text-sm font-bold text-[#002B49] dark:text-white flex items-center gap-2 uppercase tracking-wide">
-                <span className="uni-bullet">➲</span>
-                <span>University Quick Links</span>
+        <div className="lg:col-span-5 space-y-4 min-w-0">
+          <div className="rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-4 sm:p-5 shadow-sm space-y-3 min-w-0 overflow-hidden">
+            <div className="border-b border-slate-200 dark:border-slate-800 pb-2.5 min-w-0">
+              <h2 className="text-xs sm:text-sm font-bold text-[#002B49] dark:text-white flex items-center gap-2 uppercase tracking-wide truncate">
+                <span className="uni-bullet shrink-0">➲</span>
+                <span className="truncate">University Quick Links</span>
               </h2>
             </div>
-            <div className="space-y-1">
+            <div className="space-y-1 min-w-0">
               {usefulLinks.map((link, idx) => (
                 <button
                   key={idx}
                   onClick={() => handleCardClick(link.query)}
-                  className="w-full text-left p-2.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800/80 text-xs font-medium text-slate-700 dark:text-slate-200 transition-colors flex items-center justify-between group border border-transparent hover:border-slate-200 dark:hover:border-slate-700"
+                  className="w-full text-left p-2.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800/80 text-xs font-medium text-slate-700 dark:text-slate-200 transition-colors flex items-center justify-between group border border-transparent hover:border-slate-200 dark:hover:border-slate-700 min-w-0"
                 >
                   <span className="truncate pr-2">{link.label}</span>
                   <ChevronRight className="w-4 h-4 text-slate-400 group-hover:text-[#8B0000] dark:group-hover:text-amber-400 shrink-0" />
@@ -163,30 +165,30 @@ export default function HomePage() {
         </div>
 
         {/* Right Column: Latest Notices & Announcements */}
-        <div className="lg:col-span-7 space-y-4">
-          <div className="rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-5 shadow-sm space-y-3">
-            <div className="border-b border-slate-200 dark:border-slate-800 pb-2.5 flex items-center justify-between">
-              <h2 className="text-sm font-bold text-[#002B49] dark:text-white flex items-center gap-2 uppercase tracking-wide">
-                <span className="uni-bullet">➲</span>
-                <span>Latest University Notices</span>
+        <div className="lg:col-span-7 space-y-4 min-w-0">
+          <div className="rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-4 sm:p-5 shadow-sm space-y-3 min-w-0 overflow-hidden">
+            <div className="border-b border-slate-200 dark:border-slate-800 pb-2.5 flex items-center justify-between gap-2 min-w-0">
+              <h2 className="text-xs sm:text-sm font-bold text-[#002B49] dark:text-white flex items-center gap-2 uppercase tracking-wide min-w-0 truncate">
+                <span className="uni-bullet shrink-0">➲</span>
+                <span className="truncate">Latest University Notices</span>
               </h2>
-              <span className="text-xs font-medium text-slate-500">Updated Daily</span>
+              <span className="text-[11px] sm:text-xs font-medium text-slate-500 shrink-0">Updated Daily</span>
             </div>
 
-            <div className="space-y-2">
+            <div className="space-y-2 min-w-0">
               {latestNotices.map((notice, idx) => (
                 <div
                   key={idx}
                   onClick={() => handleCardClick(`Tell me details about notice: ${notice.title}`)}
-                  className="p-3 rounded-lg bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 hover:border-slate-400 dark:hover:border-slate-600 cursor-pointer transition-colors flex items-center justify-between group"
+                  className="p-3 rounded-lg bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 hover:border-slate-400 dark:hover:border-slate-600 cursor-pointer transition-colors flex flex-col xs:flex-row xs:items-center justify-between gap-2 group min-w-0 max-w-full overflow-hidden"
                 >
-                  <div className="flex items-center gap-2.5 pr-2">
+                  <div className="flex items-center gap-2.5 pr-2 min-w-0">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#8B0000] dark:bg-amber-400 shrink-0" />
-                    <span className="font-semibold text-xs text-slate-800 dark:text-slate-200 group-hover:text-[#002B49] dark:group-hover:text-white transition-colors">
+                    <span className="font-semibold text-xs text-slate-800 dark:text-slate-200 group-hover:text-[#002B49] dark:group-hover:text-white transition-colors truncate">
                       {notice.title}
                     </span>
                   </div>
-                  <span className="px-2 py-0.5 rounded bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-[10px] font-semibold shrink-0">
+                  <span className="px-2 py-0.5 rounded bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-[10px] font-semibold shrink-0 self-start xs:self-auto">
                     {notice.tag}
                   </span>
                 </div>
@@ -197,21 +199,21 @@ export default function HomePage() {
       </div>
 
       {/* Official University Leadership Cards with Photographs */}
-      <section className="space-y-4">
-        <div className="border-b border-slate-200 dark:border-slate-800 pb-2 flex items-center justify-between">
-          <h2 className="text-base font-serif font-bold text-[#002B49] dark:text-white flex items-center gap-2">
-            <span className="uni-bullet">➲</span>
-            <span>University Leadership Messages</span>
+      <section className="space-y-4 w-full max-w-full min-w-0">
+        <div className="border-b border-slate-200 dark:border-slate-800 pb-2 flex items-center justify-between gap-2 min-w-0">
+          <h2 className="text-sm sm:text-base font-serif font-bold text-[#002B49] dark:text-white flex items-center gap-2 min-w-0 truncate">
+            <span className="uni-bullet shrink-0">➲</span>
+            <span className="truncate">University Leadership Messages</span>
           </h2>
-          <span className="text-xs text-slate-500 font-medium">Institutional Mentors</span>
+          <span className="text-[11px] sm:text-xs text-slate-500 font-medium shrink-0">Institutional Mentors</span>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 w-full min-w-0">
           {/* Vice Chancellor Profile Card */}
-          <div className="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm space-y-4 flex flex-col justify-between hover:border-slate-300 dark:hover:border-slate-700 transition-all">
-            <div className="flex items-start gap-4">
+          <div className="p-4 sm:p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm space-y-4 flex flex-col justify-between hover:border-slate-300 dark:hover:border-slate-700 transition-all min-w-0 overflow-hidden">
+            <div className="flex flex-row items-center sm:items-start gap-3 sm:gap-4 min-w-0">
               {/* Circular Portrait Image */}
-              <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden border-2 border-[#002B49] dark:border-amber-400 shadow-md shrink-0 bg-slate-100 relative">
+              <div className="w-14 h-14 sm:w-20 sm:h-20 rounded-full overflow-hidden border-2 border-[#002B49] dark:border-amber-400 shadow-md shrink-0 bg-slate-100 relative">
                 <img
                   src="/images/vc-portrait.jpg"
                   alt="Prof. Vinay Kumar Pathak"
@@ -219,32 +221,32 @@ export default function HomePage() {
                   className="w-full h-full object-cover rounded-full"
                 />
               </div>
-              <div className="space-y-1">
-                <h3 className="font-bold text-base text-[#002B49] dark:text-white tracking-tight">
+              <div className="space-y-0.5 sm:space-y-1 min-w-0 flex-1">
+                <h3 className="font-bold text-sm sm:text-base text-[#002B49] dark:text-white tracking-tight break-words">
                   Prof. Vinay Kumar Pathak
                 </h3>
-                <p className="text-xs font-bold text-[#8B0000] dark:text-amber-400">
+                <p className="text-xs font-bold text-[#8B0000] dark:text-amber-400 break-words">
                   Hon'ble Vice Chancellor, CSJMU Kanpur
                 </p>
-                <p className="text-[11px] text-slate-500 font-medium">
+                <p className="text-[11px] text-slate-500 font-medium break-words">
                   Chhatrapati Shahu Ji Maharaj University
                 </p>
               </div>
             </div>
 
-            <div className="p-4 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800/80 relative">
-              <Quote className="w-5 h-5 text-[#8B0000]/20 dark:text-amber-400/20 absolute right-3 top-3" />
-              <p className="text-xs text-slate-700 dark:text-slate-300 leading-relaxed italic">
+            <div className="p-3.5 sm:p-4 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800/80 relative min-w-0 overflow-hidden">
+              <Quote className="w-4 h-4 sm:w-5 sm:h-5 text-[#8B0000]/20 dark:text-amber-400/20 absolute right-3 top-3 shrink-0" />
+              <p className="text-xs text-slate-700 dark:text-slate-300 leading-relaxed italic break-words pr-4">
                 &quot;CSJMU is forging ahead to create engineers, scientists, and professionals of high competence to meet the technical challenges of tomorrow and serve society through innovation.&quot;
               </p>
             </div>
           </div>
 
           {/* Director UIET Profile Card */}
-          <div className="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm space-y-4 flex flex-col justify-between hover:border-slate-300 dark:hover:border-slate-700 transition-all">
-            <div className="flex items-start gap-4">
+          <div className="p-4 sm:p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm space-y-4 flex flex-col justify-between hover:border-slate-300 dark:hover:border-slate-700 transition-all min-w-0 overflow-hidden">
+            <div className="flex flex-row items-center sm:items-start gap-3 sm:gap-4 min-w-0">
               {/* Circular Portrait Image */}
-              <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden border-2 border-[#8B0000] dark:border-amber-400 shadow-md shrink-0 bg-slate-100 relative">
+              <div className="w-14 h-14 sm:w-20 sm:h-20 rounded-full overflow-hidden border-2 border-[#8B0000] dark:border-amber-400 shadow-md shrink-0 bg-slate-100 relative">
                 <img
                   src="/images/director-portrait.jpg"
                   alt="Prof. (Dr.) Alok Kumar"
@@ -252,22 +254,22 @@ export default function HomePage() {
                   className="w-full h-full object-cover rounded-full"
                 />
               </div>
-              <div className="space-y-1">
-                <h3 className="font-bold text-base text-[#002B49] dark:text-white tracking-tight">
+              <div className="space-y-0.5 sm:space-y-1 min-w-0 flex-1">
+                <h3 className="font-bold text-sm sm:text-base text-[#002B49] dark:text-white tracking-tight break-words">
                   Prof. (Dr.) Alok Kumar
                 </h3>
-                <p className="text-xs font-bold text-[#8B0000] dark:text-amber-400">
+                <p className="text-xs font-bold text-[#8B0000] dark:text-amber-400 break-words">
                   Director, UIET Kanpur
                 </p>
-                <p className="text-[11px] text-slate-500 font-medium">
+                <p className="text-[11px] text-slate-500 font-medium break-words">
                   School of Engineering & Technology
                 </p>
               </div>
             </div>
 
-            <div className="p-4 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800/80 relative">
-              <Quote className="w-5 h-5 text-[#8B0000]/20 dark:text-amber-400/20 absolute right-3 top-3" />
-              <p className="text-xs text-slate-700 dark:text-slate-300 leading-relaxed italic">
+            <div className="p-3.5 sm:p-4 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800/80 relative min-w-0 overflow-hidden">
+              <Quote className="w-4 h-4 sm:w-5 sm:h-5 text-[#8B0000]/20 dark:text-amber-400/20 absolute right-3 top-3 shrink-0" />
+              <p className="text-xs text-slate-700 dark:text-slate-300 leading-relaxed italic break-words pr-4">
                 &quot;Our vision is to emerge as one of the premier educational and research institutes in engineering, providing state-of-the-art supercomputing, incubation, and academic excellence.&quot;
               </p>
             </div>
@@ -276,36 +278,36 @@ export default function HomePage() {
       </section>
 
       {/* Official Service Directory */}
-      <section className="space-y-4">
-        <div className="border-b border-slate-200 dark:border-slate-800 pb-2.5 flex items-center justify-between">
-          <h2 className="text-lg font-serif font-bold text-[#002B49] dark:text-white flex items-center gap-2">
-            <span className="uni-bullet">➲</span>
-            <span>Official University Service Directory</span>
+      <section className="space-y-4 w-full max-w-full min-w-0">
+        <div className="border-b border-slate-200 dark:border-slate-800 pb-2.5 flex items-center justify-between gap-2 min-w-0">
+          <h2 className="text-base sm:text-lg font-serif font-bold text-[#002B49] dark:text-white flex items-center gap-2 min-w-0 truncate">
+            <span className="uni-bullet shrink-0">➲</span>
+            <span className="truncate">Official University Service Directory</span>
           </h2>
-          <span className="text-xs font-semibold text-slate-500">10 Primary Categories</span>
+          <span className="text-[11px] sm:text-xs font-semibold text-slate-500 shrink-0">10 Primary Categories</span>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3.5">
+        <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-3.5 w-full min-w-0">
           {categories.map((cat, idx) => {
             const Icon = cat.icon;
             return (
               <button
                 key={idx}
                 onClick={() => handleCardClick(cat.query)}
-                className="p-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-left shadow-sm hover:border-[#002B49] dark:hover:border-amber-400/60 transition-colors flex flex-col justify-between group"
+                className="p-3.5 sm:p-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-left shadow-sm hover:border-[#002B49] dark:hover:border-amber-400/60 transition-colors flex flex-col justify-between group min-w-0 overflow-hidden w-full"
               >
-                <div className="space-y-2">
-                  <div className="flex items-center gap-2 font-bold text-xs text-[#002B49] dark:text-white">
+                <div className="space-y-2 min-w-0">
+                  <div className="flex items-center gap-2 font-bold text-xs text-[#002B49] dark:text-white min-w-0">
                     <Icon className="w-4 h-4 text-[#8B0000] dark:text-amber-400 shrink-0" />
                     <span className="truncate">{cat.title}</span>
                   </div>
-                  <p className="text-xs text-slate-500 dark:text-slate-400 line-clamp-2">
+                  <p className="text-xs text-slate-500 dark:text-slate-400 line-clamp-2 break-words">
                     {cat.desc}
                   </p>
                 </div>
-                <div className="mt-3 text-[11px] font-semibold text-[#002B49] dark:text-amber-400 group-hover:underline inline-flex items-center gap-1">
+                <div className="mt-3 text-[11px] font-semibold text-[#002B49] dark:text-amber-400 group-hover:underline inline-flex items-center gap-1 shrink-0">
                   <span>Consult Assistant</span>
-                  <ArrowRight className="w-3 h-3" />
+                  <ArrowRight className="w-3 h-3 shrink-0" />
                 </div>
               </button>
             );

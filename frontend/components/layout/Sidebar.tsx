@@ -52,7 +52,14 @@ export const Sidebar: React.FC = () => {
   };
 
   return (
-    <aside className="fixed inset-y-0 left-0 z-50 w-72 bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-200 flex flex-col shadow-2xl border-r border-slate-200 dark:border-slate-800 transition-all duration-300">
+    <>
+      {/* Mobile Drawer Overlay Backdrop */}
+      <div
+        onClick={() => setSidebarOpen(false)}
+        className="fixed inset-0 bg-slate-900/60 backdrop-blur-xs z-40 lg:hidden transition-opacity"
+        aria-hidden="true"
+      />
+      <aside className="fixed inset-y-0 left-0 z-50 w-72 max-w-[80vw] bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-200 flex flex-col shadow-2xl border-r border-slate-200 dark:border-slate-800 transition-all duration-300">
       {/* Top Header with Authentic CSJMU Seal */}
       <div className="p-4 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between">
         <div className="flex items-center gap-2.5">
@@ -145,8 +152,8 @@ export const Sidebar: React.FC = () => {
           <ShieldCheck className="w-3.5 h-3.5 text-emerald-500 dark:text-amber-400" />
           <span>NAAC A++ Accredited</span>
         </div>
-        <p className="text-[11px] text-slate-500">CSJMU Kanpur Official Enterprise System</p>
       </div>
     </aside>
+  </>
   );
 };

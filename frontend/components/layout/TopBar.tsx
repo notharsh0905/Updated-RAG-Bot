@@ -14,25 +14,25 @@ export const TopBar: React.FC = () => {
   };
 
   return (
-    <div className="w-full bg-[#8B0000] text-white text-xs font-medium py-1.5 px-4 sm:px-8 flex flex-col sm:flex-row items-center justify-between gap-2 border-b border-red-950 shadow-sm z-50">
-      <div className="flex items-center gap-3 text-[11px] sm:text-xs">
+    <div className="w-full bg-[#8B0000] text-white text-xs font-medium py-1.5 px-3 sm:px-8 flex flex-col sm:flex-row items-center justify-between gap-2 border-b border-red-950 shadow-sm z-50 max-w-full overflow-hidden">
+      <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2 sm:gap-3 text-[11px] sm:text-xs min-w-0 max-w-full overflow-hidden">
         <a
           href="https://csjmu.ac.in"
           target="_blank"
           rel="noreferrer"
-          className="hover:text-amber-200 transition-colors flex items-center gap-1 font-semibold"
+          className="hover:text-amber-200 transition-colors flex items-center gap-1 font-semibold truncate shrink"
         >
           <span>CSJMU Main Portal</span>
-          <ExternalLink className="w-3 h-3" />
+          <ExternalLink className="w-3 h-3 shrink-0" />
         </a>
-        <span className="opacity-40">|</span>
-        <div className="flex items-center gap-1 text-amber-300 font-semibold">
-          <ShieldCheck className="w-3.5 h-3.5" />
-          <span>NAAC A++ Accredited State University</span>
+        <span className="opacity-40 hidden sm:inline">|</span>
+        <div className="flex items-center gap-1 text-amber-300 font-semibold truncate shrink">
+          <ShieldCheck className="w-3.5 h-3.5 shrink-0" />
+          <span className="truncate">NAAC A++ Accredited State University</span>
         </div>
       </div>
 
-      <div className="flex items-center gap-4 text-[11px]">
+      <div className="flex flex-wrap items-center justify-center sm:justify-end gap-2 sm:gap-4 text-[11px] shrink-0 max-w-full overflow-hidden">
         <Link
           href="/admin/login"
           className="hover:text-amber-200 transition-colors flex items-center gap-1.5 text-white font-semibold"

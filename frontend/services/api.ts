@@ -37,6 +37,7 @@ export const API_BASE_URL = getApiBaseUrl();
 
 export const apiClient = axios.create({
   baseURL: API_BASE_URL,
+  withCredentials: true,
   headers: {
     'Content-Type': 'application/json',
   },
@@ -322,6 +323,29 @@ const saveStoredTasks = (tasks: KBImprovementTask[]) => {
 };
 
 export const apiService = {
+  // Admin Authentication API Calls
+  adminLogin: async (passcode: string): Promise<{ status: string; authenticated: boolean; message: string }> => {
+    const response = await apiClient.post<{ status: string; authenticated: boolean; message: string }>(
+      '/api/v1/admin/login',
+      { passcode }
+    );
+    return response.data;
+  },
+
+  adminLogout: async (): Promise<{ status: string; authenticated: boolean; message: string }> => {
+    const response = await apiClient.post<{ status: string; authenticated: boolean; message: string }>(
+      '/api/v1/admin/logout'
+    );
+    return response.data;
+  },
+
+  verifyAdminSession: async (): Promise<{ status: string; authenticated: boolean; user?: string }> => {
+    const response = await apiClient.get<{ status: string; authenticated: boolean; user?: string }>(
+      '/api/v1/admin/verify'
+    );
+    return response.data;
+  },
+
   // Query RAG Backend (POST /query)
   sendQuery: async (
     question: string,
@@ -354,6 +378,7 @@ export const apiService = {
       const baseUrl = getApiBaseUrl();
       const response = await fetch(`${baseUrl}/query/stream`, {
         method: 'POST',
+        credentials: 'include',
         headers: {
           'Content-Type': 'application/json',
         },

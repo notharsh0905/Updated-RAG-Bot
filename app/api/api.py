@@ -4,9 +4,11 @@ Exposes endpoints for health checks, question answering, SSE streaming,
 feedback collection, and admin analytics.
 """
 
+import hmac
+import hashlib
 import shutil
 import time
-from fastapi import FastAPI, HTTPException, status, Query, File, UploadFile, Form, Request
+from fastapi import FastAPI, HTTPException, status, Query, File, UploadFile, Form, Request, Response, Depends
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import StreamingResponse, JSONResponse
 from pydantic import BaseModel, Field
@@ -40,6 +42,37 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+
+# Security Headers & HTTPS HSTS Middleware
+@app.middleware("http")
+async def add_security_headers_middleware(request: Request, call_next):
+    """Enforces production HTTP security headers and conditional HSTS for HTTPS deployments."""
+    response: Response = await call_next(request)
+    response.headers["X-Content-Type-Options"] = "nosniff"
+    response.headers["X-Frame-Options"] = "DENY"
+    response.headers["Referrer-Policy"] = "strict-origin-when-cross-origin"
+    response.headers["Permissions-Policy"] = "camera=(), microphone=(), geolocation=(), payment=(), usb=(), accelerometer=(), gyroscope=(), magnetometer=()"
+    
+    csp = (
+        "default-src 'self'; "
+        "img-src 'self' data: blob: https:; "
+        "style-src 'self' 'unsafe-inline'; "
+        "font-src 'self' data:; "
+        "script-src 'self' 'unsafe-inline' 'unsafe-eval'; "
+        "connect-src 'self' http://localhost:* http://127.0.0.1:* http://10.63.135.235:8000 ws://localhost:* ws://127.0.0.1:*; "
+        "object-src 'none'; "
+        "base-uri 'self'; "
+        "frame-ancestors 'none';"
+    )
+    is_https = request.url.scheme == "https" or request.headers.get("x-forwarded-proto") == "https"
+    if config.ENVIRONMENT == "production" and is_https:
+        csp += " upgrade-insecure-requests;"
+        response.headers["Strict-Transport-Security"] = "max-age=31536000; includeSubDomains; preload"
+
+    response.headers["Content-Security-Policy"] = csp
+    return response
+
 
 
 # Global Production Exception Handler
@@ -123,6 +156,126 @@ class RebuildResponse(BaseModel):
     status: str
     message: str
     document_count: int
+
+
+class AdminLoginRequest(BaseModel):
+    """Admin Login Payload."""
+    passcode: str = Field(..., description="Administrator passcode.")
+
+
+# Session Security Token Functions
+def create_session_token() -> str:
+    """Generates an HMAC-SHA256 signed session token valid for 24 hours."""
+    timestamp = str(int(time.time()))
+    payload = f"admin:{timestamp}"
+    signature = hmac.new(
+        config.ADMIN_SESSION_SECRET.encode("utf-8"),
+        payload.encode("utf-8"),
+        hashlib.sha256
+    ).hexdigest()
+    return f"{payload}:{signature}"
+
+
+def verify_session_token(token: Optional[str]) -> bool:
+    """Verifies HMAC session token signature and 24-hour expiration."""
+    if not token or ":" not in token:
+        return False
+    parts = token.split(":")
+    if len(parts) != 3:
+        return False
+    user, ts_str, sig = parts
+    if user != "admin":
+        return False
+    try:
+        ts = int(ts_str)
+        if time.time() - ts > 86400:  # 24 hours TTL
+            return False
+        payload = f"{user}:{ts_str}"
+        expected_sig = hmac.new(
+            config.ADMIN_SESSION_SECRET.encode("utf-8"),
+            payload.encode("utf-8"),
+            hashlib.sha256
+        ).hexdigest()
+        return hmac.compare_digest(sig, expected_sig)
+    except Exception:
+        return False
+
+
+async def require_admin_auth(request: Request):
+    """FastAPI dependency enforcing valid admin session via HttpOnly cookie or Bearer header."""
+    token = request.cookies.get("admin_session")
+    if not token:
+        auth_header = request.headers.get("Authorization")
+        if auth_header and auth_header.startswith("Bearer "):
+            token = auth_header[7:]
+    if not verify_session_token(token):
+        raise HTTPException(
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            detail="Unauthorized: Valid admin session required."
+        )
+    return True
+
+
+# Authentication API Endpoints
+@app.post("/api/v1/admin/login", tags=["Admin Auth"])
+@app.post("/admin/login", tags=["Admin Auth"])
+def admin_login_endpoint(payload: AdminLoginRequest, response: Response, request: Request):
+    """Authenticates admin passcode against backend environment & sets HttpOnly session cookie."""
+    if payload.passcode.strip() != config.ADMIN_PASSCODE:
+        raise HTTPException(
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            detail="Invalid administrator passcode."
+        )
+    token = create_session_token()
+    is_secure = request.url.scheme == "https" or config.ENVIRONMENT == "production_https"
+    response.set_cookie(
+        key="admin_session",
+        value=token,
+        httponly=True,
+        samesite="lax",
+        secure=is_secure,
+        max_age=86400,
+        path="/"
+    )
+    return {
+        "status": "success",
+        "authenticated": True,
+        "message": "Admin session authenticated successfully."
+    }
+
+
+@app.post("/api/v1/admin/logout", tags=["Admin Auth"])
+@app.post("/admin/logout", tags=["Admin Auth"])
+def admin_logout_endpoint(response: Response):
+    """Clears the HttpOnly admin session cookie."""
+    response.delete_cookie(
+        key="admin_session",
+        path="/",
+        httponly=True,
+        samesite="lax"
+    )
+    return {
+        "status": "success",
+        "authenticated": False,
+        "message": "Logged out successfully."
+    }
+
+
+@app.get("/api/v1/admin/verify", tags=["Admin Auth"])
+@app.get("/admin/verify", tags=["Admin Auth"])
+def admin_verify_endpoint(request: Request):
+    """Verifies existing admin session cookie status."""
+    token = request.cookies.get("admin_session")
+    if not token:
+        auth_header = request.headers.get("Authorization")
+        if auth_header and auth_header.startswith("Bearer "):
+            token = auth_header[7:]
+    if verify_session_token(token):
+        return {"status": "success", "authenticated": True, "user": "admin"}
+    raise HTTPException(
+        status_code=status.HTTP_401_UNAUTHORIZED,
+        detail="Unauthorized: No active admin session."
+    )
 
 
 # API Endpoints
@@ -296,7 +449,7 @@ def feedback_endpoint(payload: FeedbackRequest):
     raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail="Failed to record feedback.")
 
 
-@app.get("/admin/queries/feed", tags=["Administration"])
+@app.get("/admin/queries/feed", tags=["Administration"], dependencies=[Depends(require_admin_auth)])
 def admin_queries_feed_endpoint(
     limit: int = Query(default=50, ge=1, le=200),
     offset: int = Query(default=0, ge=0),
@@ -310,7 +463,7 @@ def admin_queries_feed_endpoint(
     return {"queries": queries, "count": len(queries), "limit": limit, "offset": offset}
 
 
-@app.get("/admin/analytics", tags=["Administration"])
+@app.get("/admin/analytics", tags=["Administration"], dependencies=[Depends(require_admin_auth)])
 def admin_analytics_endpoint():
     """
     Returns query execution metrics, cache hit rate, and feedback analytics.
@@ -318,7 +471,7 @@ def admin_analytics_endpoint():
     return db_manager.get_analytics_summary()
 
 
-@app.get("/admin/history/{session_id}", tags=["Administration"])
+@app.get("/admin/history/{session_id}", tags=["Administration"], dependencies=[Depends(require_admin_auth)])
 def admin_history_endpoint(session_id: str):
     """
     Retrieves past session messages for a given session_id.
@@ -327,7 +480,7 @@ def admin_history_endpoint(session_id: str):
     return {"session_id": session_id, "messages": history}
 
 
-@app.post("/rebuild", response_model=RebuildResponse, tags=["Database Administration"])
+@app.post("/rebuild", response_model=RebuildResponse, tags=["Database Administration"], dependencies=[Depends(require_admin_auth)])
 def rebuild_endpoint():
     """
     Reloads all datasets and rebuilds the Chroma vector store & BM25 index.
@@ -366,7 +519,7 @@ class DocumentUploadResponse(BaseModel):
     status: str
 
 
-@app.post("/admin/upload", response_model=DocumentUploadResponse, tags=["Administration"])
+@app.post("/admin/upload", response_model=DocumentUploadResponse, tags=["Administration"], dependencies=[Depends(require_admin_auth)])
 async def admin_upload_endpoint(
     file: UploadFile = File(...),
     category: str = Form("uploaded_document")
@@ -411,10 +564,11 @@ async def admin_upload_endpoint(
         )
 
 
-@app.get("/admin/documents/uploaded", tags=["Administration"])
+@app.get("/admin/documents/uploaded", tags=["Administration"], dependencies=[Depends(require_admin_auth)])
 def admin_uploaded_documents_endpoint():
     """
     Returns list of all uploaded documents indexed in the RAG knowledge base.
     """
     docs = db_manager.get_uploaded_documents()
     return {"documents": docs, "count": len(docs)}
+

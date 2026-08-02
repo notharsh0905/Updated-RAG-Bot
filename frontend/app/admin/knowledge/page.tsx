@@ -565,9 +565,16 @@ export default function AdminKnowledgePage() {
           </div>
         </div>
 
-        {/* PANEL 2: RIGHT STICKY DOCUMENT INSPECTOR DRAWER (~440px) */}
+        {/* PANEL 2: RIGHT DOCUMENT INSPECTOR DRAWER (Responsive Slide-over on mobile/tablet, Sticky on XL) */}
         {selectedDoc ? (
-          <aside className="w-[440px] bg-white dark:bg-slate-950 border-l border-slate-200 dark:border-slate-800 flex flex-col shrink-0 overflow-hidden hidden xl:flex shadow-lg">
+          <>
+            {/* Mobile / Tablet Backdrop Overlay */}
+            <div
+              onClick={() => setSelectedDoc(null)}
+              className="fixed inset-0 bg-slate-900/60 backdrop-blur-xs z-40 xl:hidden"
+              aria-hidden="true"
+            />
+            <aside className="fixed inset-y-0 right-0 z-50 w-full sm:w-[440px] xl:relative xl:z-0 xl:w-[440px] bg-white dark:bg-slate-950 border-l border-slate-200 dark:border-slate-800 flex flex-col shrink-0 overflow-hidden shadow-2xl xl:shadow-lg transition-all duration-300">
             <div className="p-4 border-b border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/50 flex items-center justify-between gap-3 shrink-0">
               <div>
                 <div className="flex items-center gap-2">
@@ -780,6 +787,7 @@ export default function AdminKnowledgePage() {
               )}
             </div>
           </aside>
+        </>
         ) : null}
       </div>
 

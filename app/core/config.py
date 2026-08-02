@@ -36,6 +36,7 @@ class AppConfig(BaseSettings):
     ENVIRONMENT: str = "production"
     CORS_ORIGINS: str = "http://localhost:3000,http://localhost:3001,http://localhost:8000,http://127.0.0.1:3000,http://127.0.0.1:3001,http://10.63.135.235:3000,http://10.63.135.235:3001"
     ADMIN_PASSCODE: str = "CSJMU_UIET_2026"
+    ADMIN_SESSION_SECRET: str = "csjmu_uiet_secret_admin_session_key_2026_prod"
     MAX_FILE_SIZE_BYTES: int = 50 * 1024 * 1024  # 50 MB
     RATE_LIMIT_PER_MINUTE: int = 120
 
