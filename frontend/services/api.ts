@@ -10,13 +10,44 @@ import {
   QualityCenterAnalytics,
 } from '@/types/admin';
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
+// Centralized Dynamic API Base URL Configuration for LAN & Production Access
+// Centralized Dynamic API Base URL Configuration for LAN, Mobile & Production Access
+export const getApiBaseUrl = (): string => {
+  // 1. Dynamic Hostname Detection for Browser Clients (Mac, Tablet, Phone over LAN)
+  if (typeof window !== 'undefined') {
+    const protocol = window.location.protocol;
+    const hostname = window.location.hostname;
+    return `${protocol}//${hostname}:8000`;
+  }
+
+  // 2. Explicit Environment Variable (if provided for SSR)
+  if (process.env.NEXT_PUBLIC_API_URL) {
+    let url = process.env.NEXT_PUBLIC_API_URL.trim();
+    if (url.endsWith('/')) {
+      url = url.slice(0, -1);
+    }
+    return url;
+  }
+
+  // 3. Fallback for SSR
+  return 'http://localhost:8000';
+};
+
+export const API_BASE_URL = getApiBaseUrl();
 
 export const apiClient = axios.create({
   baseURL: API_BASE_URL,
   headers: {
     'Content-Type': 'application/json',
   },
+});
+
+// Dynamic Request Interceptor ensuring all requests adapt to active browser hostname
+apiClient.interceptors.request.use((reqConfig) => {
+  if (typeof window !== 'undefined') {
+    reqConfig.baseURL = getApiBaseUrl();
+  }
+  return reqConfig;
 });
 
 export interface QueryApiResponse {
@@ -142,12 +173,12 @@ const INITIAL_NEGATIVE_FEEDBACK: NegativeFeedbackItem[] = [
     id: 'fb-qc-004',
     sessionId: 'session-gate-score-1044',
     question: 'Are GATE qualified students eligible for direct M.Tech stipends at UIET?',
-    answer: 'Yes, GATE qualified students receive direct monthly AICTE AI Assistant stipends of Rs. 12,400.',
+    answer: 'Yes, GATE qualified students may receive a monthly AICTE stipend of around ₹12,400 (varies as per current AICTE guidelines and portal approval).',
     sources: [
       {
         source: 'UIET_MTech_Guidelines_2025.pdf',
         doc_type: 'Postgraduate Rules',
-        content_snippet: 'AICTE PG Scholarship of Rs. 12,400/month is subject to AICTE portal approval and valid GATE scorecard submission.',
+        content_snippet: 'AICTE PG Scholarship of around ₹12,400/month is subject to AICTE portal approval, state allocations, and valid GATE scorecard submission.',
         page: 6,
       },
     ],
@@ -320,7 +351,8 @@ export const apiService = {
   ): Promise<void> => {
     let completed = false;
     try {
-      const response = await fetch(`${API_BASE_URL}/query/stream`, {
+      const baseUrl = getApiBaseUrl();
+      const response = await fetch(`${baseUrl}/query/stream`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -462,11 +494,8 @@ export const apiService = {
     formData.append('file', file);
     formData.append('category', category);
 
-    const response = await apiClient.post('/admin/upload', formData, {
-      headers: {
-        'Content-Type': 'multipart/form-data',
-      },
-    });
+    // Do not explicitly set Content-Type header so browser/Axios can automatically compute multipart boundary
+    const response = await apiClient.post('/admin/upload', formData);
     return response.data;
   },
 

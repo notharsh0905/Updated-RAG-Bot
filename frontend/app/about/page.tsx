@@ -154,16 +154,16 @@ export default function AboutPage() {
           </h2>
         </div>
 
-        <div className="p-6 rounded-2xl bg-slate-900 text-slate-100 border border-slate-800 shadow-md space-y-6">
-          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-800 pb-4">
+        <div className="p-6 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm space-y-6">
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-200 dark:border-slate-800 pb-4">
             <div>
-              <span className="text-xs font-mono font-bold text-amber-400 bg-amber-400/10 px-2.5 py-1 rounded border border-amber-400/20">
+              <span className="text-xs font-mono font-bold text-blue-700 dark:text-cyan-400 bg-blue-50 dark:bg-cyan-500/10 px-3 py-1 rounded-full border border-blue-200 dark:border-cyan-500/20">
                 Release v3.0.0 (Production 2026)
               </span>
-              <h3 className="text-base font-bold text-white mt-2">
+              <h3 className="text-base font-bold text-slate-900 dark:text-slate-100 mt-2">
                 CSJMU AI Smart Student Help Desk & RAG Platform
               </h3>
-              <p className="text-xs text-slate-400 mt-0.5">
+              <p className="text-xs text-slate-600 dark:text-slate-400 mt-0.5">
                 University Institute of Engineering & Technology (UIET), CSJMU Kanpur
               </p>
             </div>
@@ -171,42 +171,42 @@ export default function AboutPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs">
             {/* Academic Guide */}
-            <div className="p-4 rounded-xl bg-slate-950/80 border border-slate-800 space-y-2">
-              <span className="text-[10px] font-bold uppercase tracking-wider text-amber-400">
+            <div className="p-4 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 space-y-2 shadow-xs">
+              <span className="text-[10px] font-bold uppercase tracking-wider text-amber-700 dark:text-amber-400">
                 Academic Project Guide
               </span>
               <div>
-                <h4 className="text-sm font-bold text-white">Assistant Professor Gayatri Rajpoot</h4>
-                <p className="text-[11px] text-slate-400 font-medium">Faculty of Computer Science & Engineering</p>
-                <p className="text-[11px] text-slate-500">UIET CSJMU Kanpur</p>
+                <h4 className="text-sm font-bold text-slate-900 dark:text-slate-100">Assistant Professor Gayatri Rajpoot</h4>
+                <p className="text-[11px] text-slate-600 dark:text-slate-400 font-medium">Faculty of Computer Science & Engineering</p>
+                <p className="text-[11px] text-slate-500 dark:text-slate-400">UIET CSJMU Kanpur</p>
               </div>
             </div>
 
             {/* Lead Developer */}
-            <div className="p-4 rounded-xl bg-slate-950/80 border border-slate-800 space-y-2">
-              <span className="text-[10px] font-bold uppercase tracking-wider text-cyan-400">
+            <div className="p-4 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 space-y-2 shadow-xs">
+              <span className="text-[10px] font-bold uppercase tracking-wider text-blue-700 dark:text-cyan-400">
                 Lead Software Architect & Developer
               </span>
               <div>
-                <h4 className="text-sm font-bold text-white">Harsh Upadhyay</h4>
-                <p className="text-[11px] text-cyan-300 font-mono">B.Tech CSE (2K24)</p>
-                <p className="text-[11px] text-slate-400">Full-Stack RAG & System Architecture</p>
+                <h4 className="text-sm font-bold text-slate-900 dark:text-slate-100">Harsh Upadhyay</h4>
+                <p className="text-[11px] text-blue-700 dark:text-cyan-300 font-mono font-semibold">B.Tech CSE (2K24)</p>
+                <p className="text-[11px] text-slate-600 dark:text-slate-400">Full-Stack RAG & System Architecture</p>
               </div>
             </div>
 
             {/* Engineering Team */}
-            <div className="p-4 rounded-xl bg-slate-950/80 border border-slate-800 space-y-2">
-              <span className="text-[10px] font-bold uppercase tracking-wider text-emerald-400">
+            <div className="p-4 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 space-y-2 shadow-xs">
+              <span className="text-[10px] font-bold uppercase tracking-wider text-emerald-700 dark:text-emerald-400">
                 Engineering Team Members
               </span>
               <div className="space-y-1.5">
                 <div>
-                  <h4 className="text-xs font-bold text-white">Nikhil Kumar</h4>
-                  <p className="text-[11px] text-emerald-400 font-mono">B.Tech CSE AI (2K23)</p>
+                  <h4 className="text-xs font-bold text-slate-900 dark:text-slate-100">Nikhil Kumar</h4>
+                  <p className="text-[11px] text-emerald-700 dark:text-emerald-400 font-mono font-semibold">B.Tech CSE AI (2K23)</p>
                 </div>
                 <div>
-                  <h4 className="text-xs font-bold text-white">Priyanshi Yadav</h4>
-                  <p className="text-[11px] text-emerald-400 font-mono">B.Tech CSE AI (2K23)</p>
+                  <h4 className="text-xs font-bold text-slate-900 dark:text-slate-100">Priyanshi Yadav</h4>
+                  <p className="text-[11px] text-emerald-700 dark:text-emerald-400 font-mono font-semibold">B.Tech CSE AI (2K23)</p>
                 </div>
               </div>
             </div>

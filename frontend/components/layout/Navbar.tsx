@@ -24,13 +24,13 @@ export const Navbar: React.FC = () => {
   ];
 
   return (
-    <header className="sticky top-0 z-40 w-full shadow-sm">
+    <header className="sticky top-0 z-40 w-full max-w-full shadow-sm overflow-hidden">
       {/* Top Header Banner with Official CSJMU Seal */}
-      <div className="w-full bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 py-2.5 px-4 sm:px-8 flex items-center justify-between">
-        <div className="flex items-center gap-3.5">
+      <div className="w-full bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 py-2.5 px-3 sm:px-6 lg:px-8 flex items-center justify-between gap-2 overflow-hidden">
+        <div className="flex items-center gap-2 sm:gap-3.5 min-w-0">
           <button
             onClick={toggleSidebar}
-            className="p-2 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors"
+            className="p-1.5 sm:p-2 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors shrink-0"
             title="Toggle Sidebar Menu"
             aria-label="Toggle Sidebar Menu"
           >
@@ -38,8 +38,8 @@ export const Navbar: React.FC = () => {
           </button>
 
           {/* Official CSJMU Seal & Title */}
-          <Link href="/" className="flex items-center gap-3 group">
-            <div className="relative w-11 h-11 sm:w-12 sm:h-12 rounded-full overflow-hidden border border-slate-200 dark:border-slate-700 shadow-sm shrink-0 bg-white p-0.5">
+          <Link href="/" className="flex items-center gap-2 sm:gap-3 group min-w-0">
+            <div className="relative w-9 h-9 sm:w-11 sm:h-11 rounded-full overflow-hidden border border-slate-200 dark:border-slate-700 shadow-sm shrink-0 bg-white p-0.5">
               <img
                 src="/images/csjmu-seal-logo.jpg"
                 alt="CSJMU Official Seal Logo"
@@ -47,11 +47,11 @@ export const Navbar: React.FC = () => {
               />
             </div>
 
-            <div className="flex flex-col">
-              <span className="font-serif font-extrabold text-sm sm:text-lg text-[#002B49] dark:text-white tracking-tight leading-snug group-hover:text-[#8B0000] dark:group-hover:text-amber-400 transition-colors">
+            <div className="flex flex-col min-w-0">
+              <span className="font-serif font-extrabold text-xs sm:text-base md:text-lg text-[#002B49] dark:text-white tracking-tight leading-snug group-hover:text-[#8B0000] dark:group-hover:text-amber-400 transition-colors truncate">
                 Chhatrapati Shahu Ji Maharaj University, Kanpur
               </span>
-              <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">
+              <span className="text-[10px] sm:text-xs font-semibold text-slate-600 dark:text-slate-300 truncate">
                 University Institute of Engineering and Technology (UIET)
               </span>
             </div>
@@ -59,11 +59,11 @@ export const Navbar: React.FC = () => {
         </div>
 
         {/* Utility Actions */}
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
           {/* Theme Toggle Button */}
           <button
             onClick={() => setTheme(isDark ? 'light' : 'dark')}
-            className="p-2.5 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors border border-slate-200 dark:border-slate-700"
+            className="p-2 sm:p-2.5 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors border border-slate-200 dark:border-slate-700 shrink-0"
             title={`Switch to ${isDark ? 'Light' : 'Dark'} Mode`}
             aria-label={`Switch to ${isDark ? 'Light' : 'Dark'} Mode`}
           >
@@ -77,7 +77,7 @@ export const Navbar: React.FC = () => {
           {/* Admin Dashboard / Login Button */}
           <Link
             href={isAdminAuthenticated ? '/admin/dashboard' : '/admin/login'}
-            className={`p-2.5 rounded-lg transition-colors border ${
+            className={`p-2 sm:p-2.5 rounded-lg transition-colors border shrink-0 ${
               isAdminAuthenticated
                 ? 'text-emerald-700 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/40 border-emerald-300 dark:border-emerald-800 font-semibold text-xs flex items-center gap-1.5'
                 : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 border-slate-200 dark:border-slate-700'
@@ -91,7 +91,7 @@ export const Navbar: React.FC = () => {
       </div>
 
       {/* Main University Navigation Bar */}
-      <nav className="w-full bg-[#002B49] text-white flex items-center justify-between px-4 sm:px-8 text-xs font-semibold tracking-wide overflow-x-auto">
+      <nav className="w-full bg-[#002B49] text-white flex items-center justify-between px-3 sm:px-8 text-xs font-semibold tracking-wide overflow-x-auto whitespace-nowrap scrollbar-none">
         <div className="flex items-center">
           {navItems.map((item) => {
             const isActive = pathname === item.href;

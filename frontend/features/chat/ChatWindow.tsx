@@ -5,6 +5,7 @@ import { useChatStore } from '@/store/useChatStore';
 import { useConversationStore } from '@/store/useConversationStore';
 import { apiService } from '@/services/api';
 import { ChatMessage } from '@/types/chat';
+import { generateId, safeCopyToClipboard } from '@/utils/generateId';
 import { ChatLayout } from './components/ChatLayout';
 import { MessageList } from './components/MessageList';
 import { ChatInput } from './components/ChatInput';
@@ -60,7 +61,7 @@ export const ChatWindow: React.FC = () => {
       setIsStreaming(false);
 
       // Add user prompt message to active conversation
-      const userMsgId = crypto.randomUUID();
+      const userMsgId = generateId();
       const userMsg: ChatMessage = {
         id: userMsgId,
         role: 'user',
@@ -70,7 +71,7 @@ export const ChatWindow: React.FC = () => {
       addMessageToActive(userMsg);
 
       // Create initial target assistant message in active conversation
-      const assistantMsgId = crypto.randomUUID();
+      const assistantMsgId = generateId();
       const assistantMsg: ChatMessage = {
         id: assistantMsgId,
         role: 'assistant',
@@ -152,7 +153,7 @@ export const ChatWindow: React.FC = () => {
   }, [pendingQuestion, isLoading, setPendingQuestion, handleExecuteQuery]);
 
   const handleCopyText = (id: string, text: string) => {
-    navigator.clipboard.writeText(text);
+    safeCopyToClipboard(text);
     setCopiedId(id);
     setTimeout(() => setCopiedId(null), 2000);
   };

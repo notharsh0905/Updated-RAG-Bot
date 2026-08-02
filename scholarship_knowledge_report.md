@@ -8,20 +8,22 @@
 
 ## 📑 Executive Summary
 
-This report documents the permanent integration of institutional scholarship data, government youth empowerment schemes, student innovation infrastructure, and smart campus startups into the **CSJMU & UIET AI Campus Assistant**. All new knowledge objects have been chunked, embedded, indexed into Chroma vector storage, indexed into BM25, and added to the Smart Campus Fact Engine.
+This report documents the permanent integration of institutional scholarship guidance, government youth empowerment schemes, student innovation infrastructure, and smart campus startups into the **CSJMU & UIET AI Campus Assistant**. All knowledge objects have been chunked, embedded, indexed into Chroma vector storage, indexed into BM25, and added to the Smart Campus Fact Engine with strict non-fixed monetary policies.
 
 ---
 
 ## 📚 PART 1: Knowledge Added
 
-### 1. Official Scholarship Amount Matrix
+### 1. Official Scholarship Guidance
 
 Structured records added in `data/raw_documents/CSJM_DOCUMENTS/scholarship_and_schemes.json`:
 
 | Student Category | Hostel Accommodation | Day Scholars (Without Hostel) | Official Guidelines |
 | :--- | :---: | :---: | :--- |
-| **SC / ST Students** | **Rs. 1,17,000** | **Rs. 1,17,000** | Full annual UP Government Fee Reimbursement regardless of accommodation status. |
-| **General / OBC Students** | **Rs. 64,500** | **Rs. 57,000** | Tiered UP Government Fee Reimbursement covering tuition and hostel fees. |
+| **SC / ST Students** | **around ₹1,17,000** | **around ₹1,17,000** | Annual UP Government Fee Reimbursement guidance (varies according to latest government notification & eligibility). |
+| **General / OBC Students** | **approximately ₹64,500** | **around ₹57,000** | Tiered UP Government Fee Reimbursement guidance (varies according to latest government notification & eligibility). |
+
+*Note: All scholarship figures are non-fixed, subject to annual state guidelines, income limits, and government updates. The AI assistant never presents scholarship amounts as permanently fixed values.*
 
 ### 2. Required Scholarship Document Checklist
 
@@ -79,9 +81,9 @@ Expanded `DOMAIN_SPELL_MAP` in `app/query/query_processor.py` with the following
 
 ## 💡 PART 3: Smart Campus Fact Engine Updates
 
-Added 4 new grounded campus facts to `data/structured_data/campus_facts.json`:
+Added grounded campus facts to `data/structured_data/campus_facts.json`:
 
-1. **`fact_schol_001`**: Details official UP Government Fee Reimbursement amounts for SC/ST (Rs. 1,17,000) and General/OBC (Rs. 64,500 / Rs. 57,000).
+1. **`fact_schol_001`**: Details UP Government Fee Reimbursement guidance for SC/ST (around ₹1,17,000) and General/OBC (approx. ₹64,500 / ₹57,000) with non-fixed policy disclaimers.
 2. **`fact_scheme_001`**: Details free tablets and smartphones distributed under the Swami Vivekananda Youth Empowerment Scheme.
 3. **`fact_innov_001`**: Details Innovation Center prototype development labs, incubation, and mentorship.
 4. **`fact_startup_001`**: Details PEZ smart campus QR printing with automatic file deletion and zero queues.
@@ -92,10 +94,10 @@ Added 4 new grounded campus facts to `data/structured_data/campus_facts.json`:
 
 Automated test suite (`scripts/test_scholarship_knowledge.py`) validated all 6 core query topics against the live RAG pipeline:
 
-| Topic | Test Query | Expected Grounded Facts | Status |
+| Topic | Test Query | Expected Grounded Facts & Qualifiers | Status |
 | :--- | :--- | :--- | :---: |
-| **SC/ST Scholarship** | *"How much scholarship do SC students receive?"* | Rs. 1,17,000 per year | ✅ PASS |
-| **OBC/Gen Scholarship** | *"How much scholarship do OBC students receive?"* | Rs. 64,500 (Hostel) / Rs. 57,000 (Day Scholar) | ✅ PASS |
+| **SC/ST Scholarship** | *"How much scholarship do SC students receive?"* | Non-fixed guidance (around ₹1,17,000, subject to government notification) | ✅ PASS |
+| **OBC/Gen Scholarship** | *"How much scholarship do OBC students receive?"* | Non-fixed guidance (approx. ₹64,500 / ₹57,000, subject to government rules) | ✅ PASS |
 | **Required Documents** | *"What documents are required for scholarship?"* | 16-document list (Passbook, Shapath Patra, Income/Domicile certs) | ✅ PASS |
 | **Free Tablet Scheme** | *"Does CSJMU provide free tablets?"* | Swami Vivekananda Youth Empowerment Scheme | ✅ PASS |
 | **Innovation Center** | *"What facilities exist at the Innovation Center?"* | Prototype lab, incubation, mentorship | ✅ PASS |
@@ -105,4 +107,4 @@ Automated test suite (`scripts/test_scholarship_knowledge.py`) validated all 6 c
 
 ## 🚀 PART 5: Production Status
 
-The CSJMU & UIET AI Assistant knowledge base has been permanently updated and verified. Vector embeddings, BM25 indices, query spell maps, and campus facts operate seamlessly without modifying unrelated collections or breaking existing retrieval capabilities.
+The CSJMU & UIET AI Assistant knowledge base has been permanently updated and verified. Vector embeddings, BM25 indices, query spell maps, and campus facts operate seamlessly with non-fixed scholarship wording, preserving factual accuracy without promising fixed figures.

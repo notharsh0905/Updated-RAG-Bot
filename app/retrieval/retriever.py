@@ -102,21 +102,33 @@ class RetrieverManager:
         vector_docs = self.retrieve_vector(query, k=k*2)
         bm25_docs = self.retrieve_bm25(query, k=k*2)
 
-        # Detect Target Intent Category for Metadata Routing
+        # Detect Target Intent Category for Metadata Routing across all 14 domains
         q_lower = query.lower()
         target_category = None
-        if "hostel" in q_lower or "mess" in q_lower or "curfew" in q_lower:
-            target_category = "hostels"
-        elif "scholar" in q_lower or "reimbursement" in q_lower or "fee waiver" in q_lower:
-            target_category = "scholarships"
-        elif "placement" in q_lower or "recruiter" in q_lower or "package" in q_lower:
-            target_category = "placements"
-        elif "gate" in q_lower or "rank" in q_lower:
+        if any(w in q_lower for w in ["hostel", "mess", "curfew", "room", "stay", "accommodation"]):
+            target_category = "hostel"
+        elif any(w in q_lower for w in ["scholar", "reimbursement", "fee waiver", "stipend", "nsp", "chhatravitti", "tablet", "smartphone", "laptop", "scheme"]):
+            target_category = "scholarship"
+        elif any(w in q_lower for w in ["placement", "recruiter", "package", "salary", "lpa", "tcs"]):
+            target_category = "placement"
+        elif any(w in q_lower for w in ["gate", "rank", "air", "scorecard"]):
             target_category = "gate"
-        elif "innovat" in q_lower or "pez" in q_lower or "startup" in q_lower:
+        elif any(w in q_lower for w in ["innovat", "pez", "startup", "incubation", "idea lab"]):
             target_category = "innovation"
-        elif "faculty" in q_lower or "director" in q_lower or "professor" in q_lower:
+        elif any(w in q_lower for w in ["faculty", "director", "professor", "hod", "dean", "teacher"]):
             target_category = "faculty"
+        elif any(w in q_lower for w in ["admiss", "apply", "counsel", "seat", "intake", "wrn"]):
+            target_category = "admission"
+        elif any(w in q_lower for w in ["eligib", "criteria", "requirement", "qualify", "pcm"]):
+            target_category = "eligibility"
+        elif any(w in q_lower for w in ["dept", "department", "school of"]):
+            target_category = "department"
+        elif any(w in q_lower for w in ["syllabus", "subject", "curriculum", "coursework"]):
+            target_category = "syllabus"
+        elif any(w in q_lower for w in ["alumni", "alumnus", "graduat"]):
+            target_category = "alumni"
+        elif any(w in q_lower for w in ["fee", "tuition", "charge", "cost"]):
+            target_category = "fee"
 
         # Reciprocal Rank Fusion (RRF) + Category Routing Reranker
         rrf_scores: Dict[str, float] = {}

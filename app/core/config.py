@@ -27,14 +27,14 @@ class AppConfig(BaseSettings):
 
     # Vector DB Configuration
     COLLECTION_NAME: str = "collection50"
-    DEFAULT_K: int = 5
+    DEFAULT_K: int = 7
 
     # FastAPI & Web Server Settings
     API_HOST: str = "0.0.0.0"
     API_PORT: int = 8000
     STREAMLIT_PORT: int = 8501
     ENVIRONMENT: str = "production"
-    CORS_ORIGINS: str = "http://localhost:3000,http://localhost:8000,http://127.0.0.1:3000"
+    CORS_ORIGINS: str = "http://localhost:3000,http://localhost:3001,http://localhost:8000,http://127.0.0.1:3000,http://127.0.0.1:3001,http://10.63.135.235:3000,http://10.63.135.235:3001"
     MAX_FILE_SIZE_BYTES: int = 50 * 1024 * 1024  # 50 MB
     RATE_LIMIT_PER_MINUTE: int = 120
 

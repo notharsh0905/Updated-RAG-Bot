@@ -1,5 +1,5 @@
 {
-  "total_conflicts_detected": 1,
+  "total_conflicts_detected": 0,
   "conflicts": [
     {
       "conflict_id": "CONF_001",
@@ -7,7 +7,8 @@
       "issue": "Curfew Timing Discrepancy between general hostel guidelines and specific girls hostel notice.",
       "document_a": "hostel.txt",
       "document_b": "guidelines_for_admission.txt",
-      "status": "Flagged for Verification"
+      "status": "Resolved & Audited",
+      "resolution": "Standardized official hostel curfew policy in hostel.txt: Girls Hostel curfew 7:30 PM (8:00 PM with warden approval) and Boys Hostel curfew 9:30 PM."
     }
   ]
 }

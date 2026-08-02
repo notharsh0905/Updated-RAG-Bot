@@ -29,14 +29,13 @@ app = FastAPI(
     version="2.0.0"
 )
 
-# Dynamic CORS origins from configuration
-cors_origins = [o.strip() for o in config.CORS_ORIGINS.split(",") if o.strip()]
-if "*" not in cors_origins:
-    cors_origins.append("*")
+# Dynamic CORS origins from configuration & regex match for LAN IPs / domains
+cors_origins = [o.strip() for o in config.CORS_ORIGINS.split(",") if o.strip() and o.strip() != "*"]
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=cors_origins,
+    allow_origins=cors_origins if cors_origins else ["*"],
+    allow_origin_regex=r"https?://.*",
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

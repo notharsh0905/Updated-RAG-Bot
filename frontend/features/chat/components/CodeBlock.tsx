@@ -1,7 +1,6 @@
-'use client';
-
 import React, { useState } from 'react';
 import { Copy, Check, Terminal } from 'lucide-react';
+import { safeCopyToClipboard } from '@/utils/generateId';
 
 interface CodeBlockProps {
   language?: string;
@@ -12,7 +11,7 @@ export const CodeBlock: React.FC<CodeBlockProps> = ({ language = 'text', code })
   const [copied, setCopied] = useState(false);
 
   const handleCopy = () => {
-    navigator.clipboard.writeText(code);
+    safeCopyToClipboard(code);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };

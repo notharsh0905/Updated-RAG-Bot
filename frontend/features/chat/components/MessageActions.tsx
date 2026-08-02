@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { Copy, Check, RotateCcw, ThumbsUp, ThumbsDown, Share2, CheckCheck } from 'lucide-react';
 import { apiService } from '@/services/api';
+import { safeCopyToClipboard } from '@/utils/generateId';
 import { FeedbackDialog } from './FeedbackDialog';
 
 interface MessageActionsProps {
@@ -64,7 +65,7 @@ export const MessageActions: React.FC<MessageActionsProps> = ({
 
   const handleShare = () => {
     const shareText = `Official CSJMU Answer:\n\n${answer.slice(0, 200)}...\n\nSource: CSJMU AI Portal`;
-    navigator.clipboard.writeText(shareText);
+    safeCopyToClipboard(shareText);
     setShared(true);
     setTimeout(() => setShared(false), 2000);
   };

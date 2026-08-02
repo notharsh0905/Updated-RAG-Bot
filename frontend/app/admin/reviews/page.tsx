@@ -98,14 +98,14 @@ export default function HumanReviewWorkspacePage() {
         confidence_score: q.confidence_score || 0.72,
         status: (q.review_status as any) || (q.user_rating === -1 ? 'Under Review' : 'Pending'),
         priority: (q.priority as any) || (q.user_rating === -1 ? 'High' : 'Medium'),
-        assigned_reviewer: q.assigned_reviewer || 'Admission Cell',
-        root_cause: q.root_cause || (q.user_rating === -1 ? 'Outdated Information' : 'Unknown'),
+        assigned_reviewer: q.assigned_reviewer || 'Academic Cell',
+        root_cause: q.root_cause || (q.user_rating === -1 ? 'Outdated Information' : 'None'),
         user_rating: q.user_rating,
         user_comments: q.user_comments,
-        created_at: q.timestamp || new Date(Date.now() - idx * 3600000).toISOString(),
+        created_at: q.timestamp || new Date().toISOString(),
         department_category: q.department_category || 'admissions',
         official_source_snippet:
-          'Official CSJMU Prospectus 2025-26 (Page 14): Girls Hostel Fee is Rs. 48,500 per annum including Mess Advance and Security Deposit.',
+          'Official CSJMU UIET Kanpur Prospectus 2026: Document verification and scholarship ceiling rules updated.',
       }));
 
       setTickets(mapped);
@@ -196,25 +196,31 @@ export default function HumanReviewWorkspacePage() {
 
   // Governance KPI Summaries
   const kpis = useMemo(() => {
+    const pending = tickets.filter((t) => t.status === 'Pending' || t.status === 'Under Review').length;
+    const critical = tickets.filter((t) => t.priority === 'Critical' || t.priority === 'High').length;
+    const resolvedToday = tickets.filter((t) => t.status === 'Resolved' || t.status === 'Approved').length;
+    const negativeCount = tickets.filter((t) => t.user_rating === -1).length;
+    const negativeRate = tickets.length ? `${Math.round((negativeCount / tickets.length) * 100)}%` : '0%';
+
     return {
-      pending: tickets.filter((t) => t.status === 'Pending' || t.status === 'Under Review').length,
-      critical: tickets.filter((t) => t.priority === 'Critical' || t.priority === 'High').length,
-      resolvedToday: tickets.filter((t) => t.status === 'Resolved' || t.status === 'Approved').length,
-      avgResolutionTime: '4.2h',
+      pending,
+      critical,
+      resolvedToday,
+      avgResolutionTime: '1.4 hrs',
       openKbTasks: 3,
-      negativeRate: '4.1%',
+      negativeRate,
     };
   }, [tickets]);
 
-  // Filtered review tickets
+  // Filtered Queue
   const filteredTickets = useMemo(() => {
     return tickets.filter((t) => {
       if (searchQuery.trim()) {
-        const qLower = searchQuery.toLowerCase();
-        const mQ = t.question.toLowerCase().includes(qLower);
-        const mA = t.answer.toLowerCase().includes(qLower);
-        const mId = t.ticket_id.toLowerCase().includes(qLower) || t.session_id.toLowerCase().includes(qLower);
-        if (!mQ && !mA && !mId) return false;
+        const q = searchQuery.toLowerCase();
+        const m1 = t.ticket_id.toLowerCase().includes(q);
+        const m2 = t.question.toLowerCase().includes(q);
+        const m3 = t.answer.toLowerCase().includes(q);
+        if (!m1 && !m2 && !m3) return false;
       }
 
       if (activePreset === 'pending' && t.status !== 'Pending' && t.status !== 'Under Review') return false;
@@ -251,24 +257,24 @@ export default function HumanReviewWorkspacePage() {
   };
 
   return (
-    <div className="flex flex-col h-[calc(100vh-65px)] bg-slate-900 text-slate-100 overflow-hidden font-sans">
+    <div className="flex flex-col h-[calc(100vh-65px)] bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 overflow-hidden font-sans">
       {/* ========================================================================= */}
       {/* TOP GOVERNANCE HEADER & KPI SUMMARY BAR */}
       {/* ========================================================================= */}
-      <header className="bg-slate-950/90 backdrop-blur border-b border-slate-800/80 px-4 sm:px-6 py-3 shrink-0">
+      <header className="bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 px-4 sm:px-6 py-3 shrink-0 shadow-xs">
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-3 mb-3">
           <div className="flex items-center gap-3">
-            <div className="p-2 rounded-xl bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
+            <div className="p-2 rounded-xl bg-blue-50 dark:bg-cyan-500/10 text-[#002B49] dark:text-cyan-400 border border-blue-200 dark:border-cyan-500/20">
               <CheckSquare className="w-5 h-5" />
             </div>
             <div>
-              <h1 className="text-base sm:text-lg font-bold text-slate-100 flex items-center gap-2">
+              <h1 className="text-base sm:text-lg font-bold text-slate-900 dark:text-slate-100 flex items-center gap-2">
                 Human Review Workspace
-                <span className="text-xs px-2 py-0.5 rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 font-mono">
+                <span className="text-xs px-2 py-0.5 rounded-full bg-blue-50 dark:bg-cyan-500/10 text-blue-700 dark:text-cyan-400 border border-blue-200 dark:border-cyan-500/20 font-mono">
                   AI Governance Console
                 </span>
               </h1>
-              <p className="text-xs text-slate-400 hidden sm:block">
+              <p className="text-xs text-slate-500 dark:text-slate-400 hidden sm:block">
                 Investigate AI answer discrepancies, manage review tickets, and trigger Knowledge Base updates
               </p>
             </div>
@@ -282,12 +288,12 @@ export default function HumanReviewWorkspacePage() {
                 placeholder="Search ticket or question..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-8 pr-3 py-1 bg-slate-900 border border-slate-800 rounded-lg text-xs text-slate-200 placeholder-slate-500 focus:outline-none focus:border-cyan-500"
+                className="w-full pl-8 pr-3 py-1 bg-slate-50 dark:bg-slate-950 border border-slate-300 dark:border-slate-800 rounded-lg text-xs text-slate-900 dark:text-slate-200 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#002B49]"
               />
             </div>
             <button
               onClick={fetchTickets}
-              className="p-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 transition-colors border border-slate-700"
+              className="p-1.5 rounded-lg bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 transition-colors border border-slate-300 dark:border-slate-700 shadow-xs"
             >
               <RefreshCw className={`w-3.5 h-3.5 ${loading ? 'animate-spin' : ''}`} />
             </button>
@@ -297,18 +303,18 @@ export default function HumanReviewWorkspacePage() {
         {/* 6 Top Governance KPI Metric Cards */}
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-2">
           {[
-            { label: 'Pending Reviews', value: kpis.pending, color: 'text-amber-400', icon: Clock },
-            { label: 'Critical / High', value: kpis.critical, color: 'text-rose-400', icon: Flame },
-            { label: 'Resolved Today', value: kpis.resolvedToday, color: 'text-emerald-400', icon: CheckCircle2 },
-            { label: 'Avg Resolution', value: kpis.avgResolutionTime, color: 'text-cyan-400', icon: Zap },
-            { label: 'Open KB Tasks', value: kpis.openKbTasks, color: 'text-indigo-400', icon: Layers },
-            { label: 'Negative Rate', value: kpis.negativeRate, color: 'text-slate-300', icon: TrendingUp },
+            { label: 'Pending Reviews', value: kpis.pending, color: 'text-amber-700 dark:text-amber-400', icon: Clock },
+            { label: 'Critical / High', value: kpis.critical, color: 'text-rose-700 dark:text-rose-400', icon: Flame },
+            { label: 'Resolved Today', value: kpis.resolvedToday, color: 'text-emerald-700 dark:text-emerald-400', icon: CheckCircle2 },
+            { label: 'Avg Resolution', value: kpis.avgResolutionTime, color: 'text-blue-700 dark:text-cyan-400', icon: Zap },
+            { label: 'Open KB Tasks', value: kpis.openKbTasks, color: 'text-indigo-700 dark:text-indigo-400', icon: Layers },
+            { label: 'Negative Rate', value: kpis.negativeRate, color: 'text-slate-700 dark:text-slate-300', icon: TrendingUp },
           ].map((kpi, idx) => {
             const KIcon = kpi.icon;
             return (
-              <div key={idx} className="bg-slate-900/80 p-2.5 rounded-xl border border-slate-800 flex items-center justify-between">
+              <div key={idx} className="bg-slate-50 dark:bg-slate-950 p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 flex items-center justify-between shadow-xs">
                 <div>
-                  <span className="text-[10px] text-slate-400 font-medium block">{kpi.label}</span>
+                  <span className="text-[10px] text-slate-500 dark:text-slate-400 font-medium block">{kpi.label}</span>
                   <span className={`text-sm font-bold font-mono ${kpi.color}`}>{kpi.value}</span>
                 </div>
                 <KIcon className={`w-4 h-4 ${kpi.color} opacity-80`} />
@@ -323,18 +329,18 @@ export default function HumanReviewWorkspacePage() {
       {/* ========================================================================= */}
       <div className="flex-1 flex overflow-hidden">
         {/* PANEL 1: WORK QUEUE PRESETS & FILTER SIDEBAR (~300px) */}
-        <aside className="w-72 bg-slate-950 border-r border-slate-800/80 flex flex-col shrink-0 hidden lg:flex">
+        <aside className="w-72 bg-slate-50 dark:bg-slate-950 border-r border-slate-200 dark:border-slate-800 flex flex-col shrink-0 hidden lg:flex">
           <div className="p-4 space-y-5 overflow-y-auto">
             <div>
-              <h2 className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2 px-1">
+              <h2 className="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-2 px-1">
                 Work Queue Presets
               </h2>
               <div className="space-y-1">
                 {[
                   { id: 'all', label: 'All Review Tickets', icon: Layers, count: tickets.length },
-                  { id: 'pending', label: 'Pending & Under Review', icon: Clock, count: kpis.pending, badge: 'bg-amber-500/20 text-amber-400' },
-                  { id: 'critical', label: 'Critical / High Priority', icon: ShieldAlert, count: kpis.critical, badge: 'bg-rose-500/20 text-rose-400' },
-                  { id: 'negative', label: 'Negative Feedback (👎)', icon: XCircle, count: tickets.filter((t) => t.user_rating === -1).length, badge: 'bg-rose-500/20 text-rose-400' },
+                  { id: 'pending', label: 'Pending & Under Review', icon: Clock, count: kpis.pending, badge: 'bg-amber-100 text-amber-800 dark:bg-amber-500/20 dark:text-amber-400' },
+                  { id: 'critical', label: 'Critical / High Priority', icon: ShieldAlert, count: kpis.critical, badge: 'bg-rose-100 text-rose-800 dark:bg-rose-500/20 dark:text-rose-400' },
+                  { id: 'negative', label: 'Negative Feedback (👎)', icon: XCircle, count: tickets.filter((t) => t.user_rating === -1).length, badge: 'bg-rose-100 text-rose-800 dark:bg-rose-500/20 dark:text-rose-400' },
                 ].map((preset) => {
                   const IconComp = preset.icon;
                   const isActive = activePreset === preset.id;
@@ -344,15 +350,15 @@ export default function HumanReviewWorkspacePage() {
                       onClick={() => setActivePreset(preset.id)}
                       className={`w-full flex items-center justify-between px-3 py-2 rounded-xl text-xs font-medium transition-all ${
                         isActive
-                          ? 'bg-cyan-500/10 text-cyan-400 border border-cyan-500/30'
-                          : 'text-slate-400 hover:text-slate-200 hover:bg-slate-900/60'
+                          ? 'bg-blue-50 dark:bg-blue-950/40 text-[#002B49] dark:text-cyan-400 border border-blue-200 dark:border-blue-800'
+                          : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-900/60'
                       }`}
                     >
                       <div className="flex items-center gap-2">
-                        <IconComp className={`w-3.5 h-3.5 ${isActive ? 'text-cyan-400' : 'text-slate-500'}`} />
+                        <IconComp className={`w-3.5 h-3.5 ${isActive ? 'text-[#002B49] dark:text-cyan-400' : 'text-slate-400'}`} />
                         <span>{preset.label}</span>
                       </div>
-                      <span className={`px-2 py-0.5 rounded-full text-[10px] font-mono ${preset.badge || 'bg-slate-800 text-slate-400'}`}>
+                      <span className={`px-2 py-0.5 rounded-full text-[10px] font-mono ${preset.badge || 'bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-400'}`}>
                         {preset.count}
                       </span>
                     </button>
@@ -361,17 +367,17 @@ export default function HumanReviewWorkspacePage() {
               </div>
             </div>
 
-            <div className="space-y-3 border-t border-slate-800/80 pt-4">
-              <h2 className="text-xs font-semibold text-slate-400 uppercase tracking-wider px-1">
+            <div className="space-y-3 border-t border-slate-200 dark:border-slate-800 pt-4">
+              <h2 className="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider px-1">
                 Refine Matrix
               </h2>
 
               <div className="space-y-1 px-1">
-                <label className="text-[11px] text-slate-400">Review Status</label>
+                <label className="text-[11px] text-slate-500 dark:text-slate-400">Review Status</label>
                 <select
                   value={statusFilter}
                   onChange={(e) => setStatusFilter(e.target.value)}
-                  className="w-full bg-slate-900 border border-slate-800 text-xs text-slate-300 rounded-lg px-2.5 py-1.5 focus:outline-none focus:border-cyan-500"
+                  className="w-full bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-800 text-xs text-slate-700 dark:text-slate-300 rounded-lg px-2.5 py-1.5 focus:outline-none focus:ring-2 focus:ring-[#002B49]"
                 >
                   <option value="all">All Statuses</option>
                   <option value="Pending">Pending</option>
@@ -383,11 +389,11 @@ export default function HumanReviewWorkspacePage() {
               </div>
 
               <div className="space-y-1 px-1">
-                <label className="text-[11px] text-slate-400">Priority Level</label>
+                <label className="text-[11px] text-slate-500 dark:text-slate-400">Priority Level</label>
                 <select
                   value={priorityFilter}
                   onChange={(e) => setPriorityFilter(e.target.value)}
-                  className="w-full bg-slate-900 border border-slate-800 text-xs text-slate-300 rounded-lg px-2.5 py-1.5 focus:outline-none focus:border-cyan-500"
+                  className="w-full bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-800 text-xs text-slate-700 dark:text-slate-300 rounded-lg px-2.5 py-1.5 focus:outline-none focus:ring-2 focus:ring-[#002B49]"
                 >
                   <option value="all">All Priorities</option>
                   <option value="Critical">Critical</option>
@@ -398,11 +404,11 @@ export default function HumanReviewWorkspacePage() {
               </div>
 
               <div className="space-y-1 px-1">
-                <label className="text-[11px] text-slate-400">Root Cause Category</label>
+                <label className="text-[11px] text-slate-500 dark:text-slate-400">Root Cause Category</label>
                 <select
                   value={rootCauseFilter}
                   onChange={(e) => setRootCauseFilter(e.target.value)}
-                  className="w-full bg-slate-900 border border-slate-800 text-xs text-slate-300 rounded-lg px-2.5 py-1.5 focus:outline-none focus:border-cyan-500"
+                  className="w-full bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-800 text-xs text-slate-700 dark:text-slate-300 rounded-lg px-2.5 py-1.5 focus:outline-none focus:ring-2 focus:ring-[#002B49]"
                 >
                   <option value="all">All Root Causes</option>
                   <option value="Outdated Information">Outdated Information</option>
@@ -417,26 +423,26 @@ export default function HumanReviewWorkspacePage() {
         </aside>
 
         {/* PANEL 2: REVIEW CARDS WORK QUEUE FEED */}
-        <main className="flex-1 border-r border-slate-800/80 flex flex-col min-w-0 bg-slate-900">
-          <div className="px-4 py-2.5 bg-slate-950/40 border-b border-slate-800/80 flex items-center justify-between shrink-0">
-            <span className="text-xs text-slate-400 font-medium">
-              Queue: <strong className="text-slate-200">{filteredTickets.length}</strong> tickets
+        <main className="flex-1 border-r border-slate-200 dark:border-slate-800 flex flex-col min-w-0 bg-slate-50 dark:bg-slate-950">
+          <div className="px-4 py-2.5 bg-white/60 dark:bg-slate-950/40 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between shrink-0">
+            <span className="text-xs text-slate-500 dark:text-slate-400 font-medium">
+              Queue: <strong className="text-slate-900 dark:text-slate-200">{filteredTickets.length}</strong> tickets
             </span>
           </div>
 
           <div className="flex-1 overflow-y-auto p-4 space-y-3">
             {loading ? (
               Array.from({ length: 4 }).map((_, idx) => (
-                <div key={idx} className="bg-slate-950/60 border border-slate-800/80 rounded-2xl p-4 space-y-3 animate-pulse">
-                  <div className="h-4 w-32 bg-slate-800 rounded" />
-                  <div className="h-5 w-3/4 bg-slate-800 rounded" />
+                <div key={idx} className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-4 space-y-3 animate-pulse shadow-xs">
+                  <div className="h-4 w-32 bg-slate-200 dark:bg-slate-800 rounded" />
+                  <div className="h-5 w-3/4 bg-slate-200 dark:bg-slate-800 rounded" />
                 </div>
               ))
             ) : filteredTickets.length === 0 ? (
-              <div className="h-80 flex flex-col items-center justify-center text-center p-6 bg-slate-950/40 rounded-2xl border border-slate-800/60 my-6">
-                <CheckCircle2 className="w-8 h-8 text-emerald-400 mb-2" />
-                <h3 className="text-sm font-semibold text-slate-200">No Review Tickets Pending</h3>
-                <p className="text-xs text-slate-400 max-w-sm mt-1">
+              <div className="h-80 flex flex-col items-center justify-center text-center p-6 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm my-6">
+                <CheckCircle2 className="w-8 h-8 text-emerald-600 dark:text-emerald-400 mb-2" />
+                <h3 className="text-sm font-semibold text-slate-900 dark:text-slate-200">No Review Tickets Pending</h3>
+                <p className="text-xs text-slate-500 dark:text-slate-400 max-w-sm mt-1">
                   All flagged AI queries and student feedback tickets have been investigated and resolved!
                 </p>
               </div>
@@ -447,18 +453,18 @@ export default function HumanReviewWorkspacePage() {
                   <div
                     key={t.ticket_id}
                     onClick={() => setSelectedTicket(t)}
-                    className={`group bg-slate-950/70 border rounded-2xl p-4 transition-all duration-200 cursor-pointer ${
+                    className={`group bg-white dark:bg-slate-900 border rounded-2xl p-4 transition-all duration-200 cursor-pointer shadow-xs ${
                       isSelected
-                        ? 'border-cyan-500/80 shadow-lg shadow-cyan-950/50 bg-slate-900/90'
-                        : 'border-slate-800 hover:border-slate-700 hover:bg-slate-900/60'
+                        ? 'border-[#002B49] dark:border-amber-400 shadow-md bg-blue-50/20 dark:bg-slate-900/90'
+                        : 'border-slate-200 dark:border-slate-800 hover:border-blue-300 dark:hover:border-slate-700 hover:shadow-md'
                     }`}
                   >
                     <div className="flex items-center justify-between gap-2 mb-2">
                       <div className="flex items-center gap-2">
-                        <span className="text-[11px] font-mono font-bold text-cyan-400 bg-cyan-500/10 px-2 py-0.5 rounded border border-cyan-500/20">
+                        <span className="text-[11px] font-mono font-bold text-[#002B49] dark:text-cyan-400 bg-blue-50 dark:bg-cyan-500/10 px-2 py-0.5 rounded border border-blue-200 dark:border-cyan-500/20">
                           {t.ticket_id}
                         </span>
-                        <span className="text-[11px] text-slate-400 font-mono">
+                        <span className="text-[11px] text-slate-500 dark:text-slate-400 font-mono">
                           {new Date(t.created_at).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
                         </span>
                       </div>
@@ -467,34 +473,34 @@ export default function HumanReviewWorkspacePage() {
                         <span
                           className={`text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full border ${
                             t.priority === 'Critical' || t.priority === 'High'
-                              ? 'bg-rose-500/10 text-rose-400 border-rose-500/20'
-                              : 'bg-amber-500/10 text-amber-400 border-amber-500/20'
+                              ? 'bg-rose-50 text-rose-700 border-rose-200 dark:bg-rose-500/10 dark:text-rose-400 dark:border-rose-500/20'
+                              : 'bg-amber-50 text-amber-700 border-amber-200 dark:bg-amber-500/10 dark:text-amber-400 dark:border-amber-500/20'
                           }`}
                         >
                           {t.priority}
                         </span>
-                        <span className="text-[10px] px-2 py-0.5 rounded-full bg-slate-900 text-slate-300 border border-slate-800 font-medium">
+                        <span className="text-[10px] px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-900 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-800 font-medium">
                           {t.status}
                         </span>
                       </div>
                     </div>
 
-                    <h3 className="text-xs sm:text-sm font-semibold text-slate-100 line-clamp-2 group-hover:text-cyan-300 transition-colors mb-1.5">
+                    <h3 className="text-xs sm:text-sm font-semibold text-slate-900 dark:text-slate-100 line-clamp-2 group-hover:text-[#002B49] dark:group-hover:text-cyan-300 transition-colors mb-1.5">
                       "{t.question}"
                     </h3>
 
-                    <p className="text-xs text-slate-400 line-clamp-2 mb-3">
+                    <p className="text-xs text-slate-600 dark:text-slate-400 line-clamp-2 mb-3">
                       {t.answer}
                     </p>
 
-                    <div className="flex items-center justify-between border-t border-slate-800/60 pt-2.5 text-[11px]">
+                    <div className="flex items-center justify-between border-t border-slate-100 dark:border-slate-800/60 pt-2.5 text-[11px]">
                       <div className="flex items-center gap-3">
-                        <span className="text-slate-400">Reviewer: <strong className="text-slate-200">{t.assigned_reviewer}</strong></span>
-                        <span className="text-amber-400 font-mono">Root Cause: {t.root_cause}</span>
+                        <span className="text-slate-500 dark:text-slate-400">Reviewer: <strong className="text-slate-900 dark:text-slate-200">{t.assigned_reviewer}</strong></span>
+                        <span className="text-amber-700 dark:text-amber-400 font-mono">Root Cause: {t.root_cause}</span>
                       </div>
 
                       {t.user_rating === -1 && (
-                        <span className="text-rose-400 bg-rose-500/10 px-2 py-0.5 rounded font-mono text-[10px] border border-rose-500/20">
+                        <span className="text-rose-700 dark:text-rose-400 bg-rose-50 dark:bg-rose-500/10 px-2 py-0.5 rounded font-mono text-[10px] border border-rose-200 dark:border-rose-500/20">
                           👎 Negative Feedback
                         </span>
                       )}
@@ -508,30 +514,30 @@ export default function HumanReviewWorkspacePage() {
 
         {/* PANEL 3: RIGHT STICKY REVIEW INSPECTOR WORKSPACE (~480px) */}
         {selectedTicket ? (
-          <aside className="w-[480px] bg-slate-950 border-l border-slate-800/80 flex flex-col shrink-0 overflow-hidden hidden xl:flex">
-            <div className="p-4 border-b border-slate-800/80 bg-slate-900/50 flex items-center justify-between gap-3 shrink-0">
+          <aside className="fixed xl:static inset-y-0 right-0 z-50 w-full sm:w-[480px] max-w-[100vw] bg-white dark:bg-slate-950 border-l border-slate-200 dark:border-slate-800 flex flex-col shrink-0 overflow-hidden shadow-2xl xl:shadow-lg transition-transform duration-300">
+            <div className="p-4 border-b border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/50 flex items-center justify-between gap-3 shrink-0">
               <div>
                 <div className="flex items-center gap-2">
-                  <span className="text-xs font-mono text-cyan-400 font-bold bg-cyan-500/10 px-2 py-0.5 rounded border border-cyan-500/20">
+                  <span className="text-xs font-mono font-bold text-[#002B49] dark:text-cyan-400 bg-blue-50 dark:bg-cyan-500/10 px-2 py-0.5 rounded border border-blue-200 dark:border-cyan-500/20">
                     {selectedTicket.ticket_id}
                   </span>
-                  <span className="text-xs text-slate-300 font-semibold">Governance Review Workspace</span>
+                  <span className="text-xs text-slate-500 dark:text-slate-400 font-semibold">Governance Review Workspace</span>
                 </div>
-                <h3 className="text-xs text-slate-300 mt-1 line-clamp-1">
+                <h3 className="text-xs text-slate-900 dark:text-slate-300 mt-1 line-clamp-1 font-semibold">
                   {selectedTicket.question}
                 </h3>
               </div>
 
               <button
                 onClick={() => setSelectedTicket(null)}
-                className="p-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-400 hover:text-slate-200 transition-colors"
+                className="p-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 transition-colors border border-slate-200 dark:border-slate-700"
               >
                 <X className="w-4 h-4" />
               </button>
             </div>
 
             {/* Inspector Navigation Tabs */}
-            <div className="flex border-b border-slate-800 bg-slate-950 text-[11px] font-medium overflow-x-auto shrink-0">
+            <div className="flex border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 text-[11px] font-medium overflow-x-auto shrink-0">
               {[
                 { id: 'evidence', label: 'Evidence Comparison' },
                 { id: 'conversation', label: 'Conversation' },
@@ -544,8 +550,8 @@ export default function HumanReviewWorkspacePage() {
                   onClick={() => setActiveTab(tab.id as any)}
                   className={`px-3 py-2.5 transition-colors whitespace-nowrap border-b-2 ${
                     activeTab === tab.id
-                      ? 'border-cyan-400 text-cyan-400 font-semibold bg-cyan-500/5'
-                      : 'border-transparent text-slate-400 hover:text-slate-200'
+                      ? 'border-[#002B49] text-[#002B49] dark:border-amber-400 dark:text-amber-400 font-semibold bg-blue-50/50 dark:bg-amber-400/5'
+                      : 'border-transparent text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200'
                   }`}
                 >
                   {tab.label}
@@ -554,36 +560,36 @@ export default function HumanReviewWorkspacePage() {
             </div>
 
             {/* Tab Body Contents */}
-            <div className="flex-1 overflow-y-auto p-4 space-y-4">
+            <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-slate-50/50 dark:bg-slate-950">
               {/* TAB 1: EVIDENCE COMPARISON (AI Answer vs Official Document Source) */}
               {activeTab === 'evidence' && (
                 <div className="space-y-4 text-xs">
-                  <div className="bg-rose-950/20 p-3.5 rounded-2xl border border-rose-500/30 space-y-1">
-                    <span className="text-[10px] uppercase font-bold tracking-wider text-rose-400 flex items-center gap-1">
+                  <div className="bg-rose-50 dark:bg-rose-950/20 p-3.5 rounded-2xl border border-rose-200 dark:border-rose-500/30 space-y-1 shadow-xs">
+                    <span className="text-[10px] uppercase font-bold tracking-wider text-rose-700 dark:text-rose-400 flex items-center gap-1">
                       <XCircle className="w-3.5 h-3.5" /> Discrepant AI Answer Generated
                     </span>
-                    <p className="text-xs text-slate-200 leading-relaxed font-mono">
+                    <p className="text-xs text-slate-900 dark:text-slate-200 leading-relaxed font-mono font-medium">
                       "{selectedTicket.answer}"
                     </p>
                   </div>
 
-                  <div className="bg-emerald-950/20 p-3.5 rounded-2xl border border-emerald-500/30 space-y-1">
-                    <span className="text-[10px] uppercase font-bold tracking-wider text-emerald-400 flex items-center gap-1">
+                  <div className="bg-emerald-50 dark:bg-emerald-950/20 p-3.5 rounded-2xl border border-emerald-200 dark:border-emerald-500/30 space-y-1 shadow-xs">
+                    <span className="text-[10px] uppercase font-bold tracking-wider text-emerald-700 dark:text-emerald-400 flex items-center gap-1">
                       <FileCheck className="w-3.5 h-3.5" /> Verifiable Official Source Text
                     </span>
-                    <p className="text-xs text-slate-200 leading-relaxed font-mono">
+                    <p className="text-xs text-slate-900 dark:text-slate-200 leading-relaxed font-mono font-medium">
                       "{selectedTicket.official_source_snippet}"
                     </p>
                   </div>
 
                   {/* Highlighted Difference Comparison Box */}
-                  <div className="bg-slate-900 p-3.5 rounded-2xl border border-slate-800 space-y-2">
-                    <span className="text-[10px] text-slate-400 font-bold uppercase tracking-wider">
+                  <div className="bg-white dark:bg-slate-900 p-3.5 rounded-2xl border border-slate-200 dark:border-slate-800 space-y-2 shadow-xs">
+                    <span className="text-[10px] text-slate-500 dark:text-slate-400 font-bold uppercase tracking-wider">
                       Difference Highlight Analysis
                     </span>
-                    <div className="p-2.5 bg-slate-950 rounded-xl border border-slate-800 text-[11px] font-mono leading-relaxed space-y-1">
-                      <p className="text-rose-400">- AI Output: Hostel Fee Rs. 42,000 per annum</p>
-                      <p className="text-emerald-400">+ Official Source: Girls Hostel Fee Rs. 48,500 per annum (2025-26 Circular)</p>
+                    <div className="p-2.5 bg-slate-50 dark:bg-slate-950 rounded-xl border border-slate-200 dark:border-slate-800 text-[11px] font-mono leading-relaxed space-y-1">
+                      <p className="text-rose-700 dark:text-rose-400 font-semibold">- AI Output: Hostel Fee Rs. 42,000 per annum</p>
+                      <p className="text-emerald-700 dark:text-emerald-400 font-semibold">+ Official Source: Girls Hostel Fee Rs. 48,500 per annum (2025-26 Circular)</p>
                     </div>
                   </div>
                 </div>
@@ -592,14 +598,14 @@ export default function HumanReviewWorkspacePage() {
               {/* TAB 2: CONVERSATION THREAD */}
               {activeTab === 'conversation' && (
                 <div className="space-y-3 text-xs">
-                  <div className="bg-slate-900 p-3 rounded-xl border border-slate-800 space-y-1">
+                  <div className="bg-white dark:bg-slate-900 p-3 rounded-xl border border-slate-200 dark:border-slate-800 space-y-1 shadow-xs">
                     <span className="text-[10px] text-slate-500 uppercase font-semibold">Student Question</span>
-                    <p className="text-xs font-medium text-slate-200">"{selectedTicket.question}"</p>
+                    <p className="text-xs font-medium text-slate-900 dark:text-slate-200">"{selectedTicket.question}"</p>
                   </div>
 
-                  <div className="bg-cyan-950/20 p-3 rounded-xl border border-cyan-500/30 space-y-1">
-                    <span className="text-[10px] text-cyan-400 uppercase font-semibold">Assistant Response</span>
-                    <p className="text-xs text-slate-200 leading-relaxed">{selectedTicket.answer}</p>
+                  <div className="bg-blue-50/50 dark:bg-cyan-950/20 p-3 rounded-xl border border-blue-200 dark:border-cyan-500/30 space-y-1 shadow-xs">
+                    <span className="text-[10px] text-[#002B49] dark:text-cyan-400 uppercase font-semibold">Assistant Response</span>
+                    <p className="text-xs text-slate-800 dark:text-slate-200 leading-relaxed">{selectedTicket.answer}</p>
                   </div>
                 </div>
               )}
@@ -609,11 +615,11 @@ export default function HumanReviewWorkspacePage() {
                 <div className="space-y-4 text-xs">
                   {/* Root Cause Selector */}
                   <div className="space-y-1.5">
-                    <label className="text-[11px] font-medium text-slate-400">Identify Root Cause</label>
+                    <label className="text-[11px] font-medium text-slate-500 dark:text-slate-400">Identify Root Cause</label>
                     <select
                       value={currentRootCause}
                       onChange={(e) => setCurrentRootCause(e.target.value)}
-                      className="w-full bg-slate-900 border border-slate-800 rounded-lg px-2.5 py-1.5 text-slate-200 focus:outline-none focus:border-cyan-500"
+                      className="w-full bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-800 rounded-lg px-2.5 py-1.5 text-slate-900 dark:text-slate-200 focus:outline-none focus:ring-2 focus:ring-[#002B49]"
                     >
                       <option value="Outdated Information">Outdated Information</option>
                       <option value="Missing Document">Missing Document</option>
@@ -625,16 +631,16 @@ export default function HumanReviewWorkspacePage() {
 
                   {/* Smart Automation Trigger Banner */}
                   {currentRootCause === 'Missing Document' && (
-                    <div className="p-3 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-300 space-y-2">
+                    <div className="p-3 rounded-xl bg-amber-50 dark:bg-amber-500/10 border border-amber-200 dark:border-amber-500/30 text-amber-900 dark:text-amber-300 space-y-2 shadow-xs">
                       <span className="font-bold flex items-center gap-1">
-                        <Sparkles className="w-3.5 h-3.5" /> Smart Automation Trigger: Missing Document
+                        <Sparkles className="w-3.5 h-3.5 text-amber-600 dark:text-amber-400" /> Smart Automation Trigger: Missing Document
                       </span>
                       <p className="text-[11px] opacity-90">
                         Automatically create a Knowledge Improvement Task to request missing PDF prospectus from the admission cell.
                       </p>
                       <button
                         onClick={() => setShowKbModal(true)}
-                        className="w-full py-1.5 bg-amber-600 hover:bg-amber-500 text-white rounded-lg font-medium transition-colors"
+                        className="w-full py-1.5 bg-amber-600 hover:bg-amber-700 text-white rounded-lg font-medium transition-colors shadow-xs"
                       >
                         Auto-Create KB Task
                       </button>
@@ -642,8 +648,8 @@ export default function HumanReviewWorkspacePage() {
                   )}
 
                   {currentRootCause === 'Outdated Information' && (
-                    <div className="p-3 rounded-xl bg-cyan-500/10 border border-cyan-500/30 text-cyan-300 space-y-2">
-                      <span className="font-bold flex items-center gap-1">
+                    <div className="p-3 rounded-xl bg-blue-50 dark:bg-cyan-500/10 border border-blue-200 dark:border-cyan-500/30 text-blue-900 dark:text-cyan-300 space-y-2 shadow-xs">
+                      <span className="font-bold flex items-center gap-1 text-[#002B49] dark:text-cyan-400">
                         <Sparkles className="w-3.5 h-3.5" /> Smart Automation Trigger: Replace Document
                       </span>
                       <p className="text-[11px] opacity-90">
@@ -651,7 +657,7 @@ export default function HumanReviewWorkspacePage() {
                       </p>
                       <button
                         onClick={() => alert('Document replacement task flagged for Knowledge Ingestion!')}
-                        className="w-full py-1.5 bg-cyan-600 hover:bg-cyan-500 text-white rounded-lg font-medium transition-colors"
+                        className="w-full py-1.5 bg-[#002B49] hover:bg-[#001D33] text-white rounded-lg font-medium transition-colors shadow-xs"
                       >
                         Flag Document for Replacement
                       </button>
@@ -659,15 +665,15 @@ export default function HumanReviewWorkspacePage() {
                   )}
 
                   {/* Resolution Buttons Grid */}
-                  <div className="space-y-2 pt-2 border-t border-slate-800">
-                    <span className="text-[11px] font-semibold text-slate-400 uppercase">Resolution Workflow Actions</span>
+                  <div className="space-y-2 pt-2 border-t border-slate-200 dark:border-slate-800">
+                    <span className="text-[11px] font-semibold text-slate-500 dark:text-slate-400 uppercase">Resolution Workflow Actions</span>
                     <div className="grid grid-cols-2 gap-2">
                       <button
                         onClick={() => {
                           setCurrentStatus('Approved');
                           handleSaveTicket();
                         }}
-                        className="py-2 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl font-medium transition-colors"
+                        className="py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl font-medium transition-colors shadow-xs"
                       >
                         Approve Answer
                       </button>
@@ -676,7 +682,7 @@ export default function HumanReviewWorkspacePage() {
                           setCurrentStatus('Resolved');
                           handleSaveTicket();
                         }}
-                        className="py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 rounded-xl font-medium transition-colors"
+                        className="py-2 bg-slate-800 hover:bg-slate-700 text-white rounded-xl font-medium transition-colors shadow-xs"
                       >
                         Mark Resolved
                       </button>
@@ -685,13 +691,13 @@ export default function HumanReviewWorkspacePage() {
                           setCurrentStatus('Escalated');
                           handleSaveTicket();
                         }}
-                        className="py-2 bg-rose-600 hover:bg-rose-500 text-white rounded-xl font-medium transition-colors"
+                        className="py-2 bg-rose-600 hover:bg-rose-700 text-white rounded-xl font-medium transition-colors shadow-xs"
                       >
                         Escalate Ticket
                       </button>
                       <button
                         onClick={() => setShowKbModal(true)}
-                        className="py-2 bg-indigo-600 hover:bg-indigo-500 text-white rounded-xl font-medium transition-colors"
+                        className="py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl font-medium transition-colors shadow-xs"
                       >
                         Create KB Task
                       </button>
@@ -704,19 +710,19 @@ export default function HumanReviewWorkspacePage() {
               {activeTab === 'notes' && (
                 <div className="space-y-3 text-xs">
                   <div className="space-y-1.5">
-                    <label className="text-[11px] font-medium text-slate-400">Reviewer Governance Notes</label>
+                    <label className="text-[11px] font-medium text-slate-500 dark:text-slate-400">Reviewer Governance Notes</label>
                     <textarea
                       rows={4}
                       value={adminNotes}
                       onChange={(e) => setAdminNotes(e.target.value)}
                       placeholder="Enter investigation notes..."
-                      className="w-full bg-slate-900 border border-slate-800 rounded-xl p-3 text-slate-200 placeholder-slate-500 focus:outline-none focus:border-cyan-500 resize-none text-xs"
+                      className="w-full bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-800 rounded-xl p-3 text-slate-900 dark:text-slate-200 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#002B49] resize-none text-xs"
                     />
                   </div>
 
                   <button
                     onClick={handleSaveTicket}
-                    className="w-full py-2 bg-cyan-600 hover:bg-cyan-500 text-white rounded-xl font-medium transition-colors flex items-center justify-center gap-1.5"
+                    className="w-full py-2 bg-[#002B49] hover:bg-[#001D33] text-white rounded-xl font-medium transition-colors flex items-center justify-center gap-1.5 shadow-xs"
                   >
                     {isSaved ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : null}
                     {isSaved ? 'Saved Governance Notes!' : 'Save Governance Notes'}
@@ -727,24 +733,24 @@ export default function HumanReviewWorkspacePage() {
               {/* TAB 5: AUDIT TIMELINE */}
               {activeTab === 'timeline' && (
                 <div className="space-y-3 text-xs">
-                  <h4 className="text-xs font-semibold text-slate-300 flex items-center gap-1.5">
-                    <GitCommit className="w-3.5 h-3.5 text-cyan-400" />
+                  <h4 className="text-xs font-semibold text-slate-900 dark:text-slate-300 flex items-center gap-1.5">
+                    <GitCommit className="w-3.5 h-3.5 text-[#002B49] dark:text-cyan-400" />
                     Governance Audit Trail
                   </h4>
 
-                  <div className="relative border-l-2 border-slate-800 ml-3 pl-4 space-y-4">
+                  <div className="relative border-l-2 border-slate-300 dark:border-slate-800 ml-3 pl-4 space-y-4">
                     {[
                       { title: 'Ticket Created', desc: 'Negative feedback submitted by student', time: '10 mins ago', actor: 'Student User' },
                       { title: 'Assigned to Reviewer', desc: 'Auto-routed to Admission Cell', time: '8 mins ago', actor: 'Governance System' },
                       { title: 'Investigation Started', desc: 'Discrepancy identified in 2025-26 hostel fee prospectus chunk', time: '3 mins ago', actor: 'Admission Cell' },
                     ].map((step, idx) => (
                       <div key={idx} className="relative">
-                        <div className="absolute -left-[23px] top-0.5 w-3 h-3 rounded-full bg-slate-900 border-2 border-cyan-400" />
+                        <div className="absolute -left-[23px] top-0.5 w-3 h-3 rounded-full bg-white dark:bg-slate-900 border-2 border-[#002B49] dark:border-cyan-400" />
                         <div className="flex justify-between items-center">
-                          <h5 className="font-semibold text-slate-200">{step.title}</h5>
+                          <h5 className="font-semibold text-slate-900 dark:text-slate-200">{step.title}</h5>
                           <span className="text-[10px] font-mono text-slate-500">{step.time}</span>
                         </div>
-                        <p className="text-[11px] text-slate-400 mt-0.5">{step.desc}</p>
+                        <p className="text-[11px] text-slate-600 dark:text-slate-400 mt-0.5">{step.desc}</p>
                       </div>
                     ))}
                   </div>
@@ -759,31 +765,31 @@ export default function HumanReviewWorkspacePage() {
       {/* KB TASK CREATION MODAL SHORTCUT */}
       {/* ========================================================================= */}
       {showKbModal && selectedTicket && (
-        <div className="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4">
-          <div className="bg-slate-900 border border-slate-800 rounded-2xl w-full max-w-md p-5 space-y-4 shadow-2xl">
-            <div className="flex justify-between items-center border-b border-slate-800 pb-3">
-              <h3 className="text-sm font-bold text-slate-100 flex items-center gap-2">
-                <Layers className="w-4 h-4 text-cyan-400" />
+        <div className="fixed inset-0 z-50 bg-slate-950/60 backdrop-blur-sm flex items-center justify-center p-4">
+          <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl w-full max-w-md p-5 space-y-4 shadow-2xl">
+            <div className="flex justify-between items-center border-b border-slate-200 dark:border-slate-800 pb-3">
+              <h3 className="text-sm font-bold text-slate-900 dark:text-slate-100 flex items-center gap-2">
+                <Layers className="w-4 h-4 text-[#002B49] dark:text-cyan-400" />
                 Create KB Improvement Task
               </h3>
-              <button onClick={() => setShowKbModal(false)} className="text-slate-400 hover:text-slate-200">
+              <button onClick={() => setShowKbModal(false)} className="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200">
                 <X className="w-4 h-4" />
               </button>
             </div>
 
             <div className="space-y-3 text-xs">
               <div>
-                <label className="text-slate-400 font-medium block mb-1">Task Summary</label>
+                <label className="text-slate-600 dark:text-slate-400 font-medium block mb-1">Task Summary</label>
                 <input
                   type="text"
                   defaultValue={`Update prospectus chunk for: "${selectedTicket.question.slice(0, 40)}..."`}
-                  className="w-full bg-slate-950 border border-slate-800 rounded-lg p-2 text-slate-200"
+                  className="w-full bg-slate-50 dark:bg-slate-950 border border-slate-300 dark:border-slate-800 rounded-lg p-2 text-slate-900 dark:text-slate-200"
                 />
               </div>
 
               <div>
-                <label className="text-slate-400 font-medium block mb-1">Department Assigned</label>
-                <select className="w-full bg-slate-950 border border-slate-800 rounded-lg p-2 text-slate-200">
+                <label className="text-slate-600 dark:text-slate-400 font-medium block mb-1">Department Assigned</label>
+                <select className="w-full bg-slate-50 dark:bg-slate-950 border border-slate-300 dark:border-slate-800 rounded-lg p-2 text-slate-900 dark:text-slate-200">
                   <option>Admission Cell</option>
                   <option>Hostel Office</option>
                   <option>Scholarship Desk</option>
@@ -792,11 +798,11 @@ export default function HumanReviewWorkspacePage() {
               </div>
 
               <div>
-                <label className="text-slate-400 font-medium block mb-1">Suggested Fix</label>
+                <label className="text-slate-600 dark:text-slate-400 font-medium block mb-1">Suggested Fix</label>
                 <textarea
                   rows={3}
                   defaultValue={`Replace old 2024 fee table chunk with updated 2025-26 circular.`}
-                  className="w-full bg-slate-950 border border-slate-800 rounded-lg p-2 text-slate-200 resize-none"
+                  className="w-full bg-slate-50 dark:bg-slate-950 border border-slate-300 dark:border-slate-800 rounded-lg p-2 text-slate-900 dark:text-slate-200 resize-none"
                 />
               </div>
             </div>
@@ -804,7 +810,7 @@ export default function HumanReviewWorkspacePage() {
             <div className="flex gap-2 pt-2">
               <button
                 onClick={() => setShowKbModal(false)}
-                className="flex-1 py-2 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-xl font-medium transition-colors text-xs"
+                className="flex-1 py-2 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 rounded-xl font-medium transition-colors text-xs border border-slate-300 dark:border-slate-700"
               >
                 Cancel
               </button>
@@ -813,7 +819,7 @@ export default function HumanReviewWorkspacePage() {
                   alert('Knowledge Base Task dispatched successfully!');
                   setShowKbModal(false);
                 }}
-                className="flex-1 py-2 bg-cyan-600 hover:bg-cyan-500 text-white rounded-xl font-medium transition-colors text-xs"
+                className="flex-1 py-2 bg-[#002B49] hover:bg-[#001D33] text-white rounded-xl font-medium transition-colors text-xs shadow-xs"
               >
                 Dispatch Task
               </button>

@@ -34,6 +34,7 @@ import {
   FileCode,
 } from 'lucide-react';
 import { apiService } from '@/services/api';
+import { safeCopyToClipboard } from '@/utils/generateId';
 
 interface UploadResult {
   success: boolean;
@@ -298,30 +299,30 @@ export default function AdminKnowledgePage() {
   };
 
   const copyToClipboard = (text: string, tag: string) => {
-    navigator.clipboard.writeText(text);
+    safeCopyToClipboard(text);
     setCopiedText(tag);
     setTimeout(() => setCopiedText(null), 2000);
   };
 
   return (
-    <div className="flex flex-col h-[calc(100vh-65px)] bg-slate-900 text-slate-100 overflow-hidden font-sans">
+    <div className="flex flex-col h-[calc(100vh-65px)] bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 overflow-hidden font-sans">
       {/* ========================================================================= */}
       {/* TOP DASHBOARD HEADER & KPI SUMMARY BAR */}
       {/* ========================================================================= */}
-      <header className="bg-slate-950/90 backdrop-blur border-b border-slate-800/80 px-4 sm:px-6 py-3 shrink-0">
+      <header className="bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 px-4 sm:px-6 py-3 shrink-0 shadow-xs">
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-3 mb-3">
           <div className="flex items-center gap-3">
-            <div className="p-2 rounded-xl bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
+            <div className="p-2 rounded-xl bg-blue-50 dark:bg-cyan-500/10 text-[#002B49] dark:text-cyan-400 border border-blue-200 dark:border-cyan-500/20">
               <UploadCloud className="w-5 h-5" />
             </div>
             <div>
-              <h1 className="text-base sm:text-lg font-bold text-slate-100 flex items-center gap-2">
+              <h1 className="text-base sm:text-lg font-bold text-slate-900 dark:text-slate-100 flex items-center gap-2">
                 Knowledge Management Console
-                <span className="text-xs px-2 py-0.5 rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 font-mono">
+                <span className="text-xs px-2 py-0.5 rounded-full bg-blue-50 dark:bg-cyan-500/10 text-blue-700 dark:text-cyan-400 border border-blue-200 dark:border-cyan-500/20 font-mono">
                   Azure AI Search Style
                 </span>
               </h1>
-              <p className="text-xs text-slate-400 hidden sm:block">
+              <p className="text-xs text-slate-500 dark:text-slate-400 hidden sm:block">
                 Real-time document ingestion, Chroma vector store indexing, and document health monitoring
               </p>
             </div>
@@ -331,7 +332,7 @@ export default function AdminKnowledgePage() {
             <button
               onClick={fetchLibrary}
               disabled={loadingDocs}
-              className="p-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 transition-colors border border-slate-700 flex items-center gap-1 text-xs"
+              className="p-1.5 rounded-lg bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 transition-colors border border-slate-300 dark:border-slate-700 flex items-center gap-1 text-xs font-medium shadow-xs"
             >
               <RefreshCw className={`w-3.5 h-3.5 ${loadingDocs ? 'animate-spin' : ''}`} /> Refresh Library
             </button>
@@ -341,18 +342,18 @@ export default function AdminKnowledgePage() {
         {/* 6 Top Knowledge KPI Cards */}
         <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 gap-2">
           {[
-            { label: 'Total Documents', value: kpis.totalDocs, color: 'text-cyan-400', icon: FileText },
-            { label: 'Indexed Chunks', value: kpis.totalChunks, color: 'text-emerald-400', icon: Database },
-            { label: 'Embedding Model', value: 'nomic-embed', color: 'text-indigo-400', icon: Sparkles },
-            { label: 'Storage Volume', value: kpis.storageMb, color: 'text-amber-400', icon: HardDrive },
-            { label: 'Avg Similarity', value: kpis.avgSimilarity, color: 'text-emerald-400', icon: TrendingUp },
-            { label: 'Needs Review', value: kpis.needsReview, color: kpis.needsReview > 0 ? 'text-rose-400' : 'text-slate-400', icon: AlertTriangle },
+            { label: 'Total Documents', value: kpis.totalDocs, color: 'text-blue-700 dark:text-cyan-400', icon: FileText },
+            { label: 'Indexed Chunks', value: kpis.totalChunks, color: 'text-emerald-700 dark:text-emerald-400', icon: Database },
+            { label: 'Embedding Model', value: 'nomic-embed', color: 'text-indigo-700 dark:text-indigo-400', icon: Sparkles },
+            { label: 'Storage Volume', value: kpis.storageMb, color: 'text-amber-700 dark:text-amber-400', icon: HardDrive },
+            { label: 'Avg Similarity', value: kpis.avgSimilarity, color: 'text-emerald-700 dark:text-emerald-400', icon: TrendingUp },
+            { label: 'Needs Review', value: kpis.needsReview, color: kpis.needsReview > 0 ? 'text-rose-700 dark:text-rose-400' : 'text-slate-500 dark:text-slate-400', icon: AlertTriangle },
           ].map((kpi, idx) => {
             const KIcon = kpi.icon;
             return (
-              <div key={idx} className="bg-slate-900/80 p-2.5 rounded-xl border border-slate-800 flex items-center justify-between">
+              <div key={idx} className="bg-slate-50 dark:bg-slate-950 p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 flex items-center justify-between shadow-xs">
                 <div>
-                  <span className="text-[10px] text-slate-400 font-medium block">{kpi.label}</span>
+                  <span className="text-[10px] text-slate-500 dark:text-slate-400 font-medium block">{kpi.label}</span>
                   <span className={`text-sm font-bold font-mono ${kpi.color}`}>{kpi.value}</span>
                 </div>
                 <KIcon className={`w-4 h-4 ${kpi.color} opacity-80`} />
@@ -367,16 +368,16 @@ export default function AdminKnowledgePage() {
       {/* ========================================================================= */}
       <div className="flex-1 flex overflow-hidden">
         {/* PANEL 1: INGESTION & DOCUMENT LIBRARY (~65% Width) */}
-        <div className="flex-1 border-r border-slate-800/80 flex flex-col min-w-0 bg-slate-900 overflow-y-auto">
+        <div className="flex-1 border-r border-slate-200 dark:border-slate-800 flex flex-col min-w-0 bg-slate-50 dark:bg-slate-950 overflow-y-auto">
           <div className="p-4 space-y-5">
             {/* INGESTION UPLOAD CARD */}
-            <div className="bg-slate-950/80 border border-slate-800/90 rounded-2xl p-4 sm:p-5 shadow-lg space-y-4">
+            <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-4 sm:p-5 shadow-sm space-y-4">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
-                  <UploadCloud className="w-4 h-4 text-cyan-400" />
-                  <h3 className="text-sm font-bold text-slate-200">Production Document Ingestion Engine</h3>
+                  <UploadCloud className="w-4 h-4 text-[#002B49] dark:text-cyan-400" />
+                  <h3 className="text-sm font-bold text-slate-900 dark:text-slate-200">Production Document Ingestion Engine</h3>
                 </div>
-                <span className="text-[11px] font-mono text-slate-400">Supported: .pdf, .txt, .docx, .json (Max 50MB)</span>
+                <span className="text-[11px] font-mono text-slate-500 dark:text-slate-400">Supported: .pdf, .txt, .docx, .json (Max 50MB)</span>
               </div>
 
               <form onSubmit={handleUploadSubmit} className="space-y-4">
@@ -387,7 +388,7 @@ export default function AdminKnowledgePage() {
                       accept=".pdf,.txt,.docx,.json"
                       onChange={(e) => setFile(e.target.files?.[0] || null)}
                       disabled={uploadStatus === 'processing'}
-                      className="w-full text-xs text-slate-300 file:mr-3 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-cyan-500/10 file:text-cyan-400 hover:file:bg-cyan-500/20 bg-slate-900 border border-slate-800 rounded-xl cursor-pointer"
+                      className="w-full text-xs text-slate-700 dark:text-slate-300 file:mr-3 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-blue-50 dark:file:bg-cyan-500/10 file:text-[#002B49] dark:file:text-cyan-400 hover:file:bg-blue-100 dark:hover:file:bg-cyan-500/20 bg-slate-50 dark:bg-slate-950 border border-slate-300 dark:border-slate-800 rounded-xl cursor-pointer"
                     />
                   </div>
 
@@ -396,7 +397,7 @@ export default function AdminKnowledgePage() {
                       value={docCategory}
                       onChange={(e) => setDocCategory(e.target.value)}
                       disabled={uploadStatus === 'processing'}
-                      className="w-full bg-slate-900 border border-slate-800 text-xs text-slate-200 rounded-xl px-3 py-2 focus:outline-none focus:border-cyan-500"
+                      className="w-full bg-slate-50 dark:bg-slate-950 border border-slate-300 dark:border-slate-800 text-xs text-slate-800 dark:text-slate-200 rounded-xl px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#002B49]"
                     >
                       <option value="admissions">Admissions & Prospectus</option>
                       <option value="hostels">Hostels & Accommodation</option>
@@ -408,39 +409,39 @@ export default function AdminKnowledgePage() {
                 </div>
 
                 <div className="flex items-center justify-between pt-1">
-                  <span className="text-xs text-slate-400">
+                  <span className="text-xs text-slate-500 dark:text-slate-400">
                     {file ? `Selected: ${file.name} (${(file.size / 1024).toFixed(1)} KB)` : 'No document selected'}
                   </span>
 
                   <button
                     type="submit"
                     disabled={!file || uploadStatus === 'processing'}
-                    className="px-5 py-2 bg-cyan-600 hover:bg-cyan-500 disabled:opacity-50 text-white rounded-xl text-xs font-semibold transition-all shadow-sm flex items-center gap-1.5"
+                    className="px-5 py-2 bg-[#002B49] hover:bg-[#001D33] disabled:opacity-50 text-white rounded-xl text-xs font-semibold transition-all shadow-xs flex items-center gap-1.5"
                   >
-                    <UploadCloud className="w-4 h-4" /> Start Real Ingestion
+                    <UploadCloud className="w-4 h-4 text-amber-300" /> Start Real Ingestion
                   </button>
                 </div>
               </form>
 
               {/* Progress Bar & Status Diagnostic */}
               {uploadStatus === 'processing' && (
-                <div className="space-y-2 pt-2 border-t border-slate-800/60">
+                <div className="space-y-2 pt-2 border-t border-slate-200 dark:border-slate-800/60">
                   <div className="flex justify-between items-center text-xs font-mono">
-                    <span className="text-cyan-400 font-semibold">{currentStep}</span>
-                    <span className="text-slate-300 font-bold">{progressPercent}%</span>
+                    <span className="text-[#002B49] dark:text-cyan-400 font-semibold">{currentStep}</span>
+                    <span className="text-slate-700 dark:text-slate-300 font-bold">{progressPercent}%</span>
                   </div>
-                  <div className="w-full bg-slate-900 rounded-full h-2 overflow-hidden border border-slate-800">
-                    <div className="bg-cyan-500 h-full transition-all duration-500" style={{ width: `${progressPercent}%` }} />
+                  <div className="w-full bg-slate-200 dark:bg-slate-900 rounded-full h-2 overflow-hidden border border-slate-300 dark:border-slate-800">
+                    <div className="bg-[#002B49] dark:bg-cyan-500 h-full transition-all duration-500" style={{ width: `${progressPercent}%` }} />
                   </div>
                 </div>
               )}
 
               {/* Diagnostic Result Card */}
               {uploadStatus === 'success' && lastResult && (
-                <div className="p-3.5 bg-emerald-500/10 border border-emerald-500/30 rounded-xl space-y-1 text-xs text-emerald-300">
+                <div className="p-3.5 bg-emerald-50 dark:bg-emerald-500/10 border border-emerald-200 dark:border-emerald-500/30 rounded-xl space-y-1 text-xs text-emerald-800 dark:text-emerald-300 shadow-xs">
                   <div className="flex justify-between items-center font-bold">
                     <span className="flex items-center gap-1">
-                      <CheckCircle2 className="w-4 h-4 text-emerald-400" /> Ingestion Successful!
+                      <CheckCircle2 className="w-4 h-4 text-emerald-600 dark:text-emerald-400" /> Ingestion Successful!
                     </span>
                     <span className="font-mono text-[11px]">{lastResult.processing_time}s</span>
                   </div>
@@ -451,7 +452,7 @@ export default function AdminKnowledgePage() {
               )}
 
               {uploadStatus === 'error' && (
-                <div className="p-3.5 bg-rose-500/10 border border-rose-500/30 rounded-xl text-xs text-rose-300 flex items-center gap-2">
+                <div className="p-3.5 bg-rose-50 dark:bg-rose-500/10 border border-rose-200 dark:border-rose-500/30 rounded-xl text-xs text-rose-800 dark:text-rose-300 flex items-center gap-2 shadow-xs">
                   <AlertCircle className="w-4 h-4 shrink-0" />
                   <span>{errorMsg}</span>
                 </div>
@@ -460,7 +461,7 @@ export default function AdminKnowledgePage() {
 
             {/* DOCUMENT LIBRARY MATRIX */}
             <div className="space-y-3">
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-slate-950/40 p-3 rounded-2xl border border-slate-800/80">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-white/60 dark:bg-slate-950/40 p-3 rounded-2xl border border-slate-200 dark:border-slate-800">
                 <div className="relative flex-1">
                   <Search className="w-3.5 h-3.5 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
                   <input
@@ -468,7 +469,7 @@ export default function AdminKnowledgePage() {
                     placeholder="Search documents by name, category, or UUID..."
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    className="w-full pl-8 pr-3 py-1.5 bg-slate-900 border border-slate-800 rounded-lg text-xs text-slate-200 focus:outline-none focus:border-cyan-500"
+                    className="w-full pl-8 pr-3 py-1.5 bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-800 rounded-lg text-xs text-slate-900 dark:text-slate-200 focus:outline-none focus:ring-2 focus:ring-[#002B49]"
                   />
                 </div>
 
@@ -476,7 +477,7 @@ export default function AdminKnowledgePage() {
                   <select
                     value={categoryFilter}
                     onChange={(e) => setCategoryFilter(e.target.value)}
-                    className="bg-slate-900 border border-slate-800 text-xs text-slate-300 rounded-lg px-2.5 py-1.5 focus:outline-none focus:border-cyan-500"
+                    className="bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-800 text-xs text-slate-700 dark:text-slate-300 rounded-lg px-2.5 py-1.5 focus:outline-none focus:ring-2 focus:ring-[#002B49]"
                   >
                     <option value="all">All Categories</option>
                     <option value="admissions">Admissions</option>
@@ -487,7 +488,7 @@ export default function AdminKnowledgePage() {
                   <select
                     value={sortMode}
                     onChange={(e) => setSortMode(e.target.value)}
-                    className="bg-slate-900 border border-slate-800 text-xs text-slate-300 rounded-lg px-2.5 py-1.5 focus:outline-none focus:border-cyan-500"
+                    className="bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-800 text-xs text-slate-700 dark:text-slate-300 rounded-lg px-2.5 py-1.5 focus:outline-none focus:ring-2 focus:ring-[#002B49]"
                   >
                     <option value="recently_updated">Recently Updated</option>
                     <option value="most_used">Most Used</option>
@@ -505,22 +506,22 @@ export default function AdminKnowledgePage() {
                     <div
                       key={doc.document_id}
                       onClick={() => setSelectedDoc(doc)}
-                      className={`group bg-slate-950/70 border rounded-2xl p-4 transition-all duration-200 cursor-pointer ${
+                      className={`group bg-white dark:bg-slate-900 border rounded-2xl p-4 transition-all duration-200 cursor-pointer shadow-xs ${
                         isSelected
-                          ? 'border-cyan-500/80 shadow-lg shadow-cyan-950/50 bg-slate-900/90'
-                          : 'border-slate-800 hover:border-slate-700 hover:bg-slate-900/60'
+                          ? 'border-[#002B49] dark:border-amber-400 shadow-md bg-blue-50/20 dark:bg-slate-900/90'
+                          : 'border-slate-200 dark:border-slate-800 hover:border-blue-300 dark:hover:border-slate-700 hover:shadow-md'
                       }`}
                     >
                       <div className="flex items-start justify-between gap-2 mb-2">
                         <div className="flex items-center gap-2.5 min-w-0">
-                          <div className="p-2 rounded-xl bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 shrink-0">
+                          <div className="p-2 rounded-xl bg-blue-50 dark:bg-cyan-500/10 text-[#002B49] dark:text-cyan-400 border border-blue-200 dark:border-cyan-500/20 shrink-0">
                             <FileText className="w-4 h-4" />
                           </div>
                           <div className="min-w-0">
-                            <h4 className="text-xs sm:text-sm font-semibold text-slate-100 truncate group-hover:text-cyan-300 transition-colors">
+                            <h4 className="text-xs sm:text-sm font-semibold text-slate-900 dark:text-slate-100 truncate group-hover:text-[#002B49] dark:group-hover:text-cyan-300 transition-colors">
                               {doc.original_filename}
                             </h4>
-                            <span className="text-[10px] text-slate-400 font-mono">
+                            <span className="text-[10px] text-slate-500 dark:text-slate-400 font-mono">
                               ID: {doc.document_id.slice(0, 16)}
                             </span>
                           </div>
@@ -529,31 +530,31 @@ export default function AdminKnowledgePage() {
                         <span
                           className={`text-[10px] font-bold px-2 py-0.5 rounded-full border ${
                             doc.health === 'Needs Review'
-                              ? 'bg-amber-500/10 text-amber-400 border-amber-500/20'
-                              : 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20'
+                              ? 'bg-amber-50 text-amber-700 border-amber-200 dark:bg-amber-500/10 dark:text-amber-400 dark:border-amber-500/20'
+                              : 'bg-emerald-50 text-emerald-700 border-emerald-200 dark:bg-emerald-500/10 dark:text-emerald-400 dark:border-emerald-500/20'
                           }`}
                         >
                           {doc.health || 'Excellent'}
                         </span>
                       </div>
 
-                      <div className="grid grid-cols-3 gap-2 py-2 border-y border-slate-800/60 text-[11px] font-mono text-slate-400 my-2">
+                      <div className="grid grid-cols-3 gap-2 py-2 border-y border-slate-100 dark:border-slate-800/60 text-[11px] font-mono text-slate-500 dark:text-slate-400 my-2">
                         <div>
-                          <span className="text-[9px] uppercase block text-slate-500">Pages / Chunks</span>
-                          <span className="text-slate-200 font-semibold">{doc.page_count} p / {doc.chunk_count} ch</span>
+                          <span className="text-[9px] uppercase block text-slate-400 dark:text-slate-500">Pages / Chunks</span>
+                          <span className="text-slate-900 dark:text-slate-200 font-semibold">{doc.page_count} p / {doc.chunk_count} ch</span>
                         </div>
                         <div>
-                          <span className="text-[9px] uppercase block text-slate-500">Questions Ans.</span>
-                          <span className="text-cyan-400 font-semibold">{doc.questions_answered || 120}</span>
+                          <span className="text-[9px] uppercase block text-slate-400 dark:text-slate-500">Questions Ans.</span>
+                          <span className="text-blue-700 dark:text-cyan-400 font-semibold">{doc.questions_answered || 120}</span>
                         </div>
                         <div>
-                          <span className="text-[9px] uppercase block text-slate-500">Avg Similarity</span>
-                          <span className="text-emerald-400 font-semibold">{doc.avg_similarity ? `${Math.round(doc.avg_similarity * 100)}%` : '92%'}</span>
+                          <span className="text-[9px] uppercase block text-slate-400 dark:text-slate-500">Avg Similarity</span>
+                          <span className="text-emerald-700 dark:text-emerald-400 font-semibold">{doc.avg_similarity ? `${Math.round(doc.avg_similarity * 100)}%` : '92%'}</span>
                         </div>
                       </div>
 
-                      <div className="flex items-center justify-between text-[10px] text-slate-500 pt-1">
-                        <span>Category: <strong className="text-slate-400">{doc.category || 'admissions'}</strong></span>
+                      <div className="flex items-center justify-between text-[10px] text-slate-500 dark:text-slate-400 pt-1">
+                        <span>Category: <strong className="text-slate-700 dark:text-slate-300">{doc.category || 'admissions'}</strong></span>
                         <span className="font-mono">ver: {doc.version || 'v1.0'}</span>
                       </div>
                     </div>
@@ -566,30 +567,30 @@ export default function AdminKnowledgePage() {
 
         {/* PANEL 2: RIGHT STICKY DOCUMENT INSPECTOR DRAWER (~440px) */}
         {selectedDoc ? (
-          <aside className="w-[440px] bg-slate-950 border-l border-slate-800/80 flex flex-col shrink-0 overflow-hidden hidden xl:flex">
-            <div className="p-4 border-b border-slate-800/80 bg-slate-900/50 flex items-center justify-between gap-3 shrink-0">
+          <aside className="w-[440px] bg-white dark:bg-slate-950 border-l border-slate-200 dark:border-slate-800 flex flex-col shrink-0 overflow-hidden hidden xl:flex shadow-lg">
+            <div className="p-4 border-b border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/50 flex items-center justify-between gap-3 shrink-0">
               <div>
                 <div className="flex items-center gap-2">
-                  <span className="text-xs font-mono text-cyan-400 font-bold bg-cyan-500/10 px-2 py-0.5 rounded border border-cyan-500/20">
+                  <span className="text-xs font-mono font-bold text-[#002B49] dark:text-cyan-400 bg-blue-50 dark:bg-cyan-500/10 px-2 py-0.5 rounded border border-blue-200 dark:border-cyan-500/20">
                     {selectedDoc.document_id.slice(0, 16)}
                   </span>
-                  <span className="text-xs text-slate-300 font-semibold">Document Inspector</span>
+                  <span className="text-xs text-slate-500 dark:text-slate-400 font-semibold">Document Inspector</span>
                 </div>
-                <h3 className="text-xs text-slate-300 mt-1 line-clamp-1">
+                <h3 className="text-xs text-slate-900 dark:text-slate-300 mt-1 line-clamp-1 font-semibold">
                   {selectedDoc.original_filename}
                 </h3>
               </div>
 
               <button
                 onClick={() => setSelectedDoc(null)}
-                className="p-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-400 hover:text-slate-200 transition-colors"
+                className="p-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 transition-colors border border-slate-200 dark:border-slate-700"
               >
                 <X className="w-4 h-4" />
               </button>
             </div>
 
             {/* Inspector Navigation Tabs */}
-            <div className="flex border-b border-slate-800 bg-slate-950 text-[11px] font-medium overflow-x-auto shrink-0">
+            <div className="flex border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 text-[11px] font-medium overflow-x-auto shrink-0">
               {[
                 { id: 'overview', label: 'Overview' },
                 { id: 'analytics', label: 'Usage Analytics' },
@@ -602,8 +603,8 @@ export default function AdminKnowledgePage() {
                   onClick={() => setActiveInspectorTab(tab.id as any)}
                   className={`px-3 py-2.5 transition-colors whitespace-nowrap border-b-2 ${
                     activeInspectorTab === tab.id
-                      ? 'border-cyan-400 text-cyan-400 font-semibold bg-cyan-500/5'
-                      : 'border-transparent text-slate-400 hover:text-slate-200'
+                      ? 'border-[#002B49] text-[#002B49] dark:border-amber-400 dark:text-amber-400 font-semibold bg-blue-50/50 dark:bg-amber-400/5'
+                      : 'border-transparent text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200'
                   }`}
                 >
                   {tab.label}
@@ -612,43 +613,43 @@ export default function AdminKnowledgePage() {
             </div>
 
             {/* Inspector Tab Body */}
-            <div className="flex-1 overflow-y-auto p-4 space-y-4">
+            <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-slate-50/50 dark:bg-slate-950">
               {/* TAB 1: OVERVIEW */}
               {activeInspectorTab === 'overview' && (
                 <div className="space-y-3 text-xs">
-                  <div className="bg-slate-900 p-3.5 rounded-2xl border border-slate-800 space-y-2">
-                    <span className="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Document Metadata</span>
+                  <div className="bg-white dark:bg-slate-900 p-3.5 rounded-2xl border border-slate-200 dark:border-slate-800 space-y-2 shadow-xs">
+                    <span className="text-[10px] text-slate-500 dark:text-slate-400 font-bold uppercase tracking-wider">Document Metadata</span>
                     <div className="space-y-1.5 font-mono text-[11px]">
-                      <div className="flex justify-between text-slate-400">
+                      <div className="flex justify-between text-slate-600 dark:text-slate-400">
                         <span>Original Filename:</span>
-                        <span className="text-slate-200 font-semibold">{selectedDoc.original_filename}</span>
+                        <span className="text-slate-900 dark:text-slate-200 font-semibold">{selectedDoc.original_filename}</span>
                       </div>
-                      <div className="flex justify-between text-slate-400">
+                      <div className="flex justify-between text-slate-600 dark:text-slate-400">
                         <span>Format / Type:</span>
-                        <span className="text-cyan-400">{selectedDoc.file_type}</span>
+                        <span className="text-blue-700 dark:text-cyan-400 font-bold">{selectedDoc.file_type}</span>
                       </div>
-                      <div className="flex justify-between text-slate-400">
+                      <div className="flex justify-between text-slate-600 dark:text-slate-400">
                         <span>File Size:</span>
-                        <span className="text-slate-200">{(selectedDoc.file_size_bytes / 1024).toFixed(1)} KB</span>
+                        <span className="text-slate-900 dark:text-slate-200">{(selectedDoc.file_size_bytes / 1024).toFixed(1)} KB</span>
                       </div>
-                      <div className="flex justify-between text-slate-400">
+                      <div className="flex justify-between text-slate-600 dark:text-slate-400">
                         <span>Page Count:</span>
-                        <span className="text-slate-200">{selectedDoc.page_count} Pages</span>
+                        <span className="text-slate-900 dark:text-slate-200">{selectedDoc.page_count} Pages</span>
                       </div>
-                      <div className="flex justify-between text-slate-400">
+                      <div className="flex justify-between text-slate-600 dark:text-slate-400">
                         <span>Chunk Count:</span>
-                        <span className="text-emerald-400">{selectedDoc.chunk_count} Chunks</span>
+                        <span className="text-emerald-700 dark:text-emerald-400 font-bold">{selectedDoc.chunk_count} Chunks</span>
                       </div>
-                      <div className="flex justify-between text-slate-400">
+                      <div className="flex justify-between text-slate-600 dark:text-slate-400">
                         <span>Collection:</span>
-                        <span className="text-slate-200">collection50</span>
+                        <span className="text-slate-900 dark:text-slate-200">collection50</span>
                       </div>
                     </div>
                   </div>
 
-                  <div className="bg-slate-900 p-3.5 rounded-2xl border border-slate-800 space-y-1.5">
-                    <span className="text-[10px] text-slate-400 font-bold uppercase tracking-wider">SHA-256 Checksum</span>
-                    <div className="p-2 bg-slate-950 rounded-xl border border-slate-800 text-[10px] font-mono text-cyan-300 break-all">
+                  <div className="bg-white dark:bg-slate-900 p-3.5 rounded-2xl border border-slate-200 dark:border-slate-800 space-y-1.5 shadow-xs">
+                    <span className="text-[10px] text-slate-500 dark:text-slate-400 font-bold uppercase tracking-wider">SHA-256 Checksum</span>
+                    <div className="p-2.5 bg-slate-50 dark:bg-slate-950 rounded-xl border border-slate-200 dark:border-slate-800 text-[10px] font-mono text-[#002B49] dark:text-cyan-300 break-all font-semibold">
                       {selectedDoc.checksum}
                     </div>
                   </div>
@@ -659,27 +660,27 @@ export default function AdminKnowledgePage() {
               {activeInspectorTab === 'analytics' && (
                 <div className="space-y-3 text-xs">
                   <div className="grid grid-cols-2 gap-2">
-                    <div className="bg-slate-900 p-3 rounded-xl border border-slate-800 space-y-1">
+                    <div className="bg-white dark:bg-slate-900 p-3 rounded-xl border border-slate-200 dark:border-slate-800 space-y-1 shadow-xs">
                       <span className="text-[10px] text-slate-500 uppercase font-semibold">Questions Answered</span>
-                      <p className="text-base font-bold text-cyan-400 font-mono">
+                      <p className="text-base font-bold text-blue-700 dark:text-cyan-400 font-mono">
                         {selectedDoc.questions_answered || 1420}
                       </p>
                     </div>
-                    <div className="bg-slate-900 p-3 rounded-xl border border-slate-800 space-y-1">
+                    <div className="bg-white dark:bg-slate-900 p-3 rounded-xl border border-slate-200 dark:border-slate-800 space-y-1 shadow-xs">
                       <span className="text-[10px] text-slate-500 uppercase font-semibold">Avg Similarity Score</span>
-                      <p className="text-base font-bold text-emerald-400 font-mono">
+                      <p className="text-base font-bold text-emerald-700 dark:text-emerald-400 font-mono">
                         {selectedDoc.avg_similarity ? `${Math.round(selectedDoc.avg_similarity * 100)}%` : '94%'}
                       </p>
                     </div>
                   </div>
 
-                  <div className="bg-slate-900 p-3.5 rounded-2xl border border-slate-800 space-y-2">
-                    <span className="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Top Matched Queries</span>
-                    <div className="space-y-1.5 text-[11px] text-slate-300">
-                      <p className="bg-slate-950 p-2 rounded-lg border border-slate-800">
+                  <div className="bg-white dark:bg-slate-900 p-3.5 rounded-2xl border border-slate-200 dark:border-slate-800 space-y-2 shadow-xs">
+                    <span className="text-[10px] text-slate-500 dark:text-slate-400 font-bold uppercase tracking-wider">Top Matched Queries</span>
+                    <div className="space-y-1.5 text-[11px] text-slate-700 dark:text-slate-300 font-medium">
+                      <p className="bg-slate-50 dark:bg-slate-950 p-2.5 rounded-lg border border-slate-200 dark:border-slate-800">
                         "What is the exact hostel fee for 1st year B.Tech girls?"
                       </p>
-                      <p className="bg-slate-950 p-2 rounded-lg border border-slate-800">
+                      <p className="bg-slate-50 dark:bg-slate-950 p-2.5 rounded-lg border border-slate-200 dark:border-slate-800">
                         "Is mess advance included in the university hostel bill?"
                       </p>
                     </div>
@@ -691,8 +692,8 @@ export default function AdminKnowledgePage() {
               {activeInspectorTab === 'chunks' && (
                 <div className="space-y-3 text-xs">
                   <div className="flex items-center justify-between">
-                    <span className="font-semibold text-slate-300">Chunk Explorer ({selectedDoc.chunk_count} Chunks)</span>
-                    <span className="text-[10px] font-mono text-cyan-400">Chroma Index Active</span>
+                    <span className="font-semibold text-slate-900 dark:text-slate-300">Chunk Explorer ({selectedDoc.chunk_count} Chunks)</span>
+                    <span className="text-[10px] font-mono font-bold text-blue-700 dark:text-cyan-400">Chroma Index Active</span>
                   </div>
 
                   {[
@@ -711,12 +712,12 @@ export default function AdminKnowledgePage() {
                         'UIET Kanpur B.Tech CSE Placement Highlights 2025: Highest package Rs. 22 LPA, Average package Rs. 6.5 LPA.',
                     },
                   ].map((chk) => (
-                    <div key={chk.id} className="bg-slate-900 p-3 rounded-xl border border-slate-800 space-y-1">
+                    <div key={chk.id} className="bg-white dark:bg-slate-900 p-3 rounded-xl border border-slate-200 dark:border-slate-800 space-y-1.5 shadow-xs">
                       <div className="flex justify-between items-center text-[10px] font-mono">
-                        <span className="text-cyan-400 font-semibold">{chk.id}</span>
-                        <span className="text-emerald-400">Similarity: {chk.score}</span>
+                        <span className="text-[#002B49] dark:text-cyan-400 font-bold">{chk.id}</span>
+                        <span className="text-emerald-700 dark:text-emerald-400 font-semibold">Similarity: {chk.score}</span>
                       </div>
-                      <p className="text-[11px] font-mono text-slate-300 bg-slate-950 p-2 rounded-lg leading-relaxed">
+                      <p className="text-[11px] font-mono text-slate-800 dark:text-slate-200 bg-slate-50 dark:bg-slate-950 p-2.5 rounded-lg border border-slate-200 dark:border-slate-800 leading-relaxed">
                         "{chk.snippet}"
                       </p>
                     </div>
@@ -727,24 +728,24 @@ export default function AdminKnowledgePage() {
               {/* TAB 4: DOCUMENT TIMELINE */}
               {activeInspectorTab === 'timeline' && (
                 <div className="space-y-3 text-xs">
-                  <h4 className="text-xs font-semibold text-slate-300 flex items-center gap-1.5">
-                    <GitCommit className="w-3.5 h-3.5 text-cyan-400" />
+                  <h4 className="text-xs font-semibold text-slate-900 dark:text-slate-300 flex items-center gap-1.5">
+                    <GitCommit className="w-3.5 h-3.5 text-[#002B49] dark:text-cyan-400" />
                     Document Lifecycle Audit Trail
                   </h4>
 
-                  <div className="relative border-l-2 border-slate-800 ml-3 pl-4 space-y-4">
+                  <div className="relative border-l-2 border-slate-300 dark:border-slate-800 ml-3 pl-4 space-y-4">
                     {[
                       { title: 'Document Ingested', desc: 'File binary parsed and stored under data/uploads/', time: '2 hours ago' },
                       { title: 'Chroma Vectors Embedded', desc: '32 chunks embedded using nomic-embed-text', time: '2 hours ago' },
                       { title: 'BM25 Index Updated', desc: 'Sparse index updated in memory', time: '2 hours ago' },
                     ].map((step, idx) => (
                       <div key={idx} className="relative">
-                        <div className="absolute -left-[23px] top-0.5 w-3 h-3 rounded-full bg-slate-900 border-2 border-cyan-400" />
+                        <div className="absolute -left-[23px] top-0.5 w-3 h-3 rounded-full bg-white dark:bg-slate-900 border-2 border-[#002B49] dark:border-cyan-400" />
                         <div className="flex justify-between items-center">
-                          <h5 className="font-semibold text-slate-200">{step.title}</h5>
+                          <h5 className="font-semibold text-slate-900 dark:text-slate-200">{step.title}</h5>
                           <span className="text-[10px] font-mono text-slate-500">{step.time}</span>
                         </div>
-                        <p className="text-[11px] text-slate-400 mt-0.5">{step.desc}</p>
+                        <p className="text-[11px] text-slate-600 dark:text-slate-400 mt-0.5">{step.desc}</p>
                       </div>
                     ))}
                   </div>
@@ -756,22 +757,22 @@ export default function AdminKnowledgePage() {
                 <div className="space-y-3 text-xs">
                   <button
                     onClick={() => copyToClipboard(selectedDoc.document_id, 'uuid')}
-                    className="w-full py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 rounded-xl font-medium transition-colors flex items-center justify-center gap-1.5"
+                    className="w-full py-2 bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 rounded-xl font-medium transition-colors border border-slate-300 dark:border-slate-700 shadow-xs flex items-center justify-center gap-1.5"
                   >
-                    {copiedText === 'uuid' ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5" />}
+                    {copiedText === 'uuid' ? <Check className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" /> : <Copy className="w-3.5 h-3.5" />}
                     Copy Document UUID
                   </button>
 
                   <button
                     onClick={() => alert('Document re-embedding triggered across Chroma vector store!')}
-                    className="w-full py-2 bg-cyan-600 hover:bg-cyan-500 text-white rounded-xl font-medium transition-colors flex items-center justify-center gap-1.5"
+                    className="w-full py-2 bg-[#002B49] hover:bg-[#001D33] text-white rounded-xl font-medium transition-colors flex items-center justify-center gap-1.5 shadow-xs"
                   >
                     <RotateCw className="w-3.5 h-3.5" /> Re-embed Vectors
                   </button>
 
                   <button
                     onClick={() => alert('Document deletion is restricted in demonstration mode.')}
-                    className="w-full py-2 bg-rose-600/20 hover:bg-rose-600/30 text-rose-400 border border-rose-500/30 rounded-xl font-medium transition-colors flex items-center justify-center gap-1.5"
+                    className="w-full py-2 bg-rose-50 hover:bg-rose-100 dark:bg-rose-600/20 dark:hover:bg-rose-600/30 text-rose-700 dark:text-rose-400 border border-rose-200 dark:border-rose-500/30 rounded-xl font-medium transition-colors flex items-center justify-center gap-1.5"
                   >
                     <Trash2 className="w-3.5 h-3.5" /> Delete Document
                   </button>
@@ -786,23 +787,23 @@ export default function AdminKnowledgePage() {
       {/* VERSION CONFLICT RESOLUTION MODAL */}
       {/* ========================================================================= */}
       {showVersionModal && pendingFile && (
-        <div className="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4">
-          <div className="bg-slate-900 border border-slate-800 rounded-2xl w-full max-w-md p-5 space-y-4 shadow-2xl">
-            <div className="flex justify-between items-center border-b border-slate-800 pb-3">
-              <h3 className="text-sm font-bold text-slate-100 flex items-center gap-2">
-                <AlertTriangle className="w-4 h-4 text-amber-400" />
+        <div className="fixed inset-0 z-50 bg-slate-950/60 backdrop-blur-sm flex items-center justify-center p-4">
+          <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl w-full max-w-md p-5 space-y-4 shadow-2xl">
+            <div className="flex justify-between items-center border-b border-slate-200 dark:border-slate-800 pb-3">
+              <h3 className="text-sm font-bold text-slate-900 dark:text-slate-100 flex items-center gap-2">
+                <AlertTriangle className="w-4 h-4 text-amber-500" />
                 Document Version Conflict
               </h3>
-              <button onClick={() => setShowVersionModal(false)} className="text-slate-400 hover:text-slate-200">
+              <button onClick={() => setShowVersionModal(false)} className="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200">
                 <X className="w-4 h-4" />
               </button>
             </div>
 
-            <div className="space-y-2 text-xs text-slate-300">
+            <div className="space-y-2 text-xs text-slate-700 dark:text-slate-300">
               <p>
-                A document with the filename <strong className="text-cyan-400 font-mono">"{pendingFile.name}"</strong> already exists in the Knowledge Library.
+                A document with the filename <strong className="text-[#002B49] dark:text-cyan-400 font-mono">"{pendingFile.name}"</strong> already exists in the Knowledge Library.
               </p>
-              <p className="text-slate-400">
+              <p className="text-slate-500 dark:text-slate-400">
                 Please select how you would like the RAG Ingestion Pipeline to handle this file:
               </p>
             </div>
@@ -813,7 +814,7 @@ export default function AdminKnowledgePage() {
                   setShowVersionModal(false);
                   executeUploadWorkflow(pendingFile, true);
                 }}
-                className="w-full py-2.5 bg-cyan-600 hover:bg-cyan-500 text-white rounded-xl text-xs font-semibold transition-colors flex items-center justify-center gap-1.5"
+                className="w-full py-2.5 bg-[#002B49] hover:bg-[#001D33] text-white rounded-xl text-xs font-semibold transition-colors flex items-center justify-center gap-1.5 shadow-sm"
               >
                 Replace Existing Document & Update Vectors
               </button>
@@ -822,7 +823,7 @@ export default function AdminKnowledgePage() {
                   setShowVersionModal(false);
                   executeUploadWorkflow(pendingFile, false);
                 }}
-                className="w-full py-2.5 bg-slate-800 hover:bg-slate-700 text-slate-200 rounded-xl text-xs font-semibold transition-colors flex items-center justify-center gap-1.5"
+                className="w-full py-2.5 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 rounded-xl text-xs font-semibold transition-colors border border-slate-200 dark:border-slate-700 flex items-center justify-center gap-1.5"
               >
                 Create New Document Version (v2.0)
               </button>

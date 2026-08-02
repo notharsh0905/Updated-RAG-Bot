@@ -2,6 +2,7 @@ import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 import { Conversation } from '@/types/conversation';
 import { ChatMessage } from '@/types/chat';
+import { generateId } from '@/utils/generateId';
 
 interface ConversationState {
   activeId: string;
@@ -47,7 +48,7 @@ export const useConversationStore = create<ConversationState>()(
       setActiveId: (id) => set({ activeId: id }),
 
       createConversation: () => {
-        const newId = crypto.randomUUID();
+        const newId = generateId();
         const newConv: Conversation = {
           id: newId,
           title: 'New Conversation',
@@ -247,7 +248,7 @@ export const useConversationStore = create<ConversationState>()(
             if (filtered.length > 0) {
               newActiveId = filtered[0].id;
             } else {
-              const freshId = crypto.randomUUID();
+              const freshId = generateId();
               const freshConv: Conversation = {
                 id: freshId,
                 title: 'New Conversation',

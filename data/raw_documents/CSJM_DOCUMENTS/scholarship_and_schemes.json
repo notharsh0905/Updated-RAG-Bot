@@ -1,17 +1,18 @@
 [
   {
     "category": "Scholarship Amount Matrix",
-    "title": "CSJMU UP Government Scholarship & Fee Reimbursement Amount Matrix",
+    "title": "CSJMU UP Government Scholarship & Fee Reimbursement Guidance",
     "sc_st_students": {
-      "with_hostel": "Rs. 1,17,000",
-      "without_hostel": "Rs. 1,17,000",
-      "details": "SC/ST category students receive up to Rs. 1,17,000 per year under UP Government Fee Reimbursement Scheme regardless of hostel or day scholar status."
+      "with_hostel": "around ₹1,17,000 (varies according to the latest government notification and eligibility)",
+      "without_hostel": "around ₹1,17,000 (varies according to the latest government notification and eligibility)",
+      "details": "SC/ST category students may receive around ₹1,17,000 per year under UP Government Fee Reimbursement Scheme, subject to annual government notifications, approved fee structure, and eligibility criteria."
     },
     "general_obc_students": {
-      "with_hostel": "Rs. 64,500",
-      "without_hostel": "Rs. 57,000",
-      "details": "General and OBC category students receive Rs. 64,500 with hostel accommodation and Rs. 57,000 for day scholars under UP Government Fee Reimbursement."
+      "with_hostel": "approximately ₹64,500 (varies according to latest government guidelines)",
+      "without_hostel": "approximately ₹57,000 (varies according to latest government guidelines)",
+      "details": "General and OBC category students may receive approximately ₹64,500 with hostel accommodation and around ₹57,000 for day scholars under UP Government Fee Reimbursement, varying according to the latest government notification and income eligibility."
     },
+    "disclaimer": "Scholarship and fee reimbursement amounts are non-fixed, subject to annual state updates, scheme allocations, and student eligibility. The assistant must never present scholarship amounts as permanently fixed values.",
     "keywords": ["scholarship", "amount", "fee reimbursement", "sc", "st", "obc", "general", "hostel", "day scholar", "financial assistance"]
   },
   {
