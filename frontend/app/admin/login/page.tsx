@@ -14,11 +14,12 @@ export default function AdminLoginPage() {
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    if (['csjmu2026', 'admin123'].includes(passcode.trim())) {
+    const validPasscode = process.env.NEXT_PUBLIC_ADMIN_PASSCODE || 'CSJMU_UIET_2026';
+    if (passcode.trim() === validPasscode) {
       setIsAdminAuthenticated(true);
       router.push('/admin/dashboard');
     } else {
-      setError('Invalid Administrator Key. Enter authorized university passcode (e.g., csjmu2026).');
+      setError('Invalid Administrator Key. Enter authorized university passcode.');
     }
   };
 
@@ -66,7 +67,7 @@ export default function AdminLoginPage() {
                   setPasscode(e.target.value);
                   setError('');
                 }}
-                placeholder="Enter passcode (e.g. csjmu2026)..."
+                placeholder="Enter admin passcode..."
                 className="w-full h-11 pl-10 pr-4 rounded-lg border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-950 text-xs text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-[#002B49] dark:focus:ring-amber-400 font-mono"
               />
               <KeyRound className="w-4 h-4 text-slate-400 absolute left-3.5 top-3.5" />

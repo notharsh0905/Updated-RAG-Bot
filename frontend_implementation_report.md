@@ -83,7 +83,7 @@ frontend/
 | `/about` | `app/about/page.tsx` | Institutional overview detailing UIET engineering departments, NVIDIA DGX H100 Supercomputing Hub, AICTE IDEA Lab, Innovation Center, and PEZ startup. |
 | `/help` | `app/help/page.tsx` | Frequently Asked Questions (FAQ) providing instant student guidance. |
 | `/contact` | `app/contact/page.tsx` | Department contact emails, phone numbers, website links, and physical address. |
-| `/admin/login` | `app/admin/login/page.tsx` | Passcode-protected admin authentication view (`csjmu2026` / `admin123`). |
+| `/admin/login` | `app/admin/login/page.tsx` | Passcode-protected admin authentication view (`CSJMU_UIET_2026`). |
 | `/admin/dashboard` | `app/admin/dashboard/page.tsx` | Administrative dashboard for query analytics, user satisfaction metrics, and full vector database rebuilding. |
 | `/admin/documents` | `app/admin/documents/page.tsx` | Document reference inspector for administrative debugging. |
 | `/admin/feedback` | `app/admin/feedback/page.tsx` | Thumbs Up / Thumbs Down user feedback summary. |
