@@ -1,33 +1,69 @@
+# ==========================
 # Python
+# ==========================
 __pycache__/
 *.py[cod]
 *$py.class
 *.so
 .Python
-env/
 venv/
+.venv/
+env/
 ENV/
-.venv
 
-# Jupyter & Checkpoints
-.ipynb_checkpoints/
-*.ipynb_checkpoints
-
-# Chroma Vector DB (Optional to exclude if dynamically built)
-# CHECK_DB/
-
-# Environment files
+# ==========================
+# Environment Variables
+# ==========================
 .env
+.env.local
+.env.*.local
 
-# IDE & OS
-.DS_Store
+# ==========================
+# Next.js
+# ==========================
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+
+# ==========================
+# Logs
+# ==========================
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# ==========================
+# IDE
+# ==========================
 .vscode/
 .idea/
-*.swp
 
-# Docker / Logs
-*.log
+# ==========================
+# macOS
+# ==========================
+.DS_Store
 
-# pytest
+# ==========================
+# Jupyter
+# ==========================
+.ipynb_checkpoints/
+
+# ==========================
+# Pytest
+# ==========================
 .pytest_cache/
 
+# ==========================
+# Build
+# ==========================
+dist/
+build/
+
+# ==========================
+# Chroma Runtime Files
+# ==========================
+# Keep this commented if your vector DB is intentionally version-controlled.
+# Uncomment it only if you rebuild the database during deployment.
+#
+# data/vector_db/CHECK_DB/
