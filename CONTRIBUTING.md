@@ -1,26 +1,49 @@
-# Contributing to CSJMU RAG System
+# Contributing to CSJMU & UIET AI Smart Student Help Desk
 
-Thank you for your interest in contributing to the CSJMU RAG System! We welcome all contributions from bug reports and feature requests to documentation improvements and pull requests.
+Thank you for contributing to the **CSJMU & UIET Kanpur AI Smart Student Help Desk**! We welcome bug reports, feature requests, documentation enhancements, and pull requests.
 
-## How to Contribute
+---
 
-### 1. Reporting Bugs
-- Check the [Issues](https://github.com/your-username/your-repo/issues) to ensure the bug hasn't already been reported.
-- If it hasn't, open a new issue using our **Bug Report Template**.
-- Provide as much detail as possible, including steps to reproduce, expected behavior, logs, and screenshots if applicable.
+## 🛠️ Development Setup
 
-### 2. Suggesting Features
-- Open an issue using our **Feature Request Template**.
-- Clearly explain the problem you want solved or the value of the new feature.
+### 1. Prerequisites
+- **Python**: 3.9 or higher
+- **Node.js**: 18.x or 20.x LTS
+- **Ollama**: Running locally (`http://localhost:11434`)
 
-### 3. Submitting Pull Requests
-- Fork the repository and create your branch from `main`.
-- Install dependencies: `pip install -r requirements.txt`.
-- Make your changes, adhering to code styling and quality standards.
-- Run tests to ensure everything is working: `pytest tests/ -v`.
-- Commit your changes with descriptive messages and submit a Pull Request targeting our `main` branch.
+### 2. Backend Environment
+```bash
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+```
 
-## Code Style & Testing
-- Use standard Python PEP 8 formatting rules.
-- Ensure all unit and integration tests pass before requesting a review.
-- Write new tests under `tests/` for any new modules or bug fixes.
+### 3. Frontend Environment
+```bash
+cd frontend
+npm install
+```
+
+---
+
+## 📜 Development Guidelines
+
+1. **Security Policy**:
+   - **Do NOT commit hardcoded secrets or passcodes.**
+   - All administrator passcodes and secret keys must be read from environment variables (`ADMIN_PASSCODE`, `ADMIN_SESSION_SECRET`).
+   - Do NOT add `NEXT_PUBLIC_ADMIN_PASSCODE` to any frontend environment files.
+
+2. **Frontend UI Conventions**:
+   - Built with Next.js 15 App Router, React 19, TypeScript, and Tailwind CSS.
+   - Maintain full mobile responsiveness across 320px–2560px screen sizes.
+   - Preserve direct horizontal navigation scrolling on mobile viewports without popups or drawer overlays.
+
+3. **Backend Conventions**:
+   - Built with FastAPI and Pydantic v2.
+   - Include `exc_info=True` in exception logger calls for full traceback visibility.
+   - Ensure all asynchronous trace loggers execute off the main loop to preserve 0ms added user latency.
+
+4. **Pull Request Checklist**:
+   - [ ] Verified `npm --prefix frontend run build` passes with zero errors.
+   - [ ] Verified `python3 -m pytest` or health checks pass.
+   - [ ] Updated relevant documentation in `docs/` or `README.md`.

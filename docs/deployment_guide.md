@@ -1,116 +1,82 @@
-# CSJMU RAG AI Campus Assistant - Production Deployment Guide
+# CSJMU & UIET AI Campus Assistant - Production Deployment Guide
 
-**Branch:** `feature-admin-v3`  
-**Version:** 2.0.0 (Production Hardened)
-
----
-
-## 1. Executive Deployment Overview
-
-The CSJMU AI Campus Assistant system is an enterprise Retrieval-Augmented Generation (RAG) platform composed of:
-1. **FastAPI Backend Services** (`app/api/api.py`)
-2. **Next.js App Router Admin Console** (`frontend/`)
-3. **ChromaDB Vector Storage** (`data/vector_db/`)
-4. **Ollama LLM Engine** (`llama3.2:3b` & `nomic-embed-text`)
-5. **SQLite AI Operations Database** (`data/analytics.db`)
+**Version:** 3.0.0 (Production Hardened)  
+**Architecture:** Next.js 15 App Router Frontend + FastAPI REST Backend + ChromaDB Vector Store + Ollama LLM (`llama3.2:3b`)
 
 ---
 
-## 2. Environment Variables Reference (`.env`)
+## 1. System Components & Port Assignments
 
-Create `.env` in the root directory:
+1. **FastAPI Backend Server**: Runs on `http://localhost:8000` (`app/api/api.py`).
+2. **Next.js Production Frontend**: Runs on `http://localhost:3000` (or `http://localhost:3001` in dev mode).
+3. **Ollama LLM Engine**: Runs on `http://localhost:11434` (`llama3.2:3b` and `nomic-embed-text`).
+4. **ChromaDB Vector Store**: Persistent storage at `data/vector_db/CHECK_DB` (1001 document chunks).
+5. **SQLite Analytics DB**: Persistent database at `data/analytics.db`.
 
-```env
-# General & Environment
+---
+
+## 2. Production Deployment Steps
+
+```bash
+# 1. Clone repository
+git clone https://github.com/csjmu/rag-assistant.git
+cd rag-assistant
+
+# 2. Virtual Environment & Python dependencies
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+
+# 3. Install Node.js dependencies
+cd frontend
+npm install
+cd ..
+
+# 4. Pull Ollama models
+ollama pull llama3.2:3b
+ollama pull nomic-embed-text
+
+# 5. Environment configuration (.env in root directory)
+cat << 'EOF' > .env
 ENVIRONMENT=production
-BASE_DIR=/Users/harshupadhyay/Downloads/compressed_folder (2)
-
-# Web Server & Network Config
 API_HOST=0.0.0.0
 API_PORT=8000
-STREAMLIT_PORT=8501
-CORS_ORIGINS=http://localhost:3000,http://localhost:8000,http://127.0.0.1:3000
-
-# Ollama LLM Services
+ADMIN_PASSCODE=<your-secure-admin-passcode>
+ADMIN_SESSION_SECRET=<generate-a-random-secret>
+CORS_ORIGINS=http://localhost:3000,http://localhost:3001,http://127.0.0.1:3000,http://127.0.0.1:3001,https://assistant.csjmu.ac.in
 OLLAMA_BASE_URL=http://localhost:11434
-EMBEDDING_MODEL=nomic-embed-text
 LLM_MODEL=llama3.2:3b
-
-# Security & Upload Constraints
-MAX_FILE_SIZE_BYTES=52428800
-RATE_LIMIT_PER_MINUTE=120
-
-# Vector DB Settings
+EMBEDDING_MODEL=nomic-embed-text
 COLLECTION_NAME=collection50
-DEFAULT_K=5
+DEFAULT_K=7
+EOF
+
+# 6. Build Next.js Production App
+cd frontend
+npm run build
+cd ..
+
+# 7. Start FastAPI Backend Service
+uvicorn app.api.api:app --host 0.0.0.0 --port 8000 &
+
+# 8. Start Next.js Frontend Service
+cd frontend
+npm run start -- -p 3000 &
 ```
 
 ---
 
-## 3. Production Deployment Hardening Checklist
+## 3. Verification & Diagnostics
 
-- [x] **Dynamic CORS Origin Verification**: Explicit allowed origins configured in `.env`.
-- [x] **Path Traversal Shielding**: Filenames sanitized with `DocumentProcessor.sanitize_filename` prior to storage under `data/uploads/`.
-- [x] **Structured Health Check Endpoint**: `GET /health` returns comprehensive JSON diagnostic payload (Ollama, ChromaDB, SQLite, Disk/RAM).
-- [x] **Global Exception Masking**: Unhandled server exceptions return sanitized JSON payloads (`500 Internal Server Error`) to avoid leaking stack traces.
-- [x] **Async Non-Blocking Trace Logging**: Database operations run off-thread via `ThreadPoolExecutor` ensuring **0ms added latency** to student responses.
-- [x] **Next.js Production Build**: Clean static page generation with 0 TypeScript or linting errors.
+- **Health Endpoint**: `curl -s http://localhost:8000/health | jq`
+- **Admin Authentication**: `curl -X POST http://localhost:8000/api/v1/admin/login -H "Content-Type: application/json" -d '{"passcode": "<your-secure-admin-passcode>"}' -i`
+- **RAG Query Execution**: `curl -X POST http://localhost:8000/query -H "Content-Type: application/json" -d '{"question": "What is hostel fee?"}'`
 
 ---
 
-## 4. Subsystem Health Diagnostics & Monitoring
+## 4. Security Enforcement Matrix
 
-### Health Endpoint: `GET /health`
-
-**Example JSON Response:**
-```json
-{
-  "status": "healthy",
-  "timestamp": "2026-07-31T23:25:00Z",
-  "environment": "production",
-  "backend": {
-    "status": "online",
-    "version": "2.0.0",
-    "rag_pipeline": "initialized"
-  },
-  "ollama": {
-    "connected": true,
-    "base_url": "http://localhost:11434",
-    "llm_model": "llama3.2:3b",
-    "embedding_model": "nomic-embed-text"
-  },
-  "vector_db": {
-    "type": "ChromaDB",
-    "collection": "collection50",
-    "document_count": 996
-  },
-  "sqlite_db": {
-    "status": "healthy"
-  },
-  "system": {
-    "disk_free_gb": 42.8,
-    "disk_usage_pct": 52.4
-  }
-}
-```
-
----
-
-## 5. Backup & Disaster Recovery Guide
-
-### 1. SQLite Database Backup
-Execute periodic automated snapshots of `data/analytics.db`:
-```bash
-sqlite3 data/analytics.db ".backup 'data/backups/analytics_backup_$(date +%F).db'"
-```
-
-### 2. Chroma Vector DB Snapshot
-Backup the persistent collection directory `data/vector_db/CHECK_DB/`:
-```bash
-tar -czvf data/backups/chroma_vector_backup_$(date +%F).tar.gz data/vector_db/CHECK_DB/
-```
-
-### 3. Full System Recovery
-In case of server failure:
-1. Re-initialize Ollama models: `ollama pull llama3.2:3b` and `ollama pull nomic-embed-text`.
-2. Restore vector store snapshot or trigger `/rebuild` endpoint to re-index documents.
+- **Zero Passcode Leakage**: `ADMIN_PASSCODE` stored exclusively in backend configuration.
+- **HttpOnly Cookies**: Session tokens issued as `HttpOnly`, `SameSite=Lax` cookies with 24h expiration TTL.
+- **HTTP Security Headers**: Enforces `X-Content-Type-Options: nosniff`, `X-Frame-Options: DENY`, `Referrer-Policy: strict-origin-when-cross-origin`, `Permissions-Policy`, and `Content-Security-Policy`.
+- **HSTS Enforcement**: Dynamically attached in production HTTPS environments (`Strict-Transport-Security`).

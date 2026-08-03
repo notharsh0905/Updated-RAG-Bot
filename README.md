@@ -1,143 +1,222 @@
-# 🎓 CSJMU & UIET Production Knowledge Management & RAG AI System
+# 🎓 CSJMU & UIET AI Smart Student Help Desk & RAG Platform
 
-An enterprise-grade, zero-hallucination **Retrieval-Augmented Generation (RAG)** system and **Knowledge Management Framework** tailored for Chhatrapati Shahu Ji Maharaj University (CSJMU) and University Institute of Engineering and Technology (UIET), Kanpur.
+An enterprise-grade, zero-hallucination **Retrieval-Augmented Generation (RAG)** platform and **Student Knowledge Management System** designed for Chhatrapati Shahu Ji Maharaj University (CSJMU) and the University Institute of Engineering and Technology (UIET), Kanpur.
 
 ---
 
-## 🏗️ System Architecture & Data Flow
+## 🏛️ System Architecture
 
-### 1. User Query & Multi-Collection RAG Architecture
-
-```mermaid
-graph TD
-    User([🎓 Student / User Query]) --> Router[🧭 Dynamic Intent Query Router]
-    
-    subgraph Multi_Collection_Chroma_DB [Chroma Vector Database]
-        Admissions[(Admissions Collection)]
-        Faculty[(Faculty Collection)]
-        Syllabus[(Syllabus Collection)]
-        Hostel[(Hostel Collection)]
-        Placements[(Placements Collection)]
-        Scholarships[(Scholarships Collection)]
-    end
-    
-    Router -->|Intent: Hostel| Hostel
-    Router -->|Intent: Faculty/Director| Faculty
-    Router -->|Intent: Syllabus| Syllabus
-    Router -->|Intent: Admission| Admissions
-    Router -->|Intent: Placement| Placements
-
-    Hostel --> Reranker[🎯 RRF Reranker & Retrieval Optimizer]
-    Faculty --> Reranker
-    Syllabus --> Reranker
-    Admissions --> Reranker
-    Placements --> Reranker
-
-    Reranker -->|Top-K Traceable Chunks| LLM[🤖 Ollama Llama 3.2 3B]
-    LLM --> Answer([💬 Verified Answer + Source Traceability])
+```
+┌─────────────────────────────────────────────────────────────────────────┐
+│                           🎓 Students / Users                           │
+└────────────────────────────────────┬────────────────────────────────────┘
+                                     │
+                                     ▼
+┌─────────────────────────────────────────────────────────────────────────┐
+│                      📱 Next.js 15 Frontend                             │
+│       React 19 • TypeScript • Tailwind CSS • App Router • 320px–2560px  │
+│                   (Direct Scrollable Mobile Navbar)                     │
+└────────────────────────────────────┬────────────────────────────────────┘
+                                     │ HTTP REST / SSE Streaming
+                                     ▼
+┌─────────────────────────────────────────────────────────────────────────┐
+│                       ⚡ FastAPI Backend Server                         │
+│       Python 3.9+ • Security Headers • HttpOnly Cookie Auth Guard       │
+└────────────────────────────────────┬────────────────────────────────────┘
+                                     │
+                                     ▼
+┌─────────────────────────────────────────────────────────────────────────┐
+│                      🧠 RAG Pipeline Orchestrator                       │
+│    PIL Domain Guard • Query Normalizer • Conversation Memory • Cache    │
+└──────────┬─────────────────────────┬──────────────────────────┬─────────┘
+           │                         │                          │
+           ▼                         ▼                          ▼
+┌──────────────────────┐  ┌─────────────────────┐  ┌──────────────────────┐
+│  🔎 Hybrid Retriever │  │  🗄️ Vector Database  │  │  🤖 Local LLM Engine │
+│    BM25 + Vector     │  │  ChromaDB (1001 docs│  │  Ollama llama3.2:3b  │
+│  Category Reranking  │  │  nomic-embed-text)  │  │  Strict CSJMU Facts  │
+└──────────────────────┘  └─────────────────────┘  └──────────────────────┘
+                                     │
+                                     ▼
+┌─────────────────────────────────────────────────────────────────────────┐
+│                     📊 SQLite Analytics & Audit Log                     │
+│         Queries • Traces • Feedback (👍/👎) • Admin Operations          │
+└─────────────────────────────────────────────────────────────────────────┘
 ```
 
 ---
 
-### 2. Autonomous Knowledge Ingestion & AI Curator Flow
+## ✨ Key Features
 
-```mermaid
-flowchart LR
-    PDF[📄 New Official Document PDF/TXT] --> Watcher[🤖 Knowledge Ingestion Watcher]
-    Watcher --> Cleaner[🧹 Text Cleaner & Noise Removal]
-    Cleaner --> Chunker[🧱 Single-Concept Semantic Chunker]
-    Chunker --> Embedder[⚡ Ollama nomic-embed-text Embedder]
-    Embedder --> Chroma[(Chroma Multi-Collection DB)]
-    Chroma --> Curator[🧠 AI-Assisted Knowledge Curator]
-    Curator --> Eval[🧪 305-Question Evaluation Suite]
-```
+- **Direct Responsive Navigation**: Custom responsive UI engineered for viewports from 320px (Android phones) to 2560px (4K monitors). Includes a clean, direct horizontally scrollable navigation bar on mobile devices without obstructive popups or hamburger drawers.
+- **Hybrid Search Engine**: Combines **BM25 keyword search** and **ChromaDB dense vector embeddings** (`nomic-embed-text`) with category-aware reranking across 1001 indexed document chunks.
+- **Production Intelligence Layer (PIL)**: Intercepts out-of-domain queries, sanitizes developer jargon into official university terminology, and enforces strict boundary guards (answers exclusively CSJMU and UIET Kanpur queries).
+- **Backend-Only Security & Cookie Auth**: Administrator passcode is verified exclusively on the FastAPI backend. Employs HMAC-SHA256 signed `HttpOnly`, `SameSite=Lax` session cookies (`admin_session`) with 24-hour expiration TTL. Zero password leakage in frontend bundles.
+- **Comprehensive Admin Suite**:
+  - **Dashboard**: Real-time operational metrics and query volume statistics.
+  - **Human Review Workspace**: Interface for evaluating student feedback (👍 / 👎) and reviewing flagged queries.
+  - **Knowledge Management**: Incremental document uploader (PDF, TXT, DOCX, JSON) and real-time document inspector.
+  - **Analytics & Monitoring**: System health diagnostics (Ollama, ChromaDB, SQLite, Disk/RAM utilization).
+- **Accurate Fee & Scholarship Guidance**: Provides clear, official fee breakdowns for B.Tech, M.Tech, MCA, BCA, and Hostels. Formulates scholarship fee waiver responses using official eligibility criteria and approximate financial limits.
 
 ---
 
-## 📂 Production Folder Directory Structure
+## 🛠️ Technology Stack
+
+| Layer | Technologies Used |
+| :--- | :--- |
+| **Frontend** | Next.js 15 (App Router), React 19, TypeScript, Tailwind CSS, Lucide React, Zustand |
+| **Backend** | FastAPI, Python 3.9+, Pydantic v2, Uvicorn, Asyncio |
+| **AI & LLM** | Ollama (`llama3.2:3b`), `nomic-embed-text`, LangChain, LangChain-Ollama |
+| **Vector DB** | ChromaDB (`data/vector_db/CHECK_DB`, collection `collection50`, 1001 chunks) |
+| **Search Index** | Rank-BM25 (Hybrid retrieval with Reciprocal Rank Fusion) |
+| **Analytics DB** | SQLite (`data/analytics.db`), Async ThreadPool Logging |
+| **Security** | HTTP Security Headers (CSP, HSTS, X-Frame-Options, Referrer-Policy, Permissions-Policy), HMAC-SHA256, HttpOnly Cookies |
+
+---
+
+## 📂 Folder Directory Structure
 
 ```
-/
-├── app/                             # Production Application Package
-│   ├── api/                         # FastAPI REST Endpoints
-│   ├── core/                        # Central Settings (config.py) & Logging
-│   ├── rag/                         # RAG Chain Engine & Strict Fact Prompts
-│   ├── retrieval/                   # Hybrid Search, Query Router & Reranker
-│   ├── embeddings/                  # Ollama Embeddings & Chroma Vector Store
-│   ├── loaders/                     # Document Loaders & Custom Formatters
-│   ├── chunking/                    # 95-Page Syllabus Parser & Chunker
-│   ├── memory/                      # Session Conversation History
-│   ├── cache/                       # Response Cache Manager
-│   ├── query/                       # Query Preprocessor
-│   ├── evaluation/                  # 305-Question Automatic Evaluator
-│   ├── analytics/                   # Analytics SQLite Manager
-│   ├── ingestion/                   # Autonomous Knowledge Ingestion Pipeline
-│   └── utils/                       # Shared Helpers
+.
+├── app/                             # Python Backend Package
+│   ├── analytics/                   # SQLite database & non-blocking async logger
+│   ├── api/                         # FastAPI REST endpoints & HTTP security middleware
+│   ├── cache/                       # Response LRU Cache Manager
+│   ├── chunking/                    # Single-concept semantic chunkers
+│   ├── core/                        # Central config (`config.py`) & logging setup
+│   ├── embeddings/                  # ChromaDB vector store manager
+│   ├── evaluation/                  # Automated evaluation framework
+│   ├── ingestion/                   # Document processor & incremental uploader
+│   ├── loaders/                     # Raw document loaders & text formatters
+│   ├── memory/                      # Session conversation memory
+│   ├── query/                       # Query preprocessor & spell normalizer
+│   ├── rag/                         # RAG pipeline, PIL guard, prompts, LLM manager
+│   ├── retrieval/                   # Hybrid retriever (BM25 + Vector Search)
+│   └── utils/                       # Health check helpers & diagnostics
 │
-├── frontend/                        # Streamlit Web User Interface
-├── data/                            # Datasets, Artifacts & Vector DB Layer
-│   ├── raw_documents/               # 17 Official CSJM_DOCUMENTS files
-│   ├── cleaned_documents/           # Clean plain text syllabus
-│   ├── structured_data/             # Single-concept chunks & collection mappings
-│   ├── vector_db/                   # Persistent Chroma DB collections
-│   ├── reports/                     # HTML reports & performance dashboards
-│   ├── datasets/                    # Golden QA Dataset (JSON, CSV, XLSX)
-│   ├── evaluation/                  # Evaluation questions & failure taxonomy
-│   ├── review/                      # Stage 2 Human Review sheets with dropdowns
-│   ├── knowledge_graph/             # Entity-relationship graph JSON
-│   ├── aliases/                     # Student query aliases
-│   └── archive/                     # Preserved legacy & duplicate files
+├── frontend/                        # Next.js 15 Web Application
+│   ├── app/                         # App Router pages (Home, Chat, About, Help, Contact, Admin)
+│   ├── components/                  # UI layout (Navbar, Footer, TopBar, Sidebar, Admin panels)
+│   ├── features/                    # Chat components & conversation interfaces
+│   ├── services/                    # Axios API client & streaming fetch handlers
+│   ├── store/                       # Zustand state management
+│   └── package.json                 # Frontend dependencies & build scripts
 │
-├── scripts/                         # Executable CLI Engines & Workflow Tools
-├── docs/                            # Developer Guides & Architectural Inventories
-├── configs/                         # Environment & Docker Configurations
-└── notebooks/                       # Exploratory Jupyter Notebooks
+├── data/                            # Production Data & Database Layer
+│   ├── raw_documents/               # Official CSJM_DOCUMENTS files
+│   ├── cleaned_documents/           # Cleaned plain text datasets
+│   ├── structured_data/             # Concept chunks & collection mappings
+│   ├── vector_db/                   # Persistent Chroma DB store (1001 document chunks)
+│   └── analytics.db                 # SQLite query audit & feedback log
+│
+├── docs/                            # Architectural & Operational Documentation
+│   ├── PROJECT_STRUCTURE.md         # Folder & module guide
+│   ├── project_inventory.md         # Inventory of repository components
+│   ├── deployment_guide.md          # Comprehensive deployment instructions
+│   └── reports/                     # Coverage and evaluation reports
+│
+├── scripts/                         # Maintenance CLI utilities
+├── DEPLOYMENT.md                    # Production deployment & security guide
+├── SECURITY.md                      # Security policy & headers specification
+├── CHANGELOG.md                     # Release history & version log
+├── CONTRIBUTING.md                  # Development contribution guidelines
+└── LICENSE                          # Project license
 ```
 
 ---
 
-## 🚀 How to Run & Work with the System
+## ⚡ Quick Start & Local Development
 
-### 1. Launching FastAPI Server & Streamlit Web UI
+### 1. Prerequisites
+- **Python**: 3.9 or higher
+- **Node.js**: 18.x or 20.x (with npm)
+- **Ollama**: Installed and running locally (`http://localhost:11434`)
+
+### 2. Ollama Model Setup
+Pull the required LLM and embedding models:
 ```bash
-# Start Streamlit UI Frontend (runs on http://localhost:8501)
-./run.sh ui
-
-# Start FastAPI REST Server (runs on http://localhost:8000)
-./run.sh api
+ollama pull llama3.2:3b
+ollama pull nomic-embed-text
 ```
 
-### 2. Running Knowledge Base Coverage Evaluation
+### 3. Backend Setup
+Activate your Python virtual environment and install dependencies:
 ```bash
-./venv/bin/python scripts/knowledge_coverage.py
+source venv/bin/activate
+pip install -r requirements.txt
 ```
 
-### 3. Stage 2 Human Validation Workflow
+Launch the FastAPI backend server (runs on `http://localhost:8000`):
 ```bash
-# Step 1: Generate human_review.xlsx with native Excel dropdowns
-./venv/bin/python scripts/human_validation_builder.py
-
-# Step 2: Open data/review/human_review.xlsx, edit dropdowns/notes, and process feedback
-./venv/bin/python scripts/update_knowledge.py
+uvicorn app.api.api:app --host 0.0.0.0 --port 8000 --reload
 ```
 
-### 4. Running AI Curator Diagnosis & Auto Re-Indexing
+### 4. Frontend Setup
+In a new terminal window, navigate to the `frontend/` directory and install dependencies:
 ```bash
-./venv/bin/python scripts/knowledge_curator.py
+cd frontend
+npm install
 ```
 
-### 5. Ingesting New Official PDFs
-Place any new university PDF into `data/raw_documents/` and execute:
+Launch the Next.js development server (runs on `http://localhost:3001`):
 ```bash
-./venv/bin/python app/ingestion/knowledge_ingestion_pipeline.py
+npm run dev
 ```
+
+Open `http://localhost:3001` in your browser to interact with the platform.
 
 ---
 
-## 📚 Architectural Documentation
+## 🔑 Environment Variables Reference
 
-For detailed internal documentation, refer to:
-- [PROJECT_STRUCTURE.md](file:///Users/harshupadhyay/Downloads/compressed_folder%20%282%29/docs/PROJECT_STRUCTURE.md): Folder-by-folder guide.
-- [project_inventory.md](file:///Users/harshupadhyay/Downloads/compressed_folder%20%282%29/docs/project_inventory.md): File-by-file audit.
-- [knowledge_inventory.md](file:///Users/harshupadhyay/Downloads/compressed_folder%20%282%29/docs/knowledge_inventory.md): Institutional domain coverage breakdown.
-- [knowledge_fix_plan.md](file:///Users/harshupadhyay/Downloads/compressed_folder%20%282%29/docs/knowledge_fix_plan.md): Impact-ranked engineering fix roadmap.
+| Variable | Required | Default Value | Purpose | Example Placeholder |
+| :--- | :---: | :--- | :--- | :--- |
+| `ENVIRONMENT` | Yes | `production` | Runtime mode (`production`, `development`) | `production` |
+| `API_HOST` | Yes | `0.0.0.0` | IP bind address for FastAPI backend server | `0.0.0.0` |
+| `API_PORT` | Yes | `8000` | Port number for FastAPI backend server | `8000` |
+| `ADMIN_PASSCODE` | Yes | Custom string | Administrator login passcode for backend auth | `ADMIN_PASSCODE=<your-secure-password>` |
+| `ADMIN_SESSION_SECRET` | Yes | Custom secret | HMAC-SHA256 secret key for signing session tokens | `ADMIN_SESSION_SECRET=<generate-a-random-secret>` |
+| `CORS_ORIGINS` | Yes | `http://localhost:3000...` | Allowed origins for cross-origin browser requests | `http://localhost:3000,https://assistant.csjmu.ac.in` |
+| `OLLAMA_BASE_URL` | Yes | `http://localhost:11434` | Service URL for Ollama LLM engine | `http://localhost:11434` |
+| `LLM_MODEL` | Yes | `llama3.2:3b` | Target LLM model for answer generation | `llama3.2:3b` |
+| `EMBEDDING_MODEL` | Yes | `nomic-embed-text` | Target embedding model for Chroma vector store | `nomic-embed-text` |
+| `COLLECTION_NAME` | Yes | `collection50` | Active ChromaDB vector store collection name | `collection50` |
+| `DEFAULT_K` | No | `7` | Number of context document chunks to retrieve | `7` |
+| `MAX_FILE_SIZE_BYTES` | No | `52428800` | Max file upload size in bytes for document uploader | `52428800` |
+| `RATE_LIMIT_PER_MINUTE` | No | `120` | Request rate limit per minute per IP | `120` |
+| `NEXT_PUBLIC_API_URL` | No | `http://localhost:8000` | Public API base URL for frontend SSR | `http://localhost:8000` |
+
+---
+
+## 🔒 Security Specifications
+
+- **Admin Passcode**: Configured via backend environment variable `ADMIN_PASSCODE` (e.g. `ADMIN_PASSCODE=<your-secure-admin-passcode>`).
+- **Session Authentication**: HMAC-SHA256 signed session tokens issued via `HttpOnly`, `SameSite=Lax` cookies.
+- **HTTP Security Headers**: Enforced globally on all responses:
+  - `X-Content-Type-Options: nosniff`
+  - `X-Frame-Options: DENY`
+  - `Referrer-Policy: strict-origin-when-cross-origin`
+  - `Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=()`
+  - `Content-Security-Policy`: Strictly scoped directive preventing unauthorized script/frame injection.
+  - `Strict-Transport-Security` (HSTS): Enforced in HTTPS production environments.
+
+---
+
+## 🚀 Production Build & Deployment
+
+To verify and compile the Next.js production bundle:
+```bash
+cd frontend
+npm run build
+npm run start
+```
+
+For complete multi-node production deployment procedures, Docker Compose instructions, reverse-proxy configurations, and backup strategies, consult [DEPLOYMENT.md](file:///Users/harshupadhyay/Downloads/compressed_folder%20%282%29/DEPLOYMENT.md).
+
+---
+
+## 📄 License & Attribution
+
+Developed for **Chhatrapati Shahu Ji Maharaj University (CSJMU)** & **University Institute of Engineering and Technology (UIET), Kanpur**.  
+See [LICENSE](file:///Users/harshupadhyay/Downloads/compressed_folder%20%282%29/LICENSE) for usage terms.
