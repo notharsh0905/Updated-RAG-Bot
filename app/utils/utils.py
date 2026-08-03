@@ -38,7 +38,7 @@ def check_ollama_health(ollama_url: str = config.OLLAMA_BASE_URL) -> Dict[str, A
             "error": f"Ollama HTTP {response.status_code}"
         }
     except Exception as e:
-        logger.error(f"Failed to connect to Ollama server at {ollama_url}: {e}")
+        logger.error(f"Failed to connect to Ollama server at {ollama_url}: {e}", exc_info=True)
         return {
             "status": "unhealthy",
             "connected": False,

@@ -79,7 +79,7 @@ async def add_security_headers_middleware(request: Request, call_next):
 @app.exception_handler(Exception)
 async def global_exception_handler(request: Request, exc: Exception):
     """Prevents raw internal stack traces from reaching clients in production."""
-    logger.error(f"Unhandled Exception on {request.method} {request.url}: {exc}")
+    logger.error(f"Unhandled Exception on {request.method} {request.url}: {exc}", exc_info=True)
     return JSONResponse(
         status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
         content={
@@ -374,18 +374,28 @@ def query_endpoint(payload: QueryRequest):
             session_id=payload.session_id,
             use_hybrid=payload.use_hybrid
         )
-        return QueryResponse(
-            session_id=res.get("session_id"),
-            question=res["question"],
-            answer=res["answer"],
-            context=res["context"],
-            sources=res["sources"],
-            response_time_sec=res.get("response_time_sec")
-        )
+        if isinstance(res, dict):
+            return QueryResponse(
+                session_id=res.get("session_id"),
+                question=res.get("question", payload.question),
+                answer=res.get("answer", ""),
+                context=res.get("context"),
+                sources=res.get("sources", []),
+                response_time_sec=res.get("response_time_sec")
+            )
+        else:
+            return QueryResponse(
+                session_id=payload.session_id,
+                question=payload.question,
+                answer=str(res),
+                context="",
+                sources=[],
+                response_time_sec=None
+            )
     except ValueError as ve:
         raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail=str(ve))
     except Exception as e:
-        logger.error(f"Error handling query endpoint: {e}")
+        logger.error(f"Error handling query endpoint: {e}", exc_info=True)
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
             detail=f"Error generating response: {str(e)}"

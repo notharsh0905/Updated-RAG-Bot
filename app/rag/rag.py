@@ -116,14 +116,33 @@ class RAGPipeline:
 
         # 3. Check Cache (Session-Isolated Payload)
         if use_cache:
-            cached_res = response_cache.get(norm_question, k, strict_prompt)
+            cached_res = response_cache.get(norm_question, k, strict_prompt, return_sources=return_sources)
             if cached_res:
                 elapsed = round(time.time() - start_time, 3)
-                if isinstance(cached_res, dict):
-                    cached_res = dict(cached_res)
-                    cached_res["session_id"] = active_session
-                db_manager.log_query(active_session, question, norm_question, cached_res if isinstance(cached_res, str) else cached_res.get("answer", ""), elapsed, k, cached=True)
-                return cached_res
+                if return_sources:
+                    if isinstance(cached_res, dict):
+                        cached_res = dict(cached_res)
+                        cached_res["session_id"] = active_session
+                    else:
+                        cached_res = {
+                            "session_id": active_session,
+                            "question": question,
+                            "answer": str(cached_res),
+                            "direct_answer": str(cached_res),
+                            "full_enriched_text": str(cached_res),
+                            "campus_fact": None,
+                            "suggested_questions": [],
+                            "suggested_objects": [],
+                            "context": "Cached response.",
+                            "sources": [],
+                            "response_time_sec": elapsed
+                        }
+                    db_manager.log_query(active_session, question, norm_question, cached_res.get("answer", ""), elapsed, k, cached=True)
+                    return cached_res
+                else:
+                    ans_text = cached_res.get("answer", "") if isinstance(cached_res, dict) else str(cached_res)
+                    db_manager.log_query(active_session, question, norm_question, ans_text, elapsed, k, cached=True)
+                    return ans_text
 
         # 4. Retrieve Memory History & Rewrite Query if needed
         history = memory_manager.get_history(active_session)
@@ -265,7 +284,7 @@ class RAGPipeline:
 
         # Save to cache
         if use_cache:
-            response_cache.put(norm_question, k, strict_prompt, result_payload if return_sources else full_enriched_text)
+            response_cache.put(norm_question, k, strict_prompt, result_payload if return_sources else full_enriched_text, return_sources=return_sources)
 
         if return_sources:
             return result_payload
