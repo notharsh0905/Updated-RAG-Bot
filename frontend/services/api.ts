@@ -408,31 +408,60 @@ export const apiService = {
         buffer = lines.pop() || '';
 
         for (const line of lines) {
-          const trimmed = line.trim();
-          if (trimmed.startsWith('data: ')) {
-            const rawData = trimmed.slice(6);
-            if (rawData === '[DONE]') {
+          const dataIdx = line.indexOf('data: ');
+          if (dataIdx !== -1) {
+            let rawData = line.slice(dataIdx + 6);
+            if (rawData.endsWith('\r')) {
+              rawData = rawData.slice(0, -1);
+            }
+
+            let parsedToken: string = rawData;
+            try {
+              if (rawData.startsWith('"') || rawData.startsWith('{')) {
+                parsedToken = JSON.parse(rawData);
+              }
+            } catch {
+              parsedToken = rawData;
+            }
+
+            if (parsedToken === '[DONE]' || rawData === '[DONE]' || rawData === '"[DONE]"') {
               completed = true;
               onComplete();
               return;
             }
-            if (rawData.startsWith('[ERROR]: ')) {
-              throw new Error(rawData.slice(9));
+            if (typeof parsedToken === 'string' && parsedToken.startsWith('[ERROR]: ')) {
+              throw new Error(parsedToken.slice(9));
             }
-            onChunk(rawData);
+            onChunk(parsedToken);
           }
         }
       }
 
-      if (buffer.trim().startsWith('data: ')) {
-        const rawData = buffer.trim().slice(6);
-        if (rawData === '[DONE]') {
-          completed = true;
-          onComplete();
-          return;
-        }
-        if (!rawData.startsWith('[ERROR]: ')) {
-          onChunk(rawData);
+      if (buffer) {
+        const dataIdx = buffer.indexOf('data: ');
+        if (dataIdx !== -1) {
+          let rawData = buffer.slice(dataIdx + 6);
+          if (rawData.endsWith('\r')) {
+            rawData = rawData.slice(0, -1);
+          }
+
+          let parsedToken: string = rawData;
+          try {
+            if (rawData.startsWith('"') || rawData.startsWith('{')) {
+              parsedToken = JSON.parse(rawData);
+            }
+          } catch {
+            parsedToken = rawData;
+          }
+
+          if (parsedToken === '[DONE]' || rawData === '[DONE]' || rawData === '"[DONE]"') {
+            completed = true;
+            onComplete();
+            return;
+          }
+          if (typeof parsedToken === 'string' && !parsedToken.startsWith('[ERROR]: ')) {
+            onChunk(parsedToken);
+          }
         }
       }
 

@@ -109,7 +109,15 @@ ADMIN_PASSCODE=<your-secure-admin-passcode>
 ADMIN_SESSION_SECRET=<generate-a-random-32-char-secret>
 CORS_ORIGINS=http://localhost:3000,http://localhost:3001,http://127.0.0.1:3000,http://127.0.0.1:3001,https://assistant.csjmu.ac.in
 
-# Ollama Services
+# LLM Provider Selection ("openrouter" or "ollama")
+LLM_PROVIDER=openrouter
+
+# OpenRouter Configuration (NVIDIA Nemotron Nano 9B V2 Free)
+OPENROUTER_API_KEY=your_openrouter_api_key_here
+OPENROUTER_BASE_URL=https://openrouter.ai/api/v1
+OPENROUTER_MODEL=nvidia/nemotron-nano-9b-v2:free
+
+# Ollama Services (Local Fallback Option)
 OLLAMA_BASE_URL=http://localhost:11434
 LLM_MODEL=llama3.2:3b
 EMBEDDING_MODEL=nomic-embed-text

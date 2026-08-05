@@ -5,6 +5,7 @@ Supports environment variables with sensible defaults.
 
 import os
 from pathlib import Path
+from typing import Optional
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
@@ -19,6 +20,14 @@ class AppConfig(BaseSettings):
     REPORTS_DIR: Path = BASE_DIR / "data" / "reports"
     DATASETS_DIR: Path = BASE_DIR / "data" / "datasets"
     EVALUATION_DIR: Path = BASE_DIR / "data" / "evaluation"
+
+    # LLM Provider Configuration ("openrouter" or "ollama")
+    LLM_PROVIDER: str = "openrouter"
+
+    # OpenRouter Configuration
+    OPENROUTER_API_KEY: Optional[str] = None
+    OPENROUTER_BASE_URL: str = "https://openrouter.ai/api/v1"
+    OPENROUTER_MODEL: str = "nvidia/nemotron-nano-9b-v2:free"
 
     # Ollama Configuration
     OLLAMA_BASE_URL: str = "http://localhost:11434"
@@ -54,6 +63,12 @@ class AppConfig(BaseSettings):
             return self.FALLBACK_DATA_DIR
         else:
             return self.BASE_DIR / "data"
+
+    def get_active_model_name(self) -> str:
+        """Returns the active LLM model identifier according to LLM_PROVIDER."""
+        if self.LLM_PROVIDER.lower().strip() == "ollama":
+            return self.LLM_MODEL
+        return self.OPENROUTER_MODEL
 
 
 config = AppConfig()

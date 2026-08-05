@@ -293,27 +293,38 @@ class RAGPipeline:
 
     @staticmethod
     def sanitize_response(text: str) -> str:
-        """Sanitizes any stray developer or RAG terminology into official university phrasing."""
+        """Sanitizes stray developer/RAG terminology and strips outer markdown code block wrappers while preserving inner code blocks and newlines."""
         if not text:
             return text
 
+        sanitized = text.strip()
+
+        # Strip a single outer ```markdown ... ``` or ``` ... ``` wrapper if it encloses the complete response
+        lines = sanitized.split("\n")
+        if len(lines) >= 2:
+            first_line = lines[0].strip().lower()
+            last_line = lines[-1].strip()
+            if first_line in ["```markdown", "```md", "```"] and last_line == "```":
+                inner_fences = [l for l in lines[1:-1] if l.strip().startswith("```")]
+                if len(inner_fences) % 2 == 0:
+                    sanitized = "\n".join(lines[1:-1]).strip()
+
         import re
         replacements = [
-            (r"(?i)based on the provided context,?\s*", "According to official CSJMU records, "),
-            (r"(?i)based on the context,?\s*", "According to official CSJMU records, "),
-            (r"(?i)according to the provided context,?\s*", "According to official CSJMU records, "),
-            (r"(?i)according to the context,?\s*", "According to official CSJMU records, "),
+            (r"(?i)based on the provided context,?[ \t]*", "According to official CSJMU records, "),
+            (r"(?i)based on the context,?[ \t]*", "According to official CSJMU records, "),
+            (r"(?i)according to the provided context,?[ \t]*", "According to official CSJMU records, "),
+            (r"(?i)according to the context,?[ \t]*", "According to official CSJMU records, "),
             (r"(?i)the provided context does not mention\b", "the currently indexed official university documents do not specify"),
             (r"(?i)the context does not mention\b", "the currently indexed official university documents do not specify"),
             (r"(?i)the retrieved documents do not mention\b", "the currently indexed official university documents do not specify"),
             (r"(?i)the retrieved context does not contain\b", "the currently indexed official university documents do not specify"),
-            (r"(?i)in the provided documents,?\s*", "in official university records, "),
+            (r"(?i)in the provided documents,?[ \t]*", "in official university records, "),
             (r"(?i)this information is not available in the provided documents\.?", "The currently indexed official university documents do not specify this information."),
             (r"(?i)there is no context provided\b", "The currently indexed official university documents do not specify this information."),
             (r"(?i)there is no information in the context\b", "The currently indexed official university documents do not specify this information."),
         ]
 
-        sanitized = text
         for pattern, replacement in replacements:
             sanitized = re.sub(pattern, replacement, sanitized)
 

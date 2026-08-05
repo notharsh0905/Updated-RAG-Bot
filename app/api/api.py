@@ -6,6 +6,7 @@ feedback collection, and admin analytics.
 
 import hmac
 import hashlib
+import json
 import shutil
 import time
 from fastapi import FastAPI, HTTPException, status, Query, File, UploadFile, Form, Request, Response, Depends
@@ -15,7 +16,7 @@ from pydantic import BaseModel, Field
 from typing import Optional, List, Dict, Any
 
 from app.rag.rag import RAGPipeline
-from app.utils.utils import check_ollama_health, check_dataset_status
+from app.utils.utils import check_ollama_health, check_dataset_status, check_llm_health
 from app.analytics.database import db_manager
 from app.analytics.async_logger import async_logger
 from app.ingestion.document_processor import DocumentProcessor
@@ -301,7 +302,7 @@ def root_endpoint():
 @app.get("/health", tags=["Health"])
 def health_endpoint():
     """Structured production health check endpoint evaluating all backend subsystems."""
-    ollama_status = check_ollama_health(config.OLLAMA_BASE_URL)
+    llm_health = check_llm_health()
     dataset_status = check_dataset_status()
     
     vector_count = pipeline.vector_store_manager.get_count() if pipeline else 0
@@ -319,7 +320,8 @@ def health_endpoint():
     disk_free_gb = round(free_b / (1024 ** 3), 2)
     disk_usage_pct = round((used_b / total_b) * 100, 1)
 
-    is_healthy = ollama_status.get("connected", False) and sqlite_healthy and disk_free_gb > 1.0
+    llm_connected = llm_health.get("connected", False)
+    is_healthy = sqlite_healthy and disk_free_gb > 1.0
 
     return {
         "status": "healthy" if is_healthy else "degraded",
@@ -330,8 +332,15 @@ def health_endpoint():
             "version": "2.0.0",
             "rag_pipeline": "initialized" if pipeline else "offline"
         },
+        "llm": {
+            "provider": llm_health.get("provider", config.LLM_PROVIDER),
+            "model": llm_health.get("model", config.get_active_model_name()),
+            "connection": "Healthy" if llm_connected else "Failed",
+            "connected": llm_connected,
+            "url": llm_health.get("url", "")
+        },
         "ollama": {
-            "connected": ollama_status.get("connected", False),
+            "connected": llm_connected if config.LLM_PROVIDER == "ollama" else True,
             "base_url": config.OLLAMA_BASE_URL,
             "llm_model": config.LLM_MODEL,
             "embedding_model": config.EMBEDDING_MODEL
@@ -424,10 +433,10 @@ def query_stream_endpoint(payload: QueryRequest):
                 use_hybrid=payload.use_hybrid
             )
             for token in stream_gen:
-                yield f"data: {token}\n\n"
-            yield "data: [DONE]\n\n"
+                yield f"data: {json.dumps(token)}\n\n"
+            yield f"data: {json.dumps('[DONE]')}\n\n"
         except Exception as e:
-            yield f"data: [ERROR]: {str(e)}\n\n"
+            yield f"data: {json.dumps(f'[ERROR]: {str(e)}')}\n\n"
 
     return StreamingResponse(event_generator(), media_type="text/event-stream")
 

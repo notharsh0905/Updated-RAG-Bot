@@ -67,7 +67,8 @@ An enterprise-grade, zero-hallucination **Retrieval-Augmented Generation (RAG)**
 | :--- | :--- |
 | **Frontend** | Next.js 15 (App Router), React 19, TypeScript, Tailwind CSS, Lucide React, Zustand |
 | **Backend** | FastAPI, Python 3.9+, Pydantic v2, Uvicorn, Asyncio |
-| **AI & LLM** | Ollama (`llama3.2:3b`), `nomic-embed-text`, LangChain, LangChain-Ollama |
+| **AI & LLM** | OpenRouter (`nvidia/nemotron-nano-9b-v2:free`), OpenAI Python SDK, Ollama (`llama3.2:3b`), `BaseLLMProvider` Abstraction Layer |
+| **Embeddings** | `nomic-embed-text` (Ollama Embeddings / Local Chroma vector pipeline) |
 | **Vector DB** | ChromaDB (`data/vector_db/CHECK_DB`, collection `collection50`, 1001 chunks) |
 | **Search Index** | Rank-BM25 (Hybrid retrieval with Reciprocal Rank Fusion) |
 | **Analytics DB** | SQLite (`data/analytics.db`), Async ThreadPool Logging |
@@ -173,6 +174,12 @@ Open `http://localhost:3001` in your browser to interact with the platform.
 | Variable | Required | Default Value | Purpose | Example Placeholder |
 | :--- | :---: | :--- | :--- | :--- |
 | `ENVIRONMENT` | Yes | `production` | Runtime mode (`production`, `development`) | `production` |
+| `LLM_PROVIDER` | Yes | `openrouter` | Active LLM Provider (`openrouter` or `ollama`) | `openrouter` |
+| `OPENROUTER_API_KEY` | Conditional | `None` | OpenRouter API Key (read from environment only) | `sk-or-v1-xxxx...` |
+| `OPENROUTER_BASE_URL` | Optional | `https://openrouter.ai/api/v1` | Base API URL for OpenRouter service | `https://openrouter.ai/api/v1` |
+| `OPENROUTER_MODEL` | Optional | `nvidia/nemotron-nano-9b-v2:free` | Model identifier for OpenRouter generation | `nvidia/nemotron-nano-9b-v2:free` |
+| `OLLAMA_BASE_URL` | Optional | `http://localhost:11434` | Base URL for local Ollama engine | `http://localhost:11434` |
+| `LLM_MODEL` | Optional | `llama3.2:3b` | Model identifier for local Ollama engine | `llama3.2:3b` |
 | `API_HOST` | Yes | `0.0.0.0` | IP bind address for FastAPI backend server | `0.0.0.0` |
 | `API_PORT` | Yes | `8000` | Port number for FastAPI backend server | `8000` |
 | `ADMIN_PASSCODE` | Yes | Custom string | Administrator login passcode for backend auth | `ADMIN_PASSCODE=<your-secure-password>` |
