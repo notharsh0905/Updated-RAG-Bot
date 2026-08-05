@@ -492,8 +492,13 @@ class RAGPipeline:
         checksum = DocumentProcessor.compute_sha256(file_bytes)
         existing_doc = db_manager.get_document_by_checksum(checksum)
         if existing_doc:
-            logger.warning(f"Duplicate document upload attempt for '{filename}' (checksum: {checksum[:12]}...).")
-            raise ValueError(f"Duplicate file detected: An identical document '{existing_doc['original_filename']}' is already indexed.")
+            stored_chroma = self.vector_store_manager.vector_store.get(where={"checksum": checksum})
+            chroma_ids = stored_chroma.get("ids", []) if stored_chroma else []
+            if chroma_ids:
+                logger.warning(f"Duplicate document upload attempt for '{filename}' (checksum: {checksum[:12]}...).")
+                raise ValueError(f"Duplicate file detected: An identical document '{existing_doc['original_filename']}' is already indexed.")
+            else:
+                logger.info(f"Document metadata exists in SQLite for '{filename}', but vector chunks are missing from Chroma DB. Proceeding to embed chunks...")
 
         # 3. Store uploaded document to disk
         doc_id = f"doc_{uuid.uuid4()}"

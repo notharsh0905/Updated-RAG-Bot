@@ -557,8 +557,12 @@ export const apiService = {
     formData.append('file', file);
     formData.append('category', category);
 
-    // Do not explicitly set Content-Type header so browser/Axios can automatically compute multipart boundary
-    const response = await apiClient.post('/admin/upload', formData);
+    // Unset default Content-Type header for FormData upload so Axios automatically generates multipart/form-data with boundary
+    const response = await apiClient.post('/admin/upload', formData, {
+      headers: {
+        'Content-Type': undefined,
+      },
+    });
     return response.data;
   },
 

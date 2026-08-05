@@ -102,8 +102,60 @@ class DocumentLoader:
         # 18. optimized_chunks.json (Cleaned single-concept syllabus & entity chunks)
         self._load_optimized_syllabus_chunks(document_collection)
 
+        # 19. User-Uploaded Documents (data/uploads)
+        self._load_uploaded_documents(document_collection)
+
         logger.info(f"Successfully loaded and formatted {len(document_collection)} total documents.")
         return document_collection
+
+    def _load_uploaded_documents(self, collection: List[Document]) -> None:
+        """Loads and chunks all user-uploaded files from data/uploads directory."""
+        uploads_dir = config.BASE_DIR / "data" / "uploads"
+        meta_json_path = uploads_dir / "metadata.json"
+        if not meta_json_path.exists():
+            return
+
+        try:
+            with open(meta_json_path, "r", encoding="utf-8") as f:
+                records = json.load(f)
+
+            from app.ingestion.document_processor import DocumentProcessor
+
+            loaded_count = 0
+            for item in records:
+                stored_name = item.get("stored_filename")
+                orig_name = item.get("original_filename", "uploaded_doc")
+                doc_id = item.get("document_id", "doc_uploaded")
+                checksum = item.get("checksum", "")
+                category = item.get("category", "admissions")
+
+                if not stored_name:
+                    continue
+
+                file_path = uploads_dir / stored_name
+                if not file_path.exists():
+                    continue
+
+                try:
+                    with open(file_path, "rb") as bf:
+                        content_bytes = bf.read()
+
+                    extracted = DocumentProcessor.extract_text_and_pages(content_bytes, orig_name)
+                    chunks = DocumentProcessor.chunk_text(
+                        text=extracted["text"],
+                        filename=orig_name,
+                        document_id=doc_id,
+                        checksum=checksum,
+                        category=category
+                    )
+                    collection.extend(chunks)
+                    loaded_count += len(chunks)
+                except Exception as e:
+                    logger.error(f"Failed to process uploaded file '{stored_name}' during loader initialization: {e}")
+
+            logger.info(f"Loaded {loaded_count} total chunks from {len(records)} user-uploaded documents in data/uploads.")
+        except Exception as e:
+            logger.error(f"Error loading uploaded documents catalog: {e}")
 
     def _load_scholarship_and_schemes(self, collection: List[Document]) -> None:
         file_path = self.data_dir / "scholarship_and_schemes.json"

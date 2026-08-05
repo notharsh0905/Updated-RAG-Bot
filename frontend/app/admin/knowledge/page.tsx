@@ -279,7 +279,18 @@ export default function AdminKnowledgePage() {
       clearTimeout(t4);
 
       setUploadStatus('error');
-      setErrorMsg(err?.response?.data?.detail || 'Failed to ingest document into vector database.');
+      const detail = err?.response?.data?.detail;
+      let displayError = 'Failed to ingest document into vector database.';
+      if (typeof detail === 'string') {
+        displayError = detail;
+      } else if (Array.isArray(detail)) {
+        displayError = detail.map((e: any) => e.msg || (typeof e === 'string' ? e : JSON.stringify(e))).join(', ');
+      } else if (detail && typeof detail === 'object') {
+        displayError = detail.msg || JSON.stringify(detail);
+      } else if (err?.message) {
+        displayError = err.message;
+      }
+      setErrorMsg(displayError);
     }
   };
 
