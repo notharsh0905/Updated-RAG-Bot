@@ -9,6 +9,15 @@ import {
   KBImprovementTask,
   QualityCenterAnalytics,
 } from '@/types/admin';
+import {
+  StudentInquiry,
+  InquirySubmitPayload,
+  InquiryStatus,
+  InquiryListResponse,
+  InquirySubmitResponse,
+} from '@/types/inquiry';
+
+
 
 // Centralized Dynamic API Base URL Configuration for LAN & Production Access
 // Centralized Dynamic API Base URL Configuration for LAN, Mobile & Production Access
@@ -907,4 +916,31 @@ export const apiService = {
       },
     };
   },
+
+  // Student Inquiry API Methods
+  async submitInquiry(payload: InquirySubmitPayload): Promise<InquirySubmitResponse> {
+    const res = await apiClient.post<InquirySubmitResponse>('/api/v1/inquiries', payload);
+    return res.data;
+  },
+
+  async getAdminInquiries(params?: {
+    search?: string;
+    status?: string;
+    category?: string;
+    sort?: string;
+  }): Promise<InquiryListResponse> {
+    const res = await apiClient.get<InquiryListResponse>('/api/v1/admin/inquiries', { params });
+    return res.data;
+  },
+
+  async updateInquiryStatus(id: number, status: InquiryStatus): Promise<{ success: boolean; inquiry: StudentInquiry }> {
+    const res = await apiClient.patch<{ success: boolean; inquiry: StudentInquiry }>(`/api/v1/admin/inquiries/${id}`, { status });
+    return res.data;
+  },
+
+  async deleteInquiry(id: number): Promise<{ success: boolean; message: string }> {
+    const res = await apiClient.delete<{ success: boolean; message: string }>(`/api/v1/admin/inquiries/${id}`);
+    return res.data;
+  },
 };
+

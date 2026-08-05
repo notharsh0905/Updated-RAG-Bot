@@ -4,6 +4,7 @@ Exposes endpoints for health checks, question answering, SSE streaming,
 feedback collection, and admin analytics.
 """
 
+import html
 import hmac
 import hashlib
 import json
@@ -12,7 +13,7 @@ import time
 from fastapi import FastAPI, HTTPException, status, Query, File, UploadFile, Form, Request, Response, Depends
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import StreamingResponse, JSONResponse
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, validator
 from typing import Optional, List, Dict, Any
 
 from app.rag.rag import RAGPipeline
@@ -21,6 +22,7 @@ from app.analytics.database import db_manager
 from app.analytics.async_logger import async_logger
 from app.ingestion.document_processor import DocumentProcessor
 from app.memory.memory import memory_manager
+from app.services.notification import notification_service
 from app.core.config import config
 from app.core.logging_config import setup_logger
 
@@ -162,6 +164,48 @@ class RebuildResponse(BaseModel):
 class AdminLoginRequest(BaseModel):
     """Admin Login Payload."""
     passcode: str = Field(..., description="Administrator passcode.")
+
+
+import re
+
+
+class InquiryCreateRequest(BaseModel):
+    """Student Inquiry Creation Payload."""
+    name: str = Field(..., min_length=1, max_length=100, description="Full name of the student.")
+    email: str = Field(..., min_length=3, max_length=100, description="Valid email address of the student.")
+    category: str = Field(..., min_length=1, max_length=100, description="Category or department for the inquiry.")
+    message: str = Field(..., min_length=20, max_length=2000, description="Detailed inquiry message (minimum 20 characters).")
+
+    @validator('name', 'category', 'message', pre=True)
+    def sanitize_and_trim(cls, v):
+        if isinstance(v, str):
+            v = v.strip()
+            v = html.escape(v)
+        return v
+
+    @validator('email')
+    def validate_email_format(cls, v):
+        if not isinstance(v, str):
+            raise ValueError("Email must be a string.")
+        v = v.strip()
+        email_regex = r"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$"
+        if not re.match(email_regex, v):
+            raise ValueError("Invalid email address format.")
+        return v
+
+
+
+class InquiryStatusUpdateRequest(BaseModel):
+    """Admin Inquiry Status Update Payload."""
+    status: str = Field(..., description="Status: Pending, In Progress, Resolved, Closed")
+
+    @validator('status')
+    def validate_status(cls, v):
+        allowed = {"Pending", "In Progress", "Resolved", "Closed"}
+        if v not in allowed:
+            raise ValueError(f"Status must be one of: {', '.join(allowed)}")
+        return v
+
 
 
 # Session Security Token Functions
@@ -590,4 +634,139 @@ def admin_uploaded_documents_endpoint():
     """
     docs = db_manager.get_uploaded_documents()
     return {"documents": docs, "count": len(docs)}
+
+
+# ==========================================
+# Student Inquiry Management System Endpoints
+# ==========================================
+
+INQUIRY_IP_SUBMISSIONS: Dict[str, List[float]] = {}
+
+
+def check_inquiry_rate_limit(request: Request, max_requests: int = 5, window_sec: int = 60):
+    """Enforces server-side submission rate limiting per client IP."""
+    client_ip = request.client.host if request.client else "127.0.0.1"
+    now = time.time()
+    timestamps = [t for t in INQUIRY_IP_SUBMISSIONS.get(client_ip, []) if now - t < window_sec]
+    if len(timestamps) >= max_requests:
+        raise HTTPException(
+            status_code=status.HTTP_429_TOO_MANY_REQUESTS,
+            detail="Submission rate limit exceeded. Please wait a minute before submitting another inquiry."
+        )
+    timestamps.append(now)
+    INQUIRY_IP_SUBMISSIONS[client_ip] = timestamps
+
+
+@app.post("/api/v1/inquiries", tags=["Student Inquiries"])
+def create_inquiry_endpoint(payload: InquiryCreateRequest, request: Request):
+    """
+    Creates a new student inquiry record with server-side validation, rate limiting, and XSS sanitization.
+    Returns reference_id formatted as CSJMU-2026-XXXX.
+    """
+    check_inquiry_rate_limit(request)
+    try:
+        inquiry = db_manager.create_student_inquiry(
+            name=payload.name,
+            email=payload.email,
+            category=payload.category,
+            message=payload.message
+        )
+        notification_service.send_inquiry_confirmation(inquiry)
+        return {
+            "success": True,
+            "reference_id": inquiry.get("reference_id")
+        }
+    except Exception as e:
+        logger.error(f"Error creating student inquiry: {e}")
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail="Failed to submit inquiry due to internal database error."
+        )
+
+
+@app.get("/api/v1/admin/inquiries", tags=["Student Inquiries Admin"], dependencies=[Depends(require_admin_auth)])
+def get_admin_inquiries_endpoint(
+    search: Optional[str] = Query(None, description="Search by Reference ID, Student Name, Email, Category, or Message"),
+    status: Optional[str] = Query(None, description="Filter by status (Pending, In Progress, Resolved, Closed)"),
+    category: Optional[str] = Query(None, description="Filter by category"),
+    sort: Optional[str] = Query("newest", description="Sort order: newest or oldest")
+):
+    """
+    Protected admin endpoint retrieving student inquiries with search, filter, and count metrics.
+    """
+    try:
+        inquiries = db_manager.get_student_inquiries(
+            search=search,
+            status_filter=status,
+            category_filter=category,
+            sort_order=sort or "newest"
+        )
+        counts = db_manager.get_student_inquiry_counts()
+        return {
+            "success": True,
+            "inquiries": inquiries,
+            "counts": counts
+        }
+    except Exception as e:
+        logger.error(f"Error retrieving admin inquiries: {e}")
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail="Failed to retrieve student inquiries."
+        )
+
+
+@app.patch("/api/v1/admin/inquiries/{id}", tags=["Student Inquiries Admin"], dependencies=[Depends(require_admin_auth)])
+def update_admin_inquiry_status_endpoint(id: int, payload: InquiryStatusUpdateRequest):
+    """
+    Protected admin endpoint allowing status updates (Pending, In Progress, Resolved, Closed).
+    """
+    try:
+        updated = db_manager.update_student_inquiry_status(inquiry_id=id, status=payload.status)
+        if not updated:
+            raise HTTPException(
+                status_code=status.HTTP_404_NOT_FOUND,
+                detail=f"Inquiry with ID {id} not found."
+            )
+        notification_service.send_inquiry_status_update(updated, payload.status)
+        return {
+            "success": True,
+            "inquiry": updated
+        }
+    except ValueError as ve:
+        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail=str(ve))
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Error updating inquiry status: {e}")
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail="Failed to update inquiry status."
+        )
+
+
+@app.delete("/api/v1/admin/inquiries/{id}", tags=["Student Inquiries Admin"], dependencies=[Depends(require_admin_auth)])
+def delete_admin_inquiry_endpoint(id: int):
+    """
+    Protected admin endpoint allowing deletion of an inquiry record.
+    """
+    try:
+        success = db_manager.delete_student_inquiry(inquiry_id=id)
+        if not success:
+            raise HTTPException(
+                status_code=status.HTTP_404_NOT_FOUND,
+                detail=f"Inquiry with ID {id} not found."
+            )
+        return {
+            "success": True,
+            "message": "Inquiry deleted successfully."
+        }
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Error deleting inquiry: {e}")
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail="Failed to delete inquiry."
+        )
+
 

@@ -200,18 +200,23 @@ class DatabaseManager:
             """)
             cursor.execute("CREATE INDEX IF NOT EXISTS idx_kbt_status ON kb_tasks (status)")
 
-            # 7. admin_activity_logs (Admin Actions Log)
+            # 8. student_inquiries (Production Student Inquiry System)
             cursor.execute("""
-            CREATE TABLE IF NOT EXISTS admin_activity_logs (
-                log_id TEXT PRIMARY KEY,
-                actor TEXT NOT NULL,
-                action TEXT NOT NULL,
-                affected_record_id TEXT,
-                ip_address TEXT,
-                timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
+            CREATE TABLE IF NOT EXISTS student_inquiries (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                reference_id TEXT UNIQUE NOT NULL,
+                name TEXT NOT NULL,
+                email TEXT NOT NULL,
+                category TEXT NOT NULL,
+                message TEXT NOT NULL,
+                status TEXT NOT NULL DEFAULT 'Pending',
+                created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+                updated_at DATETIME DEFAULT CURRENT_TIMESTAMP
             )
             """)
-            cursor.execute("CREATE INDEX IF NOT EXISTS idx_aal_timestamp ON admin_activity_logs (timestamp DESC)")
+            cursor.execute("CREATE INDEX IF NOT EXISTS idx_si_reference_id ON student_inquiries (reference_id)")
+            cursor.execute("CREATE INDEX IF NOT EXISTS idx_si_status ON student_inquiries (status)")
+            cursor.execute("CREATE INDEX IF NOT EXISTS idx_si_created_at ON student_inquiries (created_at DESC)")
 
             conn.commit()
 
@@ -568,12 +573,141 @@ class DatabaseManager:
                 sql += " ORDER BY q.timestamp DESC LIMIT ? OFFSET ?"
                 params.extend([limit, offset])
 
+        except Exception as e:
+            logger.error(f"Failed to fetch queries feed: {e}")
+            return []
+
+    def create_student_inquiry(
+        self,
+        name: str,
+        email: str,
+        category: str,
+        message: str
+    ) -> Dict[str, Any]:
+        """Creates a new student inquiry record and returns reference ID and details."""
+        try:
+            with self._get_connection() as conn:
+                cursor = conn.cursor()
+                cursor.execute("SELECT COALESCE(MAX(id), 0) + 1 FROM student_inquiries")
+                next_id = cursor.fetchone()[0]
+                ref_id = f"CSJMU-2026-{next_id:04d}"
+
+                cursor.execute("""
+                INSERT INTO student_inquiries (reference_id, name, email, category, message, status)
+                VALUES (?, ?, ?, ?, ?, 'Pending')
+                """, (ref_id, name, email, category, message))
+                
+                inquiry_id = cursor.lastrowid
+                conn.commit()
+
+                cursor.execute("SELECT * FROM student_inquiries WHERE id = ?", (inquiry_id,))
+                row = cursor.fetchone()
+                return dict(row) if row else {"id": inquiry_id, "reference_id": ref_id, "status": "Pending"}
+        except Exception as e:
+            logger.error(f"Failed to create student inquiry in DB: {e}")
+            raise e
+
+    def get_student_inquiries(
+        self,
+        search: Optional[str] = None,
+        status_filter: Optional[str] = None,
+        category_filter: Optional[str] = None,
+        sort_order: str = "newest"
+    ) -> List[Dict[str, Any]]:
+        """Retrieves student inquiries matching optional search, status, and category filters."""
+        try:
+            with self._get_connection() as conn:
+                cursor = conn.cursor()
+                sql = "SELECT * FROM student_inquiries WHERE 1=1"
+                params = []
+
+                if search:
+                    term = f"%{search.strip()}%"
+                    sql += " AND (reference_id LIKE ? OR name LIKE ? OR email LIKE ? OR category LIKE ? OR message LIKE ?)"
+                    params.extend([term, term, term, term, term])
+
+                if status_filter and status_filter.lower() != "all":
+                    sql += " AND status = ?"
+                    params.append(status_filter)
+
+                if category_filter and category_filter.lower() != "all":
+                    sql += " AND category = ?"
+                    params.append(category_filter)
+
+                if sort_order.lower() == "oldest":
+                    sql += " ORDER BY created_at ASC, id ASC"
+                else:
+                    sql += " ORDER BY created_at DESC, id DESC"
+
                 cursor.execute(sql, params)
                 rows = cursor.fetchall()
                 return [dict(r) for r in rows]
         except Exception as e:
-            logger.error(f"Failed to fetch queries feed: {e}")
+            logger.error(f"Failed to fetch student inquiries: {e}")
             return []
+
+    def update_student_inquiry_status(
+        self,
+        inquiry_id: int,
+        status: str
+    ) -> Optional[Dict[str, Any]]:
+        """Updates inquiry status and updated_at timestamp."""
+        valid_statuses = {"Pending", "In Progress", "Resolved", "Closed"}
+        if status not in valid_statuses:
+            raise ValueError(f"Invalid status '{status}'. Must be one of {valid_statuses}")
+
+        try:
+            with self._get_connection() as conn:
+                cursor = conn.cursor()
+                cursor.execute("""
+                UPDATE student_inquiries
+                SET status = ?, updated_at = CURRENT_TIMESTAMP
+                WHERE id = ?
+                """, (status, inquiry_id))
+                
+                if cursor.rowcount == 0:
+                    return None
+                
+                conn.commit()
+                cursor.execute("SELECT * FROM student_inquiries WHERE id = ?", (inquiry_id,))
+                row = cursor.fetchone()
+                return dict(row) if row else None
+        except Exception as e:
+            logger.error(f"Failed to update student inquiry status: {e}")
+            raise e
+
+    def delete_student_inquiry(self, inquiry_id: int) -> bool:
+        """Deletes a student inquiry by ID."""
+        try:
+            with self._get_connection() as conn:
+                cursor = conn.cursor()
+                cursor.execute("DELETE FROM student_inquiries WHERE id = ?", (inquiry_id,))
+                conn.commit()
+                return cursor.rowcount > 0
+        except Exception as e:
+            logger.error(f"Failed to delete student inquiry: {e}")
+            return False
+
+    def get_student_inquiry_counts(self) -> Dict[str, int]:
+        """Returns inquiry count breakdown by status."""
+        counts = {"Pending": 0, "In Progress": 0, "Resolved": 0, "Closed": 0, "total": 0}
+        try:
+            with self._get_connection() as conn:
+                cursor = conn.cursor()
+                cursor.execute("SELECT status, COUNT(*) as count FROM student_inquiries GROUP BY status")
+                rows = cursor.fetchall()
+                total = 0
+                for r in rows:
+                    st = r["status"]
+                    cnt = r["count"]
+                    if st in counts:
+                        counts[st] = cnt
+                    total += cnt
+                counts["total"] = total
+                return counts
+        except Exception as e:
+            logger.error(f"Failed to get inquiry counts: {e}")
+            return counts
 
 
 db_manager = DatabaseManager()

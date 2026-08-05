@@ -17,6 +17,7 @@ import {
   Settings,
   UserCheck,
   LogOut,
+  HelpCircle,
 } from 'lucide-react';
 import { useChatStore } from '@/store/useChatStore';
 import { apiService } from '@/services/api';
@@ -84,6 +85,11 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
 
   const adminNav = [
     { href: '/admin/dashboard', label: 'Overview', icon: LayoutDashboard },
+    {
+      href: '/admin/inquiries',
+      label: 'Student Inquiries',
+      icon: HelpCircle,
+    },
     {
       href: '/admin/reviews',
       label: 'Human Review Workspace',
