@@ -55,7 +55,16 @@ def test_response_enrichment_engine():
         if fact_obj:
             word_count = len(fact_obj["fact_text"].split())
             assert word_count <= 45, f"Fact exceeded 45 words ({word_count} words)"
-            assert fact_obj["source"] in ["Engineering PDF", "Placement Report", "Official GATE PDF", "Admissions Documents"], f"Invalid source: {fact_obj['source']}"
+            assert fact_obj["source"] in [
+                "Engineering PDF",
+                "Placement Report",
+                "Official GATE PDF",
+                "Admissions Documents",
+                "Scholarship Guidelines",
+                "UP Youth Empowerment Scheme",
+                "Innovation Center Guidelines",
+                "Campus Startup Records",
+            ], f"Invalid source: {fact_obj['source']}"
             seen_facts.add(fact_obj["id"])
             print(f"✔ Section 2 (Smart Campus Fact): [{fact_obj['source']}] ({word_count} words)\n   {fact_obj['fact_text']}")
 
