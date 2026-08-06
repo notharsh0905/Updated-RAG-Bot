@@ -137,3 +137,71 @@ def check_dataset_status() -> Dict[str, Any]:
             "exists": False,
             "error": str(e)
         }
+
+
+def check_embedding_health() -> Dict[str, Any]:
+    """
+    Checks connectivity and status of active Embedding Provider (OpenRouter or Ollama).
+
+    Returns:
+        Dict[str, Any]: Status payload indicating embedding provider, model, collection, and health.
+    """
+    provider = config.get_active_embedding_provider()
+    model_name = config.get_active_embedding_model_name()
+    collection_name = config.get_effective_collection_name()
+
+    if provider == "openrouter":
+        clean_key = (config.OPENROUTER_API_KEY or "").strip()
+        base_url = (config.OPENROUTER_BASE_URL or "https://openrouter.ai/api/v1").rstrip("/")
+
+        if not clean_key:
+            return {
+                "provider": "OpenRouter",
+                "status": "unhealthy",
+                "connected": False,
+                "model": model_name,
+                "collection": collection_name,
+                "error": "OpenRouter API Key is missing or empty"
+            }
+
+        models_url = f"{base_url}/models"
+        headers = {
+            "Authorization": f"Bearer {clean_key}",
+            "HTTP-Referer": "https://csjmu.ac.in",
+            "X-Title": "CSJMU AI Campus Assistant"
+        }
+        try:
+            r = requests.get(models_url, headers=headers, timeout=10)
+            if r.status_code == 200:
+                return {
+                    "provider": "OpenRouter",
+                    "status": "healthy",
+                    "connected": True,
+                    "model": model_name,
+                    "collection": collection_name,
+                    "url": base_url
+                }
+            return {
+                "provider": "OpenRouter",
+                "status": "unhealthy",
+                "connected": False,
+                "model": model_name,
+                "collection": collection_name,
+                "error": f"OpenRouter HTTP status {r.status_code}"
+            }
+        except Exception as e:
+            return {
+                "provider": "OpenRouter",
+                "status": "unhealthy",
+                "connected": False,
+                "model": model_name,
+                "collection": collection_name,
+                "error": str(e)
+            }
+    else:
+        res = check_ollama_health()
+        res["provider"] = "Ollama"
+        res["model"] = model_name
+        res["collection"] = collection_name
+        return res
+

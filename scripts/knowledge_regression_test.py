@@ -101,7 +101,8 @@ def run_regression_test():
     print("   - School of Engineering & Technology Prospectus 2026 (engineering.pdf - 40 Pages, 46 Chunks)")
     print("   - Official Placement Report 2023-2025 (placements.pdf - 17 Pages, 22 Chunks)")
     print("   - Official GATE Qualified Students Database 2023 & 2024 (GATE-Scorers-2024.pdf & Gate.pdf - 46 Students, 32 Chunks)")
-    print("   - Total Indexed Knowledge Chunks: 987 Documents in Chroma Collection 'collection50'")
+    print(f"   - Total Indexed Knowledge Chunks: {vsm.get_count()} Documents in Chroma Collection '{vsm.collection_name}'")
+
 
     print("\n2. Knowledge Coverage:")
     print(f"   - Total Benchmark Questions Evaluated: {total_questions}")

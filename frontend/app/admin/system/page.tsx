@@ -36,19 +36,20 @@ export default function AdminSystemPage() {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {/* Ollama Engine Status */}
+        {/* AI & Embedding Engine Status */}
         <div className="p-6 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm space-y-3">
           <div className="flex items-center gap-2 text-[#002B49] dark:text-amber-400 font-bold text-sm">
             <Server className="w-5 h-5 text-[#8B0000] dark:text-amber-400" />
-            <span>Ollama Inference Server Engine</span>
+            <span>AI LLM & Embedding Engines</span>
           </div>
           <div className="text-xs space-y-2 font-mono text-slate-700 dark:text-slate-300">
-            <p><strong>Connection Status:</strong> {health?.ollama?.connected ? '🟢 Connected' : '🔴 Offline'}</p>
-            <p><strong>Endpoint URL:</strong> http://localhost:11434</p>
-            <p><strong>Primary LLM Model:</strong> llama3.2:3b</p>
-            <p><strong>Embedding Engine:</strong> nomic-embed-text</p>
+            <p><strong>LLM Provider:</strong> {health?.llm?.provider || 'OpenRouter'} ({health?.llm?.connected ? '🟢 Connected' : '🔴 Offline'})</p>
+            <p><strong>Primary LLM Model:</strong> {health?.llm?.model || 'nvidia/nemotron-nano-9b-v2:free'}</p>
+            <p><strong>Embedding Provider:</strong> {health?.embeddings?.provider || 'Ollama'} ({health?.embeddings?.connected ? '🟢 Active' : '🔴 Offline'})</p>
+            <p><strong>Embedding Model:</strong> {health?.embeddings?.model || 'nomic-embed-text'}</p>
           </div>
         </div>
+
 
         {/* Vector DB & BM25 Status */}
         <div className="p-6 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm space-y-3">

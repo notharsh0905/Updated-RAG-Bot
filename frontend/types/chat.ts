@@ -44,6 +44,20 @@ export interface AnalyticsSummary {
 
 export interface SystemHealth {
   status: string;
+  llm?: {
+    provider: string;
+    model: string;
+    connection: string;
+    connected: boolean;
+    url?: string;
+  };
+  embeddings?: {
+    provider: string;
+    model: string;
+    collection: string;
+    status: string;
+    connected: boolean;
+  };
   ollama: {
     connected: boolean;
     models?: string[];
@@ -56,3 +70,4 @@ export interface SystemHealth {
     document_count: number;
   };
 }
+

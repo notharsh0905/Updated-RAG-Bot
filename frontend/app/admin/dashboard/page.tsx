@@ -75,7 +75,7 @@ export default function AdminDashboardPage() {
         </div>
         <div className="flex items-center gap-2 text-xs font-semibold text-slate-600 dark:text-slate-300 bg-slate-100 dark:bg-slate-800 px-3 py-1.5 rounded-lg">
           <ShieldCheck className="w-4 h-4 text-emerald-500" />
-          <span>Chroma DB collection50 Active</span>
+          <span>Chroma DB {health?.vector_db?.collection || 'collection50'} Active</span>
         </div>
       </div>
 
@@ -100,7 +100,7 @@ export default function AdminDashboardPage() {
           <div className="text-2xl font-extrabold text-slate-900 dark:text-white">
             {analytics ? `${analytics.avg_response_time_sec}s` : '0.0s'}
           </div>
-          <p className="text-[11px] text-slate-500">Ollama Llama 3.2 Inference</p>
+          <p className="text-[11px] text-slate-500">LLM Generation Latency</p>
         </div>
 
         <div className="p-5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm space-y-2">
@@ -134,7 +134,7 @@ export default function AdminDashboardPage() {
             <span>Vector DB & BM25 Rebuild</span>
           </h3>
           <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
-            Rebuild Chroma vector collection and BM25 sparse keyword index across 994 document chunks in the repository.
+            Rebuild Chroma vector collection and BM25 sparse keyword index across all document chunks in the repository.
           </p>
 
           {rebuildMsg && (
@@ -157,12 +157,14 @@ export default function AdminDashboardPage() {
             <span>System Infrastructure Health</span>
           </h3>
           <div className="text-xs space-y-2 text-slate-600 dark:text-slate-300 font-mono">
-            <p><strong>Ollama Engine:</strong> {health?.ollama?.connected ? '🟢 Online' : '🔴 Offline'}</p>
+            <p><strong>LLM Engine:</strong> {health?.llm?.provider || 'OpenRouter'} ({health?.llm?.connected ? '🟢 Online' : '🔴 Offline'})</p>
+            <p><strong>Embedding Engine:</strong> {health?.embeddings?.provider || 'Ollama'} ({health?.embeddings?.connected ? '🟢 Active' : '🔴 Offline'})</p>
             <p><strong>Vector Collection:</strong> {health?.vector_db?.collection || 'collection50'}</p>
-            <p><strong>Indexed Chunks:</strong> {health?.vector_db?.document_count || 994} chunks</p>
+            <p><strong>Indexed Chunks:</strong> {health?.vector_db?.document_count || 0} chunks</p>
             <p><strong>Dataset Repository:</strong> {health?.dataset?.exists ? '🟢 Active Documents Present' : '🔴 Missing'}</p>
           </div>
         </div>
+
       </div>
     </div>
   );

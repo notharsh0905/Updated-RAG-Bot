@@ -17,7 +17,7 @@ from pydantic import BaseModel, Field, validator
 from typing import Optional, List, Dict, Any
 
 from app.rag.rag import RAGPipeline
-from app.utils.utils import check_ollama_health, check_dataset_status, check_llm_health
+from app.utils.utils import check_ollama_health, check_dataset_status, check_llm_health, check_embedding_health
 from app.analytics.database import db_manager
 from app.analytics.async_logger import async_logger
 from app.ingestion.document_processor import DocumentProcessor
@@ -25,6 +25,7 @@ from app.memory.memory import memory_manager
 from app.services.notification import notification_service
 from app.core.config import config
 from app.core.logging_config import setup_logger
+
 
 logger = setup_logger("fastapi_backend")
 
@@ -347,9 +348,11 @@ def root_endpoint():
 def health_endpoint():
     """Structured production health check endpoint evaluating all backend subsystems."""
     llm_health = check_llm_health()
+    embedding_health = check_embedding_health()
     dataset_status = check_dataset_status()
     
     vector_count = pipeline.vector_store_manager.get_count() if pipeline else 0
+    effective_collection = config.get_effective_collection_name()
 
     # SQLite DB health check
     sqlite_healthy = False
@@ -365,6 +368,7 @@ def health_endpoint():
     disk_usage_pct = round((used_b / total_b) * 100, 1)
 
     llm_connected = llm_health.get("connected", False)
+    emb_connected = embedding_health.get("connected", False)
     is_healthy = sqlite_healthy and disk_free_gb > 1.0
 
     return {
@@ -383,15 +387,22 @@ def health_endpoint():
             "connected": llm_connected,
             "url": llm_health.get("url", "")
         },
+        "embeddings": {
+            "provider": embedding_health.get("provider", config.get_active_embedding_provider()),
+            "model": embedding_health.get("model", config.get_active_embedding_model_name()),
+            "collection": effective_collection,
+            "status": embedding_health.get("status", "unknown"),
+            "connected": emb_connected
+        },
         "ollama": {
             "connected": llm_connected if config.LLM_PROVIDER == "ollama" else True,
             "base_url": config.OLLAMA_BASE_URL,
             "llm_model": config.LLM_MODEL,
-            "embedding_model": config.EMBEDDING_MODEL
+            "embedding_model": config.get_active_embedding_model_name()
         },
         "vector_db": {
             "type": "ChromaDB",
-            "collection": config.COLLECTION_NAME,
+            "collection": effective_collection,
             "document_count": vector_count,
             "persistence_dir": str(config.CHROMA_DB_DIR)
         },
@@ -404,6 +415,7 @@ def health_endpoint():
             "disk_usage_pct": disk_usage_pct
         }
     }
+
 
 
 @app.post("/query", response_model=QueryResponse, tags=["RAG Query"])

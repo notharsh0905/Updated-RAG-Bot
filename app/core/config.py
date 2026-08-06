@@ -24,13 +24,20 @@ class AppConfig(BaseSettings):
     # LLM Provider Configuration ("openrouter" or "ollama")
     LLM_PROVIDER: str = "openrouter"
 
+    # Embedding Provider Configuration ("ollama" or "openrouter")
+    EMBEDDING_PROVIDER: str = "ollama"
+
+
     # OpenRouter Configuration
     OPENROUTER_API_KEY: Optional[str] = None
     OPENROUTER_BASE_URL: str = "https://openrouter.ai/api/v1"
     OPENROUTER_MODEL: str = "nvidia/nemotron-nano-9b-v2:free"
+    OPENROUTER_EMBEDDING_MODEL: str = "nvidia/nemotron-3-embed-1b:free"
+
 
     # Ollama Configuration
     OLLAMA_BASE_URL: str = "http://localhost:11434"
+    OLLAMA_EMBEDDING_MODEL: Optional[str] = None
     EMBEDDING_MODEL: str = "nomic-embed-text"
     LLM_MODEL: str = "llama3.2:3b"
 
@@ -70,5 +77,28 @@ class AppConfig(BaseSettings):
             return self.LLM_MODEL
         return self.OPENROUTER_MODEL
 
+    def get_active_embedding_provider(self) -> str:
+        """Returns the normalized active embedding provider ('ollama' or 'openrouter')."""
+        return self.EMBEDDING_PROVIDER.lower().strip()
+
+    def get_active_embedding_model_name(self) -> str:
+        """Returns the active embedding model identifier according to EMBEDDING_PROVIDER."""
+        if self.get_active_embedding_provider() == "openrouter":
+            return self.OPENROUTER_EMBEDDING_MODEL
+        return self.OLLAMA_EMBEDDING_MODEL or self.EMBEDDING_MODEL
+
+    def get_effective_collection_name(self) -> str:
+        """Returns provider-specific Chroma collection name to avoid mixing embeddings."""
+        provider = self.get_active_embedding_provider()
+        base_name = self.COLLECTION_NAME
+        if base_name.endswith(f"_{provider}"):
+            return base_name
+        for p in ["_ollama", "_openrouter"]:
+            if base_name.endswith(p):
+                base_name = base_name[:-len(p)]
+                break
+        return f"{base_name}_{provider}"
+
 
 config = AppConfig()
+

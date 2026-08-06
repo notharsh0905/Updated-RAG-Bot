@@ -1,4 +1,5 @@
 import io
+import time
 import pytest
 from fastapi.testclient import TestClient
 from app.api.api import app, create_session_token
@@ -16,9 +17,11 @@ def admin_headers():
 
 
 def test_admin_upload_success(admin_headers):
-    file_content = b"Sample document text content for CSJMU B.Tech admission guidelines test."
+    unique_id = str(int(time.time()))
+    filename = f"test_upload_{unique_id}.txt"
+    file_content = f"Sample document text content for CSJMU B.Tech admission guidelines test {unique_id}.".encode("utf-8")
     files = {
-        "file": ("test_upload.txt", io.BytesIO(file_content), "text/plain")
+        "file": (filename, io.BytesIO(file_content), "text/plain")
     }
     data = {
         "category": "admissions"
@@ -30,5 +33,6 @@ def test_admin_upload_success(admin_headers):
 
         res = response.json()
         assert res["success"] is True
-        assert res["filename"] == "test_upload.txt"
+        assert res["filename"] == filename
         assert res["chunks"] > 0
+
