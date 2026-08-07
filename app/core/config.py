@@ -22,7 +22,7 @@ class AppConfig(BaseSettings):
     EVALUATION_DIR: Path = BASE_DIR / "data" / "evaluation"
 
     # LLM Provider Configuration ("openrouter" or "ollama")
-    LLM_PROVIDER: str = "openrouter"
+    LLM_PROVIDER: str = "ollama"
 
     # Embedding Provider Configuration ("ollama" or "openrouter")
     EMBEDDING_PROVIDER: str = "ollama"
@@ -36,10 +36,11 @@ class AppConfig(BaseSettings):
 
 
     # Ollama Configuration
-    OLLAMA_BASE_URL: str = "http://localhost:11434"
+    OLLAMA_BASE_URL: str = "http://172.20.8.10:31435"
+    OLLAMA_LLM_MODEL: Optional[str] = None
     OLLAMA_EMBEDDING_MODEL: Optional[str] = None
-    EMBEDDING_MODEL: str = "nomic-embed-text"
-    LLM_MODEL: str = "llama3.2:3b"
+    EMBEDDING_MODEL: str = "nomic-embed-text:latest"
+    LLM_MODEL: str = "llama3.1:8b"
 
     # Vector DB Configuration
     COLLECTION_NAME: str = "collection50"
@@ -74,7 +75,7 @@ class AppConfig(BaseSettings):
     def get_active_model_name(self) -> str:
         """Returns the active LLM model identifier according to LLM_PROVIDER."""
         if self.LLM_PROVIDER.lower().strip() == "ollama":
-            return self.LLM_MODEL
+            return self.OLLAMA_LLM_MODEL or self.LLM_MODEL
         return self.OPENROUTER_MODEL
 
     def get_active_embedding_provider(self) -> str:

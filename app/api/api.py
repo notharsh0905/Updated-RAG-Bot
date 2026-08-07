@@ -369,7 +369,7 @@ def health_endpoint():
 
     llm_connected = llm_health.get("connected", False)
     emb_connected = embedding_health.get("connected", False)
-    is_healthy = sqlite_healthy and disk_free_gb > 1.0
+    is_healthy = sqlite_healthy and disk_free_gb > 1.0 and llm_connected and emb_connected and (pipeline is not None)
 
     return {
         "status": "healthy" if is_healthy else "degraded",
@@ -397,7 +397,7 @@ def health_endpoint():
         "ollama": {
             "connected": llm_connected if config.LLM_PROVIDER == "ollama" else True,
             "base_url": config.OLLAMA_BASE_URL,
-            "llm_model": config.LLM_MODEL,
+            "llm_model": config.get_active_model_name(),
             "embedding_model": config.get_active_embedding_model_name()
         },
         "vector_db": {

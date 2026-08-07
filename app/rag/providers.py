@@ -67,7 +67,7 @@ class OllamaProvider(BaseLLMProvider):
         base_url: Optional[str] = None,
         temperature: float = 0.0,
     ):
-        self.model_name = model_name or config.LLM_MODEL
+        self.model_name = model_name or config.get_active_model_name()
         self.base_url = base_url or config.OLLAMA_BASE_URL
         self.temperature = temperature
 

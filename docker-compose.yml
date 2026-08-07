@@ -1,28 +1,21 @@
 version: '3.8'
 
 services:
-  ollama:
-    image: ollama/ollama:latest
-    container_name: csjmu_ollama
-    ports:
-      - "11434:11434"
-    volumes:
-      - ollama_storage:/root/.ollama
-    restart: unless-stopped
-
   backend:
     build: .
     container_name: csjmu_rag_backend
     ports:
       - "8000:8000"
     environment:
-      - OLLAMA_BASE_URL=http://ollama:11434
-      - EMBEDDING_MODEL=nomic-embed-text
-      - LLM_MODEL=llama3.2:3b
+      - LLM_PROVIDER=ollama
+      - EMBEDDING_PROVIDER=ollama
+      - OLLAMA_BASE_URL=http://172.20.8.10:31435
+      - OLLAMA_LLM_MODEL=llama3.1:8b
+      - OLLAMA_EMBEDDING_MODEL=nomic-embed-text:latest
+      - LLM_MODEL=llama3.1:8b
+      - EMBEDDING_MODEL=nomic-embed-text:latest
       - COLLECTION_NAME=collection50
       - CHROMA_DB_DIR=./data/vector_db/CHECK_DB
-    depends_on:
-      - ollama
     restart: unless-stopped
 
   frontend:
@@ -32,12 +25,13 @@ services:
     ports:
       - "8501:8501"
     environment:
-      - OLLAMA_BASE_URL=http://ollama:11434
-      - EMBEDDING_MODEL=nomic-embed-text
-      - LLM_MODEL=llama3.2:3b
+      - LLM_PROVIDER=ollama
+      - EMBEDDING_PROVIDER=ollama
+      - OLLAMA_BASE_URL=http://172.20.8.10:31435
+      - OLLAMA_LLM_MODEL=llama3.1:8b
+      - OLLAMA_EMBEDDING_MODEL=nomic-embed-text:latest
+      - LLM_MODEL=llama3.1:8b
+      - EMBEDDING_MODEL=nomic-embed-text:latest
     depends_on:
       - backend
     restart: unless-stopped
-
-volumes:
-  ollama_storage:

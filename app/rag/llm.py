@@ -29,7 +29,7 @@ class LLMManager:
             )
         elif self.provider_type == "ollama":
             self.provider: BaseLLMProvider = OllamaProvider(
-                model_name=model_name or config.LLM_MODEL,
+                model_name=model_name or config.get_active_model_name(),
                 temperature=self.temperature
             )
         else:

@@ -113,7 +113,7 @@ def check_llm_health() -> Dict[str, Any]:
             }
     else:
         res = check_ollama_health()
-        res["model"] = config.LLM_MODEL
+        res["model"] = config.get_active_model_name()
         return res
 
 
