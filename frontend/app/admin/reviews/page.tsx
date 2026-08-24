@@ -303,7 +303,7 @@ export default function HumanReviewWorkspacePage() {
         {/* 6 Top Governance KPI Metric Cards */}
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-2">
           {[
-            { label: 'Pending Reviews', value: kpis.pending, color: 'text-amber-700 dark:text-amber-400', icon: Clock },
+            { label: 'Pending Reviews', value: kpis.pending, color: 'text-amber-700 dark:text-[#1E88FF]', icon: Clock },
             { label: 'Critical / High', value: kpis.critical, color: 'text-rose-700 dark:text-rose-400', icon: Flame },
             { label: 'Resolved Today', value: kpis.resolvedToday, color: 'text-emerald-700 dark:text-emerald-400', icon: CheckCircle2 },
             { label: 'Avg Resolution', value: kpis.avgResolutionTime, color: 'text-blue-700 dark:text-cyan-400', icon: Zap },
@@ -338,7 +338,7 @@ export default function HumanReviewWorkspacePage() {
               <div className="space-y-1">
                 {[
                   { id: 'all', label: 'All Review Tickets', icon: Layers, count: tickets.length },
-                  { id: 'pending', label: 'Pending & Under Review', icon: Clock, count: kpis.pending, badge: 'bg-amber-100 text-amber-800 dark:bg-amber-500/20 dark:text-amber-400' },
+                  { id: 'pending', label: 'Pending & Under Review', icon: Clock, count: kpis.pending, badge: 'bg-amber-100 text-amber-800 dark:bg-blue-50/500/20 dark:text-[#1E88FF]' },
                   { id: 'critical', label: 'Critical / High Priority', icon: ShieldAlert, count: kpis.critical, badge: 'bg-rose-100 text-rose-800 dark:bg-rose-500/20 dark:text-rose-400' },
                   { id: 'negative', label: 'Negative Feedback (👎)', icon: XCircle, count: tickets.filter((t) => t.user_rating === -1).length, badge: 'bg-rose-100 text-rose-800 dark:bg-rose-500/20 dark:text-rose-400' },
                 ].map((preset) => {
@@ -455,7 +455,7 @@ export default function HumanReviewWorkspacePage() {
                     onClick={() => setSelectedTicket(t)}
                     className={`group bg-white dark:bg-slate-900 border rounded-2xl p-4 transition-all duration-200 cursor-pointer shadow-xs ${
                       isSelected
-                        ? 'border-[#002B49] dark:border-amber-400 shadow-md bg-blue-50/20 dark:bg-slate-900/90'
+                        ? 'border-[#002B49] dark:border-[#1E88FF] shadow-md bg-blue-50/20 dark:bg-slate-900/90'
                         : 'border-slate-200 dark:border-slate-800 hover:border-blue-300 dark:hover:border-slate-700 hover:shadow-md'
                     }`}
                   >
@@ -474,7 +474,7 @@ export default function HumanReviewWorkspacePage() {
                           className={`text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full border ${
                             t.priority === 'Critical' || t.priority === 'High'
                               ? 'bg-rose-50 text-rose-700 border-rose-200 dark:bg-rose-500/10 dark:text-rose-400 dark:border-rose-500/20'
-                              : 'bg-amber-50 text-amber-700 border-amber-200 dark:bg-amber-500/10 dark:text-amber-400 dark:border-amber-500/20'
+                              : 'bg-blue-50/50 text-amber-700 border-slate-200 dark:bg-blue-50/500/10 dark:text-[#1E88FF] dark:border-amber-500/20'
                           }`}
                         >
                           {t.priority}
@@ -496,7 +496,7 @@ export default function HumanReviewWorkspacePage() {
                     <div className="flex items-center justify-between border-t border-slate-100 dark:border-slate-800/60 pt-2.5 text-[11px]">
                       <div className="flex items-center gap-3">
                         <span className="text-slate-500 dark:text-slate-400">Reviewer: <strong className="text-slate-900 dark:text-slate-200">{t.assigned_reviewer}</strong></span>
-                        <span className="text-amber-700 dark:text-amber-400 font-mono">Root Cause: {t.root_cause}</span>
+                        <span className="text-amber-700 dark:text-[#1E88FF] font-mono">Root Cause: {t.root_cause}</span>
                       </div>
 
                       {t.user_rating === -1 && (
@@ -550,7 +550,7 @@ export default function HumanReviewWorkspacePage() {
                   onClick={() => setActiveTab(tab.id as any)}
                   className={`px-3 py-2.5 transition-colors whitespace-nowrap border-b-2 ${
                     activeTab === tab.id
-                      ? 'border-[#002B49] text-[#002B49] dark:border-amber-400 dark:text-amber-400 font-semibold bg-blue-50/50 dark:bg-amber-400/5'
+                      ? 'border-[#002B49] text-[#002B49] dark:border-[#1E88FF] dark:text-[#1E88FF] font-semibold bg-blue-50/50 dark:bg-[#1268D4]/5'
                       : 'border-transparent text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200'
                   }`}
                 >
@@ -631,9 +631,9 @@ export default function HumanReviewWorkspacePage() {
 
                   {/* Smart Automation Trigger Banner */}
                   {currentRootCause === 'Missing Document' && (
-                    <div className="p-3 rounded-xl bg-amber-50 dark:bg-amber-500/10 border border-amber-200 dark:border-amber-500/30 text-amber-900 dark:text-amber-300 space-y-2 shadow-xs">
+                    <div className="p-3 rounded-xl bg-blue-50/50 dark:bg-blue-50/500/10 border border-slate-200 dark:border-amber-500/30 text-amber-900 dark:text-[#1E88FF] space-y-2 shadow-xs">
                       <span className="font-bold flex items-center gap-1">
-                        <Sparkles className="w-3.5 h-3.5 text-amber-600 dark:text-amber-400" /> Smart Automation Trigger: Missing Document
+                        <Sparkles className="w-3.5 h-3.5 text-amber-600 dark:text-[#1E88FF]" /> Smart Automation Trigger: Missing Document
                       </span>
                       <p className="text-[11px] opacity-90">
                         Automatically create a Knowledge Improvement Task to request missing PDF prospectus from the admission cell.

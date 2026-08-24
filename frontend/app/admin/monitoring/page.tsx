@@ -238,7 +238,7 @@ export default function AdminQualityCenterPage() {
       <div className="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-xs flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div className="space-y-1">
           <div className="flex items-center gap-2.5">
-            <div className="w-9 h-9 rounded-xl bg-[#002B49] text-amber-400 border border-amber-400/30 flex items-center justify-center font-bold">
+            <div className="w-9 h-9 rounded-xl bg-[#002B49] text-[#1268D4] border border-[#1E88FF]/30 flex items-center justify-center font-bold">
               <ShieldAlert className="w-5 h-5" />
             </div>
             <div>
@@ -264,7 +264,7 @@ export default function AdminQualityCenterPage() {
             onClick={() => setActiveTab('overview')}
             className={`py-3 px-4 text-xs font-bold flex items-center gap-2 border-b-2 whitespace-nowrap transition-colors ${
               activeTab === 'overview'
-                ? 'border-[#8B0000] text-[#002B49] dark:text-amber-400 bg-slate-50 dark:bg-slate-800/60'
+                ? 'border-[#1268D4] text-[#002B49] dark:text-[#1E88FF] bg-slate-50 dark:bg-slate-800/60'
                 : 'border-transparent text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200'
             }`}
           >
@@ -276,11 +276,11 @@ export default function AdminQualityCenterPage() {
             onClick={() => setActiveTab('needs-review')}
             className={`py-3 px-4 text-xs font-bold flex items-center gap-2 border-b-2 whitespace-nowrap transition-colors ${
               activeTab === 'needs-review'
-                ? 'border-[#8B0000] text-[#002B49] dark:text-amber-400 bg-slate-50 dark:bg-slate-800/60'
+                ? 'border-[#1268D4] text-[#002B49] dark:text-[#1E88FF] bg-slate-50 dark:bg-slate-800/60'
                 : 'border-transparent text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200'
             }`}
           >
-            <Clock className="w-4 h-4 text-amber-500" />
+            <Clock className="w-4 h-4 text-[#1268D4]" />
             <span>Needs Review</span>
             {openReviewsCount > 0 && (
               <span className="px-1.5 py-0.2 rounded-full bg-red-600 text-white text-[10px] font-extrabold">
@@ -293,7 +293,7 @@ export default function AdminQualityCenterPage() {
             onClick={() => setActiveTab('kb-tasks')}
             className={`py-3 px-4 text-xs font-bold flex items-center gap-2 border-b-2 whitespace-nowrap transition-colors ${
               activeTab === 'kb-tasks'
-                ? 'border-[#8B0000] text-[#002B49] dark:text-amber-400 bg-slate-50 dark:bg-slate-800/60'
+                ? 'border-[#1268D4] text-[#002B49] dark:text-[#1E88FF] bg-slate-50 dark:bg-slate-800/60'
                 : 'border-transparent text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200'
             }`}
           >
@@ -308,7 +308,7 @@ export default function AdminQualityCenterPage() {
             onClick={() => setActiveTab('analytics')}
             className={`py-3 px-4 text-xs font-bold flex items-center gap-2 border-b-2 whitespace-nowrap transition-colors ${
               activeTab === 'analytics'
-                ? 'border-[#8B0000] text-[#002B49] dark:text-amber-400 bg-slate-50 dark:bg-slate-800/60'
+                ? 'border-[#1268D4] text-[#002B49] dark:text-[#1E88FF] bg-slate-50 dark:bg-slate-800/60'
                 : 'border-transparent text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200'
             }`}
           >
@@ -320,7 +320,7 @@ export default function AdminQualityCenterPage() {
             onClick={() => setActiveTab('resolved')}
             className={`py-3 px-4 text-xs font-bold flex items-center gap-2 border-b-2 whitespace-nowrap transition-colors ${
               activeTab === 'resolved'
-                ? 'border-[#8B0000] text-[#002B49] dark:text-amber-400 bg-slate-50 dark:bg-slate-800/60'
+                ? 'border-[#1268D4] text-[#002B49] dark:text-[#1E88FF] bg-slate-50 dark:bg-slate-800/60'
                 : 'border-transparent text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200'
             }`}
           >
@@ -353,7 +353,7 @@ export default function AdminQualityCenterPage() {
                   value={filter.searchQuery}
                   onChange={(e) => setFilter({ ...filter, searchQuery: e.target.value })}
                   placeholder="Search questions, responses, session ID..."
-                  className="w-full pl-9 pr-3 py-2 bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl text-xs text-slate-900 dark:text-white placeholder:text-slate-400 focus:outline-none focus:ring-1 focus:ring-[#002B49] dark:focus:ring-amber-400"
+                  className="w-full pl-9 pr-3 py-2 bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl text-xs text-slate-900 dark:text-white placeholder:text-slate-400 focus:outline-none focus:ring-1 focus:ring-[#002B49] dark:focus:ring-[#1268D4]"
                 />
               </div>
 
@@ -590,11 +590,11 @@ export default function AdminQualityCenterPage() {
                     onClick={() => setActiveModalTab('recommendation')}
                     className={`py-2 px-3.5 text-xs font-bold border-b-2 flex items-center gap-1.5 transition-colors ${
                       activeModalTab === 'recommendation'
-                        ? 'border-[#8B0000] text-[#002B49] dark:text-amber-400'
+                        ? 'border-[#1268D4] text-[#002B49] dark:text-[#1E88FF]'
                         : 'border-transparent text-slate-500 hover:text-slate-900 dark:hover:text-white'
                     }`}
                   >
-                    <ShieldAlert className="w-3.5 h-3.5 text-amber-500" />
+                    <ShieldAlert className="w-3.5 h-3.5 text-[#1268D4]" />
                     <span>Governance Details</span>
                   </button>
 
@@ -602,7 +602,7 @@ export default function AdminQualityCenterPage() {
                     onClick={() => setActiveModalTab('sources')}
                     className={`py-2 px-3.5 text-xs font-bold border-b-2 flex items-center gap-1.5 transition-colors ${
                       activeModalTab === 'sources'
-                        ? 'border-[#8B0000] text-[#002B49] dark:text-amber-400'
+                        ? 'border-[#1268D4] text-[#002B49] dark:text-[#1E88FF]'
                         : 'border-transparent text-slate-500 hover:text-slate-900 dark:hover:text-white'
                     }`}
                   >
@@ -614,7 +614,7 @@ export default function AdminQualityCenterPage() {
                     onClick={() => setActiveModalTab('history')}
                     className={`py-2 px-3.5 text-xs font-bold border-b-2 flex items-center gap-1.5 transition-colors ${
                       activeModalTab === 'history'
-                        ? 'border-[#8B0000] text-[#002B49] dark:text-amber-400'
+                        ? 'border-[#1268D4] text-[#002B49] dark:text-[#1E88FF]'
                         : 'border-transparent text-slate-500 hover:text-slate-900 dark:hover:text-white'
                     }`}
                   >
@@ -626,7 +626,7 @@ export default function AdminQualityCenterPage() {
                     onClick={() => setActiveModalTab('notes')}
                     className={`py-2 px-3.5 text-xs font-bold border-b-2 flex items-center gap-1.5 transition-colors ${
                       activeModalTab === 'notes'
-                        ? 'border-[#8B0000] text-[#002B49] dark:text-amber-400'
+                        ? 'border-[#1268D4] text-[#002B49] dark:text-[#1E88FF]'
                         : 'border-transparent text-slate-500 hover:text-slate-900 dark:hover:text-white'
                     }`}
                   >
@@ -665,7 +665,7 @@ export default function AdminQualityCenterPage() {
                         >
                           <div className="flex items-center justify-between font-semibold text-slate-900 dark:text-white">
                             <span className="flex items-center gap-1.5">
-                              <BookOpen className="w-3.5 h-3.5 text-[#8B0000] dark:text-amber-400" />
+                              <BookOpen className="w-3.5 h-3.5 text-[#1268D4] dark:text-[#1E88FF]" />
                               {src.source}
                             </span>
                             {src.doc_type && (
@@ -715,7 +715,7 @@ export default function AdminQualityCenterPage() {
                       onChange={(e) => setAdminNoteText(e.target.value)}
                       rows={4}
                       placeholder="e.g., 'Re-ingested 2026 B.Tech Prospectus PDF to fix outdated fee figures.'"
-                      className="w-full p-3 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-300 dark:border-slate-800 text-xs text-slate-900 dark:text-white placeholder:text-slate-400 focus:outline-none focus:ring-1 focus:ring-[#002B49] dark:focus:ring-amber-400 resize-none font-sans custom-scrollbar"
+                      className="w-full p-3 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-300 dark:border-slate-800 text-xs text-slate-900 dark:text-white placeholder:text-slate-400 focus:outline-none focus:ring-1 focus:ring-[#002B49] dark:focus:ring-[#1268D4] resize-none font-sans custom-scrollbar"
                     />
                     <div className="flex items-center justify-between">
                       {noteSavedMsg ? (
@@ -729,7 +729,7 @@ export default function AdminQualityCenterPage() {
                       <button
                         onClick={handleSaveNote}
                         disabled={savingNote}
-                        className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-[#8B0000] hover:bg-red-900 text-white text-xs font-bold transition-all shadow-xs active:scale-95 disabled:opacity-50"
+                        className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-[#1268D4] hover:bg-red-900 text-white text-xs font-bold transition-all shadow-xs active:scale-95 disabled:opacity-50"
                       >
                         <Save className="w-3.5 h-3.5" />
                         <span>{savingNote ? 'Saving Note...' : 'Save Note'}</span>

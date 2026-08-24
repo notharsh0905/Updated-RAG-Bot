@@ -49,7 +49,7 @@ export default function AdminFeedbackPage() {
         </div>
 
         <div className="p-6 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm space-y-2">
-          <div className="flex items-center gap-2 text-[#002B49] dark:text-amber-400 font-bold text-xs">
+          <div className="flex items-center gap-2 text-[#002B49] dark:text-[#1E88FF] font-bold text-xs">
             <Star className="w-4 h-4" />
             <span>Satisfaction Ratio</span>
           </div>

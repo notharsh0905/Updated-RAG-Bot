@@ -113,7 +113,7 @@ export const MessageList: React.FC<MessageListProps> = ({
             className="fixed bottom-24 z-30 flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/90 dark:bg-slate-800/90 text-slate-800 dark:text-slate-200 hover:text-slate-900 dark:hover:text-white border border-slate-200 dark:border-slate-700/80 shadow-xl backdrop-blur-md text-xs font-semibold transition-all hover:bg-slate-100 dark:hover:bg-slate-700 active:scale-95"
           >
             <span>Scroll to latest</span>
-            <ChevronDown className="w-3.5 h-3.5 text-[#8B0000] dark:text-amber-400" />
+            <ChevronDown className="w-3.5 h-3.5 text-[#1268D4] dark:text-[#1E88FF]" />
           </motion.button>
         )}
       </AnimatePresence>

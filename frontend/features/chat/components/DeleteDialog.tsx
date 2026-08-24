@@ -41,7 +41,7 @@ export const DeleteDialog: React.FC<DeleteDialogProps> = ({
         >
           <div className="flex items-center justify-between border-b border-slate-200 dark:border-slate-800 pb-2.5">
             <div className="flex items-center gap-2">
-              <AlertTriangle className="w-4 h-4 text-[#8B0000] dark:text-rose-400" />
+              <AlertTriangle className="w-4 h-4 text-[#1268D4] dark:text-rose-400" />
               <h3 className="text-sm font-bold text-slate-900 dark:text-white font-sans">Delete Conversation</h3>
             </div>
             <button
@@ -70,7 +70,7 @@ export const DeleteDialog: React.FC<DeleteDialogProps> = ({
                 onConfirm();
                 onClose();
               }}
-              className="flex items-center gap-1 px-3 py-1.5 bg-[#8B0000] hover:bg-red-900 text-white rounded-xl text-xs font-semibold transition-all shadow-sm active:scale-95"
+              className="flex items-center gap-1 px-3 py-1.5 bg-[#1268D4] hover:bg-red-900 text-white rounded-xl text-xs font-semibold transition-all shadow-sm active:scale-95"
             >
               <Trash2 className="w-3.5 h-3.5" />
               <span>Delete</span>

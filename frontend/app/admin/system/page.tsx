@@ -38,8 +38,8 @@ export default function AdminSystemPage() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* AI & Embedding Engine Status */}
         <div className="p-6 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm space-y-3">
-          <div className="flex items-center gap-2 text-[#002B49] dark:text-amber-400 font-bold text-sm">
-            <Server className="w-5 h-5 text-[#8B0000] dark:text-amber-400" />
+          <div className="flex items-center gap-2 text-[#002B49] dark:text-[#1E88FF] font-bold text-sm">
+            <Server className="w-5 h-5 text-[#1268D4] dark:text-[#1E88FF]" />
             <span>AI LLM & Embedding Engines</span>
           </div>
           <div className="text-xs space-y-2 font-mono text-slate-700 dark:text-slate-300">
@@ -53,8 +53,8 @@ export default function AdminSystemPage() {
 
         {/* Vector DB & BM25 Status */}
         <div className="p-6 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm space-y-3">
-          <div className="flex items-center gap-2 text-[#002B49] dark:text-amber-400 font-bold text-sm">
-            <Database className="w-5 h-5 text-[#8B0000] dark:text-amber-400" />
+          <div className="flex items-center gap-2 text-[#002B49] dark:text-[#1E88FF] font-bold text-sm">
+            <Database className="w-5 h-5 text-[#1268D4] dark:text-[#1E88FF]" />
             <span>Chroma Vector Store & BM25 Index</span>
           </div>
           <div className="text-xs space-y-2 font-mono text-slate-700 dark:text-slate-300">
@@ -85,7 +85,7 @@ export default function AdminSystemPage() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
           <div className="p-3.5 rounded-lg bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 space-y-1">
-            <span className="text-[10px] font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400">
+            <span className="text-[10px] font-bold uppercase tracking-wider text-amber-600 dark:text-[#1E88FF]">
               Academic Project Guide
             </span>
             <p className="font-bold text-slate-900 dark:text-white">Assistant Professor Gayatri Rajpoot</p>

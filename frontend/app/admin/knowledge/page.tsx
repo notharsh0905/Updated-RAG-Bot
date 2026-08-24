@@ -359,7 +359,7 @@ export default function AdminKnowledgePage() {
             { label: 'Total Documents', value: kpis.totalDocs, color: 'text-blue-700 dark:text-cyan-400', icon: FileText },
             { label: 'Indexed Chunks', value: kpis.totalChunks, color: 'text-emerald-700 dark:text-emerald-400', icon: Database },
             { label: 'Embedding Model', value: 'nomic-embed', color: 'text-indigo-700 dark:text-indigo-400', icon: Sparkles },
-            { label: 'Storage Volume', value: kpis.storageMb, color: 'text-amber-700 dark:text-amber-400', icon: HardDrive },
+            { label: 'Storage Volume', value: kpis.storageMb, color: 'text-amber-700 dark:text-[#1E88FF]', icon: HardDrive },
             { label: 'Avg Similarity', value: kpis.avgSimilarity, color: 'text-emerald-700 dark:text-emerald-400', icon: TrendingUp },
             { label: 'Needs Review', value: kpis.needsReview, color: kpis.needsReview > 0 ? 'text-rose-700 dark:text-rose-400' : 'text-slate-500 dark:text-slate-400', icon: AlertTriangle },
           ].map((kpi, idx) => {
@@ -432,7 +432,7 @@ export default function AdminKnowledgePage() {
                     disabled={!file || uploadStatus === 'processing'}
                     className="px-5 py-2 bg-[#002B49] hover:bg-[#001D33] disabled:opacity-50 text-white rounded-xl text-xs font-semibold transition-all shadow-xs flex items-center gap-1.5"
                   >
-                    <UploadCloud className="w-4 h-4 text-amber-300" /> Start Real Ingestion
+                    <UploadCloud className="w-4 h-4 text-[#1E88FF]" /> Start Real Ingestion
                   </button>
                 </div>
               </form>
@@ -522,7 +522,7 @@ export default function AdminKnowledgePage() {
                       onClick={() => setSelectedDoc(doc)}
                       className={`group bg-white dark:bg-slate-900 border rounded-2xl p-4 transition-all duration-200 cursor-pointer shadow-xs ${
                         isSelected
-                          ? 'border-[#002B49] dark:border-amber-400 shadow-md bg-blue-50/20 dark:bg-slate-900/90'
+                          ? 'border-[#002B49] dark:border-[#1E88FF] shadow-md bg-blue-50/20 dark:bg-slate-900/90'
                           : 'border-slate-200 dark:border-slate-800 hover:border-blue-300 dark:hover:border-slate-700 hover:shadow-md'
                       }`}
                     >
@@ -544,7 +544,7 @@ export default function AdminKnowledgePage() {
                         <span
                           className={`text-[10px] font-bold px-2 py-0.5 rounded-full border ${
                             doc.health === 'Needs Review'
-                              ? 'bg-amber-50 text-amber-700 border-amber-200 dark:bg-amber-500/10 dark:text-amber-400 dark:border-amber-500/20'
+                              ? 'bg-blue-50/50 text-amber-700 border-slate-200 dark:bg-blue-50/500/10 dark:text-[#1E88FF] dark:border-amber-500/20'
                               : 'bg-emerald-50 text-emerald-700 border-emerald-200 dark:bg-emerald-500/10 dark:text-emerald-400 dark:border-emerald-500/20'
                           }`}
                         >
@@ -624,7 +624,7 @@ export default function AdminKnowledgePage() {
                   onClick={() => setActiveInspectorTab(tab.id as any)}
                   className={`px-3 py-2.5 transition-colors whitespace-nowrap border-b-2 ${
                     activeInspectorTab === tab.id
-                      ? 'border-[#002B49] text-[#002B49] dark:border-amber-400 dark:text-amber-400 font-semibold bg-blue-50/50 dark:bg-amber-400/5'
+                      ? 'border-[#002B49] text-[#002B49] dark:border-[#1E88FF] dark:text-[#1E88FF] font-semibold bg-blue-50/50 dark:bg-[#1268D4]/5'
                       : 'border-transparent text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200'
                   }`}
                 >
@@ -813,7 +813,7 @@ export default function AdminKnowledgePage() {
           <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl w-full max-w-md p-5 space-y-4 shadow-2xl">
             <div className="flex justify-between items-center border-b border-slate-200 dark:border-slate-800 pb-3">
               <h3 className="text-sm font-bold text-slate-900 dark:text-slate-100 flex items-center gap-2">
-                <AlertTriangle className="w-4 h-4 text-amber-500" />
+                <AlertTriangle className="w-4 h-4 text-[#1268D4]" />
                 Document Version Conflict
               </h3>
               <button onClick={() => setShowVersionModal(false)} className="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200">

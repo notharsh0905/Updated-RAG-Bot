@@ -8,8 +8,8 @@ export default function AboutPage() {
     <div className="max-w-5xl mx-auto px-4 py-8 space-y-8">
       {/* Header Banner */}
       <div className="space-y-3 border-b border-slate-200 dark:border-slate-800 pb-6">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#002B49]/10 dark:bg-amber-400/10 text-[#002B49] dark:text-amber-300 text-xs font-semibold border border-[#002B49]/20 dark:border-amber-400/20">
-          <ShieldCheck className="w-4 h-4 text-[#8B0000] dark:text-amber-400" />
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#002B49]/10 dark:bg-[#1268D4]/10 text-[#002B49] dark:text-[#1E88FF] text-xs font-semibold border border-[#002B49]/20 dark:border-[#1E88FF]/20">
+          <ShieldCheck className="w-4 h-4 text-[#1268D4] dark:text-[#1E88FF]" />
           <span>NAAC A++ Grade Accredited State University • Established 1966</span>
         </div>
         <h1 className="text-2xl sm:text-3xl font-serif font-bold text-[#002B49] dark:text-white tracking-tight">
@@ -33,7 +33,7 @@ export default function AboutPage() {
           {/* Vice Chancellor Profile */}
           <div className="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm space-y-4">
             <div className="flex items-center gap-4">
-              <div className="w-20 h-20 rounded-full overflow-hidden border-2 border-[#002B49] dark:border-amber-400 shadow-md shrink-0 bg-slate-100 relative">
+              <div className="w-20 h-20 rounded-full overflow-hidden border-2 border-[#002B49] dark:border-[#1E88FF] shadow-md shrink-0 bg-slate-100 relative">
                 <img
                   src="/images/vc-portrait.jpg"
                   alt="Prof. Vinay Kumar Pathak"
@@ -45,7 +45,7 @@ export default function AboutPage() {
                 <h3 className="font-bold text-base text-[#002B49] dark:text-white">
                   Prof. Vinay Kumar Pathak
                 </h3>
-                <p className="text-xs font-bold text-[#8B0000] dark:text-amber-400">
+                <p className="text-xs font-bold text-[#1268D4] dark:text-[#1E88FF]">
                   Hon'ble Vice Chancellor
                 </p>
                 <p className="text-[11px] text-slate-500 font-medium">
@@ -54,7 +54,7 @@ export default function AboutPage() {
               </div>
             </div>
             <div className="p-4 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 relative">
-              <Quote className="w-5 h-5 text-[#8B0000]/20 dark:text-amber-400/20 absolute right-3 top-3" />
+              <Quote className="w-5 h-5 text-[#1268D4]/20 dark:text-[#1E88FF]/20 absolute right-3 top-3" />
               <p className="text-xs text-slate-700 dark:text-slate-300 leading-relaxed italic">
                 &quot;Our mission is to empower students through cutting-edge technology, research innovation, and world-class academic infrastructure.&quot;
               </p>
@@ -64,7 +64,7 @@ export default function AboutPage() {
           {/* Director UIET Profile */}
           <div className="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm space-y-4">
             <div className="flex items-center gap-4">
-              <div className="w-20 h-20 rounded-full overflow-hidden border-2 border-[#8B0000] dark:border-amber-400 shadow-md shrink-0 bg-slate-100 relative">
+              <div className="w-20 h-20 rounded-full overflow-hidden border-2 border-[#1268D4] dark:border-[#1E88FF] shadow-md shrink-0 bg-slate-100 relative">
                 <img
                   src="/images/director-portrait.jpg"
                   alt="Prof. (Dr.) Alok Kumar"
@@ -76,7 +76,7 @@ export default function AboutPage() {
                 <h3 className="font-bold text-base text-[#002B49] dark:text-white">
                   Prof. (Dr.) Alok Kumar
                 </h3>
-                <p className="text-xs font-bold text-[#8B0000] dark:text-amber-400">
+                <p className="text-xs font-bold text-[#1268D4] dark:text-[#1E88FF]">
                   Director, UIET Kanpur
                 </p>
                 <p className="text-[11px] text-slate-500 font-medium">
@@ -85,7 +85,7 @@ export default function AboutPage() {
               </div>
             </div>
             <div className="p-4 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 relative">
-              <Quote className="w-5 h-5 text-[#8B0000]/20 dark:text-amber-400/20 absolute right-3 top-3" />
+              <Quote className="w-5 h-5 text-[#1268D4]/20 dark:text-[#1E88FF]/20 absolute right-3 top-3" />
               <p className="text-xs text-slate-700 dark:text-slate-300 leading-relaxed italic">
                 &quot;UIET is committed to fostering engineering excellence, startup incubation, and supercomputing research for sustainable growth.&quot;
               </p>
@@ -97,7 +97,7 @@ export default function AboutPage() {
       {/* Grid Features */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div className="p-6 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 space-y-3 shadow-sm">
-          <div className="w-10 h-10 rounded-lg bg-[#002B49] text-amber-300 flex items-center justify-center font-bold">
+          <div className="w-10 h-10 rounded-lg bg-[#002B49] text-[#1E88FF] flex items-center justify-center font-bold">
             <Building className="w-5 h-5" />
           </div>
           <h2 className="text-base font-bold text-[#002B49] dark:text-white">
@@ -109,7 +109,7 @@ export default function AboutPage() {
         </div>
 
         <div className="p-6 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 space-y-3 shadow-sm">
-          <div className="w-10 h-10 rounded-lg bg-[#002B49] text-amber-300 flex items-center justify-center font-bold">
+          <div className="w-10 h-10 rounded-lg bg-[#002B49] text-[#1E88FF] flex items-center justify-center font-bold">
             <Cpu className="w-5 h-5" />
           </div>
           <h2 className="text-base font-bold text-[#002B49] dark:text-white">
@@ -121,7 +121,7 @@ export default function AboutPage() {
         </div>
 
         <div className="p-6 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 space-y-3 shadow-sm">
-          <div className="w-10 h-10 rounded-lg bg-[#002B49] text-amber-300 flex items-center justify-center font-bold">
+          <div className="w-10 h-10 rounded-lg bg-[#002B49] text-[#1E88FF] flex items-center justify-center font-bold">
             <Sparkles className="w-5 h-5" />
           </div>
           <h2 className="text-base font-bold text-[#002B49] dark:text-white">
@@ -133,7 +133,7 @@ export default function AboutPage() {
         </div>
 
         <div className="p-6 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 space-y-3 shadow-sm">
-          <div className="w-10 h-10 rounded-lg bg-[#002B49] text-amber-300 flex items-center justify-center font-bold">
+          <div className="w-10 h-10 rounded-lg bg-[#002B49] text-[#1E88FF] flex items-center justify-center font-bold">
             <Printer className="w-5 h-5" />
           </div>
           <h2 className="text-base font-bold text-[#002B49] dark:text-white">
@@ -172,7 +172,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs">
             {/* Academic Guide */}
             <div className="p-4 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 space-y-2 shadow-xs">
-              <span className="text-[10px] font-bold uppercase tracking-wider text-amber-700 dark:text-amber-400">
+              <span className="text-[10px] font-bold uppercase tracking-wider text-amber-700 dark:text-[#1E88FF]">
                 Academic Project Guide
               </span>
               <div>

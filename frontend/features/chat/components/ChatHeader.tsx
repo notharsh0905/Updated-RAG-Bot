@@ -50,7 +50,7 @@ export const ChatHeader: React.FC<ChatHeaderProps> = ({
             <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping absolute" />
             <span className="w-2 h-2 rounded-full bg-emerald-500 relative" />
           </div>
-          
+
           <div className="flex items-center gap-1 sm:gap-1.5 leading-none min-w-0 truncate">
             <img
               src="/images/csjmu-seal-logo.jpg"
@@ -66,7 +66,7 @@ export const ChatHeader: React.FC<ChatHeaderProps> = ({
           </div>
 
           <span className="hidden md:inline text-slate-300 dark:text-slate-600">•</span>
-          
+
           {/* Horizontally Aligned Verified Status Icon */}
           <span className="hidden md:inline-flex items-center gap-1.5 text-slate-600 dark:text-slate-300 text-[11px] font-medium leading-none shrink-0">
             <ShieldCheck className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400 shrink-0" />

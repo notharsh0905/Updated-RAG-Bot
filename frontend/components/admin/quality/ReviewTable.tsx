@@ -34,7 +34,7 @@ export const ReviewTable: React.FC<ReviewTableProps> = ({
         );
       case 'Assigned':
         return (
-          <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-extrabold bg-amber-100 dark:bg-amber-950/80 text-amber-800 dark:text-amber-300 border border-amber-300 dark:border-amber-800">
+          <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-extrabold bg-amber-100 dark:bg-amber-950/80 text-amber-800 dark:text-[#1E88FF] border border-amber-300 dark:border-blue-950">
             <AlertCircle className="w-3 h-3" /> Assigned
           </span>
         );
@@ -168,7 +168,7 @@ export const ReviewTable: React.FC<ReviewTableProps> = ({
 
             <div className="flex items-center justify-between pt-2 border-t border-slate-100 dark:border-slate-800 gap-2">
               <RootCauseBadge category={item.rootCause} />
-              <span className="font-bold text-[#002B49] dark:text-amber-400 text-xs flex items-center gap-1">
+              <span className="font-bold text-[#002B49] dark:text-[#1E88FF] text-xs flex items-center gap-1">
                 Inspect <ChevronRight className="w-3.5 h-3.5" />
               </span>
             </div>

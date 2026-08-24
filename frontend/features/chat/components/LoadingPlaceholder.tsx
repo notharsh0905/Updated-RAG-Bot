@@ -23,8 +23,8 @@ export const LoadingPlaceholder: React.FC = () => {
 
       {/* Shimmer Thinking Card */}
       <div className="flex-1 max-w-2xl bg-white dark:bg-slate-900/70 border border-slate-200 dark:border-slate-800/90 backdrop-blur-md rounded-2xl p-4.5 space-y-3 shadow-sm">
-        <div className="flex items-center gap-2 text-xs text-[#8B0000] dark:text-amber-400 font-semibold">
-          <Cpu className="w-3.5 h-3.5 animate-pulse text-[#8B0000] dark:text-amber-400" />
+        <div className="flex items-center gap-2 text-xs text-[#1268D4] dark:text-[#1E88FF] font-semibold">
+          <Cpu className="w-3.5 h-3.5 animate-pulse text-[#1268D4] dark:text-[#1E88FF]" />
           <span>Synthesizing official CSJMU records...</span>
         </div>
 

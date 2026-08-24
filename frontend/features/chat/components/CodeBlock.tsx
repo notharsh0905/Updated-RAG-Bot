@@ -21,7 +21,7 @@ export const CodeBlock: React.FC<CodeBlockProps> = ({ language = 'text', code })
       {/* Header Bar */}
       <div className="flex items-center justify-between px-3.5 py-2 bg-slate-900/90 border-b border-slate-800/80 text-[11px] font-mono text-slate-400 select-none">
         <div className="flex items-center gap-1.5 text-slate-300">
-          <Terminal className="w-3.5 h-3.5 text-amber-400" />
+          <Terminal className="w-3.5 h-3.5 text-[#1268D4]" />
           <span className="capitalize font-medium">{language || 'code'}</span>
         </div>
 

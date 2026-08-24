@@ -21,7 +21,7 @@ export const EvidenceHighlight: React.FC<EvidenceHighlightProps> = ({ text }) =>
           return (
             <mark
               key={idx}
-              className="bg-amber-400/15 text-amber-200 border-b border-amber-400/40 px-1 py-0.5 rounded font-medium"
+              className="bg-[#1268D4]/15 text-amber-200 border-b border-[#1E88FF]/40 px-1 py-0.5 rounded font-medium"
             >
               {part}
             </mark>

@@ -26,9 +26,9 @@ export const SourceSection: React.FC<SourceSectionProps> = ({ sources, messageId
       {/* Section Header */}
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-1.5 text-xs font-bold text-slate-800 dark:text-slate-300 font-sans tracking-wide">
-          <BookOpen className="w-3.5 h-3.5 text-[#8B0000] dark:text-amber-400" />
+          <BookOpen className="w-3.5 h-3.5 text-[#1268D4] dark:text-[#1E88FF]" />
           <span>Verified Sources & References</span>
-          <span className="px-1.5 py-0.5 rounded-full bg-slate-200 dark:bg-slate-800 text-[10px] text-[#002B49] dark:text-amber-300 font-mono font-semibold">
+          <span className="px-1.5 py-0.5 rounded-full bg-slate-200 dark:bg-slate-800 text-[10px] text-[#002B49] dark:text-[#1E88FF] font-mono font-semibold">
             {sources.length}
           </span>
         </div>

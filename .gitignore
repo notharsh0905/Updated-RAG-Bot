@@ -77,3 +77,4 @@ data/vector_db/
 # Coverage
 ############################
 coverage/
+/data/uploads/

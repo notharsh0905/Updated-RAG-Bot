@@ -24,8 +24,8 @@ export const RecommendationPanel: React.FC<RecommendationPanelProps> = ({
     <div className="p-4 rounded-2xl bg-gradient-to-r from-blue-900/10 via-slate-900/5 to-amber-900/10 border border-blue-200 dark:border-blue-900/40 space-y-3">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <Sparkles className="w-4 h-4 text-[#8B0000] dark:text-amber-400" />
-          <h4 className="text-xs font-bold text-[#002B49] dark:text-amber-400 font-sans tracking-wide">
+          <Sparkles className="w-4 h-4 text-[#1268D4] dark:text-[#1E88FF]" />
+          <h4 className="text-xs font-bold text-[#002B49] dark:text-[#1E88FF] font-sans tracking-wide">
             AI-Assisted Governance Recommendation
           </h4>
         </div>
@@ -56,9 +56,9 @@ export const RecommendationPanel: React.FC<RecommendationPanelProps> = ({
         {defaultRec.potentialMissingDoc && (
           <div className="p-3 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 space-y-1">
             <span className="text-[10px] font-bold text-slate-500 uppercase tracking-wider block flex items-center gap-1">
-              <FilePlus className="w-3 h-3 text-amber-500" /> Potential Missing Doc:
+              <FilePlus className="w-3 h-3 text-[#1268D4]" /> Potential Missing Doc:
             </span>
-            <p className="text-[#8B0000] dark:text-amber-400 font-mono text-[11px] font-bold">
+            <p className="text-[#1268D4] dark:text-[#1E88FF] font-mono text-[11px] font-bold">
               {defaultRec.potentialMissingDoc}
             </p>
           </div>

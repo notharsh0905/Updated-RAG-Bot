@@ -61,7 +61,7 @@ export const KBTaskPanel: React.FC<KBTaskPanelProps> = ({ tasks, onRefreshTasks 
     switch (status) {
       case 'Open':
         return (
-          <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-amber-100 dark:bg-amber-950 text-amber-800 dark:text-amber-300 border border-amber-300 dark:border-amber-800">
+          <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-amber-100 dark:bg-amber-950 text-amber-800 dark:text-[#1E88FF] border border-amber-300 dark:border-blue-950">
             <Clock className="w-3 h-3" /> Open
           </span>
         );
@@ -97,7 +97,7 @@ export const KBTaskPanel: React.FC<KBTaskPanelProps> = ({ tasks, onRefreshTasks 
           onClick={() => setShowCreateModal(true)}
           className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-[#002B49] hover:bg-[#001D33] text-white text-xs font-bold transition-all shadow-xs shrink-0"
         >
-          <Plus className="w-4 h-4 text-amber-300" />
+          <Plus className="w-4 h-4 text-[#1E88FF]" />
           <span>Create KB Improvement Task</span>
         </button>
       </div>
@@ -126,7 +126,7 @@ export const KBTaskPanel: React.FC<KBTaskPanelProps> = ({ tasks, onRefreshTasks 
 
               <div className="p-3 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-[11px] space-y-1">
                 <div className="text-slate-500 font-semibold">
-                  Required Document: <span className="font-mono text-[#8B0000] dark:text-amber-400 font-bold">{task.requiredDocument}</span>
+                  Required Document: <span className="font-mono text-[#1268D4] dark:text-[#1E88FF] font-bold">{task.requiredDocument}</span>
                 </div>
                 <div className="text-slate-500 font-semibold">
                   Assigned Team: <span className="text-slate-900 dark:text-white font-bold">{task.assignedTeam}</span>
@@ -137,7 +137,7 @@ export const KBTaskPanel: React.FC<KBTaskPanelProps> = ({ tasks, onRefreshTasks 
             <div className="flex items-center justify-between pt-3 border-t border-slate-100 dark:border-slate-800 text-[11px]">
               {task.dueDate ? (
                 <span className="text-slate-500 flex items-center gap-1 font-mono">
-                  <Calendar className="w-3 h-3 text-amber-500" /> Due: {task.dueDate}
+                  <Calendar className="w-3 h-3 text-[#1268D4]" /> Due: {task.dueDate}
                 </span>
               ) : (
                 <span className="text-slate-400 font-mono">No Due Date</span>

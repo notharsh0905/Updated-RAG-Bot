@@ -116,11 +116,10 @@ export const MessageItem: React.FC<MessageItemProps> = ({
       {/* Message Content Enclosure */}
       <div className={`space-y-1.5 flex-1 min-w-0 ${isUser ? 'flex justify-end' : 'max-w-[92%] sm:max-w-3xl'}`}>
         <div
-          className={`rounded-2xl shadow-xs transition-all ${
-            isUser
+          className={`rounded-2xl shadow-xs transition-all ${isUser
               ? 'bg-[#002B49] text-white dark:bg-[#002B49] dark:text-white rounded-tr-xs px-5 py-3.5 sm:px-6 sm:py-4 border border-blue-900/50 max-w-full sm:max-w-2xl'
               : 'bg-slate-50/90 dark:bg-slate-900/80 border border-slate-200/90 dark:border-slate-800/90 text-slate-900 dark:text-slate-100 rounded-tl-xs p-5 sm:p-6 hover:border-slate-300 dark:hover:border-slate-700/80'
-          }`}
+            }`}
         >
           {/* User Message View */}
           {isUser ? (

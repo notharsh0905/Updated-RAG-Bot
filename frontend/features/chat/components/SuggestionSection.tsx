@@ -84,7 +84,7 @@ export const SuggestionSection: React.FC<SuggestionSectionProps> = ({
     >
       {/* Header */}
       <div className="flex items-center gap-1.5 text-[11px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider">
-        <Compass className="w-3.5 h-3.5 text-[#8B0000] dark:text-amber-400" />
+        <Compass className="w-3.5 h-3.5 text-[#1268D4] dark:text-[#1E88FF]" />
         <span>Suggested Follow-Up Questions</span>
       </div>
 

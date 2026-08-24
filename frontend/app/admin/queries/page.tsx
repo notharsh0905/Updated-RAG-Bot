@@ -206,7 +206,7 @@ export default function StudentQueryCenterPage() {
     const score = item.confidence_score || 0.8;
     if (score >= 0.9) return { label: 'Excellent', color: 'text-emerald-600 dark:text-emerald-400', bg: 'bg-emerald-50 dark:bg-emerald-950/40 border-emerald-200 dark:border-emerald-800', icon: CheckCircle2 };
     if (score >= 0.75) return { label: 'Good', color: 'text-blue-600 dark:text-cyan-400', bg: 'bg-blue-50 dark:bg-cyan-950/40 border-blue-200 dark:border-cyan-800', icon: Sparkles };
-    return { label: 'Low Confidence', color: 'text-amber-600 dark:text-amber-400', bg: 'bg-amber-50 dark:bg-amber-950/40 border-amber-200 dark:border-amber-800', icon: AlertTriangle };
+    return { label: 'Low Confidence', color: 'text-amber-600 dark:text-[#1E88FF]', bg: 'bg-blue-50/50 dark:bg-amber-950/40 border-slate-200 dark:border-blue-950', icon: AlertTriangle };
   };
 
   // Presets Count Breakdown
@@ -306,7 +306,7 @@ export default function StudentQueryCenterPage() {
               placeholder="Search traces or ID..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-9 pr-3 py-1.5 bg-slate-50 dark:bg-slate-950 border border-slate-300 dark:border-slate-800 rounded-lg text-xs text-slate-900 dark:text-slate-200 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#002B49] dark:focus:ring-amber-400 transition-colors"
+              className="w-full pl-9 pr-3 py-1.5 bg-slate-50 dark:bg-slate-950 border border-slate-300 dark:border-slate-800 rounded-lg text-xs text-slate-900 dark:text-slate-200 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#002B49] dark:focus:ring-[#1268D4] transition-colors"
             />
           </div>
 
@@ -364,7 +364,7 @@ export default function StudentQueryCenterPage() {
               <div className="space-y-1">
                 {[
                   { id: 'all', label: 'All Traces', count: presetCounts.all, icon: Layers },
-                  { id: 'needsReview', label: 'Needs Review', count: presetCounts.needsReview, icon: AlertTriangle, badgeColor: 'bg-amber-100 text-amber-800 dark:bg-amber-500/20 dark:text-amber-400' },
+                  { id: 'needsReview', label: 'Needs Review', count: presetCounts.needsReview, icon: AlertTriangle, badgeColor: 'bg-amber-100 text-amber-800 dark:bg-blue-50/500/20 dark:text-[#1E88FF]' },
                   { id: 'negative', label: 'Negative Feedback', count: presetCounts.negative, icon: XCircle, badgeColor: 'bg-rose-100 text-rose-800 dark:bg-rose-500/20 dark:text-rose-400' },
                   { id: 'lowConfidence', label: 'Low Confidence (<70%)', count: presetCounts.lowConfidence, icon: ShieldAlert, badgeColor: 'bg-indigo-100 text-indigo-800 dark:bg-indigo-500/20 dark:text-indigo-400' },
                   { id: 'pinned', label: 'Pinned Traces', count: presetCounts.pinned, icon: Pin, badgeColor: 'bg-blue-100 text-blue-800 dark:bg-cyan-500/20 dark:text-cyan-400' },
@@ -516,7 +516,7 @@ export default function StudentQueryCenterPage() {
                     onClick={() => setSelectedQuery(item)}
                     className={`group relative bg-white dark:bg-slate-900 border rounded-2xl p-4 transition-all duration-200 cursor-pointer shadow-xs ${
                       isSelected
-                        ? 'border-[#002B49] dark:border-amber-400 shadow-md bg-blue-50/20 dark:bg-slate-900/90'
+                        ? 'border-[#002B49] dark:border-[#1E88FF] shadow-md bg-blue-50/20 dark:bg-slate-900/90'
                         : 'border-slate-200 dark:border-slate-800 hover:border-blue-300 dark:hover:border-slate-700 hover:shadow-md'
                     }`}
                   >
@@ -535,7 +535,7 @@ export default function StudentQueryCenterPage() {
                         <button
                           onClick={(e) => togglePin(item.query_id, e)}
                           className={`p-1 rounded-md transition-colors ${
-                            isPinned ? 'text-amber-500 bg-amber-50 dark:bg-cyan-500/10' : 'text-slate-400 opacity-0 group-hover:opacity-100 hover:text-slate-600 dark:hover:text-slate-300'
+                            isPinned ? 'text-[#1268D4] bg-blue-50/50 dark:bg-cyan-500/10' : 'text-slate-400 opacity-0 group-hover:opacity-100 hover:text-slate-600 dark:hover:text-slate-300'
                           }`}
                           title={isPinned ? 'Unpin Trace' : 'Pin Trace'}
                         >
@@ -565,7 +565,7 @@ export default function StudentQueryCenterPage() {
                               ? 'text-emerald-700 dark:text-emerald-400'
                               : (item.confidence_score || 0) >= 0.75
                               ? 'text-blue-700 dark:text-cyan-400'
-                              : 'text-amber-700 dark:text-amber-400'
+                              : 'text-amber-700 dark:text-[#1E88FF]'
                           }`}
                         >
                           Conf: {Math.round((item.confidence_score || 0) * 100)}%
@@ -594,7 +594,7 @@ export default function StudentQueryCenterPage() {
                       </div>
 
                       {item.review_status && (
-                        <span className="text-[10px] px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-900 text-amber-700 dark:text-amber-400 border border-amber-300 dark:border-amber-500/30 font-medium">
+                        <span className="text-[10px] px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-900 text-amber-700 dark:text-[#1E88FF] border border-amber-300 dark:border-amber-500/30 font-medium">
                           {item.review_status}
                         </span>
                       )}
@@ -663,7 +663,7 @@ export default function StudentQueryCenterPage() {
                   onClick={() => setActiveTab(tab.id as any)}
                   className={`px-3 py-2.5 transition-colors whitespace-nowrap border-b-2 ${
                     activeTab === tab.id
-                      ? 'border-[#002B49] text-[#002B49] dark:border-amber-400 dark:text-amber-400 font-semibold bg-blue-50/50 dark:bg-amber-400/5'
+                      ? 'border-[#002B49] text-[#002B49] dark:border-[#1E88FF] dark:text-[#1E88FF] font-semibold bg-blue-50/50 dark:bg-[#1268D4]/5'
                       : 'border-transparent text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200'
                   }`}
                 >
@@ -767,7 +767,7 @@ export default function StudentQueryCenterPage() {
               {/* OTHER TABS (Prompt, Generation, Documents, AI Explain, Governance) */}
               {(activeTab === 'prompt' || activeTab === 'generation' || activeTab === 'documents' || activeTab === 'explanation' || activeTab === 'governance') && (
                 <div className="bg-white dark:bg-slate-900 p-4 rounded-2xl border border-slate-200 dark:border-slate-800 space-y-3 shadow-xs text-xs">
-                  <div className="flex items-center gap-2 text-[#002B49] dark:text-amber-400 font-bold">
+                  <div className="flex items-center gap-2 text-[#002B49] dark:text-[#1E88FF] font-bold">
                     <Activity className="w-4 h-4" />
                     <span className="capitalize">{activeTab} Diagnostics Payload</span>
                   </div>

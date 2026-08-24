@@ -35,7 +35,7 @@ export const ConversationItem: React.FC<ConversationItemProps> = ({
       <div className="flex items-center gap-2 min-w-0 pr-1">
         <MessageSquare
           className={`w-3.5 h-3.5 shrink-0 ${
-            isActive ? 'text-[#8B0000] dark:text-amber-400' : 'text-slate-400 group-hover:text-slate-600 dark:group-hover:text-slate-300'
+            isActive ? 'text-[#1268D4] dark:text-[#1E88FF]' : 'text-slate-400 group-hover:text-slate-600 dark:group-hover:text-slate-300'
           }`}
         />
         <span className="truncate text-xs font-sans leading-tight">
@@ -46,7 +46,7 @@ export const ConversationItem: React.FC<ConversationItemProps> = ({
       <div className="flex items-center gap-1 shrink-0">
         {/* Pinned Badge */}
         {conversation.isPinned && (
-          <Pin className="w-3 h-3 text-[#8B0000] dark:text-amber-400 rotate-45 shrink-0" />
+          <Pin className="w-3 h-3 text-[#1268D4] dark:text-[#1E88FF] rotate-45 shrink-0" />
         )}
 
         {/* Action Trigger Menu Button */}
@@ -83,7 +83,7 @@ export const ConversationItem: React.FC<ConversationItemProps> = ({
               }}
               className="flex items-center gap-2 w-full px-2.5 py-1.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-left transition-colors font-medium"
             >
-              <Pin className="w-3.5 h-3.5 text-[#8B0000] dark:text-amber-400" />
+              <Pin className="w-3.5 h-3.5 text-[#1268D4] dark:text-[#1E88FF]" />
               <span>{conversation.isPinned ? 'Unpin' : 'Pin'}</span>
             </button>
 

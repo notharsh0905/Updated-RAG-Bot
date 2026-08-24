@@ -83,7 +83,7 @@ export default function HelpPage() {
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
           placeholder="Search FAQs (e.g. 'hostel curfew', 'fee reimbursement', 'spot round')..."
-          className="w-full h-12 pl-11 pr-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 text-xs sm:text-sm text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-[#002B49] dark:focus:ring-amber-400 shadow-sm"
+          className="w-full h-12 pl-11 pr-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 text-xs sm:text-sm text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-[#002B49] dark:focus:ring-[#1268D4] shadow-sm"
         />
       </div>
 
@@ -101,7 +101,7 @@ export default function HelpPage() {
                 className="w-full p-4 text-left flex items-center justify-between gap-4 font-semibold text-xs sm:text-sm text-slate-900 dark:text-white hover:bg-slate-50 dark:hover:bg-slate-800/60 transition-colors"
               >
                 <div className="flex items-center gap-2.5">
-                  <HelpCircle className="w-4 h-4 text-[#8B0000] dark:text-amber-400 shrink-0" />
+                  <HelpCircle className="w-4 h-4 text-[#1268D4] dark:text-[#1E88FF] shrink-0" />
                   <span>{faq.question}</span>
                 </div>
                 <ChevronDown
@@ -120,7 +120,7 @@ export default function HelpPage() {
                       onClick={() => handleAskAI(faq.aiQuery)}
                       className="px-3 py-1 rounded bg-[#002B49] hover:bg-[#001D33] text-white font-semibold text-xs inline-flex items-center gap-1.5 transition-colors shadow-sm"
                     >
-                      <Bot className="w-3.5 h-3.5 text-amber-300" />
+                      <Bot className="w-3.5 h-3.5 text-[#1E88FF]" />
                       <span>Ask AI for Details</span>
                       <ArrowRight className="w-3 h-3" />
                     </button>

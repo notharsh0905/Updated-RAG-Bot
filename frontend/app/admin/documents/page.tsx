@@ -29,7 +29,7 @@ export default function AdminDocumentsPage() {
             className="p-5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm space-y-3"
           >
             <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 pb-2.5">
-              <div className="flex items-center gap-2 text-xs font-bold text-[#002B49] dark:text-amber-400">
+              <div className="flex items-center gap-2 text-xs font-bold text-[#002B49] dark:text-[#1E88FF]">
                 <Database className="w-4 h-4" />
                 <span>Query Document Match Log ({msg.timestamp}):</span>
               </div>

@@ -127,7 +127,7 @@ export default function ContactPage() {
 
             <div className="space-y-3.5 text-xs text-slate-700 dark:text-slate-300">
               <div className="flex items-start gap-3">
-                <MapPin className="w-4 h-4 text-[#8B0000] dark:text-amber-400 shrink-0 mt-0.5" />
+                <MapPin className="w-4 h-4 text-[#1268D4] dark:text-[#1E88FF] shrink-0 mt-0.5" />
                 <div>
                   <strong className="block text-slate-900 dark:text-white">Campus Location:</strong>
                   <span>CSJMU Campus, Kalyanpur, Kanpur, Uttar Pradesh - 208024</span>
@@ -135,7 +135,7 @@ export default function ContactPage() {
               </div>
 
               <div className="flex items-start gap-3">
-                <Mail className="w-4 h-4 text-[#8B0000] dark:text-amber-400 shrink-0 mt-0.5" />
+                <Mail className="w-4 h-4 text-[#1268D4] dark:text-[#1E88FF] shrink-0 mt-0.5" />
                 <div>
                   <strong className="block text-slate-900 dark:text-white">Admissions Inquiry Email:</strong>
                   <span>admission@csjmu.ac.in</span>
@@ -143,7 +143,7 @@ export default function ContactPage() {
               </div>
 
               <div className="flex items-start gap-3">
-                <Phone className="w-4 h-4 text-[#8B0000] dark:text-amber-400 shrink-0 mt-0.5" />
+                <Phone className="w-4 h-4 text-[#1268D4] dark:text-[#1E88FF] shrink-0 mt-0.5" />
                 <div>
                   <strong className="block text-slate-900 dark:text-white">University Helpline:</strong>
                   <span>+91 0512-2580044 / 2581261</span>
@@ -151,7 +151,7 @@ export default function ContactPage() {
               </div>
 
               <div className="flex items-start gap-3">
-                <Clock className="w-4 h-4 text-[#8B0000] dark:text-amber-400 shrink-0 mt-0.5" />
+                <Clock className="w-4 h-4 text-[#1268D4] dark:text-[#1E88FF] shrink-0 mt-0.5" />
                 <div>
                   <strong className="block text-slate-900 dark:text-white">Office Hours:</strong>
                   <span>Monday - Saturday: 10:00 AM to 5:00 PM</span>
@@ -161,7 +161,7 @@ export default function ContactPage() {
           </div>
 
           <div className="p-5 rounded-xl bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 space-y-2 text-xs">
-            <div className="flex items-center gap-2 font-bold text-[#002B49] dark:text-amber-400">
+            <div className="flex items-center gap-2 font-bold text-[#002B49] dark:text-[#1E88FF]">
               <ShieldCheck className="w-4 h-4" />
               <span>Official Verification Note</span>
             </div>
@@ -205,7 +205,7 @@ export default function ContactPage() {
                     <span className="text-[11px] uppercase tracking-wider text-slate-500 dark:text-slate-400 font-semibold block">
                       Reference ID:
                     </span>
-                    <span className="text-base font-mono font-bold text-[#002B49] dark:text-amber-400">
+                    <span className="text-base font-mono font-bold text-[#002B49] dark:text-[#1E88FF]">
                       {submittedRefId}
                     </span>
                   </div>
@@ -236,7 +236,7 @@ export default function ContactPage() {
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       placeholder="e.g. Rahul Sharma"
-                      className="w-full h-10 px-3 rounded-lg border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-950 text-xs text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-[#002B49] dark:focus:ring-amber-400"
+                      className="w-full h-10 px-3 rounded-lg border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-950 text-xs text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-[#002B49] dark:focus:ring-[#1268D4]"
                     />
                   </div>
 
@@ -250,7 +250,7 @@ export default function ContactPage() {
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       placeholder="e.g. student@gmail.com"
-                      className="w-full h-10 px-3 rounded-lg border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-950 text-xs text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-[#002B49] dark:focus:ring-amber-400"
+                      className="w-full h-10 px-3 rounded-lg border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-950 text-xs text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-[#002B49] dark:focus:ring-[#1268D4]"
                     />
                   </div>
                 </div>
@@ -263,7 +263,7 @@ export default function ContactPage() {
                     required
                     value={formData.category}
                     onChange={(e) => setFormData({ ...formData, category: e.target.value })}
-                    className="w-full h-10 px-3 rounded-lg border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-950 text-xs text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-[#002B49] dark:focus:ring-amber-400"
+                    className="w-full h-10 px-3 rounded-lg border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-950 text-xs text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-[#002B49] dark:focus:ring-[#1268D4]"
                   >
                     <option value="B.Tech Admissions 2026-27">B.Tech Admissions 2026-27</option>
                     <option value="UP Post-Matric Fee Reimbursement">UP Post-Matric Fee Reimbursement</option>
@@ -288,7 +288,7 @@ export default function ContactPage() {
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     placeholder="Describe your inquiry clearly (at least 20 characters)..."
-                    className="w-full p-3 rounded-lg border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-950 text-xs text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-[#002B49] dark:focus:ring-amber-400"
+                    className="w-full p-3 rounded-lg border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-950 text-xs text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-[#002B49] dark:focus:ring-[#1268D4]"
                   />
                 </div>
 

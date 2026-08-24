@@ -38,7 +38,7 @@ export const CitationTooltip: React.FC<CitationTooltipProps> = ({
         {/* Header */}
         <div className="flex items-start justify-between gap-1.5 border-b border-slate-800 pb-2">
           <div className="flex items-center gap-1.5 min-w-0">
-            <span className="flex items-center justify-center w-4 h-4 rounded bg-[#002B49] text-amber-400 font-mono text-[9px] font-bold shrink-0 border border-amber-400/40">
+            <span className="flex items-center justify-center w-4 h-4 rounded bg-[#002B49] text-[#1268D4] font-mono text-[9px] font-bold shrink-0 border border-[#1E88FF]/40">
               {index}
             </span>
             <span className="text-xs font-semibold text-white truncate font-sans">
@@ -63,7 +63,7 @@ export const CitationTooltip: React.FC<CitationTooltipProps> = ({
           <span className="flex items-center gap-1 text-emerald-400">
             <ShieldCheck className="w-3 h-3" /> CSJMU Verified
           </span>
-          <span className="text-amber-400/90 flex items-center gap-0.5">
+          <span className="text-[#1268D4]/90 flex items-center gap-0.5">
             Click to view <ArrowDown className="w-2.5 h-2.5" />
           </span>
         </div>

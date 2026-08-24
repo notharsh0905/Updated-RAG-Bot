@@ -52,7 +52,7 @@ export default function AdminProfilePage() {
 
             <div className="flex items-center justify-between p-3 rounded-lg bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800">
               <div className="flex items-center gap-2">
-                <Lock className="w-4 h-4 text-[#002B49] dark:text-amber-400" />
+                <Lock className="w-4 h-4 text-[#002B49] dark:text-[#1E88FF]" />
                 <span className="font-medium text-slate-800 dark:text-slate-200">Session Encryption</span>
               </div>
               <span className="font-mono text-slate-600 dark:text-slate-400">TLS 1.3 / AES-256</span>
@@ -60,7 +60,7 @@ export default function AdminProfilePage() {
 
             <div className="flex items-center justify-between p-3 rounded-lg bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800">
               <div className="flex items-center gap-2">
-                <Key className="w-4 h-4 text-[#8B0000] dark:text-amber-400" />
+                <Key className="w-4 h-4 text-[#1268D4] dark:text-[#1E88FF]" />
                 <span className="font-medium text-slate-800 dark:text-slate-200">Passcode Key Status</span>
               </div>
               <span className="font-semibold text-slate-700 dark:text-slate-300">Authorized Key</span>

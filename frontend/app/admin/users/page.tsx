@@ -25,7 +25,7 @@ export default function AdminUsersPage() {
           </p>
         </div>
         <button className="px-3.5 py-2 rounded-lg bg-[#002B49] hover:bg-[#001D33] text-white font-semibold text-xs flex items-center gap-1.5 shadow-sm transition-colors">
-          <UserPlus className="w-4 h-4 text-amber-300" />
+          <UserPlus className="w-4 h-4 text-[#1E88FF]" />
           <span>Add Administrator</span>
         </button>
       </div>
@@ -63,7 +63,7 @@ export default function AdminUsersPage() {
                     </span>
                   </td>
                   <td className="py-3 px-4 text-right font-medium">
-                    <button className="text-[#002B49] dark:text-amber-400 hover:underline">Edit Privileges</button>
+                    <button className="text-[#002B49] dark:text-[#1E88FF] hover:underline">Edit Privileges</button>
                   </td>
                 </tr>
               ))}

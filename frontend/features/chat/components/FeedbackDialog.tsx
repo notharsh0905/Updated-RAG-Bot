@@ -151,7 +151,7 @@ export const FeedbackDialog: React.FC<FeedbackDialogProps> = ({
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="flex items-center gap-1.5 px-4 py-1.5 bg-[#8B0000] hover:bg-red-900 text-white rounded-xl text-xs font-semibold transition-all shadow-sm active:scale-95 disabled:opacity-50"
+                className="flex items-center gap-1.5 px-4 py-1.5 bg-[#1268D4] hover:bg-red-900 text-white rounded-xl text-xs font-semibold transition-all shadow-sm active:scale-95 disabled:opacity-50"
               >
                 {isSubmitting ? (
                   <Loader2 className="w-3.5 h-3.5 animate-spin" />

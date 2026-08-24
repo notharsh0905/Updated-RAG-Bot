@@ -96,10 +96,10 @@ export const MessageActions: React.FC<MessageActionsProps> = ({
             type="button"
             disabled={disabled}
             onClick={onRegenerate}
-            className="p-1.5 hover:text-slate-900 dark:hover:text-amber-300 hover:bg-slate-200 dark:hover:bg-slate-800/90 rounded-md transition-colors text-slate-500 dark:text-slate-400 flex items-center gap-1 text-[11px] disabled:opacity-40"
+            className="p-1.5 hover:text-slate-900 dark:hover:text-[#1E88FF] hover:bg-slate-200 dark:hover:bg-slate-800/90 rounded-md transition-colors text-slate-500 dark:text-slate-400 flex items-center gap-1 text-[11px] disabled:opacity-40"
             title="Regenerate last response"
           >
-            <RotateCcw className="w-3.5 h-3.5 text-[#8B0000] dark:text-amber-400" />
+            <RotateCcw className="w-3.5 h-3.5 text-[#1268D4] dark:text-[#1E88FF]" />
             <span className="hidden sm:inline font-medium">Regenerate</span>
           </button>
         )}

@@ -30,7 +30,7 @@ export const EmptyState: React.FC<EmptyStateProps> = ({ onSelectPrompt }) => {
       category: 'Scholarships & Aid',
       title: 'UP Fee Reimbursement & Waivers',
       query: 'What scholarships, UP post-matric fee reimbursement rules, and tuition fee waivers are available for UIET students?',
-      color: 'bg-amber-50 dark:bg-amber-950/40 text-amber-800 dark:text-amber-300 border-amber-200 dark:border-amber-800',
+      color: 'bg-blue-50/50 dark:bg-amber-950/40 text-amber-800 dark:text-[#1E88FF] border-slate-200 dark:border-blue-950',
     },
     {
       icon: Briefcase,
@@ -99,7 +99,7 @@ export const EmptyState: React.FC<EmptyStateProps> = ({ onSelectPrompt }) => {
                   <Icon className="w-3.5 h-3.5 shrink-0" />
                   <span>{prompt.category}</span>
                 </span>
-                <ArrowUpRight className="w-4 h-4 text-slate-400 group-hover:text-[#002B49] dark:group-hover:text-amber-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
+                <ArrowUpRight className="w-4 h-4 text-slate-400 group-hover:text-[#002B49] dark:group-hover:text-[#1E88FF] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
               </div>
 
               <div>

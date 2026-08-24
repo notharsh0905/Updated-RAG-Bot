@@ -77,11 +77,10 @@ export const Navbar: React.FC = () => {
           {/* Admin Dashboard / Login Button */}
           <Link
             href={isAdminAuthenticated ? '/admin/dashboard' : '/admin/login'}
-            className={`p-2 sm:p-2.5 rounded-lg transition-colors border shrink-0 ${
-              isAdminAuthenticated
+            className={`p-2 sm:p-2.5 rounded-lg transition-colors border shrink-0 ${isAdminAuthenticated
                 ? 'text-emerald-700 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/40 border-emerald-300 dark:border-emerald-800 font-semibold text-xs flex items-center gap-1.5'
                 : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 border-slate-200 dark:border-slate-700'
-            }`}
+              }`}
             title={isAdminAuthenticated ? 'Admin Dashboard' : 'Admin Login'}
           >
             <Lock className="w-4 h-4" />
@@ -99,13 +98,12 @@ export const Navbar: React.FC = () => {
               <Link
                 key={item.href}
                 href={item.href}
-                className={`py-2.5 px-4 transition-colors whitespace-nowrap border-b-2 font-medium ${
-                  isActive
+                className={`py-2.5 px-4 transition-colors whitespace-nowrap border-b-2 font-medium ${isActive
                     ? 'bg-[#8B0000] border-amber-400 text-white font-bold'
                     : item.highlight
-                    ? 'bg-amber-400/10 text-amber-300 border-transparent hover:bg-amber-400/20 font-bold'
-                    : 'hover:bg-[#00385F] border-transparent text-slate-200 hover:text-white'
-                }`}
+                      ? 'bg-amber-400/10 text-amber-300 border-transparent hover:bg-amber-400/20 font-bold'
+                      : 'hover:bg-[#00385F] border-transparent text-slate-200 hover:text-white'
+                  }`}
               >
                 {item.label}
               </Link>

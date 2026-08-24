@@ -57,7 +57,7 @@ export const RenameDialog: React.FC<RenameDialogProps> = ({
         >
           <div className="flex items-center justify-between border-b border-slate-200 dark:border-slate-800 pb-2.5">
             <div className="flex items-center gap-2">
-              <Edit3 className="w-4 h-4 text-[#8B0000] dark:text-amber-400" />
+              <Edit3 className="w-4 h-4 text-[#1268D4] dark:text-[#1E88FF]" />
               <h3 className="text-sm font-bold text-slate-900 dark:text-white font-sans">Rename Conversation</h3>
             </div>
             <button
@@ -75,7 +75,7 @@ export const RenameDialog: React.FC<RenameDialogProps> = ({
               onChange={(e) => setTitle(e.target.value)}
               autoFocus
               placeholder="Enter conversation title..."
-              className="w-full bg-slate-50 dark:bg-slate-900 border border-slate-300 dark:border-slate-800 rounded-xl px-3 py-2 text-xs text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:outline-none focus:ring-1 focus:ring-[#002B49] dark:focus:ring-amber-400 font-sans"
+              className="w-full bg-slate-50 dark:bg-slate-900 border border-slate-300 dark:border-slate-800 rounded-xl px-3 py-2 text-xs text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:outline-none focus:ring-1 focus:ring-[#002B49] dark:focus:ring-[#1268D4] font-sans"
             />
 
             <div className="flex items-center justify-end gap-2 pt-2 border-t border-slate-200 dark:border-slate-900">

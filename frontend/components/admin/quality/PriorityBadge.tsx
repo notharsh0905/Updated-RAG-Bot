@@ -19,7 +19,7 @@ export const PriorityBadge: React.FC<PriorityBadgeProps> = ({ priority, size = '
         };
       case 'High':
         return {
-          color: 'bg-amber-100 dark:bg-amber-950/80 text-amber-800 dark:text-amber-300 border-amber-300 dark:border-amber-800',
+          color: 'bg-amber-100 dark:bg-amber-950/80 text-amber-800 dark:text-[#1E88FF] border-amber-300 dark:border-blue-950',
           icon: AlertTriangle,
         };
       case 'Medium':

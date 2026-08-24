@@ -73,13 +73,16 @@ blockquote p {
   width: 6px;
   height: 6px;
 }
+
 ::-webkit-scrollbar-track {
   background: transparent;
 }
+
 ::-webkit-scrollbar-thumb {
   background: #cbd5e1;
   border-radius: 9999px;
 }
+
 .dark ::-webkit-scrollbar-thumb {
   background: #334155;
 }
@@ -89,6 +92,7 @@ blockquote p {
   outline: 2px solid #002B49;
   outline-offset: 2px;
 }
+
 .dark :focus-visible {
   outline: 2px solid #D4AF37;
   outline-offset: 2px;

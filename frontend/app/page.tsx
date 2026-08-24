@@ -72,7 +72,7 @@ export default function HomePage() {
 
   return (
     <div className="flex flex-col min-h-[calc(100vh-8rem)] w-full max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8 py-4 sm:py-6 space-y-6 sm:space-y-8 min-w-0 overflow-hidden">
-      
+
       {/* Official Ticker Announcement Bar */}
       <div className="flex flex-col sm:flex-row items-center justify-between gap-3 p-3.5 rounded-xl bg-[#002B49] text-white shadow-sm border border-slate-700 w-full max-w-full overflow-hidden">
         <div className="flex items-center gap-2 text-xs font-semibold min-w-0 w-full sm:w-auto">
@@ -139,7 +139,7 @@ export default function HomePage() {
 
       {/* Main 2-Column Section */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 w-full max-w-full min-w-0">
-        
+
         {/* Left Column: Useful Links Directory */}
         <div className="lg:col-span-5 space-y-4 min-w-0">
           <div className="rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-4 sm:p-5 shadow-sm space-y-3 min-w-0 overflow-hidden">

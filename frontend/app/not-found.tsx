@@ -19,7 +19,7 @@ export default function NotFound() {
         </div>
 
         <div className="space-y-2">
-          <span className="px-3 py-1 rounded-full bg-[#8B0000]/10 text-[#8B0000] dark:text-amber-400 text-xs font-bold uppercase tracking-wider">
+          <span className="px-3 py-1 rounded-full bg-[#1268D4]/10 text-[#1268D4] dark:text-[#1E88FF] text-xs font-bold uppercase tracking-wider">
             ERROR 404
           </span>
           <h1 className="text-2xl font-serif font-bold text-[#002B49] dark:text-white tracking-tight">
@@ -40,9 +40,9 @@ export default function NotFound() {
           </Link>
           <Link
             href="/chat"
-            className="w-full py-2.5 px-4 rounded-lg bg-[#8B0000] hover:bg-red-900 text-white font-semibold text-xs flex items-center justify-center gap-1.5 shadow-sm transition-colors"
+            className="w-full py-2.5 px-4 rounded-lg bg-[#1268D4] hover:bg-red-900 text-white font-semibold text-xs flex items-center justify-center gap-1.5 shadow-sm transition-colors"
           >
-            <Bot className="w-4 h-4 text-amber-300" />
+            <Bot className="w-4 h-4 text-[#1E88FF]" />
             <span>Ask AI Assistant</span>
           </Link>
         </div>

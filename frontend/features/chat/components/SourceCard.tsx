@@ -40,7 +40,7 @@ export const SourceCard: React.FC<SourceCardProps> = ({
   const getSourceIcon = (docType: string, sourceName: string) => {
     const combined = `${docType} ${sourceName}`.toLowerCase();
     if (combined.includes('admission') || combined.includes('eligibility') || combined.includes('board')) {
-      return <GraduationCap className="w-3.5 h-3.5 text-amber-500 dark:text-amber-400 shrink-0" />;
+      return <GraduationCap className="w-3.5 h-3.5 text-[#1268D4] dark:text-[#1E88FF] shrink-0" />;
     }
     if (combined.includes('scholarship') || combined.includes('fee') || combined.includes('scheme')) {
       return <DollarSign className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400 shrink-0" />;
@@ -55,7 +55,7 @@ export const SourceCard: React.FC<SourceCardProps> = ({
       return <UserCheck className="w-3.5 h-3.5 text-indigo-600 dark:text-indigo-400 shrink-0" />;
     }
     if (combined.includes('innovation') || combined.includes('startup') || combined.includes('pez')) {
-      return <Sparkles className="w-3.5 h-3.5 text-[#8B0000] dark:text-amber-300 shrink-0" />;
+      return <Sparkles className="w-3.5 h-3.5 text-[#1268D4] dark:text-[#1E88FF] shrink-0" />;
     }
     return <FileText className="w-3.5 h-3.5 text-slate-500 dark:text-slate-400 shrink-0" />;
   };
@@ -93,7 +93,7 @@ export const SourceCard: React.FC<SourceCardProps> = ({
       onClick={onSelect}
       className={`rounded-xl border p-3 transition-all duration-200 shadow-xs flex flex-col justify-between space-y-2.5 group cursor-pointer ${
         isSelected
-          ? 'bg-slate-100 dark:bg-slate-900/95 border-[#002B49] dark:border-amber-400/80 ring-2 ring-[#002B49]/20 dark:ring-amber-400/40 scale-[1.01]'
+          ? 'bg-slate-100 dark:bg-slate-900/95 border-[#002B49] dark:border-[#1E88FF]/80 ring-2 ring-[#002B49]/20 dark:ring-amber-400/40 scale-[1.01]'
           : isDimmed
           ? 'bg-slate-50 dark:bg-slate-950/70 border-slate-200 dark:border-slate-800/70 opacity-60 hover:opacity-100'
           : 'bg-white dark:bg-slate-950/90 border-slate-200 dark:border-slate-800/90 hover:border-slate-300 dark:hover:border-slate-700/80'
@@ -102,7 +102,7 @@ export const SourceCard: React.FC<SourceCardProps> = ({
       {/* Top Header Row */}
       <div className="flex items-start justify-between gap-2">
         <div className="flex items-center gap-2 min-w-0">
-          <span className="flex items-center justify-center w-5 h-5 rounded-md bg-[#002B49] text-amber-300 font-mono text-[10px] font-bold shrink-0">
+          <span className="flex items-center justify-center w-5 h-5 rounded-md bg-[#002B49] text-[#1E88FF] font-mono text-[10px] font-bold shrink-0">
             {index + 1}
           </span>
           <div className="flex items-center gap-1.5 min-w-0">
@@ -151,10 +151,10 @@ export const SourceCard: React.FC<SourceCardProps> = ({
         <button
           type="button"
           onClick={handleScrollToAnswerCitation}
-          className="flex items-center gap-1 text-slate-600 dark:text-slate-400 hover:text-[#002B49] dark:hover:text-amber-300 transition-colors"
+          className="flex items-center gap-1 text-slate-600 dark:text-slate-400 hover:text-[#002B49] dark:hover:text-[#1E88FF] transition-colors"
           title="Scroll back up to citation in answer"
         >
-          <ArrowUp className="w-3 h-3 text-[#8B0000] dark:text-amber-400" />
+          <ArrowUp className="w-3 h-3 text-[#1268D4] dark:text-[#1E88FF]" />
           <span>Referenced in Answer</span>
         </button>
 
@@ -164,7 +164,7 @@ export const SourceCard: React.FC<SourceCardProps> = ({
             e.stopPropagation();
             setIsExpanded(!isExpanded);
           }}
-          className="flex items-center gap-1 text-[#002B49] dark:text-amber-400 hover:underline font-semibold text-[11px]"
+          className="flex items-center gap-1 text-[#002B49] dark:text-[#1E88FF] hover:underline font-semibold text-[11px]"
         >
           <span>{isExpanded ? 'Collapse excerpt' : 'View excerpt'}</span>
           <ChevronDown

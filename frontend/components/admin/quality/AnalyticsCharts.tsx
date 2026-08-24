@@ -19,7 +19,7 @@ export const AnalyticsCharts: React.FC<AnalyticsChartsProps> = ({ analytics }) =
         <div className="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-xs space-y-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <PieChart className="w-4 h-4 text-[#8B0000] dark:text-amber-400" />
+              <PieChart className="w-4 h-4 text-[#1268D4] dark:text-[#1E88FF]" />
               <h3 className="text-sm font-bold text-slate-900 dark:text-white">
                 Root Cause Failure Categories
               </h3>
@@ -39,7 +39,7 @@ export const AnalyticsCharts: React.FC<AnalyticsChartsProps> = ({ analytics }) =
                   </div>
                   <div className="h-2.5 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
                     <div
-                      className="h-full bg-gradient-to-r from-[#002B49] to-[#8B0000] dark:from-blue-500 dark:to-amber-400 rounded-full transition-all duration-500"
+                      className="h-full bg-gradient-to-r from-[#002B49] to-[#1268D4] dark:from-blue-500 dark:to-amber-400 rounded-full transition-all duration-500"
                       style={{ width: `${pct}%` }}
                     />
                   </div>
@@ -73,7 +73,7 @@ export const AnalyticsCharts: React.FC<AnalyticsChartsProps> = ({ analytics }) =
                     {pt.count}
                   </span>
                   <div
-                    className="w-full bg-[#002B49] dark:bg-amber-400 rounded-t-lg group-hover:bg-[#8B0000] dark:group-hover:bg-amber-300 transition-all duration-300 shadow-xs"
+                    className="w-full bg-[#002B49] dark:bg-[#1268D4] rounded-t-lg group-hover:bg-[#1268D4] dark:group-hover:bg-[#1E88FF] transition-all duration-300 shadow-xs"
                     style={{ height: `${heightPct}%` }}
                   />
                   <span className="text-[10px] font-semibold text-slate-500 truncate">{pt.date}</span>
@@ -122,9 +122,9 @@ export const AnalyticsCharts: React.FC<AnalyticsChartsProps> = ({ analytics }) =
           </div>
 
           <div className="grid grid-cols-3 gap-3 text-center">
-            <div className="p-4 rounded-xl bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-900 space-y-1">
-              <span className="text-[10px] font-bold text-amber-800 dark:text-amber-300 uppercase">Open</span>
-              <div className="text-xl font-extrabold text-amber-700 dark:text-amber-300">
+            <div className="p-4 rounded-xl bg-blue-50/50 dark:bg-amber-950/40 border border-slate-200 dark:border-amber-900 space-y-1">
+              <span className="text-[10px] font-bold text-amber-800 dark:text-[#1E88FF] uppercase">Open</span>
+              <div className="text-xl font-extrabold text-amber-700 dark:text-[#1E88FF]">
                 {analytics.kbTasksProgress.open}
               </div>
             </div>

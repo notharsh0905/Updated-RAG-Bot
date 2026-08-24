@@ -17,7 +17,7 @@ export const QuickActionBar: React.FC<QuickActionBarProps> = ({
       icon: Lightbulb,
       label: 'Explain Simply',
       query: 'Could you please explain the above response in simple bullet points?',
-      color: 'text-amber-500 dark:text-amber-400',
+      color: 'text-[#1268D4] dark:text-[#1E88FF]',
     },
     {
       icon: FileText,

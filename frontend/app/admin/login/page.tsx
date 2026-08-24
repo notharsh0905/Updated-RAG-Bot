@@ -80,7 +80,7 @@ export default function AdminLoginPage() {
                   setError('');
                 }}
                 placeholder="Enter admin passcode..."
-                className="w-full h-11 pl-10 pr-4 rounded-lg border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-950 text-xs text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-[#002B49] dark:focus:ring-amber-400 font-mono"
+                className="w-full h-11 pl-10 pr-4 rounded-lg border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-950 text-xs text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-[#002B49] dark:focus:ring-[#1268D4] font-mono"
               />
               <KeyRound className="w-4 h-4 text-slate-400 absolute left-3.5 top-3.5" />
             </div>

@@ -115,8 +115,8 @@ export default function AdminStudentInquiriesPage() {
     switch (status) {
       case 'Pending':
         return (
-          <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-amber-100 dark:bg-amber-950/60 text-amber-800 dark:text-amber-300 border border-amber-300 dark:border-amber-800">
-            <Clock className="w-3 h-3 text-amber-600 dark:text-amber-400" />
+          <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-amber-100 dark:bg-blue-950/60 text-amber-800 dark:text-[#1E88FF] border border-amber-300 dark:border-blue-950">
+            <Clock className="w-3 h-3 text-amber-600 dark:text-[#1E88FF]" />
             Pending
           </span>
         );
@@ -194,14 +194,14 @@ export default function AdminStudentInquiriesPage() {
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
         <div className="p-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-xs flex items-center justify-between">
           <div>
-            <span className="text-[11px] font-semibold text-amber-700 dark:text-amber-400 uppercase tracking-wider block">
+            <span className="text-[11px] font-semibold text-amber-700 dark:text-[#1E88FF] uppercase tracking-wider block">
               Pending
             </span>
             <span className="text-2xl font-bold text-slate-900 dark:text-white mt-1 block">
               {counts.Pending}
             </span>
           </div>
-          <div className="w-10 h-10 rounded-lg bg-amber-50 dark:bg-amber-950/50 text-amber-600 dark:text-amber-400 flex items-center justify-center border border-amber-200 dark:border-amber-900">
+          <div className="w-10 h-10 rounded-lg bg-blue-50/50 dark:bg-amber-950/50 text-amber-600 dark:text-[#1E88FF] flex items-center justify-center border border-slate-200 dark:border-amber-900">
             <Clock className="w-5 h-5" />
           </div>
         </div>
@@ -260,7 +260,7 @@ export default function AdminStudentInquiriesPage() {
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               placeholder="Search Reference ID, Name, Email, Category..."
-              className="w-full h-10 pl-9 pr-3 rounded-lg border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-950 text-xs text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-[#002B49] dark:focus:ring-amber-400"
+              className="w-full h-10 pl-9 pr-3 rounded-lg border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-950 text-xs text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-[#002B49] dark:focus:ring-[#1268D4]"
             />
           </div>
 
@@ -269,7 +269,7 @@ export default function AdminStudentInquiriesPage() {
             <select
               value={statusFilter}
               onChange={(e) => setStatusFilter(e.target.value)}
-              className="w-full h-10 px-3 rounded-lg border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-950 text-xs text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-[#002B49] dark:focus:ring-amber-400"
+              className="w-full h-10 px-3 rounded-lg border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-950 text-xs text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-[#002B49] dark:focus:ring-[#1268D4]"
             >
               <option value="All">All Statuses</option>
               <option value="Pending">Pending</option>
@@ -284,7 +284,7 @@ export default function AdminStudentInquiriesPage() {
             <select
               value={categoryFilter}
               onChange={(e) => setCategoryFilter(e.target.value)}
-              className="w-full h-10 px-3 rounded-lg border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-950 text-xs text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-[#002B49] dark:focus:ring-amber-400"
+              className="w-full h-10 px-3 rounded-lg border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-950 text-xs text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-[#002B49] dark:focus:ring-[#1268D4]"
             >
               <option value="All">All Categories</option>
               <option value="B.Tech Admissions 2026-27">Admissions</option>
@@ -300,7 +300,7 @@ export default function AdminStudentInquiriesPage() {
             <select
               value={sortOrder}
               onChange={(e) => setSortOrder(e.target.value)}
-              className="w-full h-10 px-3 rounded-lg border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-950 text-xs text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-[#002B49] dark:focus:ring-amber-400"
+              className="w-full h-10 px-3 rounded-lg border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-950 text-xs text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-[#002B49] dark:focus:ring-[#1268D4]"
             >
               <option value="newest">Newest First</option>
               <option value="oldest">Oldest First</option>
@@ -313,7 +313,7 @@ export default function AdminStudentInquiriesPage() {
       <div className="p-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-xs overflow-x-auto">
         {isLoading ? (
           <div className="py-12 text-center space-y-3">
-            <Loader2 className="w-8 h-8 text-[#002B49] dark:text-amber-400 animate-spin mx-auto" />
+            <Loader2 className="w-8 h-8 text-[#002B49] dark:text-[#1E88FF] animate-spin mx-auto" />
             <p className="text-xs text-slate-500 dark:text-slate-400">Loading student inquiries...</p>
           </div>
         ) : inquiries.length === 0 ? (
@@ -344,7 +344,7 @@ export default function AdminStudentInquiriesPage() {
                   className="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors cursor-pointer"
                   onClick={() => setSelectedInquiry(item)}
                 >
-                  <td className="py-3 px-3 font-mono font-bold text-[#002B49] dark:text-amber-400 whitespace-nowrap">
+                  <td className="py-3 px-3 font-mono font-bold text-[#002B49] dark:text-[#1E88FF] whitespace-nowrap">
                     {item.reference_id}
                   </td>
                   <td className="py-3 px-3 font-medium whitespace-nowrap">{item.name}</td>
@@ -383,7 +383,7 @@ export default function AdminStudentInquiriesPage() {
             {/* Drawer Header */}
             <div className="p-5 bg-[#002B49] text-white flex items-center justify-between border-b border-slate-800 shrink-0">
               <div>
-                <span className="text-[10px] uppercase font-bold text-amber-400 tracking-wider">
+                <span className="text-[10px] uppercase font-bold text-[#1268D4] tracking-wider">
                   Inquiry Detail Record
                 </span>
                 <h2 className="text-lg font-mono font-bold">{selectedInquiry.reference_id}</h2>
@@ -413,13 +413,13 @@ export default function AdminStudentInquiriesPage() {
 
                 <div className="space-y-2">
                   <div className="flex items-center gap-2 text-slate-700 dark:text-slate-300">
-                    <User className="w-4 h-4 text-[#8B0000] dark:text-amber-400 shrink-0" />
+                    <User className="w-4 h-4 text-[#1268D4] dark:text-[#1E88FF] shrink-0" />
                     <span className="font-semibold">Full Name:</span>
                     <span>{selectedInquiry.name}</span>
                   </div>
 
                   <div className="flex items-center gap-2 text-slate-700 dark:text-slate-300">
-                    <Mail className="w-4 h-4 text-[#8B0000] dark:text-amber-400 shrink-0" />
+                    <Mail className="w-4 h-4 text-[#1268D4] dark:text-[#1E88FF] shrink-0" />
                     <span className="font-semibold">Email:</span>
                     <a href={`mailto:${selectedInquiry.email}`} className="text-blue-600 dark:text-blue-400 hover:underline">
                       {selectedInquiry.email}
@@ -427,7 +427,7 @@ export default function AdminStudentInquiriesPage() {
                   </div>
 
                   <div className="flex items-center gap-2 text-slate-700 dark:text-slate-300">
-                    <Tag className="w-4 h-4 text-[#8B0000] dark:text-amber-400 shrink-0" />
+                    <Tag className="w-4 h-4 text-[#1268D4] dark:text-[#1E88FF] shrink-0" />
                     <span className="font-semibold">Category:</span>
                     <span>{selectedInquiry.category}</span>
                   </div>
@@ -447,7 +447,7 @@ export default function AdminStudentInquiriesPage() {
               {/* Timeline */}
               <div className="p-4 rounded-xl bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 space-y-2">
                 <h3 className="font-bold text-[#002B49] dark:text-white uppercase tracking-wider text-[11px] flex items-center gap-1.5">
-                  <Calendar className="w-3.5 h-3.5 text-[#8B0000] dark:text-amber-400" />
+                  <Calendar className="w-3.5 h-3.5 text-[#1268D4] dark:text-[#1E88FF]" />
                   <span>Submission Timeline</span>
                 </h3>
 

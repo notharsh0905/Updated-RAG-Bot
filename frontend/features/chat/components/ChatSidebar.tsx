@@ -143,9 +143,8 @@ export const ChatSidebar: React.FC<ChatSidebarProps> = ({
 
       {/* Sidebar Navigation Panel */}
       <aside
-        className={`fixed md:relative inset-y-0 left-0 z-50 flex flex-col w-72 bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-200 border-r border-slate-200 dark:border-slate-800/80 transition-all duration-300 ease-in-out shrink-0 ${
-          isOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0 md:w-0 md:border-r-0 md:overflow-hidden'
-        }`}
+        className={`fixed md:relative inset-y-0 left-0 z-50 flex flex-col w-72 bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-200 border-r border-slate-200 dark:border-slate-800/80 transition-all duration-300 ease-in-out shrink-0 ${isOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0 md:w-0 md:border-r-0 md:overflow-hidden'
+          }`}
       >
         {/* Top Header with Official CSJMU Seal */}
         <div className="p-3.5 border-b border-slate-200 dark:border-slate-800/80 flex items-center justify-between">

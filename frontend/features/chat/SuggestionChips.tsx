@@ -28,7 +28,7 @@ export const SuggestionChips: React.FC<SuggestionChipsProps> = ({ suggestions, o
 
   return (
     <div className="mt-4 pt-3 border-t border-slate-200/80 dark:border-slate-800">
-      <div className="text-xs font-bold text-[#A51C30] dark:text-amber-400 mb-2.5 flex items-center gap-1.5 uppercase tracking-wider">
+      <div className="text-xs font-bold text-[#1E88FF] dark:text-[#1E88FF] mb-2.5 flex items-center gap-1.5 uppercase tracking-wider">
         <span className="uni-bullet">➲</span>
         <span>You may also want to know:</span>
       </div>
@@ -39,14 +39,14 @@ export const SuggestionChips: React.FC<SuggestionChipsProps> = ({ suggestions, o
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.97 }}
             onClick={() => onSelect(chip.full_question)}
-            className="h-11 px-3.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800/90 hover:bg-[#A51C30] hover:text-white dark:hover:bg-[#A51C30] dark:hover:text-white text-slate-800 dark:text-slate-200 font-semibold text-xs shadow-sm hover:shadow-md transition-all text-left truncate flex items-center justify-between group"
+            className="h-11 px-3.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800/90 hover:bg-[#1E88FF] hover:text-white dark:hover:bg-[#1E88FF] dark:hover:text-white text-slate-800 dark:text-slate-200 font-semibold text-xs shadow-sm hover:shadow-md transition-all text-left truncate flex items-center justify-between group"
             title={chip.full_question}
           >
             <div className="flex items-center gap-1.5 truncate">
-              <span className="uni-bullet text-[#A51C30] group-hover:text-white">➲</span>
+              <span className="uni-bullet text-[#1E88FF] group-hover:text-white">➲</span>
               <span className="truncate">{chip.short_label}</span>
             </div>
-            <span className="text-slate-400 group-hover:text-amber-300 ml-1 text-xs">
+            <span className="text-slate-400 group-hover:text-[#1E88FF] ml-1 text-xs">
               →
             </span>
           </motion.button>

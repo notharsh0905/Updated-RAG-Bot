@@ -29,7 +29,7 @@ export default function AdminAnalyticsPage() {
         <div className="p-5 bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 space-y-2 shadow-sm">
           <div className="flex items-center justify-between text-slate-500 text-xs font-bold uppercase">
             <span>Total Logged Queries</span>
-            <Activity className="w-4 h-4 text-[#002B49] dark:text-amber-400" />
+            <Activity className="w-4 h-4 text-[#002B49] dark:text-[#1E88FF]" />
           </div>
           <div className="text-2xl font-extrabold text-slate-900 dark:text-white">
             {analytics?.total_queries || 0}
@@ -49,7 +49,7 @@ export default function AdminAnalyticsPage() {
         <div className="p-5 bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 space-y-2 shadow-sm">
           <div className="flex items-center justify-between text-slate-500 text-xs font-bold uppercase">
             <span>Cache Hits</span>
-            <Database className="w-4 h-4 text-[#8B0000] dark:text-amber-400" />
+            <Database className="w-4 h-4 text-[#1268D4] dark:text-[#1E88FF]" />
           </div>
           <div className="text-2xl font-extrabold text-slate-900 dark:text-white">
             {analytics?.cache_hits || 0}
@@ -59,7 +59,7 @@ export default function AdminAnalyticsPage() {
         <div className="p-5 bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 space-y-2 shadow-sm">
           <div className="flex items-center justify-between text-slate-500 text-xs font-bold uppercase">
             <span>Satisfaction Rate</span>
-            <ThumbsUp className="w-4 h-4 text-[#002B49] dark:text-amber-400" />
+            <ThumbsUp className="w-4 h-4 text-[#002B49] dark:text-[#1E88FF]" />
           </div>
           <div className="text-2xl font-extrabold text-slate-900 dark:text-white">
             {analytics?.satisfaction_pct || 100}%
