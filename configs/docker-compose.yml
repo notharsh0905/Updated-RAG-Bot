@@ -2,11 +2,16 @@ version: '3.8'
 
 services:
   backend:
-    build: .
+    build:
+      context: ..
+      dockerfile: Dockerfile
     container_name: csjmu_rag_backend
     ports:
       - "8000:8000"
     environment:
+      - ENVIRONMENT=production
+      - API_HOST=0.0.0.0
+      - API_PORT=8000
       - LLM_PROVIDER=ollama
       - EMBEDDING_PROVIDER=ollama
       - OLLAMA_BASE_URL=http://172.20.8.10:31435
@@ -19,19 +24,15 @@ services:
     restart: unless-stopped
 
   frontend:
-    build: .
+    build:
+      context: ../frontend
+      dockerfile: Dockerfile
     container_name: csjmu_rag_frontend
-    command: streamlit run frontend/streamlit_app.py --server.port=8501 --server.address=0.0.0.0
     ports:
-      - "8501:8501"
+      - "3000:3000"
     environment:
-      - LLM_PROVIDER=ollama
-      - EMBEDDING_PROVIDER=ollama
-      - OLLAMA_BASE_URL=http://172.20.8.10:31435
-      - OLLAMA_LLM_MODEL=llama3.1:8b
-      - OLLAMA_EMBEDDING_MODEL=nomic-embed-text:latest
-      - LLM_MODEL=llama3.1:8b
-      - EMBEDDING_MODEL=nomic-embed-text:latest
+      - NODE_ENV=production
+      - NEXT_PUBLIC_API_URL=http://localhost:8000
     depends_on:
       - backend
     restart: unless-stopped

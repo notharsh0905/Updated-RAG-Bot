@@ -1,4 +1,4 @@
-# Production Dockerfile for CSJMU RAG System
+# Production Dockerfile for CSJMU RAG System FastAPI Backend
 FROM python:3.10-slim
 
 WORKDIR /app
@@ -15,12 +15,11 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy source application modules
 COPY app/ ./app/
-COPY frontend/ ./frontend/
 COPY data/ ./data/
 COPY main.py ./
 COPY .env.example .env
 
-EXPOSE 8000 8501
+EXPOSE 8000
 
 HEALTHCHECK --interval=30s --timeout=5s --start-period=10s --retries=3 \
   CMD curl -f http://localhost:8000/health || exit 1

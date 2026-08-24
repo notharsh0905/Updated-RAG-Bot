@@ -16,6 +16,8 @@ def admin_headers():
     return {"Authorization": f"Bearer {token}"}
 
 
+from unittest.mock import patch
+
 def test_admin_upload_success(admin_headers):
     unique_id = str(int(time.time()))
     filename = f"test_upload_{unique_id}.txt"
@@ -27,12 +29,14 @@ def test_admin_upload_success(admin_headers):
         "category": "admissions"
     }
 
-    with TestClient(app) as client:
-        response = client.post("/admin/upload", headers=admin_headers, files=files, data=data)
-        assert response.status_code == 200, f"Expected 200, got {response.status_code}: {response.text}"
+    with patch("langchain_chroma.Chroma.add_documents", return_value=["id_1"]):
+        with TestClient(app) as client:
+            response = client.post("/admin/upload", headers=admin_headers, files=files, data=data)
+            assert response.status_code == 200, f"Expected 200, got {response.status_code}: {response.text}"
 
-        res = response.json()
-        assert res["success"] is True
-        assert res["filename"] == filename
-        assert res["chunks"] > 0
+            res = response.json()
+            assert res["success"] is True
+            assert res["filename"] == filename
+            assert res["chunks"] > 0
+
 

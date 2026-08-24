@@ -1,5 +1,18 @@
 [
   {
+    "document_id": "doc_20b873d4-8516-4674-9203-fbe862854766",
+    "original_filename": "test_upload_1787555736.txt",
+    "stored_filename": "doc_20b873d4-8516-4674-9203-fbe862854766_test_upload_1787555736.txt",
+    "file_type": "txt",
+    "file_size_bytes": 83,
+    "checksum": "3a44a4747cfe15bb8a538d0fe64603cb6065bcd5caafe3954473bd3ab35ba34f",
+    "category": "admissions",
+    "page_count": 1,
+    "chunk_count": 1,
+    "status": "completed",
+    "upload_timestamp": "2026-08-24 12:45:41"
+  },
+  {
     "document_id": "doc_2ddb74e5-d956-4231-a2ee-7b11d0a435a6",
     "original_filename": "test_upload_1786004801.txt",
     "stored_filename": "doc_2ddb74e5-d956-4231-a2ee-7b11d0a435a6_test_upload_1786004801.txt",

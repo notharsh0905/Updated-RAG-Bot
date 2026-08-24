@@ -20,7 +20,14 @@ jobs:
         python-version: "3.10"
         cache: 'pip'
 
-    - name: Install Dependencies
+    - name: Set up Node.js 20
+      uses: actions/setup-node@v3
+      with:
+        node-version: "20"
+        cache: 'npm'
+        cache-dependency-path: frontend/package-lock.json
+
+    - name: Install Python Dependencies
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
@@ -28,9 +35,7 @@ jobs:
 
     - name: Run Linting (flake8)
       run: |
-        # Stop the build if there are Python syntax errors or undefined names
         flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
-        # Warn for code formatting issues without breaking build
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
 
     - name: Run Pytest Unit Tests
@@ -42,7 +47,15 @@ jobs:
         python -c "import json; questions = json.load(open('data/evaluation/eval_questions.json')); assert len(questions) >= 300, 'Evaluation dataset must contain at least 300 questions'"
         echo "✅ Evaluation dataset schema verified successfully."
 
+    - name: Install Frontend Dependencies & Build Next.js
+      run: |
+        cd frontend
+        npm ci
+        npm run build
+        echo "✅ Next.js production build succeeded."
+
     - name: Docker Build Check
       run: |
-        docker build -t csjmu-rag-system:latest -f Dockerfile .
-        echo "✅ Docker build succeeded."
+        docker build -t csjmu-rag-backend:latest -f Dockerfile .
+        docker build -t csjmu-rag-frontend:latest -f frontend/Dockerfile frontend/
+        echo "✅ Docker builds succeeded."

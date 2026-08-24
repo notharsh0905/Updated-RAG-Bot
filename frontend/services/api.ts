@@ -19,17 +19,9 @@ import {
 
 
 
-// Centralized Dynamic API Base URL Configuration for LAN & Production Access
-// Centralized Dynamic API Base URL Configuration for LAN, Mobile & Production Access
+// Centralized Dynamic API Base URL Configuration for LAN, SSR & Production Access
 export const getApiBaseUrl = (): string => {
-  // 1. Dynamic Hostname Detection for Browser Clients (Mac, Tablet, Phone over LAN)
-  if (typeof window !== 'undefined') {
-    const protocol = window.location.protocol;
-    const hostname = window.location.hostname;
-    return `${protocol}//${hostname}:8000`;
-  }
-
-  // 2. Explicit Environment Variable (if provided for SSR)
+  // 1. Explicit Environment Variable (highest priority if configured)
   if (process.env.NEXT_PUBLIC_API_URL) {
     let url = process.env.NEXT_PUBLIC_API_URL.trim();
     if (url.endsWith('/')) {
@@ -38,7 +30,22 @@ export const getApiBaseUrl = (): string => {
     return url;
   }
 
-  // 3. Fallback for SSR
+  // 2. Dynamic Hostname & Port Detection for Browser Clients
+  if (typeof window !== 'undefined') {
+    const protocol = window.location.protocol;
+    const hostname = window.location.hostname;
+    const port = window.location.port;
+
+    // For local or LAN development servers running on custom dev ports (e.g. 3000, 3001)
+    if (port === '3000' || port === '3001' || port === '3002') {
+      return `${protocol}//${hostname}:8000`;
+    }
+
+    // For production deployments behind Nginx / SSL reverse proxy (Port 80/443)
+    return '';
+  }
+
+  // 3. Fallback for SSR / Node environment
   return 'http://localhost:8000';
 };
 
