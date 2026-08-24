@@ -34,6 +34,7 @@ import {
   FileCode,
 } from 'lucide-react';
 import { apiService } from '@/services/api';
+import { SystemHealth } from '@/types/chat';
 import { safeCopyToClipboard } from '@/utils/generateId';
 
 interface UploadResult {
@@ -84,6 +85,7 @@ export default function AdminKnowledgePage() {
   >('overview');
   const [expandedChunkId, setExpandedChunkId] = useState<string | null>('chunk-1');
   const [copiedText, setCopiedText] = useState<string | null>(null);
+  const [health, setHealth] = useState<SystemHealth | null>(null);
 
   // Search & Filter States
   const [searchQuery, setSearchQuery] = useState<string>('');
@@ -181,6 +183,7 @@ export default function AdminKnowledgePage() {
 
   useEffect(() => {
     fetchLibrary();
+    apiService.getHealth().then(setHealth).catch(() => {});
   }, []);
 
   // Enterprise Dashboard KPI Computations
@@ -198,10 +201,10 @@ export default function AdminKnowledgePage() {
       storageMb: `${storageMb} MB`,
       totalQuestions: totalQuestions.toLocaleString(),
       needsReview,
-      embeddingModel: 'nomic-embed-text',
+      embeddingModel: health?.embeddings?.model || 'nomic-embed-text',
       avgSimilarity: '0.91',
     };
-  }, [uploadedDocs]);
+  }, [uploadedDocs, health]);
 
   // Filter & Sort Pipeline
   const filteredDocs = useMemo(() => {
@@ -249,7 +252,7 @@ export default function AdminKnowledgePage() {
 
     const t3 = setTimeout(() => {
       setProgressPercent(75);
-      setCurrentStep('Embedding vectors using nomic-embed-text...');
+      setCurrentStep(`Embedding vectors using ${health?.embeddings?.model || 'nomic-embed-text'}...`);
     }, 2000);
 
     const t4 = setTimeout(() => {
@@ -754,7 +757,7 @@ export default function AdminKnowledgePage() {
                   <div className="relative border-l-2 border-slate-300 dark:border-slate-800 ml-3 pl-4 space-y-4">
                     {[
                       { title: 'Document Ingested', desc: 'File binary parsed and stored under data/uploads/', time: '2 hours ago' },
-                      { title: 'Chroma Vectors Embedded', desc: '32 chunks embedded using nomic-embed-text', time: '2 hours ago' },
+                      { title: 'Chroma Vectors Embedded', desc: `32 chunks embedded using ${health?.embeddings?.model || 'nomic-embed-text'}`, time: '2 hours ago' },
                       { title: 'BM25 Index Updated', desc: 'Sparse index updated in memory', time: '2 hours ago' },
                     ].map((step, idx) => (
                       <div key={idx} className="relative">

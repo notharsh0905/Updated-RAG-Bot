@@ -40,6 +40,7 @@ import {
   CheckSquare,
 } from 'lucide-react';
 import { apiService } from '@/services/api';
+import { SystemHealth } from '@/types/chat';
 import { safeCopyToClipboard } from '@/utils/generateId';
 
 // Types for AI Operations Trace Item
@@ -93,6 +94,7 @@ export default function StudentQueryCenterPage() {
   const [ticketReviewer, setTicketReviewer] = useState<string>('Unassigned');
   const [adminNotes, setAdminNotes] = useState<string>('');
   const [isSavedNotes, setIsSavedNotes] = useState<boolean>(false);
+  const [health, setHealth] = useState<SystemHealth | null>(null);
 
   // Load Feed Data from API
   const fetchQueries = async () => {
@@ -183,6 +185,7 @@ export default function StudentQueryCenterPage() {
 
   useEffect(() => {
     fetchQueries();
+    apiService.getHealth().then(setHealth).catch(() => {});
   }, []);
 
   useEffect(() => {
@@ -770,8 +773,8 @@ export default function StudentQueryCenterPage() {
                   </div>
                   <div className="p-3 bg-slate-50 dark:bg-slate-950 rounded-xl border border-slate-200 dark:border-slate-800 font-mono text-[11px] text-slate-700 dark:text-slate-300 leading-relaxed">
                     <p className="text-[#002B49] dark:text-cyan-400 font-semibold">// Pipeline Execution Telemetry</p>
-                    <p>Model: llama3.2:3b | Temperature: 0.0 | Top-K: 5</p>
-                    <p>Embedding: nomic-embed-text | Vector Dim: 768</p>
+                    <p>Model: {health?.llm?.model || 'Active LLM'} | Temperature: 0.0 | Top-K: 5</p>
+                    <p>Embedding: {health?.embeddings?.model || 'nomic-embed-text'} | Vector Dim: 768</p>
                     <p>Response Latency: 0.44s | TTFT: 0.11s</p>
                   </div>
                 </div>

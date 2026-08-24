@@ -215,7 +215,7 @@ with st.sidebar:
         if not st.session_state.is_admin_authenticated:
             pwd_input = st.text_input("Enter Admin Passcode", type="password")
             if st.button("Log In to Admin", use_container_width=True):
-                admin_pass = os.getenv("ADMIN_PASSCODE", "CSJMU_UIET_2026")
+                admin_pass = os.getenv("ADMIN_PASSCODE", "change_me_admin_passcode")
                 if pwd_input == admin_pass:
                     st.session_state.is_admin_authenticated = True
                     st.toast("Admin authentication successful!", icon="🔓")

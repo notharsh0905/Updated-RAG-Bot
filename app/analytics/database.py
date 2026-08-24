@@ -101,8 +101,8 @@ class DatabaseManager:
                 question TEXT NOT NULL,
                 answer TEXT NOT NULL,
                 prompt_version TEXT DEFAULT '2.0',
-                model_used TEXT DEFAULT 'llama3.2:3b',
-                embedding_model TEXT DEFAULT 'nomic-embed-text',
+                model_used TEXT,
+                embedding_model TEXT,
                 retrieval_method TEXT DEFAULT 'hybrid_bm25_vector',
                 total_retrieved_chunks INTEGER DEFAULT 0,
                 confidence_score REAL DEFAULT 0.0,
@@ -407,8 +407,8 @@ class DatabaseManager:
             question = payload.get("question", "")
             answer = payload.get("answer", "")
             prompt_version = payload.get("prompt_version", "2.0")
-            model_used = payload.get("model_used", "llama3.2:3b")
-            embedding_model = payload.get("embedding_model", "nomic-embed-text")
+            model_used = payload.get("model_used") or config.get_active_model_name()
+            embedding_model = payload.get("embedding_model") or config.get_active_embedding_model_name()
             retrieval_method = payload.get("retrieval_method", "hybrid_bm25_vector")
             total_retrieved_chunks = payload.get("total_retrieved_chunks", 0)
             confidence_score = payload.get("confidence_score", 0.0)
